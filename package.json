@@ -11,10 +11,10 @@
     },
     "homepage": "https://www.npmjs.com/package/@collboard/modules-sdk",
     "private": false,
-    "main": "./dist/modules/sdk/src/runtime/runtime.js",
+    "main": "./dist/runtime/runtime.js",
     "types": "./types/index.d.ts",
     "bin": {
-        "colldev": "./dist/modules/sdk/src/colldev/colldev.js"
+        "colldev": "./dist/colldev/colldev.js"
     },
     "scripts": {
         "postinstall": "tsc"
