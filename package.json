@@ -9,7 +9,7 @@
         "type": "git",
         "url": "https://github.com/collboard/modules-sdk"
     },
-    "homepage": "https://www.npmjs.com/package/@collboard/modules-sdk",
+    "homepage": "https://www.npmjs.com/package/@collboard/modules-sdk#TODO:!!!MakeGHPage",
     "private": false,
     "main": "./dist/runtime/runtime.js",
     "types": "./types/index.d.ts",
