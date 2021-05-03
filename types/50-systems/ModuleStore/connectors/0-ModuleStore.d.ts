@@ -21,7 +21,7 @@ export declare class ModuleStore extends AbstractSystem implements IModuleStoreC
     search(searchCriteria: IModuleStoreConnectorSearchQuery): Promise<{
         modules: (IDependency & Partial<import("../interfaces/IModuleManifest").IModuleManifest>)[];
     }>;
-    download(...modules: IDependency[]): Promise<import("../../../40-utils/IFactory").IFactorable<import("../interfaces/IModule").IModuleDefinition>[]>;
+    download(...modules: IDependency[]): Promise<import("../../../CollboardSdk").IFactorable<import("../interfaces/IModule").IModuleDefinition>[]>;
     getCategories(): Promise<Set<string_module_category>>;
 }
 

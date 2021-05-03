@@ -6,7 +6,7 @@
                   /// <reference types="react" />
 import { AppState } from '../../50-systems/AppState/0-AppState';
 import { IArtVersioningSystem } from '../../50-systems/ArtVersionSystem/IArtVersionSystem';
-import { ArtSerializer } from '../../CollBoardApp';
+import { ArtSerializer } from '../../CollboardApp';
 interface IArtsListProps {
     appState: AppState;
     materialArtVersioningSystem: IArtVersioningSystem;

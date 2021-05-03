@@ -4,9 +4,9 @@ import http from 'http';
 import { join, relative } from 'path';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
-import { IColldevSyncerSocket } from '../../../../../src/00-modules/development/IColldevSyncerSocket';
 import { Compiler } from '../compiler/Compiler';
 import { ASSETS_PATH } from '../config';
+import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 
 export class Server {
     constructor(private compiler: Compiler) {

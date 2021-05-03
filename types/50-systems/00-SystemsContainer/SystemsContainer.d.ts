@@ -4,7 +4,7 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
                   import { TouchController } from 'touchcontroller';
-import { ArtSerializer } from '../../CollBoardApp';
+import { ArtSerializer } from '../../CollboardApp';
 import { ModuleStore } from '../ModuleStore/connectors/0-ModuleStore';
 import { ApiClient } from './../ApiClient/0-ApiClient';
 import { BoardApiClient } from './../ApiClient/BoardApiClient';

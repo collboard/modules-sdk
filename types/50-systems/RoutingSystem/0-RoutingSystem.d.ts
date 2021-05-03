@@ -1,7 +1,9 @@
+
+                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { BrowserHistoryPathStorage, IBrowserHistoryStorageOptions, IJson, IObservableStorage } from 'everstorage';
+                  import { BrowserHistoryPathStorage, IBrowserHistoryStorageOptions, IJson, IObservableStorage } from 'everstorage';
 import { string_uri_part, string_url } from '../../40-utils/typeAliases';
 import { AbstractSystem } from '../AbstractSystem';
 import { IRoutePathParams } from './routePath';
@@ -23,9 +25,8 @@ export declare class RoutingSystem extends AbstractSystem {
      * TODO: !! Use this in all places
      */
     navigateBoardHome(): void;
-    registerQuery<TValue extends IJson>(
-        defaultParams: TValue,
-        options?: Partial<IBrowserHistoryStorageOptions>,
-    ): IObservableStorage<TValue>;
+    registerQuery<TValue extends IJson>(defaultParams: TValue, options?: Partial<IBrowserHistoryStorageOptions>): IObservableStorage<TValue>;
     SELF_URL: string_url;
 }
+
+                  

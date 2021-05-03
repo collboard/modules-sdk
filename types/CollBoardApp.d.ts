@@ -9,7 +9,7 @@ import { Serializer } from './50-systems/Serializer/0-Serializer';
 import { AbstractArt } from './71-arts/20-AbstractArt';
 export declare type ISerializableTypes = Commit | AbstractArt | Vector;
 export declare type ArtSerializer = Serializer<ISerializableTypes>;
-export declare class CollBoardApp {
+export declare class CollboardApp {
     private rootElement;
     private apiUrl;
     private systems;

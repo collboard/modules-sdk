@@ -8,7 +8,7 @@ import { string_attribute } from '../../40-utils/typeAliases';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 import { AbstractSystem } from '../AbstractSystem';
 /**
- * AppState is not quite a system but an object representing the state of the CollBoard app.
+ * AppState is not quite a system but an object representing the state of the Collboard app.
  * TODO: Should it be a system?
  */
 export declare class AppState extends AbstractSystem {

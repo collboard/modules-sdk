@@ -6,7 +6,7 @@
                   import * as React from 'react';
 import { IArtVersioningSystem } from '../../50-systems/ArtVersionSystem/IArtVersionSystem';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
-import { ArtSerializer } from '../../CollBoardApp';
+import { ArtSerializer } from '../../CollboardApp';
 interface IArtDetailProps {
     art: AbstractArt;
     materialArtVersioningSystem: IArtVersioningSystem;

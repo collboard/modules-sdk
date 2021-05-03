@@ -20,7 +20,7 @@ export declare class StyleSystem extends AbstractSystem {
      * TODO: Enable object-like styles + styled components in future
      * TODO: Create scoped version of this
      */
-    registerGlobalStyle(style: string): import("../../40-utils/destroyables/Registration").Registration;
+    registerGlobalStyle(style: string): import("../../CollboardSdk").Registration;
     renderStyles(): JSX.Element;
     destroy(): Promise<void>;
 }
