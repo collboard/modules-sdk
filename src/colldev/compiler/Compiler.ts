@@ -14,8 +14,8 @@ export class Compiler {
     readonly bundles: ReplaySubject<{ path: string }> = new ReplaySubject(1);
 
     private async init() {
-        makeColldevFolder();
-        cleanupAssets();
+        await makeColldevFolder();
+        await cleanupAssets();
 
         const bundleId = uuid.v4();
         const bundleFilename = `bundle-${bundleId}.min.js`;

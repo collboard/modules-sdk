@@ -1,6 +1,6 @@
 {
     "name": "@collboard/modules-sdk",
-    "version": "10.4.1-5",
+    "version": "10.4.1-6",
     "description": "Modules SDK toolkit for Collboard.com",
     "license": "SEE LICENSE IN LICENSE",
     "contributors": [
@@ -20,7 +20,7 @@
     },
     "scripts": {
         "test": "TODO: !!!",
-        "develop": "tsc --watch",
+        "develop": "ts-node dist/colldev/colldev.js",
         "postinstall": "tsc",
         "preversion": "tsc && npm run test",
         "postversion": "TODO: !!! npm publish !!!! How to deal with the versioning - keep connedted, suffix or split"
@@ -46,5 +46,8 @@
         "uuid": "^8.3.2",
         "waitasecond": "^1.5.0",
         "webpack": "^5.35.1"
+    },
+    "devDependencies": {
+        "ts-node": "^9.1.1"
     }
 }
