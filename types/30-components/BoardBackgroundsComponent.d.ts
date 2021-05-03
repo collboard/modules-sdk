@@ -1,0 +1,16 @@
+
+                  
+// GENERATED WITH generate-modules-sdk
+// Warning: Do not edit by hand, all changes will be lost on next execution!
+
+                  /// <reference types="react" />
+import { Transform } from 'xyzt';
+import { AbstractBackgroundArt } from '../71-arts/26-AbstractBackgroundArt';
+interface IBoardBackgroundsProps {
+    backgroundArts: AbstractBackgroundArt[];
+    transform: Transform;
+}
+export declare function BoardBackgroundsComponent({ backgroundArts, transform }: IBoardBackgroundsProps): JSX.Element;
+export {};
+
+                  

@@ -1,0 +1,18 @@
+
+                  
+// GENERATED WITH generate-modules-sdk
+// Warning: Do not edit by hand, all changes will be lost on next execution!
+
+                  import { IStorage } from 'everstorage';
+import { AbstractSystem } from '../AbstractSystem';
+/**
+ * StorageSystem provides storages for other systems / modules
+ */
+export declare class StorageSystem extends AbstractSystem {
+    protected init(): Promise<void>;
+    private persistentStorage;
+    private sessionStorage;
+    getStorage<T extends any>(storageName: string, persistent?: boolean): IStorage<T>;
+}
+
+                  

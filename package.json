@@ -1,0 +1,39 @@
+{
+    "name": "@collboard/modules-sdk",
+    "version": "10.4.1-2",
+    "contributors": [
+        "Pavol Hejný <me@pavolhejny.com> (https://pavolhejny.com)",
+        "Jonáš Rosecký <jonas.rosecky@h-edu.cz>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/collboard/modules-sdk"
+    },
+    "homepage": "https://www.npmjs.com/package/@collboard/modules-sdk",
+    "private": false,
+    "main": "./dist/modules/sdk/src/runtime/runtime.js",
+    "types": "./types/index.d.ts",
+    "bin": {
+        "colldev": "./dist/modules/sdk/src/colldev/colldev.js"
+    },
+    "scripts": {
+        "postinstall": "tsc"
+    },
+    "dependencies": {
+        "@types/react": "^16.9.49",
+        "commander": "^7.2.0",
+        "express": "^4.17.1",
+        "ink": "^3.0.8",
+        "ink-table": "^3.0.0",
+        "mobx": "^6.3.0",
+        "mobx-react": "^7.1.0",
+        "react": "^16.13.1",
+        "rxjs": "^6.6.7",
+        "serve-static": "^1.14.1",
+        "socket.io": "^4.0.1",
+        "ts-loader": "^8.2.0",
+        "uuid": "^8.3.2",
+        "waitasecond": "^1.5.0",
+        "webpack": "^5.35.1"
+    }
+}

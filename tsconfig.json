@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "downlevelIteration": true,
+        "allowJs": true,
+        "moduleResolution": "node",
+        "jsx": "react",
+        "outDir": "dist",
+        "sourceMap": true,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "experimentalDecorators": true,
+        "noUnusedLocals": false,
+        "esModuleInterop": true,
+        "types": ["node"]
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
+}

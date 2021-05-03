@@ -1,0 +1,4 @@
+# Note: types folded cannot be ignored because then will be not published with NPM
+
+dist
+node_modules
