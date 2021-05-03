@@ -3,7 +3,7 @@ import { ReplaySubject } from 'rxjs';
 import * as uuid from 'uuid';
 import webpack from 'webpack';
 import { ASSETS_PATH } from '../config';
-import { cleanupAssets } from './utils/cleanupAssets';
+import { cleanupAssets, makeColldevFolder } from './utils/cleanupAssets';
 import { getPackageMainPath } from './utils/package';
 
 export class Compiler {
@@ -14,6 +14,7 @@ export class Compiler {
     readonly bundles: ReplaySubject<{ path: string }> = new ReplaySubject(1);
 
     private async init() {
+        makeColldevFolder();
         cleanupAssets();
 
         const bundleId = uuid.v4();
