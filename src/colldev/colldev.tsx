@@ -21,6 +21,8 @@ async function colldevMain() {
 
     await forEver();
     render(<Output {...{ outputStats }} />);
+
+    // TODO: !!! SIGINT
 }
 
 colldevMain();
