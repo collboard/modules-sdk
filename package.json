@@ -1,6 +1,8 @@
 {
     "name": "@collboard/modules-sdk",
     "version": "10.4.1-4",
+    "description": "Modules SDK toolkit for Collboard.com",
+    "license": "SEE LICENSE IN LICENSE",
     "contributors": [
         "Pavol Hejný <me@pavolhejny.com> (https://pavolhejny.com)",
         "Jonáš Rosecký <jonas.rosecky@h-edu.cz>"
