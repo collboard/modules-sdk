@@ -1,4 +1,6 @@
-# modules-sdk
+# Collboard modules SDK
+
+Modules SDK toolkit for Collboard.com
 
 SDK for Collboard.com modules
 
