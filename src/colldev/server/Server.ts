@@ -96,7 +96,13 @@ export class Server {
                 // console.log(`Client ${instanceUUID} connected and identified`);
 
                 this.serverStatusUpdate((serverStatusValue) => {
-                    serverStatusValue.clients[instanceUUID] = { connected: true, modules: {} };
+                    serverStatusValue.clients[instanceUUID] = {
+                        // TODO: Maybe transfer theese in initial
+                        connected: true,
+                        url: '' /* TODO: Better */,
+                        boardId: null,
+                        modules: {},
+                    };
                 });
 
                 const subscription = this.compiler.bundles.subscribe({
