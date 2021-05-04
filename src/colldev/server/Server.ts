@@ -22,6 +22,9 @@ export class Server {
         this.socketHandler(socket);
 
         app.get('/', (req, res) => {
+            // TODO: !!! show sth on 3000
+            // TODO: !!! Allow to choose port
+            // TODO: !!! Localtunneling
             res.send('Hello World!');
         });
 
