@@ -1,16 +1,22 @@
 import { join } from 'path';
-import { ReplaySubject } from 'rxjs';
+import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import * as uuid from 'uuid';
 import webpack from 'webpack';
 import { ASSETS_PATH } from '../config';
 import { cleanupAssets, makeColldevFolder } from './utils/cleanupAssets';
 import { getPackageMainPath } from './utils/package';
 
+export interface ICompilerResults {
+    stats?: string;
+    error?: Error;
+}
+
 export class Compiler {
     constructor() {
         this.init();
     }
 
+    readonly stats: BehaviorSubject<null | ICompilerResults> = new BehaviorSubject(null);
     readonly bundles: ReplaySubject<{ path: string }> = new ReplaySubject(1);
 
     private async init() {
@@ -52,12 +58,13 @@ export class Compiler {
                 },
             },
             async (error, stats) => {
-                console.log(
-                    stats?.toString({
+                this.stats.next({
+                    error,
+                    stats: stats?.toString({
                         chunks: false, // Makes the build much quieter
                         colors: true, // Shows colors in the console
                     }),
-                );
+                });
 
                 this.bundles.next({ path: join(ASSETS_PATH, bundleFilename) });
 

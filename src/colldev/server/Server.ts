@@ -19,7 +19,7 @@ export class Server {
         this.init();
     }
 
-    serverStatus: BehaviorSubject<IServerStatus> = new BehaviorSubject({ clients: {} });
+    readonly serverStatus: BehaviorSubject<IServerStatus> = new BehaviorSubject({ clients: {} });
     private serverStatusUpdate(updator: (serverStatusValue: IServerStatus) => void) {
         const serverStatusValue = { ...this.serverStatus.value };
         updator(serverStatusValue);
@@ -38,13 +38,25 @@ export class Server {
             // TODO: !!! show sth on 3000
             // TODO: !!! Allow to choose port
             // TODO: !!! Localtunneling
-            res.send('Hello World!');
+            res.type('text/html').send(`
+            <h1>Colldev server</h1>
+            <p>Hello from Collboard.com modules SDK toolkit:</p>
+            <ul>
+                <li>To test currently developed modules go to <a href="https://dev.collboard.com">https://dev.collboard.com</a>.</li>
+                <li>To show current stats to <a href="/stats">/stats</a>.</li>
+                <li>To learn more <a href="https://github.com/collboard/modules-sdk">https://github.com/collboard/modules-sdk</a>.</li>
+            </ul>
+
+            `);
         });
 
-        /*
-        app.get('/bundles', (req, res) => {
-            res.type('application/javascript').send(`console.log('Hello from colldev express');` + bundle);
-        });*/
+        app.get('/stats', (req, res) => {
+            res.type('application/javascript').send({
+                date: new Date().toISOString(),
+                server: this.serverStatus.value,
+                compiler: this.compiler.stats.value,
+            });
+        });
 
         /*
         Note: We cannot use simple static server, because we are dynamically replacing declareModuleCallback
@@ -71,7 +83,7 @@ export class Server {
         });
 
         server.listen(port, () => {
-            console.log(`Example app listening at http://localhost:${port}`);
+            // console.log(`Example app listening at http://localhost:${port}`);
         });
     }
 
@@ -81,7 +93,7 @@ export class Server {
                 const { instanceUUID } = clientIdentification;
 
                 // TODO: !!! Cleanup theese console logs - only react ink interface
-                console.log(`Client ${instanceUUID} connected and identified`);
+                // console.log(`Client ${instanceUUID} connected and identified`);
 
                 this.serverStatusUpdate((serverStatusValue) => {
                     serverStatusValue.clients[instanceUUID] = { connected: true, modules: {} };
@@ -89,7 +101,7 @@ export class Server {
 
                 const subscription = this.compiler.bundles.subscribe({
                     next: ({ path }) => {
-                        console.log(`Emmiting bundle for ${instanceUUID}`);
+                        // console.log(`Emmiting bundle for ${instanceUUID}`);
                         socket.emit('bundle', {
                             bundleUrl: 'http://localhost:3000/assets/' + relative(ASSETS_PATH, path),
                         } as IColldevSyncerSocket.bundle);
@@ -97,7 +109,7 @@ export class Server {
                 });
 
                 socketConnection.on('clientStatus', (clientStatus: IColldevSyncerSocket.clientStatus) => {
-                    console.log({ clientStatus });
+                    // console.log({ clientStatus });
 
                     this.serverStatusUpdate((serverStatusValue) => {
                         serverStatusValue.clients[instanceUUID] = clientStatus;

@@ -1,8 +1,8 @@
 import { Box, Text } from 'ink';
 import Table from 'ink-table';
 import * as React from 'react';
-import { map } from 'rxjs/operators';
-import { Compiler } from '../../compiler/Compiler';
+import { filter, map } from 'rxjs/operators';
+import { Compiler, ICompilerResults } from '../../compiler/Compiler';
 import { Server } from '../../server/Server';
 import { ObservableContentComponent } from './ObservableContentComponent';
 
@@ -15,18 +15,39 @@ interface IOutputProps {
 
 export function Output({ compiler, server }: IOutputProps) {
     return (
-        <Box borderStyle="double" marginRight={2}>
-            <Box borderStyle="round" marginRight={2}>
-                <Text color="green">{/*JSON.stringify(server.serverStatus)*/}</Text>
+        <Box borderStyle="doubleSingle" margin={2}>
+            <Box borderStyle="round">
+                <ObservableContentComponent
+                    loading={<Text color="grey">Compiling...</Text>}
+                    content={compiler.stats.pipe(filter((stats) => stats !== null)).pipe(
+                        map(({ stats, error }: ICompilerResults) => {
+                            return <Text>{stats}</Text>;
+                        }),
+                    )}
+                />
             </Box>
 
             <ObservableContentComponent
+                loading={<Text color="grey">Starting server...</Text>}
                 content={server.serverStatus.pipe(
                     map((serverStatus) => {
                         const data = Object.entries(serverStatus.clients)
                             .map(([clientUuid, data]) => ({ clientUuid, ...data }))
                             .map(({ connected, clientUuid, modules }) => ({ connected, clientUuid, ...modules }));
-                        console.log('data', data);
+
+                        if (!data.length) {
+                            return (
+                                <Box borderStyle="round">
+                                    <Text color="grey">
+                                        Waiting for clients...
+                                        <Text color="red" bold>
+                                            {'\n'}
+                                            Open https://dev.collboard.com
+                                        </Text>
+                                    </Text>
+                                </Box>
+                            );
+                        }
                         return <Table data={data} />;
                     }),
                 )}

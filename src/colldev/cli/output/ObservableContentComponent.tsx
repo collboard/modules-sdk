@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 type IAwaitable<T> = T | Promise<T>;
 
 interface IObservableContentComponentProps {
-    loading?: JSX.Element;
+    loading: JSX.Element;
     /**
      * You can put here any RxJS observable. For example BehaviorSubject.
      */
@@ -21,7 +21,7 @@ interface IObservableContentComponentState {
 // !! TODO: Probbaly use keys in other async helpers
 
 export function ObservableContentComponent({ loading, content }: IObservableContentComponentProps) {
-    const [state, setState] = React.useState<IObservableContentComponentState>({ content: loading || <></> });
+    const [state, setState] = React.useState<IObservableContentComponentState>({ content: loading });
 
     React.useEffect(() => {
         const subscription = content.subscribe(async (newContentAwaitable) => {
