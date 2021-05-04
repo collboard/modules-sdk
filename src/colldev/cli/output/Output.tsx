@@ -2,68 +2,45 @@ import { Box, Text } from 'ink';
 import Table from 'ink-table';
 import { observer } from 'mobx-react';
 import * as React from 'react';
-import { useEffect, useState } from 'react';
-import { OutputStats } from './OutputStats';
+import { Compiler } from '../../compiler/Compiler';
+import { Server } from '../../server/Server';
 
-export const Output = observer(({ outputStats }: { outputStats: OutputStats }) => {
-    const [counter, setCounter] = useState(0);
+interface IOutputProps {
+    compiler: Compiler;
+    server: Server;
+}
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCounter((previousCounter) => previousCounter + 1);
-        }, 100);
+// TODO: !!! Make simmilar UI for CollboardDevelopmentModule + Colldev Express
+
+export const Output = observer(({ compiler, server }: IOutputProps) => {
+    const [render, setRender] = React.useState(0);
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setRender((renderLast) => renderLast + 1);
+        }, 1000);
 
         return () => {
-            clearInterval(timer);
+            clearInterval(interval);
         };
     }, []);
+
+    const data = Object.entries(server.serverStatus.clients)
+        .map(([clientUuid, data]) => ({ clientUuid, ...data }))
+        .map(({ connected, clientUuid, modules }) => ({ connected, clientUuid, ...modules }));
+
+    console.log('data', data);
 
     return (
         <Box borderStyle="double" marginRight={2}>
             <Box borderStyle="round" marginRight={2}>
                 <Text color="green">
-                    {counter} tests passed {outputStats.test}
+                    {/*JSON.stringify(server.serverStatus)*/}
+                    {server.test}
+                    {render}
                 </Text>
             </Box>
-            <Table
-                data={[
-                    {
-                        name: 'Sosa Saunders',
-                        gender: 'male',
-                        age: 17,
-                        email: 'sosa.saunders@mail.com',
-                        phone: '+1 (809) 435-2786',
-                    },
-                    {
-                        name: 'Angelina Kirk',
-                        gender: 'female',
-                        age: 3,
-                        email: 'angelina@kirk.io',
-                        phone: '+1 (870) 567-3516',
-                    },
-                    {
-                        name: 'Bradford Rosales',
-                        gender: 'male',
-                        age: 20,
-                        email: 'bradfordrosales@fast.com',
-                        phone: '+1 (918) 573-3240',
-                    },
-                    {
-                        name: 'Gwen Schroeder',
-                        gender: 'female',
-                        age: 17,
-                        email: 'gwen@corp.xyz',
-                        phone: '+1 (987) 417-2062',
-                    },
-                    {
-                        name: 'Ellison Mann',
-                        gender: 'male',
-                        age: 5,
-                        email: 'ellisonmann@katakana.com',
-                        phone: '+1 (889) 411-2186',
-                    },
-                ]}
-            />
+            <Table data={data} />
         </Box>
     );
 

@@ -10,6 +10,18 @@ export namespace IColldevSyncerSocket {
     export interface bundle {
         bundleUrl: string;
     }
+
+    export interface clientStatus {
+        connected: boolean;
+        modules: Record<
+            string,
+            {
+                declared: boolean;
+                // TODO: installed
+                error?: Error;
+            }
+        >;
+    }
 }
 
 // Note: Not using string semantic helpers because this file is copyied to modules-sdk repository
