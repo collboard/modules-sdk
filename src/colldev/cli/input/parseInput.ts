@@ -1,10 +1,11 @@
 //import { watch } from 'chokidar';
 import { Command } from 'commander';
+import { getColldevPackageContent } from '../../utils/colldevPackage';
 import { IInputOptions } from './IInputOptions';
 
-export function parseInput(): IInputOptions {
+export async function parseInput(): Promise<IInputOptions> {
     const command = new Command();
-    command.version('0.0.1' /* TODO: !!! */);
+    command.version((await getColldevPackageContent()).version);
 
     // TODO: !! Command options
     // TODO: !! Localtunneling

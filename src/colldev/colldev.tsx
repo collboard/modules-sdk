@@ -11,7 +11,7 @@ import { Server } from './server/Server';
  * Note Using main function because still we cannot reliably use top level awaits
  */
 async function colldevMain() {
-    const inputOptions = parseInput();
+    const inputOptions = await parseInput();
 
     const compiler = new Compiler();
     const server = new Server(compiler);

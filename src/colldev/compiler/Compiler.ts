@@ -4,7 +4,7 @@ import * as uuid from 'uuid';
 import webpack, { Compiler } from 'webpack';
 import { ASSETS_PATH } from '../config';
 import { cleanupAssets, makeColldevFolder } from './utils/cleanupAssets';
-import { getPackageMainPath } from './utils/package';
+import { getModulePackageMainPath } from './utils/modulePackage';
 
 export interface ICompilerResults {
     stats?: string;
@@ -39,7 +39,7 @@ export class Compiler {
                 watch: true,
                 mode: 'development', //'production',
                 devtool: 'source-map',
-                entry: await getPackageMainPath(),
+                entry: await getModulePackageMainPath(),
                 module: {
                     rules: [
                         {
