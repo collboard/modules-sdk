@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Express } from 'express';
 import { readFile } from 'fs';
 import http from 'http';
 import { join, relative } from 'path';
@@ -9,8 +9,6 @@ import { Compiler } from '../compiler/Compiler';
 import { ASSETS_PATH } from '../config';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 
-// !!! Remove mobx + mobx-react
-
 interface IServerStatus {
     clients: Record<string, IColldevSyncerSocket.clientStatus>;
 }
@@ -19,6 +17,9 @@ export class Server {
         this.init();
     }
 
+    /**
+     * Note: We are not using here mobx-react because it does not work with ink
+     */
     readonly serverStatus: BehaviorSubject<IServerStatus> = new BehaviorSubject({ clients: {} });
     private serverStatusUpdate(updator: (serverStatusValue: IServerStatus) => void) {
         const serverStatusValue = { ...this.serverStatus.value };
@@ -26,18 +27,19 @@ export class Server {
         this.serverStatus.next(serverStatusValue);
     }
 
+    private server: http.Server;
+    private expressApp: Express;
+    private socket: SocketIoServer;
+
     private init() {
-        const app = express();
-        const port = 3000; // TODO: !!!! What is best port for dev server
+        this.expressApp = express();
+        const port = 3000;
 
-        const server = http.createServer(app);
-        const socket = new SocketIoServer(server, { transports: ['websocket', 'polling'] });
-        this.socketHandler(socket);
+        this.server = http.createServer(this.expressApp);
+        this.socket = new SocketIoServer(this.server, { transports: ['websocket', 'polling'] });
+        this.socketHandler();
 
-        app.get('/', (req, res) => {
-            // TODO: !!! show sth on 3000
-            // TODO: !!! Allow to choose port
-            // TODO: !!! Localtunneling
+        this.expressApp.get('/', (req, res) => {
             res.type('text/html').send(`
             <h1>Colldev server</h1>
             <p>Hello from Collboard.com modules SDK toolkit:</p>
@@ -50,7 +52,7 @@ export class Server {
             `);
         });
 
-        app.get('/stats', (req, res) => {
+        this.expressApp.get('/stats', (req, res) => {
             res.type('application/javascript').send({
                 date: new Date().toISOString(),
                 server: this.serverStatus.value,
@@ -63,7 +65,7 @@ export class Server {
         app.use('/assets', serveStatic(ASSETS_PATH, { index: false }));
         */
 
-        app.use('/assets/*', async (request, response) => {
+        this.expressApp.use('/assets/*', async (request, response) => {
             const fileUri = request.params[0];
             const filePath = join(ASSETS_PATH, fileUri);
 
@@ -82,17 +84,16 @@ export class Server {
             }
         });
 
-        server.listen(port, () => {
+        this.server.listen(port, () => {
             // console.log(`Example app listening at http://localhost:${port}`);
         });
     }
 
-    private async socketHandler(socket: SocketIoServer) {
-        socket.on('connection', (socketConnection) => {
+    private async socketHandler() {
+        this.socket.on('connection', (socketConnection) => {
             socketConnection.on('identify', (clientIdentification: IColldevSyncerSocket.identify) => {
                 const { instanceUUID } = clientIdentification;
 
-                // TODO: !!! Cleanup theese console logs - only react ink interface
                 // console.log(`Client ${instanceUUID} connected and identified`);
 
                 this.serverStatusUpdate((serverStatusValue) => {
@@ -108,7 +109,7 @@ export class Server {
                 const subscription = this.compiler.bundles.subscribe({
                     next: ({ path }) => {
                         // console.log(`Emmiting bundle for ${instanceUUID}`);
-                        socket.emit('bundle', {
+                        this.socket.emit('bundle', {
                             bundleUrl: 'http://localhost:3000/assets/' + relative(ASSETS_PATH, path),
                         } as IColldevSyncerSocket.bundle);
                     },
@@ -133,5 +134,11 @@ export class Server {
 
             // TODO: Initial bundle socketConnection.emit('bundle', {} as IColldevSyncerSocket.bundle);
         });
+    }
+
+    public async destroy() {
+        this.server.close();
+        this.socket.close();
+        // TODO: Also destroy this.expressApp
     }
 }

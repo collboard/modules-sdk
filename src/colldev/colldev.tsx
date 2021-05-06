@@ -18,7 +18,11 @@ async function colldevMain() {
 
     render(<Output {...{ compiler, server }} />);
 
-    // TODO: !!! SIGINT
+    process.on('SIGINT', function () {
+        server.destroy();
+        compiler.destroy();
+        process.exit();
+    });
 }
 
 colldevMain();

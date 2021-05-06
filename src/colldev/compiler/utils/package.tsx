@@ -35,4 +35,4 @@ export async function getPackageMainPath(): Promise<string> {
 }
 
 // TODO: Warn if project is not versioned by GIT
-// TODO: !!! Test version compatibility
+// TODO: !! Test version compatibility

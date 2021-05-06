@@ -6,7 +6,10 @@ export function parseInput(): IInputOptions {
     const command = new Command();
     command.version('0.0.1' /* TODO: !!! */);
 
-    // TODO: !!! Command options
+    // TODO: !! Command options
+    // TODO: !! Localtunneling
+    // TODO: !! Allow to choose the port
+
     command
         .option('-d, --debug', 'output extra debugging')
         .option('-s, --small', 'small pizza size')

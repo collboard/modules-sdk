@@ -11,10 +11,11 @@ interface IOutputProps {
     server: Server;
 }
 
-// TODO: !!! Make simmilar UI for CollboardDevelopmentModule + Colldev Express
+// TODO:  Make simmilar UI for CollboardDevelopmentModule + Colldev Express
 
 export function Output({ compiler, server }: IOutputProps) {
     // @see https://www.w3schools.com/charsets/ref_utf_symbols.asp
+    // Note: We are not using here mobx-react because it does not work with ink
 
     return (
         <Box borderStyle="doubleSingle" margin={2}>
