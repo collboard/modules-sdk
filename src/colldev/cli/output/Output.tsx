@@ -18,8 +18,8 @@ export function Output({ compiler, server }: IOutputProps) {
     // Note: We are not using here mobx-react because it does not work with ink
 
     return (
-        <Box borderStyle="doubleSingle" margin={2}>
-            <Box borderStyle="round">
+        <Box borderStyle="round" display="flex" flexDirection="column">
+            <Box borderStyle="single">
                 <ObservableContentComponent
                     loading={<Text color="grey">Compiling...</Text>}
                     content={compiler.stats.pipe(filter((stats) => stats !== null)).pipe(
@@ -48,7 +48,7 @@ export function Output({ compiler, server }: IOutputProps) {
 
                         if (!data.length) {
                             return (
-                                <Box borderStyle="round">
+                                <Box borderStyle="single">
                                     <Text color="grey">
                                         Waiting for clients...
                                         <Text color="red" bold>

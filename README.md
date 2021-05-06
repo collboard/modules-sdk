@@ -88,6 +88,8 @@ colldev
 npx colldev
 ```
 
+![Colldev running in terminal](./manual/assets/colldev-running.png 'Colldev running in terminal')
+
 ## How it works?
 
 Colldev will automatically look into your package.json, finds **main** entry _(it can be typescript or javascript file)_. And watch, build and serve changes to Collboard in development mode.
