@@ -38,7 +38,7 @@ export function Output({ compiler, server }: IOutputProps) {
                             .map(([clientUuid, data]) => ({ clientUuid, ...data }))
                             .map(({ boardId, connected, clientUuid, modules }) => ({
                                 boardId,
-                                connected: connected ? '✔' : '✗',
+                                // connected: connected ? '✔' : '✗',
                                 clientUuid: clientUuid.split('-')[0] + '-...',
                                 ...objectMap(modules, (key, module) => [
                                     `⛃  ${key}`,
@@ -51,7 +51,7 @@ export function Output({ compiler, server }: IOutputProps) {
                                 <Box borderStyle="single">
                                     <Text color="grey">
                                         Waiting for clients...
-                                        <Text color="red" bold>
+                                        <Text color="magenta" bold>
                                             {'\n'}
                                             Open https://dev.collboard.com
                                         </Text>

@@ -127,7 +127,7 @@ export class Server {
                     subscription.unsubscribe();
 
                     this.serverStatusUpdate((serverStatusValue) => {
-                        serverStatusValue.clients[instanceUUID].connected = false;
+                        delete serverStatusValue.clients[instanceUUID];
                     });
                 });
             });
