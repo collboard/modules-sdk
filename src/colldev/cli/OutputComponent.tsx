@@ -54,7 +54,7 @@ export function OutputComponent({ compiler, server }: IOutputProps) {
                                         Waiting for clients...
                                         <Text color="magenta" bold>
                                             {'\n'}
-                                            Open https://dev.collboard.com
+                                            Please open https://dev.collboard.com
                                         </Text>
                                     </Text>
                                 </Box>

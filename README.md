@@ -86,6 +86,18 @@ colldev
 
 # Windows, PowerShell
 npx colldev
+
+
+# You can also run full command
+colldev develop
+
+# And disable to open dev.collboard.com
+colldev develop --open false
+
+
+# Or open some specific board/url to develop on
+colldev develop --open https://dev.collboard.com/dev-TODO:!!!
+
 ```
 
 ![Colldev running in terminal](./manual/assets/colldev-running.png 'Colldev running in terminal')
