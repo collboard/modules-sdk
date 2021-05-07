@@ -1,8 +1,10 @@
 import { join } from 'path';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import * as uuid from 'uuid';
-import webpack, { Compiler } from 'webpack';
+import webpack, { Compiler as WebpackCompiler } from 'webpack';
 import { ASSETS_PATH } from '../config';
+import { Destroyable } from '../utils/destroyables/Destroyable';
+import { IDestroyable } from '../utils/destroyables/IDestroyable';
 import { cleanupAssets, makeColldevFolder } from './utils/cleanupAssets';
 import { getModulePackageMainPath } from './utils/modulePackage';
 
@@ -11,8 +13,9 @@ export interface ICompilerResults {
     error?: Error;
 }
 
-export class Compiler {
+export class Compiler extends Destroyable implements IDestroyable {
     constructor() {
+        super();
         this.init();
     }
 
@@ -22,7 +25,7 @@ export class Compiler {
     readonly stats: BehaviorSubject<null | ICompilerResults> = new BehaviorSubject(null);
     readonly bundles: ReplaySubject<{ path: string }> = new ReplaySubject(1);
 
-    private compiler: Compiler;
+    private compiler: WebpackCompiler;
 
     private async init() {
         await makeColldevFolder();
@@ -85,7 +88,8 @@ export class Compiler {
         );
     }
 
-    public destroy() {
+    public async destroy() {
+        await super.destroy();
         this.compiler.close(() => {
             /* TODO: What is this callback about */
         });

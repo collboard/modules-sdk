@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { Observable } from 'rxjs';
+import { IAwaitable } from './destroyables/IAwaitable';
 
-type IAwaitable<T> = T | Promise<T>;
+/**
+ * TODO: Make from this some microlibrary
+ */
 
 interface IObservableContentComponentProps {
     loading: JSX.Element;

@@ -1,13 +1,11 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="node" />
+/// <reference types="node" />
 import * as React from 'react';
 /**
  *
- * Note: In future this file will we in indipendent repository as external module.
+ * Note: In future this file will we in independent repository as external module.
  *
  */
 export interface ITimerComponentProps {
@@ -28,5 +26,3 @@ export declare class TimerComponent extends React.Component<ITimerComponentProps
     render(): JSX.Element;
 }
 export {};
-
-                  

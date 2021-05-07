@@ -16,7 +16,7 @@
     "main": "./dist/runtime/runtime.js",
     "types": "./types/index.d.ts",
     "bin": {
-        "colldev": "dist/colldev/colldev.js"
+        "colldev": "dist/colldev/main.js"
     },
     "scripts": {
         "test": "TODO: !!!",

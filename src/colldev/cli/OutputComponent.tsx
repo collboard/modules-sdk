@@ -2,9 +2,10 @@ import { Box, Text } from 'ink';
 import Table from 'ink-table';
 import * as React from 'react';
 import { filter, map } from 'rxjs/operators';
-import { Compiler, ICompilerResults } from '../../compiler/Compiler';
-import { Server } from '../../server/Server';
-import { ObservableContentComponent } from './ObservableContentComponent';
+import { Compiler, ICompilerResults } from '../compiler/Compiler';
+import { Server } from '../server/Server';
+import { objectMap } from '../utils/objectMap';
+import { ObservableContentComponent } from '../utils/ObservableContentComponent';
 
 interface IOutputProps {
     compiler: Compiler;
@@ -13,7 +14,7 @@ interface IOutputProps {
 
 // TODO:  Make simmilar UI for CollboardDevelopmentModule + Colldev Express
 
-export function Output({ compiler, server }: IOutputProps) {
+export function OutputComponent({ compiler, server }: IOutputProps) {
     // @see https://www.w3schools.com/charsets/ref_utf_symbols.asp
     // Note: We are not using here mobx-react because it does not work with ink
 
@@ -67,15 +68,4 @@ export function Output({ compiler, server }: IOutputProps) {
     );
 
     // TODO: Testing on mobile (with some localtunnel) and QR code
-}
-
-function objectMap<TValue, TValueMapped>(
-    object: Record<string, TValue>,
-    map: (key: string, value: TValue) => [string, TValueMapped],
-): Record<string, TValueMapped> {
-    return Object.keys(object).reduce((result, key) => {
-        const [newKey, newValue] = map(key, object[key]);
-        result[newKey] = newValue;
-        return result;
-    }, {} as Record<string, TValueMapped>);
 }
