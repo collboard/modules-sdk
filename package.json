@@ -22,7 +22,9 @@
         "test": "TODO: !!!",
         "postinstall": "tsc",
         "preversion": "tsc && npm run test",
-        "postversion": "TODO: !!! npm publish !!!! How to deal with the versioning - keep connedted, suffix or split"
+        "postversion": "TODO: !!! npm publish !!!! How to deal with the versioning - keep connedted, suffix or split",
+        "documentation": "typedoc ./types/index.d.ts --excludePrivate --hideGenerator --theme minimal --out docs --name \"Modules SDK toolkit for Collboard.com\" ./src",
+        "documentation-commit": "git diff --exit-code && npm run documentation && git add docs && git commit --allow-empty -m \"Documentation\""
     },
     "dependencies": {
         "@types/babylonjs": "^2.4.1",
@@ -44,5 +46,8 @@
         "uuid": "^8.3.2",
         "waitasecond": "^1.5.0",
         "webpack": "^5.35.1"
+    },
+    "devDependencies": {
+        "typedoc": "^0.20.36"
     }
 }
