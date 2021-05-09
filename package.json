@@ -1,6 +1,6 @@
 {
     "name": "@collboard/modules-sdk",
-    "version": "10.4.1-4",
+    "version": "10.4.1-7",
     "description": "Modules SDK toolkit for Collboard.com",
     "license": "SEE LICENSE IN LICENSE",
     "contributors": [
@@ -16,10 +16,11 @@
     "main": "./dist/runtime/runtime.js",
     "types": "./types/index.d.ts",
     "bin": {
-        "colldev": "./dist/colldev/colldev.js"
+        "colldev": "dist/colldev/main.js"
     },
     "scripts": {
         "test": "TODO: !!!",
+        "develop": "ts-node dist/colldev/colldev.js",
         "postinstall": "tsc",
         "preversion": "tsc && npm run test",
         "postversion": "TODO: !!! npm publish !!!! How to deal with the versioning - keep connedted, suffix or split",
@@ -35,9 +36,9 @@
         "express": "^4.17.1",
         "ink": "^3.0.8",
         "ink-table": "^3.0.0",
-        "mobx": "^6.3.0",
-        "mobx-react": "^7.1.0",
+        "open": "^8.0.7",
         "react": "^16.13.1",
+        "react-dom": "16.14.*",
         "rxjs": "^6.6.7",
         "serve-static": "^1.14.1",
         "socket.io": "^4.0.1",
@@ -48,6 +49,7 @@
         "webpack": "^5.35.1"
     },
     "devDependencies": {
-        "typedoc": "^0.20.36"
+        "typedoc": "^0.20.36",
+        "ts-node": "^9.1.1"
     }
 }

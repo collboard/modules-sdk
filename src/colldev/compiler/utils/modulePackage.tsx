@@ -2,14 +2,14 @@ import { access, constants, readFile } from 'fs';
 import { join } from 'path';
 import { promisify } from 'util';
 
-function getPackagePath(): string {
+function getModulePackagePath(): string {
     const packagePath = join(process.cwd(), 'package.json');
     return packagePath;
 }
 
-async function getPackageContent(): Promise<any> {
+async function getModulePackageContent(): Promise<any> {
     try {
-        const packagePath = getPackagePath();
+        const packagePath = getModulePackagePath();
         await promisify(access)(packagePath, constants.R_OK);
         const packageContentString = await promisify(readFile)(packagePath, 'utf8');
         const packageContent = JSON.parse(packageContentString);
@@ -19,8 +19,8 @@ async function getPackageContent(): Promise<any> {
         throw new Error(`Colldev did not found valid package.json`);
     }
 }
-export async function getPackageMainPath(): Promise<string> {
-    const mainPathRelative = (await getPackageContent()).main;
+export async function getModulePackageMainPath(): Promise<string> {
+    const mainPathRelative = (await getModulePackageContent()).main;
     if (!mainPathRelative) {
         throw new Error(`Colldev did not found main entry in package.json`);
     }
@@ -35,4 +35,4 @@ export async function getPackageMainPath(): Promise<string> {
 }
 
 // TODO: Warn if project is not versioned by GIT
-// TODO: !!! Test version compatibility
+// TODO: !! Test version compatibility

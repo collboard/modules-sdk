@@ -1,41 +1,74 @@
-import express from 'express';
+import express, { Express } from 'express';
 import { readFile } from 'fs';
 import http from 'http';
 import { join, relative } from 'path';
+import { BehaviorSubject } from 'rxjs';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
 import { Compiler } from '../compiler/Compiler';
 import { ASSETS_PATH } from '../config';
+import { Destroyable } from '../utils/destroyables/Destroyable';
+import { IDestroyable } from '../utils/destroyables/IDestroyable';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 
-export class Server {
+interface IServerStatus {
+    clients: Record<string, IColldevSyncerSocket.clientStatus>;
+}
+export class Server extends Destroyable implements IDestroyable {
     constructor(private compiler: Compiler) {
+        super();
         this.init();
     }
 
+    /**
+     * Note: We are not using here mobx-react because it does not work with ink
+     */
+    readonly serverStatus: BehaviorSubject<IServerStatus> = new BehaviorSubject({ clients: {} });
+    private serverStatusUpdate(updator: (serverStatusValue: IServerStatus) => void) {
+        const serverStatusValue = { ...this.serverStatus.value };
+        updator(serverStatusValue);
+        this.serverStatus.next(serverStatusValue);
+    }
+
+    private server: http.Server;
+    private expressApp: Express;
+    private socket: SocketIoServer;
+
     private init() {
-        const app = express();
-        const port = 3000; // TODO: !!!! What is best port for dev server
+        this.expressApp = express();
+        const port = 3000;
 
-        const server = http.createServer(app);
-        const socket = new SocketIoServer(server, { transports: ['websocket', 'polling'] });
-        this.socketHandler(socket);
+        this.server = http.createServer(this.expressApp);
+        this.socket = new SocketIoServer(this.server, { transports: ['websocket', 'polling'] });
+        this.socketHandler();
 
-        app.get('/', (req, res) => {
-            res.send('Hello World!');
+        this.expressApp.get('/', (req, res) => {
+            res.type('text/html').send(`
+            <h1>Colldev server</h1>
+            <p>Hello from Collboard.com modules SDK toolkit:</p>
+            <ul>
+                <li>To test currently developed modules go to <a href="https://dev.collboard.com">https://dev.collboard.com</a>.</li>
+                <li>To show current stats to <a href="/stats">/stats</a>.</li>
+                <li>To learn more <a href="https://github.com/collboard/modules-sdk">https://github.com/collboard/modules-sdk</a>.</li>
+            </ul>
+
+            `);
         });
 
-        /*
-        app.get('/bundles', (req, res) => {
-            res.type('application/javascript').send(`console.log('Hello from colldev express');` + bundle);
-        });*/
+        this.expressApp.get('/stats', (req, res) => {
+            res.type('application/javascript').send({
+                date: new Date().toISOString(),
+                server: this.serverStatus.value,
+                compiler: this.compiler.stats.value,
+            });
+        });
 
         /*
         Note: We cannot use simple static server, because we are dynamically replacing declareModuleCallback
         app.use('/assets', serveStatic(ASSETS_PATH, { index: false }));
         */
 
-        app.use('/assets/*', async (request, response) => {
+        this.expressApp.use('/assets/*', async (request, response) => {
             const fileUri = request.params[0];
             const filePath = join(ASSETS_PATH, fileUri);
 
@@ -54,32 +87,62 @@ export class Server {
             }
         });
 
-        server.listen(port, () => {
-            console.log(`Example app listening at http://localhost:${port}`);
+        this.server.listen(port, () => {
+            // console.log(`Example app listening at http://localhost:${port}`);
         });
     }
 
-    private async socketHandler(socket: SocketIoServer) {
-        socket.on('connection', (socketConnection) => {
+    private async socketHandler() {
+        this.socket.on('connection', (socketConnection) => {
             socketConnection.on('identify', (clientIdentification: IColldevSyncerSocket.identify) => {
                 const { instanceUUID } = clientIdentification;
-                console.log(`Client ${instanceUUID} connected and identified`);
+
+                // console.log(`Client ${instanceUUID} connected and identified`);
+
+                this.serverStatusUpdate((serverStatusValue) => {
+                    serverStatusValue.clients[instanceUUID] = {
+                        // TODO: Maybe transfer theese in initial
+                        connected: true,
+                        url: '' /* TODO: Better */,
+                        boardId: null,
+                        modules: {},
+                    };
+                });
 
                 const subscription = this.compiler.bundles.subscribe({
                     next: ({ path }) => {
-                        console.log(`Emmiting bundle for ${instanceUUID}`);
-                        socket.emit('bundle', {
+                        // console.log(`Emmiting bundle for ${instanceUUID}`);
+                        this.socket.emit('bundle', {
                             bundleUrl: 'http://localhost:3000/assets/' + relative(ASSETS_PATH, path),
                         } as IColldevSyncerSocket.bundle);
                     },
                 });
 
+                socketConnection.on('clientStatus', (clientStatus: IColldevSyncerSocket.clientStatus) => {
+                    // console.log({ clientStatus });
+
+                    this.serverStatusUpdate((serverStatusValue) => {
+                        serverStatusValue.clients[instanceUUID] = clientStatus;
+                    });
+                });
+
                 socketConnection.on('disconnect', async () => {
                     subscription.unsubscribe();
+
+                    this.serverStatusUpdate((serverStatusValue) => {
+                        delete serverStatusValue.clients[instanceUUID];
+                    });
                 });
             });
 
             // TODO: Initial bundle socketConnection.emit('bundle', {} as IColldevSyncerSocket.bundle);
         });
+    }
+
+    public async destroy() {
+        await super.destroy();
+        this.server.close();
+        this.socket.close();
+        // TODO: Also destroy this.expressApp
     }
 }

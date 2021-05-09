@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { AbstractSystem } from '../AbstractSystem';
 /**
  * TODO: Describe
@@ -12,12 +10,12 @@ import { AbstractSystem } from '../AbstractSystem';
  * @collboard SDK
  */
 export declare enum ExtraJsxPlace {
-    RootComponent = "RootComponent",
-    BoardComponent = "BoardComponent",
-    EdgeBottom = "EdgeBottom",
-    EdgeTop = "EdgeTop",
-    EdgeRight = "EdgeRight",
-    ModalHeader = "ModalHeader"
+    RootComponent = 'RootComponent',
+    BoardComponent = 'BoardComponent',
+    EdgeBottom = 'EdgeBottom',
+    EdgeTop = 'EdgeTop',
+    EdgeRight = 'EdgeRight',
+    ModalHeader = 'ModalHeader',
 }
 /**
  * ExtraJsxSystem can register and manage additional JSX
@@ -29,11 +27,9 @@ export declare class ExtraJsxSystem extends AbstractSystem {
     protected init(): Promise<void>;
     /**
      * TODO: Options
-     * TODO: !!! Rename to registerExtraJsx but before find better name to ExtraJsx
+     * TODO: !! Rename to registerExtraJsx but before find better name to ExtraJsx
      */
-    register(place: ExtraJsxPlace, order: number, jsx: JSX.Element): import("../../CollboardSdk").Registration;
+    register(place: ExtraJsxPlace, order: number, jsx: JSX.Element): import('../../CollboardSdk').Registration;
     render(place: ExtraJsxPlace): JSX.Element;
     private getPlaceStorage;
 }
-
-                  

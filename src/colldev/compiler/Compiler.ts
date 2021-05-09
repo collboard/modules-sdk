@@ -1,36 +1,48 @@
 import { join } from 'path';
-import { ReplaySubject } from 'rxjs';
+import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import * as uuid from 'uuid';
-import webpack from 'webpack';
+import webpack, { Compiler as WebpackCompiler } from 'webpack';
 import { ASSETS_PATH } from '../config';
-import { cleanupAssets } from './utils/cleanupAssets';
-import { getPackageMainPath } from './utils/package';
+import { Destroyable } from '../utils/destroyables/Destroyable';
+import { IDestroyable } from '../utils/destroyables/IDestroyable';
+import { cleanupAssets, makeColldevFolder } from './utils/cleanupAssets';
+import { getModulePackageMainPath } from './utils/modulePackage';
 
-export class Compiler {
+export interface ICompilerResults {
+    stats?: string;
+    error?: Error;
+}
+
+export class Compiler extends Destroyable implements IDestroyable {
     constructor() {
+        super();
         this.init();
     }
 
+    /**
+     * Note: We are not using here mobx-react because it does not work with ink
+     */
+    readonly stats: BehaviorSubject<null | ICompilerResults> = new BehaviorSubject(null);
     readonly bundles: ReplaySubject<{ path: string }> = new ReplaySubject(1);
 
+    private compiler: WebpackCompiler;
+
     private async init() {
-        cleanupAssets();
+        await makeColldevFolder();
+        await cleanupAssets();
 
         const bundleId = uuid.v4();
         const bundleFilename = `bundle-${bundleId}.min.js`;
 
-        // TODO: !!! Errors here should be displayed in nice react console UI
-        /*const compiler = */ webpack(
+        this.compiler = webpack(
             // TODO: Maybe use webpack watch instead of onchange
             // TODO: Generate sourcemaps
             // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
             {
-                // TODO: !!! Watch here
                 watch: true,
-
                 mode: 'development', //'production',
                 devtool: 'source-map',
-                entry: await getPackageMainPath(/* TODO: !!! Errors here should be displayed in nice react console UI */),
+                entry: await getModulePackageMainPath(),
                 module: {
                     rules: [
                         {
@@ -44,26 +56,24 @@ export class Compiler {
                     extensions: ['.tsx', '.ts', '.js'],
                 },
                 output: {
-                    // TODO: !!!! Jak dělat balíčky s mnoha vstupy, co hned poběží
                     // TODO: Bypass files and just keep output in memory probbably via "compiler.outputFileSystem = fs;"
                     filename: bundleFilename,
                     path: ASSETS_PATH,
                 },
             },
             async (error, stats) => {
-                console.log(
-                    stats?.toString({
+                this.stats.next({
+                    error,
+                    stats: stats?.toString({
                         chunks: false, // Makes the build much quieter
                         colors: true, // Shows colors in the console
                     }),
-                );
+                });
 
                 this.bundles.next({ path: join(ASSETS_PATH, bundleFilename) });
 
                 //const bundleContent = await promisify(readFile)(join(assetsPath, bundleFilename), 'utf8');
 
-                // TODO: !!! Appand package json to modules
-                // TODO: !!! Run and analyze the content
                 // const modules = analyzeBundleModules(bundleContent);
 
                 /*console.log({ error, stats });
@@ -76,5 +86,12 @@ export class Compiler {
   */
             },
         );
+    }
+
+    public async destroy() {
+        await super.destroy();
+        this.compiler.close(() => {
+            /* TODO: What is this callback about */
+        });
     }
 }
