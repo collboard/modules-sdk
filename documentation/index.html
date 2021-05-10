@@ -1,0 +1,622 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Modules SDK toolkit for Collboard.com - v10.4.1-7</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v10.4.1-7">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">Modules SDK toolkit for Collboard.com - v10.4.1-7</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>Modules SDK toolkit for Collboard.com - v10.4.1-7</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#collboard-modules-sdk" id="collboard-modules-sdk" style="color: inherit; text-decoration: none;">
+					<h1>Collboard modules SDK</h1>
+				</a>
+				<p>Modules SDK toolkit for <a href="https://collboard.com/">Collboard.com</a>.
+				Here is the <a href="https://github.com/collboard/module-sample-basic">sample of very simple module</a>.</p>
+				<a href="#1-to-start-install-the-sdk-first" id="1-to-start-install-the-sdk-first" style="color: inherit; text-decoration: none;">
+					<h2>1/ To start install the SDK first:</h2>
+				</a>
+				<pre><code class="language-bash"><span style="color: #000000">npm install @collboard/modules-sdk</span>
+</code></pre>
+				<!--TODO: Also create option to install from GH repositories -->
+				<a href="#2-then-create-packagejson-file-with-link-to-main-file" id="2-then-create-packagejson-file-with-link-to-main-file" style="color: inherit; text-decoration: none;">
+					<h2>2/ Then create <strong>package.json</strong> file with link to main file:</h2>
+				</a>
+				<pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">    </span><span style="color: #0451A5">&quot;version&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;1.0.0&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #0451A5">&quot;main&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;./src/sampleButtonModule.tsx&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #0451A5">&quot;scripts&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">        </span><span style="color: #0451A5">&quot;start&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;colldev&quot;</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">    </span><span style="color: #0451A5">&quot;dependencies&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">        </span><span style="color: #0451A5">&quot;@collboard/modules-sdk&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;^10.4.1-6&quot;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<!--TODO: Auto-update versions in READMEs -->
+				<a href="#3-create-the-main-file" id="3-create-the-main-file" style="color: inherit; text-decoration: none;">
+					<h2>3/ Create the main file</h2>
+				</a>
+				<p>It can be either <strong>TypeScript</strong> or <strong>JavaScript</strong>. It can import other files or node modules <em>(colldev internally uses webpack with ts-loader)</em>.</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">declareModule</span><span style="color: #000000">, </span><span style="color: #001080">ExtraJsxPlace</span><span style="color: #000000">, </span><span style="color: #001080">makeExtrajsxModule</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@collboard/modules-sdk&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">React</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;react&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #008000">// TODO: !!! How to make modules + manual for systems</span>
+<span style="color: #795E26">declareModule</span><span style="color: #000000">(</span>
+<span style="color: #000000">    </span><span style="color: #795E26">makeExtrajsxModule</span><span style="color: #000000">({</span>
+<span style="color: #000000">        </span><span style="color: #001080">manifest:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">            </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;SampleButton&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">            </span><span style="color: #001080">title:</span><span style="color: #000000"> { </span><span style="color: #001080">en:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Hello World Button&quot;&#039;</span><span style="color: #000000">, </span><span style="color: #001080">cs:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Hello World Tlačítko&#039;</span><span style="color: #000000"> },</span>
+<span style="color: #000000">            </span><span style="color: #001080">description:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">                </span><span style="color: #001080">en:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Button exported from the SampleButtonModule&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">                </span><span style="color: #001080">cs:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Tlačítko exportované ze SampleButtonModule&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">            },</span>
+<span style="color: #000000">            </span><span style="color: #001080">keywords:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">            </span><span style="color: #001080">categories:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;Buttons&#039;</span><span style="color: #000000">],</span>
+<span style="color: #000000">            </span><span style="color: #001080">icon:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;/assets/icons/copy-material.svg&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// TODO: module scoped assets</span>
+<span style="color: #000000">            </span><span style="color: #001080">screenshots:</span><span style="color: #000000"> [], </span><span style="color: #008000">// TODO: module scoped assets</span>
+<span style="color: #000000">            </span><span style="color: #001080">author:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">                </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Collboard Developers&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">                </span><span style="color: #001080">email:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;dev@collboard.com&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">                </span><span style="color: #001080">url:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;http://collboard.com/&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">            },</span>
+<span style="color: #000000">        },</span>
+<span style="color: #000000">        </span><span style="color: #001080">place:</span><span style="color: #000000"> </span><span style="color: #001080">ExtraJsxPlace</span><span style="color: #000000">.</span><span style="color: #001080">EdgeRight</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #795E26">createExtraJsx</span><span style="color: #000000">({</span>
+<span style="color: #000000">            </span><span style="color: #001080">routingSystem</span><span style="color: #000000">,</span>
+<span style="color: #000000">            </span><span style="color: #001080">translationsSystem</span><span style="color: #000000">,</span>
+<span style="color: #000000">            </span><span style="color: #001080">apiClient</span><span style="color: #000000">,</span>
+<span style="color: #000000">            </span><span style="color: #001080">materialArtVersioningSystem</span><span style="color: #000000">: { </span><span style="color: #001080">cornerstoneArts</span><span style="color: #000000"> },</span>
+<span style="color: #000000">        }) {</span>
+<span style="color: #000000">            </span><span style="color: #AF00DB">return</span><span style="color: #000000"> (</span>
+<span style="color: #000000">                &lt;</span><span style="color: #001080">button</span>
+<span style="color: #000000">                    </span><span style="color: #001080">onClick</span><span style="color: #000000">={</span><span style="color: #795E26">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">                        </span><span style="color: #795E26">alert</span><span style="color: #000000">(</span><span style="color: #A31515">`Hello from Collboard modules!`</span><span style="color: #000000">);</span>
+<span style="color: #000000">                    }}</span>
+<span style="color: #000000">                    </span><span style="color: #001080">className</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;button button-primary button-vertical&quot;</span>
+<span style="color: #000000">                &gt;</span>
+<span style="color: #000000">                    &lt;</span><span style="color: #267F99">span</span><span style="color: #000000">&gt;</span><span style="color: #001080">Hello</span><span style="color: #000000"> </span><span style="color: #001080">World</span><span style="color: #000000">!&lt;/</span><span style="color: #001080">span</span><span style="color: #000000">&gt;</span>
+<span style="color: #000000">                &lt;/</span><span style="color: #001080">button</span><span style="color: #000000">&gt;</span>
+<span style="color: #000000">            );</span>
+<span style="color: #000000">        },</span>
+<span style="color: #000000">    }),</span>
+<span style="color: #000000">);</span>
+</code></pre>
+				<a href="#4-and-you-can-start-to-develop-your-first-module" id="4-and-you-can-start-to-develop-your-first-module" style="color: inherit; text-decoration: none;">
+					<h2>4/ And you can start to develop your first module!</h2>
+				</a>
+				<pre><code class="language-bash"><span style="color: #008000"># Linux, WSL</span>
+<span style="color: #000000">colldev</span>
+
+<span style="color: #008000"># Windows, PowerShell</span>
+<span style="color: #000000">npx colldev</span>
+
+
+<span style="color: #008000"># You can also run full command</span>
+<span style="color: #000000">colldev develop</span>
+
+<span style="color: #008000"># And disable to open dev.collboard.com</span>
+<span style="color: #000000">colldev develop --open </span><span style="color: #795E26">false</span>
+
+
+<span style="color: #008000"># Or open some specific board/url to develop on</span>
+<span style="color: #000000">colldev develop --open https://dev.collboard.com/dev-TODO:!!!</span>
+
+</code></pre>
+				<p><img src="./manual/assets/colldev-running.png" alt="Colldev running in terminal" title="Colldev running in terminal"></p>
+				<a href="#how-it-works" id="how-it-works" style="color: inherit; text-decoration: none;">
+					<h2>How it works?</h2>
+				</a>
+				<p>Colldev will automatically look into your package.json, finds <strong>main</strong> entry <em>(it can be typescript or javascript file)</em>. And watch, build and serve changes to Collboard in development mode.</p>
+				<p>Then you open <a href="https://dev.collboard.com">Collboard in developer mode - dev.collboard.com</a> and there you will see modules that you are working on.</p>
+				<p>Most of the modules make sense on the board (not the homepage) <strong>so you will probably need to create a new board</strong>.</p>
+				<p>These modules will be automatically installed &amp; hot reloaded <em>(uninstalled+installed)</em> as you go.</p>
+				<p>Notice that boards+its contents created under development mode will be automatically erased after some time.</p>
+				<a href="#when-you-module-is-finished" id="when-you-module-is-finished" style="color: inherit; text-decoration: none;">
+					<h2>When you module is finished</h2>
+				</a>
+				<p>Run colldev commant with <strong>publish</strong> modifier. This will send module to Collboard server as a release candidate to authorize. Please provide contact to author in package.json if there is some problem with the module to contact you and solve it.</p>
+				<p>When you are updating, please provide new version in package json.</p>
+				<pre><code class="language-bash"><span style="color: #008000"># Linux, WSL</span>
+<span style="color: #000000">colldev publish</span>
+
+<span style="color: #008000"># Windows, PowerShell</span>
+<span style="color: #000000">npx colldev publish</span>
+</code></pre>
+				<p><em>Tip: You can also setup postversion command to publish automatically.</em></p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/exportformat.html" class="tsd-kind-icon">Export<wbr>Format</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/extrajsxplace.html" class="tsd-kind-icon">Extra<wbr>Jsx<wbr>Place</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/importstrategy.html" class="tsd-kind-icon">Import<wbr>Strategy</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/shapename.html" class="tsd-kind-icon">Shape<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/abstract2dart.html" class="tsd-kind-icon">Abstract2d<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/abstract2dboxart.html" class="tsd-kind-icon">Abstract2d<wbr>Box<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/abstractart.html" class="tsd-kind-icon">Abstract<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/abstractbackgroundart.html" class="tsd-kind-icon">Abstract<wbr>Background<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/abstractenvironmentart.html" class="tsd-kind-icon">Abstract<wbr>Environment<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/abstractplacedart.html" class="tsd-kind-icon">Abstract<wbr>Placed<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/abstractuiart.html" class="tsd-kind-icon">AbstractUIArt</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/additional.html" class="tsd-kind-icon">Additional</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/backgroundpatternart.html" class="tsd-kind-icon">Background<wbr>Pattern<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/backgroundwallpaperart.html" class="tsd-kind-icon">Background<wbr>Wallpaper<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/collisionerror.html" class="tsd-kind-icon">Collision<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cornerstoneart.html" class="tsd-kind-icon">Cornerstone<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/deletedart.html" class="tsd-kind-icon">Deleted<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/destroyable.html" class="tsd-kind-icon">Destroyable</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/destroyableloop.html" class="tsd-kind-icon">Destroyable<wbr>Loop</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/exportart.html" class="tsd-kind-icon">Export<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/extrajsxsystem.html" class="tsd-kind-icon">Extra<wbr>Jsx<wbr>System</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/freehandart.html" class="tsd-kind-icon">Freehand<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/htmlart.html" class="tsd-kind-icon">HTMLArt</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/highordererror.html" class="tsd-kind-icon">High<wbr>Order<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/imageart.html" class="tsd-kind-icon">Image<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/importart.html" class="tsd-kind-icon">Import<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/lineart.html" class="tsd-kind-icon">Line<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/notfounderror.html" class="tsd-kind-icon">Not<wbr>Found<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/notfounderrorforboard.html" class="tsd-kind-icon">Not<wbr>Found<wbr>Error<wbr>For<wbr>Board</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/notfounderrorformodule.html" class="tsd-kind-icon">Not<wbr>Found<wbr>Error<wbr>For<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/queue.html" class="tsd-kind-icon">Queue</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/queues.html" class="tsd-kind-icon">Queues</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/registration.html" class="tsd-kind-icon">Registration</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/shapeart.html" class="tsd-kind-icon">Shape<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/speech.html" class="tsd-kind-icon">Speech</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/textart.html" class="tsd-kind-icon">Text<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ibehavoirprops.html" class="tsd-kind-icon">IBehavoir<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestroyable.html" class="tsd-kind-icon">IDestroyable</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iqueueoptions.html" class="tsd-kind-icon">IQueue<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/iregisteritemsoptions.html" class="tsd-kind-icon">IRegister<wbr>Items<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/isubscription.html" class="tsd-kind-icon">ISubscription</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#iarrayable" class="tsd-kind-icon">IArrayable</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#iawaitable" class="tsd-kind-icon">IAwaitable</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#ifactorable" class="tsd-kind-icon">IFactorable</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#ifactory" class="tsd-kind-icon">IFactory</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#ihandler" class="tsd-kind-icon">IHandler</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ikeywords" class="tsd-kind-icon">IKeywords</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#iliststyle" class="tsd-kind-icon">IList<wbr>Style</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#iteardownlogic" class="tsd-kind-icon">ITeardown<wbr>Logic</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#requireatleastone" class="tsd-kind-icon">Require<wbr>AtLeast<wbr>One</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#requireonlyone" class="tsd-kind-icon">Require<wbr>Only<wbr>One</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_attribute" class="tsd-kind-icon">string_<wbr>attribute</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_char" class="tsd-kind-icon">string_<wbr>char</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_char_emoji" class="tsd-kind-icon">string_<wbr>char_<wbr>emoji</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_context" class="tsd-kind-icon">string_<wbr>context</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_css_cursor" class="tsd-kind-icon">string_<wbr>css_<wbr>cursor</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_email" class="tsd-kind-icon">string_<wbr>email</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_file_extension" class="tsd-kind-icon">string_<wbr>file_<wbr>extension</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_file_path" class="tsd-kind-icon">string_<wbr>file_<wbr>path</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_html" class="tsd-kind-icon">string_<wbr>html</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_license" class="tsd-kind-icon">string_<wbr>license</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_mime_type" class="tsd-kind-icon">string_<wbr>mime_<wbr>type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_mime_type_with_wildcard" class="tsd-kind-icon">string_<wbr>mime_<wbr>type_<wbr>with_<wbr>wildcard</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_module_category" class="tsd-kind-icon">string_<wbr>module_<wbr>category</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_module_name" class="tsd-kind-icon">string_<wbr>module_<wbr>name</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_person_fullname" class="tsd-kind-icon">string_<wbr>person_<wbr>fullname</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_sha256" class="tsd-kind-icon">string_<wbr>sha256</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_uri" class="tsd-kind-icon">string_<wbr>uri</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_uri_part" class="tsd-kind-icon">string_<wbr>uri_<wbr>part</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_url" class="tsd-kind-icon">string_<wbr>url</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_url_image" class="tsd-kind-icon">string_<wbr>url_<wbr>image</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_uuid" class="tsd-kind-icon">string_<wbr>uuid</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_version" class="tsd-kind-icon">string_<wbr>version</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#string_version_dependency" class="tsd-kind-icon">string_<wbr>version_<wbr>dependency</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#is_near_distance" class="tsd-kind-icon">IS_<wbr>NEAR_<wbr>DISTANCE</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#svg_padding" class="tsd-kind-icon">SVG_<wbr>PADDING</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#artmodules" class="tsd-kind-icon">art<wbr>Modules</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#standardattributemodules" class="tsd-kind-icon">standard<wbr>Attribute<wbr>Modules</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#virtualcornerstoneart" class="tsd-kind-icon">virtual<wbr>Cornerstone<wbr>Art</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#alertdialogue" class="tsd-kind-icon">alert<wbr>Dialogue</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#blobtodatauri" class="tsd-kind-icon">blob<wbr>ToDataURI</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#capitalizefirstletter" class="tsd-kind-icon">capitalize<wbr>First<wbr>Letter</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#classnames" class="tsd-kind-icon">class<wbr>Names</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#confirmdialogue" class="tsd-kind-icon">confirm<wbr>Dialogue</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#create3drotation" class="tsd-kind-icon">create3d<wbr>Rotation</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#createmodaltitle" class="tsd-kind-icon">create<wbr>Modal<wbr>Title</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#declaremodule" class="tsd-kind-icon">declare<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#difference" class="tsd-kind-icon">difference</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#enumtoarray" class="tsd-kind-icon">enum<wbr>ToArray</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#errorboundary" class="tsd-kind-icon">error<wbr>Boundary</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#factor" class="tsd-kind-icon">factor</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#filedialogue" class="tsd-kind-icon">file<wbr>Dialogue</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#flatternarray" class="tsd-kind-icon">flattern<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#getwindowsize" class="tsd-kind-icon">get<wbr>Window<wbr>Size</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#isequalarray" class="tsd-kind-icon">is<wbr>Equal<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isnumeric" class="tsd-kind-icon">is<wbr>Numeric</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isvaliduriid" class="tsd-kind-icon">is<wbr>Valid<wbr>Uri<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#makeartmodule" class="tsd-kind-icon">make<wbr>Art<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#makearticlessetmodule" class="tsd-kind-icon">make<wbr>Articles<wbr>Set<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#makeattributemodule" class="tsd-kind-icon">make<wbr>Attribute<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#makeemojistoolmodule" class="tsd-kind-icon">make<wbr>Emojis<wbr>Tool<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#makeextrajsxmodule" class="tsd-kind-icon">make<wbr>Extrajsx<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#makeiconmodule" class="tsd-kind-icon">make<wbr>Icon<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#makeiconmoduleonmodule" class="tsd-kind-icon">make<wbr>Icon<wbr>Module<wbr>OnModule</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#makeiconmoduleonroute" class="tsd-kind-icon">make<wbr>Icon<wbr>Module<wbr>OnRoute</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#makemodalmodule" class="tsd-kind-icon">make<wbr>Modal<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#makemultimodule" class="tsd-kind-icon">make<wbr>Multi<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#measureimagesize" class="tsd-kind-icon">measure<wbr>Image<wbr>Size</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#nametouripart" class="tsd-kind-icon">name<wbr>ToUri<wbr>Part</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#normalizetocamelcase" class="tsd-kind-icon">normalize<wbr>ToCamel<wbr>Case</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#normalizetoscreaming_case" class="tsd-kind-icon">normalize<wbr>ToSCREAMING_<wbr>CASE</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#parsekeywords" class="tsd-kind-icon">parse<wbr>Keywords</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#pointstopolygon" class="tsd-kind-icon">points<wbr>ToPolygon</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#positiontobabylon" class="tsd-kind-icon">position<wbr>ToBabylon</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#promptdialogue" class="tsd-kind-icon">prompt<wbr>Dialogue</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#randomitem" class="tsd-kind-icon">random<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#randomstring" class="tsd-kind-icon">random<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#randomuriid" class="tsd-kind-icon">random<wbr>Uri<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#registeritemsinarray" class="tsd-kind-icon">register<wbr>Items<wbr>InArray</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#registerpairsinobject" class="tsd-kind-icon">register<wbr>Pairs<wbr>InObject</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#removediacritics" class="tsd-kind-icon">remove<wbr>Diacritics</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#rotationtobabylon" class="tsd-kind-icon">rotation<wbr>ToBabylon</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#scrapecontentfromurl" class="tsd-kind-icon">scrape<wbr>Content<wbr>From<wbr>Url</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#searchkeywords" class="tsd-kind-icon">search<wbr>Keywords</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#selectiontooldraggingbehavior" class="tsd-kind-icon">selection<wbr>Tool<wbr>Dragging<wbr>Behavior</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#selectiontoolscalingbehavior" class="tsd-kind-icon">selection<wbr>Tool<wbr>Scaling<wbr>Behavior</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#selectiontoolselectionboxbehavior" class="tsd-kind-icon">selection<wbr>Tool<wbr>Selection<wbr>Box<wbr>Behavior</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#softdestroy" class="tsd-kind-icon">soft<wbr>Destroy</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#teardown" class="tsd-kind-icon">teardown</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#toarray" class="tsd-kind-icon">to<wbr>Array</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
