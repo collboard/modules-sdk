@@ -100,7 +100,7 @@ colldev develop --open https://dev.collboard.com/dev-TODO:!!!
 
 ```
 
-![Colldev running in terminal](./manual/assets/colldev-running.png 'Colldev running in terminal')
+![Colldev running in terminal](./media/colldev-running.png 'Colldev running in terminal')
 
 ## How it works?
 

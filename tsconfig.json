@@ -25,6 +25,12 @@
         "name": "Modules SDK toolkit for Collboard.com",
         "entryPoints": ["./types/index.d.ts"],
         "includeVersion": true,
-        "out": "./documentation"
+        "hideGenerator": true,
+        "theme": "minimal",
+        "out": "./documentation",
+        "media": "./media",
+        "gaID": "UA-161448779-1",
+        "gitRemote": "https://github.com/collboard/modules-sdk",
+        
       }
 }
