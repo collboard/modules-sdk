@@ -19,6 +19,12 @@
         "esModuleInterop": true,
         "types": ["node"]
     },
-    "include": ["src"],
-    "exclude": ["node_modules"]
+    "include": ["src","types"],
+
+    "typedocOptions": {
+        "name": "Modules SDK toolkit for Collboard.com",
+        "entryPoints": ["./types/index.d.ts"],
+        "includeVersion": true,
+        "out": "./documentation"
+      }
 }
