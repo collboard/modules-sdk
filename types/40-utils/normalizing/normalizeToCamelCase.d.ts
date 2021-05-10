@@ -7,7 +7,7 @@
  *
  * TODO: Put this into some inpidendent library which do normalizing (there are things in Collboard+Czech.events)
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function normalizeToCamelCase(name: string, firstLetterCapital?: boolean): string;
 

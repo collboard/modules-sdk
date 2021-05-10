@@ -6,7 +6,7 @@
                   import { string_html, string_url } from './typeAliases';
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function scrapeContentFromUrl(articleUrl: string_url): Promise<string_html>;
 

@@ -9,7 +9,7 @@
  * TODO: To some system?
  * TODO: Cleanup
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class Speech {
     transcript: Observable<string | null>;

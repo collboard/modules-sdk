@@ -8,7 +8,7 @@
  * TODO: description
  * Note: This is not in the internal module because some of the Arts are so tightly connected with the core that they need to be there, not in optionally deactivateable module.
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class DeletedArt extends AbstractArt {
     get acceptedAttributes(): never[];

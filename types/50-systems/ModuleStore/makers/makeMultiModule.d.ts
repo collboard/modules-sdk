@@ -12,7 +12,7 @@ import { IModuleManifest } from '../interfaces/IModuleManifest';
  * Manifest is either given or it will be taken from the first non-anonymous module or returned module will be anonymous
  * @returns a factory (not definition) which will dynamically makes multimodule again and again because only this can ensure one run per one instance policy.
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function makeMultiModule(modulesOrProtomodule: {
     manifest?: IModuleManifest;

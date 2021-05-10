@@ -5,7 +5,7 @@
 
                   /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function randomString(length: number, chars: string): string;
 

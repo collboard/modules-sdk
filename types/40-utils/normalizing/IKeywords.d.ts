@@ -6,7 +6,7 @@
                   /**
  * IKeywords are lowercase [a-z1-9]
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare type IKeywords = string[];
 

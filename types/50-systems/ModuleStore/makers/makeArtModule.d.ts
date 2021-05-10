@@ -13,7 +13,7 @@ export declare const artModules: Array<IModule & {
  * makeArtModule will make UI module
  *
  * Note: Module still needs to be declared
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function makeArtModule(artSerializeRule: ISerializeRule<AbstractArt>): IModuleDefinition;
 

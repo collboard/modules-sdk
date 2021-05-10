@@ -11,7 +11,7 @@
 }
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function alertDialogue(options: IAlertDialogueOptions | string): Promise<void>;
 export {};

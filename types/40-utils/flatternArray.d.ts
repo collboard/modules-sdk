@@ -8,7 +8,7 @@
  * @param array for example [[1,2],[3,4]]
  * @return for example [1,2,3,4]
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function flatternArray<T>(array: T[][]): T[];
 

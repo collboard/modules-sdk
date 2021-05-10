@@ -7,7 +7,7 @@
 import { string_url_image } from '../40-utils/typeAliases';
 import { AbstractBackgroundArt } from './26-AbstractBackgroundArt';
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class BackgroundWallpaperArt extends AbstractBackgroundArt {
     src: string_url_image;

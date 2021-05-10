@@ -6,7 +6,7 @@
                   /**
  * TODO: Naming blobToDataURI vs. blobToDataUri
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function blobToDataURI(blob: Blob): Promise<string>;
 

@@ -9,7 +9,7 @@ import { IVector, Vector } from 'xyzt';
 import { Abstract2dArt } from './26-Abstract2dArt';
 export declare const SVG_PADDING = 10;
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class FreehandArt extends Abstract2dArt {
     frames: TouchFrame[];

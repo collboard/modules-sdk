@@ -4,7 +4,7 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
                   /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class Additional<TKey, TValue> {
     private lib;

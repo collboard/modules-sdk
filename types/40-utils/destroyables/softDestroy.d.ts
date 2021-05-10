@@ -6,7 +6,7 @@
                   import { IDestroyable } from './IDestroyable';
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function softDestroy(destroyable: IDestroyable): Promise<void>;
 

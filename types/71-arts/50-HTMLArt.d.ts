@@ -8,7 +8,7 @@ import { Abstract2dBoxArt } from './27-Abstract2dBoxArt';
 /**
  * TODO: Maybe rename to HtmlArt - we need to fugure out consistent namings of acronyms in CamelCasingLolVsWTF
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class HTMLArt extends Abstract2dBoxArt {
     content: string;

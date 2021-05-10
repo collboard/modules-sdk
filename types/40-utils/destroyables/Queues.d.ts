@@ -7,7 +7,7 @@
 import { IDestroyable } from './IDestroyable';
 import { IQueueOptions, Queue } from './Queue';
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class Queues<K, V> extends Destroyable implements IDestroyable {
     private options;

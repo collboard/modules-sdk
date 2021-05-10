@@ -6,7 +6,7 @@
                   import { Vector } from 'xyzt';
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function measureImageSize(imageFileOrDataURI: Blob | string): Promise<Vector>;
 

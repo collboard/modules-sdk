@@ -9,7 +9,7 @@ import { AbstractEnvironmentArt } from './25-AbstractEnvironmentArt';
 /**
  * This art will in future changes backgroud image of the board.
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare abstract class AbstractBackgroundArt extends AbstractEnvironmentArt {
     z: number;

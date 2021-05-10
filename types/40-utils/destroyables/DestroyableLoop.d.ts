@@ -5,7 +5,7 @@
 
                   import { Destroyable } from './Destroyable';
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class DestroyableLoop extends Destroyable {
     constructor(executor: (amIDestroyed: () => boolean) => Promise<void>);

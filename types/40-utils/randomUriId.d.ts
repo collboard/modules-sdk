@@ -6,7 +6,7 @@
                   import { string_uri_part } from './typeAliases';
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function randomUriId(): string_uri_part;
 

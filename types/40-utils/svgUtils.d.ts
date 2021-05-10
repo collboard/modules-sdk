@@ -6,7 +6,7 @@
                   import { IVector } from 'xyzt';
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function pointsToPolygon(points: IVector[]): string;
 

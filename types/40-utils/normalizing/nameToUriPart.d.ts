@@ -5,7 +5,7 @@
 
                   import { string_uri_part } from '../typeAliases';
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function nameToUriPart(name: string): string_uri_part;
 

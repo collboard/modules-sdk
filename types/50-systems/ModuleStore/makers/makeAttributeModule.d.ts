@@ -12,7 +12,7 @@ export declare const standardAttributeModules: Array<IModule & {
 }>;
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function makeAttributeModule<T>(protoModule: Omit<IAttributeRule<T>, 'moduleName'> & {
     manifest: IModuleManifest;

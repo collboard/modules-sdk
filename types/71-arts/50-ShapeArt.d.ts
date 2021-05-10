@@ -8,7 +8,7 @@ import { IVector, Vector } from 'xyzt';
 import { IFramable } from '../50-systems/ExportImportSystem/0-ExportSystem';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare enum ShapeName {
     Rectange = 0,
@@ -18,7 +18,7 @@ export declare enum ShapeName {
     TriangleRight = 4
 }
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class ShapeArt extends Abstract2dArt implements IFramable {
     shape: ShapeName;

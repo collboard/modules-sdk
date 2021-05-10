@@ -5,7 +5,7 @@
 
                   import { IKeywords } from './IKeywords';
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function searchKeywords(haystack: IKeywords, needle: IKeywords): boolean;
 

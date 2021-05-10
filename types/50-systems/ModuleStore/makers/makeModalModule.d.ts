@@ -15,7 +15,7 @@ declare type ICreateModalReturn = Partial<Omit<IModalProps, 'children' | 'system
 };
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function makeModalModule(protoModule: {
     manifest?: IModuleManifest;

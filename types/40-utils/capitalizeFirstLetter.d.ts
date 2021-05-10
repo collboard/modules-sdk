@@ -5,7 +5,7 @@
 
                   /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function capitalizeFirstLetter(word: string): string;
 

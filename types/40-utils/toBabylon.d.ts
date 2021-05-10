@@ -7,12 +7,12 @@
 import { Vector } from 'xyzt';
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function positionToBabylon(vector: Vector): Vector3;
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function rotationToBabylon(vector: Vector): Vector3;
 

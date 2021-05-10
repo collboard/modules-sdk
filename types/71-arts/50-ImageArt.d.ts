@@ -7,7 +7,7 @@
 import { string_url_image } from '../40-utils/typeAliases';
 import { Abstract2dBoxArt } from './27-Abstract2dBoxArt';
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class ImageArt extends Abstract2dBoxArt {
     src: string_url_image;

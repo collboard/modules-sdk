@@ -7,7 +7,7 @@ import { AbstractSystem } from '../AbstractSystem';
  * TODO: Describe
  * TODO: Unite naming ToolbarName vs. ExtraJsxPlace
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare enum ExtraJsxPlace {
     RootComponent = 'RootComponent',

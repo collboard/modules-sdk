@@ -8,7 +8,7 @@ import { ITeardownLogic } from './TeardownLogic';
 /**
  * TODO: Unite Registration and Destroyable
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare abstract class Destroyable implements IDestroyable {
     private _destroyed;

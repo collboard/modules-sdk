@@ -24,7 +24,7 @@ interface IFileDialogueOptions {
  * @returns array of files NOT FileList
  * TODO: As some cathegory of utils which replace alert, prompt, confirm by better async options like this or NotificationSystem
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function fileDialogue({ accept, multiple }: IFileDialogueOptions): Promise<File[]>;
 export {};

@@ -16,7 +16,7 @@ import { IModuleManifest } from '../interfaces/IModuleManifest';
  *
  * Note: There is in git history makeArticleModule but we have removed it. If it will be needed, we can bring it back.
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function makeArticlesSetModule(protoModule: {
     manifest: IModuleManifest;

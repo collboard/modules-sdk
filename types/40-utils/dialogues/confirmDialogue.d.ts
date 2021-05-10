@@ -11,7 +11,7 @@
 }
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function confirmDialogue(options: IConfirmDialogueOptions | string): Promise<boolean>;
 export {};

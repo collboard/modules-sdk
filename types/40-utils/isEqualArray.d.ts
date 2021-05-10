@@ -5,7 +5,7 @@
 
                   /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function isEqualArray<T>(a: T[], b: T[], isEqualItem?: (a: T, b: T) => boolean): boolean;
 

@@ -6,7 +6,7 @@
                   import { IVector, Vector } from 'xyzt';
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function create3dRotation(vector: IVector): Vector;
 

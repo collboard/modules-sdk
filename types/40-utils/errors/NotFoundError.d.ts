@@ -4,18 +4,18 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
                   /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class NotFoundError extends Error {
     readonly name = "NotFoundError";
 }
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class NotFoundErrorForBoard extends NotFoundError {
 }
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class NotFoundErrorForModule extends NotFoundError {
 }

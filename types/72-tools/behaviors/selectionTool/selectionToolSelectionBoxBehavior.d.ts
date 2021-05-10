@@ -6,7 +6,7 @@
                   import { IBehavoirProps } from '../IBehavoirProps';
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function selectionToolSelectionBoxBehavior(behaviorProps: IBehavoirProps): boolean;
 

@@ -10,7 +10,7 @@ import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function makeExtrajsxModule(protoModule: {
     manifest?: IModuleManifest;

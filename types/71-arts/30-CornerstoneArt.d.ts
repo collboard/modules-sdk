@@ -12,7 +12,7 @@ import { Abstract2dArt } from './26-Abstract2dArt';
  * Note: This is not in the internal module because some of the Arts are so tightly connected with the core that they need to be there, not in optionally deactivateable module.
  * TODO: Probbably we can rename it into shorter name like CtoneArt @roseckyj what do you think
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class CornerstoneArt extends Abstract2dArt {
     boardName: string;

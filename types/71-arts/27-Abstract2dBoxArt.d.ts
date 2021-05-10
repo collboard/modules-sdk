@@ -12,7 +12,7 @@ import { Abstract2dArt } from './26-Abstract2dArt';
  * TODO: Inspire by Abstract3dBoxArt (for example in size fluent API)
  * Note: This is not in the internal module because some of the Arts are so tightly connected with the core that they need to be there, not in optionally deactivateable module.
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
     private privateSize;

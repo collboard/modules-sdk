@@ -13,7 +13,7 @@ import { ITeardownLogic } from './TeardownLogic';
  * TODO: Unite Registration and Destroyable
  * TODO: Maybe create some Registration.create helper for MobX observe/intercept
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class Registration extends Destroyable implements IDestroyable {
     private teardownLogic;

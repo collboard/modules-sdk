@@ -12,7 +12,7 @@
 }
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function promptDialogue(options: IPromptDialogueOptions | string): Promise<string | null>;
 export {};

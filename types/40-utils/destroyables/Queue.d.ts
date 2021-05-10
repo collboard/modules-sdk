@@ -7,7 +7,7 @@
 import { Destroyable } from './Destroyable';
 import { IDestroyable } from './IDestroyable';
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export interface IQueueOptions {
     /**
@@ -23,7 +23,7 @@ export interface IQueueOptions {
  * TODO: maybe debouncing
  * TODO: timeouts
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class Queue<T> extends Destroyable implements IDestroyable {
     private options;

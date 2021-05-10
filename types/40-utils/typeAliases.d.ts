@@ -5,7 +5,7 @@
 
                   /**
  * Theese string_whatever are just semantic helpers:
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 /**
  * Semantic helper; For example "text/plain" or "application/collboard"

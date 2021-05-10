@@ -6,7 +6,7 @@
                   import { IVector } from 'xyzt';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare enum ExportFormat {
     Native = "NATIVE",
@@ -16,7 +16,7 @@ export declare enum ExportFormat {
  * ExportArt is art for exporting content from the board.
  * Note: This is not in the internal module because some of the Arts are so tightly connected with the core that they need to be there, not in optionally deactivateable module.
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare class ExportArt extends Abstract2dArt {
     format: ExportFormat;

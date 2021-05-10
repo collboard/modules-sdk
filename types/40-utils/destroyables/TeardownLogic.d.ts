@@ -6,12 +6,12 @@
                   import { IAwaitable } from '../IAwaitable';
 import { IDestroyable } from './IDestroyable';
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare type ITeardownLogic = (() => IAwaitable<void>) | IDestroyable;
 /**
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function teardown(teardownLogic: ITeardownLogic): Promise<void>;
 

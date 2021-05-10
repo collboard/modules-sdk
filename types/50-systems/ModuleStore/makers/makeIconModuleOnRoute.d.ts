@@ -13,7 +13,7 @@ import { IModuleManifest } from '../interfaces/IModuleManifest';
  * Makes toolbar icon module which setup/unsetup given submodule when user select/unselect icon
  * TODO: Probbably better name (makeIconModuleOnModule vs. makeIconModuleOnRoute)
  *
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export declare function makeIconModuleOnRoute(protoModule: {
     manifest?: IModuleManifest;

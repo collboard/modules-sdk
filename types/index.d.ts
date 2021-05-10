@@ -8,7 +8,7 @@
 
         export declare function declareModule(module: IModule): void;
 
-        // Note: here is all stuff marked with "@collboard SDK"
+        // Note: here is all stuff marked with "@collboard-modules-sdk"
         export * from './40-utils/Additional';
 export * from './40-utils/blobToDataURI';
 export * from './40-utils/capitalizeFirstLetter';

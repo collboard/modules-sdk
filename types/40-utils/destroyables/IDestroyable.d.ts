@@ -5,7 +5,7 @@
 
                   import { IAwaitable } from '../IAwaitable';
 /**
- * @collboard SDK
+ * @collboard-modules-sdk
  */
 export interface IDestroyable {
     readonly destroyed: boolean;
