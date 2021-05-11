@@ -3,7 +3,9 @@
 Modules SDK toolkit for [Collboard.com](https://collboard.com/).
 Here is the [sample of very simple module](https://github.com/collboard/module-sample-basic).
 
-## 1/ To start install the SDK first:
+
+## How to develop your first module in 4 steps
+### 1) To start install the SDK first:
 
 ```bash
 npm install @collboard/modules-sdk
@@ -11,7 +13,7 @@ npm install @collboard/modules-sdk
 
 <!--TODO: Also create option to install from GH repositories -->
 
-## 2/ Then create **package.json** file with link to main file:
+### 2) Then create **package.json** file with link to main file:
 
 ```json
 {
@@ -28,33 +30,19 @@ npm install @collboard/modules-sdk
 
 <!--TODO: Auto-update versions in READMEs -->
 
-## 3/ Create the main file
+### 3) Create the main file
 
 It can be either **TypeScript** or **JavaScript**. It can import other files or node modules _(colldev internally uses webpack with ts-loader)_.
 
+<!-- TODO: Some better example -->
 ```typescript
 import { declareModule, ExtraJsxPlace, makeExtrajsxModule } from '@collboard/modules-sdk';
 import * as React from 'react';
 
-// TODO: !!! How to make modules + manual for systems
 declareModule(
     makeExtrajsxModule({
         manifest: {
-            name: 'SampleButton',
-            title: { en: 'Hello World Button"', cs: 'Hello World Tlačítko' },
-            description: {
-                en: 'Button exported from the SampleButtonModule',
-                cs: 'Tlačítko exportované ze SampleButtonModule',
-            },
-            keywords: [],
-            categories: ['Buttons'],
-            icon: '/assets/icons/copy-material.svg', // TODO: module scoped assets
-            screenshots: [], // TODO: module scoped assets
-            author: {
-                name: 'Collboard Developers',
-                email: 'dev@collboard.com',
-                url: 'http://collboard.com/',
-            },
+            name: 'MyFirstModule',
         },
         place: ExtraJsxPlace.EdgeRight,
         createExtraJsx({
@@ -78,7 +66,7 @@ declareModule(
 );
 ```
 
-## 4/ And you can start to develop your first module!
+### 4) And you can start to develop your first module!
 
 ```bash
 # Linux, WSL
@@ -102,7 +90,7 @@ colldev develop --open https://dev.collboard.com/dev-TODO:!!!
 
 ![Colldev running in terminal](./media/colldev-running.png 'Colldev running in terminal')
 
-## How it works?
+### How it works under the hood?
 
 Colldev will automatically look into your package.json, finds **main** entry _(it can be typescript or javascript file)_. And watch, build and serve changes to Collboard in development mode.
 
@@ -114,7 +102,7 @@ These modules will be automatically installed & hot reloaded _(uninstalled+insta
 
 Notice that boards+its contents created under development mode will be automatically erased after some time.
 
-## When you module is finished
+## Publishing the module
 
 Run colldev commant with **publish** modifier. This will send module to Collboard server as a release candidate to authorize. Please provide contact to author in package.json if there is some problem with the module to contact you and solve it.
 
@@ -129,3 +117,39 @@ npx colldev publish
 ```
 
 _Tip: You can also setup postversion command to publish automatically._
+
+
+
+## Systems
+<!--TODO: Should be theese sections in primary README or use other markdown files? -->
+
+In setup function you are interacting with Collboard systems. Theese are something like APIs each controlling some part of collboard app.
+
+Typically you are registering something under theese sytems. This will returns you [destroyable](https://collboard.github.io/modules-sdk/interfaces/idestroyable.html) which you can directly return from your setup function.
+
+
+
+<!--!!!-->
+
+
+### SgsdfgSystem
+!!!
+
+
+/**
+* Generator: Systems
+* Omit: Serializer
+* Pattern: ### <System>
+*/
+
+
+
+
+
+<!--
+TODO: !!! ## Makers
+-->
+
+<!--
+TODO: !!! ## Multimodules
+-->
