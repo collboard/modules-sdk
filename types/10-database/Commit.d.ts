@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { string_uri_part, string_uuid, string_version } from '../40-utils/typeAliases';
+import { string_uri_part, string_uuid, string_version } from '../40-utils/typeAliases';
 export declare class Commit {
     [index: string]: string | number | null | any;
     id: number;
@@ -30,5 +28,3 @@ export declare class Commit {
     artClass: string;
     art: object;
 }
-
-                  

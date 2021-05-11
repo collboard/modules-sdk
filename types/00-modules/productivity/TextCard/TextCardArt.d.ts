@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { IVector, Vector } from 'xyzt';
 import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
 import { IListStyle } from '../../../71-arts/50-TextArt';
@@ -19,7 +17,16 @@ export declare class TextCardArt extends Abstract2dArt {
     underline: boolean;
     listStyle: IListStyle;
     point1: IVector;
-    constructor(content: string, color: string, fontSize: number, bold: boolean, italic: boolean, underline: boolean, listStyle: IListStyle, point1: IVector);
+    constructor(
+        content: string,
+        color: string,
+        fontSize: number,
+        bold: boolean,
+        italic: boolean,
+        underline: boolean,
+        listStyle: IListStyle,
+        point1: IVector,
+    );
     get size(): Vector;
     get topLeftCorner(): Vector;
     get bottomRightCorner(): Vector;
@@ -27,5 +34,3 @@ export declare class TextCardArt extends Abstract2dArt {
     get acceptedAttributes(): string[];
     render(selected: boolean): JSX.Element;
 }
-
-                  

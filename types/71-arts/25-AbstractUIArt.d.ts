@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { string_attribute } from '../40-utils/typeAliases';
 import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
 import { ExtraJsxPlace } from '../50-systems/ExtraJsxSystem/0-ExtraJsxSystem';
@@ -20,5 +18,3 @@ export declare abstract class AbstractUIArt extends AbstractArt {
     abstract render(systemsContainer: ISystems): JSX.Element;
     get acceptedAttributes(): string_attribute[];
 }
-
-                  

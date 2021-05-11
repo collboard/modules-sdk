@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { string_module_category } from '../../../40-utils/typeAliases';
+import { string_module_category } from '../../../40-utils/typeAliases';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IDependency } from '../interfaces/IDependencies';
 import { IModuleDefinition } from '../interfaces/IModule';
@@ -20,9 +18,9 @@ export declare class StorageModuleStoreConnector implements IModuleStoreConnecto
     constructor(systems: ISystems, modulesStorage: Pick<IModulesStorage, 'modules'>);
     download(...identificators: IDependency[]): Promise<IModuleDefinition[]>;
     getCategories(): Promise<Set<string_module_category>>;
-    search(searchCriteria: IModuleStoreConnectorSearchQuery): Promise<{
-        modules: import("../interfaces/IModuleManifest").IModuleManifest[];
+    search(
+        searchCriteria: IModuleStoreConnectorSearchQuery,
+    ): Promise<{
+        modules: import('../interfaces/IModuleManifest').IModuleManifest[];
     }>;
 }
-
-                  

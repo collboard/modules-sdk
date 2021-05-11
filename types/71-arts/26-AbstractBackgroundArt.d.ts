@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 import { Transform } from 'xyzt';
 import { AbstractEnvironmentArt } from './25-AbstractEnvironmentArt';
 /**
@@ -18,5 +16,3 @@ export declare abstract class AbstractBackgroundArt extends AbstractEnvironmentA
     transformStyle(transform: Transform): CSSProperties;
     get acceptedAttributes(): never[];
 }
-
-                  

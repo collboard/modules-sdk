@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IDependenciesRecord } from './interfaces/IDependencies';
+import { IDependenciesRecord } from './interfaces/IDependencies';
 export declare const DEFAULT_ACTIVATE: {
     priority: number;
 };
@@ -12,5 +10,3 @@ export declare const DEFAULT_ACTIVATE: {
  * TODO: !! This should be put into a bussiness mlutimodule which defines collboard bussiness
  */
 export declare const DEFAULT_CORNERSTONE_DEPENDENCIES: IDependenciesRecord;
-
-                  

@@ -1,15 +1,15 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IVector, Transform, Vector } from 'xyzt';
+import { IVector, Transform, Vector } from 'xyzt';
 import { string_attribute } from '../../40-utils/typeAliases';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 import { AbstractSystem } from '../AbstractSystem';
 /**
  * AppState is not quite a system but an object representing the state of the Collboard app.
  * TODO: Should it be a system?
+ *
+ * @collboard-system
  */
 export declare class AppState extends AbstractSystem {
     protected init(): Promise<void>;
@@ -37,7 +37,10 @@ export declare class AppState extends AbstractSystem {
     debug: {
         artsList: boolean;
     };
-    setSelection({ selected, selection, }: {
+    setSelection({
+        selected,
+        selection,
+    }: {
         selected?: AbstractPlacedArt[];
         selection?: null | {
             point1: IVector;
@@ -45,16 +48,16 @@ export declare class AppState extends AbstractSystem {
         };
     }): void;
     cancelSelection(): void;
-    getSelection(): import("../../40-utils/pointsToSquare").square | null;
+    getSelection(): import('../../40-utils/pointsToSquare').square | null;
     /**
      * This bounding box is relative to screen
      */
-    getSelectedBoundingBox(): {
-        topLeftCorner: Vector;
-        bottomRightCorner: Vector;
-    } | undefined;
+    getSelectedBoundingBox():
+        | {
+              topLeftCorner: Vector;
+              bottomRightCorner: Vector;
+          }
+        | undefined;
     getCommonAttributeValueOfSelectedArts(name: string_attribute): any;
     getCommonAttributesOfSelectedArts(): string[];
 }
-
-                  

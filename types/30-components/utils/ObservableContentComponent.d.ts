@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { Observable } from 'rxjs';
 import { IAwaitable } from '../../40-utils/IAwaitable';
 interface IObservableContentComponentProps {
@@ -15,5 +13,3 @@ interface IObservableContentComponentProps {
 }
 export declare function ObservableContentComponent({ loading, content }: IObservableContentComponentProps): JSX.Element;
 export {};
-
-                  

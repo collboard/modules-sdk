@@ -1,13 +1,11 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { AbstractPlanetArt, IPlanetConfiguration } from './AbstractPlanetArt';
+import { AbstractPlanetArt, IPlanetConfiguration } from './AbstractPlanetArt';
 export declare enum RealPlanetType {
-    Earth = "EARTH",
-    Moon = "MOON",
-    Sun = "SUN"
+    Earth = 'EARTH',
+    Moon = 'MOON',
+    Sun = 'SUN',
 }
 export declare class RealPlanetArt extends AbstractPlanetArt {
     private realPlanetType;
@@ -19,5 +17,3 @@ export declare class RealPlanetArt extends AbstractPlanetArt {
     getPlanetConfiguration(): IPlanetConfiguration;
     private static planetConfigurationFromType;
 }
-
-                  

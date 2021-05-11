@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import * as React from 'react';
+import * as React from 'react';
 import { string_attribute, string_context } from '../../../40-utils/typeAliases';
 import { AttributesSystem } from '../0-AttributesSystem';
 import { attribute_value } from '../IAttribute';
@@ -20,5 +18,3 @@ export declare class InputsRender extends React.Component<IInputsRenderProps> {
     render(): JSX.Element;
 }
 export {};
-
-                  

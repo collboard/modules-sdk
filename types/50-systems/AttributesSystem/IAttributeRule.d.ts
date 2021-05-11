@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { string_module_name } from '../../40-utils/typeAliases';
+import { string_module_name } from '../../40-utils/typeAliases';
 import { IAttribute } from './IAttribute';
 import { IAttributeInputRender } from './IAttributeInputRender';
 export interface IAttributeRule<T> {
@@ -15,5 +13,3 @@ export interface IAttributeRule<T> {
     standard: boolean;
     inputRender: IAttributeInputRender<T>;
 }
-
-                  

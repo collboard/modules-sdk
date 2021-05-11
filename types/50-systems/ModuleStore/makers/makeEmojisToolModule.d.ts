@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IModuleDefinition } from '../interfaces/IModule';
+import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 /**
  * Makes toolbar icon module which setup/unsetup given submodule when user select/unselect icon
@@ -20,5 +18,3 @@ export declare function makeEmojisToolModule(protoModule: {
     placeFrequency: number;
     emojis: string[];
 }): IModuleDefinition;
-
-                  

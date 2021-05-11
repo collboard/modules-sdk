@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { Vector } from 'xyzt';
+import { Vector } from 'xyzt';
 import { ISystems } from '../../../../50-systems/00-SystemsContainer/ISystems';
 import { IModuleFactory } from '../../../../50-systems/ModuleStore/interfaces/IModule';
 import { IModuleManifest } from '../../../../50-systems/ModuleStore/interfaces/IModuleManifest';
@@ -16,5 +14,3 @@ export declare function makeTrayModule<Art extends Abstract2dArt>(protoModule: {
     trayDefinition: ITrayDefinition;
     newArtMaker: (id: string, position: Vector) => Art;
 }): IModuleFactory;
-
-                  

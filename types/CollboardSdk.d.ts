@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  export * from './40-utils/Additional';
+export * from './40-utils/Additional';
 export * from './40-utils/blobToDataURI';
 export * from './40-utils/capitalizeFirstLetter';
 export * from './40-utils/classNames';
@@ -90,5 +88,3 @@ export * from './72-tools/behaviors/IBehavoirProps';
 export * from './72-tools/behaviors/selectionTool/selectionToolDraggingBehavior';
 export * from './72-tools/behaviors/selectionTool/selectionToolScalingBehavior';
 export * from './72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior';
-
-                  

@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { Commit } from '../../10-database/Commit';
+import { Commit } from '../../10-database/Commit';
 import { Destroyable } from '../../40-utils/destroyables/Destroyable';
 import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
@@ -14,13 +12,19 @@ import { IFreshMaterialOperation, IOngoingMaterialOperation } from './IOperation
 /**
  * Start with takeArts, takeCommits, newArts or takeArtsOrCommitsOrNulls continue with update (oe other update methods) and end with persist or delete.
  */
-export declare class Operation extends Destroyable implements IClosePreventable, IDestroyable, IFreshMaterialOperation, IOngoingMaterialOperation {
+export declare class Operation
+    extends Destroyable
+    implements IClosePreventable, IDestroyable, IFreshMaterialOperation, IOngoingMaterialOperation {
     private artVersioningSystem;
     private closePreventionSystem;
     private operationId;
     private operationName;
     static ORIGIN: symbol;
-    constructor(artVersioningSystem: IArtVersioningSystem, closePreventionSystem: ClosePreventionSystem, operationName: string);
+    constructor(
+        artVersioningSystem: IArtVersioningSystem,
+        closePreventionSystem: ClosePreventionSystem,
+        operationName: string,
+    );
     private previousCommitsOrNullsOrOrigins;
     private get commits();
     get canBeClosed(): boolean;
@@ -76,5 +80,3 @@ export declare class Operation extends Destroyable implements IClosePreventable,
     private checkIfPersistedProperly;
     private static isCommitLike;
 }
-
-                  

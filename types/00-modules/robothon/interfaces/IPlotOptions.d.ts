@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { BoundingBox } from 'xyzt';
+import { BoundingBox } from 'xyzt';
 export declare type IPlotColor = string;
 export interface IPlotObject {
     color?: IPlotColor;
@@ -21,5 +19,3 @@ export interface IPlotOptions {
     boundingBox: BoundingBox;
     objects?: IPlotObjects;
 }
-
-                  

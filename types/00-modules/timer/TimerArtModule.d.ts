@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { IVector, Vector } from 'xyzt';
 import { Abstract2dArt } from '../../71-arts/26-Abstract2dArt';
 export declare class TimerArt extends Abstract2dArt {
@@ -21,7 +19,7 @@ export declare class TimerArt extends Abstract2dArt {
     set timerTime(millis: number);
     get timerTime(): number;
     get acceptedAttributes(): string[];
-    get topLeftCorner(): import("xyzt").IVectorObject;
+    get topLeftCorner(): import('xyzt').IVectorObject;
     get bottomRightCorner(): Vector;
     get warningThreshold(): number;
     render(): JSX.Element;
@@ -29,5 +27,3 @@ export declare class TimerArt extends Abstract2dArt {
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */
-
-                  

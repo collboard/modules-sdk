@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IConnectionIdentity } from '../50-systems/IdentitySystem/IIdentity';
+import { IConnectionIdentity } from '../50-systems/IdentitySystem/IIdentity';
 export declare class Tunnel implements IConnectionIdentity {
     id: number;
     userUUID: string | null;
@@ -19,5 +17,3 @@ export declare class Tunnel implements IConnectionIdentity {
     start: Date;
     end: Date | null;
 }
-
-                  

@@ -1,11 +1,8 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { TouchController } from 'touchcontroller';
+import { TouchController } from 'touchcontroller';
 import { ArtSerializer } from '../../CollboardApp';
-import { ModuleStore } from '../ModuleStore/connectors/0-ModuleStore';
 import { ApiClient } from './../ApiClient/0-ApiClient';
 import { BoardApiClient } from './../ApiClient/BoardApiClient';
 import { AppState } from './../AppState/0-AppState';
@@ -24,10 +21,13 @@ import { GamificationSystem } from './../GamificationSystem/0-GamificationSystem
 import { GenerateSystem } from './../GenerateSystem/0-GenerateSystem';
 import { HintSystem } from './../HintSystem/0-HintSystem';
 import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
+import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
 import { AttributeSupportSyncer } from './../ModuleStore/Syncers/AttributeSupportSyncer';
+import { BusinessSyncer } from './../ModuleStore/Syncers/BusinessSyncer';
 import { CornerstoneSyncer } from './../ModuleStore/Syncers/CornerstoneSyncer';
 import { RouteSyncer } from './../ModuleStore/Syncers/RouteSyncer';
+import { StorageSyncer } from './../ModuleStore/Syncers/StorageSyncer';
 import { NotificationSystem } from './../NotificationSystem/0-NotificationSystem';
 import { PointerSystem } from './../PointerSystem/0-PointerSystem';
 import { RoutingSystem } from './../RoutingSystem/0-RoutingSystem';
@@ -71,8 +71,10 @@ export declare class SystemsContainer implements ISystems {
     private _moduleStore;
     private _artSupportSyncer;
     private _attributeSupportSyncer;
+    private _businessSyncer;
     private _cornerstoneSyncer;
     private _routeSyncer;
+    private _storageSyncer;
     private _notificationSystem;
     private _pointerSystem;
     private _routingSystem;
@@ -231,6 +233,11 @@ export declare class SystemsContainer implements ISystems {
     get attributeSupportSyncerPromise(): Promise<AttributeSupportSyncer>;
     setAttributeSupportSyncer(attributeSupportSyncer: AttributeSupportSyncer): Promise<void>;
     removeAttributeSupportSyncer(): Promise<void>;
+    get businessSyncer(): BusinessSyncer;
+    get businessSyncerNullable(): BusinessSyncer | null;
+    get businessSyncerPromise(): Promise<BusinessSyncer>;
+    setBusinessSyncer(businessSyncer: BusinessSyncer): Promise<void>;
+    removeBusinessSyncer(): Promise<void>;
     get cornerstoneSyncer(): CornerstoneSyncer;
     get cornerstoneSyncerNullable(): CornerstoneSyncer | null;
     get cornerstoneSyncerPromise(): Promise<CornerstoneSyncer>;
@@ -241,6 +248,11 @@ export declare class SystemsContainer implements ISystems {
     get routeSyncerPromise(): Promise<RouteSyncer>;
     setRouteSyncer(routeSyncer: RouteSyncer): Promise<void>;
     removeRouteSyncer(): Promise<void>;
+    get storageSyncer(): StorageSyncer;
+    get storageSyncerNullable(): StorageSyncer | null;
+    get storageSyncerPromise(): Promise<StorageSyncer>;
+    setStorageSyncer(storageSyncer: StorageSyncer): Promise<void>;
+    removeStorageSyncer(): Promise<void>;
     get notificationSystem(): NotificationSystem;
     get notificationSystemNullable(): NotificationSystem | null;
     get notificationSystemPromise(): Promise<NotificationSystem>;
@@ -307,5 +319,3 @@ export declare class SystemsContainer implements ISystems {
     setArtSerializer(artSerializer: ArtSerializer): Promise<void>;
     removeArtSerializer(): Promise<void>;
 }
-
-                  

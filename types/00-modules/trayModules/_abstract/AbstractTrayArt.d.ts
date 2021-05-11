@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { Vector } from 'xyzt';
 import { Abstract2dBoxArt } from '../../../71-arts/27-Abstract2dBoxArt';
 import { ITrayDefinition } from './TrayItemTypes';
@@ -19,5 +17,3 @@ export declare abstract class AbstractTrayArt extends Abstract2dBoxArt {
     get acceptedAttributes(): string[];
     renderBox(): JSX.Element;
 }
-
-                  

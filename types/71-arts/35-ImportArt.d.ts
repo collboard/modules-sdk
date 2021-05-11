@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IVector } from 'xyzt';
+import { IVector } from 'xyzt';
 import { string_url } from '../40-utils/typeAliases';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
@@ -12,7 +10,7 @@ import { Abstract2dArt } from './26-Abstract2dArt';
  * @collboard-modules-sdk
  */
 export declare enum ImportStrategy {
-    Materialize = "MATERIALIZE"
+    Materialize = 'MATERIALIZE',
 }
 /**
  * ImportArt is art for importing external content into the board.
@@ -30,8 +28,8 @@ export declare class ImportArt extends Abstract2dArt {
      * @param strategy should be import live-linked or just destroyed and converted to copyied objects?
      */
     constructor(source: string_url, strategy: ImportStrategy);
-    get topLeftCorner(): import("xyzt").IVectorObject;
-    get bottomRightCorner(): import("xyzt").IVectorObject;
+    get topLeftCorner(): import('xyzt').IVectorObject;
+    get bottomRightCorner(): import('xyzt').IVectorObject;
     isNear(point2: IVector): boolean;
     get acceptedAttributes(): never[];
     render(selected: boolean): null;
@@ -39,5 +37,3 @@ export declare class ImportArt extends Abstract2dArt {
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */
-
-                  

@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { string_url_image } from '../40-utils/typeAliases';
 import { Abstract2dBoxArt } from './27-Abstract2dBoxArt';
 /**
@@ -18,5 +16,3 @@ export declare class ImageArt extends Abstract2dBoxArt {
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */
-
-                  

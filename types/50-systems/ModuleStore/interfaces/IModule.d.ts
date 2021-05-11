@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IDestroyable } from '../../../40-utils/destroyables/IDestroyable';
+import { IDestroyable } from '../../../40-utils/destroyables/IDestroyable';
 import { IAwaitable } from '../../../40-utils/IAwaitable';
 import { IFactorable, IFactory } from '../../../40-utils/IFactory';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
@@ -18,5 +16,3 @@ export interface IModuleDefinition {
     setup: IModuleSetup;
 }
 export declare type IModuleSetup = (systems: ISystems) => IAwaitable<IDestroyable>;
-
-                  

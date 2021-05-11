@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { Vector } from 'xyzt';
+import { Vector } from 'xyzt';
 import { string_mime_type_with_wildcard } from '../../../40-utils/typeAliases';
 /**
  * This represents support for one file type for example some mime type or text file with some structure
@@ -22,11 +20,5 @@ export interface IFileImportSupporter {
     /**
      *  processFile it will either import file into the board OR call next to pass responsibility to another supporter
      */
-    processFile: (options: {
-        boardPosition: Vector;
-        file: Blob;
-        next: () => void;
-    }) => Promise<void>;
+    processFile: (options: { boardPosition: Vector; file: Blob; next: () => void }) => Promise<void>;
 }
-
-                  

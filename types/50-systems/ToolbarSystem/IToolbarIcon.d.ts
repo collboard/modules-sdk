@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { IIconAnonymous } from '../../30-components/menu/IIconAnonymous';
 import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
 import { IAwaitable } from '../../40-utils/IAwaitable';
@@ -44,5 +42,3 @@ export interface IToolbarIcon extends IIconAnonymous {
      */
     menu?: () => JSX.Element;
 }
-
-                  

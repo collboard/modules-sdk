@@ -1,14 +1,14 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { string_uuid } from '../../40-utils/typeAliases';
+import { string_uuid } from '../../40-utils/typeAliases';
 import { AbstractSystem } from '../AbstractSystem';
 import { IBoardApiIdentity, IConnectionIdentity, IInstanceIdentity } from './IIdentity';
 /**
  * IdentitySystem identifies the User by a pseudonym.
  * TODO: Rename all UUID UPPERCASE strings to Uuid
+ *
+ * @collboard-system
  */
 export declare class IdentitySystem extends AbstractSystem {
     readonly instanceUUID: string_uuid;
@@ -23,5 +23,3 @@ export declare class IdentitySystem extends AbstractSystem {
     createConnectionIdentity(boardApiIdentity: IBoardApiIdentity): IConnectionIdentity;
     private track;
 }
-
-                  

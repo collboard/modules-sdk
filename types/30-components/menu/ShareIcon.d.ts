@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import React from 'react';
+import React from 'react';
 import { RoutingSystem } from '../../50-systems/RoutingSystem/0-RoutingSystem';
 interface IShareIconProps {
     routingSystem: RoutingSystem;
@@ -21,5 +19,3 @@ export declare class ShareIcon extends React.Component<IShareIconProps, IShareIc
     render(): JSX.Element;
 }
 export {};
-
-                  

@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IFactorable } from '../../../40-utils/IFactory';
+import { IFactorable } from '../../../40-utils/IFactory';
 import { IModule, IModuleFactory } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 /**
@@ -14,9 +12,11 @@ import { IModuleManifest } from '../interfaces/IModuleManifest';
  *
  * @collboard-modules-sdk
  */
-export declare function makeMultiModule(modulesOrProtomodule: {
-    manifest?: IModuleManifest;
-    modules: IFactorable<IModule[]>;
-} | IFactorable<IModule[]>): IModuleFactory;
-
-                  
+export declare function makeMultiModule(
+    modulesOrProtomodule:
+        | {
+              manifest?: IModuleManifest;
+              modules: IFactorable<IModule[]>;
+          }
+        | IFactorable<IModule[]>,
+): IModuleFactory;

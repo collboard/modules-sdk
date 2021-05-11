@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { Vector } from 'xyzt';
+import { Vector } from 'xyzt';
 import { Commit } from './10-database/Commit';
 import { Serializer } from './50-systems/Serializer/0-Serializer';
 import { AbstractArt } from './71-arts/20-AbstractArt';
@@ -31,5 +29,3 @@ export declare class CollboardApp {
 /**
 TODO: This file is too big
  */
-
-                  

@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IVector } from 'xyzt';
+import { IVector } from 'xyzt';
 export interface IImportFileOptions {
     /**
      * TODO: Use here xyzt coords to allow consumer to use different coord system and reference for example screenCenteredPosition
@@ -17,5 +15,3 @@ export interface IImportFileOptions {
      */
     file: Blob | Blob[];
 }
-
-                  

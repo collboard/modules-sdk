@@ -1,16 +1,17 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IDestroyable } from '../../../40-utils/destroyables/IDestroyable';
+import { IDestroyable } from '../../../40-utils/destroyables/IDestroyable';
 import { ISyncer } from '../interfaces/ISyncer';
 import { AbstractSyncer } from './AbstractSyncer';
 /**
  * RouteSyncer install/uninstall modules according to the app URI
+ *
+ * @private
+ * @collboard-system
  */
 export declare class RouteSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
-    modulesStorage: import("../interfaces/IModulesStorage").IModulesStorage;
+    modulesStorage: import('../interfaces/IModulesStorage').IModulesStorage;
     private subscription;
     protected initSyncer(): Promise<void>;
     /**
@@ -23,5 +24,3 @@ export declare class RouteSyncer extends AbstractSyncer implements ISyncer, IDes
     triggerErrorForModule(error: Error): Promise<void>;
     destroy(): Promise<void>;
 }
-
-                  

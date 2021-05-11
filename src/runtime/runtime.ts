@@ -9,7 +9,7 @@
         // Note: window->declareModule will be replaced by some unique javascript name
         export const declareModule = (window as any).declareModule;
 
-        // Note: here is all stuff marked with "@collboard-modules-sdk"
+        // Note: here is all stuff marked with "@collboard SDK"
         
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/40-utils/Additional.d.ts
                     export const Additional = (window as any).CollboardSdk.Additional;

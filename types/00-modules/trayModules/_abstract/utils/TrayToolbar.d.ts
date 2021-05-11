@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import * as React from 'react';
+import * as React from 'react';
 import { TouchController } from 'touchcontroller';
 import { ITrayDefinition } from '../TrayItemTypes';
 export interface ITrayToolbarProps {
@@ -26,5 +24,3 @@ export declare class TrayToolbar extends React.Component<ITrayToolbarProps, ITra
     render(): JSX.Element;
 }
 export {};
-
-                  

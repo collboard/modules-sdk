@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import 'moment/locale/cs';
+import 'moment/locale/cs';
 import 'moment/locale/sk';
 import * as React from 'react';
 import { Observable } from 'rxjs';
@@ -28,6 +26,8 @@ export interface ITranslationMessages {
 }
 /**
  * TranslationsSystem manages messages across core, systems and modules.
+ *
+ * @collboard-system
  */
 export declare class TranslationsSystem extends AbstractSystem {
     private translateMessagesRecord;
@@ -41,20 +41,24 @@ export declare class TranslationsSystem extends AbstractSystem {
     set language(language: string_tranlate_language);
     push(...translateMessages: ITranslateMessage[]): void;
     private missingTranslation;
-    translate(nameNN: string_tranlate_name_not_normalized, note?: string, parameters?: {
-        [key: string]: string;
-    }): string;
+    translate(
+        nameNN: string_tranlate_name_not_normalized,
+        note?: string,
+        parameters?: {
+            [key: string]: string;
+        },
+    ): string;
     replacer: IReplacer;
-    Translate(props: React.PropsWithChildren<{
-        name: string_tranlate_name_not_normalized;
-        html?: boolean;
-        parameters?: any;
-    }>): JSX.Element;
+    Translate(
+        props: React.PropsWithChildren<{
+            name: string_tranlate_name_not_normalized;
+            html?: boolean;
+            parameters?: any;
+        }>,
+    ): JSX.Element;
     useTemplate(html: string): string;
     pickMessage(messageTranslation: string | Record<string_tranlate_language, string>): string;
     private get preferedLanguages();
     private get secondaryLanguage();
     showDateAndTime(date: Date | string): string;
 }
-
-                  

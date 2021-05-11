@@ -1,10 +1,18 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IFlags } from '../../../40-utils/flagsToObject';
-import { string_char_emoji, string_email, string_license, string_module_category, string_module_name, string_person_fullname, string_url, string_url_image, string_version } from '../../../40-utils/typeAliases';
+import { IFlags } from '../../../40-utils/flagsToObject';
+import {
+    string_char_emoji,
+    string_email,
+    string_license,
+    string_module_category,
+    string_module_name,
+    string_person_fullname,
+    string_url,
+    string_url_image,
+    string_version,
+} from '../../../40-utils/typeAliases';
 import { string_tranlate_language } from '../../TranslationsSystem/0-TranslationsSystem';
 import { IDependenciesRecord } from './IDependencies';
 /**
@@ -49,13 +57,12 @@ export interface IModuleManifestAuthor {
     url?: string_url;
 }
 export declare const internalModule: true;
-export declare const hidden: true;
 export declare const inDevelopment: true;
 export declare const inDevelopmentPublishedAsExperimental: true;
 export declare const deprecated: true;
-export declare type IModuleManifestTranslation = string | (Record<string_tranlate_language, string> & {
-    en?: string;
-    cs?: string;
-});
-
-                  
+export declare type IModuleManifestTranslation =
+    | string
+    | (Record<string_tranlate_language, string> & {
+          en?: string;
+          cs?: string;
+      });

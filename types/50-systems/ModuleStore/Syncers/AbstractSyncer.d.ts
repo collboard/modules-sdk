@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { string_module_name } from '../../../40-utils/typeAliases';
+import { string_module_name } from '../../../40-utils/typeAliases';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../../AbstractSystem';
 import { IDependenciesRecord, IDependency } from '../interfaces/IDependencies';
@@ -18,15 +16,14 @@ export declare abstract class AbstractSyncer extends AbstractSystem implements I
     abstract modulesStorage: IModulesStorage;
     private moduleInstaller;
     private queue;
-    get statusOf(): (moduleName: string) => import("rxjs").BehaviorSubject<import("../ModuleStatus").ModuleStatus>;
-    get installations(): import("../ModuleInstallation").ModuleInstallation[];
+    get statusOf(): any;
+    get installations(): import('../ModuleInstallation').ModuleInstallation[];
     install(dependency: IDependency, systems: ISystems, syncerName?: string): Promise<void>;
     uninstall(moduleName: string_module_name): Promise<void>;
+    uninstallAll(): Promise<void>;
     protected init(): Promise<void>;
     protected initSyncer(): void | Promise<void>;
     private currentDependencies;
     sync(dependenciesTarget: IDependenciesRecord): Promise<void>;
     destroy(): Promise<void>;
 }
-
-                  

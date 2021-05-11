@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { string_uri_part, string_url, string_version } from '../../40-utils/typeAliases';
 import { ISystems } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
@@ -13,6 +11,8 @@ import { ICreateBoardOptions } from './ICreateBoardOptions';
 import { IGetMyBoardsResponse } from './interfaces/IGetMyBoards';
 /**
  * ApiClient provides API calls to the remote server.
+ *
+ * @collboard-system
  */
 export declare class ApiClient extends AbstractSystem {
     private apiUrl;
@@ -33,5 +33,3 @@ export declare class ApiClient extends AbstractSystem {
     private post;
     private processResponse;
 }
-
-                  

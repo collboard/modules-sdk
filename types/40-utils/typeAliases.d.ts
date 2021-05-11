@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /**
+/**
  * Theese string_whatever are just semantic helpers:
  * @collboard-modules-sdk
  */
@@ -91,7 +89,42 @@ export declare type string_license = string;
 /**
  * CSS curson;
  */
-export declare type string_css_cursor = 'alias' | 'all-scroll' | 'auto' | 'cell' | 'context-menu' | 'col-resize' | 'copy' | 'crosshair' | 'default' | 'e-resize' | 'ew-resize' | 'grab' | 'grabbing' | 'help' | 'move' | 'n-resize' | 'ne-resize' | 'nesw-resize' | 'ns-resize' | 'nw-resize' | 'nwse-resize' | 'no-drop' | 'none' | 'not-allowed' | 'pointer' | 'progress' | 'row-resize' | 's-resize' | 'se-resize' | 'sw-resize' | 'text' | 'w-resize' | 'wait' | 'zoom-in' | 'zoom-out';
+export declare type string_css_cursor =
+    | 'alias'
+    | 'all-scroll'
+    | 'auto'
+    | 'cell'
+    | 'context-menu'
+    | 'col-resize'
+    | 'copy'
+    | 'crosshair'
+    | 'default'
+    | 'e-resize'
+    | 'ew-resize'
+    | 'grab'
+    | 'grabbing'
+    | 'help'
+    | 'move'
+    | 'n-resize'
+    | 'ne-resize'
+    | 'nesw-resize'
+    | 'ns-resize'
+    | 'nw-resize'
+    | 'nwse-resize'
+    | 'no-drop'
+    | 'none'
+    | 'not-allowed'
+    | 'pointer'
+    | 'progress'
+    | 'row-resize'
+    | 's-resize'
+    | 'se-resize'
+    | 'sw-resize'
+    | 'text'
+    | 'w-resize'
+    | 'wait'
+    | 'zoom-in'
+    | 'zoom-out';
 /**
  * Semantic helper for attributes; case insensitive; For example "color"
  * TODO: Maybe move where is AttributesManager
@@ -102,5 +135,3 @@ export declare type string_attribute = string;
  * TODO: Maybe move where is AttributesManager
  */
 export declare type string_context = string;
-
-                  

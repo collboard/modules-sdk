@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { string_mime_type } from '../../../40-utils/typeAliases';
+import { string_mime_type } from '../../../40-utils/typeAliases';
 import { IArtContainer } from './IArtContainer';
 /**
  * This represents support for one file type export
@@ -25,5 +23,3 @@ export interface IFileExportSupporter {
      */
     createFile: (artContainers: IArtContainer[]) => Promise<Blob | string | null>;
 }
-
-                  

@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Registration } from './Registration';
 /**
  * @deprecated TODO: instead of this interface use shared IRegisterItemsOptions
@@ -23,7 +21,11 @@ interface IRegisterItemsInSubjectOfArrays<T> {
  * @param base will automatically triggers next in given subject and when unregistered triggers another one
  * @param add is array of items which will be added into base
  */
-export declare function registerItemsInSubjectOfArrays<T>({ currentValue, base, add, compare, errorReporting, }: IRegisterItemsInSubjectOfArrays<T>): Registration;
+export declare function registerItemsInSubjectOfArrays<T>({
+    currentValue,
+    base,
+    add,
+    compare,
+    errorReporting,
+}: IRegisterItemsInSubjectOfArrays<T>): Registration;
 export {};
-
-                  

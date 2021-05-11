@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { Abstract2dBoxArt } from './27-Abstract2dBoxArt';
 /**
  * TODO: Maybe rename to HtmlArt - we need to fugure out consistent namings of acronyms in CamelCasingLolVsWTF
@@ -19,5 +17,3 @@ export declare class HTMLArt extends Abstract2dBoxArt {
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */
-
-                  

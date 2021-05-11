@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { IVector, Vector } from 'xyzt';
 import { IFramable } from '../50-systems/ExportImportSystem/0-ExportSystem';
 import { Abstract2dArt } from './26-Abstract2dArt';
@@ -15,7 +13,7 @@ export declare enum ShapeName {
     Circle = 1,
     Line = 2,
     Triangle = 3,
-    TriangleRight = 4
+    TriangleRight = 4,
 }
 /**
  * @collboard-modules-sdk
@@ -26,7 +24,7 @@ export declare class ShapeArt extends Abstract2dArt implements IFramable {
     weight: number;
     private privateSize;
     constructor(shape: ShapeName, color: string, weight: number, shift: IVector, privateSize: IVector);
-    get topLeftCorner(): import("xyzt").IVectorObject;
+    get topLeftCorner(): import('xyzt').IVectorObject;
     get bottomRightCorner(): Vector;
     get size(): IVector;
     set size(newSize: IVector);
@@ -37,5 +35,3 @@ export declare class ShapeArt extends Abstract2dArt implements IFramable {
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */
-
-                  

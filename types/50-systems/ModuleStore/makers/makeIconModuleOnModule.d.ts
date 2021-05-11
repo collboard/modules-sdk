@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { ISystems } from '../../00-SystemsContainer/ISystems';
+import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { ToolbarName } from '../../ToolbarSystem/0-ToolbarSystem';
 import { IToolbarIcon } from '../../ToolbarSystem/IToolbarIcon';
 import { IModule, IModuleDefinition } from '../interfaces/IModule';
@@ -20,5 +18,3 @@ export declare function makeIconModuleOnModule(protoModule: {
     icon: IToolbarIcon | ((systemsContainer: ISystems) => IToolbarIcon);
     moduleActivatedByIcon: IModule;
 }): IModuleDefinition;
-
-                  

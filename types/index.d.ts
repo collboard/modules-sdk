@@ -1,15 +1,12 @@
-
-        import { IModule } from './50-systems/ModuleStore/interfaces/IModule';
-
-        
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
+import { IModule } from './50-systems/ModuleStore/interfaces/IModule';
 
-        export declare function declareModule(module: IModule): void;
+export declare function declareModule(module: IModule): void;
 
-        // Note: here is all stuff marked with "@collboard-modules-sdk"
-        export * from './40-utils/Additional';
+// Note: here is all stuff marked with "@collboard SDK"
+export * from './40-utils/Additional';
 export * from './40-utils/blobToDataURI';
 export * from './40-utils/capitalizeFirstLetter';
 export * from './40-utils/classNames';
@@ -96,4 +93,3 @@ export * from './72-tools/behaviors/IBehavoirProps';
 export * from './72-tools/behaviors/selectionTool/selectionToolDraggingBehavior';
 export * from './72-tools/behaviors/selectionTool/selectionToolScalingBehavior';
 export * from './72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior';
-    

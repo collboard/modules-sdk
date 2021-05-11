@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { AbstractMesh, Scene } from 'babylonjs';
+import { AbstractMesh, Scene } from 'babylonjs';
 import { IVector, Vector } from 'xyzt';
 import { string_attribute } from '../../40-utils/typeAliases';
 import { Abstract3dArt, IRenderCache } from '../../50-systems/CollSpace/Abstract3dArt';
@@ -17,7 +15,7 @@ export declare abstract class Abstract3dBoxArt extends Abstract3dArt<IRenderCach
     constructor(_size?: IVector);
     get size(): IVector;
     set size(size: IVector);
-    get topLeftCorner(): import("xyzt").IVectorObject;
+    get topLeftCorner(): import('xyzt').IVectorObject;
     get bottomRightCorner(): Vector;
     get acceptedAttributes(): string_attribute[];
     render(selected: boolean, scene: Scene, renderCache?: IRenderCache): IRenderCache;
@@ -26,5 +24,3 @@ export declare abstract class Abstract3dBoxArt extends Abstract3dArt<IRenderCach
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */
-
-                  

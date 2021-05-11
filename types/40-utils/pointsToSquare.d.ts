@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IVector, Vector } from 'xyzt';
+import { IVector, Vector } from 'xyzt';
 /**
  * @deprecated this should be using xyzt BoundingBox
  */
@@ -15,5 +13,3 @@ export declare type square = {
  * @deprecated this should be using xyzt BoundingBox
  */
 export declare function pointsToSquare(point1: IVector, point2: IVector): square;
-
-                  

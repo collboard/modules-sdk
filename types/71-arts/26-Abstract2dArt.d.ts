@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { IVector } from 'xyzt';
 import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
 import { AbstractPlacedArt } from './25-AbstractPlacedArt';
@@ -23,5 +21,3 @@ export declare abstract class Abstract2dArt extends AbstractPlacedArt {
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */
-
-                  

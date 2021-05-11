@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { IVector, Vector } from 'xyzt';
 import { Abstract2dArt } from '../../71-arts/26-Abstract2dArt';
 export declare class CurtainArt extends Abstract2dArt {
@@ -17,9 +15,7 @@ export declare class CurtainArt extends Abstract2dArt {
     get curtainVisible(): number;
     set curtainVisible(toggle: number);
     get acceptedAttributes(): string[];
-    get topLeftCorner(): import("xyzt").IVectorObject;
+    get topLeftCorner(): import('xyzt').IVectorObject;
     get bottomRightCorner(): Vector;
     render(): JSX.Element;
 }
-
-                  

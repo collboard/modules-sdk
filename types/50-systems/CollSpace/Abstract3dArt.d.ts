@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { AbstractMesh, Scene } from 'babylonjs';
+import { AbstractMesh, Scene } from 'babylonjs';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 export interface IRenderCache {
     mesh: AbstractMesh;
@@ -20,5 +18,3 @@ export declare abstract class Abstract3dArt<TRenderCache extends IRenderCache> e
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */
-
-                  

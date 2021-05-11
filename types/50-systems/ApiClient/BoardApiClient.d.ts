@@ -1,15 +1,18 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
+import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
 import { string_uri_part, string_url } from '../../40-utils/typeAliases';
 import { ISystems } from '../00-SystemsContainer/ISystems';
 import { MaterialArtVersioningSystem } from '../ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { IArtVersioningSystem } from '../ArtVersionSystem/IArtVersionSystem';
 import { IClosePreventable } from '../ClosePreventionSystem/IClosePreventable';
-export declare class BoardApiClient extends MaterialArtVersioningSystem implements IClosePreventable, IDestroyable, IArtVersioningSystem {
+/**
+ * @collboard-system
+ */
+export declare class BoardApiClient
+    extends MaterialArtVersioningSystem
+    implements IClosePreventable, IDestroyable, IArtVersioningSystem {
     private apiUrl;
     private uriId;
     private socketClient;
@@ -34,5 +37,3 @@ export declare class BoardApiClient extends MaterialArtVersioningSystem implemen
     private syncLocalObjectsToServer;
     get canBeClosed(): boolean;
 }
-
-                  

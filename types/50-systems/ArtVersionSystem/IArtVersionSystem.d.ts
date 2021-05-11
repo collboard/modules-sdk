@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Commit } from '../../10-database/Commit';
 import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
 import { string_uuid } from '../../40-utils/typeAliases';
@@ -43,5 +41,3 @@ export interface IArtVersioningSystem extends IDestroyable {
     setCommitWasPersisted(commitId: string_uuid, id: number): void;
     _USE_ONLY_INSIDE_CORE_pushCommit(...commits: Commit[]): Promise<void>;
 }
-
-                  

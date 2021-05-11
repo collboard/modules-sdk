@@ -1,9 +1,10 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import './../70-attributes/ColorAttributeModule';
+import './../50-systems/ModuleStore/connectors/ModulesStorage';
+import './../50-systems/ModuleStore/interfaces/IModulesStorage';
+import './../50-systems/ModuleStore/Syncers/StorageSyncer';
+import './../70-attributes/ColorAttributeModule';
 import './../70-attributes/FontSizeAttributeModule';
 import './../70-attributes/FontStyleAttributeModule';
 import './../70-attributes/ListStyleAttributeModule';
@@ -37,7 +38,9 @@ import './colors/RainbowColorModule';
 import './curtain/CurtainArtModule';
 import './curtain/CurtainControlsAttributeModule';
 import './curtain/CurtainTool';
-import './development/DevelopmentModule';
+import './development/DevelopmentAboutModule';
+import './development/DevelopmentColldevModule';
+import './development/DevelopmentWarningModule';
 import './dice/DiceArtModule';
 import './dice/DiceControlsAttributeModule';
 import './dice/DiceSidesAttributeModule';
@@ -94,5 +97,3 @@ import './ui/clone/CloneBoardButton';
 import './weightPickers/Weight2AttributeModule';
 import './xmas/CollboardXmasLogoModule';
 import './xmas/XmasSnowingModule';
-
-                  

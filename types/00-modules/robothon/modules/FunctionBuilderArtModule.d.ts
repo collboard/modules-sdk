@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { IVector, Vector } from 'xyzt';
 import { ISystems } from '../../../50-systems/00-SystemsContainer/ISystems';
 import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
@@ -39,5 +37,3 @@ export declare class FunctionBuilderArt extends Abstract2dArt {
     evaluate(x: number, seenNodes: string[], systemsContainer: ISystems): number | null;
     render(_selected: boolean, systemsContainer: ISystems): JSX.Element;
 }
-
-                  

@@ -1,6 +1,9 @@
+
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
+// tslint:disable:class-name
+// tslint:disable-next-line:no-namespace
 export namespace IColldevSyncerSocket {
     export interface identify {
         // TODO: domain: string_url;

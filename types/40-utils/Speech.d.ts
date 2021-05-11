@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 /**
  *
  * TODO: To some system?
@@ -21,5 +19,3 @@ export declare class Speech {
      */
     private listen;
 }
-
-                  

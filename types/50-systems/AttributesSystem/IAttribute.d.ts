@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { string_attribute } from '../../40-utils/typeAliases';
+import { string_attribute } from '../../40-utils/typeAliases';
 export declare type IAttribute = IAttributeString | IAttributeNumber | IAttributeBoolean | IAttributeObject;
 export declare type attribute_value = number | string | boolean | object;
 interface IAttributeCommon {
@@ -29,5 +27,3 @@ export interface IAttributeObject extends IAttributeCommon {
     defaultValue: any;
 }
 export {};
-
-                  

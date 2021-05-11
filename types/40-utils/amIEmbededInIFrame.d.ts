@@ -1,8 +1,4 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  export declare function amIEmbededInIFrame(): boolean;
-
-                  
+export declare function amIEmbededInIFrame(): boolean;

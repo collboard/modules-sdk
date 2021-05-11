@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IAwaitable } from '../IAwaitable';
+import { IAwaitable } from '../IAwaitable';
 import { Destroyable } from './Destroyable';
 import { IDestroyable } from './IDestroyable';
 /**
@@ -34,5 +32,3 @@ export declare class Queue<T> extends Destroyable implements IDestroyable {
     task(runner: () => IAwaitable<T>): Promise<T>;
     destroy(): Promise<void>;
 }
-
-                  

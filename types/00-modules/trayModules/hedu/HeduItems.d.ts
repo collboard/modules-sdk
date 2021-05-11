@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { ITrayItemList, ITrayToolbarItems } from '../_abstract/TrayItemTypes';
+import { ITrayItemList, ITrayToolbarItems } from '../_abstract/TrayItemTypes';
 export declare class HeduItemsGenerator {
     static privateItems: ITrayItemList;
     static privateToolbar: ITrayToolbarItems;
@@ -12,5 +10,3 @@ export declare class HeduItemsGenerator {
     private static createItems;
     private static createToolbar;
 }
-
-                  

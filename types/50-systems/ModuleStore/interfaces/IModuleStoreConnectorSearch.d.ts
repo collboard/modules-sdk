@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IJson } from 'everstorage';
+import { IJson } from 'everstorage';
 import { string_attribute, string_module_category } from '../../../40-utils/typeAliases';
 import { IDependency } from './IDependencies';
 import { IModuleManifest } from './IModuleManifest';
@@ -19,5 +17,3 @@ export declare const DEFAULT_IModuleStoreConnectorSearchQuery: IModuleStoreConne
 export interface IModuleStoreConnectorSearchResult {
     modules: Array<IDependency & Partial<IModuleManifest>>;
 }
-
-                  

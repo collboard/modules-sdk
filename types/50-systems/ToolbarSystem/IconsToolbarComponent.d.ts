@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import * as React from 'react';
+import * as React from 'react';
 import { IconsToolbar } from './IconsToolbar';
 interface IIconsToolbarComponentProps {
     section: number;
@@ -15,5 +13,3 @@ export declare class IconsToolbarComponent extends React.Component<IIconsToolbar
     render(): JSX.Element;
 }
 export {};
-
-                  

@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IDestroyable } from 'everstorage';
+import { IDestroyable } from 'everstorage';
 import { Destroyable } from './destroyables/Destroyable';
 /**
  * Wraps one function and cache its results
@@ -19,5 +17,3 @@ export declare class FunctionCache<TInput, TOutput> extends Destroyable implemen
     execute(input: TInput): Promise<TOutput>;
     destroy(): Promise<void>;
 }
-
-                  

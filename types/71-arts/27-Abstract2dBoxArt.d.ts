@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { IVector, Vector } from 'xyzt';
 import { string_attribute } from '../40-utils/typeAliases';
 import { Abstract2dArt } from './26-Abstract2dArt';
@@ -24,7 +22,7 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
     originalSize: Vector;
     get size(): IVector;
     set size(size: IVector);
-    get topLeftCorner(): import("xyzt").IVectorObject;
+    get topLeftCorner(): import('xyzt').IVectorObject;
     get bottomRightCorner(): Vector;
     get measured(): boolean;
     get acceptedAttributes(): string_attribute[];
@@ -35,5 +33,3 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */
-
-                  

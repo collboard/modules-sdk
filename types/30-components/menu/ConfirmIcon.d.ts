@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import * as React from 'react';
+import * as React from 'react';
 import { string_icon } from './icons';
 interface IConfirmIconProps {
     icon: string_icon;
@@ -24,5 +22,3 @@ export declare class ConfirmIcon extends React.Component<IConfirmIconProps, ICon
     render(): JSX.Element;
 }
 export {};
-
-                  

@@ -1,13 +1,13 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IVector, Vector } from 'xyzt';
+import { IVector, Vector } from 'xyzt';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 import { AbstractSystem } from '../AbstractSystem';
 /**
  * CollSpace manages 3D objects rendered by WebGL (BABYLON JS) and provides all the tooling around the 3D scene, positioning, textures, materials, etc.
+ *
+ * @collboard-system
  */
 export declare class CollSpace extends AbstractSystem {
     private renderCache;
@@ -18,7 +18,9 @@ export declare class CollSpace extends AbstractSystem {
     private get sceneSync();
     private shadowGenerator;
     private createScene;
-    pickPoint(point: IVector): {
+    pickPoint(
+        point: IVector,
+    ): {
         point: Vector;
         normal: Vector;
     };
@@ -32,5 +34,3 @@ export declare class CollSpace extends AbstractSystem {
  *  TODO:
  *
  */
-
-                  

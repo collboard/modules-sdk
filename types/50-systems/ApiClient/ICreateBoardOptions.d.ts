@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { string_url } from '../../40-utils/typeAliases';
+import { string_url } from '../../40-utils/typeAliases';
 export interface ICreateBoardOptions {
     /**
      * If you want to request custom uriId, provide valid debug token.
@@ -16,5 +14,3 @@ export interface ICreateBoardOptions {
     modulesOn?: string | string[];
     modulesOff?: string | string[];
 }
-
-                  

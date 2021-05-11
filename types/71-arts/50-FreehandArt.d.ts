@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { TouchFrame } from 'touchcontroller';
 import { IVector, Vector } from 'xyzt';
 import { Abstract2dArt } from './26-Abstract2dArt';
@@ -33,5 +31,3 @@ export declare class FreehandArt extends Abstract2dArt {
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */
-
-                  

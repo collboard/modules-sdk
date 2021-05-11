@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IArrayable } from '../toArray';
+import { IArrayable } from '../toArray';
 import { string_mime_type_with_wildcard } from '../typeAliases';
 interface IFileDialogueOptions {
     /**
@@ -28,5 +26,3 @@ interface IFileDialogueOptions {
  */
 export declare function fileDialogue({ accept, multiple }: IFileDialogueOptions): Promise<File[]>;
 export {};
-
-                  

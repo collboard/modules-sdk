@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { ISerializable, ISerialized, ISerializeRule } from 'everstorage';
+import { ISerializable, ISerialized, ISerializeRule } from 'everstorage';
 import { Registration } from '../../40-utils/destroyables/Registration';
 import { ISystems } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
@@ -26,5 +24,3 @@ export declare class Serializer<T extends ISerializable> extends AbstractSystem 
     private getSerializeRuleFromSerialized;
     deepClone<TCloned extends T>(instance: TCloned): Promise<TCloned>;
 }
-
-                  

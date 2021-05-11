@@ -1,10 +1,8 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
-import { string_module_name } from '../../40-utils/typeAliases';
+/// <reference types="react" />
+import { string_module_name, string_url } from '../../40-utils/typeAliases';
 /**
  * Similar interface to Notification Web API
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Notification
@@ -37,7 +35,6 @@ export interface INotificationAction {
     readonly icon?: string;
     readonly type?: 'ok' | 'cancel' | 'more';
     readonly onClick?: INotificationCallback;
+    readonly href?: string_url;
 }
 export declare type INotificationCallback = () => void;
-
-                  

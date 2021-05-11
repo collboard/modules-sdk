@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IDestroyable } from './IDestroyable';
+import { IDestroyable } from './IDestroyable';
 import { ITeardownLogic } from './TeardownLogic';
 /**
  * TODO: Unite Registration and Destroyable
@@ -25,7 +23,5 @@ export declare abstract class Destroyable implements IDestroyable {
      * Binds new registration with itself. This registration/destroyable will be destroyed with this.
      * TODO: create remove counterpart to add
      */
-    addSubdestroyable(subdestroyable: ITeardownLogic): this;
+    addSubdestroyable(...subdestroyable: ITeardownLogic[]): this;
 }
-
-                  

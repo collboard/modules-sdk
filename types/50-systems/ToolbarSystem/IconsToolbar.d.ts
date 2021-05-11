@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { Destroyable } from '../../40-utils/destroyables/Destroyable';
+import { Destroyable } from '../../40-utils/destroyables/Destroyable';
 import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
 import { Registration } from '../../40-utils/destroyables/Registration';
 import { ShortcutsSystem } from '../ShortcutsSystem/0-ShortcutsSystem';
@@ -32,5 +30,3 @@ export declare class IconsToolbar extends Destroyable implements IDestroyable {
     registerIcon(icon: IToolbarIcon): Registration;
     destroy(): Promise<void>;
 }
-
-                  

@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Commit } from '../../10-database/Commit';
 import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
 import { string_uuid } from '../../40-utils/typeAliases';
@@ -19,6 +17,8 @@ import { Operation } from './Operation';
 /**
  * ArtVersionSystem synchronizes the arts with the remote server.
  * TODO: This is used a lot so maybe we can figure out some better name
+ *
+ * @collboard-system
  */
 export declare class MaterialArtVersioningSystem extends AbstractSystem implements IDestroyable, IArtVersioningSystem {
     readonly moduleSignature: IModuleSignature;
@@ -61,5 +61,3 @@ export declare class MaterialArtVersioningSystem extends AbstractSystem implemen
     get sortCommitsByOperationId(): Commit[][];
     findCommitsByOperationId(operationId: string_uuid): Commit[];
 }
-
-                  

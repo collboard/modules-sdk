@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 export declare type ITrayItem = {
     content: JSX.Element;
     defaultColor: string;
@@ -30,5 +28,3 @@ export interface ITrayDefinition {
     imageFolder: string;
     className: string;
 }
-
-                  

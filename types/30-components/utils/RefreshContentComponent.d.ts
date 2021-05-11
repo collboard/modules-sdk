@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import * as React from 'react';
+import * as React from 'react';
 interface IRefreshContentComponentProps {
     interval: number;
     content: () => JSX.Element | JSX.Element[];
@@ -11,7 +9,10 @@ interface IRefreshContentComponentProps {
 interface IRefreshContentComponentState {
     content: JSX.Element | JSX.Element[] | null;
 }
-export declare class RefreshContentComponent extends React.Component<IRefreshContentComponentProps, IRefreshContentComponentState> {
+export declare class RefreshContentComponent extends React.Component<
+    IRefreshContentComponentProps,
+    IRefreshContentComponentState
+> {
     state: IRefreshContentComponentState;
     constructor(props: IRefreshContentComponentProps);
     private loop;
@@ -19,5 +20,3 @@ export declare class RefreshContentComponent extends React.Component<IRefreshCon
     render(): JSX.Element | JSX.Element[] | null;
 }
 export {};
-
-                  

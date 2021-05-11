@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { Transform } from 'xyzt';
 import { AbstractBackgroundArt } from '../71-arts/26-AbstractBackgroundArt';
 interface IBoardBackgroundsProps {
@@ -12,5 +10,3 @@ interface IBoardBackgroundsProps {
 }
 export declare function BoardBackgroundsComponent({ backgroundArts, transform }: IBoardBackgroundsProps): JSX.Element;
 export {};
-
-                  

@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /**
+/**
  * @collboard-modules-sdk
  */
 export interface IRegisterItemsOptions<TType, TItem> {
@@ -31,5 +29,3 @@ export interface IRegisterItemsOptions<TType, TItem> {
 /**
  * TODO: Maybe there should exist some object that will represent registrations ad a whole above array/record
  */
-
-                  

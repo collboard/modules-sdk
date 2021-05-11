@@ -1,11 +1,8 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { TouchController } from 'touchcontroller';
+import { TouchController } from 'touchcontroller';
 import { ArtSerializer } from '../../CollboardApp';
-import { ModuleStore } from '../ModuleStore/connectors/0-ModuleStore';
 import { ApiClient } from './../ApiClient/0-ApiClient';
 import { BoardApiClient } from './../ApiClient/BoardApiClient';
 import { AppState } from './../AppState/0-AppState';
@@ -24,10 +21,13 @@ import { GamificationSystem } from './../GamificationSystem/0-GamificationSystem
 import { GenerateSystem } from './../GenerateSystem/0-GenerateSystem';
 import { HintSystem } from './../HintSystem/0-HintSystem';
 import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
+import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
 import { AttributeSupportSyncer } from './../ModuleStore/Syncers/AttributeSupportSyncer';
+import { BusinessSyncer } from './../ModuleStore/Syncers/BusinessSyncer';
 import { CornerstoneSyncer } from './../ModuleStore/Syncers/CornerstoneSyncer';
 import { RouteSyncer } from './../ModuleStore/Syncers/RouteSyncer';
+import { StorageSyncer } from './../ModuleStore/Syncers/StorageSyncer';
 import { NotificationSystem } from './../NotificationSystem/0-NotificationSystem';
 import { PointerSystem } from './../PointerSystem/0-PointerSystem';
 import { RoutingSystem } from './../RoutingSystem/0-RoutingSystem';
@@ -114,12 +114,18 @@ export interface ISystems {
     readonly attributeSupportSyncer: AttributeSupportSyncer;
     readonly attributeSupportSyncerPromise: Promise<AttributeSupportSyncer>;
     readonly attributeSupportSyncerNullable: AttributeSupportSyncer | null;
+    readonly businessSyncer: BusinessSyncer;
+    readonly businessSyncerPromise: Promise<BusinessSyncer>;
+    readonly businessSyncerNullable: BusinessSyncer | null;
     readonly cornerstoneSyncer: CornerstoneSyncer;
     readonly cornerstoneSyncerPromise: Promise<CornerstoneSyncer>;
     readonly cornerstoneSyncerNullable: CornerstoneSyncer | null;
     readonly routeSyncer: RouteSyncer;
     readonly routeSyncerPromise: Promise<RouteSyncer>;
     readonly routeSyncerNullable: RouteSyncer | null;
+    readonly storageSyncer: StorageSyncer;
+    readonly storageSyncerPromise: Promise<StorageSyncer>;
+    readonly storageSyncerNullable: StorageSyncer | null;
     readonly notificationSystem: NotificationSystem;
     readonly notificationSystemPromise: Promise<NotificationSystem>;
     readonly notificationSystemNullable: NotificationSystem | null;
@@ -160,5 +166,3 @@ export interface ISystems {
     readonly artSerializerPromise: Promise<ArtSerializer>;
     readonly artSerializerNullable: ArtSerializer | null;
 }
-
-                  

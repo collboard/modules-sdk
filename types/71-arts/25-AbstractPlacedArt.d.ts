@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IVector } from 'xyzt';
+import { IVector } from 'xyzt';
 import { IBoundingBox } from '../50-systems/ExportImportSystem/interfaces/IBoundingBox';
 import { AbstractArt } from './20-AbstractArt';
 export declare const IS_NEAR_DISTANCE = 20;
@@ -32,5 +30,3 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */
-
-                  

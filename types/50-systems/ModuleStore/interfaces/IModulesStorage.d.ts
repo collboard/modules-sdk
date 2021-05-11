@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { IDestroyable } from 'touchcontroller';
+import { IDestroyable } from 'touchcontroller';
 import { string_module_name } from '../../../40-utils/typeAliases';
 import { IModule, IModuleDefinition } from './IModule';
 /**
@@ -19,5 +17,3 @@ export interface IModulesStorage extends IDestroyable {
      */
     readonly modules: Record<string_module_name, IModuleDefinition>;
 }
-
-                  

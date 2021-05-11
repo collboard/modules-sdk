@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  import { string_char, string_char_emoji } from '../../40-utils/typeAliases';
+import { string_char, string_char_emoji } from '../../40-utils/typeAliases';
 import { string_icon } from './icons';
 /**
  * Icon (visual) which can appear on toolbars, buttons,... This interface just represents icon without context and placement (vs. IToolbarIcon)
@@ -20,5 +18,3 @@ export interface IIconAnonymous {
     icon?: string_icon;
     className?: string;
 }
-
-                  

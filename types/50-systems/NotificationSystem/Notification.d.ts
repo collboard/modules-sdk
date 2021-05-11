@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  /// <reference types="react" />
+/// <reference types="react" />
 import { string_module_name } from '../../40-utils/typeAliases';
 import { NotificationSystem } from './0-NotificationSystem';
 import { INotification, INotificationAction, INotificationCallback } from './INotification';
@@ -21,5 +19,3 @@ export declare class Notification implements INotification {
     publish(notificationSystem: NotificationSystem): void;
     constrict(): void;
 }
-
-                  

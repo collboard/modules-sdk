@@ -1,9 +1,7 @@
-
-                  
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-                  export declare type IReplacer = (key: string, note?: string) => string;
+export declare type IReplacer = (key: string, note?: string) => string;
 interface ITemplateArguments {
     template: string;
     replace?: IReplacer;
@@ -15,5 +13,3 @@ interface ITemplateArguments {
  */
 export declare function applyParamsOnTemplate({ template, params, replace }: ITemplateArguments): string;
 export {};
-
-                  
