@@ -24,8 +24,7 @@
         "postinstall": "tsc",
         "preversion": "tsc && npm run test",
         "postversion": "TODO: !!! npm publish !!!! How to deal with the versioning - keep connedted, suffix or split",
-        "documentation": "typedoc",
-        "documentation-commit": "git diff --exit-code && npm run documentation && git add docs && git commit --allow-empty -m \"Documentation\""
+        "documentation": "typedoc"
     },
     "dependencies": {
         "@types/babylonjs": "^2.4.1",
