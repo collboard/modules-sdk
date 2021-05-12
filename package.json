@@ -19,11 +19,10 @@
         "colldev": "dist/colldev/main.js"
     },
     "scripts": {
-        "test": "TODO: !!!",
+        "test": "echo \"TODO: !!! Implement\"",
         "develop": "ts-node dist/colldev/colldev.js",
         "postinstall": "tsc",
-        "preversion": "tsc && npm run test",
-        "postversion": "TODO: !!! npm publish !!!! How to deal with the versioning - keep connedted, suffix or split",
+        "prepare": "tsc && npm run test",
         "documentation": "typedoc"
     },
     "dependencies": {
