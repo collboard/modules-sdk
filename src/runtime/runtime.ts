@@ -232,8 +232,85 @@ export const rotationToBabylon = (window as any).CollboardSdk.rotationToBabylon;
 export const RequireOnlyOne = (window as any).CollboardSdk.RequireOnlyOne;
                     
 
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/00-SystemsContainer/ISystems.d.ts
+                    export const ISystems = (window as any).CollboardSdk.ISystems;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ApiClient/0-ApiClient.d.ts
+                    export const ApiClient = (window as any).CollboardSdk.ApiClient;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ApiClient/BoardApiClient.d.ts
+                    export const BoardApiClient = (window as any).CollboardSdk.BoardApiClient;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/AppState/0-AppState.d.ts
+                    export const AppState = (window as any).CollboardSdk.AppState;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ArtVersionSystem/0-MaterialArtVersioningSystem.d.ts
+                    export const MaterialArtVersioningSystem = (window as any).CollboardSdk.MaterialArtVersioningSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ArtVersionSystem/0-VirtualArtVersioningSystem.d.ts
+                    export const VirtualArtVersioningSystem = (window as any).CollboardSdk.VirtualArtVersioningSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/AttributesSystem/0-AttributesSystem.d.ts
+                    export const AttributesSystem = (window as any).CollboardSdk.AttributesSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ClosePreventionSystem/0-ClosePreventionSystem.d.ts
+                    export const ClosePreventionSystem = (window as any).CollboardSdk.ClosePreventionSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/CollSpace/0-CollSpace.d.ts
+                    export const CollSpace = (window as any).CollboardSdk.CollSpace;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/CreateSystem/0-CreateSystem.d.ts
+                    export const CreateSystem = (window as any).CollboardSdk.CreateSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ExportImportSystem/0-ExportSystem.d.ts
+                    export const ExportSystem = (window as any).CollboardSdk.ExportSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ExportImportSystem/0-ImportSystem.d.ts
+                    export const ImportSystem = (window as any).CollboardSdk.ImportSystem;
+                    
+
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts
                     export const ExtraJsxPlace = (window as any).CollboardSdk.ExtraJsxPlace;
+export const ExtraJsxSystem = (window as any).CollboardSdk.ExtraJsxSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/FilepickSystem/0-FilepickSystem.d.ts
+                    export const FilepickSystem = (window as any).CollboardSdk.FilepickSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/FractalSystem/0-FractalSystem.d.ts
+                    export const FractalSystem = (window as any).CollboardSdk.FractalSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/GamificationSystem/0-GamificationSystem.d.ts
+                    export const GamificationSystem = (window as any).CollboardSdk.GamificationSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/GenerateSystem/0-GenerateSystem.d.ts
+                    export const GenerateSystem = (window as any).CollboardSdk.GenerateSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/HintSystem/0-HintSystem.d.ts
+                    export const HintSystem = (window as any).CollboardSdk.HintSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/IdentitySystem/0-IdentitySystem.d.ts
+                    export const IdentitySystem = (window as any).CollboardSdk.IdentitySystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ModuleStore/connectors/0-ModuleStore.d.ts
+                    export const ModuleStore = (window as any).CollboardSdk.ModuleStore;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ModuleStore/makers/makeArticlesSetModule.d.ts
@@ -274,6 +351,74 @@ export const RequireOnlyOne = (window as any).CollboardSdk.RequireOnlyOne;
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ModuleStore/makers/makeMultiModule.d.ts
                     export const makeMultiModule = (window as any).CollboardSdk.makeMultiModule;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ModuleStore/Syncers/ArtSupportSyncer.d.ts
+                    export const ArtSupportSyncer = (window as any).CollboardSdk.ArtSupportSyncer;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ModuleStore/Syncers/AttributeSupportSyncer.d.ts
+                    export const AttributeSupportSyncer = (window as any).CollboardSdk.AttributeSupportSyncer;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ModuleStore/Syncers/BusinessSyncer.d.ts
+                    export const BusinessSyncer = (window as any).CollboardSdk.BusinessSyncer;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts
+                    export const CornerstoneSyncer = (window as any).CollboardSdk.CornerstoneSyncer;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ModuleStore/Syncers/RouteSyncer.d.ts
+                    export const RouteSyncer = (window as any).CollboardSdk.RouteSyncer;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ModuleStore/Syncers/StorageSyncer.d.ts
+                    export const StorageSyncer = (window as any).CollboardSdk.StorageSyncer;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/NotificationSystem/0-NotificationSystem.d.ts
+                    export const NotificationSystem = (window as any).CollboardSdk.NotificationSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/PointerSystem/0-PointerSystem.d.ts
+                    export const PointerSystem = (window as any).CollboardSdk.PointerSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/RoutingSystem/0-RoutingSystem.d.ts
+                    export const RoutingSystem = (window as any).CollboardSdk.RoutingSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ShortcutsSystem/0-ShortcutsSystem.d.ts
+                    export const ShortcutsSystem = (window as any).CollboardSdk.ShortcutsSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/SnapSystem/0-SnapSystem.d.ts
+                    export const SnapSystem = (window as any).CollboardSdk.SnapSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/SoundSystem/0-SoundSystem.d.ts
+                    export const SoundSystem = (window as any).CollboardSdk.SoundSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/StorageSystem/StorageSystem.d.ts
+                    export const StorageSystem = (window as any).CollboardSdk.StorageSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/StyleSystem/0-StyleSystem.d.ts
+                    export const StyleSystem = (window as any).CollboardSdk.StyleSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ToolbarSystem/0-ToolbarSystem.d.ts
+                    export const ToolbarSystem = (window as any).CollboardSdk.ToolbarSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/TranslationsSystem/0-TranslationsSystem.d.ts
+                    export const TranslationsSystem = (window as any).CollboardSdk.TranslationsSystem;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/VoiceSystem/0-VoiceSystem.d.ts
+                    export const VoiceSystem = (window as any).CollboardSdk.VoiceSystem;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/20-AbstractArt.d.ts

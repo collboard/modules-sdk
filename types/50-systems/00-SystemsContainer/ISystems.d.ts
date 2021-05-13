@@ -43,6 +43,8 @@ import { VoiceSystem } from './../VoiceSystem/0-VoiceSystem';
  * Systems do everything in Collboard.
  * They can comunicate between or modules can do things through a systems
  * TODO: Every module needs to get permission to comunicate with each system
+ *
+ * @collboard-modules-sdk
  */
 export interface ISystems {
     /**
