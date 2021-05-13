@@ -1,6 +1,6 @@
 {
     "name": "@collboard/modules-sdk",
-    "version": "11.1.0-2",
+    "version": "11.1.0-3",
     "description": "Modules SDK toolkit for Collboard.com",
     "license": "SEE LICENSE IN LICENSE",
     "contributors": [
