@@ -356,9 +356,26 @@ Note: SoundSystem can play a sound vs. VoiceSystem can detect voice or speech.
 -->
 <!--SYSTEMS-END-->
 
-<!--
-TODO: !!! ## Makers
--->
+## Makers
+
+Makers are helpers which helps to create an module. Maker is a pure function that transforms a simpler form of module definition to [module definition which will be accepted by declareModule](https://collboard.github.io/modules-sdk/interfaces/imodule.html). So you still need to call declareModule.
+
+### makeArtModule
+
+### makeAttributeModule
+
+### makeExtrajsxModule
+
+### makeIconModule
+
+### makeIconModuleOnModule
+
+### makeIconModuleOnRoute
+
+### makeModalModule
+
+### makeMultiModule
+
 <!--
 TODO: !!! ## Multimodules
 -->
