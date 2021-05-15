@@ -6,6 +6,8 @@ import { IModule } from './50-systems/ModuleStore/interfaces/IModule';
 export declare function declareModule(module: IModule): void;
 
 // Note: here is all stuff marked with "@collboard SDK"
+export * from './30-components/menu/Icon';
+export * from './30-components/menu/Separator';
 export * from './40-utils/Additional';
 export * from './40-utils/blobToDataURI';
 export * from './40-utils/capitalizeFirstLetter';

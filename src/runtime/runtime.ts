@@ -11,6 +11,14 @@
 
         // Note: here is all stuff marked with "@collboard SDK"
         
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/menu/Icon.d.ts
+                    export const IconColor = (window as any).CollboardSdk.IconColor;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/menu/Separator.d.ts
+                    export const Separator = (window as any).CollboardSdk.Separator;
+                    
+
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/40-utils/Additional.d.ts
                     export const Additional = (window as any).CollboardSdk.Additional;
                     
@@ -410,7 +418,8 @@ export const ExtraJsxSystem = (window as any).CollboardSdk.ExtraJsxSystem;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ToolbarSystem/0-ToolbarSystem.d.ts
-                    export const ToolbarSystem = (window as any).CollboardSdk.ToolbarSystem;
+                    export const ToolbarName = (window as any).CollboardSdk.ToolbarName;
+export const ToolbarSystem = (window as any).CollboardSdk.ToolbarSystem;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/TranslationsSystem/0-TranslationsSystem.d.ts

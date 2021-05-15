@@ -3,6 +3,13 @@
 
 import { AbstractSystem } from '../AbstractSystem';
 import { IconsToolbar } from './IconsToolbar';
+/**
+ *
+ * TODO: Unite naming ToolbarName, which can be part of IToolbarIcon (similar as section on it) OR combine it with ExtraJsxPlace
+ *
+ *
+ * @collboard-modules-sdk
+ */
 export declare enum ToolbarName {
     Tools = 'TOOLS',
     Navigation = 'NAVIGATION',
