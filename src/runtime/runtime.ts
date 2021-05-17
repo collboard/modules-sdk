@@ -12,11 +12,54 @@
         // Note: here is all stuff marked with "@collboard SDK"
         
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/menu/Icon.d.ts
-                    export const IconColor = (window as any).CollboardSdk.IconColor;
+                    export const Icon = (window as any).CollboardSdk.Icon;
+export const IconColor = (window as any).CollboardSdk.IconColor;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/menu/icons.d.ts
+                    export const string_icon = (window as any).CollboardSdk.string_icon;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/menu/IIconAnonymous.d.ts
+                    export const IIconAnonymous = (window as any).CollboardSdk.IIconAnonymous;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/menu/Menu.d.ts
+                    export const Menu = (window as any).CollboardSdk.Menu;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/menu/Separator.d.ts
                     export const Separator = (window as any).CollboardSdk.Separator;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/modal/CategorizedModal.d.ts
+                    export const CategorizedModal = (window as any).CollboardSdk.CategorizedModal;
+export const CategorizedModalMenu = (window as any).CollboardSdk.CategorizedModalMenu;
+export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModalBody;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/modal/Modal.d.ts
+                    export const Modal = (window as any).CollboardSdk.Modal;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/modal/ModalFooter.d.ts
+                    export const ModalFooter = (window as any).CollboardSdk.ModalFooter;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/modal/PageOverlay.d.ts
+                    export const PageOverlay = (window as any).CollboardSdk.PageOverlay;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/utils/AsyncContentComponent.d.ts
+                    export const AsyncContentComponent = (window as any).CollboardSdk.AsyncContentComponent;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/utils/ObservableContentComponent.d.ts
+                    export const ObservableContentComponent = (window as any).CollboardSdk.ObservableContentComponent;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/30-components/utils/RefreshContentComponent.d.ts
+                    export const RefreshContentComponent = (window as any).CollboardSdk.RefreshContentComponent;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/40-utils/Additional.d.ts
@@ -439,7 +482,8 @@ export const ToolbarSystem = (window as any).CollboardSdk.ToolbarSystem;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/25-AbstractPlacedArt.d.ts
-                    export const AbstractPlacedArt = (window as any).CollboardSdk.AbstractPlacedArt;
+                    export const IS_NEAR_DISTANCE = (window as any).CollboardSdk.IS_NEAR_DISTANCE;
+export const AbstractPlacedArt = (window as any).CollboardSdk.AbstractPlacedArt;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/25-AbstractUIArt.d.ts
@@ -460,20 +504,11 @@ export const ToolbarSystem = (window as any).CollboardSdk.ToolbarSystem;
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/30-CornerstoneArt.d.ts
                     export const CornerstoneArt = (window as any).CollboardSdk.CornerstoneArt;
+export const virtualCornerstoneArt = (window as any).CollboardSdk.virtualCornerstoneArt;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/30-DeletedArt.d.ts
                     export const DeletedArt = (window as any).CollboardSdk.DeletedArt;
-                    
-
-                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/35-ExportArt.d.ts
-                    export const ExportFormat = (window as any).CollboardSdk.ExportFormat;
-export const ExportArt = (window as any).CollboardSdk.ExportArt;
-                    
-
-                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/35-ImportArt.d.ts
-                    export const ImportStrategy = (window as any).CollboardSdk.ImportStrategy;
-export const ImportArt = (window as any).CollboardSdk.ImportArt;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/40-BackgroundPatternArt.d.ts
@@ -484,29 +519,12 @@ export const ImportArt = (window as any).CollboardSdk.ImportArt;
                     export const BackgroundWallpaperArt = (window as any).CollboardSdk.BackgroundWallpaperArt;
                     
 
-                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/50-FreehandArt.d.ts
-                    export const FreehandArt = (window as any).CollboardSdk.FreehandArt;
-                    
-
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/50-HTMLArt.d.ts
                     export const HTMLArt = (window as any).CollboardSdk.HTMLArt;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/50-ImageArt.d.ts
                     export const ImageArt = (window as any).CollboardSdk.ImageArt;
-                    
-
-                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/50-LineArt.d.ts
-                    export const LineArt = (window as any).CollboardSdk.LineArt;
-                    
-
-                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/50-ShapeArt.d.ts
-                    export const ShapeName = (window as any).CollboardSdk.ShapeName;
-export const ShapeArt = (window as any).CollboardSdk.ShapeArt;
-                    
-
-                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/71-arts/50-TextArt.d.ts
-                    export const TextArt = (window as any).CollboardSdk.TextArt;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/72-tools/behaviors/IBehavoirProps.d.ts

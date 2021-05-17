@@ -4,12 +4,18 @@
 /// <reference types="react" />
 import { Abstract2dBoxArt } from './27-Abstract2dBoxArt';
 /**
- * TODO: Maybe rename to HtmlArt - we need to fugure out consistent namings of acronyms in CamelCasingLolVsWTF
+ * Art rendering a given HTML content
+ *
+ * **Warning: HTML is dangerously set inside a div element, please sanitize the
+ * content of any malicious scripts before creating art!**
  *
  * @collboard-modules-sdk
  */
 export declare class HTMLArt extends Abstract2dBoxArt {
     content: string;
+    /**
+     * @param content HTML content as string
+     */
     constructor(content: string);
     defaultZIndex: number;
     renderBox(): JSX.Element;

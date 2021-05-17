@@ -5,19 +5,13 @@
 import { IVector, Vector } from 'xyzt';
 import { IFramable } from '../50-systems/ExportImportSystem/0-ExportSystem';
 import { Abstract2dArt } from './26-Abstract2dArt';
-/**
- * @collboard-modules-sdk
- */
 export declare enum ShapeName {
-    Rectange = 0,
-    Circle = 1,
-    Line = 2,
-    Triangle = 3,
-    TriangleRight = 4,
+    Rectange = 'Rectange',
+    Circle = 'Circle',
+    Line = 'Line',
+    Triangle = 'Triangle',
+    TriangleRight = 'TriangleRight',
 }
-/**
- * @collboard-modules-sdk
- */
 export declare class ShapeArt extends Abstract2dArt implements IFramable {
     shape: ShapeName;
     color: string;

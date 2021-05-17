@@ -6,6 +6,7 @@ interface ISeparatorProps {
     className?: string;
 }
 /**
+ * Menu separator
  *
  * @collboard-modules-sdk
  */

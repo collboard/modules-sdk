@@ -3,8 +3,10 @@
 
 import * as React from 'react';
 import { NotificationSystem } from '../0-NotificationSystem';
+import { NotificationPlace } from '../INotification';
 interface INotificationsComponentProps {
     notificationSystem: NotificationSystem;
+    place: NotificationPlace;
 }
 export declare class NotificationsComponent extends React.Component<INotificationsComponentProps> {
     render(): JSX.Element;

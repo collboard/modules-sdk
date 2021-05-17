@@ -13,6 +13,7 @@ import { IconsToolbar } from './IconsToolbar';
 export declare enum ToolbarName {
     Tools = 'TOOLS',
     Navigation = 'NAVIGATION',
+    Social = 'SOCIAL',
 }
 /**
  * ToolbarSystem can register and manage toolbars and icons which there are.
@@ -22,6 +23,7 @@ export declare enum ToolbarName {
  */
 export declare class ToolbarSystem extends AbstractSystem {
     private toolbars;
+    private focusScopeRegistrations;
     protected init(): Promise<void>;
     getToolbar(toolbarName: ToolbarName): IconsToolbar;
     destroy(): Promise<void>;

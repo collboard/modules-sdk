@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CornerstoneArt | Modules SDK toolkit for Collboard.com - v11.1.0-21</title>
-	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.1.0-21">
+	<title>CornerstoneArt | Modules SDK toolkit for Collboard.com - v11.2.0-0</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.2.0-0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
   --color-background: #fdfdfd;
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.1.0-21</a></strong>
+					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.2.0-0</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2785,10 +2785,12 @@ img {
 		<section class="tsd-panel tsd-comment">
 			<div class="tsd-comment tsd-typography">
 				<div class="lead">
-					<p>TODO: description
-						Note: This is not in the internal module because some of the Arts are so tightly connected with the core that they need to be there, not in optionally deactivateable module.
-					TODO: Probbably we can rename it into shorter name like CtoneArt @roseckyj what do you think</p>
+					<p>Cornerstone holds all informations about a particular board, such as
+					board name, active and inactive modules.</p>
 				</div>
+				<p>Every board contains exactly one CornerstoneArt and it cannot be deleted.</p>
+				<p>Cornerstone for a current board can be obtained through
+				<code>MaterialArtVersioningSystem.cornerstoneArts.value</code></p>
 				<dl class="tsd-comment-tags">
 					<dt>collboard-modules-sdk</dt>
 					<dd></dd>
@@ -2871,7 +2873,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="abstract2dart.html">Abstract2dArt</a>.<a href="abstract2dart.html#constructor">constructor</a></p>
 							<ul>
-								<li>Defined in types/71-arts/20-AbstractArt.d.ts:15</li>
+								<li>Defined in types/71-arts/20-AbstractArt.d.ts:22</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="cornerstoneart.html" class="tsd-signature-type" data-tsd-kind="Class">CornerstoneArt</a></h4>
@@ -2888,9 +2890,14 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="abstract2dart.html">Abstract2dArt</a>.<a href="abstract2dart.html#artid">artId</a></p>
 					<ul>
-						<li>Defined in types/71-arts/20-AbstractArt.d.ts:15</li>
+						<li>Defined in types/71-arts/20-AbstractArt.d.ts:22</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Unique identifier of each art</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="boardname" class="tsd-anchor"></a>
@@ -2898,9 +2905,14 @@ img {
 				<div class="tsd-signature tsd-kind-icon">board<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:16</li>
+						<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:25</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>String containing user-editable board name</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 				<a name="defaultzindex" class="tsd-anchor"></a>
@@ -2909,9 +2921,20 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="abstract2dart.html">Abstract2dArt</a>.<a href="abstract2dart.html#defaultzindex">defaultZIndex</a></p>
 					<ul>
-						<li>Defined in types/71-arts/26-Abstract2dArt.d.ts:19</li>
+						<li>Defined in types/71-arts/26-Abstract2dArt.d.ts:60</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Default z-index of art</p>
+					</div>
+					<p>Needs to be between 1-9 (including), otherwise it can lead to
+					undefined behavior.</p>
+					<p>When locked, decreases by one.</p>
+					<p><em>Note: This will be replaced with proper object ordering in the
+							near future, however it is highly suggested to override use property
+					until then.</em></p>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 				<a name="locked" class="tsd-anchor"></a>
@@ -2920,9 +2943,14 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="abstract2dart.html">Abstract2dArt</a>.<a href="abstract2dart.html#locked">locked</a></p>
 					<ul>
-						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:16</li>
+						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:30</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Marks, whether art is locked</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 				<a name="moduleremovefromactivateanddeactivatelist" class="tsd-anchor"></a>
@@ -2930,9 +2958,14 @@ img {
 				<div class="tsd-signature tsd-kind-icon">module<wbr>Remove<wbr>From<wbr>Activate<wbr>And<wbr>Deactivate<wbr>List<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:24</li>
+						<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:42</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Removes module from <code>modulesActive</code> and <code>modulesInactive</code></p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="modulesactive" class="tsd-anchor"></a>
@@ -2940,9 +2973,14 @@ img {
 				<div class="tsd-signature tsd-kind-icon">modules<wbr>Active<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:22</li>
+						<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:34</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>List of user-activated modules on a board</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="modulesinactive" class="tsd-anchor"></a>
@@ -2950,9 +2988,14 @@ img {
 				<div class="tsd-signature tsd-kind-icon">modules<wbr>Inactive<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:23</li>
+						<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:38</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>List of user-inactivated modules on a board</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 				<a name="opacity" class="tsd-anchor"></a>
@@ -2961,13 +3004,15 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="abstract2dart.html">Abstract2dArt</a>.<a href="abstract2dart.html#opacity">opacity</a></p>
 					<ul>
-						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:20</li>
+						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:49</li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>TODO: Implement also on 3D arts</p>
+						<p>Opacity of an art</p>
 					</div>
+					<p>Value is automatically used by ArtShell when rendering</p>
+					<p><em>Note: only works on 2D arts</em></p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -2977,9 +3022,15 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="abstract2dart.html">Abstract2dArt</a>.<a href="abstract2dart.html#rotation">rotation</a></p>
 					<ul>
-						<li>Defined in types/71-arts/26-Abstract2dArt.d.ts:17</li>
+						<li>Defined in types/71-arts/26-Abstract2dArt.d.ts:35</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Object rotation</p>
+					</div>
+					<p><em>Note: This will be replaced with 3D rotiation in <code>AbstractPlacedArt</code></em></p>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 				<a name="shift" class="tsd-anchor"></a>
@@ -2988,9 +3039,14 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="abstract2dart.html">Abstract2dArt</a>.<a href="abstract2dart.html#shift">shift</a></p>
 					<ul>
-						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:15</li>
+						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:26</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Translation vector of art</p>
+					</div>
+				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
@@ -3005,9 +3061,15 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:20</li>
+								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:29</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Getter with list of attributes particular art supports</p>
+							</div>
+							<p>Value is used to display a floating menu above selection</p>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span></h4>
 					</li>
 				</ul>
@@ -3022,9 +3084,15 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:25</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:85</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Position of bottom left corner of art (absolute including <code>shift</code>)</p>
+							</div>
+							<p>Value is used mostly when making selection</p>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IVectorObject</span></h4>
 					</li>
 				</ul>
@@ -3039,9 +3107,15 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:18</li>
+								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:27</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Position of bottom right corner of art (absolute including <code>shift</code>)</p>
+							</div>
+							<p>Value is used mostly when making selection</p>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IVectorObject</span></h4>
 					</li>
 				</ul>
@@ -3057,17 +3131,31 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/26-Abstract2dArt.d.ts:15</li>
+								<li>Defined in types/71-arts/26-Abstract2dArt.d.ts:21</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Getter for getting element size.</p>
+							</div>
+							<p>Needs to be overridden if art has <code>&quot;size&quot;</code> among <code>AcceptedAttributes</code></p>
+							<p><em>Note: This will be removed in the future</em></p>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IVectorObject</span></h4>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/26-Abstract2dArt.d.ts:16</li>
+								<li>Defined in types/71-arts/26-Abstract2dArt.d.ts:29</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Getter for changing element size.</p>
+							</div>
+							<p>Needs to be overridden if art has <code>&quot;size&quot;</code> among <code>AcceptedAttributes</code></p>
+							<p><em>Note: This will be removed in the future</em></p>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -3088,9 +3176,15 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:17</li>
+								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:26</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Position of top left corner of art (absolute including <code>shift</code>)</p>
+							</div>
+							<p>Value is used mostly when making selection</p>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IVectorObject</span></h4>
 					</li>
 				</ul>
@@ -3105,9 +3199,15 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:24</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:79</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Position of top right corner of art (absolute including <code>shift</code>)</p>
+							</div>
+							<p>Value is used mostly when making selection</p>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IVectorObject</span></h4>
 					</li>
 				</ul>
@@ -3126,7 +3226,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Overrides <a href="abstract2dart.html">Abstract2dArt</a>.<a href="abstract2dart.html#isnear">isNear</a></p>
 							<ul>
-								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:19</li>
+								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:28</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3149,9 +3249,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:25</li>
+								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:46</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Add a module among user-activated modules on board</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -3172,9 +3277,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:26</li>
+								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:50</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Add a module among user-deactivated modules on board</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -3196,9 +3306,14 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="abstract2dart.html">Abstract2dArt</a>.<a href="abstract2dart.html#move">move</a></p>
 							<ul>
-								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:28</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:99</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Move art to by vector (= relative)</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -3220,7 +3335,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Overrides <a href="abstract2dart.html">Abstract2dArt</a>.<a href="abstract2dart.html#render">render</a></p>
 							<ul>
-								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:21</li>
+								<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:30</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3244,9 +3359,14 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="abstract2dart.html">Abstract2dArt</a>.<a href="abstract2dart.html#setshift">setShift</a></p>
 							<ul>
-								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:27</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:95</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Move art to certain vector (= absolute)</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>

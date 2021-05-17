@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ImportStrategy | Modules SDK toolkit for Collboard.com - v11.1.0-21</title>
-	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.1.0-21">
+	<title>IIconAnonymous | Modules SDK toolkit for Collboard.com - v11.2.0-0</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.2.0-0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
   --color-background: #fdfdfd;
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.1.0-21</a></strong>
+					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.2.0-0</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2704,11 +2704,26 @@ img {
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
-		<li class="current tsd-kind-enum">
-			<a href="importstrategy.html" class="tsd-kind-icon">Import<wbr>Strategy</a>
+		<li class="current tsd-kind-interface">
+			<a href="iiconanonymous.html" class="tsd-kind-icon">IIcon<wbr>Anonymous</a>
 			<ul>
-				<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-					<a href="importstrategy.html#materialize" class="tsd-kind-icon">Materialize</a>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="iiconanonymous.html#active" class="tsd-kind-icon">active</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="iiconanonymous.html#char" class="tsd-kind-icon">char</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="iiconanonymous.html#classname" class="tsd-kind-icon">class<wbr>Name</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="iiconanonymous.html#icon" class="tsd-kind-icon">icon</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="iiconanonymous.html#inactive" class="tsd-kind-icon">inactive</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="iiconanonymous.html#onclick" class="tsd-kind-icon">on<wbr>Click</a>
 				</li>
 			</ul>
 		</li>
@@ -2719,7 +2734,9 @@ img {
 		<section class="tsd-panel tsd-comment">
 			<div class="tsd-comment tsd-typography">
 				<div class="lead">
-					<p>TODO: !! Import should be only LINK type so remove this and MATERIALIZE strategy move to frontend MimeSupportSystem</p>
+					<p>Icon (visual) which can appear on toolbars, buttons,...
+						This interface just represents icon without context and placement
+					(vs. <code>IToolbarIcon</code>)</p>
 				</div>
 				<dl class="tsd-comment-tags">
 					<dt>collboard-modules-sdk</dt>
@@ -2727,30 +2744,147 @@ img {
 				</dl>
 			</div>
 		</section>
+		<section class="tsd-panel tsd-hierarchy">
+			<h3>Hierarchy</h3>
+			<ul class="tsd-hierarchy">
+				<li>
+					<span class="target">IIconAnonymous</span>
+				</li>
+			</ul>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>Enumeration members</h3>
+						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="importstrategy.html#materialize" class="tsd-kind-icon">Materialize</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iiconanonymous.html#active" class="tsd-kind-icon">active</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iiconanonymous.html#char" class="tsd-kind-icon">char</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iiconanonymous.html#classname" class="tsd-kind-icon">class<wbr>Name</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iiconanonymous.html#icon" class="tsd-kind-icon">icon</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iiconanonymous.html#inactive" class="tsd-kind-icon">inactive</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iiconanonymous.html#onclick" class="tsd-kind-icon">on<wbr>Click</a></li>
 						</ul>
 					</section>
 				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
-			<h2>Enumeration members</h2>
-			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-				<a name="materialize" class="tsd-anchor"></a>
-				<h3>Materialize</h3>
-				<div class="tsd-signature tsd-kind-icon">Materialize<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;MATERIALIZE&quot;</span></div>
+			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="active" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> active</h3>
+				<div class="tsd-signature tsd-kind-icon">active<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/71-arts/35-ImportArt.d.ts:13</li>
+						<li>Defined in types/30-components/menu/IIconAnonymous.d.ts:23</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Marks if the icon should appear selected</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="char" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> char</h3>
+				<div class="tsd-signature tsd-kind-icon">char<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in types/30-components/menu/IIconAnonymous.d.ts:34</li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Char which should be rendered instead of <code>icon</code></p>
+					</div>
+					<p><strong><code>icon</code> xor <code>char</code> must be set</strong></p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="classname" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> class<wbr>Name</h3>
+				<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in types/30-components/menu/IIconAnonymous.d.ts:46</li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Optional class name which should be set on the icon</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="icon" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> icon</h3>
+				<div class="tsd-signature tsd-kind-icon">icon<span class="tsd-signature-symbol">:</span> <a href="../modules.html#string_icon" class="tsd-signature-type" data-tsd-kind="Type alias">string_icon</a></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in types/30-components/menu/IIconAnonymous.d.ts:42</li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Internal icon name which should appear on Icon</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>see</dt>
+						<dd><p>string_icon</p>
+							<p><strong><code>icon</code> xor <code>char</code> must be set</strong></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="inactive" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> inactive</h3>
+				<div class="tsd-signature tsd-kind-icon">inactive<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in types/30-components/menu/IIconAnonymous.d.ts:28</li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Marks if the icon should be unclickable
+						(also <code>onClick</code> does not get called when <code>true</code>)</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="onclick" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> on<wbr>Click</h3>
+				<div class="tsd-signature tsd-kind-icon">on<wbr>Click<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in types/30-components/menu/IIconAnonymous.d.ts:19</li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Callback called when the icon is clicked</p>
+					</div>
+					<p><em>Note: Prefer to use onActivate when using IToolbarIcon</em></p>
+				</div>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-signature">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-interface">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
 			</section>
 		</section>
 		<footer>

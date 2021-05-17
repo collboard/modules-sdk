@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AbstractPlacedArt | Modules SDK toolkit for Collboard.com - v11.1.0-21</title>
-	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.1.0-21">
+	<title>AbstractPlacedArt | Modules SDK toolkit for Collboard.com - v11.2.0-0</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.2.0-0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
   --color-background: #fdfdfd;
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.1.0-21</a></strong>
+					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.2.0-0</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2725,7 +2725,7 @@ img {
 				<li class=" tsd-kind-property tsd-parent-kind-class">
 					<a href="abstractplacedart.html#shift" class="tsd-kind-icon">shift</a>
 				</li>
-				<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 					<a href="abstractplacedart.html#acceptedattributes" class="tsd-kind-icon">accepted<wbr>Attributes</a>
 				</li>
 				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
@@ -2758,8 +2758,8 @@ img {
 		<section class="tsd-panel tsd-comment">
 			<div class="tsd-comment tsd-typography">
 				<div class="lead">
-					<p>TODO: description
-					Note: This is not in the internal module because some of the Arts are so tightly connected with the core that they need to be there, not in optionally deactivateable module.</p>
+					<p>AbstractPlacedArt is an abstract class which all arts with position and size
+					extend.</p>
 				</div>
 				<dl class="tsd-comment-tags">
 					<dt>collboard-modules-sdk</dt>
@@ -2814,7 +2814,7 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Accessors</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="abstractplacedart.html#acceptedattributes" class="tsd-kind-icon">accepted<wbr>Attributes</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="abstractplacedart.html#acceptedattributes" class="tsd-kind-icon">accepted<wbr>Attributes</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="abstractplacedart.html#bottomleftcorner" class="tsd-kind-icon">bottom<wbr>Left<wbr>Corner</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="abstractplacedart.html#bottomrightcorner" class="tsd-kind-icon">bottom<wbr>Right<wbr>Corner</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="abstractplacedart.html#topleftcorner" class="tsd-kind-icon">top<wbr>Left<wbr>Corner</a></li>
@@ -2845,7 +2845,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="abstractart.html">AbstractArt</a>.<a href="abstractart.html#constructor">constructor</a></p>
 							<ul>
-								<li>Defined in types/71-arts/20-AbstractArt.d.ts:15</li>
+								<li>Defined in types/71-arts/20-AbstractArt.d.ts:22</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="abstractplacedart.html" class="tsd-signature-type" data-tsd-kind="Class">AbstractPlacedArt</a></h4>
@@ -2862,9 +2862,14 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="abstractart.html">AbstractArt</a>.<a href="abstractart.html#artid">artId</a></p>
 					<ul>
-						<li>Defined in types/71-arts/20-AbstractArt.d.ts:15</li>
+						<li>Defined in types/71-arts/20-AbstractArt.d.ts:22</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Unique identifier of each art</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="locked" class="tsd-anchor"></a>
@@ -2872,9 +2877,14 @@ img {
 				<div class="tsd-signature tsd-kind-icon">locked<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:16</li>
+						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:30</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Marks, whether art is locked</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="opacity" class="tsd-anchor"></a>
@@ -2882,13 +2892,15 @@ img {
 				<div class="tsd-signature tsd-kind-icon">opacity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:20</li>
+						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:49</li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>TODO: Implement also on 3D arts</p>
+						<p>Opacity of an art</p>
 					</div>
+					<p>Value is automatically used by ArtShell when rendering</p>
+					<p><em>Note: only works on 2D arts</em></p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
@@ -2897,9 +2909,16 @@ img {
 				<div class="tsd-signature tsd-kind-icon">rotation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:21</li>
+						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:57</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Rotation of an art</p>
+					</div>
+					<p>Value is automatically used by ArtShell when rendering</p>
+					<p><em>Note: type needs to be overridden when extending</em></p>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="shift" class="tsd-anchor"></a>
@@ -2907,26 +2926,44 @@ img {
 				<div class="tsd-signature tsd-kind-icon">shift<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IVectorObject</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:15</li>
+						<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:26</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Translation vector of art</p>
+					</div>
+				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Accessors</h2>
-			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 				<a name="acceptedattributes" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> accepted<wbr>Attributes</h3>
-				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> acceptedAttributes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/20-AbstractArt.d.ts:14</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:41</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Getter with list of attributes particular art supports</p>
+							</div>
+							<p>Value is used to display a floating menu above selection</p>
+							<dl class="tsd-comment-tags">
+								<dt>example</dt>
+								<dd><p>get acceptedAttributes() {
+										return [&quot;color&quot;, &quot;size&quot;];
+									}</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
 					</li>
 				</ul>
@@ -2941,9 +2978,15 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:25</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:85</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Position of bottom left corner of art (absolute including <code>shift</code>)</p>
+							</div>
+							<p>Value is used mostly when making selection</p>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IVectorObject</span></h4>
 					</li>
 				</ul>
@@ -2958,9 +3001,19 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:23</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:73</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Position of bottom right corner of art (absolute including <code>shift</code>)</p>
+							</div>
+							<p>Value is used mostly when making selection</p>
+							<dl class="tsd-comment-tags">
+								<dt>abstract</dt>
+								<dd></dd>
+							</dl>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IVectorObject</span></h4>
 					</li>
 				</ul>
@@ -2975,9 +3028,19 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:22</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:65</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Position of top left corner of art (absolute including <code>shift</code>)</p>
+							</div>
+							<p>Value is used mostly when making selection</p>
+							<dl class="tsd-comment-tags">
+								<dt>abstract</dt>
+								<dd></dd>
+							</dl>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IVectorObject</span></h4>
 					</li>
 				</ul>
@@ -2992,9 +3055,15 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:24</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:79</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Position of top right corner of art (absolute including <code>shift</code>)</p>
+							</div>
+							<p>Value is used mostly when making selection</p>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IVectorObject</span></h4>
 					</li>
 				</ul>
@@ -3012,9 +3081,15 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:26</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:91</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Function determining, whether a point is near the art</p>
+							</div>
+							<p>Default implementation uses square bounding box</p>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -3035,9 +3110,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:28</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:99</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Move art to by vector (= relative)</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -3058,9 +3138,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:27</li>
+								<li>Defined in types/71-arts/25-AbstractPlacedArt.d.ts:95</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Move art to certain vector (= absolute)</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>

@@ -3,15 +3,15 @@
 
 /// <reference types="react" />
 import { INotification } from '../INotification';
-interface INotificationComponentProps {
+interface IAnnouncementComponentProps {
     notification: INotification;
     closeHandler: () => void;
 }
 /**
  * TODO: @roseckyj maybe unite AnnouncementComponent and NotificationComponent
  */
-export declare function NotificationComponent({
+export declare function AnnouncementComponent({
     notification: { type, onClick, title, subtitle, canBeClosed, body, actions },
     closeHandler,
-}: INotificationComponentProps): JSX.Element;
+}: IAnnouncementComponentProps): JSX.Element;
 export {};

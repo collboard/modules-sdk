@@ -16,9 +16,9 @@ interface IConfirmIconState {
 }
 export declare class ConfirmIcon extends React.Component<IConfirmIconProps, IConfirmIconState> {
     state: IConfirmIconState;
-    clickHandler(): void;
-    modalNoHandler(): void;
-    modalYesHandler(): void;
+    private clickHandler;
+    private modalNoHandler;
+    private modalYesHandler;
     render(): JSX.Element;
 }
 export {};

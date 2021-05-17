@@ -28,8 +28,9 @@ export interface IToolbarIcon extends IIconAnonymous {
      */
     autoSelect?: boolean;
     order: number;
+    focusScope?: string;
     /**
-     * TODO: Remove section OR unite with ToolbarName, which can be part of IToolbarIcon OR unite ToolbarName and ExtraJsxPlace
+     * This represents section seperated by | in the toolbar
      */
     section: number;
     /**

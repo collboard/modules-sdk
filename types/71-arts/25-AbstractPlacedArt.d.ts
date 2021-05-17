@@ -2,31 +2,99 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 import { IVector } from 'xyzt';
+import { string_attribute } from '../40-utils/typeAliases';
 import { IBoundingBox } from '../50-systems/ExportImportSystem/interfaces/IBoundingBox';
 import { AbstractArt } from './20-AbstractArt';
+/**
+ * Constant, which should be used to determine, whether a point is near the art
+ *
+ * @see AbstractPlacedArt.isNear
+ *
+ * @collboard-modules-sdk
+ */
 export declare const IS_NEAR_DISTANCE = 20;
 /**
- * TODO: description
- * Note: This is not in the internal module because some of the Arts are so tightly connected with the core that they need to be there, not in optionally deactivateable module.
+ * AbstractPlacedArt is an abstract class which all arts with position and size
+ * extend.
  *
  * @collboard-modules-sdk
  */
 export declare abstract class AbstractPlacedArt extends AbstractArt implements IBoundingBox {
+    /**
+     * Translation vector of art
+     */
     shift: IVector;
+    /**
+     * Marks, whether art is locked
+     */
     locked: boolean;
     /**
-     * TODO: Implement also on 3D arts
+     * Getter with list of attributes particular art supports
+     *
+     * Value is used to display a floating menu above selection
+     *
+     * @example
+     * get acceptedAttributes() {
+     *     return ["color", "size"];
+     * }
+     */
+    abstract get acceptedAttributes(): string_attribute[];
+    /**
+     * Opacity of an art
+     *
+     * Value is automatically used by ArtShell when rendering
+     *
+     * *Note: only works on 2D arts*
      */
     opacity?: number;
+    /**
+     * Rotation of an art
+     *
+     * Value is automatically used by ArtShell when rendering
+     *
+     * *Note: type needs to be overridden when extending*
+     */
     rotation: any;
+    /**
+     * Position of top left corner of art (absolute including `shift`)
+     *
+     * Value is used mostly when making selection
+     *
+     * @abstract
+     */
     abstract get topLeftCorner(): IVector;
+    /**
+     * Position of bottom right corner of art (absolute including `shift`)
+     *
+     * Value is used mostly when making selection
+     *
+     * @abstract
+     */
     abstract get bottomRightCorner(): IVector;
+    /**
+     * Position of top right corner of art (absolute including `shift`)
+     *
+     * Value is used mostly when making selection
+     */
     get topRightCorner(): IVector;
+    /**
+     * Position of bottom left corner of art (absolute including `shift`)
+     *
+     * Value is used mostly when making selection
+     */
     get bottomLeftCorner(): IVector;
+    /**
+     * Function determining, whether a point is near the art
+     *
+     * Default implementation uses square bounding box
+     */
     isNear(point2: IVector): boolean;
+    /**
+     * Move art to certain vector (= absolute)
+     */
     setShift(shift: IVector): this;
+    /**
+     * Move art to by vector (= relative)
+     */
     move(shift: IVector): this;
 }
-/**
- * Note: number is just a file prefix to feep it on the top of file list.
- */

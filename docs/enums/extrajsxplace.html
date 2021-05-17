@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ExtraJsxPlace | Modules SDK toolkit for Collboard.com - v11.1.0-21</title>
-	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.1.0-21">
+	<title>ExtraJsxPlace | Modules SDK toolkit for Collboard.com - v11.2.0-0</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.2.0-0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
   --color-background: #fdfdfd;
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.1.0-21</a></strong>
+					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.2.0-0</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2725,6 +2725,12 @@ img {
 				<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
 					<a href="extrajsxplace.html#rootcomponent" class="tsd-kind-icon">Root<wbr>Component</a>
 				</li>
+				<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+					<a href="extrajsxplace.html#welcomemodal" class="tsd-kind-icon">Welcome<wbr>Modal</a>
+				</li>
+				<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+					<a href="extrajsxplace.html#welcomemodaladjacent" class="tsd-kind-icon">Welcome<wbr>Modal<wbr>Adjacent</a>
+				</li>
 			</ul>
 		</li>
 	</ul>
@@ -2734,8 +2740,7 @@ img {
 		<section class="tsd-panel tsd-comment">
 			<div class="tsd-comment tsd-typography">
 				<div class="lead">
-					<p>TODO: Describe
-					TODO: Unite naming ToolbarName vs. ExtraJsxPlace</p>
+					<p>ExtraJsxPlace enum lists possible places for an ExtraJSX object to be placed.</p>
 				</div>
 				<dl class="tsd-comment-tags">
 					<dt>collboard-modules-sdk</dt>
@@ -2756,6 +2761,8 @@ img {
 							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="extrajsxplace.html#edgetop" class="tsd-kind-icon">Edge<wbr>Top</a></li>
 							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="extrajsxplace.html#modalheader" class="tsd-kind-icon">Modal<wbr>Header</a></li>
 							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="extrajsxplace.html#rootcomponent" class="tsd-kind-icon">Root<wbr>Component</a></li>
+							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="extrajsxplace.html#welcomemodal" class="tsd-kind-icon">Welcome<wbr>Modal</a></li>
+							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="extrajsxplace.html#welcomemodaladjacent" class="tsd-kind-icon">Welcome<wbr>Modal<wbr>Adjacent</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2766,62 +2773,172 @@ img {
 			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 				<a name="boardcomponent" class="tsd-anchor"></a>
 				<h3>Board<wbr>Component</h3>
-				<div class="tsd-signature tsd-kind-icon">Board<wbr>Component<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;BoardComponent&quot;</span></div>
+				<div class="tsd-signature tsd-kind-icon">Board<wbr>Component<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;BOARD_COMPONENT&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:14</li>
+						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:28</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Board component <code>&lt;div class=&quot;board-container&quot;&gt;</code> is a parent of
+						everything rendered on the whiteboard canvas.</p>
+					</div>
+					<p>It does not contain menus and other fixed components,
+					however the positioning is still relative to screen (not canvas).</p>
+					<dl class="tsd-comment-tags">
+						<dt>collboard-modules-sdk</dt>
+						<dd></dd>
+					</dl>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 				<a name="edgebottom" class="tsd-anchor"></a>
 				<h3>Edge<wbr>Bottom</h3>
-				<div class="tsd-signature tsd-kind-icon">Edge<wbr>Bottom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;EdgeBottom&quot;</span></div>
+				<div class="tsd-signature tsd-kind-icon">Edge<wbr>Bottom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;EDGE_BOTTOM&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:15</li>
+						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:36</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The bottom edge of screen</p>
+						<ul>
+							<li>growing left to right</li>
+							<li>aligned to bottom</li>
+						</ul>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>collboard-modules-sdk</dt>
+						<dd></dd>
+					</dl>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 				<a name="edgeright" class="tsd-anchor"></a>
 				<h3>Edge<wbr>Right</h3>
-				<div class="tsd-signature tsd-kind-icon">Edge<wbr>Right<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;EdgeRight&quot;</span></div>
+				<div class="tsd-signature tsd-kind-icon">Edge<wbr>Right<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;EDGE_RIGHT&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:17</li>
+						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:52</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The right edge of screen</p>
+						<ul>
+							<li>growing top to bottom</li>
+							<li>aligned to right</li>
+						</ul>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>collboard-modules-sdk</dt>
+						<dd></dd>
+					</dl>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 				<a name="edgetop" class="tsd-anchor"></a>
 				<h3>Edge<wbr>Top</h3>
-				<div class="tsd-signature tsd-kind-icon">Edge<wbr>Top<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;EdgeTop&quot;</span></div>
+				<div class="tsd-signature tsd-kind-icon">Edge<wbr>Top<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;EDGE_TOP&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:16</li>
+						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:44</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The top edge of screen</p>
+						<ul>
+							<li>growing left to right</li>
+							<li>aligned to top</li>
+						</ul>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>collboard-modules-sdk</dt>
+						<dd></dd>
+					</dl>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 				<a name="modalheader" class="tsd-anchor"></a>
 				<h3>Modal<wbr>Header</h3>
-				<div class="tsd-signature tsd-kind-icon">Modal<wbr>Header<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;ModalHeader&quot;</span></div>
+				<div class="tsd-signature tsd-kind-icon">Modal<wbr>Header<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;MODAL_HEADER&quot;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:59</li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Rendering in some modals</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>deprecated</dt>
+						<dd></dd>
+						<dt>collboard-modules-sdk</dt>
+						<dd></dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+				<a name="rootcomponent" class="tsd-anchor"></a>
+				<h3>Root<wbr>Component</h3>
+				<div class="tsd-signature tsd-kind-icon">Root<wbr>Component<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;ROOT_COMPONENT&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
 						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:18</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Root component <code>&lt;div id=&quot;root&quot;&gt;</code> is a parent of everything
+						within Collboard app</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>collboard-modules-sdk</dt>
+						<dd></dd>
+					</dl>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-				<a name="rootcomponent" class="tsd-anchor"></a>
-				<h3>Root<wbr>Component</h3>
-				<div class="tsd-signature tsd-kind-icon">Root<wbr>Component<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;RootComponent&quot;</span></div>
+				<a name="welcomemodal" class="tsd-anchor"></a>
+				<h3>Welcome<wbr>Modal</h3>
+				<div class="tsd-signature tsd-kind-icon">Welcome<wbr>Modal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;WELCOME_MODAL&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:13</li>
+						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:65</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Welcome modal inside</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>collboard-modules-sdk</dt>
+						<dd></dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+				<a name="welcomemodaladjacent" class="tsd-anchor"></a>
+				<h3>Welcome<wbr>Modal<wbr>Adjacent</h3>
+				<div class="tsd-signature tsd-kind-icon">Welcome<wbr>Modal<wbr>Adjacent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;WELCOME_MODAL_ADJACENT&quot;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts:71</li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Welcome modal edge</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>collboard-modules-sdk</dt>
+						<dd></dd>
+					</dl>
+				</div>
 			</section>
 		</section>
 		<footer>

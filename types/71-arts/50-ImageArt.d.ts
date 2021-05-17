@@ -5,11 +5,17 @@
 import { string_url_image } from '../40-utils/typeAliases';
 import { Abstract2dBoxArt } from './27-Abstract2dBoxArt';
 /**
+ * Art rendering a given image
+ *
  * @collboard-modules-sdk
  */
 export declare class ImageArt extends Abstract2dBoxArt {
     src: string_url_image;
     alt: string;
+    /**
+     * @param src Image source
+     * @param alt Image alt text
+     */
     constructor(src: string_url_image, alt: string);
     renderBox(): JSX.Element;
 }

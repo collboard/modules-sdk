@@ -3,14 +3,16 @@
 
 import { AbstractArt } from './20-AbstractArt';
 /**
- * TODO: description
- * Note: This is not in the internal module because some of the Arts are so tightly connected with the core that they need to be there, not in optionally deactivateable module.
+ * All removed arts get replaced with DeletedArt as a terminal point of
+ * it's existence.
+ *
+ * *Note: Committing any art with predecessor of type DeletedArt results in
+ * undefined behavior since DeletedArts are removed in garbage collection
+ * process.*
  *
  * @collboard-modules-sdk
  */
-export declare class DeletedArt extends AbstractArt {
-    get acceptedAttributes(): never[];
-}
+export declare class DeletedArt extends AbstractArt {}
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
  */

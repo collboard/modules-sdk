@@ -3,8 +3,16 @@
 
 import * as React from 'react';
 import { IIconAnonymous } from './IIconAnonymous';
+/**
+ * Generic icon component
+ *
+ * *Note: If not rendered within a menu, there is no guarantee
+ * of being rendered correctly*
+ *
+ * @collboard-modules-sdk
+ */
 export declare class Icon extends React.Component<IIconAnonymous> {
-    clickHandler(): void;
+    private clickHandler;
     render(): JSX.Element;
 }
 interface IIconColorProps {
@@ -15,6 +23,10 @@ interface IIconColorProps {
     inactive?: boolean;
 }
 /**
+ * Color picker icon component
+ *
+ * *Note: If not rendered within a menu, there is no guarantee
+ * of being rendered correctly*
  *
  * @collboard-modules-sdk
  */

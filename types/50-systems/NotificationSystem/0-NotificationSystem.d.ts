@@ -3,6 +3,7 @@
 
 import { AbstractSystem } from '../AbstractSystem';
 import { INotification } from './INotification';
+import { NotificationRegistration } from './NotificationRegistration';
 /**
  *
  * @collboard-system
@@ -10,6 +11,6 @@ import { INotification } from './INotification';
 export declare class NotificationSystem extends AbstractSystem {
     notifications: INotification[];
     protected init(): Promise<void>;
-    publish(notification: INotification): void;
+    publish(notification: INotification): NotificationRegistration;
     constrict(notification: INotification): void;
 }

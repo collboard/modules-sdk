@@ -1,20 +1,24 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { string_attribute, string_uuid } from '../40-utils/typeAliases';
+import { string_uuid } from '../40-utils/typeAliases';
 import { attribute_value } from '../50-systems/AttributesSystem/IAttribute';
 /**
- * TODO: description
- * Note: This is not in the internal module because some of the Arts are so tightly connected with the core that they need to be there, not in optionally deactivateable module.
+ * AbstractArt is an abstract class which all art classes extend.
+ *
+ * It only provides unique identifier for each art
  *
  * @collboard-modules-sdk
  */
 export declare abstract class AbstractArt {
+    /**
+     * AbstractArt is considered indexable in order to make serialization
+     * and deserialization work
+     */
     [index: string]: attribute_value | any;
-    abstract get acceptedAttributes(): string_attribute[];
+    /**
+     * Unique identifier of each art
+     */
     readonly artId: string_uuid;
     constructor();
 }
-/**
- * Note: number is just a file prefix to feep it on the top of file list.
- */

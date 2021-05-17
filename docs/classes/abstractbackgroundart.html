@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AbstractBackgroundArt | Modules SDK toolkit for Collboard.com - v11.1.0-21</title>
-	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.1.0-21">
+	<title>AbstractBackgroundArt | Modules SDK toolkit for Collboard.com - v11.2.0-0</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.2.0-0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
   --color-background: #fdfdfd;
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.1.0-21</a></strong>
+					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.2.0-0</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2716,9 +2716,6 @@ img {
 				<li class=" tsd-kind-property tsd-parent-kind-class">
 					<a href="abstractbackgroundart.html#z" class="tsd-kind-icon">z</a>
 				</li>
-				<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-					<a href="abstractbackgroundart.html#acceptedattributes" class="tsd-kind-icon">accepted<wbr>Attributes</a>
-				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="abstractbackgroundart.html#additionalstyle" class="tsd-kind-icon">additional<wbr>Style</a>
 				</li>
@@ -2734,7 +2731,7 @@ img {
 		<section class="tsd-panel tsd-comment">
 			<div class="tsd-comment tsd-typography">
 				<div class="lead">
-					<p>This art will in future changes backgroud image of the board.</p>
+					<p>This art holds information about a backgroud image of the board.</p>
 				</div>
 				<dl class="tsd-comment-tags">
 					<dt>collboard-modules-sdk</dt>
@@ -2781,12 +2778,6 @@ img {
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
-						<h3>Accessors</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="abstractbackgroundart.html#acceptedattributes" class="tsd-kind-icon">accepted<wbr>Attributes</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="abstractbackgroundart.html#additionalstyle" class="tsd-kind-icon">additional<wbr>Style</a></li>
@@ -2816,6 +2807,9 @@ img {
 						<ul class="tsd-parameters">
 							<li>
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> z: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Z-position of background. Currently unused</p>
+								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="abstractbackgroundart.html" class="tsd-signature-type" data-tsd-kind="Class">AbstractBackgroundArt</a></h4>
@@ -2832,9 +2826,14 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="abstractenvironmentart.html">AbstractEnvironmentArt</a>.<a href="abstractenvironmentart.html#artid">artId</a></p>
 					<ul>
-						<li>Defined in types/71-arts/20-AbstractArt.d.ts:15</li>
+						<li>Defined in types/71-arts/20-AbstractArt.d.ts:22</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Unique identifier of each art</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="z" class="tsd-anchor"></a>
@@ -2845,26 +2844,6 @@ img {
 						<li>Defined in types/71-arts/26-AbstractBackgroundArt.d.ts:13</li>
 					</ul>
 				</aside>
-			</section>
-		</section>
-		<section class="tsd-panel-group tsd-member-group ">
-			<h2>Accessors</h2>
-			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-				<a name="acceptedattributes" class="tsd-anchor"></a>
-				<h3>accepted<wbr>Attributes</h3>
-				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> acceptedAttributes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in types/71-arts/26-AbstractBackgroundArt.d.ts:17</li>
-							</ul>
-						</aside>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span></h4>
-					</li>
-				</ul>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
@@ -2879,9 +2858,15 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/26-AbstractBackgroundArt.d.ts:15</li>
+								<li>Defined in types/71-arts/26-AbstractBackgroundArt.d.ts:22</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Getter with static CSS properties for the <code>&lt;div class=&quot;board-bg&quot;&gt;</code>
+								rendered within <code>BoardComponent</code></p>
+							</div>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">CSSProperties</span></h4>
 					</li>
 				</ul>
@@ -2896,9 +2881,20 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/71-arts/26-AbstractBackgroundArt.d.ts:16</li>
+								<li>Defined in types/71-arts/26-AbstractBackgroundArt.d.ts:29</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Getter with dynamic CSS properties for the <code>&lt;div class=&quot;board-bg&quot;&gt;</code>
+								rendered within <code>BoardComponent</code></p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>argument</dt>
+								<dd><p>transform AppState board transform</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>

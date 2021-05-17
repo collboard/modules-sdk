@@ -13,20 +13,24 @@ import { IToolbarIcon } from './IToolbarIcon';
 export declare class IconsToolbar extends Destroyable implements IDestroyable {
     readonly toolbarName: ToolbarName;
     private shortcutsSystem;
+    private focusScopeRegistrations;
     activeIcon: IToolbarIcon | null;
     icons: IToolbarIcon[];
-    private activeIconSelectRegistration;
     /**
      *
      * @param toolbarName does not effect IconsToolbar behaviour, it solves only for identification purposes.
      */
-    constructor(toolbarName: ToolbarName, shortcutsSystem: ShortcutsSystem);
+    constructor(
+        toolbarName: ToolbarName,
+        shortcutsSystem: ShortcutsSystem,
+        focusScopeRegistrations: Record<string, IDestroyable>,
+    );
+    private selectQueue;
     /**
      * @param icon You can use here either full IToolbarIcon (same reference that is registered) or name (especially usefull when triggering externally)
      */
     selectIcon(iconOrIconName: IToolbarIcon | string): Promise<void>;
     isActive(toolbarIconOrName: IToolbarIcon | string): boolean;
-    private autoSelectQueue;
     registerIcon(icon: IToolbarIcon): Registration;
     destroy(): Promise<void>;
 }
