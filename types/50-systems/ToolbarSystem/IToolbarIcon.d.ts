@@ -27,12 +27,25 @@ export interface IToolbarIcon extends IIconAnonymous {
      * Note: working only with onSelect (not onClick)
      */
     autoSelect?: boolean;
-    order: number;
+    /**
+     * Where the icon will be on the toolbar
+     * Note: section has a priorit
+     *
+     * @default 0
+     */
+    order?: number;
+    /**
+     * Focus scope represent type of focus that is taken by one think in an app.
+     *
+     * @default "tools"
+     */
     focusScope?: string;
     /**
      * This represents section seperated by | in the toolbar
+     *
+     * @default 0
      */
-    section: number;
+    section?: number;
     /**
      * This shortcut will be automatically registered in shortcut system
      */
