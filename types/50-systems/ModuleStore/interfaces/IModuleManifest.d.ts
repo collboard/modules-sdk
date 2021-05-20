@@ -5,7 +5,6 @@ import { IFlags } from '../../../40-utils/flagsToObject';
 import {
     string_char_emoji,
     string_email,
-    string_license,
     string_module_category,
     string_module_name,
     string_person_fullname,
@@ -14,10 +13,11 @@ import {
     string_version,
 } from '../../../40-utils/typeAliases';
 import { string_tranlate_language } from '../../TranslationsSystem/0-TranslationsSystem';
-import { IDependenciesRecord } from './IDependencies';
 /**
  * Manifest describes the module.
- * It is a bit inspired by all web and mobile app manifests + dependencies and project manifests like package.json or tsconfig.json
+ *
+ * You are able to spread package.json into Collboard module manifest and all types are matching perfectly.
+ * It is a bit inspired by all web and mobile app manifests.
  *
  */
 export interface IModuleManifest {
@@ -29,37 +29,38 @@ export interface IModuleManifest {
     categories?: string_module_category[];
     icon?: string_url_image | string_char_emoji;
     screenshots?: string_url_image[];
-    license?: string_license;
+    license?: IModuleManifestLicense;
+    licenses?: IModuleManifestLicense[];
     author?: IModuleManifestAuthor;
     contributors?: IModuleManifestAuthor[];
     /**
      * This determinates the priority of module as a supporter
-     * TODO: Use in MimeSupportSystem
-     * TODO: Use in support systems
      */
     priority?: number;
-    hidden?: true;
-    dependencies?: IDependenciesRecord;
     version?: string_version;
-    inDevelopment?: true;
-    inDevelopmentPublishedAsExperimental?: true;
-    deprecated?: true;
 }
 export interface IModuleFlags {
+    hidden: boolean;
     deprecated: boolean;
+    development: boolean;
+    experimental: boolean;
 }
 /**
  * Describes author or contributor of a module. It is in same format as in package.json.
  */
-export interface IModuleManifestAuthor {
-    name: string_person_fullname;
-    email?: string_email;
-    url?: string_url;
-}
-export declare const internalModule: true;
-export declare const inDevelopment: true;
-export declare const inDevelopmentPublishedAsExperimental: true;
-export declare const deprecated: true;
+export declare type IModuleManifestAuthor =
+    | string
+    | {
+          name: string_person_fullname;
+          email?: string_email;
+          url?: string_url;
+      };
+export declare type IModuleManifestLicense =
+    | string
+    | {
+          type?: string;
+          url?: string;
+      };
 export declare type IModuleManifestTranslation =
     | string
     | (Record<string_tranlate_language, string> & {
