@@ -23,7 +23,7 @@ npm install @collboard/modules-sdk
         "start": "colldev"
     },
     "dependencies": {
-        "@collboard/modules-sdk": "^10.4.1-6"
+        "@collboard/modules-sdk": "^11.2.2-1"
     }
 }
 ```
