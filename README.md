@@ -90,6 +90,16 @@ colldev develop --open false
 
 ![Colldev running in terminal](./media/colldev-running.png 'Colldev running in terminal')
 
+### 5) Create gitignore file *(optional if using git)* 
+
+Create file **.gitignore** and ignore temporary files and modules. 
+
+```
+.coldev
+node_modules
+```
+
+
 ### How it works under the hood?
 
 Colldev will automatically look into your package.json, finds **main** entry _(it can be typescript or javascript file)_. And watch, build and serve changes to Collboard in development mode.
