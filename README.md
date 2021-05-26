@@ -95,7 +95,7 @@ colldev develop --open false
 Create file **.gitignore** and ignore temporary files and modules. 
 
 ```
-.coldev
+.colldev
 node_modules
 ```
 
