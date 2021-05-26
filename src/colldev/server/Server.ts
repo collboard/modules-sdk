@@ -112,7 +112,7 @@ export class Server extends Destroyable implements IDestroyable {
                 const subscription = this.compiler.bundles.subscribe({
                     next: ({ path }) => {
                         // console.log(`Emmiting bundle for ${instanceUUID}`);
-                        this.socket.emit('bundle', {
+                        socketConnection.emit('bundle', {
                             bundleUrl: 'http://localhost:3000/assets/' + relative(ASSETS_PATH, path),
                         } as IColldevSyncerSocket.bundle);
                     },
