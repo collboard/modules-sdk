@@ -23,7 +23,7 @@ npm install @collboard/modules-sdk
         "start": "colldev"
     },
     "dependencies": {
-        "@collboard/modules-sdk": "^10.4.1-6"
+        "@collboard/modules-sdk": "^11.2.2-1"
     }
 }
 ```
@@ -89,6 +89,16 @@ colldev develop --open false
 ```
 
 ![Colldev running in terminal](./media/colldev-running.png 'Colldev running in terminal')
+
+### 5) Create gitignore file *(optional if using git)* 
+
+Create file **.gitignore** and ignore temporary files and modules. 
+
+```
+.colldev
+node_modules
+```
+
 
 ### How it works under the hood?
 
