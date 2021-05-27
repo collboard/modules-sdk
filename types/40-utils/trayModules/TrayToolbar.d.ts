@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 import { TouchController } from 'touchcontroller';
-import { ITrayDefinition } from '../TrayItemTypes';
+import { ITrayDefinition } from './TrayItemTypes';
 export interface ITrayToolbarProps {
     onMouseOver?: () => void;
     onMouseOut?: () => void;

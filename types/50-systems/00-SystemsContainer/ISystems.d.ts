@@ -48,6 +48,10 @@ import { VoiceSystem } from './../VoiceSystem/0-VoiceSystem';
  */
 export interface ISystems {
     /**
+     * Resolves when every system is ready.
+     */
+    readonly ready: Promise<void>;
+    /**
      * Generator: Systems
      * Omit: Serializer
      * Add: TouchController,ArtSerializer

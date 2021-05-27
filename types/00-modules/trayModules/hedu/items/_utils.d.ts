@@ -2,7 +2,7 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 /// <reference types="react" />
-import { ITrayItemList } from '../../_abstract/TrayItemTypes';
+import { ITrayItemList } from '../../../../40-utils/trayModules/TrayItemTypes';
 export declare function arrow(x1: number, y1: number, x2: number, y2: number, key?: number | string): JSX.Element;
 export declare function mapArray(
     object: {
