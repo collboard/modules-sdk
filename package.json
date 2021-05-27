@@ -1,6 +1,6 @@
 {
   "name": "@collboard/modules-sdk",
-  "version": "11.3.0-4",
+  "version": "11.3.0-5",
   "description": "Modules SDK toolkit for Collboard.com",
   "license": "SEE LICENSE IN LICENSE",
   "contributors": [
@@ -21,7 +21,6 @@
   "scripts": {
     "test": "echo \"TODO: !!! Implement\"",
     "develop": "ts-node dist/colldev/colldev.js",
-    "postinstall": "tsc",
     "prepare": "tsc && npm run test",
     "documentation": "typedoc"
   },
