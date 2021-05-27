@@ -88,6 +88,7 @@ export declare class SystemsContainer implements ISystems {
     private _voiceSystem;
     private _touchController;
     private _artSerializer;
+    get ready(): Promise<void>;
     /**
      * Generator: Systems
      * Omit: Serializer

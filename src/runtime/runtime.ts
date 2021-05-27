@@ -404,6 +404,10 @@ export const ExtraJsxSystem = (window as any).CollboardSdk.ExtraJsxSystem;
                     export const makeMultiModule = (window as any).CollboardSdk.makeMultiModule;
                     
 
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ModuleStore/makers/makeTrayModule.d.ts
+                    export const makeTrayModule = (window as any).CollboardSdk.makeTrayModule;
+                    
+
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/50-systems/ModuleStore/Syncers/ArtSupportSyncer.d.ts
                     export const ArtSupportSyncer = (window as any).CollboardSdk.ArtSupportSyncer;
                     
@@ -529,6 +533,10 @@ export const virtualCornerstoneArt = (window as any).CollboardSdk.virtualCorners
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/72-tools/behaviors/IBehavoirProps.d.ts
                     export const IBehavoirProps = (window as any).CollboardSdk.IBehavoirProps;
+                    
+
+                    // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/72-tools/behaviors/selectionTool/_selectionToolBehavior.d.ts
+                    export const selectionToolBehavior = (window as any).CollboardSdk.selectionToolBehavior;
                     
 
                     // C:/Users/me/work/collboard/collboard-main/modules/sdk/types/72-tools/behaviors/selectionTool/selectionToolDraggingBehavior.d.ts

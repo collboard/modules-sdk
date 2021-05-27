@@ -3,4 +3,8 @@
 
 import { PackageJson } from 'type-fest';
 import { IModuleManifest } from './IModuleManifest';
+/**
+ *
+ * @private
+ */
 export declare function testingThatPackageJsonIsAssignableToMobuleManifest(packageJson: PackageJson): IModuleManifest;

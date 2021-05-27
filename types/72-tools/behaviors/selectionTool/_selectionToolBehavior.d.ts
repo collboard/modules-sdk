@@ -13,6 +13,8 @@ import { IBehavoirProps } from '../IBehavoirProps';
  * - `rotating` (Rotating objects) - **not yet implemented**
  *
  * @see IBehavoirProps
+ *
+ * @collboard-modules-sdk
  */
 export declare function selectionToolBehavior(
     behaviorProps: IBehavoirProps,
