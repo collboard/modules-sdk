@@ -17,7 +17,9 @@
         "experimentalDecorators": true,
         "noUnusedLocals": false,
         "esModuleInterop": true,
-        "types": ["node"]
+        "skipLibCheck": true,
+        "types": ["node"],
+        "lib": ["DOM"]
     },
     "include": ["src","types"],
 
