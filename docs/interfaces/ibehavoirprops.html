@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IBehavoirProps | Modules SDK toolkit for Collboard.com - v11.3.0-0</title>
-	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.3.0-0">
+	<title>IBehavoirProps | Modules SDK toolkit for Collboard.com - v12.0.0-0</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v12.0.0-0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
   --color-background: #fdfdfd;
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.3.0-0</a></strong>
+					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v12.0.0-0</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2736,17 +2736,19 @@ img {
 				<dl class="tsd-comment-tags">
 					<dt>example</dt>
 					<dd><p>let module = {
-							setup: (systems) =&gt; {
-							return Registration.fromSubscription((registerAdditionalSubscription) =&gt;
-							systems.touchController.touches.subscribe((touch) =&gt; {
-							// do something else
-							let props: IBehavoirProps = { systems, registerAdditionalSubscription, touch };
-							if (selectionToolBehavior(props)) return;
-							if (someOtherBehavior(props)) return;
-							}),
-							);
-							},
-						}</p>
+							async setup(systems){
+						const { touchController } = await systems.request(&#39;touchController&#39;);</p>
+						<pre><code><span style="color: #000000">    </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">Registration</span><span style="color: #000000">.</span><span style="color: #795E26">fromSubscription</span><span style="color: #000000">((</span><span style="color: #001080">registerAdditionalSubscription</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">        </span><span style="color: #001080">touchController</span><span style="color: #000000">.</span><span style="color: #001080">touches</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">((</span><span style="color: #001080">touch</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">            </span><span style="color: #008000">// do something else</span>
+<span style="color: #000000">            </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">props</span><span style="color: #000000">: </span><span style="color: #267F99">IBehavoirProps</span><span style="color: #000000"> = { </span><span style="color: #001080">systems</span><span style="color: #000000">, </span><span style="color: #001080">registerAdditionalSubscription</span><span style="color: #000000">, </span><span style="color: #001080">touch</span><span style="color: #000000"> };</span>
+<span style="color: #000000">            </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #795E26">selectionToolBehavior</span><span style="color: #000000">(</span><span style="color: #001080">props</span><span style="color: #000000">)) </span><span style="color: #AF00DB">return</span><span style="color: #000000">;</span>
+<span style="color: #000000">            </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #795E26">someOtherBehavior</span><span style="color: #000000">(</span><span style="color: #001080">props</span><span style="color: #000000">)) </span><span style="color: #AF00DB">return</span><span style="color: #000000">;</span>
+<span style="color: #000000">        }),</span>
+<span style="color: #000000">    );</span>
+<span style="color: #000000">},</span>
+</code></pre>
+						<p>}</p>
 					</dd>
 					<dt>collboard-modules-sdk</dt>
 					<dd></dd>
@@ -2784,7 +2786,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">register<wbr>Additional<wbr>Subscription<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>subscription<span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type" data-tsd-kind="Interface">ISubscription</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/72-tools/behaviors/IBehavoirProps.d.ts:35</li>
+						<li>Defined in types/72-tools/behaviors/IBehavoirProps.d.ts:37</li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -2812,10 +2814,10 @@ img {
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 				<a name="systems" class="tsd-anchor"></a>
 				<h3>systems</h3>
-				<div class="tsd-signature tsd-kind-icon">systems<span class="tsd-signature-symbol">:</span> <a href="isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a></div>
+				<div class="tsd-signature tsd-kind-icon">systems<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;request&quot;</span><span class="tsd-signature-symbol">&gt;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/72-tools/behaviors/IBehavoirProps.d.ts:34</li>
+						<li>Defined in types/72-tools/behaviors/IBehavoirProps.d.ts:36</li>
 					</ul>
 				</aside>
 			</section>
@@ -2825,7 +2827,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">touch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Touch</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/72-tools/behaviors/IBehavoirProps.d.ts:36</li>
+						<li>Defined in types/72-tools/behaviors/IBehavoirProps.d.ts:38</li>
 					</ul>
 				</aside>
 			</section>

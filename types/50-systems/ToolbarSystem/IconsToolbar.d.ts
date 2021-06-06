@@ -4,33 +4,31 @@
 import { Destroyable } from '../../40-utils/destroyables/Destroyable';
 import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
 import { Registration } from '../../40-utils/destroyables/Registration';
+import { FocusSystem } from '../FocusSystem/0-FocusSystem';
 import { ShortcutsSystem } from '../ShortcutsSystem/0-ShortcutsSystem';
 import { ToolbarName } from './0-ToolbarSystem';
 import { IToolbarIcon } from './IToolbarIcon';
-/**
- * TODO: Destoryable (destroy for example queues)
- */
 export declare class IconsToolbar extends Destroyable implements IDestroyable {
     readonly toolbarName: ToolbarName;
     private shortcutsSystem;
-    private focusScopeRegistrations;
-    activeIcon: IToolbarIcon | null;
+    private focusSystem;
+    activeIcons: IToolbarIcon[];
     icons: IToolbarIcon[];
     /**
      *
      * @param toolbarName does not effect IconsToolbar behaviour, it solves only for identification purposes.
      */
-    constructor(
-        toolbarName: ToolbarName,
-        shortcutsSystem: ShortcutsSystem,
-        focusScopeRegistrations: Record<string, IDestroyable>,
-    );
+    constructor(toolbarName: ToolbarName, shortcutsSystem: ShortcutsSystem, focusSystem: FocusSystem);
     private selectQueue;
+    private iconOrNameToIcon;
     /**
-     * @param icon You can use here either full IToolbarIcon (same reference that is registered) or name (especially usefull when triggering externally)
+     * @param iconOrName You can use here either full IToolbarIcon (same reference that is registered) or name (especially usefull when triggering externally)
      */
-    selectIcon(iconOrIconName: IToolbarIcon | string): Promise<void>;
-    isActive(toolbarIconOrName: IToolbarIcon | string): boolean;
+    handleIconClick(iconOrName: IToolbarIcon | string): Promise<void>;
+    /**
+     * @param iconOrName You can use here either full IToolbarIcon (same reference that is registered) or name (especially usefull when triggering externally)
+     */
+    isIconActive(iconOrName: IToolbarIcon | string): boolean;
     registerIcon(icon: IToolbarIcon): Registration;
     destroy(): Promise<void>;
 }

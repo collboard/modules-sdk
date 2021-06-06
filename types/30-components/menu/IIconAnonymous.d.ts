@@ -1,6 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
+import { IAwaitable } from '../../40-utils/IAwaitable';
 import { string_char, string_char_emoji } from '../../40-utils/typeAliases';
 import { string_icon } from './icons';
 /**
@@ -16,7 +17,7 @@ export interface IIconAnonymous {
      *
      * *Note: Prefer to use onActivate when using IToolbarIcon*
      */
-    onClick?: () => void;
+    onClick?: () => IAwaitable<void>;
     /**
      * Marks if the icon should appear selected
      */

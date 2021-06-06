@@ -3,7 +3,7 @@
 
 import { Observable } from 'rxjs';
 import { string_uri_part, string_url, string_version } from '../../40-utils/typeAliases';
-import { ISystems } from '../00-SystemsContainer/ISystems';
+import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
 import { MaterialArtVersioningSystem } from '../ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { ITranslateMessage } from '../TranslationsSystem/ITranslateMessage';
@@ -16,7 +16,7 @@ import { IGetMyBoardsResponse } from './interfaces/IGetMyBoards';
  */
 export declare class ApiClient extends AbstractSystem {
     private apiUrl;
-    constructor(systemsContainer: ISystems, apiUrl: string);
+    constructor(systems: ISystemsExtended, apiUrl: string);
     private apiClientCache;
     protected init(): Promise<void>;
     getAbout(): Promise<{

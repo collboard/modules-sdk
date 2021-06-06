@@ -3,15 +3,24 @@
 
 /// <reference types="react" />
 import { IHandler } from '../../../../../40-utils/IHandler';
-import { ISystems } from '../../../../../50-systems/00-SystemsContainer/ISystems';
+import { ModuleStore } from '../../../../../50-systems/ModuleStore/connectors/0-ModuleStore';
 import { IModuleStoreConnectorSearchQuery } from '../../../../../50-systems/ModuleStore/interfaces/IModuleStoreConnectorSearch';
+import { CornerstoneSyncer } from '../../../../../50-systems/ModuleStore/Syncers/CornerstoneSyncer';
+import { RoutingSystem } from '../../../../../50-systems/RoutingSystem/0-RoutingSystem';
+import { TranslationsSystem } from '../../../../../50-systems/TranslationsSystem/0-TranslationsSystem';
 interface IModuleStoreModalComponentProps {
-    systemsContainer: ISystems;
+    routingSystem: RoutingSystem;
+    moduleStore: ModuleStore;
+    cornerstoneSyncer: CornerstoneSyncer;
+    translationsSystem: TranslationsSystem;
     search: IModuleStoreConnectorSearchQuery;
     onSearchChange: IHandler<IModuleStoreConnectorSearchQuery>;
 }
 export declare function ModuleStoreModalComponent({
-    systemsContainer,
+    routingSystem,
+    moduleStore,
+    cornerstoneSyncer,
+    translationsSystem,
     search,
     onSearchChange,
 }: IModuleStoreModalComponentProps): JSX.Element;

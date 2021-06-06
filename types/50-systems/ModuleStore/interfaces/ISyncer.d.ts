@@ -3,6 +3,10 @@
 
 import { IDependenciesRecord } from './IDependencies';
 import { IInstaller } from './IInstaller';
+/**
+ * Syncer watches some signal and sync (install/uninstall) modules according to it.
+ * This signal can be for example activated modules in the cornerstone or route
+ */
 export interface ISyncer extends IInstaller {
     sync(dependenciesTarget: IDependenciesRecord): Promise<void>;
 }

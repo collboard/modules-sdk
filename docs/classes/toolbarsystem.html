@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ToolbarSystem | Modules SDK toolkit for Collboard.com - v11.3.0-0</title>
-	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.3.0-0">
+	<title>ToolbarSystem | Modules SDK toolkit for Collboard.com - v12.0.0-0</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v12.0.0-0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
   --color-background: #fdfdfd;
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.3.0-0</a></strong>
+					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v12.0.0-0</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2711,7 +2711,10 @@ img {
 					<a href="toolbarsystem.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a href="toolbarsystem.html#focusscoperegistrations" class="tsd-kind-icon">focus<wbr>Scope<wbr>Registrations</a>
+					<a href="toolbarsystem.html#focussystem" class="tsd-kind-icon">focus<wbr>System</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="toolbarsystem.html#shortcutssystem" class="tsd-kind-icon">shortcuts<wbr>System</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a href="toolbarsystem.html#systems" class="tsd-kind-icon">systems</a>
@@ -2781,7 +2784,8 @@ img {
 					<section class="tsd-index-section tsd-is-private-protected">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="toolbarsystem.html#focusscoperegistrations" class="tsd-kind-icon">focus<wbr>Scope<wbr>Registrations</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="toolbarsystem.html#focussystem" class="tsd-kind-icon">focus<wbr>System</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="toolbarsystem.html#shortcutssystem" class="tsd-kind-icon">shortcuts<wbr>System</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="toolbarsystem.html#systems" class="tsd-kind-icon">systems</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="toolbarsystem.html#toolbars" class="tsd-kind-icon">toolbars</a></li>
 						</ul>
@@ -2811,7 +2815,7 @@ img {
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Toolbar<wbr>System<span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="../interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="toolbarsystem.html" class="tsd-signature-type" data-tsd-kind="Class">ToolbarSystem</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Toolbar<wbr>System<span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="../interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="toolbarsystem.html" class="tsd-signature-type" data-tsd-kind="Class">ToolbarSystem</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -2824,7 +2828,7 @@ img {
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>systems: <a href="../interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a></h5>
+								<h5>systems: <a href="../interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="toolbarsystem.html" class="tsd-signature-type" data-tsd-kind="Class">ToolbarSystem</a></h4>
@@ -2835,19 +2839,29 @@ img {
 		<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-				<a name="focusscoperegistrations" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagPrivate">Private</span> focus<wbr>Scope<wbr>Registrations</h3>
-				<div class="tsd-signature tsd-kind-icon">focus<wbr>Scope<wbr>Registrations<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+				<a name="focussystem" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> focus<wbr>System</h3>
+				<div class="tsd-signature tsd-kind-icon">focus<wbr>System<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
 						<li>Defined in types/50-systems/ToolbarSystem/0-ToolbarSystem.d.ts:26</li>
 					</ul>
 				</aside>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="shortcutssystem" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> shortcuts<wbr>System</h3>
+				<div class="tsd-signature tsd-kind-icon">shortcuts<wbr>System<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in types/50-systems/ToolbarSystem/0-ToolbarSystem.d.ts:27</li>
+					</ul>
+				</aside>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 				<a name="systems" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> systems</h3>
-				<div class="tsd-signature tsd-kind-icon">systems<span class="tsd-signature-symbol">:</span> <a href="../interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a></div>
+				<div class="tsd-signature tsd-kind-icon">systems<span class="tsd-signature-symbol">:</span> <a href="../interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a></div>
 				<aside class="tsd-sources">
 					<p>Inherited from AbstractSystem.systems</p>
 					<ul>
@@ -2978,7 +2992,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Overrides AbstractSystem.destroy</p>
 							<ul>
-								<li>Defined in types/50-systems/ToolbarSystem/0-ToolbarSystem.d.ts:29</li>
+								<li>Defined in types/50-systems/ToolbarSystem/0-ToolbarSystem.d.ts:30</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -2995,7 +3009,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/50-systems/ToolbarSystem/0-ToolbarSystem.d.ts:28</li>
+								<li>Defined in types/50-systems/ToolbarSystem/0-ToolbarSystem.d.ts:29</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3019,7 +3033,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Overrides AbstractSystem.init</p>
 							<ul>
-								<li>Defined in types/50-systems/ToolbarSystem/0-ToolbarSystem.d.ts:27</li>
+								<li>Defined in types/50-systems/ToolbarSystem/0-ToolbarSystem.d.ts:28</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>

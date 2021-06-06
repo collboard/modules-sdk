@@ -24,4 +24,4 @@ export declare function selectionToolBehavior(
         rotating?: boolean;
         selectionBox?: boolean;
     },
-): boolean;
+): Promise<boolean>;

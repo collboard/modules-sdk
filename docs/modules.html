@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Modules SDK toolkit for Collboard.com - v11.3.0-0 | Modules SDK toolkit for Collboard.com - v11.3.0-0</title>
-	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.3.0-0">
+	<title>Modules SDK toolkit for Collboard.com - v12.0.0-0 | Modules SDK toolkit for Collboard.com - v12.0.0-0</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v12.0.0-0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
   --color-background: #fdfdfd;
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="index.html">Modules SDK toolkit for Collboard.com - v11.3.0-0</a></strong>
+					<strong><a href="index.html">Modules SDK toolkit for Collboard.com - v12.0.0-0</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2706,6 +2706,9 @@ img {
 	<ul>
 		<li class=" tsd-kind-enum">
 			<a href="enums/extrajsxplace.html" class="tsd-kind-icon">Extra<wbr>Jsx<wbr>Place</a>
+		</li>
+		<li class=" tsd-kind-enum">
+			<a href="enums/focusscopename.html" class="tsd-kind-icon">Focus<wbr>Scope<wbr>Name</a>
 		</li>
 		<li class=" tsd-kind-enum">
 			<a href="enums/toolbarname.html" class="tsd-kind-icon">Toolbar<wbr>Name</a>
@@ -2742,9 +2745,6 @@ img {
 		</li>
 		<li class=" tsd-kind-class tsd-is-private">
 			<a href="classes/artsupportsyncer.html" class="tsd-kind-icon">Art<wbr>Support<wbr>Syncer</a>
-		</li>
-		<li class=" tsd-kind-class">
-			<a href="classes/asynccontentcomponent.html" class="tsd-kind-icon">Async<wbr>Content<wbr>Component</a>
 		</li>
 		<li class=" tsd-kind-class tsd-is-private">
 			<a href="classes/attributesupportsyncer.html" class="tsd-kind-icon">Attribute<wbr>Support<wbr>Syncer</a>
@@ -2802,6 +2802,9 @@ img {
 		</li>
 		<li class=" tsd-kind-class tsd-is-private">
 			<a href="classes/filepicksystem.html" class="tsd-kind-icon">Filepick<wbr>System</a>
+		</li>
+		<li class=" tsd-kind-class">
+			<a href="classes/focussystem.html" class="tsd-kind-icon">Focus<wbr>System</a>
 		</li>
 		<li class=" tsd-kind-class tsd-is-private">
 			<a href="classes/fractalsystem.html" class="tsd-kind-icon">Fractal<wbr>System</a>
@@ -2936,7 +2939,7 @@ img {
 			<a href="interfaces/isubscription.html" class="tsd-kind-icon">ISubscription</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/isystems.html" class="tsd-kind-icon">ISystems</a>
+			<a href="interfaces/isystemsextended.html" class="tsd-kind-icon">ISystems<wbr>Extended</a>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="interfaces/itranslationmessages.html" class="tsd-kind-icon">ITranslation<wbr>Messages</a>
@@ -2961,6 +2964,9 @@ img {
 		</li>
 		<li class=" tsd-kind-type-alias">
 			<a href="modules.html#ikeywords" class="tsd-kind-icon">IKeywords</a>
+		</li>
+		<li class=" tsd-kind-type-alias">
+			<a href="modules.html#isystems" class="tsd-kind-icon">ISystems</a>
 		</li>
 		<li class=" tsd-kind-type-alias">
 			<a href="modules.html#iteardownlogic" class="tsd-kind-icon">ITeardown<wbr>Logic</a>
@@ -3069,6 +3075,9 @@ img {
 		</li>
 		<li class=" tsd-kind-variable">
 			<a href="modules.html#virtualcornerstoneart" class="tsd-kind-icon">virtual<wbr>Cornerstone<wbr>Art</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="modules.html#asynccontentcomponent" class="tsd-kind-icon">Async<wbr>Content<wbr>Component</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#categorizedmodalbody" class="tsd-kind-icon">Categorized<wbr>Modal<wbr>Body</a>
@@ -3279,7 +3288,7 @@ img {
 <span style="color: #000000">        </span><span style="color: #0451A5">&quot;start&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;colldev&quot;</span>
 <span style="color: #000000">    },</span>
 <span style="color: #000000">    </span><span style="color: #0451A5">&quot;dependencies&quot;</span><span style="color: #000000">: {</span>
-<span style="color: #000000">        </span><span style="color: #0451A5">&quot;@collboard/modules-sdk&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;^10.4.1-6&quot;</span>
+<span style="color: #000000">        </span><span style="color: #0451A5">&quot;@collboard/modules-sdk&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;^11.2.2-1&quot;</span>
 <span style="color: #000000">    }</span>
 <span style="color: #000000">}</span>
 </code></pre>
@@ -3339,6 +3348,13 @@ img {
 
 </code></pre>
 			<p><img src="./media/colldev-running.png" alt="Colldev running in terminal" title="Colldev running in terminal"></p>
+			<a href="#5-create-gitignore-file-optional-if-using-git" id="5-create-gitignore-file-optional-if-using-git" style="color: inherit; text-decoration: none;">
+				<h3>5) Create gitignore file <em>(optional if using git)</em></h3>
+			</a>
+			<p>Create file <strong>.gitignore</strong> and ignore temporary files and modules.</p>
+			<pre><code><span style="color: #000000">.</span><span style="color: #001080">colldev</span>
+<span style="color: #001080">node_modules</span>
+</code></pre>
 			<a href="#how-it-works-under-the-hood" id="how-it-works-under-the-hood" style="color: inherit; text-decoration: none;">
 				<h3>How it works under the hood?</h3>
 			</a>
@@ -3428,6 +3444,10 @@ The standard window that can be used by modules to choose a file.
 
 
 -->
+			<a href="#focussystem" id="focussystem" style="color: inherit; text-decoration: none;">
+				<h3><a href="https://collboard.github.io/modules-sdk/classes/focussystem.html">FocusSystem</a></h3>
+			</a>
+			<p>FocusSystem can register and manage unique focuses and icons which there are.</p>
 			<!--Private system:
 ### [FractalSystem](https://collboard.github.io/modules-sdk/classes/fractalsystem.html)
 FractalSystem can do procedurally generated part of the board - patterns, iterations, etc.
@@ -3621,6 +3641,7 @@ TODO: !!! ## Multimodules
 						<h3>Enumerations</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-enum"><a href="enums/extrajsxplace.html" class="tsd-kind-icon">Extra<wbr>Jsx<wbr>Place</a></li>
+							<li class="tsd-kind-enum"><a href="enums/focusscopename.html" class="tsd-kind-icon">Focus<wbr>Scope<wbr>Name</a></li>
 							<li class="tsd-kind-enum"><a href="enums/toolbarname.html" class="tsd-kind-icon">Toolbar<wbr>Name</a></li>
 						</ul>
 					</section>
@@ -3638,7 +3659,6 @@ TODO: !!! ## Multimodules
 							<li class="tsd-kind-class"><a href="classes/apiclient.html" class="tsd-kind-icon">Api<wbr>Client</a></li>
 							<li class="tsd-kind-class"><a href="classes/appstate.html" class="tsd-kind-icon">App<wbr>State</a></li>
 							<li class="tsd-kind-class tsd-is-private"><a href="classes/artsupportsyncer.html" class="tsd-kind-icon">Art<wbr>Support<wbr>Syncer</a></li>
-							<li class="tsd-kind-class"><a href="classes/asynccontentcomponent.html" class="tsd-kind-icon">Async<wbr>Content<wbr>Component</a></li>
 							<li class="tsd-kind-class tsd-is-private"><a href="classes/attributesupportsyncer.html" class="tsd-kind-icon">Attribute<wbr>Support<wbr>Syncer</a></li>
 							<li class="tsd-kind-class"><a href="classes/attributessystem.html" class="tsd-kind-icon">Attributes<wbr>System</a></li>
 							<li class="tsd-kind-class"><a href="classes/backgroundpatternart.html" class="tsd-kind-icon">Background<wbr>Pattern<wbr>Art</a></li>
@@ -3658,6 +3678,7 @@ TODO: !!! ## Multimodules
 							<li class="tsd-kind-class"><a href="classes/exportsystem.html" class="tsd-kind-icon">Export<wbr>System</a></li>
 							<li class="tsd-kind-class"><a href="classes/extrajsxsystem.html" class="tsd-kind-icon">Extra<wbr>Jsx<wbr>System</a></li>
 							<li class="tsd-kind-class tsd-is-private"><a href="classes/filepicksystem.html" class="tsd-kind-icon">Filepick<wbr>System</a></li>
+							<li class="tsd-kind-class"><a href="classes/focussystem.html" class="tsd-kind-icon">Focus<wbr>System</a></li>
 							<li class="tsd-kind-class tsd-is-private"><a href="classes/fractalsystem.html" class="tsd-kind-icon">Fractal<wbr>System</a></li>
 							<li class="tsd-kind-class tsd-is-private"><a href="classes/gamificationsystem.html" class="tsd-kind-icon">Gamification<wbr>System</a></li>
 							<li class="tsd-kind-class tsd-is-private"><a href="classes/generatesystem.html" class="tsd-kind-icon">Generate<wbr>System</a></li>
@@ -3707,7 +3728,7 @@ TODO: !!! ## Multimodules
 							<li class="tsd-kind-interface"><a href="interfaces/iqueueoptions.html" class="tsd-kind-icon">IQueue<wbr>Options</a></li>
 							<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/iregisteritemsoptions.html" class="tsd-kind-icon">IRegister<wbr>Items<wbr>Options</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/isubscription.html" class="tsd-kind-icon">ISubscription</a></li>
-							<li class="tsd-kind-interface"><a href="interfaces/isystems.html" class="tsd-kind-icon">ISystems</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/isystemsextended.html" class="tsd-kind-icon">ISystems<wbr>Extended</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/itranslationmessages.html" class="tsd-kind-icon">ITranslation<wbr>Messages</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/iwrappedvalue.html" class="tsd-kind-icon">IWrapped<wbr>Value</a></li>
 						</ul>
@@ -3721,6 +3742,7 @@ TODO: !!! ## Multimodules
 							<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#ifactory" class="tsd-kind-icon">IFactory</a></li>
 							<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#ihandler" class="tsd-kind-icon">IHandler</a></li>
 							<li class="tsd-kind-type-alias"><a href="modules.html#ikeywords" class="tsd-kind-icon">IKeywords</a></li>
+							<li class="tsd-kind-type-alias"><a href="modules.html#isystems" class="tsd-kind-icon">ISystems</a></li>
 							<li class="tsd-kind-type-alias"><a href="modules.html#iteardownlogic" class="tsd-kind-icon">ITeardown<wbr>Logic</a></li>
 							<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#requireatleastone" class="tsd-kind-icon">Require<wbr>AtLeast<wbr>One</a></li>
 							<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#requireonlyone" class="tsd-kind-icon">Require<wbr>Only<wbr>One</a></li>
@@ -3767,6 +3789,7 @@ TODO: !!! ## Multimodules
 					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-function"><a href="modules.html#asynccontentcomponent" class="tsd-kind-icon">Async<wbr>Content<wbr>Component</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#categorizedmodalbody" class="tsd-kind-icon">Categorized<wbr>Modal<wbr>Body</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#categorizedmodalmenu" class="tsd-kind-icon">Categorized<wbr>Modal<wbr>Menu</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#iconcolor" class="tsd-kind-icon">Icon<wbr>Color</a></li>
@@ -3992,6 +4015,26 @@ TODO: !!! ## Multimodules
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
 						<p>IKeywords are lowercase [a-z1-9]</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>collboard-modules-sdk</dt>
+						<dd></dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-type-alias">
+				<a name="isystems" class="tsd-anchor"></a>
+				<h3>ISystems</h3>
+				<div class="tsd-signature tsd-kind-icon">ISystems<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;request&quot;</span><span class="tsd-signature-symbol">&gt;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in types/50-systems/00-SystemsContainer/ISystems.d.ts:50</li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Systems do everything in Collboard.
+						They can comunicate between or modules can do things through a systems</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>collboard-modules-sdk</dt>
@@ -4699,7 +4742,7 @@ TODO: !!! ## Multimodules
 				<div class="tsd-signature tsd-kind-icon">virtual<wbr>Cornerstone<wbr>Art<span class="tsd-signature-symbol">:</span> <a href="classes/cornerstoneart.html" class="tsd-signature-type" data-tsd-kind="Class">CornerstoneArt</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:57</li>
+						<li>Defined in types/71-arts/30-CornerstoneArt.d.ts:60</li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -4715,6 +4758,38 @@ TODO: !!! ## Multimodules
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Functions</h2>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="asynccontentcomponent" class="tsd-anchor"></a>
+				<h3>Async<wbr>Content<wbr>Component</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">Async<wbr>Content<wbr>Component<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IAsyncContentComponentProps</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">JSX.Element</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in types/30-components/utils/AsyncContentComponent.d.ts:24</li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Utility for mounting RxJS observable content</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>collboard-modules-sdk</dt>
+								<dd></dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>__namedParameters: <span class="tsd-signature-type">IAsyncContentComponentProps</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">JSX.Element</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="categorizedmodalbody" class="tsd-anchor"></a>
 				<h3>Categorized<wbr>Modal<wbr>Body</h3>
@@ -4897,7 +4972,7 @@ TODO: !!! ## Multimodules
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/30-components/utils/ObservableContentComponent.d.ts:24</li>
+								<li>Defined in types/30-components/utils/ObservableContentComponent.d.ts:27</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -5145,7 +5220,7 @@ TODO: !!! ## Multimodules
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/50-systems/ModuleStore/makers/makeModalModule.d.ts:22</li>
+								<li>Defined in types/50-systems/ModuleStore/makers/makeModalModule.d.ts:23</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -5754,7 +5829,7 @@ TODO: !!! ## Multimodules
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/50-systems/ModuleStore/makers/makeExtrajsxModule.d.ts:13</li>
+								<li>Defined in types/50-systems/ModuleStore/makers/makeExtrajsxModule.d.ts:14</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -5780,22 +5855,22 @@ TODO: !!! ## Multimodules
 									<li class="tsd-parameter">
 										<h5>create<wbr>Extra<wbr>Jsx<span class="tsd-signature-symbol">: </span>function</h5>
 										<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-type-literal">
-											<li class="tsd-signature tsd-kind-icon">create<wbr>Extra<wbr>Jsx<span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+											<li class="tsd-signature tsd-kind-icon">create<wbr>Extra<wbr>Jsx<span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;request&quot;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">&gt;</span></li>
 										</ul>
 										<ul class="tsd-descriptions">
 											<li class="tsd-description">
 												<aside class="tsd-sources">
 													<ul>
-														<li>Defined in types/50-systems/ModuleStore/makers/makeExtrajsxModule.d.ts:17</li>
+														<li>Defined in types/50-systems/ModuleStore/makers/makeExtrajsxModule.d.ts:18</li>
 													</ul>
 												</aside>
 												<h4 class="tsd-parameters-title">Parameters</h4>
 												<ul class="tsd-parameters">
 													<li>
-														<h5>systemsContainer: <a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a></h5>
+														<h5>systems: <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;request&quot;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 													</li>
 												</ul>
-												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
+												<h4 class="tsd-returns-title">Returns <a href="modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">&gt;</span></h4>
 											</li>
 										</ul>
 									</li>
@@ -5810,13 +5885,13 @@ TODO: !!! ## Multimodules
 				<a name="makeiconmodule" class="tsd-anchor"></a>
 				<h3>make<wbr>Icon<wbr>Module</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">make<wbr>Icon<wbr>Module<span class="tsd-signature-symbol">(</span>protoModule<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModuleDefinition</span></li>
+					<li class="tsd-signature tsd-kind-icon">make<wbr>Icon<wbr>Module<span class="tsd-signature-symbol">(</span>protoModule<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModuleDefinition</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/50-systems/ModuleStore/makers/makeIconModule.d.ts:13</li>
+								<li>Defined in types/50-systems/ModuleStore/makers/makeIconModule.d.ts:14</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -5828,10 +5903,10 @@ TODO: !!! ## Multimodules
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>protoModule: <span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span></h5>
+								<h5>protoModule: <span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span></h5>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter">
-										<h5>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span></h5>
+										<h5>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span></h5>
 									</li>
 									<li class="tsd-parameter">
 										<h5><span class="tsd-flag ts-flagOptional">Optional</span> manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span></h5>
@@ -5850,13 +5925,13 @@ TODO: !!! ## Multimodules
 				<a name="makeiconmoduleonmodule" class="tsd-anchor"></a>
 				<h3>make<wbr>Icon<wbr>Module<wbr>OnModule</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">make<wbr>Icon<wbr>Module<wbr>OnModule<span class="tsd-signature-symbol">(</span>protoModule<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>moduleActivatedByIcon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModule</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModuleDefinition</span></li>
+					<li class="tsd-signature tsd-kind-icon">make<wbr>Icon<wbr>Module<wbr>OnModule<span class="tsd-signature-symbol">(</span>protoModule<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>moduleActivatedByIcon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModule</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModuleDefinition</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/50-systems/ModuleStore/makers/makeIconModuleOnModule.d.ts:15</li>
+								<li>Defined in types/50-systems/ModuleStore/makers/makeIconModuleOnModule.d.ts:16</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -5872,10 +5947,10 @@ TODO: !!! ## Multimodules
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>protoModule: <span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>moduleActivatedByIcon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModule</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span></h5>
+								<h5>protoModule: <span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>moduleActivatedByIcon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModule</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span></h5>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter">
-										<h5>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span></h5>
+										<h5>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span></h5>
 									</li>
 									<li class="tsd-parameter">
 										<h5><span class="tsd-flag ts-flagOptional">Optional</span> manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span></h5>
@@ -5897,7 +5972,7 @@ TODO: !!! ## Multimodules
 				<a name="makeiconmoduleonroute" class="tsd-anchor"></a>
 				<h3>make<wbr>Icon<wbr>Module<wbr>OnRoute</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">make<wbr>Icon<wbr>Module<wbr>OnRoute<span class="tsd-signature-symbol">(</span>protoModule<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>routeParams<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IRoutePathParams</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModuleDefinition</span></li>
+					<li class="tsd-signature tsd-kind-icon">make<wbr>Icon<wbr>Module<wbr>OnRoute<span class="tsd-signature-symbol">(</span>protoModule<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>routeParams<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IRoutePathParams</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModuleDefinition</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -5919,10 +5994,10 @@ TODO: !!! ## Multimodules
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>protoModule: <span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>routeParams<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IRoutePathParams</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span></h5>
+								<h5>protoModule: <span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>routeParams<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IRoutePathParams</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>toolbar<span class="tsd-signature-symbol">: </span><a href="enums/toolbarname.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ToolbarName</a><span class="tsd-signature-symbol"> }</span></h5>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter">
-										<h5>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span></h5>
+										<h5>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span></h5>
 									</li>
 									<li class="tsd-parameter">
 										<h5><span class="tsd-flag ts-flagOptional">Optional</span> manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span></h5>
@@ -5950,7 +6025,7 @@ TODO: !!! ## Multimodules
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/50-systems/ModuleStore/makers/makeModalModule.d.ts:18</li>
+								<li>Defined in types/50-systems/ModuleStore/makers/makeModalModule.d.ts:19</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -5970,22 +6045,22 @@ TODO: !!! ## Multimodules
 									<li class="tsd-parameter">
 										<h5>create<wbr>Modal<span class="tsd-signature-symbol">: </span>function</h5>
 										<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-type-literal">
-											<li class="tsd-signature tsd-kind-icon">create<wbr>Modal<span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ICreateModalReturn</span></li>
+											<li class="tsd-signature tsd-kind-icon">create<wbr>Modal<span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;request&quot;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ICreateModalReturn</span><span class="tsd-signature-symbol">&gt;</span></li>
 										</ul>
 										<ul class="tsd-descriptions">
 											<li class="tsd-description">
 												<aside class="tsd-sources">
 													<ul>
-														<li>Defined in types/50-systems/ModuleStore/makers/makeModalModule.d.ts:20</li>
+														<li>Defined in types/50-systems/ModuleStore/makers/makeModalModule.d.ts:21</li>
 													</ul>
 												</aside>
 												<h4 class="tsd-parameters-title">Parameters</h4>
 												<ul class="tsd-parameters">
 													<li>
-														<h5>systemsContainer: <a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a></h5>
+														<h5>systems: <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;request&quot;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 													</li>
 												</ul>
-												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ICreateModalReturn</span></h4>
+												<h4 class="tsd-returns-title">Returns <a href="modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ICreateModalReturn</span><span class="tsd-signature-symbol">&gt;</span></h4>
 											</li>
 										</ul>
 									</li>
@@ -6035,7 +6110,7 @@ TODO: !!! ## Multimodules
 				<a name="maketraymodule" class="tsd-anchor"></a>
 				<h3>make<wbr>Tray<wbr>Module</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">make<wbr>Tray<wbr>Module&lt;Art&gt;<span class="tsd-signature-symbol">(</span>protoModule<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>newArtMaker<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Art</span><span class="tsd-signature-symbol">; </span>trayDefinition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ITrayDefinition</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModuleFactory</span></li>
+					<li class="tsd-signature tsd-kind-icon">make<wbr>Tray<wbr>Module&lt;Art&gt;<span class="tsd-signature-symbol">(</span>protoModule<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>newArtMaker<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Art</span><span class="tsd-signature-symbol">; </span>trayDefinition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ITrayDefinition</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModuleFactory</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -6062,10 +6137,10 @@ TODO: !!! ## Multimodules
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>protoModule: <span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>newArtMaker<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Art</span><span class="tsd-signature-symbol">; </span>trayDefinition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ITrayDefinition</span><span class="tsd-signature-symbol"> }</span></h5>
+								<h5>protoModule: <span class="tsd-signature-symbol">{ </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">; </span>newArtMaker<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Art</span><span class="tsd-signature-symbol">; </span>trayDefinition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ITrayDefinition</span><span class="tsd-signature-symbol"> }</span></h5>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter">
-										<h5>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systemsContainer<span class="tsd-signature-symbol">: </span><a href="interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span></h5>
+										<h5>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="modules.html#isystems" class="tsd-signature-type" data-tsd-kind="Type alias">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">IToolbarIcon</span><span class="tsd-signature-symbol">)</span></h5>
 										<div class="tsd-comment tsd-typography">
 											<div class="lead">
 												<p>Toolbar icon</p>
@@ -6654,7 +6729,7 @@ TODO: !!! ## Multimodules
 				<a name="selectiontoolbehavior" class="tsd-anchor"></a>
 				<h3>selection<wbr>Tool<wbr>Behavior</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">selection<wbr>Tool<wbr>Behavior<span class="tsd-signature-symbol">(</span>behaviorProps<span class="tsd-signature-symbol">: </span><a href="interfaces/ibehavoirprops.html" class="tsd-signature-type" data-tsd-kind="Interface">IBehavoirProps</a>, useBehaviors<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>dragging<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>rotating<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>scaling<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>selectionBox<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					<li class="tsd-signature tsd-kind-icon">selection<wbr>Tool<wbr>Behavior<span class="tsd-signature-symbol">(</span>behaviorProps<span class="tsd-signature-symbol">: </span><a href="interfaces/ibehavoirprops.html" class="tsd-signature-type" data-tsd-kind="Interface">IBehavoirProps</a>, useBehaviors<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>dragging<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>rotating<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>scaling<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>selectionBox<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -6708,7 +6783,7 @@ TODO: !!! ## Multimodules
 								</ul>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -6716,7 +6791,7 @@ TODO: !!! ## Multimodules
 				<a name="selectiontooldraggingbehavior" class="tsd-anchor"></a>
 				<h3>selection<wbr>Tool<wbr>Dragging<wbr>Behavior</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">selection<wbr>Tool<wbr>Dragging<wbr>Behavior<span class="tsd-signature-symbol">(</span>behaviorProps<span class="tsd-signature-symbol">: </span><a href="interfaces/ibehavoirprops.html" class="tsd-signature-type" data-tsd-kind="Interface">IBehavoirProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					<li class="tsd-signature tsd-kind-icon">selection<wbr>Tool<wbr>Dragging<wbr>Behavior<span class="tsd-signature-symbol">(</span>behaviorProps<span class="tsd-signature-symbol">: </span><a href="interfaces/ibehavoirprops.html" class="tsd-signature-type" data-tsd-kind="Interface">IBehavoirProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -6737,7 +6812,7 @@ TODO: !!! ## Multimodules
 								<h5>behaviorProps: <a href="interfaces/ibehavoirprops.html" class="tsd-signature-type" data-tsd-kind="Interface">IBehavoirProps</a></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -6745,7 +6820,7 @@ TODO: !!! ## Multimodules
 				<a name="selectiontoolscalingbehavior" class="tsd-anchor"></a>
 				<h3>selection<wbr>Tool<wbr>Scaling<wbr>Behavior</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">selection<wbr>Tool<wbr>Scaling<wbr>Behavior<span class="tsd-signature-symbol">(</span>behaviorProps<span class="tsd-signature-symbol">: </span><a href="interfaces/ibehavoirprops.html" class="tsd-signature-type" data-tsd-kind="Interface">IBehavoirProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					<li class="tsd-signature tsd-kind-icon">selection<wbr>Tool<wbr>Scaling<wbr>Behavior<span class="tsd-signature-symbol">(</span>behaviorProps<span class="tsd-signature-symbol">: </span><a href="interfaces/ibehavoirprops.html" class="tsd-signature-type" data-tsd-kind="Interface">IBehavoirProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -6766,7 +6841,7 @@ TODO: !!! ## Multimodules
 								<h5>behaviorProps: <a href="interfaces/ibehavoirprops.html" class="tsd-signature-type" data-tsd-kind="Interface">IBehavoirProps</a></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -6774,7 +6849,7 @@ TODO: !!! ## Multimodules
 				<a name="selectiontoolselectionboxbehavior" class="tsd-anchor"></a>
 				<h3>selection<wbr>Tool<wbr>Selection<wbr>Box<wbr>Behavior</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">selection<wbr>Tool<wbr>Selection<wbr>Box<wbr>Behavior<span class="tsd-signature-symbol">(</span>behaviorProps<span class="tsd-signature-symbol">: </span><a href="interfaces/ibehavoirprops.html" class="tsd-signature-type" data-tsd-kind="Interface">IBehavoirProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					<li class="tsd-signature tsd-kind-icon">selection<wbr>Tool<wbr>Selection<wbr>Box<wbr>Behavior<span class="tsd-signature-symbol">(</span>behaviorProps<span class="tsd-signature-symbol">: </span><a href="interfaces/ibehavoirprops.html" class="tsd-signature-type" data-tsd-kind="Interface">IBehavoirProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -6795,7 +6870,7 @@ TODO: !!! ## Multimodules
 								<h5>behaviorProps: <a href="interfaces/ibehavoirprops.html" class="tsd-signature-type" data-tsd-kind="Interface">IBehavoirProps</a></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>

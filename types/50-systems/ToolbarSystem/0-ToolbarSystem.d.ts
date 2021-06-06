@@ -23,7 +23,8 @@ export declare enum ToolbarName {
  */
 export declare class ToolbarSystem extends AbstractSystem {
     private toolbars;
-    private focusScopeRegistrations;
+    private focusSystem;
+    private shortcutsSystem;
     protected init(): Promise<void>;
     getToolbar(toolbarName: ToolbarName): IconsToolbar;
     destroy(): Promise<void>;

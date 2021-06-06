@@ -6,7 +6,7 @@ import 'moment/locale/sk';
 import * as React from 'react';
 import { Observable } from 'rxjs';
 import { IReplacer } from '../../40-utils/applyParamsOnTemplate';
-import { ISystems } from '../00-SystemsContainer/ISystems';
+import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
 import { ITranslateMessage } from './ITranslateMessage';
 /**
@@ -34,7 +34,7 @@ export declare class TranslationsSystem extends AbstractSystem {
     readonly missingTranslateMessages: Observable<ITranslateMessage>;
     private missingTranslateMessagesObserver?;
     private _language;
-    constructor(systemsContainer: ISystems);
+    constructor(systems: ISystemsExtended);
     protected init(): Promise<void>;
     get translateMessages(): ITranslateMessage[];
     get language(): string_tranlate_language;

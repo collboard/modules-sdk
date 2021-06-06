@@ -4,7 +4,7 @@
 import { IDestroyable } from 'everstorage';
 import { BehaviorSubject } from 'rxjs';
 import { string_module_name } from '../../../40-utils/typeAliases';
-import { ISystems } from '../../00-SystemsContainer/ISystems';
+import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { ModuleInstallation } from '../ModuleInstallation';
 import { ModuleStatus } from '../ModuleStatus';
 import { IDependency } from './IDependencies';
@@ -13,7 +13,7 @@ import { IDependency } from './IDependencies';
  */
 export interface IInstaller extends IDestroyable {
     readonly installations: ModuleInstallation[];
-    install(dependency: IDependency, systems: ISystems, syncerName?: string): Promise<void>;
+    install(dependency: IDependency, systems: ISystemsExtended, syncerName?: string): Promise<void>;
     uninstall(moduleName: string_module_name): Promise<void>;
     uninstallAll(): Promise<void>;
     statusOf(moduleName: string_module_name): BehaviorSubject<ModuleStatus>;

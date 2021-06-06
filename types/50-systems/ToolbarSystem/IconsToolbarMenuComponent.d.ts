@@ -7,6 +7,6 @@ interface IIconsToolbarMenuComponentProps {
     iconsToolbar: IconsToolbar;
 }
 export declare class IconsToolbarMenuComponent extends React.Component<IIconsToolbarMenuComponentProps> {
-    render(): JSX.Element | null;
+    render(): JSX.Element;
 }
 export {};

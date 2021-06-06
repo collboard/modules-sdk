@@ -16,6 +16,7 @@ import { ExportSystem } from './../ExportImportSystem/0-ExportSystem';
 import { ImportSystem } from './../ExportImportSystem/0-ImportSystem';
 import { ExtraJsxSystem } from './../ExtraJsxSystem/0-ExtraJsxSystem';
 import { FilepickSystem } from './../FilepickSystem/0-FilepickSystem';
+import { FocusSystem } from './../FocusSystem/0-FocusSystem';
 import { FractalSystem } from './../FractalSystem/0-FractalSystem';
 import { GamificationSystem } from './../GamificationSystem/0-GamificationSystem';
 import { GenerateSystem } from './../GenerateSystem/0-GenerateSystem';
@@ -39,136 +40,64 @@ import { StyleSystem } from './../StyleSystem/0-StyleSystem';
 import { ToolbarSystem } from './../ToolbarSystem/0-ToolbarSystem';
 import { TranslationsSystem } from './../TranslationsSystem/0-TranslationsSystem';
 import { VoiceSystem } from './../VoiceSystem/0-VoiceSystem';
+import { ISystemsResolved } from './ISystemsResolved';
 /**
  * Systems do everything in Collboard.
  * They can comunicate between or modules can do things through a systems
- * TODO: Every module needs to get permission to comunicate with each system
  *
  * @collboard-modules-sdk
  */
-export interface ISystems {
-    /**
-     * Resolves when every system is ready.
-     */
-    readonly ready: Promise<void>;
+export declare type ISystems = Pick<ISystemsExtended, 'request'>;
+/**
+ * TODO: Remove this temporary solution when we merge feature/requesting-systems-pure
+ */
+export interface ISystemsExtended {
+    request<T extends keyof Omit<ISystemsExtended, 'request'>>(
+        ...requestedSystemsNames: T[]
+    ): Promise<Pick<ISystemsResolved, T>>;
     /**
      * Generator: Systems
      * Omit: Serializer
      * Add: TouchController,ArtSerializer
-     * Pattern: readonly <system>: <System>;readonly <system>Promise: Promise<<System>>;readonly <system>Nullable: <System> | null;
+     * Pattern: readonly <system>: Promise<<System>>;
      */
-    readonly apiClient: ApiClient;
-    readonly apiClientPromise: Promise<ApiClient>;
-    readonly apiClientNullable: ApiClient | null;
-    readonly boardApiClient: BoardApiClient;
-    readonly boardApiClientPromise: Promise<BoardApiClient>;
-    readonly boardApiClientNullable: BoardApiClient | null;
-    readonly appState: AppState;
-    readonly appStatePromise: Promise<AppState>;
-    readonly appStateNullable: AppState | null;
-    readonly materialArtVersioningSystem: MaterialArtVersioningSystem;
-    readonly materialArtVersioningSystemPromise: Promise<MaterialArtVersioningSystem>;
-    readonly materialArtVersioningSystemNullable: MaterialArtVersioningSystem | null;
-    readonly virtualArtVersioningSystem: VirtualArtVersioningSystem;
-    readonly virtualArtVersioningSystemPromise: Promise<VirtualArtVersioningSystem>;
-    readonly virtualArtVersioningSystemNullable: VirtualArtVersioningSystem | null;
-    readonly attributesSystem: AttributesSystem;
-    readonly attributesSystemPromise: Promise<AttributesSystem>;
-    readonly attributesSystemNullable: AttributesSystem | null;
-    readonly closePreventionSystem: ClosePreventionSystem;
-    readonly closePreventionSystemPromise: Promise<ClosePreventionSystem>;
-    readonly closePreventionSystemNullable: ClosePreventionSystem | null;
-    readonly collSpace: CollSpace;
-    readonly collSpacePromise: Promise<CollSpace>;
-    readonly collSpaceNullable: CollSpace | null;
-    readonly createSystem: CreateSystem;
-    readonly createSystemPromise: Promise<CreateSystem>;
-    readonly createSystemNullable: CreateSystem | null;
-    readonly exportSystem: ExportSystem;
-    readonly exportSystemPromise: Promise<ExportSystem>;
-    readonly exportSystemNullable: ExportSystem | null;
-    readonly importSystem: ImportSystem;
-    readonly importSystemPromise: Promise<ImportSystem>;
-    readonly importSystemNullable: ImportSystem | null;
-    readonly extraJsxSystem: ExtraJsxSystem;
-    readonly extraJsxSystemPromise: Promise<ExtraJsxSystem>;
-    readonly extraJsxSystemNullable: ExtraJsxSystem | null;
-    readonly filepickSystem: FilepickSystem;
-    readonly filepickSystemPromise: Promise<FilepickSystem>;
-    readonly filepickSystemNullable: FilepickSystem | null;
-    readonly fractalSystem: FractalSystem;
-    readonly fractalSystemPromise: Promise<FractalSystem>;
-    readonly fractalSystemNullable: FractalSystem | null;
-    readonly gamificationSystem: GamificationSystem;
-    readonly gamificationSystemPromise: Promise<GamificationSystem>;
-    readonly gamificationSystemNullable: GamificationSystem | null;
-    readonly generateSystem: GenerateSystem;
-    readonly generateSystemPromise: Promise<GenerateSystem>;
-    readonly generateSystemNullable: GenerateSystem | null;
-    readonly hintSystem: HintSystem;
-    readonly hintSystemPromise: Promise<HintSystem>;
-    readonly hintSystemNullable: HintSystem | null;
-    readonly identitySystem: IdentitySystem;
-    readonly identitySystemPromise: Promise<IdentitySystem>;
-    readonly identitySystemNullable: IdentitySystem | null;
-    readonly moduleStore: ModuleStore;
-    readonly moduleStorePromise: Promise<ModuleStore>;
-    readonly moduleStoreNullable: ModuleStore | null;
-    readonly artSupportSyncer: ArtSupportSyncer;
-    readonly artSupportSyncerPromise: Promise<ArtSupportSyncer>;
-    readonly artSupportSyncerNullable: ArtSupportSyncer | null;
-    readonly attributeSupportSyncer: AttributeSupportSyncer;
-    readonly attributeSupportSyncerPromise: Promise<AttributeSupportSyncer>;
-    readonly attributeSupportSyncerNullable: AttributeSupportSyncer | null;
-    readonly businessSyncer: BusinessSyncer;
-    readonly businessSyncerPromise: Promise<BusinessSyncer>;
-    readonly businessSyncerNullable: BusinessSyncer | null;
-    readonly cornerstoneSyncer: CornerstoneSyncer;
-    readonly cornerstoneSyncerPromise: Promise<CornerstoneSyncer>;
-    readonly cornerstoneSyncerNullable: CornerstoneSyncer | null;
-    readonly routeSyncer: RouteSyncer;
-    readonly routeSyncerPromise: Promise<RouteSyncer>;
-    readonly routeSyncerNullable: RouteSyncer | null;
-    readonly storageSyncer: StorageSyncer;
-    readonly storageSyncerPromise: Promise<StorageSyncer>;
-    readonly storageSyncerNullable: StorageSyncer | null;
-    readonly notificationSystem: NotificationSystem;
-    readonly notificationSystemPromise: Promise<NotificationSystem>;
-    readonly notificationSystemNullable: NotificationSystem | null;
-    readonly pointerSystem: PointerSystem;
-    readonly pointerSystemPromise: Promise<PointerSystem>;
-    readonly pointerSystemNullable: PointerSystem | null;
-    readonly routingSystem: RoutingSystem;
-    readonly routingSystemPromise: Promise<RoutingSystem>;
-    readonly routingSystemNullable: RoutingSystem | null;
-    readonly shortcutsSystem: ShortcutsSystem;
-    readonly shortcutsSystemPromise: Promise<ShortcutsSystem>;
-    readonly shortcutsSystemNullable: ShortcutsSystem | null;
-    readonly snapSystem: SnapSystem;
-    readonly snapSystemPromise: Promise<SnapSystem>;
-    readonly snapSystemNullable: SnapSystem | null;
-    readonly soundSystem: SoundSystem;
-    readonly soundSystemPromise: Promise<SoundSystem>;
-    readonly soundSystemNullable: SoundSystem | null;
-    readonly storageSystem: StorageSystem;
-    readonly storageSystemPromise: Promise<StorageSystem>;
-    readonly storageSystemNullable: StorageSystem | null;
-    readonly styleSystem: StyleSystem;
-    readonly styleSystemPromise: Promise<StyleSystem>;
-    readonly styleSystemNullable: StyleSystem | null;
-    readonly toolbarSystem: ToolbarSystem;
-    readonly toolbarSystemPromise: Promise<ToolbarSystem>;
-    readonly toolbarSystemNullable: ToolbarSystem | null;
-    readonly translationsSystem: TranslationsSystem;
-    readonly translationsSystemPromise: Promise<TranslationsSystem>;
-    readonly translationsSystemNullable: TranslationsSystem | null;
-    readonly voiceSystem: VoiceSystem;
-    readonly voiceSystemPromise: Promise<VoiceSystem>;
-    readonly voiceSystemNullable: VoiceSystem | null;
-    readonly touchController: TouchController;
-    readonly touchControllerPromise: Promise<TouchController>;
-    readonly touchControllerNullable: TouchController | null;
-    readonly artSerializer: ArtSerializer;
-    readonly artSerializerPromise: Promise<ArtSerializer>;
-    readonly artSerializerNullable: ArtSerializer | null;
+    readonly apiClient: Promise<ApiClient>;
+    readonly boardApiClient: Promise<BoardApiClient>;
+    readonly appState: Promise<AppState>;
+    readonly materialArtVersioningSystem: Promise<MaterialArtVersioningSystem>;
+    readonly virtualArtVersioningSystem: Promise<VirtualArtVersioningSystem>;
+    readonly attributesSystem: Promise<AttributesSystem>;
+    readonly closePreventionSystem: Promise<ClosePreventionSystem>;
+    readonly collSpace: Promise<CollSpace>;
+    readonly createSystem: Promise<CreateSystem>;
+    readonly exportSystem: Promise<ExportSystem>;
+    readonly importSystem: Promise<ImportSystem>;
+    readonly extraJsxSystem: Promise<ExtraJsxSystem>;
+    readonly filepickSystem: Promise<FilepickSystem>;
+    readonly focusSystem: Promise<FocusSystem>;
+    readonly fractalSystem: Promise<FractalSystem>;
+    readonly gamificationSystem: Promise<GamificationSystem>;
+    readonly generateSystem: Promise<GenerateSystem>;
+    readonly hintSystem: Promise<HintSystem>;
+    readonly identitySystem: Promise<IdentitySystem>;
+    readonly moduleStore: Promise<ModuleStore>;
+    readonly artSupportSyncer: Promise<ArtSupportSyncer>;
+    readonly attributeSupportSyncer: Promise<AttributeSupportSyncer>;
+    readonly businessSyncer: Promise<BusinessSyncer>;
+    readonly cornerstoneSyncer: Promise<CornerstoneSyncer>;
+    readonly routeSyncer: Promise<RouteSyncer>;
+    readonly storageSyncer: Promise<StorageSyncer>;
+    readonly notificationSystem: Promise<NotificationSystem>;
+    readonly pointerSystem: Promise<PointerSystem>;
+    readonly routingSystem: Promise<RoutingSystem>;
+    readonly shortcutsSystem: Promise<ShortcutsSystem>;
+    readonly snapSystem: Promise<SnapSystem>;
+    readonly soundSystem: Promise<SoundSystem>;
+    readonly storageSystem: Promise<StorageSystem>;
+    readonly styleSystem: Promise<StyleSystem>;
+    readonly toolbarSystem: Promise<ToolbarSystem>;
+    readonly translationsSystem: Promise<TranslationsSystem>;
+    readonly voiceSystem: Promise<VoiceSystem>;
+    readonly touchController: Promise<TouchController>;
+    readonly artSerializer: Promise<ArtSerializer>;
 }

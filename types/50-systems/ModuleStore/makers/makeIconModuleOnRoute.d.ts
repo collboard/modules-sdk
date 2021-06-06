@@ -16,6 +16,6 @@ import { IModuleManifest } from '../interfaces/IModuleManifest';
 export declare function makeIconModuleOnRoute(protoModule: {
     manifest?: IModuleManifest;
     toolbar: ToolbarName;
-    icon: IToolbarIcon | ((systemsContainer: ISystems) => IToolbarIcon);
+    icon: IToolbarIcon | ((systems: ISystems) => IToolbarIcon);
     routeParams: Partial<IRoutePathParams>;
 }): IModuleDefinition;

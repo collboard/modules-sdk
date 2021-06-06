@@ -8,5 +8,6 @@ export declare const DEFAULT_ACTIVATE: {
 /**
  * When there will be nothing in cornerstone (fresh board) what dependencies will be installed by CornerstoneSyncer.
  * TODO: !! This should be put into a bussiness mlutimodule which defines collboard bussiness
+ * TODO: Maybe pass through IStorageSyncerOptions
  */
-export declare const DEFAULT_CORNERSTONE_DEPENDENCIES: IDependenciesRecord;
+export declare const DEFAULT_ACTIVE_CORNERSTONE_DEPENDENCIES: IDependenciesRecord;

@@ -48,13 +48,12 @@ export interface IModuleFlags {
 /**
  * Describes author or contributor of a module. It is in same format as in package.json.
  */
-export declare type IModuleManifestAuthor =
-    | string
-    | {
-          name: string_person_fullname;
-          email?: string_email;
-          url?: string_url;
-      };
+export declare type IModuleManifestAuthor = string | IModuleManifestAuthorObject;
+export declare type IModuleManifestAuthorObject = {
+    name?: string_person_fullname;
+    email?: string_email;
+    url?: string_url;
+};
 export declare type IModuleManifestLicense =
     | string
     | {

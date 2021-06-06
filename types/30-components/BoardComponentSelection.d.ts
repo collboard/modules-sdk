@@ -2,11 +2,20 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 import * as React from 'react';
-import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
+import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
+import { AppState } from '../50-systems/AppState/0-AppState';
+import { ToolbarSystem } from '../50-systems/ToolbarSystem/0-ToolbarSystem';
 interface IBoardComponentSelectionProps {
-    systemsContainer: ISystems;
+    systems: ISystemsExtended;
 }
 export declare class BoardComponentSelection extends React.Component<IBoardComponentSelectionProps> {
+    render(): JSX.Element;
+}
+interface IBoardComponentSelectionInnerProps extends IBoardComponentSelectionProps {
+    appState: AppState;
+    toolbarSystem: ToolbarSystem;
+}
+export declare class BoardComponentSelectionInner extends React.Component<IBoardComponentSelectionInnerProps> {
     render(): JSX.Element;
 }
 export {};

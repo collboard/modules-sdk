@@ -85,6 +85,7 @@ export * from './50-systems/ExportImportSystem/0-ExportSystem';
 export * from './50-systems/ExportImportSystem/0-ImportSystem';
 export * from './50-systems/ExtraJsxSystem/0-ExtraJsxSystem';
 export * from './50-systems/FilepickSystem/0-FilepickSystem';
+export * from './50-systems/FocusSystem/0-FocusSystem';
 export * from './50-systems/FractalSystem/0-FractalSystem';
 export * from './50-systems/GamificationSystem/0-GamificationSystem';
 export * from './50-systems/GenerateSystem/0-GenerateSystem';

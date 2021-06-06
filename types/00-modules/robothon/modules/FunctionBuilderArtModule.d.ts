@@ -4,6 +4,8 @@
 /// <reference types="react" />
 import { IVector, Vector } from 'xyzt';
 import { ISystems } from '../../../50-systems/00-SystemsContainer/ISystems';
+import { MaterialArtVersioningSystem } from '../../../50-systems/ArtVersionSystem/0-MaterialArtVersioningSystem';
+import { CollSpace } from '../../../50-systems/CollSpace/0-CollSpace';
 import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
 import { FunctionBuilderDefinition } from '../interfaces/FunctionBuilderFunction';
 import '../style.css';
@@ -32,8 +34,8 @@ export declare class FunctionBuilderArt extends Abstract2dArt {
     private recountPointerOverInputByPosition;
     private clearAllPointerOverInputs;
     private locateRef;
-    getOutputPosition(systemsContainer: ISystems): Vector;
-    getInputPosition(key: string, systemsContainer: ISystems): Vector;
-    evaluate(x: number, seenNodes: string[], systemsContainer: ISystems): number | null;
-    render(_selected: boolean, systemsContainer: ISystems): JSX.Element;
+    getOutputPosition(collSpace: CollSpace): Vector;
+    getInputPosition(key: string, collSpace: CollSpace): Vector;
+    evaluate(x: number, seenNodes: string[], materialArtVersioningSystem: MaterialArtVersioningSystem): number | null;
+    render(_selected: boolean, systems: ISystems): Promise<JSX.Element>;
 }

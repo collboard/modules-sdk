@@ -11,6 +11,7 @@ import { AbstractSystem } from '../AbstractSystem';
  */
 export declare class CollSpace extends AbstractSystem {
     private renderCache;
+    private appState;
     protected init(): Promise<void>;
     private _scene;
     private get scene();

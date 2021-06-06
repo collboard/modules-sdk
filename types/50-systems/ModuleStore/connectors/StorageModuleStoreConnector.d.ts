@@ -2,7 +2,7 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 import { string_module_category } from '../../../40-utils/typeAliases';
-import { ISystems } from '../../00-SystemsContainer/ISystems';
+import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { IDependency } from '../interfaces/IDependencies';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModulesStorage } from '../interfaces/IModulesStorage';
@@ -15,7 +15,7 @@ import { IModuleStoreConnectorSearchQuery } from '../interfaces/IModuleStoreConn
 export declare class StorageModuleStoreConnector implements IModuleStoreConnector {
     private systems;
     private modulesStorage;
-    constructor(systems: ISystems, modulesStorage: Pick<IModulesStorage, 'modules'>);
+    constructor(systems: ISystemsExtended, modulesStorage: Pick<IModulesStorage, 'modules'>);
     download(...identificators: IDependency[]): Promise<IModuleDefinition[]>;
     getCategories(): Promise<Set<string_module_category>>;
     search(

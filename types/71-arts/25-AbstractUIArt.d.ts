@@ -2,7 +2,7 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 /// <reference types="react" />
-import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
+import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
 import { ExtraJsxPlace } from '../50-systems/ExtraJsxSystem/0-ExtraJsxSystem';
 import { AbstractArt } from './20-AbstractArt';
 /**
@@ -16,5 +16,5 @@ import { AbstractArt } from './20-AbstractArt';
 export declare abstract class AbstractUIArt extends AbstractArt {
     extraJsxPlace: ExtraJsxPlace;
     constructor(extraJsxPlace: ExtraJsxPlace);
-    abstract render(systemsContainer: ISystems): JSX.Element;
+    abstract render(systems: ISystemsExtended): JSX.Element;
 }

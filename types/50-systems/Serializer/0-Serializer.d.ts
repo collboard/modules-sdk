@@ -3,7 +3,7 @@
 
 import { ISerializable, ISerialized, ISerializeRule } from 'everstorage';
 import { Registration } from '../../40-utils/destroyables/Registration';
-import { ISystems } from '../00-SystemsContainer/ISystems';
+import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
 /**
  * TODO: !! This should be imported from everstorage and extended
@@ -13,7 +13,7 @@ import { AbstractSystem } from '../AbstractSystem';
  */
 export declare class Serializer<T extends ISerializable> extends AbstractSystem {
     private rules;
-    constructor(systemsContainer: ISystems, rules: Array<ISerializeRule<T>>);
+    constructor(systems: ISystemsExtended, rules: Array<ISerializeRule<T>>);
     protected init(): Promise<void>;
     registerRule(rule: ISerializeRule<T>): Registration;
     serialize(instance: T): Promise<ISerialized>;

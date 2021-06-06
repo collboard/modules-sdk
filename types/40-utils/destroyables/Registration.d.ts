@@ -23,8 +23,8 @@ export declare class Registration extends Destroyable implements IDestroyable {
     static join(...registrations: Array<IAwaitable<IDestroyable | undefined>>): Registration;
     static fromSubscription(
         subscriptionFactory: (
-            registerAdditionalSubscription: (additionalSubscription: ISubscription) => void,
-        ) => ISubscription,
+            registerAdditionalSubscription: (additionalSubscription: IAwaitable<ISubscription>) => void,
+        ) => IAwaitable<ISubscription>,
     ): Registration;
     static void(): Registration;
     /**

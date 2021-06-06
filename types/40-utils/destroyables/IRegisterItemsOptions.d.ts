@@ -24,7 +24,7 @@ export interface IRegisterItemsOptions<TType, TItem> {
      * - **SKIP** will just ignore this item
      * - **OVERRIDE** will re-write existing item *(is cases of simple comparision this can behave same as SKIP)*
      */
-    collisionStrategy?: 'ERROR' | 'SKIP' | 'OVERRIDE';
+    collisionStrategy?: 'ERROR' | 'WARN' | 'SKIP' | 'OVERRIDE';
 }
 /**
  * TODO: Maybe there should exist some object that will represent registrations ad a whole above array/record

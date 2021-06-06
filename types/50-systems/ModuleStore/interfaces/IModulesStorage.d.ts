@@ -1,6 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
+import { BehaviorSubject } from 'rxjs';
 import { IDestroyable } from 'touchcontroller';
 import { string_module_name } from '../../../40-utils/typeAliases';
 import { IModule, IModuleDefinition } from './IModule';
@@ -15,5 +16,5 @@ export interface IModulesStorage extends IDestroyable {
     /**
      * TODO: Maybe Map
      */
-    readonly modules: Record<string_module_name, IModuleDefinition>;
+    readonly modules: BehaviorSubject<Record<string_module_name, IModuleDefinition>>;
 }

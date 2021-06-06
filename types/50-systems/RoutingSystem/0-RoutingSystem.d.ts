@@ -18,6 +18,7 @@ export declare let routingSystem: RoutingSystem;
  */
 export declare class RoutingSystem extends AbstractSystem {
     viewUriId: string_uri_part | null;
+    private storageSystem;
     protected init(): Promise<void>;
     readonly path: BrowserHistoryPathStorage<IRoutePathParams>;
     navigateHome(): IRoutePathParams;

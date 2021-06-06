@@ -21,7 +21,7 @@ export declare class AppState extends AbstractSystem {
     windowSize: Vector;
     private watchWindowSize;
     /**
-     * TODO: selected, selection,... should be managed by some separate system OR this system rename to SelectionSystem
+     * TODO: selected, selection,... should be managed by some separate system (FocusSystem) OR this system rename to SelectionSystem
      * TODO: When loosing focus in the app (for example clicking on board name or opening a modal), selection should be canceled
      */
     selected: AbstractPlacedArt[];

@@ -2,7 +2,7 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 import { string_module_name } from '../../../40-utils/typeAliases';
-import { ISystems } from '../../00-SystemsContainer/ISystems';
+import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../../AbstractSystem';
 import { IDependenciesRecord, IDependency } from '../interfaces/IDependencies';
 import { IModulesStorage } from '../interfaces/IModulesStorage';
@@ -18,7 +18,7 @@ export declare abstract class AbstractSyncer extends AbstractSystem implements I
     private queue;
     get statusOf(): any;
     get installations(): import('../ModuleInstallation').ModuleInstallation[];
-    install(dependency: IDependency, systems: ISystems, syncerName?: string): Promise<void>;
+    install(dependency: IDependency, systems: ISystemsExtended, syncerName?: string): Promise<void>;
     uninstall(moduleName: string_module_name): Promise<void>;
     uninstallAll(): Promise<void>;
     protected init(): Promise<void>;

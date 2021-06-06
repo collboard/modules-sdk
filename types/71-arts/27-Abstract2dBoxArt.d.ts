@@ -4,7 +4,7 @@
 /// <reference types="react" />
 import { IVector, Vector } from 'xyzt';
 import { string_attribute } from '../40-utils/typeAliases';
-import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
+import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
  * Abstract2dArt implements some of the functionality of `Abstract2dArt` to
@@ -31,7 +31,7 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
      */
     get measured(): boolean;
     get acceptedAttributes(): string_attribute[];
-    render(selected: boolean, systemsContainer: ISystems): JSX.Element;
+    render(selected: boolean, systems: ISystemsExtended): JSX.Element;
     /**
      * Measure the object and set `privateSize` and `originalSize`
      */
@@ -46,7 +46,7 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
      * *Note: This can be called many times a second when user is scrolling
      * or not at all when art is out of screen*
      */
-    abstract renderBox(systemsContainer: ISystems): JSX.Element;
+    abstract renderBox(systems: ISystemsExtended): JSX.Element;
 }
 /**
  * Note: number is just a file prefix to feep it on the top of file list.

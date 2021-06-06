@@ -3,6 +3,7 @@
 
 import * as React from 'react';
 import { IModalProps } from '../../../30-components/modal/Modal';
+import { IAwaitable } from '../../../40-utils/IAwaitable';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { TranslationsSystem } from '../../TranslationsSystem/0-TranslationsSystem';
 import { IModuleDefinition } from '../interfaces/IModule';
@@ -17,7 +18,7 @@ declare type ICreateModalReturn = Partial<Omit<IModalProps, 'children' | 'system
  */
 export declare function makeModalModule(protoModule: {
     manifest?: IModuleManifest;
-    createModal(systemsContainer: ISystems): ICreateModalReturn;
+    createModal(systems: ISystems): IAwaitable<ICreateModalReturn>;
 }): IModuleDefinition;
 export declare function createModalTitle({
     modal,

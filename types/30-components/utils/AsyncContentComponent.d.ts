@@ -1,7 +1,9 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import * as React from 'react';
+/// <reference types="react" />
+import { IAwaitable } from '../../40-utils/IAwaitable';
+import { IFactorable } from '../../40-utils/IFactory';
 interface IAsyncContentComponentProps {
     /**
      * Component to be rendered before the content is loaded
@@ -12,26 +14,12 @@ interface IAsyncContentComponentProps {
     /**
      * The async content to be rendered
      */
-    content: () => Promise<JSX.Element | JSX.Element[]>;
-}
-interface IAsyncContentComponentState {
-    content: JSX.Element | JSX.Element[] | null;
+    content: IFactorable<IAwaitable<JSX.Element>>;
 }
 /**
- * Utility for mounting async content
+ * Utility for mounting RxJS observable content
  *
  * @collboard-modules-sdk
  */
-export declare class AsyncContentComponent extends React.Component<
-    IAsyncContentComponentProps,
-    IAsyncContentComponentState
-> {
-    state: IAsyncContentComponentState;
-    constructor(props: IAsyncContentComponentProps);
-    UNSAFE_componentWillReceiveProps(props: IAsyncContentComponentProps): void;
-    private unmounted;
-    componentWillUnmount(): void;
-    private load;
-    render(): JSX.Element;
-}
+export declare function AsyncContentComponent({ loading, content }: IAsyncContentComponentProps): JSX.Element;
 export {};

@@ -3,9 +3,9 @@
 
 import { Destroyable } from '../40-utils/destroyables/Destroyable';
 import { IDestroyable } from '../40-utils/destroyables/IDestroyable';
-import { ISystems } from './00-SystemsContainer/ISystems';
+import { ISystemsExtended } from './00-SystemsContainer/ISystems';
 export declare abstract class AbstractSystem extends Destroyable implements IDestroyable {
-    protected readonly systems: ISystems;
-    constructor(systems: ISystems);
+    protected readonly systems: ISystemsExtended;
+    constructor(systems: ISystemsExtended);
     protected abstract init(): Promise<void>;
 }

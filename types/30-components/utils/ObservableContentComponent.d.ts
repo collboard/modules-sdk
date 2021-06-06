@@ -4,6 +4,9 @@
 /// <reference types="react" />
 import { Observable } from 'rxjs';
 import { IAwaitable } from '../../40-utils/IAwaitable';
+/**
+ * TODO: Make from this some microlibrary
+ */
 interface IObservableContentComponentProps {
     /**
      * Component to be rendered before the content is loaded
@@ -14,7 +17,7 @@ interface IObservableContentComponentProps {
     /**
      * You can put here any RxJS observable. For example BehaviorSubject.
      */
-    content: Observable<IAwaitable<JSX.Element | JSX.Element[]>>;
+    content: Observable<IAwaitable<JSX.Element>>;
 }
 /**
  * Utility for mounting RxJS observable content

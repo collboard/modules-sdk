@@ -90,15 +90,14 @@ colldev develop --open false
 
 ![Colldev running in terminal](./media/colldev-running.png 'Colldev running in terminal')
 
-### 5) Create gitignore file *(optional if using git)* 
+### 5) Create gitignore file _(optional if using git)_
 
-Create file **.gitignore** and ignore temporary files and modules. 
+Create file **.gitignore** and ignore temporary files and modules.
 
 ```
 .colldev
 node_modules
 ```
-
 
 ### How it works under the hood?
 
@@ -197,6 +196,10 @@ The standard window that can be used by modules to choose a file.
 
 
 -->
+
+### [FocusSystem](https://collboard.github.io/modules-sdk/classes/focussystem.html)
+
+FocusSystem can register and manage unique focuses and icons which there are.
 
 <!--Private system:
 ### [FractalSystem](https://collboard.github.io/modules-sdk/classes/fractalsystem.html)

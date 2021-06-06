@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CornerstoneSyncer | Modules SDK toolkit for Collboard.com - v11.3.0-0</title>
-	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v11.3.0-0">
+	<title>CornerstoneSyncer | Modules SDK toolkit for Collboard.com - v12.0.0-0</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v12.0.0-0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
   --color-background: #fdfdfd;
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v11.3.0-0</a></strong>
+					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v12.0.0-0</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2746,6 +2746,12 @@ img {
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="cornerstonesyncer.html#install" class="tsd-kind-icon">install</a>
 				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="cornerstonesyncer.html#moduleactivate" class="tsd-kind-icon">module<wbr>Activate</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="cornerstonesyncer.html#moduledeactivate" class="tsd-kind-icon">module<wbr>Deactivate</a>
+				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="cornerstonesyncer.html#sync" class="tsd-kind-icon">sync</a>
 				</li>
@@ -2789,6 +2795,7 @@ img {
 			<h3>Implements</h3>
 			<ul class="tsd-hierarchy">
 				<li><span class="tsd-signature-type">ISyncer</span></li>
+				<li><span class="tsd-signature-type">IActivator</span></li>
 				<li><a href="../interfaces/idestroyable.html" class="tsd-signature-type" data-tsd-kind="Interface">IDestroyable</a></li>
 			</ul>
 		</section>
@@ -2827,6 +2834,8 @@ img {
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="cornerstonesyncer.html#init" class="tsd-kind-icon">init</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="cornerstonesyncer.html#initsyncer" class="tsd-kind-icon">init<wbr>Syncer</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cornerstonesyncer.html#install" class="tsd-kind-icon">install</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cornerstonesyncer.html#moduleactivate" class="tsd-kind-icon">module<wbr>Activate</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cornerstonesyncer.html#moduledeactivate" class="tsd-kind-icon">module<wbr>Deactivate</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cornerstonesyncer.html#sync" class="tsd-kind-icon">sync</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cornerstonesyncer.html#uninstall" class="tsd-kind-icon">uninstall</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cornerstonesyncer.html#uninstallall" class="tsd-kind-icon">uninstall<wbr>All</a></li>
@@ -2841,7 +2850,7 @@ img {
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Cornerstone<wbr>Syncer<span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="../interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cornerstonesyncer.html" class="tsd-signature-type" data-tsd-kind="Class">CornerstoneSyncer</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Cornerstone<wbr>Syncer<span class="tsd-signature-symbol">(</span>systems<span class="tsd-signature-symbol">: </span><a href="../interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cornerstonesyncer.html" class="tsd-signature-type" data-tsd-kind="Class">CornerstoneSyncer</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -2854,7 +2863,7 @@ img {
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>systems: <a href="../interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a></h5>
+								<h5>systems: <a href="../interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="cornerstonesyncer.html" class="tsd-signature-type" data-tsd-kind="Class">CornerstoneSyncer</a></h4>
@@ -2871,7 +2880,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Overrides AbstractSyncer.modulesStorage</p>
 					<ul>
-						<li>Defined in types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts:14</li>
+						<li>Defined in types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts:16</li>
 					</ul>
 				</aside>
 			</section>
@@ -2881,14 +2890,14 @@ img {
 				<div class="tsd-signature tsd-kind-icon">subscription<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts:15</li>
+						<li>Defined in types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts:17</li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 				<a name="systems" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> systems</h3>
-				<div class="tsd-signature tsd-kind-icon">systems<span class="tsd-signature-symbol">:</span> <a href="../interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a></div>
+				<div class="tsd-signature tsd-kind-icon">systems<span class="tsd-signature-symbol">:</span> <a href="../interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a></div>
 				<aside class="tsd-sources">
 					<p>Inherited from AbstractSyncer.systems</p>
 					<ul>
@@ -3050,7 +3059,7 @@ img {
 							<p>Implementation of <a href="../interfaces/idestroyable.html">IDestroyable</a>.<a href="../interfaces/idestroyable.html#destroy">destroy</a></p>
 							<p>Overrides AbstractSyncer.destroy</p>
 							<ul>
-								<li>Defined in types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts:17</li>
+								<li>Defined in types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts:21</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3091,7 +3100,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Overrides AbstractSyncer.initSyncer</p>
 							<ul>
-								<li>Defined in types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts:16</li>
+								<li>Defined in types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts:18</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -3102,7 +3111,7 @@ img {
 				<a name="install" class="tsd-anchor"></a>
 				<h3>install</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<li class="tsd-signature tsd-kind-icon">install<span class="tsd-signature-symbol">(</span>dependency<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDependency</span>, systems<span class="tsd-signature-symbol">: </span><a href="../interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a>, syncerName<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">install<span class="tsd-signature-symbol">(</span>dependency<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDependency</span>, systems<span class="tsd-signature-symbol">: </span><a href="../interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a>, syncerName<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -3119,10 +3128,58 @@ img {
 								<h5>dependency: <span class="tsd-signature-type">IDependency</span></h5>
 							</li>
 							<li>
-								<h5>systems: <a href="../interfaces/isystems.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystems</a></h5>
+								<h5>systems: <a href="../interfaces/isystemsextended.html" class="tsd-signature-type" data-tsd-kind="Interface">ISystemsExtended</a></h5>
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> syncerName: <span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="moduleactivate" class="tsd-anchor"></a>
+				<h3>module<wbr>Activate</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">module<wbr>Activate<span class="tsd-signature-symbol">(</span>moduleName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Implementation of IActivator.moduleActivate</p>
+							<ul>
+								<li>Defined in types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts:19</li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>moduleName: <span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="moduledeactivate" class="tsd-anchor"></a>
+				<h3>module<wbr>Deactivate</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">module<wbr>Deactivate<span class="tsd-signature-symbol">(</span>moduleName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Implementation of IActivator.moduleDeactivate</p>
+							<ul>
+								<li>Defined in types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts:20</li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>moduleName: <span class="tsd-signature-type">string</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -3133,7 +3190,7 @@ img {
 				<a name="sync" class="tsd-anchor"></a>
 				<h3>sync</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<li class="tsd-signature tsd-kind-icon">sync<span class="tsd-signature-symbol">(</span>dependenciesTarget<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDependenciesRecord</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">sync<span class="tsd-signature-symbol">(</span>dependenciesTarget<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">IDependencyDetail</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -3147,7 +3204,7 @@ img {
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>dependenciesTarget: <span class="tsd-signature-type">IDependenciesRecord</span></h5>
+								<h5>dependenciesTarget: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">IDependencyDetail</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>

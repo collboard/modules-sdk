@@ -41,7 +41,7 @@ export interface IModalProps extends React.PropsWithChildren<{}> {
     /**
      * Reference to systems container
      */
-    systemsContainer?: ISystems;
+    systems?: ISystems;
 }
 /**
  * Modal component

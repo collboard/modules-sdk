@@ -18,7 +18,7 @@ export declare function makeTrayModule<Art extends Abstract2dArt>(protoModule: {
     /**
      * Toolbar icon
      */
-    icon: IToolbarIcon | ((systemsContainer: ISystems) => IToolbarIcon);
+    icon: IToolbarIcon | ((systems: ISystems) => IToolbarIcon);
     /**
      * Definition of tray items
      */

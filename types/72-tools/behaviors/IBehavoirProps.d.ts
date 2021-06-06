@@ -16,9 +16,11 @@ import { ISystems } from '../../50-systems/00-SystemsContainer/ISystems';
  *
  * @example
  * let module = {
- *     setup: (systems) => {
+ *     async setup(systems){
+ *         const { touchController } = await systems.request('touchController');
+ *
  *         return Registration.fromSubscription((registerAdditionalSubscription) =>
- *             systems.touchController.touches.subscribe((touch) => {
+ *             touchController.touches.subscribe((touch) => {
  *                 // do something else
  *                 let props: IBehavoirProps = { systems, registerAdditionalSubscription, touch };
  *                 if (selectionToolBehavior(props)) return;

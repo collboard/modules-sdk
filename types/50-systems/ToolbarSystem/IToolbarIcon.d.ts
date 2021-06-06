@@ -5,8 +5,9 @@
 import { IIconAnonymous } from '../../30-components/menu/IIconAnonymous';
 import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
 import { IAwaitable } from '../../40-utils/IAwaitable';
-import { IFactory } from '../../40-utils/IFactory';
+import { IFactorable, IFactory } from '../../40-utils/IFactory';
 import { string_css_cursor } from '../../40-utils/typeAliases';
+import { FocusScopeName } from '../FocusSystem/0-FocusSystem';
 import { IShortcut } from '../ShortcutsSystem/interfaces/IShortcut';
 /**
  * Icon placed on the toolbar with listeners (vs. IIconAnonymous without context)
@@ -25,8 +26,15 @@ export interface IToolbarIcon extends IIconAnonymous {
     /**
      * Select immediatelly when is ihis icon added into toolbar
      * Note: working only with onSelect (not onClick)
+     *
+     * @default true
      */
     autoSelect?: boolean;
+    /**
+     * If user click on icon when it is selected should it be unselected
+     * Note: working only with onSelect (not onClick)
+     */
+    togglable?: boolean;
     /**
      * Where the icon will be on the toolbar
      * Note: section has a priorit
@@ -37,9 +45,9 @@ export interface IToolbarIcon extends IIconAnonymous {
     /**
      * Focus scope represent type of focus that is taken by one think in an app.
      *
-     * @default "tools"
+     * @default "TOOL"
      */
-    focusScope?: string;
+    focusScope?: FocusScopeName;
     /**
      * This represents section seperated by | in the toolbar
      *
@@ -53,6 +61,7 @@ export interface IToolbarIcon extends IIconAnonymous {
     boardCursor?: string_css_cursor;
     /**
      * Extra menu which will be
+     *
      */
-    menu?: () => JSX.Element;
+    menu?: IFactorable<IAwaitable<JSX.Element>>;
 }
