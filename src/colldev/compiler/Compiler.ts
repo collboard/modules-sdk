@@ -14,7 +14,7 @@ export interface ICompilerResults {
 }
 
 export class Compiler extends Destroyable implements IDestroyable {
-    constructor() {
+    constructor(private workingDir: string) {
         super();
         this.init();
     }
@@ -42,7 +42,7 @@ export class Compiler extends Destroyable implements IDestroyable {
                 watch: true,
                 mode: 'development', //'production',
                 devtool: 'source-map',
-                entry: await getModulePackageMainPath(),
+                entry: await getModulePackageMainPath(this.workingDir),
                 module: {
                     rules: [
                         {

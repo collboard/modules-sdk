@@ -30,14 +30,16 @@ export class Colldev extends Destroyable implements IDestroyable {
 
         const commands = {
             develop: program
-                .command('develop', { isDefault: true })
+                // TODO: What is difference between "develop <path>" vs develop [path]
+                .command('develop <path>', { isDefault: true })
                 // TODO: browser
                 .alias('start')
                 .description(`Start developing collboard module. Runs compiler+dev server.`)
+                .option('-c, --collboard <url>', `Url of development Collboard`, 'https://dev.collboard.com')
                 .option(
-                    '-o, --open <url>',
-                    `Url of dev collboard OR 'false' to not open any page. `,
-                    'https://dev.collboard.com',
+                    '-o, --open <openMode>',
+                    `"redirect" for redirecting to development Collboard;\n "about" for showing Colldev page with more info;\n "none" for silent run of Colldev`,
+                    'redirect',
                 )
                 .action(this.runDevelop.bind(this)),
             publish: program
@@ -55,12 +57,24 @@ export class Colldev extends Destroyable implements IDestroyable {
         return { program, commands };
     }
 
-    private async runDevelop({ open }: { open: string }) {
-        if (open !== 'false') {
-            openBrowser(open);
+    private async runDevelop(
+        path: string,
+        { collboard, open }: { collboard: string; open: 'redirect' | 'about' | 'none' },
+    ) {
+        // console.info('develop:', { path, collboard, open });
+
+        let uriParams = '';
+        if (collboard !== 'https://dev.collboard.com') {
+            uriParams = `?collboardUrl=${encodeURIComponent(collboard)}`;
         }
 
-        const compiler = new Compiler();
+        if (open === 'redirect') {
+            openBrowser(`http://localhost:3000/${uriParams}`);
+        } else if (open === 'about') {
+            openBrowser(`http://localhost:3000/about${uriParams}`);
+        }
+
+        const compiler = new Compiler(path || './');
         const server = new Server(compiler);
 
         this.addSubdestroyable(compiler, server);

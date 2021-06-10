@@ -2,14 +2,14 @@ import { access, constants, readFile } from 'fs';
 import { join } from 'path';
 import { promisify } from 'util';
 
-function getModulePackagePath(): string {
-    const packagePath = join(process.cwd(), 'package.json');
+function getModulePackagePath(workingDir: string): string {
+    const packagePath = join(process.cwd(), workingDir, 'package.json');
     return packagePath;
 }
 
-async function getModulePackageContent(): Promise<any> {
+async function getModulePackageContent(workingDir: string): Promise<any> {
     try {
-        const packagePath = getModulePackagePath();
+        const packagePath = getModulePackagePath(workingDir);
         await promisify(access)(packagePath, constants.R_OK);
         const packageContentString = await promisify(readFile)(packagePath, 'utf8');
         const packageContent = JSON.parse(packageContentString);
@@ -19,18 +19,20 @@ async function getModulePackageContent(): Promise<any> {
         throw new Error(`Colldev did not found valid package.json`);
     }
 }
-export async function getModulePackageMainPath(): Promise<string> {
-    const mainPathRelative = (await getModulePackageContent()).main;
+export async function getModulePackageMainPath(workingDir: string): Promise<string> {
+    const mainPathRelative = (await getModulePackageContent(workingDir)).main;
     if (!mainPathRelative) {
         throw new Error(`Colldev did not found main entry in package.json`);
     }
+    const mainPath = join(process.cwd(), workingDir, mainPathRelative);
+
     try {
-        await promisify(access)(mainPathRelative, constants.R_OK);
+        await promisify(access)(mainPath, constants.R_OK);
     } catch (error) {
         console.error(error);
-        throw new Error(`Colldev cannot acces main entry "${mainPathRelative}" defined in package.json`);
+        throw new Error(`Colldev cannot acces main entry "${mainPath}" defined in package.json`);
     }
-    const mainPath = join(process.cwd(), mainPathRelative);
+
     return mainPath;
 }
 

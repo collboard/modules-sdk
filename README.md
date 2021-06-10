@@ -83,14 +83,14 @@ npm start
 # Note: "colldev" is just shortcut for "colldev develop"
 colldev develop
 
-# And disable to open browser on dev.collboard.com
-colldev develop --open false
+# And disable to open browser
+colldev develop --open none
 
 ```
 
 ![Colldev running in terminal](./media/colldev-running.png 'Colldev running in terminal')
 
-### 5) Create gitignore file _(optional if using git)_
+### 5) Create .gitignore file _(optional if using git)_
 
 Create file **.gitignore** and ignore temporary files and modules.
 

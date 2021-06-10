@@ -20,7 +20,7 @@
     },
     "scripts": {
         "test": "echo \"TODO: !!! Implement\"",
-        "develop": "ts-node dist/colldev/colldev.js",
+        "develop": "ts-node ./src/colldev/main.ts develop ./sample_module --collboard http://localhost:9977 --open redirect",
         "prepare": "tsc && npm run test",
         "documentation": "typedoc"
     },
