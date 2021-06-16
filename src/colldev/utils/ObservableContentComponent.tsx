@@ -3,9 +3,10 @@ import { Observable } from 'rxjs';
 import { IAwaitable } from './destroyables/IAwaitable';
 
 /**
- * TODO: Make from this some microlibrary
+ * Note: THIS IS A COPY. Do not edit it here but:
+ * https://github.com/collboard/collboard/blob/refactoring/persisting-connector-advanced/src/30-components/utils/ObservableContentComponent.tsx
+ *
  */
-
 interface IObservableContentComponentProps {
     /**
      * Component to be rendered before the content is loaded
@@ -25,9 +26,9 @@ interface IObservableContentComponentState {
 }
 
 /**
- * Utility for mounting RxJS observable content
+ * Note: THIS IS A COPY. Do not edit it here but:
+ * https://github.com/collboard/collboard/blob/refactoring/persisting-connector-advanced/src/30-components/utils/ObservableContentComponent.tsx
  *
- * @collboard-modules-sdk
  */
 export function ObservableContentComponent({ loading, content }: IObservableContentComponentProps) {
     const [state, setState] = React.useState<IObservableContentComponentState>({ content: loading || <>Loading...</> });
