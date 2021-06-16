@@ -2,13 +2,16 @@ import { IAwaitable } from './IAwaitable';
 import { IDestroyable } from './IDestroyable';
 
 /**
- *  TODO: Take from independent library when available
+ * Note: THIS IS A COPY. Do not edit it here but:
+ * https://github.com/collboard/collboard/tree/refactoring/persisting-connector-advanced/src/40-utils/destroyables
+ *
  */
 export type ITeardownLogic = (() => IAwaitable<void>) | IDestroyable;
 
 /**
+ * Note: THIS IS A COPY. Do not edit it here but:
+ * https://github.com/collboard/collboard/tree/refactoring/persisting-connector-advanced/src/40-utils/destroyables
  *
- * TODO: Take from independent library when available
  */
 export async function teardown(teardownLogic: ITeardownLogic): Promise<void> {
     if (typeof teardownLogic === 'function') {
@@ -17,6 +20,3 @@ export async function teardown(teardownLogic: ITeardownLogic): Promise<void> {
         return await teardownLogic.destroy();
     }
 }
-
-// TODO: Make compatible with IAwaitable<IDestroyable | undefined>
-// TODO: Use in Registration.join

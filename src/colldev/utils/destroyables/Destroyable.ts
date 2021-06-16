@@ -2,7 +2,9 @@ import { IDestroyable } from './IDestroyable';
 import { ITeardownLogic, teardown } from './TeardownLogic';
 
 /**
- * TODO: Take from independent library when available
+ * Note: THIS IS A COPY. Do not edit it here but:
+ * https://github.com/collboard/collboard/tree/refactoring/persisting-connector-advanced/src/40-utils/destroyables
+ *
  */
 export abstract class Destroyable implements IDestroyable {
     private _destroyed = false;

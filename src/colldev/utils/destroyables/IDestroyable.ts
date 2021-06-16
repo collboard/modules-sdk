@@ -1,9 +1,10 @@
 import { IAwaitable } from './IAwaitable';
 
 /**
- * TODO: Take from independent library when available
- */
-export interface IDestroyable {
+ * Note: THIS IS A COPY. Do not edit it here but:
+ * https://github.com/collboard/collboard/tree/refactoring/persisting-connector-advanced/src/40-utils/destroyables
+ *
+ */ export interface IDestroyable {
     readonly destroyed: boolean;
     destroy(): IAwaitable<void>;
 }
