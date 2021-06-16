@@ -2,14 +2,14 @@ import { IAwaitable } from './IAwaitable';
 import { IDestroyable } from './IDestroyable';
 
 /**
- * Note: THIS IS A COPY. Do not edit it here but:
+ * ⚠️Warning: THIS IS A COPY. Do not edit it here but:
  * https://github.com/collboard/collboard/tree/refactoring/persisting-connector-advanced/src/40-utils/destroyables
  *
  */
 export type ITeardownLogic = (() => IAwaitable<void>) | IDestroyable;
 
 /**
- * Note: THIS IS A COPY. Do not edit it here but:
+ * ⚠️Warning: THIS IS A COPY. Do not edit it here but:
  * https://github.com/collboard/collboard/tree/refactoring/persisting-connector-advanced/src/40-utils/destroyables
  *
  */

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { IAwaitable } from './destroyables/IAwaitable';
 
 /**
- * Note: THIS IS A COPY. Do not edit it here but:
+ * ⚠️Warning: THIS IS A COPY. Do not edit it here but:
  * https://github.com/collboard/collboard/blob/refactoring/persisting-connector-advanced/src/30-components/utils/ObservableContentComponent.tsx
  *
  */
@@ -26,7 +26,7 @@ interface IObservableContentComponentState {
 }
 
 /**
- * Note: THIS IS A COPY. Do not edit it here but:
+ * ⚠️Warning: THIS IS A COPY. Do not edit it here but:
  * https://github.com/collboard/collboard/blob/refactoring/persisting-connector-advanced/src/30-components/utils/ObservableContentComponent.tsx
  *
  */
