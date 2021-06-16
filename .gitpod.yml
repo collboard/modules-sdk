@@ -1,0 +1,12 @@
+ports:
+    - port: 3000
+tasks:
+    - name: install
+      init: npm install && gp sync-done install
+
+    - name: develop
+      init: gp sync-await install
+      command: npm run develop
+vscode:
+    extensions:
+        - esbenp.prettier-vscode

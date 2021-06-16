@@ -3,6 +3,8 @@
 Modules SDK toolkit for [Collboard.com](https://collboard.com/).
 Here is the [sample of very simple module](https://github.com/collboard/module-sample-basic). And here you can read [full manual](https://collboard.github.io/modules-sdk/).
 
+![Collboard banner](./media/collboard.png 'Collboard banner')
+
 ## How to develop your first module in 4 steps
 
 ### 1) To start install the [@collboard/modules-sdk](https://www.npmjs.com/package/@collboard/modules-sdk) first:
