@@ -3,13 +3,13 @@ import Table from 'ink-table';
 import * as React from 'react';
 import { filter, map } from 'rxjs/operators';
 import { Compiler, ICompilerResults } from '../compiler/Compiler';
-import { Server } from '../server/Server';
+import { ColldevServer } from '../server/ColldevServer';
 import { objectMap } from '../utils/objectMap';
 import { ObservableContentComponent } from '../utils/ObservableContentComponent';
 
 interface IOutputProps {
     compiler: Compiler;
-    server: Server;
+    server: ColldevServer;
 }
 
 // TODO:  Make simmilar UI for CollboardDevelopmentModule + Colldev Express

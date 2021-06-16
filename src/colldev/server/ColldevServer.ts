@@ -14,7 +14,7 @@ import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 interface IServerStatus {
     clients: Record<string, IColldevSyncerSocket.clientStatus>;
 }
-export class Server extends Destroyable implements IDestroyable {
+export class ColldevServer extends Destroyable implements IDestroyable {
     constructor(private compiler: Compiler) {
         super();
         this.init();

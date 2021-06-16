@@ -3,7 +3,7 @@ import { render } from 'ink';
 import openBrowser from 'open';
 import React from 'react';
 import { Compiler } from '../compiler/Compiler';
-import { Server } from '../server/Server';
+import { ColldevServer } from '../server/ColldevServer';
 import { getColldevPackageContent } from '../utils/colldevPackage';
 import { Destroyable } from '../utils/destroyables/Destroyable';
 import { IDestroyable } from '../utils/destroyables/IDestroyable';
@@ -75,7 +75,7 @@ export class Colldev extends Destroyable implements IDestroyable {
         }
 
         const compiler = new Compiler(path || './');
-        const server = new Server(compiler);
+        const server = new ColldevServer(compiler);
 
         this.addSubdestroyable(compiler, server);
 
