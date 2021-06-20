@@ -11,9 +11,14 @@ import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 export declare class ColldevSyncer extends StorageSyncer {
     private declareModuleCallbackName;
     private socketClient;
+    private storageSystem;
+    private storage;
+    private _colldevUrl;
+    get colldevUrl(): string;
+    set colldevUrl(colldevUrl: string);
     clientStatus: IColldevSyncerSocket.clientStatus;
     protected initSyncer(): Promise<void>;
-    private establishConnection;
+    private reestablishConnection;
     private sendClientStatus;
     destroy(): Promise<void>;
 }

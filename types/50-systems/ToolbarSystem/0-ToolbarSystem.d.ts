@@ -27,5 +27,6 @@ export declare class ToolbarSystem extends AbstractSystem {
     private shortcutsSystem;
     protected init(): Promise<void>;
     getToolbar(toolbarName: ToolbarName): IconsToolbar;
+    getAllToolbars(): Record<ToolbarName, IconsToolbar>;
     destroy(): Promise<void>;
 }

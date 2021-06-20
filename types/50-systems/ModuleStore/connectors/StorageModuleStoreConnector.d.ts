@@ -1,6 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
+import { Destroyable } from '../../../40-utils/destroyables/Destroyable';
 import { string_module_category } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { IDependency } from '../interfaces/IDependencies';
@@ -12,7 +13,7 @@ import { IModuleStoreConnectorSearchQuery } from '../interfaces/IModuleStoreConn
  * StorageModuleStoreConnector searches through IModulesStorage modules (which are already delcared in memory).
  * This is used for internal modules + modules in development by colldev
  */
-export declare class StorageModuleStoreConnector implements IModuleStoreConnector {
+export declare class StorageModuleStoreConnector extends Destroyable implements IModuleStoreConnector {
     private systems;
     private modulesStorage;
     constructor(systems: ISystemsExtended, modulesStorage: Pick<IModulesStorage, 'modules'>);

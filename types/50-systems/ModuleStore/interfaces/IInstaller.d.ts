@@ -10,6 +10,8 @@ import { ModuleStatus } from '../ModuleStatus';
 import { IDependency } from './IDependencies';
 /**
  * Installer manages module installations, it takes care of number of running instances, manages reasons of module activation, syncing, etc.
+ *
+ * @collboard-modules-sdk
  */
 export interface IInstaller extends IDestroyable {
     readonly installations: ModuleInstallation[];

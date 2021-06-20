@@ -23,7 +23,7 @@ export declare enum FocusScopeName {
 export declare class FocusSystem extends AbstractSystem {
     private focusScopes;
     protected init(): Promise<void>;
-    getFocus<TIdentification>(focusName: FocusScopeName): FocusScope<TIdentification>;
+    getFocus<TIdentification>(focusName: FocusScopeName | string): FocusScope<TIdentification>;
     getAllFocusScopes<TIdentification>(): Record<FocusScopeName, FocusScope<TIdentification>>;
     destroy(): Promise<void>;
 }

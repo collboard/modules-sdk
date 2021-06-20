@@ -5,6 +5,11 @@ import { IJson } from 'everstorage';
 import { string_attribute, string_module_category } from '../../../40-utils/typeAliases';
 import { IDependency } from './IDependencies';
 import { IModuleManifest } from './IModuleManifest';
+/**
+ * Represents a query to modules repository
+ *
+ * @collboard-modules-sdk
+ */
 export interface IModuleStoreConnectorSearchQuery extends IJson {
     needle?: string;
     category?: string_module_category;
@@ -13,7 +18,11 @@ export interface IModuleStoreConnectorSearchQuery extends IJson {
         attribute?: string_attribute;
     };
 }
-export declare const DEFAULT_IModuleStoreConnectorSearchQuery: IModuleStoreConnectorSearchQuery;
+/**
+ * Represents a result from modules repository
+ *
+ * @collboard-modules-sdk
+ */
 export interface IModuleStoreConnectorSearchResult {
     modules: Array<IDependency & Partial<IModuleManifest>>;
 }

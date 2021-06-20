@@ -3,7 +3,6 @@
 
 import 'moment/locale/cs';
 import 'moment/locale/sk';
-import * as React from 'react';
 import { Observable } from 'rxjs';
 import { IReplacer } from '../../40-utils/applyParamsOnTemplate';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
@@ -48,14 +47,9 @@ export declare class TranslationsSystem extends AbstractSystem {
             [key: string]: string;
         },
     ): string;
-    replacer: IReplacer;
-    Translate(
-        props: React.PropsWithChildren<{
-            name: string_tranlate_name_not_normalized;
-            html?: boolean;
-            parameters?: any;
-        }>,
-    ): JSX.Element;
+    readonly replacer: IReplacer;
+    readonly Translate: any;
+    private _Translate;
     useTemplate(html: string): string;
     pickMessage(messageTranslation: string | Record<string_tranlate_language, string>): string;
     private get preferedLanguages();

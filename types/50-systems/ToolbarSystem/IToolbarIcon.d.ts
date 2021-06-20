@@ -45,9 +45,13 @@ export interface IToolbarIcon extends IIconAnonymous {
     /**
      * Focus scope represent type of focus that is taken by one think in an app.
      *
+     * 1) You can use enum **FocusScopeName** to pick from common focus scopes
+     * 2) Or you can define your own by your own unique **string**
+     * 3) And if you will use **null** it will be behaving as its own unique scope
+     *
      * @default "TOOL"
      */
-    focusScope?: FocusScopeName;
+    focusScopeName?: FocusScopeName | string | null;
     /**
      * This represents section seperated by | in the toolbar
      *

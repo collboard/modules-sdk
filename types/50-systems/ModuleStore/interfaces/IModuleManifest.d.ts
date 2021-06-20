@@ -19,6 +19,7 @@ import { string_tranlate_language } from '../../TranslationsSystem/0-Translation
  * You are able to spread package.json into Collboard module manifest and all types are matching perfectly.
  * It is a bit inspired by all web and mobile app manifests.
  *
+ * @collboard-modules-sdk
  */
 export interface IModuleManifest {
     name: string_module_name;
@@ -39,6 +40,11 @@ export interface IModuleManifest {
     priority?: number;
     version?: string_version;
 }
+/**
+ *
+ *
+ * @collboard-modules-sdk
+ */
 export interface IModuleFlags {
     hidden: boolean;
     deprecated: boolean;
@@ -47,19 +53,36 @@ export interface IModuleFlags {
 }
 /**
  * Describes author or contributor of a module. It is in same format as in package.json.
+ *
+ * @collboard-modules-sdk
  */
 export declare type IModuleManifestAuthor = string | IModuleManifestAuthorObject;
+/**
+ *
+ *
+ * @collboard-modules-sdk
+ */
 export declare type IModuleManifestAuthorObject = {
     name?: string_person_fullname;
     email?: string_email;
     url?: string_url;
 };
+/**
+ *
+ *
+ * @collboard-modules-sdk
+ */
 export declare type IModuleManifestLicense =
     | string
     | {
           type?: string;
           url?: string;
       };
+/**
+ *
+ *
+ * @collboard-modules-sdk
+ */
 export declare type IModuleManifestTranslation =
     | string
     | (Record<string_tranlate_language, string> & {

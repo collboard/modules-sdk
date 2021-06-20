@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ModuleStore | Modules SDK toolkit for Collboard.com - v12.0.1-0</title>
-	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v12.0.1-0">
+	<title>ModuleStore | Modules SDK toolkit for Collboard.com - v12.0.1-1</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v12.0.1-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
   --color-background: #fdfdfd;
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v12.0.1-0</a></strong>
+					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v12.0.1-1</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2779,7 +2779,7 @@ img {
 		<section class="tsd-panel">
 			<h3>Implements</h3>
 			<ul class="tsd-hierarchy">
-				<li><span class="tsd-signature-type">IModuleStoreConnector</span></li>
+				<li><a href="../interfaces/imodulestoreconnector.html" class="tsd-signature-type" data-tsd-kind="Interface">IModuleStoreConnector</a></li>
 			</ul>
 		</section>
 		<section class="tsd-panel-group tsd-index-group">
@@ -2884,10 +2884,16 @@ img {
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
+							<p>Implementation of <a href="../interfaces/imodulestoreconnector.html">IModuleStoreConnector</a>.<a href="../interfaces/imodulestoreconnector.html#destroyed">destroyed</a></p>
 							<ul>
 								<li>Defined in types/40-utils/destroyables/Destroyable.d.ts:13</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Is destroyed?</p>
+							</div>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 					</li>
 				</ul>
@@ -2983,11 +2989,17 @@ img {
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
+							<p>Implementation of <a href="../interfaces/imodulestoreconnector.html">IModuleStoreConnector</a>.<a href="../interfaces/imodulestoreconnector.html#destroy">destroy</a></p>
 							<p>Inherited from AbstractSystem.destroy</p>
 							<ul>
 								<li>Defined in types/40-utils/destroyables/Destroyable.d.ts:14</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Destroy the object</p>
+							</div>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
@@ -2996,12 +3008,12 @@ img {
 				<a name="download" class="tsd-anchor"></a>
 				<h3>download</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">download<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>modules<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDependency</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#ifactorable" class="tsd-signature-type" data-tsd-kind="Type alias">IFactorable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IModuleDefinition</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">download<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>modules<span class="tsd-signature-symbol">: </span><a href="../interfaces/idependency.html" class="tsd-signature-type" data-tsd-kind="Interface">IDependency</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#ifactorable" class="tsd-signature-type" data-tsd-kind="Type alias">IFactorable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/imoduledefinition.html" class="tsd-signature-type" data-tsd-kind="Interface">IModuleDefinition</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
-							<p>Implementation of IModuleStoreConnector.download</p>
+							<p>Implementation of <a href="../interfaces/imodulestoreconnector.html">IModuleStoreConnector</a>.<a href="../interfaces/imodulestoreconnector.html#download">download</a></p>
 							<ul>
 								<li>Defined in types/50-systems/ModuleStore/connectors/0-ModuleStore.d.ts:26</li>
 							</ul>
@@ -3009,10 +3021,10 @@ img {
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>modules: <span class="tsd-signature-type">IDependency</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>modules: <a href="../interfaces/idependency.html" class="tsd-signature-type" data-tsd-kind="Interface">IDependency</a><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#ifactorable" class="tsd-signature-type" data-tsd-kind="Type alias">IFactorable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IModuleDefinition</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#ifactorable" class="tsd-signature-type" data-tsd-kind="Type alias">IFactorable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/imoduledefinition.html" class="tsd-signature-type" data-tsd-kind="Interface">IModuleDefinition</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -3025,7 +3037,7 @@ img {
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
-							<p>Implementation of IModuleStoreConnector.getCategories</p>
+							<p>Implementation of <a href="../interfaces/imodulestoreconnector.html">IModuleStoreConnector</a>.<a href="../interfaces/imodulestoreconnector.html#getcategories">getCategories</a></p>
 							<ul>
 								<li>Defined in types/50-systems/ModuleStore/connectors/0-ModuleStore.d.ts:29</li>
 							</ul>
@@ -3079,7 +3091,7 @@ img {
 				<a name="registermodulestoreconnector" class="tsd-anchor"></a>
 				<h3>register<wbr>Module<wbr>Store<wbr>Connector</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">register<wbr>Module<wbr>Store<wbr>Connector<span class="tsd-signature-symbol">(</span>modulesConnector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModuleStoreConnector</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDestroyable</span></li>
+					<li class="tsd-signature tsd-kind-icon">register<wbr>Module<wbr>Store<wbr>Connector<span class="tsd-signature-symbol">(</span>modulesConnector<span class="tsd-signature-symbol">: </span><a href="../interfaces/imodulestoreconnector.html" class="tsd-signature-type" data-tsd-kind="Interface">IModuleStoreConnector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDestroyable</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -3091,7 +3103,7 @@ img {
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>modulesConnector: <span class="tsd-signature-type">IModuleStoreConnector</span></h5>
+								<h5>modulesConnector: <a href="../interfaces/imodulestoreconnector.html" class="tsd-signature-type" data-tsd-kind="Interface">IModuleStoreConnector</a></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IDestroyable</span></h4>
@@ -3102,12 +3114,12 @@ img {
 				<a name="search" class="tsd-anchor"></a>
 				<h3>search</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">(</span>searchCriteria<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IModuleStoreConnectorSearchQuery</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>modules<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">IDependency</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">(</span>searchCriteria<span class="tsd-signature-symbol">: </span><a href="../interfaces/imodulestoreconnectorsearchquery.html" class="tsd-signature-type" data-tsd-kind="Interface">IModuleStoreConnectorSearchQuery</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>modules<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><a href="../interfaces/idependency.html" class="tsd-signature-type" data-tsd-kind="Interface">IDependency</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/imodulemanifest.html" class="tsd-signature-type" data-tsd-kind="Interface">IModuleManifest</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
-							<p>Implementation of IModuleStoreConnector.search</p>
+							<p>Implementation of <a href="../interfaces/imodulestoreconnector.html">IModuleStoreConnector</a>.<a href="../interfaces/imodulestoreconnector.html#search">search</a></p>
 							<ul>
 								<li>Defined in types/50-systems/ModuleStore/connectors/0-ModuleStore.d.ts:21</li>
 							</ul>
@@ -3115,10 +3127,10 @@ img {
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>searchCriteria: <span class="tsd-signature-type">IModuleStoreConnectorSearchQuery</span></h5>
+								<h5>searchCriteria: <a href="../interfaces/imodulestoreconnectorsearchquery.html" class="tsd-signature-type" data-tsd-kind="Interface">IModuleStoreConnectorSearchQuery</a></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>modules<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">IDependency</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IModuleManifest</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>modules<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><a href="../interfaces/idependency.html" class="tsd-signature-type" data-tsd-kind="Interface">IDependency</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/imodulemanifest.html" class="tsd-signature-type" data-tsd-kind="Interface">IModuleManifest</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>

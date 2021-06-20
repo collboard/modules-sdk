@@ -1,8 +1,8 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IFactorable } from '../../../40-utils/IFactory';
-import { IModule, IModuleFactory } from '../interfaces/IModule';
+import { IFactorable, IFactory } from '../../../40-utils/IFactory';
+import { IModule, IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 /**
  * Takes an array of of modules (or just a setup functions) and create a composition module from it.
@@ -19,4 +19,4 @@ export declare function makeMultiModule(
               modules: IFactorable<IModule[]>;
           }
         | IFactorable<IModule[]>,
-): IModuleFactory;
+): IFactory<IModuleDefinition>;

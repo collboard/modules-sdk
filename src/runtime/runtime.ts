@@ -82,6 +82,10 @@ export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModa
                     export const create3dRotation = (window as any).CollboardSdk.create3dRotation;
                     
 
+                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/AlreadyDestroyedError.d.ts
+                    export const AlreadyDestroyedError = (window as any).CollboardSdk.AlreadyDestroyedError;
+                    
+
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/Destroyable.d.ts
                     export const Destroyable = (window as any).CollboardSdk.Destroyable;
                     
@@ -168,6 +172,10 @@ export const NotFoundErrorForModule = (window as any).CollboardSdk.NotFoundError
 
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/flatternArray.d.ts
                     export const flatternArray = (window as any).CollboardSdk.flatternArray;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/getUrlParam.d.ts
+                    export const getUrlParam = (window as any).CollboardSdk.getUrlParam;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/getWindowSize.d.ts
@@ -276,6 +284,28 @@ export const rotationToBabylon = (window as any).CollboardSdk.rotationToBabylon;
 
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/typeAliases.d.ts
                     export const string_mime_type = (window as any).CollboardSdk.string_mime_type;
+export const string_mime_type_with_wildcard = (window as any).CollboardSdk.string_mime_type_with_wildcard;
+export const string_char = (window as any).CollboardSdk.string_char;
+export const string_char_emoji = (window as any).CollboardSdk.string_char_emoji;
+export const string_html = (window as any).CollboardSdk.string_html;
+export const string_url = (window as any).CollboardSdk.string_url;
+export const string_url_image = (window as any).CollboardSdk.string_url_image;
+export const string_uri = (window as any).CollboardSdk.string_uri;
+export const string_uri_part = (window as any).CollboardSdk.string_uri_part;
+export const string_email = (window as any).CollboardSdk.string_email;
+export const string_uuid = (window as any).CollboardSdk.string_uuid;
+export const string_sha256 = (window as any).CollboardSdk.string_sha256;
+export const string_version = (window as any).CollboardSdk.string_version;
+export const string_version_dependency = (window as any).CollboardSdk.string_version_dependency;
+export const string_file_extension = (window as any).CollboardSdk.string_file_extension;
+export const string_file_path = (window as any).CollboardSdk.string_file_path;
+export const string_module_name = (window as any).CollboardSdk.string_module_name;
+export const string_module_category = (window as any).CollboardSdk.string_module_category;
+export const string_person_fullname = (window as any).CollboardSdk.string_person_fullname;
+export const string_license = (window as any).CollboardSdk.string_license;
+export const string_css_cursor = (window as any).CollboardSdk.string_css_cursor;
+export const string_attribute = (window as any).CollboardSdk.string_attribute;
+export const string_context = (window as any).CollboardSdk.string_context;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/typeHelpers.d.ts
@@ -367,6 +397,49 @@ export const FocusSystem = (window as any).CollboardSdk.FocusSystem;
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/connectors/0-ModuleStore.d.ts
                     export const ModuleStore = (window as any).CollboardSdk.ModuleStore;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IActivator.d.ts
+                    export const IActivator = (window as any).CollboardSdk.IActivator;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IDependencies.d.ts
+                    export const IDependenciesRecord = (window as any).CollboardSdk.IDependenciesRecord;
+export const IDependenciesSet = (window as any).CollboardSdk.IDependenciesSet;
+export const IDependency = (window as any).CollboardSdk.IDependency;
+export const IDependencyDetail = (window as any).CollboardSdk.IDependencyDetail;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IInstaller.d.ts
+                    export const IInstaller = (window as any).CollboardSdk.IInstaller;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IInstallPlan.d.ts
+                    export const IInstallPlan = (window as any).CollboardSdk.IInstallPlan;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModule.d.ts
+                    export const IModule = (window as any).CollboardSdk.IModule;
+export const IModuleDefinition = (window as any).CollboardSdk.IModuleDefinition;
+export const IModuleSetup = (window as any).CollboardSdk.IModuleSetup;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModuleManifest.d.ts
+                    export const IModuleManifest = (window as any).CollboardSdk.IModuleManifest;
+export const IModuleFlags = (window as any).CollboardSdk.IModuleFlags;
+export const IModuleManifestAuthor = (window as any).CollboardSdk.IModuleManifestAuthor;
+export const IModuleManifestAuthorObject = (window as any).CollboardSdk.IModuleManifestAuthorObject;
+export const IModuleManifestLicense = (window as any).CollboardSdk.IModuleManifestLicense;
+export const IModuleManifestTranslation = (window as any).CollboardSdk.IModuleManifestTranslation;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModuleStoreConnector.d.ts
+                    export const IModuleStoreConnector = (window as any).CollboardSdk.IModuleStoreConnector;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModuleStoreConnectorSearch.d.ts
+                    export const IModuleStoreConnectorSearchQuery = (window as any).CollboardSdk.IModuleStoreConnectorSearchQuery;
+export const IModuleStoreConnectorSearchResult = (window as any).CollboardSdk.IModuleStoreConnectorSearchResult;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeArticlesSetModule.d.ts
