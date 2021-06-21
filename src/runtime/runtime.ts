@@ -216,10 +216,6 @@ export const factor = (window as any).CollboardSdk.factor;
                     export const measureImageSize = (window as any).CollboardSdk.measureImageSize;
                     
 
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/normalizing/IKeywords.d.ts
-                    export const IKeywords = (window as any).CollboardSdk.IKeywords;
-                    
-
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/normalizing/nameToUriPart.d.ts
                     export const nameToUriPart = (window as any).CollboardSdk.nameToUriPart;
                     
@@ -303,6 +299,8 @@ export const string_module_name = (window as any).CollboardSdk.string_module_nam
 export const string_module_category = (window as any).CollboardSdk.string_module_category;
 export const string_person_fullname = (window as any).CollboardSdk.string_person_fullname;
 export const string_license = (window as any).CollboardSdk.string_license;
+export const string_keyword = (window as any).CollboardSdk.string_keyword;
+export const IKeywords = (window as any).CollboardSdk.IKeywords;
 export const string_css_cursor = (window as any).CollboardSdk.string_css_cursor;
 export const string_attribute = (window as any).CollboardSdk.string_attribute;
 export const string_context = (window as any).CollboardSdk.string_context;
@@ -508,6 +506,10 @@ export const IModuleStoreConnectorSearchResult = (window as any).CollboardSdk.IM
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/Syncers/StorageSyncer.d.ts
                     export const StorageSyncer = (window as any).CollboardSdk.StorageSyncer;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/utils/parseKeywordsFromManifest.d.ts
+                    export const parseKeywordsFromManifest = (window as any).CollboardSdk.parseKeywordsFromManifest;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/NotificationSystem/0-NotificationSystem.d.ts
