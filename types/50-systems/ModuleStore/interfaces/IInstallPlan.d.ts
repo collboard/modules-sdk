@@ -3,7 +3,11 @@
 
 import { IDependenciesRecord } from './IDependencies';
 /**
- * Install plan says what 1. modules are uninstalled and 2. what are installed by an installer
+ * Install plan says instruction how modules are installed
+ *
+ * 1. There are installed all default modules
+ * 2. There are uninstalled all modules which are here listed as **uninstall**
+ * 3. There are installed all modules which are here listed as **install**
  *
  * @collboard-modules-sdk
  */

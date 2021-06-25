@@ -13,7 +13,7 @@ import { AbstractSyncer } from './AbstractSyncer';
 export declare class ArtSupportSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
     modulesStorage: import('../interfaces/IModulesStorage').IModulesStorage;
     private artDependencies;
-    private queues;
+    private throttleQueues;
     activateModuleSupportForArt(classNameOrInstance: string | any): Promise<unknown>;
     destroy(): Promise<void>;
 }

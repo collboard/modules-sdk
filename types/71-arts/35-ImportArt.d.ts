@@ -1,6 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
+/// <reference types="react" />
 import { IVector } from 'xyzt';
 import { string_url } from '../40-utils/typeAliases';
 import { Abstract2dArt } from './26-Abstract2dArt';
@@ -27,7 +28,7 @@ export declare class ImportArt extends Abstract2dArt {
     get bottomRightCorner(): import('xyzt').IVectorObject;
     isNear(point2: IVector): boolean;
     get acceptedAttributes(): never[];
-    render(selected: boolean): null;
+    render(selected: boolean): JSX.Element;
 }
 /**
  * Note: number is just a file prefix to feep it on the top of file list.

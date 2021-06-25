@@ -8,9 +8,9 @@ interface IAsyncContentComponentProps {
     /**
      * Component to be rendered before the content is loaded
      *
-     * If not set, default loading is used
+     * If not set, default <Loader/> is used
      */
-    loading?: JSX.Element;
+    loader?: JSX.Element;
     /**
      * The async content to be rendered
      */
@@ -21,5 +21,5 @@ interface IAsyncContentComponentProps {
  *
  * @collboard-modules-sdk
  */
-export declare function AsyncContentComponent({ loading, content }: IAsyncContentComponentProps): JSX.Element;
+export declare function AsyncContentComponent({ loader, content }: IAsyncContentComponentProps): JSX.Element;
 export {};

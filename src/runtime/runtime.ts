@@ -50,6 +50,10 @@ export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModa
                     export const PageOverlay = (window as any).CollboardSdk.PageOverlay;
                     
 
+                    // C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/AsyncButtonComponent.d.ts
+                    export const AsyncButtonComponent = (window as any).CollboardSdk.AsyncButtonComponent;
+                    
+
                     // C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/AsyncContentComponent.d.ts
                     export const AsyncContentComponent = (window as any).CollboardSdk.AsyncContentComponent;
                     
@@ -100,15 +104,6 @@ export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModa
 
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/IRegisterItemsOptions.d.ts
                     export const IRegisterItemsOptions = (window as any).CollboardSdk.IRegisterItemsOptions;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/Queue.d.ts
-                    export const IQueueOptions = (window as any).CollboardSdk.IQueueOptions;
-export const Queue = (window as any).CollboardSdk.Queue;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/Queues.d.ts
-                    export const Queues = (window as any).CollboardSdk.Queues;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/registerItemsInArray.d.ts
@@ -268,6 +263,19 @@ export const factor = (window as any).CollboardSdk.factor;
                     export const pointsToPolygon = (window as any).CollboardSdk.pointsToPolygon;
                     
 
+                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/tasks/Queue.d.ts
+                    export const Queue = (window as any).CollboardSdk.Queue;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/tasks/ThrottleQueue.d.ts
+                    export const IThrottleQueueOptions = (window as any).CollboardSdk.IThrottleQueueOptions;
+export const ThrottleQueue = (window as any).CollboardSdk.ThrottleQueue;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/tasks/ThrottleQueues.d.ts
+                    export const ThrottleQueues = (window as any).CollboardSdk.ThrottleQueues;
+                    
+
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/toArray.d.ts
                     export const IArrayable = (window as any).CollboardSdk.IArrayable;
 export const toArray = (window as any).CollboardSdk.toArray;
@@ -298,7 +306,10 @@ export const string_file_path = (window as any).CollboardSdk.string_file_path;
 export const string_module_name = (window as any).CollboardSdk.string_module_name;
 export const string_module_category = (window as any).CollboardSdk.string_module_category;
 export const string_person_fullname = (window as any).CollboardSdk.string_person_fullname;
+export const string_person_profile = (window as any).CollboardSdk.string_person_profile;
+export const IPersonProfile = (window as any).CollboardSdk.IPersonProfile;
 export const string_license = (window as any).CollboardSdk.string_license;
+export const ILicense = (window as any).CollboardSdk.ILicense;
 export const string_keyword = (window as any).CollboardSdk.string_keyword;
 export const IKeywords = (window as any).CollboardSdk.IKeywords;
 export const string_css_cursor = (window as any).CollboardSdk.string_css_cursor;
@@ -397,10 +408,6 @@ export const FocusSystem = (window as any).CollboardSdk.FocusSystem;
                     export const ModuleStore = (window as any).CollboardSdk.ModuleStore;
                     
 
-                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IActivator.d.ts
-                    export const IActivator = (window as any).CollboardSdk.IActivator;
-                    
-
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IDependencies.d.ts
                     export const IDependenciesRecord = (window as any).CollboardSdk.IDependenciesRecord;
 export const IDependenciesSet = (window as any).CollboardSdk.IDependenciesSet;
@@ -426,9 +433,12 @@ export const IModuleSetup = (window as any).CollboardSdk.IModuleSetup;
                     export const IModuleManifest = (window as any).CollboardSdk.IModuleManifest;
 export const IModuleFlags = (window as any).CollboardSdk.IModuleFlags;
 export const IModuleManifestAuthor = (window as any).CollboardSdk.IModuleManifestAuthor;
-export const IModuleManifestAuthorObject = (window as any).CollboardSdk.IModuleManifestAuthorObject;
 export const IModuleManifestLicense = (window as any).CollboardSdk.IModuleManifestLicense;
 export const IModuleManifestTranslation = (window as any).CollboardSdk.IModuleManifestTranslation;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModulePersister.d.ts
+                    export const IModulePersister = (window as any).CollboardSdk.IModulePersister;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModuleStoreConnector.d.ts

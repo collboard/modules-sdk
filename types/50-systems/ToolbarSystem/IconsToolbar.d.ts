@@ -19,7 +19,7 @@ export declare class IconsToolbar extends Destroyable implements IDestroyable {
      * @param toolbarName does not effect IconsToolbar behaviour, it solves only for identification purposes.
      */
     constructor(toolbarName: ToolbarName, shortcutsSystem: ShortcutsSystem, focusSystem: FocusSystem);
-    private selectQueue;
+    private selectThrottleQueue;
     private iconOrNameToIcon;
     /**
      * @param iconOrName You can use here either full IToolbarIcon (same reference that is registered) or name (especially usefull when triggering externally)

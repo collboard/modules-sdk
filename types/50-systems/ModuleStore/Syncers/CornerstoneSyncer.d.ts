@@ -3,7 +3,7 @@
 
 import { IDestroyable } from '../../../40-utils/destroyables/IDestroyable';
 import { string_module_name } from '../../../40-utils/typeAliases';
-import { IActivator } from '../interfaces/IActivator';
+import { IModulePersister } from '../interfaces/IModulePersister';
 import { ISyncer } from '../interfaces/ISyncer';
 import { AbstractSyncer } from './AbstractSyncer';
 /**
@@ -12,7 +12,7 @@ import { AbstractSyncer } from './AbstractSyncer';
  * @private
  * @collboard-system
  */
-export declare class CornerstoneSyncer extends AbstractSyncer implements ISyncer, IActivator, IDestroyable {
+export declare class CornerstoneSyncer extends AbstractSyncer implements ISyncer, IModulePersister, IDestroyable {
     modulesStorage: import('../interfaces/IModulesStorage').IModulesStorage;
     private subscription;
     protected initSyncer(): Promise<void>;

@@ -15,7 +15,7 @@ import { ISyncer } from '../interfaces/ISyncer';
 export declare abstract class AbstractSyncer extends AbstractSystem implements ISyncer {
     abstract modulesStorage: IModulesStorage;
     private moduleInstaller;
-    private queue;
+    private throttleQueue;
     get statusOf(): any;
     get installations(): import('../ModuleInstallation').ModuleInstallation[];
     install(dependency: IDependency, systems: ISystemsExtended, syncerName?: string): Promise<void>;

@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Queues | Modules SDK toolkit for Collboard.com - v12.0.1-2</title>
-	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v12.0.1-2">
+	<title>IModulePersister | Modules SDK toolkit for Collboard.com - v12.2.0-0</title>
+	<meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v12.2.0-0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
   --color-background: #fdfdfd;
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v12.0.1-2</a></strong>
+					<strong><a href="../index.html">Modules SDK toolkit for Collboard.com - v12.2.0-0</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2704,32 +2704,14 @@ img {
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
-		<li class="current tsd-kind-class tsd-has-type-parameter">
-			<a href="queues.html" class="tsd-kind-icon">Queues</a>
+		<li class="current tsd-kind-interface">
+			<a href="imodulepersister.html" class="tsd-kind-icon">IModule<wbr>Persister</a>
 			<ul>
-				<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
-					<a href="queues.html#constructor" class="tsd-kind-icon">constructor</a>
+				<li class=" tsd-kind-method tsd-parent-kind-interface">
+					<a href="imodulepersister.html#moduleactivate" class="tsd-kind-icon">module<wbr>Activate</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a href="queues.html#options" class="tsd-kind-icon">options</a>
-				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a href="queues.html#queues-1" class="tsd-kind-icon">queues</a>
-				</li>
-				<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-					<a href="queues.html#destroyed" class="tsd-kind-icon">destroyed</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a href="queues.html#addsubdestroyable" class="tsd-kind-icon">add<wbr>Subdestroyable</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a href="queues.html#checkwhethernotdestroyed" class="tsd-kind-icon">check<wbr>Whether<wbr>Not<wbr>Destroyed</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-					<a href="queues.html#destroy" class="tsd-kind-icon">destroy</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="queues.html#getqueue" class="tsd-kind-icon">get<wbr>Queue</a>
+				<li class=" tsd-kind-method tsd-parent-kind-interface">
+					<a href="imodulepersister.html#moduledeactivate" class="tsd-kind-icon">module<wbr>Deactivate</a>
 				</li>
 			</ul>
 		</li>
@@ -2739,40 +2721,30 @@ img {
 	<div class="content-wrap">
 		<section class="tsd-panel tsd-comment">
 			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>Activator saves the information which module should be synced/installed</p>
+				</div>
+				<p>Note: this is not using destroyable pattern because activation of the module is long-term thing</p>
 				<dl class="tsd-comment-tags">
 					<dt>collboard-modules-sdk</dt>
 					<dd></dd>
 				</dl>
 			</div>
 		</section>
-		<section class="tsd-panel tsd-type-parameters">
-			<h3>Type parameters</h3>
-			<ul class="tsd-type-parameters">
-				<li>
-					<h4>K</h4>
-				</li>
-				<li>
-					<h4>V</h4>
-				</li>
-			</ul>
-		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<a href="destroyable.html" class="tsd-signature-type" data-tsd-kind="Class">Destroyable</a>
-					<ul class="tsd-hierarchy">
-						<li>
-							<span class="target">Queues</span>
-						</li>
-					</ul>
+					<span class="target">IModulePersister</span>
 				</li>
 			</ul>
 		</section>
 		<section class="tsd-panel">
-			<h3>Implements</h3>
+			<h3>Implemented by</h3>
 			<ul class="tsd-hierarchy">
-				<li><a href="../interfaces/idestroyable.html" class="tsd-signature-type" data-tsd-kind="Interface">IDestroyable</a></li>
+				<li><a href="../classes/cornerstoneart.html" class="tsd-signature-type" data-tsd-kind="Class">CornerstoneArt</a></li>
+				<li><a href="../classes/cornerstonesyncer.html" class="tsd-signature-type" data-tsd-kind="Class">CornerstoneSyncer</a></li>
+				<li><a href="../classes/storagesyncer.html" class="tsd-signature-type" data-tsd-kind="Class">StorageSyncer</a></li>
 			</ul>
 		</section>
 		<section class="tsd-panel-group tsd-index-group">
@@ -2780,246 +2752,60 @@ img {
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>Constructors</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite"><a href="queues.html#constructor" class="tsd-kind-icon">constructor</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-						<h3>Properties</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="queues.html#options" class="tsd-kind-icon">options</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="queues.html#queues-1" class="tsd-kind-icon">queues</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section ">
-						<h3>Accessors</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="queues.html#destroyed" class="tsd-kind-icon">destroyed</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="queues.html#addsubdestroyable" class="tsd-kind-icon">add<wbr>Subdestroyable</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="queues.html#checkwhethernotdestroyed" class="tsd-kind-icon">check<wbr>Whether<wbr>Not<wbr>Destroyed</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="queues.html#destroy" class="tsd-kind-icon">destroy</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.html#getqueue" class="tsd-kind-icon">get<wbr>Queue</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imodulepersister.html#moduleactivate" class="tsd-kind-icon">module<wbr>Activate</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imodulepersister.html#moduledeactivate" class="tsd-kind-icon">module<wbr>Deactivate</a></li>
 						</ul>
 					</section>
 				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
-			<h2>Constructors</h2>
-			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
-				<a name="constructor" class="tsd-anchor"></a>
-				<h3>constructor</h3>
-				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Queues&lt;K, V&gt;<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iqueueoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">IQueueOptions</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;throttler&quot;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="queues.html" class="tsd-signature-type" data-tsd-kind="Class">Queues</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<p>Overrides <a href="destroyable.html">Destroyable</a>.<a href="destroyable.html#constructor">constructor</a></p>
-							<ul>
-								<li>Defined in types/40-utils/destroyables/Queues.d.ts:12</li>
-							</ul>
-						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>K</h4>
-							</li>
-							<li>
-								<h4>V</h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>options: <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iqueueoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">IQueueOptions</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;throttler&quot;</span><span class="tsd-signature-symbol">&gt;</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="queues.html" class="tsd-signature-type" data-tsd-kind="Class">Queues</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-		</section>
-		<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-			<h2>Properties</h2>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-				<a name="options" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagPrivate">Private</span> options</h3>
-				<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in types/40-utils/destroyables/Queues.d.ts:11</li>
-					</ul>
-				</aside>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-				<a name="queues-1" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagPrivate">Private</span> queues</h3>
-				<div class="tsd-signature tsd-kind-icon">queues<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in types/40-utils/destroyables/Queues.d.ts:12</li>
-					</ul>
-				</aside>
-			</section>
-		</section>
-		<section class="tsd-panel-group tsd-member-group ">
-			<h2>Accessors</h2>
-			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-				<a name="destroyed" class="tsd-anchor"></a>
-				<h3>destroyed</h3>
-				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> destroyed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<p>Implementation of <a href="../interfaces/idestroyable.html">IDestroyable</a>.<a href="../interfaces/idestroyable.html#destroyed">destroyed</a></p>
-							<ul>
-								<li>Defined in types/40-utils/destroyables/Destroyable.d.ts:13</li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Is destroyed?</p>
-							</div>
-						</div>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-					</li>
-				</ul>
-			</section>
-		</section>
-		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Methods</h2>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-				<a name="addsubdestroyable" class="tsd-anchor"></a>
-				<h3>add<wbr>Subdestroyable</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<li class="tsd-signature tsd-kind-icon">add<wbr>Subdestroyable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>subdestroyable<span class="tsd-signature-symbol">: </span><a href="../modules.html#iteardownlogic" class="tsd-signature-type" data-tsd-kind="Type alias">ITeardownLogic</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="queues.html" class="tsd-signature-type" data-tsd-kind="Class">Queues</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<p>Inherited from <a href="destroyable.html">Destroyable</a>.<a href="destroyable.html#addsubdestroyable">addSubdestroyable</a></p>
-							<ul>
-								<li>Defined in types/40-utils/destroyables/Destroyable.d.ts:26</li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Binds new registration with itself. This registration/destroyable will be destroyed with this.</p>
-							</div>
-						</div>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>subdestroyable: <a href="../modules.html#iteardownlogic" class="tsd-signature-type" data-tsd-kind="Type alias">ITeardownLogic</a><span class="tsd-signature-symbol">[]</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="queues.html" class="tsd-signature-type" data-tsd-kind="Class">Queues</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-				<a name="checkwhethernotdestroyed" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagProtected">Protected</span> check<wbr>Whether<wbr>Not<wbr>Destroyed</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<li class="tsd-signature tsd-kind-icon">check<wbr>Whether<wbr>Not<wbr>Destroyed<span class="tsd-signature-symbol">(</span>errorMessage<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, runBeforeError<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<p>Inherited from <a href="destroyable.html">Destroyable</a>.<a href="destroyable.html#checkwhethernotdestroyed">checkWhetherNotDestroyed</a></p>
-							<ul>
-								<li>Defined in types/40-utils/destroyables/Destroyable.d.ts:21</li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Checks, whether the object is not destroyed</p>
-							</div>
-						</div>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> errorMessage: <span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<p>Message that will replace default one before error</p>
-								</div>
-							</li>
-							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> runBeforeError: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<p>Callback runed before error is thrown; typically this can be some logging</p>
-								</div>
-								<ul class="tsd-parameters">
-									<li class="tsd-parameter-signature">
-										<ul class="tsd-signatures tsd-kind-type-literal">
-											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-										</ul>
-										<ul class="tsd-descriptions">
-											<li class="tsd-description">
-												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-				<a name="destroy" class="tsd-anchor"></a>
-				<h3>destroy</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-					<li class="tsd-signature tsd-kind-icon">destroy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<p>Implementation of <a href="../interfaces/idestroyable.html">IDestroyable</a>.<a href="../interfaces/idestroyable.html#destroy">destroy</a></p>
-							<p>Overrides <a href="destroyable.html">Destroyable</a>.<a href="destroyable.html#destroy">destroy</a></p>
-							<ul>
-								<li>Defined in types/40-utils/destroyables/Queues.d.ts:15</li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Destroy the object</p>
-							</div>
-						</div>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="getqueue" class="tsd-anchor"></a>
-				<h3>get<wbr>Queue</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">get<wbr>Queue<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="queue.html" class="tsd-signature-type" data-tsd-kind="Class">Queue</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></li>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+				<a name="moduleactivate" class="tsd-anchor"></a>
+				<h3>module<wbr>Activate</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+					<li class="tsd-signature tsd-kind-icon">module<wbr>Activate<span class="tsd-signature-symbol">(</span>moduleName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in types/40-utils/destroyables/Queues.d.ts:14</li>
+								<li>Defined in types/50-systems/ModuleStore/interfaces/IModulePersister.d.ts:15</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>key: <span class="tsd-signature-type">K</span></h5>
+								<h5>moduleName: <span class="tsd-signature-type">string</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="queue.html" class="tsd-signature-type" data-tsd-kind="Class">Queue</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="../modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+				<a name="moduledeactivate" class="tsd-anchor"></a>
+				<h3>module<wbr>Deactivate</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+					<li class="tsd-signature tsd-kind-icon">module<wbr>Deactivate<span class="tsd-signature-symbol">(</span>moduleName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in types/50-systems/ModuleStore/interfaces/IModulePersister.d.ts:16</li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>moduleName: <span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../modules.html#iawaitable" class="tsd-signature-type" data-tsd-kind="Type alias">IAwaitable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>

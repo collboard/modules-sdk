@@ -4,7 +4,7 @@
 /// <reference types="react" />
 import { IVector } from 'xyzt';
 import { string_module_name } from '../40-utils/typeAliases';
-import { IActivator } from '../50-systems/ModuleStore/interfaces/IActivator';
+import { IModulePersister } from '../50-systems/ModuleStore/interfaces/IModulePersister';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
  * Cornerstone holds all informations about a particular board, such as
@@ -21,7 +21,7 @@ import { Abstract2dArt } from './26-Abstract2dArt';
  */
 export declare class CornerstoneArt
     extends Abstract2dArt /* TODO: maybe only AbstractPlacedArt */
-    implements IActivator {
+    implements IModulePersister {
     /**
      * String containing user-editable board name
      */

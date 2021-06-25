@@ -2,7 +2,6 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 import * as React from 'react';
-import { ISystems } from '../../50-systems/00-SystemsContainer/ISystems';
 export interface IModalProps extends React.PropsWithChildren<{}> {
     /**
      * Modal title
@@ -32,16 +31,6 @@ export interface IModalProps extends React.PropsWithChildren<{}> {
      * Is the modal full page height?
      */
     fullSize?: boolean;
-    /**
-     * Is this modal Welcome page?
-     *
-     * *Note: do not use this unless you know what are you doing!*
-     */
-    renderExtraJsx?: boolean;
-    /**
-     * Reference to systems container
-     */
-    systems?: ISystems;
 }
 /**
  * Modal component

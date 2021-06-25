@@ -11,7 +11,7 @@ import { string_module_name } from '../../../40-utils/typeAliases';
  *
  * @collboard-modules-sdk
  */
-export interface IActivator {
+export interface IModulePersister {
     moduleActivate(moduleName: string_module_name): IAwaitable<void>;
     moduleDeactivate(moduleName: string_module_name): IAwaitable<void>;
 }

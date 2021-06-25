@@ -144,11 +144,41 @@ export declare type string_module_category = string;
 export declare type string_person_fullname = string;
 /**
  * Semantic helper
+ * Full profile of the person with his email and web (like in package.json)
+ *
+ * For example `"Pavol Hejný <pavol@collboard.com> (https://pavolhejny.com)"`
+ * @collboard-modules-sdk
+ */
+export declare type string_person_profile = string;
+/**
+ * Full profile of the person with his email and web (like in package.json)
+ *
+ * @collboard-modules-sdk
+ */
+export interface IPersonProfile {
+    name?: string_person_fullname;
+    /**
+     * Note: Photos are taken from Gravatar by email
+     */
+    email?: string_email;
+    url?: string_url;
+}
+/**
+ * Semantic helper
  *
  * For example `"MIT"`
  * @collboard-modules-sdk
  */
 export declare type string_license = string;
+/**
+ * License with its name and url like in package.json
+ *
+ * @collboard-modules-sdk
+ */
+export interface ILicense {
+    type?: string_license;
+    url?: string;
+}
 /**
  * Semantic helper
  *

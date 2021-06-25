@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
 interface ICollboardUnloadedComponentProps extends React.PropsWithChildren<{}> {
-    loading: boolean;
+    isLoading: boolean;
     renderExtraJsx?: boolean;
     systems: ISystemsExtended;
 }

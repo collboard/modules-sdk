@@ -7,6 +7,7 @@ import { IAwaitable } from '../../40-utils/IAwaitable';
 export declare class FocusScope<TSubject> extends Destroyable implements IDestroyable {
     private active;
     get activeSubject(): TSubject | null;
-    takeFocus(options: { subject: TSubject; destroyable: IAwaitable<IDestroyable> }): Promise<void>;
+    private queue;
+    takeFocus(options: { subject: TSubject; create: () => IAwaitable<IDestroyable> }): Promise<void>;
     blurFocus(): Promise<void>;
 }

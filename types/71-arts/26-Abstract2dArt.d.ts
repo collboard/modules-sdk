@@ -45,7 +45,7 @@ export declare abstract class Abstract2dArt extends AbstractPlacedArt {
      * *Note: This can be called many times a second when user is scrolling
      * or not at all when art is out of screen*
      */
-    abstract render(selected: boolean, systems: ISystemsExtended): IAwaitable<JSX.Element | null>;
+    abstract render(selected: boolean, systems: ISystemsExtended): IAwaitable<JSX.Element>;
     /**
      * Default z-index of art
      *

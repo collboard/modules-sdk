@@ -14,7 +14,7 @@ import { AbstractSyncer } from './AbstractSyncer';
 export declare class AttributeSupportSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
     modulesStorage: import('../interfaces/IModulesStorage').IModulesStorage;
     private attributeDependencies;
-    private queues;
+    private throttleQueues;
     activateModuleSupportForAttribute(attributeName: string_attribute): Promise<unknown>;
     destroy(): Promise<void>;
 }

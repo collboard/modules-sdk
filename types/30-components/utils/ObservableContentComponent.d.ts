@@ -11,9 +11,9 @@ interface IObservableContentComponentProps {
     /**
      * Component to be rendered before the content is loaded
      *
-     * If not set, default loading is used
+     * If not set, default <Loader/> is used
      */
-    loading?: JSX.Element;
+    loader?: JSX.Element;
     /**
      * You can put here any RxJS observable. For example BehaviorSubject.
      */
@@ -24,5 +24,5 @@ interface IObservableContentComponentProps {
  *
  * @collboard-modules-sdk
  */
-export declare function ObservableContentComponent({ loading, content }: IObservableContentComponentProps): JSX.Element;
+export declare function ObservableContentComponent({ loader, content }: IObservableContentComponentProps): JSX.Element;
 export {};

@@ -3,12 +3,13 @@
 
 import { IFlags } from '../../../40-utils/flagsToObject';
 import {
+    ILicense,
+    IPersonProfile,
     string_char_emoji,
-    string_email,
+    string_license,
     string_module_category,
     string_module_name,
-    string_person_fullname,
-    string_url,
+    string_person_profile,
     string_url_image,
     string_version,
 } from '../../../40-utils/typeAliases';
@@ -56,28 +57,13 @@ export interface IModuleFlags {
  *
  * @collboard-modules-sdk
  */
-export declare type IModuleManifestAuthor = string | IModuleManifestAuthorObject;
+export declare type IModuleManifestAuthor = string_person_profile | IPersonProfile;
 /**
  *
  *
  * @collboard-modules-sdk
  */
-export declare type IModuleManifestAuthorObject = {
-    name?: string_person_fullname;
-    email?: string_email;
-    url?: string_url;
-};
-/**
- *
- *
- * @collboard-modules-sdk
- */
-export declare type IModuleManifestLicense =
-    | string
-    | {
-          type?: string;
-          url?: string;
-      };
+export declare type IModuleManifestLicense = string_license | ILicense;
 /**
  *
  *

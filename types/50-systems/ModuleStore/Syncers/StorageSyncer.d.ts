@@ -4,7 +4,7 @@
 import { IDestroyable } from '../../../40-utils/destroyables/IDestroyable';
 import { string_module_name } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
-import { IActivator } from '../interfaces/IActivator';
+import { IModulePersister } from '../interfaces/IModulePersister';
 import { IModule } from '../interfaces/IModule';
 import { IModulesStorage } from '../interfaces/IModulesStorage';
 import { ISyncer } from '../interfaces/ISyncer';
@@ -23,7 +23,7 @@ interface IStorageSyncerOptions {
  */
 export declare class StorageSyncer
     extends AbstractSyncer
-    implements ISyncer, IActivator, IModulesStorage, IDestroyable {
+    implements ISyncer, IModulePersister, IModulesStorage, IDestroyable {
     private readonly options;
     modulesStorage: IModulesStorage;
     constructor(systems: ISystemsExtended, options?: IStorageSyncerOptions);

@@ -8,7 +8,7 @@ import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { TranslationsSystem } from '../../TranslationsSystem/0-TranslationsSystem';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
-declare type ICreateModalReturn = Partial<Omit<IModalProps, 'children' | 'systemsContainer'>> & {
+declare type ICreateModalReturn = Partial<Omit<IModalProps, 'children'>> & {
     content: JSX.Element;
     wrapModalManually?: boolean;
 };
