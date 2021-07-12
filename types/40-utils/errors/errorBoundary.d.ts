@@ -1,7 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IAwaitable } from 'everstorage';
+import { IAwaitable } from 'destroyable';
 import { IFactory } from '../IFactory';
 /**
  * This util catches an error and rethrows more meaningfull error messege to better debugging

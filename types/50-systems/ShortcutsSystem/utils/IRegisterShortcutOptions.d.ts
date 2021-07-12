@@ -1,7 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IAwaitable } from 'touchcontroller';
+import { IAwaitable } from 'destroyable';
 import { IShortcut } from '../interfaces/IShortcut';
 export declare type IRegisterShortcutOptions<TValue> =
     | IRegisterShortcutOptionsSingle
