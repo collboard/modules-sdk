@@ -4,6 +4,10 @@
         {
             "name": "👨🏽‍💻🔥 Develop",
             "command": "npm run develop"
+        },
+        {
+            "name": "Test sample module",
+            "command": "cd ./sample_module/ && colldev"
         }
     ]
 }
