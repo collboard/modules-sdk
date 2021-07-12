@@ -1,8 +1,8 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
+import { ISubscription } from 'destroyable';
 import { Touch } from 'touchcontroller';
-import { ISubscription } from '../../40-utils/ISubscription';
 import { ISystems } from '../../50-systems/00-SystemsContainer/ISystems';
 /**
  * Behaviors are parts of functionality of tools, which can be shared
