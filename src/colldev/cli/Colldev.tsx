@@ -1,7 +1,9 @@
+import chalk from 'chalk';
 import commander from 'commander';
 import { render } from 'ink';
 import openBrowser from 'open';
 import React from 'react';
+import { filter } from 'rxjs/operators';
 import { Compiler } from '../compiler/Compiler';
 import { getColldevPackageContent } from '../compiler/utils/colldevPackage';
 import { ColldevServer } from '../server/ColldevServer';
@@ -30,8 +32,7 @@ export class Colldev extends Destroyable implements IDestroyable {
 
         const commands = {
             develop: program
-                // TODO: What is difference between "develop <path>" vs develop [path]
-                .command('develop <path>', { isDefault: true })
+                .command('develop [path]', { isDefault: true })
                 // TODO: browser
                 .alias('start')
                 .description(`Start developing collboard module. Runs compiler+dev server.`)
@@ -41,6 +42,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                     `"redirect" for redirecting to development Collboard;\n "about" for showing Colldev page with more info;\n "none" for silent run of Colldev`,
                     'redirect',
                 )
+                .option('-e, --exit', `Exit after succesfully started with propper exit code`)
                 .action(this.runDevelop.bind(this)),
             publish: program
                 .command('publish')
@@ -59,7 +61,7 @@ export class Colldev extends Destroyable implements IDestroyable {
 
     private async runDevelop(
         path: string,
-        { collboard, open }: { collboard: string; open: 'redirect' | 'about' | 'none' },
+        { collboard, open, exit }: { collboard: string; open: 'redirect' | 'about' | 'none'; exit: boolean },
     ) {
         // console.info('develop:', { path, collboard, open });
 
@@ -68,6 +70,7 @@ export class Colldev extends Destroyable implements IDestroyable {
             uriParams = `?collboardUrl=${encodeURIComponent(collboard)}`;
         }
 
+        // TODO: Maybe also close the browser in case of exiting the process / auto exit by --exit
         if (open === 'redirect') {
             openBrowser(`http://localhost:3000/${uriParams}`);
         } else if (open === 'about') {
@@ -79,11 +82,28 @@ export class Colldev extends Destroyable implements IDestroyable {
 
         this.addSubdestroyable(compiler, server);
 
-        render(<OutputComponent {...{ compiler, server }} />);
+        if (!exit) {
+            render(<OutputComponent {...{ compiler, server }} />);
+        } else {
+            compiler.statuses.pipe(filter(({ ready }) => ready)).subscribe(({ stats }) => {
+                if (stats?.hasErrors()) {
+                     console.error(
+                        stats?.toString({
+                            chunks: false, // Makes the build much quieter
+                            colors: true, // Shows colors in the console
+                        }),
+                    );
+                    process.exit(1);
+                }
+
+                console.info(chalk.green(`Working!!!!`));
+                process.exit(0);
+            });
+        }
     }
 
     private async runDeploy() {
-        // TODO: !!
+        // TODO: !!!
         console.log(
             `\x1b[44mWe are still working on automatical deployment\nPlease send us your work to dev@collboard.com\x1b[0m`,
         );

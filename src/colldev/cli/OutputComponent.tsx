@@ -2,7 +2,7 @@ import { Box, Text } from 'ink';
 import Table from 'ink-table';
 import * as React from 'react';
 import { filter, map } from 'rxjs/operators';
-import { Compiler, ICompilerResults } from '../compiler/Compiler';
+import { Compiler, ICompilerStatus } from '../compiler/Compiler';
 import { ColldevServer } from '../server/ColldevServer';
 import { objectMap } from '../utils/objectMap';
 import { ObservableContentComponent } from '../utils/ObservableContentComponent';
@@ -23,9 +23,16 @@ export function OutputComponent({ compiler, server }: IOutputProps) {
             <Box borderStyle="single">
                 <ObservableContentComponent
                     loading={<Text color="grey">Compiling...</Text>}
-                    content={compiler.stats.pipe(filter((stats) => stats !== null)).pipe(
-                        map(({ stats, error }: ICompilerResults) => {
-                            return <Text>{stats}</Text>;
+                    content={compiler.statuses.pipe(filter((stats) => stats !== null)).pipe(
+                        map(({ stats }: ICompilerStatus) => {
+                            return (
+                                <Text>
+                                    {stats?.toString({
+                                        chunks: false, // Makes the build much quieter
+                                        colors: true, // Shows colors in the console
+                                    })}
+                                </Text>
+                            );
                         }),
                     )}
                 />
@@ -36,7 +43,7 @@ export function OutputComponent({ compiler, server }: IOutputProps) {
                 content={server.serverStatus.pipe(
                     map((serverStatus) => {
                         const data = Object.entries(serverStatus.clients)
-                            .map(([clientUuid, data]) => ({ clientUuid, ...data }))
+                            .map(([clientUuid, clientData]) => ({ clientUuid, ...clientData }))
                             .map(({ boardId, connected, clientUuid, modules }) => ({
                                 boardId,
                                 // connected: connected ? '✔' : '✗',

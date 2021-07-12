@@ -73,7 +73,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
             res.type('application/javascript').send({
                 date: new Date().toISOString(),
                 server: this.serverStatus.value,
-                compiler: this.compiler.stats.value,
+                compiler: this.compiler.statuses.value,
             });
         });
 
@@ -123,12 +123,14 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                     };
                 });
 
-                const subscription = this.compiler.bundles.subscribe({
-                    next: ({ path }) => {
-                        // console.log(`Emmiting bundle for ${instanceUUID}`);
-                        socketConnection.emit('bundle', {
-                            bundleUrl: 'http://localhost:3000/assets/' + relative(ASSETS_PATH, path),
-                        } as IColldevSyncerSocket.bundle);
+                const subscription = this.compiler.statuses.subscribe({
+                    next: ({ bundle }) => {
+                        if (bundle) {
+                            // console.log(`Emmiting bundle for ${instanceUUID}`);
+                            socketConnection.emit('bundle', {
+                                bundleUrl: 'http://localhost:3000/assets/' + relative(ASSETS_PATH, bundle.path),
+                            } as IColldevSyncerSocket.bundle);
+                        }
                     },
                 });
 

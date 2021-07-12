@@ -1,16 +1,18 @@
 import { join } from 'path';
-import { BehaviorSubject, ReplaySubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import * as uuid from 'uuid';
 import webpack, { Compiler as WebpackCompiler } from 'webpack';
 import { ASSETS_PATH } from '../config';
 import { Destroyable } from '../utils/destroyables/Destroyable';
 import { IDestroyable } from '../utils/destroyables/IDestroyable';
-import { cleanupAssets, makeColldevFolder } from './utils/cleanupAssets';
-import { getModulePackageMainPath } from './utils/modulePackage';
+import { cleanupAssets } from './utils/cleanupAssets';
+import { getModulePackageMainPath } from './utils/getModulePackageMainPath';
+import { makeColldevFolder } from './utils/makeColldevFolder';
 
-export interface ICompilerResults {
-    stats?: string;
-    error?: Error;
+export interface ICompilerStatus {
+    ready: boolean;
+    stats?: webpack.Stats;
+    bundle?: { path: string };
 }
 
 export class Compiler extends Destroyable implements IDestroyable {
@@ -22,8 +24,7 @@ export class Compiler extends Destroyable implements IDestroyable {
     /**
      * Note: We are not using here mobx-react because it does not work with ink
      */
-    readonly stats: BehaviorSubject<null | ICompilerResults> = new BehaviorSubject(null);
-    readonly bundles: ReplaySubject<{ path: string }> = new ReplaySubject(1);
+    readonly statuses: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ ready: false });
 
     private compiler: WebpackCompiler;
 
@@ -61,29 +62,13 @@ export class Compiler extends Destroyable implements IDestroyable {
                     path: ASSETS_PATH,
                 },
             },
-            async (error, stats) => {
-                this.stats.next({
-                    error,
-                    stats: stats?.toString({
-                        chunks: false, // Makes the build much quieter
-                        colors: true, // Shows colors in the console
-                    }),
+            async (error /* TODO: Error is probbably useless */, stats) => {
+                // TODO: One next for stats and bundles
+                this.statuses.next({
+                    ready: true,
+                    stats,
+                    bundle: { path: join(ASSETS_PATH, bundleFilename) },
                 });
-
-                this.bundles.next({ path: join(ASSETS_PATH, bundleFilename) });
-
-                //const bundleContent = await promisify(readFile)(join(assetsPath, bundleFilename), 'utf8');
-
-                // const modules = analyzeBundleModules(bundleContent);
-
-                /*console.log({ error, stats });
-
-  // [Stats Object](#stats-object)
-  if (error || stats.hasErrors()) {
-      // [Handle errors here](#error-handling)
-  }
-  // Done processing
-  */
             },
         );
     }
