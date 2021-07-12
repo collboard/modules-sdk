@@ -26,7 +26,7 @@ describe('the errored modules', () => {
     });
     /**/
 
-    for (const errorType of ['syntax', 'type']) {
+    for (const errorType of ['syntax', 'type', 'runtime', 'missing-package', 'missing-entry', 'version-mismatch']) {
         it(`should crash when there is a ${errorType.toUpperCase()} ERROR in the module`, async () => {
             await expect(
                 execCommand({
