@@ -6,8 +6,14 @@
             "command": "npm run develop"
         },
         {
-            "name": "Test sample module",
-            "command": "cd ./sample_module/ && colldev"
+            "name": "🧪 Test",
+            "command": "npm run test",
+            "onlySingle": true
+        },
+        {
+            "name": "🧪 Lint",
+            "command": "npm run lint",
+            "onlySingle": true
         }
     ]
 }

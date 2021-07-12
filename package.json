@@ -19,9 +19,10 @@
         "colldev": "dist/colldev/main.js"
     },
     "scripts": {
-        "test": "echo \"TODO: !!! Implement\"",
-        "develop": "ts-node ./src/colldev/main.ts develop ./sample_module --collboard http://localhost:9977 --open redirect",
-        "prepare": "tsc && npm run test",
+        "test": "jest --config jestconfig.json",
+        "develop": "ts-node ./src/colldev/main.ts develop ./samples/hello-world --collboard http://localhost:9977 --open redirect",
+        "prepare": "tsc",
+        "prepublish": "npm run lint && npm run test",
         "documentation": "typedoc"
     },
     "dependencies": {
@@ -49,6 +50,9 @@
         "xyzt": "=4.4.2"
     },
     "devDependencies": {
+        "@types/jest": "^26.0.24",
+        "jest": "^27.0.6",
+        "ts-jest": "^27.0.3",
         "ts-node": "^9.1.1",
         "typedoc": "^0.20.36"
     }

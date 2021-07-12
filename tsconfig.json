@@ -18,10 +18,10 @@
         "noUnusedLocals": false,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "types": ["node"],
+        "types": ["node", "jest"],
         "lib": ["DOM"]
     },
-    "include": ["src","types"],
+    "include": ["src", "types", "test/utils/execCommand.ts"],
 
     "typedocOptions": {
         "name": "Modules SDK toolkit for Collboard.com",
@@ -32,7 +32,6 @@
         "out": "./docs",
         "media": "./media",
         "gaID": "UA-161448779-1",
-        "gitRemote": "https://github.com/collboard/modules-sdk",
-        
-      }
+        "gitRemote": "https://github.com/collboard/modules-sdk"
+    }
 }
