@@ -1,4 +1,4 @@
-import { readdir, unlink, mkdir } from 'fs';
+import { readdir, unlink } from 'fs';
 import { join } from 'path';
 import { promisify } from 'util';
 import { ASSETS_PATH } from '../../config';
@@ -9,6 +9,4 @@ export async function cleanupAssets() {
     }
 }
 
-export async function makeColldevFolder() {
-    await promisify(mkdir)(ASSETS_PATH,{recursive:true});
-}
+
