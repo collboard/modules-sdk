@@ -21,8 +21,8 @@
         "types": ["node", "jest"],
         "lib": ["DOM"]
     },
-    "include": ["src", "types", "test/utils/execCommand.ts"],
-
+    "include": ["src", "types"],
+    "exclude": ["samples"],
     "typedocOptions": {
         "name": "Modules SDK toolkit for Collboard.com",
         "entryPoints": ["./types/index.d.ts"],
