@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { Colldev } from './cli/Colldev';
+import { Colldev } from './Colldev/Colldev';
 
 const colldev = new Colldev(process.argv);
 
