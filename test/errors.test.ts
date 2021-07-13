@@ -26,11 +26,20 @@ describe('the errored modules', () => {
     });
     /**/
 
-    for (const errorType of ['syntax', 'type', 'runtime', 'missing-package', 'missing-entry', 'version-mismatch']) {
-        it(`should crash when there is a ${errorType.toUpperCase()} ERROR in the module`, async () => {
+    for (const errorType of [
+        'syntax-error',
+        'type-error',
+        'runtime-error-in-declare',
+        'runtime-error-in-setup',
+        'runtime-error-in-unsetup',
+        'missing-package-error',
+        'missing-entry-error',
+        // TODO: 'version-mismatch-error',
+    ]) {
+        it(`should crash when there is a ${errorType.split('-').join(' ').toUpperCase()} in the module`, async () => {
             await expect(
                 execCommand({
-                    command: `ts-node ./src/colldev/main.ts develop ./samples/errors/${errorType}-error --exit`,
+                    command: `ts-node ./src/colldev/main.ts develop ./samples/errors/${errorType} --exit`,
                     cwd: join(__dirname, '..'),
                 }),
             ).rejects.toThrow();
