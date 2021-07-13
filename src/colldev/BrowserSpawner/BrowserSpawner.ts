@@ -1,6 +1,5 @@
+import { Destroyable, IDestroyable } from 'destroyable';
 import { ColldevServer } from '../ColldevServer/ColldevServer';
-import { Destroyable } from '../utils/destroyables/Destroyable';
-import { IDestroyable } from '../utils/destroyables/IDestroyable';
 
 export class BrowserSpawner extends Destroyable implements IDestroyable {
     constructor(private colldevServer: ColldevServer) {

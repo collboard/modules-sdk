@@ -135,7 +135,7 @@ _Tip: You can also setup postversion command to publish automatically._
 
 In setup function you are interacting with Collboard systems. Theese are something like APIs each controlling some part of collboard app.
 
-Typically you are registering something under theese sytems. This will returns you [destroyable](types/40-utils/destroyables/IDestroyable.d.ts) which you can directly return from your setup function.
+Typically you are registering something under theese sytems. This will returns you [destroyable](https://github.com/hejny/destroyable) which you can directly return from your setup function.
 
 <!--
     This section is GENERATED WITH generate-modules-sdk

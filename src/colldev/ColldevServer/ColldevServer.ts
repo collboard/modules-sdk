@@ -7,8 +7,8 @@ import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
 import { Compiler } from '../Compiler/Compiler';
 import { ASSETS_PATH } from '../config';
-import { Destroyable } from '../utils/destroyables/Destroyable';
-import { IDestroyable } from '../utils/destroyables/IDestroyable';
+import { Destroyable } from 'destroyable';
+import { IDestroyable } from 'destroyable';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 
 interface IServerStatus {

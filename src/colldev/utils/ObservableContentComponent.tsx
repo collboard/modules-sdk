@@ -1,6 +1,6 @@
+import { IAwaitable } from 'destroyable';
 import * as React from 'react';
 import { Observable } from 'rxjs';
-import { IAwaitable } from './destroyables/IAwaitable';
 
 /**
  * ⚠️Warning: THIS IS A COPY. Do not edit it here but:

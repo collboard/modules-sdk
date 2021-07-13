@@ -1,10 +1,9 @@
+import { Destroyable, IDestroyable } from 'destroyable';
 import { join } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import * as uuid from 'uuid';
 import webpack, { Compiler as WebpackCompiler } from 'webpack';
 import { ASSETS_PATH } from '../config';
-import { Destroyable } from '../utils/destroyables/Destroyable';
-import { IDestroyable } from '../utils/destroyables/IDestroyable';
 import { cleanupAssets } from './utils/cleanupAssets';
 import { getModulePackageMainPath } from './utils/getModulePackageMainPath';
 import { makeColldevFolder } from './utils/makeColldevFolder';

@@ -1,15 +1,14 @@
 import chalk from 'chalk';
 import commander from 'commander';
+import { Destroyable, IDestroyable } from 'destroyable';
 import { render } from 'ink';
 import openBrowser from 'open';
 import React from 'react';
 import { filter } from 'rxjs/operators';
 import { forTime } from 'waitasecond';
+import { ColldevServer } from '../ColldevServer/ColldevServer';
 import { Compiler } from '../Compiler/Compiler';
 import { getColldevPackageContent } from '../Compiler/utils/colldevPackage';
-import { ColldevServer } from '../ColldevServer/ColldevServer';
-import { Destroyable } from '../utils/destroyables/Destroyable';
-import { IDestroyable } from '../utils/destroyables/IDestroyable';
 import { OutputComponent } from './OutputComponent';
 
 export class Colldev extends Destroyable implements IDestroyable {
