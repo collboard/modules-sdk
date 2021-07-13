@@ -5,7 +5,7 @@ import { join, relative } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
-import { Compiler } from '../compiler/Compiler';
+import { Compiler } from '../Compiler/Compiler';
 import { ASSETS_PATH } from '../config';
 import { Destroyable } from '../utils/destroyables/Destroyable';
 import { IDestroyable } from '../utils/destroyables/IDestroyable';
