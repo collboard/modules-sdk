@@ -1,0 +1,3 @@
+{
+    "main": "./module-that-dont-exists.tsx"
+}
