@@ -1,10 +1,13 @@
-import { declareModule, makeExtrajsxModule } from '../../../src/runtime/runtime';
+import { declareModule } from '../../../src/runtime/runtime';
 
-declareModule(
-    makeExtrajsxModule({
-        manifest: {
-            name: 'TypeErrorModule',
-        },
-        // Testing here mising stuff
-    }),
-);
+declareModule({
+    manifest: {
+        name: 'TypeErrorModule',
+    },
+    setup() {
+        return {
+            // 🧪 Testing here mising stuff
+            missingDestroy: () => {},
+        };
+    },
+});
