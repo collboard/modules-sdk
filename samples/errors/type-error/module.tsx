@@ -1,4 +1,4 @@
-import { declareModule, makeExtrajsxModule } from '../../../../src/runtime/runtime';
+import { declareModule, makeExtrajsxModule } from '../../../src/runtime/runtime';
 
 declareModule(
     makeExtrajsxModule({
