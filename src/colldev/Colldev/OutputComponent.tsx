@@ -3,7 +3,7 @@ import Table from 'ink-table';
 import * as React from 'react';
 import { filter, map } from 'rxjs/operators';
 import { Compiler, ICompilerStatus } from '../Compiler/Compiler';
-import { ColldevServer } from '../server/ColldevServer';
+import { ColldevServer } from '../ColldevServer/ColldevServer';
 import { objectMap } from '../utils/objectMap';
 import { ObservableContentComponent } from '../utils/ObservableContentComponent';
 

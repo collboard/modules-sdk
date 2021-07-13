@@ -1,4 +1,4 @@
-import { ColldevServer } from '../server/ColldevServer';
+import { ColldevServer } from '../ColldevServer/ColldevServer';
 import { Destroyable } from '../utils/destroyables/Destroyable';
 import { IDestroyable } from '../utils/destroyables/IDestroyable';
 

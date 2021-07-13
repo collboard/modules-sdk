@@ -7,7 +7,7 @@ import { filter } from 'rxjs/operators';
 import { forTime } from 'waitasecond';
 import { Compiler } from '../Compiler/Compiler';
 import { getColldevPackageContent } from '../Compiler/utils/colldevPackage';
-import { ColldevServer } from '../server/ColldevServer';
+import { ColldevServer } from '../ColldevServer/ColldevServer';
 import { Destroyable } from '../utils/destroyables/Destroyable';
 import { IDestroyable } from '../utils/destroyables/IDestroyable';
 import { OutputComponent } from './OutputComponent';
