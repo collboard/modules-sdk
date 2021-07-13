@@ -4,6 +4,7 @@ import { render } from 'ink';
 import openBrowser from 'open';
 import React from 'react';
 import { filter } from 'rxjs/operators';
+import { forTime } from 'waitasecond';
 import { Compiler } from '../compiler/Compiler';
 import { getColldevPackageContent } from '../compiler/utils/colldevPackage';
 import { ColldevServer } from '../server/ColldevServer';
@@ -39,10 +40,18 @@ export class Colldev extends Destroyable implements IDestroyable {
                 .option('-c, --collboard <url>', `Url of development Collboard`, 'https://dev.collboard.com')
                 .option(
                     '-o, --open <openMode>',
-                    `"redirect" for redirecting to development Collboard;\n "about" for showing Colldev page with more info;\n "none" for silent run of Colldev`,
+                    `"redirect" for redirecting to development Collboard;` +
+                        `"about" for showing Colldev page with more info;` +
+                        `"none" for silent run of Colldev`,
+                    /* TODO: Use here spacetrim */
                     'redirect',
                 )
-                .option('-e, --exit', `Exit after succesfully started with propper exit code`)
+                .option(
+                    '-om, --open-multiple',
+                    `Detect if Collboard is already opened and if yes do not open it multiple times`,
+                    false,
+                )
+                .option('-e, --exit', `Exit after succesfully started with propper exit code`, false)
                 .action(this.runDevelop.bind(this)),
             publish: program
                 .command('publish')
@@ -61,33 +70,51 @@ export class Colldev extends Destroyable implements IDestroyable {
 
     private async runDevelop(
         path: string,
-        { collboard, open, exit }: { collboard: string; open: 'redirect' | 'about' | 'none'; exit: boolean },
+        options: { collboard: string; open: 'redirect' | 'about' | 'none'; exit: boolean; openMultiple: boolean },
     ) {
-        // console.info('develop:', { path, collboard, open });
+        const { collboard, open, exit, openMultiple } = options;
+        //console.info('develop:', options);
 
         let uriParams = '';
         if (collboard !== 'https://dev.collboard.com') {
             uriParams = `?collboardUrl=${encodeURIComponent(collboard)}`;
         }
 
-        // TODO: Maybe also close the browser in case of exiting the process / auto exit by --exit
-        if (open === 'redirect') {
-            openBrowser(`http://localhost:3000/${uriParams}`);
-        } else if (open === 'about') {
-            openBrowser(`http://localhost:3000/about${uriParams}`);
-        }
-
         const compiler = new Compiler(path || './');
         const server = new ColldevServer(compiler);
 
-        this.addSubdestroyable(compiler, server);
+        this.addSubdestroyable(compiler, server /* TODO: Browsers */);
+
+        // TODO: Opening system in class like Compiler or ColldevServer
+        const openBrowserWithMultiple = async (url: string) => {
+            if (!openMultiple) {
+                await forTime(2500 /* TODO: Configurable */);
+                console.log(
+                    'Object.values(server.serverStatus.value.clients)',
+                    Object.values(server.serverStatus.value.clients),
+                );
+                if (Object.values(server.serverStatus.value.clients).length) {
+                    // Note: There is already some client connected
+                    return;
+                }
+            }
+
+            // TODO: Maybe also close the browser in case of exiting the process / auto exit by --exit
+            openBrowser(url);
+        };
+
+        if (open === 'redirect') {
+            /* not await */ openBrowserWithMultiple(`http://localhost:3000/${uriParams}`);
+        } else if (open === 'about') {
+            /* not await */ openBrowserWithMultiple(`http://localhost:3000/about${uriParams}`);
+        }
 
         if (!exit) {
             render(<OutputComponent {...{ compiler, server }} />);
         } else {
             compiler.statuses.pipe(filter(({ ready }) => ready)).subscribe(({ stats }) => {
                 if (stats?.hasErrors()) {
-                     console.error(
+                    console.error(
                         stats?.toString({
                             chunks: false, // Makes the build much quieter
                             colors: true, // Shows colors in the console
