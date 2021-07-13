@@ -1,7 +1,14 @@
-//const cmd = require('./cmd');
+import { join } from 'path';
+import { execCommand } from './utils/execCommand';
+
 describe('the basics', () => {
     it('should run without crash on the sample module', async () => {
-        //const response = await cmd.execute('', ['--peppers', '--cheese', 'gouda']);
-        //expect(response).to.equal('you ordered a pizza with:\n  - peppers\n  - gouda cheese');
+        await expect(
+            execCommand({
+                command: 'ts-node src/colldev/main.ts develop ./samples/hello-world --exit',
+                cwd: join(__dirname, '..'),
+            }),
+        ).rejects.toThrow('I should fail!!!');
+        expect.assertions(1);
     });
 });
