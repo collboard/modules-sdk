@@ -39,7 +39,7 @@ describe('the errored modules', () => {
         it(`should crash when there is a ${errorType.split('-').join(' ').toUpperCase()} in the module`, async () => {
             await expect(
                 execCommand({
-                    command: `ts-node ./src/colldev/main.ts develop ./samples/errors/${errorType} --exit`,
+                    command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/${errorType} --mode multiple --exit`,
                     cwd: join(__dirname, '..'),
                 }),
             ).rejects.toThrow();
