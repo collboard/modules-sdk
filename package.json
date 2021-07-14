@@ -21,7 +21,7 @@
     "scripts": {
         "test": "jest --config jestconfig.json",
         "lint": "tslint -p tsconfig.json",
-        "develop": "ts-node ./src/colldev/main.ts develop ./test-samples/hello-world --collboard http://localhost:9977 --open redirect",
+        "develop": "ts-node ./src/colldev/main.ts develop ./test-samples/hello-world",
         "prepare": "tsc",
         "prepublish": "npm run lint && npm run test",
         "documentation": "typedoc"
