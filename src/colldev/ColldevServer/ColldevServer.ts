@@ -15,7 +15,7 @@ interface IServerStatus {
     clients: Record<string, IColldevSyncerSocket.clientStatus>;
 }
 
-type IColldevServerOptions = Pick<IColldevDevelopOptions, 'collboardUrl'>;
+type IColldevServerOptions = Pick<IColldevDevelopOptions, 'collboardUrl' | 'port' | 'expose'>;
 export class ColldevServer extends Destroyable implements IDestroyable {
     constructor(private compiler: Compiler, private readonly options: IColldevServerOptions) {
         super();
@@ -23,7 +23,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
     }
 
     public get openCollboardUrl() {
-        const { collboardUrl } = this.options;
+        const { collboardUrl, port, expose } = this.options;
 
         let uriParams = '';
         if (collboardUrl !== 'https://dev.collboard.com') {

@@ -47,14 +47,6 @@ export class Colldev extends Destroyable implements IDestroyable {
                     'single',
                 )
                 .option(
-                    '-h, --headless',
-                    `` /* TODO: Use here spacetrim */ +
-                        `Opens the browser in headless mode\n` +
-                        `Note: This option is especially usefull when testing` +
-                        `Note: This option has no effect with option "--open none"`,
-                    false,
-                )
-                .option(
                     '-b, --browser',
                     `` /* TODO: Use here spacetrim */ +
                         `Which browser use\n` +
@@ -62,6 +54,14 @@ export class Colldev extends Destroyable implements IDestroyable {
                         //`Note: This option is especially usefull when testing` +
                         `Note: This option has no effect with option "--open none"`,
                     'default',
+                )
+                .option(
+                    '-h, --headless',
+                    `` /* TODO: Use here spacetrim */ +
+                        `Opens the browser in headless mode\n` +
+                        `Note: This option is especially usefull when testing` +
+                        `Note: This option has no effect with option "--open none"`,
+                    false,
                 )
                 // TODO: Browser -  chrome
                 .option(
@@ -108,12 +108,12 @@ export class Colldev extends Destroyable implements IDestroyable {
     }
 
     private async runDevelop(path: string, options: IColldevDevelopOptions) {
-        const { collboardUrl, open, headless, wait, exit } = options;
+        const { collboardUrl, open, browser, headless, wait, exit, port, expose } = options;
         //console.info('develop:', options);
 
         const compiler = new Compiler(path || './');
-        const server = new ColldevServer(compiler, { collboardUrl });
-        const browserSpawner = new BrowserSpawner(server, { open, headless, wait });
+        const server = new ColldevServer(compiler, { collboardUrl, port, expose });
+        const browserSpawner = new BrowserSpawner(server, { open, browser, headless, wait });
 
         this.addSubdestroyable(compiler, server, browserSpawner);
 

@@ -9,7 +9,7 @@ import openBrowser from 'open';
 openBrowser(url);
 */
 
-type IBrowserSpawnerOptions = Pick<IColldevDevelopOptions, 'open' | 'headless' | 'wait'>;
+type IBrowserSpawnerOptions = Pick<IColldevDevelopOptions, 'open' | 'browser' | 'headless' | 'wait'>;
 export class BrowserSpawner extends Destroyable implements IDestroyable {
     private browser: Browser;
 
@@ -38,7 +38,7 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
     }
 
     private async newPage(): Promise<Page> {
-        const { headless } = this.options;
+        const { browser, headless } = this.options;
 
         if (!this.browser) {
             this.browser = await puppeteer.launch({
