@@ -11,6 +11,7 @@ process.on('SIGINT', () => {
     process.exit();
 });
 
-process.on('exit', () => {
-    colldev.destroy();
+process.on('exit', async () => {
+    await colldev.destroy();
+    // !!! console.info(chalk.red('----'));
 });

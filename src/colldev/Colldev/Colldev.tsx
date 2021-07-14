@@ -2,10 +2,9 @@ import chalk from 'chalk';
 import commander from 'commander';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { render } from 'ink';
-import openBrowser from 'open';
 import React from 'react';
 import { filter } from 'rxjs/operators';
-import { forTime } from 'waitasecond';
+import { BrowserSpawner } from '../BrowserSpawner/BrowserSpawner';
 import { ColldevServer } from '../ColldevServer/ColldevServer';
 import { Compiler } from '../Compiler/Compiler';
 import { getColldevPackageContent } from '../Compiler/utils/colldevPackage';
@@ -45,6 +44,9 @@ export class Colldev extends Destroyable implements IDestroyable {
                     /* TODO: Use here spacetrim */
                     'redirect',
                 )
+                // TODO: !!! open - none, single, multiple, multiple
+                // TODO: -headless (in case of multiple)
+                // TODO: Browser -  chrome
                 .option(
                     '-om, --open-multiple',
                     `Detect if Collboard is already opened and if yes do not open it multiple times`,
@@ -81,31 +83,14 @@ export class Colldev extends Destroyable implements IDestroyable {
 
         const compiler = new Compiler(path || './');
         const server = new ColldevServer(compiler);
+        const browserSpawner = new BrowserSpawner(server, { openMultiple });
 
-        this.addSubdestroyable(compiler, server /* TODO: Browsers */);
-
-        // TODO: Opening system in class like Compiler or ColldevServer
-        const openBrowserWithMultiple = async (url: string) => {
-            if (!openMultiple) {
-                await forTime(2500 /* TODO: Configurable */);
-                console.log(
-                    'Object.values(server.serverStatus.value.clients)',
-                    Object.values(server.serverStatus.value.clients),
-                );
-                if (Object.values(server.serverStatus.value.clients).length) {
-                    // Note: There is already some client connected
-                    return;
-                }
-            }
-
-            // TODO: Maybe also close the browser in case of exiting the process / auto exit by --exit
-            openBrowser(url);
-        };
+        this.addSubdestroyable(compiler, server, browserSpawner);
 
         if (open === 'redirect') {
-            /* not await */ openBrowserWithMultiple(`http://localhost:3000/${uriParams}`);
+            /* not await */ browserSpawner.open(`http://localhost:3000/${uriParams}`);
         } else if (open === 'about') {
-            /* not await */ openBrowserWithMultiple(`http://localhost:3000/about${uriParams}`);
+            /* not await */ browserSpawner.open(`http://localhost:3000/about${uriParams}`);
         }
 
         if (!exit) {
@@ -115,6 +100,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                 if (stats?.hasErrors()) {
                     console.error(
                         stats?.toString({
+                            // TODO: DRY
                             chunks: false, // Makes the build much quieter
                             colors: true, // Shows colors in the console
                         }),
