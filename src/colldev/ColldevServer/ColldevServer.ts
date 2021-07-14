@@ -57,15 +57,12 @@ export class ColldevServer extends Destroyable implements IDestroyable {
         this.socketHandler();
 
         this.expressApp.get('/', (request, response) => {
-            const collboardUrl = request.query.collboardUrl || 'https://dev.collboard.com';
-
             // TODO: Put here a version
-            // TODO: Put here redirect link
             response.type('text/html').send(`
             <h1>Colldev server</h1>
             <p>Hello from Collboard.com modules SDK toolkit:</p>
             <ul>
-                <li>To test currently developed modules go to <a href="${collboardUrl}">${collboardUrl}</a>.</li>
+                <li>To test currently developed modules go to <a href="${this.openCollboardUrl}">${this.openCollboardUrl}</a>.</li>
                 <li>To show current stats to <a href="/stats">/stats</a>.</li>
                 <li>To learn more <a href="https://github.com/collboard/modules-sdk">https://github.com/collboard/modules-sdk</a>.</li>
             </ul>
