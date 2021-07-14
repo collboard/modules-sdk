@@ -22,14 +22,14 @@ export class ColldevServer extends Destroyable implements IDestroyable {
         this.init();
     }
 
-    public get redirectUrl() {
+    public get openCollboardUrl() {
         const { collboardUrl } = this.options;
 
         let uriParams = '';
         if (collboardUrl !== 'https://dev.collboard.com') {
             uriParams = `?collboardUrl=${encodeURIComponent(collboardUrl)}`;
         }
-        const redirectUrl = /* TODO: On exposed do not hardcode localhost */ `http://localhost:3000/redirect${uriParams}`;
+        const redirectUrl = /* TODO: On exposed do not hardcode localhost */ `http://localhost:3000/open-collboard${uriParams}`;
 
         return redirectUrl;
     }
@@ -73,12 +73,12 @@ export class ColldevServer extends Destroyable implements IDestroyable {
             `);
         });
 
-        this.expressApp.get('/redirect', (request, response) => {
+        this.expressApp.get('/open-collboard', (request, response) => {
             const collboardUrl = request.query.collboardUrl || 'https://dev.collboard.com';
 
             response.type('text/html').send(`
             <script>
-                window.location = '${collboardUrl}?colldevUrl='+encodeURIComponent(window.location.toString().split('/redirect').join(''));
+                window.location = '${collboardUrl}?colldevUrl='+encodeURIComponent(window.location.toString().split('/open-collboard').join(''));
             </script>
 
             `);

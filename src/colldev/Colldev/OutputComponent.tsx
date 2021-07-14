@@ -62,7 +62,7 @@ export function OutputComponent({ compiler, server }: IOutputProps) {
                                         Waiting for clients...
                                         <Text color="magenta" bold>
                                             {'\n'}
-                                            Please open {server.redirectUrl}
+                                            Please open {server.openCollboardUrl}
                                         </Text>
                                     </Text>
                                 </Box>
