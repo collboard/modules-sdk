@@ -6,6 +6,7 @@ import { join, relative } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
+import { IColldevDevelopOptions } from '../Colldev/IColldevDevelopOptions';
 import { Compiler } from '../Compiler/Compiler';
 import { ASSETS_PATH } from '../config';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
@@ -13,10 +14,24 @@ import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 interface IServerStatus {
     clients: Record<string, IColldevSyncerSocket.clientStatus>;
 }
+
+type IColldevServerOptions = Pick<IColldevDevelopOptions, 'collboardUrl'>;
 export class ColldevServer extends Destroyable implements IDestroyable {
-    constructor(private compiler: Compiler) {
+    constructor(private compiler: Compiler, private readonly options: IColldevServerOptions) {
         super();
         this.init();
+    }
+
+    public get redirectUrl() {
+        const { collboardUrl } = this.options;
+
+        let uriParams = '';
+        if (collboardUrl !== 'https://dev.collboard.com') {
+            uriParams = `?collboardUrl=${encodeURIComponent(collboardUrl)}`;
+        }
+        const redirectUrl = /* TODO: On exposed do not hardcode localhost */ `http://localhost:3000/redirect${uriParams}`;
+
+        return redirectUrl;
     }
 
     /**
@@ -41,22 +56,11 @@ export class ColldevServer extends Destroyable implements IDestroyable {
         this.socket = new SocketIoServer(this.server, { transports: ['websocket', 'polling'] });
         this.socketHandler();
 
-        // TODO: !!! Swap / -> /collboard and /about -> / URL
         this.expressApp.get('/', (request, response) => {
             const collboardUrl = request.query.collboardUrl || 'https://dev.collboard.com';
 
-            response.type('text/html').send(`
-            <script>
-                window.location = '${collboardUrl}?colldevUrl='+encodeURIComponent(window.location);
-            </script>
-
-            `);
-        });
-
-        this.expressApp.get('/about', (request, response) => {
-            const collboardUrl = request.query.collboardUrl || 'https://dev.collboard.com';
-
             // TODO: Put here a version
+            // TODO: Put here redirect link
             response.type('text/html').send(`
             <h1>Colldev server</h1>
             <p>Hello from Collboard.com modules SDK toolkit:</p>
@@ -65,6 +69,17 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                 <li>To show current stats to <a href="/stats">/stats</a>.</li>
                 <li>To learn more <a href="https://github.com/collboard/modules-sdk">https://github.com/collboard/modules-sdk</a>.</li>
             </ul>
+
+            `);
+        });
+
+        this.expressApp.get('/redirect', (request, response) => {
+            const collboardUrl = request.query.collboardUrl || 'https://dev.collboard.com';
+
+            response.type('text/html').send(`
+            <script>
+                window.location = '${collboardUrl}?colldevUrl='+encodeURIComponent(window.location.toString().split('/redirect').join(''));
+            </script>
 
             `);
         });

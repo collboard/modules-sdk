@@ -2,8 +2,8 @@ import { Box, Text } from 'ink';
 import Table from 'ink-table';
 import * as React from 'react';
 import { filter, map } from 'rxjs/operators';
-import { Compiler, ICompilerStatus } from '../Compiler/Compiler';
 import { ColldevServer } from '../ColldevServer/ColldevServer';
+import { Compiler, ICompilerStatus } from '../Compiler/Compiler';
 import { objectMap } from '../utils/objectMap';
 import { ObservableContentComponent } from '../utils/ObservableContentComponent';
 
@@ -28,6 +28,7 @@ export function OutputComponent({ compiler, server }: IOutputProps) {
                             return (
                                 <Text>
                                     {stats?.toString({
+                                        // TODO:  !!! DRY
                                         chunks: false, // Makes the build much quieter
                                         colors: true, // Shows colors in the console
                                     })}
@@ -61,7 +62,7 @@ export function OutputComponent({ compiler, server }: IOutputProps) {
                                         Waiting for clients...
                                         <Text color="magenta" bold>
                                             {'\n'}
-                                            Please open https://dev.collboard.com
+                                            Please open {server.redirectUrl}
                                         </Text>
                                     </Text>
                                 </Box>

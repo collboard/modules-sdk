@@ -8,6 +8,7 @@ import { BrowserSpawner } from '../BrowserSpawner/BrowserSpawner';
 import { ColldevServer } from '../ColldevServer/ColldevServer';
 import { Compiler } from '../Compiler/Compiler';
 import { getColldevPackageContent } from '../Compiler/utils/colldevPackage';
+import { IColldevDevelopOptions } from './IColldevDevelopOptions';
 import { OutputComponent } from './OutputComponent';
 
 export class Colldev extends Destroyable implements IDestroyable {
@@ -35,24 +36,43 @@ export class Colldev extends Destroyable implements IDestroyable {
                 // TODO: browser
                 .alias('start')
                 .description(`Start developing collboard module. Runs compiler+dev server.`)
-                .option('-c, --collboard <url>', `Url of development Collboard`, 'https://dev.collboard.com')
+                .option('-c, --collboard-url <url>', `Url of development Collboard`, 'https://dev.collboard.com')
                 .option(
                     '-o, --open <openMode>',
-                    `"redirect" for redirecting to development Collboard;` +
-                        `"about" for showing Colldev page with more info;` +
-                        `"none" for silent run of Colldev`,
-                    /* TODO: Use here spacetrim */
+                    `` /* TODO: Use here spacetrim */ +
+                        `"none" for just running colldev without opening the browser;\n` +
+                        `"single" for wait some time if the Collboard connects to Colldev, if yes do nothing if no open new browser window with collboard;\n` +
+                        `"multiple" new browser window for each colldev running`,
+
                     'redirect',
                 )
-                // TODO: !!! open - none, single, multiple, multiple
+                .option(
+                    '-h, --headless',
+                    `` /* TODO: Use here spacetrim */ +
+                        `Opens the browser in headless mode\n` +
+                        `Note: This option is especially usefull when testing` +
+                        `Note: This option has no effect with option "--open none"`,
+                    false,
+                )
+
                 // TODO: -headless (in case of multiple)
                 // TODO: Browser -  chrome
                 .option(
-                    '-om, --open-multiple',
-                    `Detect if Collboard is already opened and if yes do not open it multiple times`,
+                    '-w, --wait <miliseconds>',
+                    `` /* TODO: Use here spacetrim */ +
+                        `How many miliseconds to wait to connection until opening new browser window with Collboard\n` +
+                        `Note: It can be used only with option "--open single"`,
+
+                    '2500',
+                )
+                .option(
+                    '-e, --exit',
+                    `` /* TODO: Use here spacetrim */ +
+                        `Exit the CLI after succesfully started with propper exit code\n` +
+                        `Note: This option is especially usefull when testing`,
                     false,
                 )
-                .option('-e, --exit', `Exit after succesfully started with propper exit code`, false)
+                // TODO: port and expose
                 .action(this.runDevelop.bind(this)),
             publish: program
                 .command('publish')
@@ -69,29 +89,15 @@ export class Colldev extends Destroyable implements IDestroyable {
         return { program, commands };
     }
 
-    private async runDevelop(
-        path: string,
-        options: { collboard: string; open: 'redirect' | 'about' | 'none'; exit: boolean; openMultiple: boolean },
-    ) {
-        const { collboard, open, exit, openMultiple } = options;
+    private async runDevelop(path: string, options: IColldevDevelopOptions) {
+        const { collboardUrl, open, headless, wait, exit } = options;
         //console.info('develop:', options);
 
-        let uriParams = '';
-        if (collboard !== 'https://dev.collboard.com') {
-            uriParams = `?collboardUrl=${encodeURIComponent(collboard)}`;
-        }
-
         const compiler = new Compiler(path || './');
-        const server = new ColldevServer(compiler);
-        const browserSpawner = new BrowserSpawner(server, { openMultiple });
+        const server = new ColldevServer(compiler, { collboardUrl });
+        const browserSpawner = new BrowserSpawner(server, { open, headless, wait });
 
         this.addSubdestroyable(compiler, server, browserSpawner);
-
-        if (open === 'redirect') {
-            /* not await */ browserSpawner.open(`http://localhost:3000/${uriParams}`);
-        } else if (open === 'about') {
-            /* not await */ browserSpawner.open(`http://localhost:3000/about${uriParams}`);
-        }
 
         if (!exit) {
             render(<OutputComponent {...{ compiler, server }} />);
@@ -100,7 +106,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                 if (stats?.hasErrors()) {
                     console.error(
                         stats?.toString({
-                            // TODO: DRY
+                            // TODO:  !!! DRY
                             chunks: false, // Makes the build much quieter
                             colors: true, // Shows colors in the console
                         }),

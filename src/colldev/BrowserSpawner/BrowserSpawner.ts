@@ -1,6 +1,7 @@
 import { Destroyable, IDestroyable } from 'destroyable';
 import puppeteer, { Browser, Page } from 'puppeteer-core';
 import { forTime } from 'waitasecond';
+import { IColldevDevelopOptions } from '../Colldev/IColldevDevelopOptions';
 import { ColldevServer } from '../ColldevServer/ColldevServer';
 
 /*
@@ -8,11 +9,7 @@ import openBrowser from 'open';
 openBrowser(url);
 */
 
-interface IBrowserSpawnerOptions {
-    //browser: 'default'|'chrome'...|'puppeteer'
-    openMultiple: boolean;
-}
-
+type IBrowserSpawnerOptions = Pick<IColldevDevelopOptions, 'open' | 'headless' | 'wait'>;
 export class BrowserSpawner extends Destroyable implements IDestroyable {
     private browser: Browser;
 
@@ -20,28 +17,32 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
 
     constructor(private server: ColldevServer, private readonly options: IBrowserSpawnerOptions) {
         super();
-        // !!! this.init();
+        this.init();
     }
 
-    async open(url: string) /* TODO: Maybe return destroyable tab */ {
-        if (false /*!!!*/ && !this.options.openMultiple) {
-            await forTime(2500 /* TODO: Configurable */);
+    private async init() {
+        const { open, wait } = this.options;
+
+        if (open === 'none') {
+            return;
+        } else if (open === 'single') {
+            await forTime(parseInt(wait));
             if (Object.values(this.server.serverStatus.value.clients).length) {
                 // Note: There is already some client connected
                 return;
             }
-        }
+        } /* not else */
 
         const page = await this.newPage();
-        await page.goto(url);
-
-        console.log(3);
+        await page.goto(this.server.redirectUrl);
     }
 
     private async newPage(): Promise<Page> {
+        const { headless } = this.options;
+
         if (!this.browser) {
             this.browser = await puppeteer.launch({
-                headless: false,
+                headless,
                 /*!!! unhardcode and allow to pick executable or browser alias */
                 executablePath: `C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe`,
                 //`C:/Program Files (x86)/Google/Chrome/Application/chrome.exe`,
@@ -54,6 +55,8 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
 
     public async destroy() {
         await super.destroy();
-        this.browser.close();
+        if (this.browser) {
+            this.browser.close();
+        }
     }
 }
