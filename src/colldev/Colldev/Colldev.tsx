@@ -54,8 +54,15 @@ export class Colldev extends Destroyable implements IDestroyable {
                         `Note: This option has no effect with option "--open none"`,
                     false,
                 )
-
-                // TODO: -headless (in case of multiple)
+                .option(
+                    '-b, --browser',
+                    `` /* TODO: Use here spacetrim */ +
+                        `Which browser use\n` +
+                        // TODO: !!! options + implement
+                        //`Note: This option is especially usefull when testing` +
+                        `Note: This option has no effect with option "--open none"`,
+                    'default',
+                )
                 // TODO: Browser -  chrome
                 .option(
                     '-w, --wait <miliseconds>',
@@ -72,7 +79,18 @@ export class Colldev extends Destroyable implements IDestroyable {
                         `Note: This option is especially usefull when testing`,
                     false,
                 )
-                // TODO: port and expose
+                .option(
+                    '-p, --port',
+                    `` /* TODO: Use here spacetrim */ +
+                        `On which port will be Colldev server running\n` +
+                        // TODO: !!! options + implement
+                        '3000+',
+                )
+                .option(
+                    '-e, --expose',
+                    ``, // TODO: !!! options + implement
+                    false,
+                )
                 .action(this.runDevelop.bind(this)),
             publish: program
                 .command('publish')
