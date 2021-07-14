@@ -1,3 +1,4 @@
+import { Destroyable, IDestroyable } from 'destroyable';
 import express, { Express } from 'express';
 import { readFile } from 'fs';
 import http from 'http';
@@ -7,8 +8,6 @@ import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
 import { Compiler } from '../Compiler/Compiler';
 import { ASSETS_PATH } from '../config';
-import { Destroyable } from 'destroyable';
-import { IDestroyable } from 'destroyable';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 
 interface IServerStatus {
@@ -42,6 +41,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
         this.socket = new SocketIoServer(this.server, { transports: ['websocket', 'polling'] });
         this.socketHandler();
 
+        // TODO: !!! Swap / -> /collboard and /about -> / URL
         this.expressApp.get('/', (request, response) => {
             const collboardUrl = request.query.collboardUrl || 'https://dev.collboard.com';
 
