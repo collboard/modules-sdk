@@ -44,7 +44,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                         `"single" for wait some time if the Collboard connects to Colldev, if yes do nothing if no open new browser window with collboard;\n` +
                         `"multiple" new browser window for each colldev running`,
 
-                    'redirect',
+                    'single',
                 )
                 .option(
                     '-h, --headless',
