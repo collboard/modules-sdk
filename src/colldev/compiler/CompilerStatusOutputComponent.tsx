@@ -20,5 +20,6 @@ export function CompilerStatusOutputComponent({ ready, error, compilerStats, web
         );
     }
 
-    return <Text color="red">Compiled!</Text>;
+    // TODO: Report nicer - words compiled, runned (and test, type check...) shoud be dynamic from status and on separate lines with nice ✔ / ❌
+    return <Text color="green">Successfuly compile and run.</Text>;
 }
