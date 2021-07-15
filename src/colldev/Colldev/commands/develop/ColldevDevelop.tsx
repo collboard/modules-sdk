@@ -6,6 +6,7 @@ import { filter } from 'rxjs/operators';
 import { BrowserSpawner } from '../../../BrowserSpawner/BrowserSpawner';
 import { ColldevServer } from '../../../ColldevServer/ColldevServer';
 import { Compiler } from '../../../Compiler/Compiler';
+import { CompilerStatusOutputComponent } from '../../../Compiler/CompilerStatusOutputComponent';
 import { OutputComponent } from './../../OutputComponent';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
 
@@ -34,15 +35,15 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
                     `Which browser use\n` +
                     // TODO: !!! options + implement
                     //`Note: This option is especially usefull when testing` +
-                    `Note: This option has no effect with option "--open none"`,
+                    `Note: This flag has no effect with flag "--open none"`,
                 'default',
             )
             .option(
                 '-h, --headless',
                 `` /* TODO: Use here spacetrim */ +
                     `Opens the browser in headless mode\n` +
-                    `Note: This option is especially usefull when testing` +
-                    `Note: This option has no effect with option "--open none"`,
+                    `Note: This flag is especially usefull when testing` +
+                    `Note: This flag has no effect with flag "--open none"`,
                 false,
             )
             // TODO: Browser -  chrome
@@ -50,7 +51,7 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
                 '-w, --wait <miliseconds>',
                 `` /* TODO: Use here spacetrim */ +
                     `How many miliseconds to wait to connection until opening new browser window with Collboard\n` +
-                    `Note: It can be used only with option "--open single"`,
+                    `Note: It can be used only with flag "--open single"`,
 
                 '2500',
             )
@@ -58,8 +59,18 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
                 '-e, --exit',
                 `` /* TODO: Use here spacetrim */ +
                     `Exit the CLI after succesfully started with propper exit code\n` +
-                    `Note: This option is especially usefull when testing`,
+                    `Note: This flag is especially usefull when testing`,
                 false,
+            )
+            .option(
+                '-o, --output <outputType>',
+                `` /* TODO: Use here spacetrim */ +
+                    `Output from the compiler\n` +
+                    `"human" for human readable ASCII like, colorfull output;\n` +
+                    `"json" for pretty JSON;\n` +
+                    `"json-raw" for raw minified JSON;\n` +
+                    `Note: It can be used only with flag "--exit"`,
+                'human',
             )
             .option(
                 '-d, --disconnect',
@@ -83,7 +94,7 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
     }
 
     private async run(path: string, options: IColldevDevelopOptions) {
-        const { exit } = options;
+        const { exit, output } = options;
         //console.info('develop:', { path, options });
         //process.exit();
 
@@ -98,7 +109,16 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
         } else {
             compiler.statuses.pipe(filter(({ ready }) => ready)).subscribe((status) => {
                 // TODO: !!! Some smarter reports what is and what is not working + structural report
-                console.info(JSON.stringify(status, null, 4));
+
+                if (output === 'human') {
+                    render(<CompilerStatusOutputComponent {...status} />);
+                } else if (output === 'json') {
+                    console.info(JSON.stringify(status, null, 4));
+                } else if (output === 'json-raw') {
+                    console.info(JSON.stringify(status));
+                } else {
+                    console.info(`Unknown flag "--output ${output}".`);
+                }
                 process.exit(status.error ? 1 : 0);
             });
         }
