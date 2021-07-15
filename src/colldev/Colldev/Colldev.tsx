@@ -36,6 +36,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                 // TODO: browser
                 .alias('start')
                 .description(`Start developing collboard module. Runs compiler+dev server.`)
+                // TODO: What is better collboard-url or collboard?
                 .option('-c, --collboard-url <url>', `Url of development Collboard`, 'https://dev.collboard.com')
                 .option(
                     '-o, --open <openMode>',
@@ -47,7 +48,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                     'single',
                 )
                 .option(
-                    '-b, --browser',
+                    '-b, --browser <browser>',
                     `` /* TODO: Use here spacetrim */ +
                         `Which browser use\n` +
                         // TODO: !!! options + implement
@@ -80,11 +81,10 @@ export class Colldev extends Destroyable implements IDestroyable {
                     false,
                 )
                 .option(
-                    '-p, --port',
-                    `` /* TODO: Use here spacetrim */ +
-                        `On which port will be Colldev server running\n` +
-                        // TODO: !!! options + implement
-                        '3000+',
+                    '-p, --port <port>',
+                    `On which port will be Colldev server running`,
+                    // TODO: Maybe allow option with + suffix
+                    '3000',
                 )
                 .option(
                     '-e, --expose',
@@ -98,10 +98,9 @@ export class Colldev extends Destroyable implements IDestroyable {
                 .description(`Deploy collboard module.`)
                 .action(this.runDeploy.bind(this)),
 
-            // TODO: init
-            // TODO: maybe build
-            // TODO: test
-            // TODO: login
+            // TODO: command init
+            // TODO: command test
+            // TODO: command login
         };
 
         return { program, commands };
@@ -109,7 +108,8 @@ export class Colldev extends Destroyable implements IDestroyable {
 
     private async runDevelop(path: string, options: IColldevDevelopOptions) {
         const { collboardUrl, open, browser, headless, wait, exit, port, expose } = options;
-        //console.info('develop:', options);
+        //console.info('develop:', { path, options });
+        //process.exit();
 
         const compiler = new Compiler(path || './');
         const server = new ColldevServer(compiler, { collboardUrl, port, expose });

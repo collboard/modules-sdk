@@ -23,15 +23,20 @@ export class ColldevServer extends Destroyable implements IDestroyable {
     }
 
     public get openCollboardUrl() {
-        const { collboardUrl, port, expose } = this.options;
+        const { collboardUrl } = this.options;
 
         let uriParams = '';
         if (collboardUrl !== 'https://dev.collboard.com') {
             uriParams = `?collboardUrl=${encodeURIComponent(collboardUrl)}`;
         }
-        const redirectUrl = /* TODO: On exposed do not hardcode localhost */ `http://localhost:3000/open-collboard${uriParams}`;
+        const redirectUrl = `${this.colldevUrl}/open-collboard${uriParams}`;
 
         return redirectUrl;
+    }
+
+    public get colldevUrl() {
+        const { port, expose } = this.options;
+        return /* TODO: On exposed do not hardcode localhost */ `http://localhost:${port}`;
     }
 
     /**
@@ -50,7 +55,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
 
     private init() {
         this.expressApp = express();
-        const port = 3000;
+        const { port } = this.options;
 
         this.server = http.createServer(this.expressApp);
         this.socket = new SocketIoServer(this.server, { transports: ['websocket', 'polling'] });
@@ -113,9 +118,9 @@ export class ColldevServer extends Destroyable implements IDestroyable {
             }
         });
 
-        this.server.listen(port, () => {
-            // console.log(`Example app listening at http://localhost:${port}`);
-        });
+        // TODO: Maybe nicer report of EADDRINUSE and unsafe ports ; this can be coimplemented with port+ option
+
+        this.server.listen(port);
     }
 
     private async socketHandler() {
@@ -140,7 +145,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                         if (bundle) {
                             // console.log(`Emmiting bundle for ${instanceUUID}`);
                             socketConnection.emit('bundle', {
-                                bundleUrl: 'http://localhost:3000/assets/' + relative(ASSETS_PATH, bundle.path),
+                                bundleUrl: `${this.colldevUrl}/assets/` + relative(ASSETS_PATH, bundle.path),
                             } as IColldevSyncerSocket.bundle);
                         }
                     },
