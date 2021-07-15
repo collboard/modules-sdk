@@ -7,6 +7,7 @@ import { BrowserSpawner } from '../../../BrowserSpawner/BrowserSpawner';
 import { ColldevServer } from '../../../ColldevServer/ColldevServer';
 import { Compiler } from '../../../Compiler/Compiler';
 import { CompilerStatusOutputComponent } from '../../../Compiler/CompilerStatusOutputComponent';
+import { compilerStatusToJson } from '../../../Compiler/utils/compilerStatusToJson';
 import { OutputComponent } from './../../OutputComponent';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
 
@@ -113,9 +114,9 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
                 if (output === 'human') {
                     render(<CompilerStatusOutputComponent {...status} />);
                 } else if (output === 'json') {
-                    console.info(JSON.stringify(status, null, 4));
+                    console.info(JSON.stringify(compilerStatusToJson(status), null, 4));
                 } else if (output === 'json-raw') {
-                    console.info(JSON.stringify(status));
+                    console.info(JSON.stringify(compilerStatusToJson(status)));
                 } else {
                     console.info(`Unknown flag "--output ${output}".`);
                 }

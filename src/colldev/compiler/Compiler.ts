@@ -23,6 +23,8 @@ interface ICompilerStats {
     packageMainPath: string;
     webpackConfig: webpack.Configuration;
 }
+
+
 export class Compiler extends Destroyable implements IDestroyable {
     private bundleId: string;
     private bundleFilename: string;

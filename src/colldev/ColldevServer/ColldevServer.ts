@@ -8,6 +8,7 @@ import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
 import { IColldevDevelopOptions } from '../Colldev/commands/develop/IColldevDevelopOptions';
 import { Compiler } from '../Compiler/Compiler';
+import { compilerStatusToJson } from '../Compiler/utils/compilerStatusToJson';
 import { ASSETS_PATH } from '../config';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 
@@ -92,6 +93,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
         });
 
         this.expressApp.get('/stats', (req, res) => {
+            // TODO: Pretty print sended json
             res.type('application/javascript').send({
                 // TODO: Add version
                 links: {
@@ -100,10 +102,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                 },
                 args: this.options,
                 server: this.serverStatus.value,
-                compiler: {
-                    ...this.compiler.statuses.value,
-                    webpackStats: this.compiler.statuses.value.webpackStats?.toJson(),
-                },
+                compiler: compilerStatusToJson(this.compiler.statuses.value),
             });
         });
 
