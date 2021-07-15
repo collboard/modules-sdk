@@ -10,7 +10,7 @@ import { makeColldevFolder } from './utils/makeColldevFolder';
 
 export interface ICompilerStatus {
     ready: boolean;
-    error?: Error;
+    error: Error | null;
     compilerStats?: ICompilerStats;
     webpackStats?: webpack.Stats;
     bundle?: { path: string };
@@ -23,7 +23,6 @@ interface ICompilerStats {
     packageMainPath: string;
     webpackConfig: webpack.Configuration;
 }
-
 
 export class Compiler extends Destroyable implements IDestroyable {
     private bundleId: string;
@@ -92,7 +91,7 @@ export class Compiler extends Destroyable implements IDestroyable {
                 // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
                 this.webpackConfig,
                 async (__error /* Note: This error is probbably useless */, webpackStats) => {
-                    let error: Error | undefined = undefined;
+                    let error: Error | null = null;
                     if (webpackStats?.hasErrors()) {
                         error = new WebpackError(
                             webpackStats?.toString({
