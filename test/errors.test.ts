@@ -39,7 +39,7 @@ describe('the errored modules', () => {
 
     [
         'syntax-error',
-        'type-error',
+        // TODO: 'type-error',
         'runtime-error-in-declare',
         'runtime-error-in-setup',
         'runtime-error-in-unsetup',
