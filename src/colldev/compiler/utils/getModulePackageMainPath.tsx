@@ -1,7 +1,7 @@
 import { access, constants } from 'fs';
 import { join } from 'path';
 import { promisify } from 'util';
-import { MainEntryNotFoundError } from '../errors/NotFoundError';
+import { MainEntryNotFoundError } from "../errors/MainEntryNotFoundError";
 import { getModulePackageContent } from './getModulePackageContent';
 
 export async function getModulePackageMainPath(workingDir: string): Promise<string> {

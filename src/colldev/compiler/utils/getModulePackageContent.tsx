@@ -1,6 +1,6 @@
 import { access, constants, readFile } from 'fs';
 import { promisify } from 'util';
-import { PackageNotFoundError } from '../errors/NotFoundError';
+import { PackageNotFoundError } from "../errors/PackageNotFoundError";
 import { getModulePackagePath } from './getModulePackagePath';
 
 export async function getModulePackageContent(workingDir: string): Promise<any> {
