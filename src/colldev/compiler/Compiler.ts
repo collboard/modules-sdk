@@ -38,7 +38,7 @@ export class Compiler extends Destroyable implements IDestroyable {
     /**
      * Note: We are not using here mobx-react because it does not work with ink
      */
-    readonly statuses: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ ready: false });
+    readonly statuses: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ ready: false, error:null });
 
     private get compilerStats(): ICompilerStats {
         const { workingDir, bundleId, bundleFilename, packageMainPath, webpackConfig } = this;
