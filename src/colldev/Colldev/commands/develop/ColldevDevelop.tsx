@@ -77,13 +77,13 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
     }
 
     private async run(path: string, options: IColldevDevelopOptions) {
-        const { collboardUrl, open, browser, headless, wait, exit, port, expose } = options;
+        const { exit } = options;
         //console.info('develop:', { path, options });
         //process.exit();
 
         const compiler = new Compiler(path || './');
-        const server = new ColldevServer(compiler, { collboardUrl, port, expose });
-        const browserSpawner = new BrowserSpawner(server, { open, browser, headless, wait });
+        const server = new ColldevServer(compiler, { path, ...options });
+        const browserSpawner = new BrowserSpawner(server, options);
 
         this.addSubdestroyable(compiler, server, browserSpawner);
 

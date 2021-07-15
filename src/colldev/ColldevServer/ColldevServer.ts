@@ -15,7 +15,12 @@ interface IServerStatus {
     clients: Record<string, IColldevSyncerSocket.clientStatus>;
 }
 
-type IColldevServerOptions = Pick<IColldevDevelopOptions, 'collboardUrl' | 'port' | 'expose'>;
+/**
+ * Internally using only collboardUrl, port and expose but it is usefull to present all the args in /stats route
+ */
+interface IColldevServerOptions extends IColldevDevelopOptions {
+    path: string;
+}
 export class ColldevServer extends Destroyable implements IDestroyable {
     constructor(private compiler: Compiler, private readonly options: IColldevServerOptions) {
         super();
