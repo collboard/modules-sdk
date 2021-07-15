@@ -6,7 +6,7 @@ import { join, relative } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
-import { IColldevDevelopOptions } from '../Colldev/IColldevDevelopOptions';
+import { IColldevDevelopOptions } from '../Colldev/commands/develop/IColldevDevelopOptions';
 import { Compiler } from '../Compiler/Compiler';
 import { ASSETS_PATH } from '../config';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
@@ -93,6 +93,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                     colldevUrl: this.colldevUrl,
                     openCollboardUrl: this.openCollboardUrl,
                 },
+                args: this.options,
                 server: this.serverStatus.value,
                 compiler: { ...this.compiler.statuses.value, stats: this.compiler.statuses.value.stats?.toJson() },
             });
