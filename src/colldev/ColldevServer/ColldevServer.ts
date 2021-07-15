@@ -178,7 +178,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                         delete serverStatusValue.clients[instanceUUID];
                     });
 
-                    if (this.options.disconnect) {
+                    if (this.options.disconnect && Object.values(this.serverStatus.value.clients).length === 0) {
                         /*
                         TODO: Report or not to report
                         console.info(
