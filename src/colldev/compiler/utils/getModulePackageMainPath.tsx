@@ -1,7 +1,8 @@
 import { access, constants } from 'fs';
 import { join } from 'path';
 import { promisify } from 'util';
-import { getModulePackageContent } from "./getModulePackageContent";
+import { MainEntryNotFoundError } from '../errors/NotFoundError';
+import { getModulePackageContent } from './getModulePackageContent';
 
 export async function getModulePackageMainPath(workingDir: string): Promise<string> {
     const mainPathRelative = (await getModulePackageContent(workingDir)).main;
@@ -14,7 +15,7 @@ export async function getModulePackageMainPath(workingDir: string): Promise<stri
         await promisify(access)(mainPath, constants.R_OK);
     } catch (error) {
         console.error(error);
-        throw new Error(`Colldev cannot acces main entry "${mainPath}" defined in package.json`);
+        throw new MainEntryNotFoundError(`Colldev cannot acces main entry "${mainPath}" defined in package.json`);
     }
 
     return mainPath;

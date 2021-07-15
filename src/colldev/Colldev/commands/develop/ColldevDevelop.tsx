@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import commander from 'commander';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { render } from 'ink';
@@ -97,21 +96,10 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
         if (!exit) {
             render(<OutputComponent {...{ compiler, server }} />);
         } else {
-            compiler.statuses.pipe(filter(({ ready }) => ready)).subscribe(({ webpackStats }) => {
-                if (webpackStats?.hasErrors()) {
-                    console.error(
-                        webpackStats?.toString({
-                            // TODO:  !!! DRY
-                            chunks: false, // Makes the build much quieter
-                            colors: true, // Shows colors in the console
-                        }),
-                    );
-                    process.exit(1);
-                }
-
+            compiler.statuses.pipe(filter(({ ready }) => ready)).subscribe((status) => {
                 // TODO: !!! Some smarter reports what is and what is not working + structural report
-                console.info(chalk.green(`Working!!!!`));
-                process.exit(0);
+                console.info(JSON.stringify(status, null, 4));
+                process.exit(status.error ? 1 : 0);
             });
         }
     }

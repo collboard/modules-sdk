@@ -1,7 +1,7 @@
 import { access, constants, readFile } from 'fs';
 import { promisify } from 'util';
-import { getModulePackagePath } from "./getModulePackagePath";
-
+import { PackageNotFoundError } from '../errors/NotFoundError';
+import { getModulePackagePath } from './getModulePackagePath';
 
 export async function getModulePackageContent(workingDir: string): Promise<any> {
     const packagePath = getModulePackagePath(workingDir);
@@ -12,6 +12,8 @@ export async function getModulePackageContent(workingDir: string): Promise<any> 
         return packageContent;
     } catch (error) {
         console.error(error);
-        throw new Error(`Colldev did not found valid package.json\nExpected location is "${packagePath}"`);
+        throw new PackageNotFoundError(
+            `Colldev did not found valid package.json\nExpected location is "${packagePath}"`,
+        );
     }
 }

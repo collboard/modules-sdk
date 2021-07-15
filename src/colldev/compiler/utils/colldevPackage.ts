@@ -11,6 +11,6 @@ export async function getColldevPackageContent(): Promise<any> {
         return packageContent;
     } catch (error) {
         console.error(error);
-        throw new Error(`Colldev did not found valid package.json`);
+        throw new Error(`Colldev recognized some internal error\n Missing internal package.json`);
     }
 }
