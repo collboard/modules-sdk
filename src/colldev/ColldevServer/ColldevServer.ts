@@ -88,7 +88,11 @@ export class ColldevServer extends Destroyable implements IDestroyable {
 
         this.expressApp.get('/stats', (req, res) => {
             res.type('application/javascript').send({
-                date: new Date().toISOString(),
+                // TODO: Add version
+                links: {
+                    colldevUrl: this.colldevUrl,
+                    openCollboardUrl: this.openCollboardUrl,
+                },
                 server: this.serverStatus.value,
                 compiler: { ...this.compiler.statuses.value, stats: this.compiler.statuses.value.stats?.toJson() },
             });

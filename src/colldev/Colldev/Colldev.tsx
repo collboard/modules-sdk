@@ -132,6 +132,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                     process.exit(1);
                 }
 
+                // TODO: !!! Some smarter reports what is and what is not working + structural report
                 console.info(chalk.green(`Working!!!!`));
                 process.exit(0);
             });
