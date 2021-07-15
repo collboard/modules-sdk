@@ -63,6 +63,13 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
                 false,
             )
             .option(
+                '-d, --disconnect',
+                `` /* TODO: Use here spacetrim */ +
+                    `Exit the CLI when Collboard disconnects from Colldev.\n` +
+                    `Note: It allows closing CLI by closing a browser`,
+                false,
+            )
+            .option(
                 '-p, --port <port>',
                 `On which port will be Colldev server running`,
                 // TODO: Maybe allow option with + suffix

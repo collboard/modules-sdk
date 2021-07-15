@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import { Destroyable, IDestroyable } from 'destroyable';
 import express, { Express } from 'express';
 import { readFile } from 'fs';
@@ -178,6 +179,18 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                     this.serverStatusUpdate((serverStatusValue) => {
                         delete serverStatusValue.clients[instanceUUID];
                     });
+
+                    if (this.options.disconnect) {
+                        /*
+                        TODO: Report or not to report
+                        console.info(
+                            chalk.red(
+                                'Stopping Colldev because Collboard has disconnected in combination with option --disconnect',
+                            ),
+                        );
+                        */
+                        process.exit(0);
+                    }
                 });
             });
 

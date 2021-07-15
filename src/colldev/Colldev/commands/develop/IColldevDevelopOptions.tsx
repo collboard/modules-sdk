@@ -5,6 +5,7 @@ export interface IColldevDevelopOptions {
     headless: boolean;
     wait: string /* Note: commander does not support number */;
     exit: boolean;
+    disconnect: boolean;
     port: string /* Note: commander does not support number */;
     expose: boolean;
 }
