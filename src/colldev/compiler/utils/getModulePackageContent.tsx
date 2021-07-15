@@ -11,7 +11,6 @@ export async function getModulePackageContent(workingDir: string): Promise<any> 
         const packageContent = JSON.parse(packageContentString);
         return packageContent;
     } catch (error) {
-        console.error(error);
         throw new PackageNotFoundError(
             `Colldev did not found valid package.json\nExpected location is "${packagePath}"`,
         );

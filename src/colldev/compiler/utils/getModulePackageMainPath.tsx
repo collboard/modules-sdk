@@ -14,7 +14,6 @@ export async function getModulePackageMainPath(workingDir: string): Promise<stri
     try {
         await promisify(access)(mainPath, constants.R_OK);
     } catch (error) {
-        console.error(error);
         throw new MainEntryNotFoundError(`Colldev cannot acces main entry "${mainPath}" defined in package.json`);
     }
 

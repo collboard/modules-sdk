@@ -1,5 +1,6 @@
 import { access, constants, readFile } from 'fs';
 import { promisify } from 'util';
+import { InternalError } from '../errors/NotFoundError';
 import { getColldevPackagePath } from './getColldevPackagePath';
 
 export async function getColldevPackageContent(): Promise<any> {
@@ -10,7 +11,6 @@ export async function getColldevPackageContent(): Promise<any> {
         const packageContent = JSON.parse(packageContentString);
         return packageContent;
     } catch (error) {
-        console.error(error);
-        throw new Error(`Colldev recognized some internal error\n Missing internal package.json`);
+        throw new InternalError(`Colldev recognized some internal error\n Missing internal package.json`);
     }
 }

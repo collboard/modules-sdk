@@ -1,3 +1,7 @@
+export class InternalError extends Error {
+    readonly name = 'InternalError';
+}
+
 export class PackageNotFoundError extends Error {
     readonly name = 'PackageNotFoundError';
 }
