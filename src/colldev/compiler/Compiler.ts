@@ -95,7 +95,6 @@ export class Compiler extends Destroyable implements IDestroyable {
                     if (webpackStats?.hasErrors()) {
                         error = new WebpackError(
                             webpackStats?.toString({
-                                // TODO:  !!! DRY
                                 chunks: false, // Makes the build much quieter
                                 colors: true, // Shows colors in the console
                             }),

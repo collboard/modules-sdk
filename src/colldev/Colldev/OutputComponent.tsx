@@ -4,6 +4,7 @@ import * as React from 'react';
 import { filter, map } from 'rxjs/operators';
 import { ColldevServer } from '../ColldevServer/ColldevServer';
 import { Compiler, ICompilerStatus } from '../Compiler/Compiler';
+import { CompilerStatusOutputComponent } from '../Compiler/CompilerStatusOutputComponent';
 import { objectMap } from '../utils/objectMap';
 import { ObservableContentComponent } from '../utils/ObservableContentComponent';
 
@@ -23,19 +24,9 @@ export function OutputComponent({ compiler, server }: IOutputProps) {
             <Box borderStyle="single">
                 <ObservableContentComponent
                     loading={<Text color="grey">Compiling...</Text>}
-                    content={compiler.statuses.pipe(filter((stats) => stats !== null)).pipe(
-                        map(({ webpackStats }: ICompilerStatus) => {
-                            return (
-                                <Text>
-                                    {webpackStats?.toString({
-                                        // TODO:  !!! DRY
-                                        chunks: false, // Makes the build much quieter
-                                        colors: true, // Shows colors in the console
-                                    })}
-                                </Text>
-                            );
-                        }),
-                    )}
+                    content={compiler.statuses
+                        .pipe(filter((stats) => stats !== null))
+                        .pipe(map((status: ICompilerStatus) => <CompilerStatusOutputComponent {...status} />))}
                 />
             </Box>
 
