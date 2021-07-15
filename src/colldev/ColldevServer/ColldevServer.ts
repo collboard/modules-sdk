@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import { Destroyable, IDestroyable } from 'destroyable';
 import express, { Express } from 'express';
 import { readFile } from 'fs';
@@ -189,7 +188,9 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                             ),
                         );
                         */
-                        process.exit(0);
+                        process.exit(
+                            1 /* Note: when the browser in closed in combination with testing it indicates some problem so we want to indicate here error exit code */,
+                        );
                     }
                 });
             });
