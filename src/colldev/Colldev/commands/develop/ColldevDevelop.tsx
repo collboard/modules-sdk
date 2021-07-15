@@ -90,10 +90,10 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
         if (!exit) {
             render(<OutputComponent {...{ compiler, server }} />);
         } else {
-            compiler.statuses.pipe(filter(({ ready }) => ready)).subscribe(({ stats }) => {
-                if (stats?.hasErrors()) {
+            compiler.statuses.pipe(filter(({ ready }) => ready)).subscribe(({ webpackStats }) => {
+                if (webpackStats?.hasErrors()) {
                     console.error(
-                        stats?.toString({
+                        webpackStats?.toString({
                             // TODO:  !!! DRY
                             chunks: false, // Makes the build much quieter
                             colors: true, // Shows colors in the console

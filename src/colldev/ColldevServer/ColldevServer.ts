@@ -100,7 +100,10 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                 },
                 args: this.options,
                 server: this.serverStatus.value,
-                compiler: { ...this.compiler.statuses.value, stats: this.compiler.statuses.value.stats?.toJson() },
+                compiler: {
+                    ...this.compiler.statuses.value,
+                    webpackStats: this.compiler.statuses.value.webpackStats?.toJson(),
+                },
             });
         });
 

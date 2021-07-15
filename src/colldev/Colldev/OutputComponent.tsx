@@ -24,10 +24,10 @@ export function OutputComponent({ compiler, server }: IOutputProps) {
                 <ObservableContentComponent
                     loading={<Text color="grey">Compiling...</Text>}
                     content={compiler.statuses.pipe(filter((stats) => stats !== null)).pipe(
-                        map(({ stats }: ICompilerStatus) => {
+                        map(({ webpackStats }: ICompilerStatus) => {
                             return (
                                 <Text>
-                                    {stats?.toString({
+                                    {webpackStats?.toString({
                                         // TODO:  !!! DRY
                                         chunks: false, // Makes the build much quieter
                                         colors: true, // Shows colors in the console

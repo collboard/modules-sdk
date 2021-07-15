@@ -10,12 +10,25 @@ import { makeColldevFolder } from './utils/makeColldevFolder';
 
 export interface ICompilerStatus {
     ready: boolean;
-    stats?: webpack.Stats;
+    compilerStats?: ICompilerStats;
+    webpackStats?: webpack.Stats;
     bundle?: { path: string };
 }
 
+interface ICompilerStats {
+    workingDir: string;
+    bundleId: string;
+    bundleFilename: string;
+    packageMainPath: string;
+    webpackConfig: webpack.Configuration;
+}
 export class Compiler extends Destroyable implements IDestroyable {
-    constructor(private workingDir: string) {
+    private bundleId: string;
+    private bundleFilename: string;
+    private packageMainPath: string;
+    private webpackConfig: webpack.Configuration;
+
+    constructor(private readonly workingDir: string) {
         super();
         this.init();
     }
@@ -25,48 +38,62 @@ export class Compiler extends Destroyable implements IDestroyable {
      */
     readonly statuses: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ ready: false });
 
+    private get compilerStats(): ICompilerStats {
+        const { workingDir, bundleId, bundleFilename, packageMainPath, webpackConfig } = this;
+        return {
+            workingDir,
+            bundleId,
+            bundleFilename,
+            packageMainPath,
+            webpackConfig,
+        };
+    }
+
     private compiler: WebpackCompiler;
 
     private async init() {
         await makeColldevFolder();
         await cleanupAssets();
 
-        const bundleId = uuid.v4();
-        const bundleFilename = `bundle-${bundleId}.min.js`;
+        this.bundleId = uuid.v4();
+        this.bundleFilename = `bundle-${this.bundleId}.min.js`;
+        this.packageMainPath = await getModulePackageMainPath(this.workingDir);
+        this.webpackConfig = {
+            // TODO: Generate sourcemaps
+            watch: true,
+            mode: 'development', //'production',
+            devtool: 'source-map',
+            entry: this.packageMainPath,
+            module: {
+                rules: [
+                    {
+                        test: /\.tsx?$/,
+                        use: 'ts-loader',
+                        exclude: /node_modules/,
+                    },
+                ],
+            },
+            resolve: {
+                extensions: ['.tsx', '.ts', '.js'],
+            },
+            output: {
+                // TODO: Bypass files and just keep output in memory probbably via "compiler.outputFileSystem = fs;"
+                filename: this.bundleFilename,
+                path: ASSETS_PATH,
+            },
+        };
 
         this.compiler = webpack(
             // TODO: Maybe use webpack watch instead of onchange
-            // TODO: Generate sourcemaps
             // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
-            {
-                watch: true,
-                mode: 'development', //'production',
-                devtool: 'source-map',
-                entry: await getModulePackageMainPath(this.workingDir),
-                module: {
-                    rules: [
-                        {
-                            test: /\.tsx?$/,
-                            use: 'ts-loader',
-                            exclude: /node_modules/,
-                        },
-                    ],
-                },
-                resolve: {
-                    extensions: ['.tsx', '.ts', '.js'],
-                },
-                output: {
-                    // TODO: Bypass files and just keep output in memory probbably via "compiler.outputFileSystem = fs;"
-                    filename: bundleFilename,
-                    path: ASSETS_PATH,
-                },
-            },
-            async (error /* TODO: Error is probbably useless */, stats) => {
+            this.webpackConfig,
+            async (error /* TODO: Error is probbably useless */, webpackStats) => {
                 // TODO: One next for stats and bundles
                 this.statuses.next({
                     ready: true,
-                    stats,
-                    bundle: { path: join(ASSETS_PATH, bundleFilename) },
+                    compilerStats: this.compilerStats,
+                    webpackStats,
+                    bundle: { path: join(ASSETS_PATH, this.bundleFilename) },
                 });
             },
         );
