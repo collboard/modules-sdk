@@ -86,7 +86,9 @@ export class ColldevServer extends Destroyable implements IDestroyable {
 
             response.type('text/html').send(`
             <script>
-                window.location = '${collboardUrl}?colldevUrl='+encodeURIComponent(window.location.toString().split('/open-collboard').join(''));
+                var redirectUrl = '${collboardUrl}?colldevUrl='+encodeURIComponent(window.location.toString().split('/open-collboard')[0]);
+                document.write('Redirecting to <a href="'+redirectUrl+'">'+redirectUrl+'</a>.');
+                window.location = redirectUrl;
             </script>
 
             `);
@@ -146,6 +148,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                     serverStatusValue.clients[instanceUUID] = {
                         // TODO: Maybe transfer theese in initial
                         connected: true,
+                        error: null,
                         url: '' /* TODO: Better */,
                         boardId: null,
                         modules: {},
@@ -164,7 +167,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                 });
 
                 socketConnection.on('clientStatus', (clientStatus: IColldevSyncerSocket.clientStatus) => {
-                    // console.log({ clientStatus });
+                    console.log({ clientStatus });
 
                     this.serverStatusUpdate((serverStatusValue) => {
                         serverStatusValue.clients[instanceUUID] = clientStatus;
