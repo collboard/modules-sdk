@@ -56,7 +56,9 @@ export class ColldevServer extends Destroyable implements IDestroyable {
         const serverStatusValue = { ...this.serverStatus.value };
         updator(serverStatusValue);
 
-        serverStatusValue.ready = Object.values(serverStatusValue.clients).length > 0 /* TODO: Configurable treshold */;
+        serverStatusValue.ready =
+            Object.values(serverStatusValue.clients).filter(({ ready }) => ready).length >
+            0 /* TODO: Configurable treshold */;
 
         // TODO: !!! Errors
         const clientWithError = Object.values(serverStatusValue.clients).find(({ error }) => error);
@@ -161,6 +163,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                         version: -1,
                         // TODO: Maybe transfer theese in initial
                         connected: true,
+                        ready: false,
                         error: null,
                         url: '' /* TODO: Better */,
                         boardId: null,

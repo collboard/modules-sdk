@@ -13,9 +13,10 @@ interface IServerStatusOutputComponentProps {
 export function ServerStatusOutputComponent({ server, serverStatus: { clients } }: IServerStatusOutputComponentProps) {
     const data = Object.entries(clients)
         .map(([clientUuid, clientData]) => ({ clientUuid, ...clientData }))
-        .map(({ boardId, connected, error, version, clientUuid, modules }) => ({
+        .map(({ boardId, connected, ready, error, version, clientUuid, modules }) => ({
             boardId,
             // connected: connected ? '✔' : '✗',
+            ready: ready ? '✔' : '✗',
             // version,
             clientUuid: clientUuid.split('-')[0] + '…',
             error: error ? error.message : '',

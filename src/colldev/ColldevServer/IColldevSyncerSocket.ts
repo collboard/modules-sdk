@@ -20,6 +20,7 @@ export namespace IColldevSyncerSocket {
     export interface clientStatus {
         version: number;
         connected: boolean;
+        ready: boolean;
         // TODO: !!! errors
         error: IError | null;
         boardId: string | null;
