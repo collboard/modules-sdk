@@ -31,7 +31,7 @@ interface IObservableContentComponentState {
  *
  */
 export function ObservableContentComponent({ loading, content }: IObservableContentComponentProps) {
-    const [state, setState] = React.useState<IObservableContentComponentState>({ content: loading || <>Loading...</> });
+    const [state, setState] = React.useState<IObservableContentComponentState>({ content: loading || <></> });
 
     React.useEffect(() => {
         const subscription = content.subscribe(async (newContentAwaitable) => {

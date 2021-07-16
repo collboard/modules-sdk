@@ -39,5 +39,7 @@ export function ServerStatusOutputComponent({ server, serverStatus: { clients } 
             </Box>
         );
     }
+
+    // TODO: Also red border on error
     return <Table data={data} />;
 }
