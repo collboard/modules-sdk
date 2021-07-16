@@ -29,11 +29,10 @@ export function CompilerStatusOutputComponent({
     // TODO: Report nicer - words compiled, runned (and test, type check...) shoud be dynamic from status and on separate lines with nice ✔ / ❌
     return (
         <Text color="green">
-            Successfuly compile and run.
-            {/*webpackStats?.toString({
+            {webpackStats?.toString({
                 chunks: false, // Makes the build much quieter
                 colors: true, // Shows colors in the console
-            })*/}
+            })}
         </Text>
     );
 }
