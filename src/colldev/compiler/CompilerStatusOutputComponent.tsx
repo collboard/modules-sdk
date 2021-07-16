@@ -1,8 +1,14 @@
 import { Text } from 'ink';
 import * as React from 'react';
-import { ICompilerStatus } from './Compiler';
+import { ICompilerStatus } from './ICompilerStatus';
 
-export function CompilerStatusOutputComponent({ ready, error, compilerStats, webpackStats, bundle }: ICompilerStatus) {
+interface ICompilerStatusProps {
+    compilerStatus: ICompilerStatus;
+}
+
+export function CompilerStatusOutputComponent({
+    compilerStatus: { ready, error, compilerStats, webpackStats, bundle },
+}: ICompilerStatusProps) {
     if (!ready) {
         return <Text color="grey">Compiling...</Text>;
     }

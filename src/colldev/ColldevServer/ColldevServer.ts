@@ -11,10 +11,9 @@ import { Compiler } from '../Compiler/Compiler';
 import { compilerStatusToJson } from '../Compiler/utils/compilerStatusToJson';
 import { ASSETS_PATH } from '../config';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
+import { IServerStatus } from './IServerStatus';
 
-interface IServerStatus {
-    clients: Record<string, IColldevSyncerSocket.clientStatus>;
-}
+// TODO: !!! Just server
 
 /**
  * Internally using only collboardUrl, port and expose but it is usefull to present all the args in /stats route
@@ -48,10 +47,23 @@ export class ColldevServer extends Destroyable implements IDestroyable {
     /**
      * Note: We are not using here mobx-react because it does not work with ink
      */
-    readonly serverStatus: BehaviorSubject<IServerStatus> = new BehaviorSubject({ clients: {} });
+    readonly serverStatus: BehaviorSubject<IServerStatus> = new BehaviorSubject({
+        ready: false,
+        error: null,
+        clients: {},
+    });
     private serverStatusUpdate(updator: (serverStatusValue: IServerStatus) => void) {
         const serverStatusValue = { ...this.serverStatus.value };
         updator(serverStatusValue);
+
+        serverStatusValue.ready = Object.values(serverStatusValue.clients).length > 0 /* TODO: Configurable treshold */;
+
+        // TODO: !!! Errors
+        const clientWithError = Object.values(serverStatusValue.clients).find(({ error }) => error);
+        if (clientWithError) {
+            serverStatusValue.error = clientWithError.error;
+        }
+
         this.serverStatus.next(serverStatusValue);
     }
 
@@ -104,7 +116,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                 },
                 args: this.options,
                 server: this.serverStatus.value,
-                compiler: compilerStatusToJson(this.compiler.statuses.value),
+                compiler: compilerStatusToJson(this.compiler.compilerStatus.value),
             });
         });
 
@@ -146,6 +158,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
 
                 this.serverStatusUpdate((serverStatusValue) => {
                     serverStatusValue.clients[instanceUUID] = {
+                        version: -1,
                         // TODO: Maybe transfer theese in initial
                         connected: true,
                         error: null,
@@ -155,7 +168,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                     };
                 });
 
-                const subscription = this.compiler.statuses.subscribe({
+                const subscription = this.compiler.compilerStatus.subscribe({
                     next: ({ bundle }) => {
                         if (bundle) {
                             // console.log(`Emmiting bundle for ${instanceUUID}`);

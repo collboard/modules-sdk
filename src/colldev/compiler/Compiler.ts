@@ -4,25 +4,10 @@ import { BehaviorSubject } from 'rxjs';
 import * as uuid from 'uuid';
 import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
 import { ASSETS_PATH } from '../config';
+import { ICompilerStatus, ICompilerStats } from './ICompilerStatus';
 import { cleanupAssets } from './utils/cleanupAssets';
 import { getModulePackageMainPath } from './utils/getModulePackageMainPath';
 import { makeColldevFolder } from './utils/makeColldevFolder';
-
-export interface ICompilerStatus {
-    ready: boolean;
-    error: Error | null;
-    compilerStats?: ICompilerStats;
-    webpackStats?: webpack.Stats;
-    bundle?: { path: string };
-}
-
-interface ICompilerStats {
-    workingDir: string;
-    bundleId: string;
-    bundleFilename: string;
-    packageMainPath: string;
-    webpackConfig: webpack.Configuration;
-}
 
 export class Compiler extends Destroyable implements IDestroyable {
     private bundleId: string;
@@ -38,7 +23,7 @@ export class Compiler extends Destroyable implements IDestroyable {
     /**
      * Note: We are not using here mobx-react because it does not work with ink
      */
-    readonly statuses: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ ready: false, error:null });
+    readonly compilerStatus: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ ready: false, error: null });
 
     private get compilerStats(): ICompilerStats {
         const { workingDir, bundleId, bundleFilename, packageMainPath, webpackConfig } = this;
@@ -101,7 +86,7 @@ export class Compiler extends Destroyable implements IDestroyable {
                         );
                     }
 
-                    this.statuses.next({
+                    this.compilerStatus.next({
                         ready: true,
                         error,
                         compilerStats: this.compilerStats,
@@ -111,13 +96,13 @@ export class Compiler extends Destroyable implements IDestroyable {
                 },
             );
         } catch (error) {
-            this.statuses.next({
+            this.compilerStatus.next({
                 ready: true,
-                error: {
+                error /*!!! delete {
                     name: error.name,
                     message: error.message,
                     stack: error.stack,
-                },
+                }*/,
                 compilerStats: this.compilerStats,
             });
         }

@@ -1,11 +1,11 @@
-import { Box, Text } from 'ink';
-import Table from 'ink-table';
+import { Box } from 'ink';
 import * as React from 'react';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { ColldevServer } from '../ColldevServer/ColldevServer';
-import { Compiler, ICompilerStatus } from '../Compiler/Compiler';
+import { ServerStatusOutputComponent } from '../ColldevServer/ServerStatusOutputComponent';
+import { Compiler } from '../Compiler/Compiler';
 import { CompilerStatusOutputComponent } from '../Compiler/CompilerStatusOutputComponent';
-import { objectMap } from '../utils/objectMap';
+import { ICompilerStatus } from '../Compiler/ICompilerStatus';
 import { ObservableContentComponent } from '../utils/ObservableContentComponent';
 
 interface IOutputProps {
@@ -22,49 +22,23 @@ export function OutputComponent({ compiler, server }: IOutputProps) {
     return (
         <Box borderStyle="round" display="flex" flexDirection="column">
             <Box borderStyle="single">
+                {/* Unify boxes around */}
                 <ObservableContentComponent
-                    loading={<Text color="grey">Compiling...</Text>}
-                    content={compiler.statuses
-                        .pipe(filter((stats) => stats !== null))
-                        .pipe(map((status: ICompilerStatus) => <CompilerStatusOutputComponent {...status} />))}
+                    loading={<></>}
+                    content={compiler.compilerStatus.pipe(
+                        map((compilerStatus: ICompilerStatus) => (
+                            <CompilerStatusOutputComponent {...{ compilerStatus }} />
+                        )),
+                    )}
                 />
             </Box>
 
             <ObservableContentComponent
-                loading={<Text color="grey">Starting server...</Text>}
+                loading={<></>}
                 content={server.serverStatus.pipe(
-                    map((serverStatus) => {
-                        const data = Object.entries(serverStatus.clients)
-                            .map(([clientUuid, clientData]) => ({ clientUuid, ...clientData }))
-                            .map(({ boardId, connected, clientUuid, modules }) => ({
-                                boardId,
-                                // connected: connected ? '✔' : '✗',
-                                clientUuid: clientUuid.split('-')[0] + '-...',
-                                ...objectMap(modules, (key, module) => [
-                                    `⛃  ${key}`,
-                                    module.declared ? 'Working' : 'Error',
-                                ]),
-                            }));
-
-                        if (!data.length) {
-                            return (
-                                <Box borderStyle="single">
-                                    <Text color="grey">
-                                        Waiting for clients...
-                                        <Text color="magenta" bold>
-                                            {'\n'}
-                                            Please open {server.openCollboardUrl}
-                                        </Text>
-                                    </Text>
-                                </Box>
-                            );
-                        }
-                        return <Table data={data} />;
-                    }),
+                    map((serverStatus) => <ServerStatusOutputComponent {...{ server, serverStatus }} />),
                 )}
             />
         </Box>
     );
-
-    // TODO: Testing on mobile (with some localtunnel) and QR code
 }

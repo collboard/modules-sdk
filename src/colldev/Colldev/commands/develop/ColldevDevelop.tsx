@@ -3,11 +3,10 @@ import { Destroyable, IDestroyable } from 'destroyable';
 import { render } from 'ink';
 import React from 'react';
 import { filter } from 'rxjs/operators';
+import { forImmediate } from 'waitasecond';
 import { BrowserSpawner } from '../../../BrowserSpawner/BrowserSpawner';
 import { ColldevServer } from '../../../ColldevServer/ColldevServer';
 import { Compiler } from '../../../Compiler/Compiler';
-import { CompilerStatusOutputComponent } from '../../../Compiler/CompilerStatusOutputComponent';
-import { compilerStatusToJson } from '../../../Compiler/utils/compilerStatusToJson';
 import { OutputComponent } from './../../OutputComponent';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
 
@@ -69,8 +68,8 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
                     `Output from the compiler\n` +
                     `"human" for human readable ASCII like, colorfull output;\n` +
                     `"json" for pretty JSON;\n` +
-                    `"json-raw" for raw minified JSON;\n` +
-                    `Note: It can be used only with flag "--exit"`,
+                    `"json-raw" for raw minified JSON;\n`,
+                // !!! delete `Note: It can be used only with flag "--exit"`,
                 'human',
             )
             .option(
@@ -105,22 +104,26 @@ export class ColldevDevelop extends Destroyable implements IDestroyable {
 
         this.addSubdestroyable(compiler, server, browserSpawner);
 
-        if (!exit) {
+        if (output === 'human') {
             render(<OutputComponent {...{ compiler, server }} />);
+        } else if (output === 'json') {
+            // TODO: !!! console.info(JSON.stringify(compilerStatusToJson(status), null, 4));
+        } else if (output === 'json-raw') {
+            // TODO: !!!  console.info(JSON.stringify(compilerStatusToJson(status)));
         } else {
-            compiler.statuses.pipe(filter(({ ready }) => ready)).subscribe((status) => {
-                // TODO: !!! Some smarter reports what is and what is not working + structural report
+            console.info(`Unknown flag "--output ${output}".`);
+        }
 
-                if (output === 'human') {
-                    render(<CompilerStatusOutputComponent {...status} />);
-                } else if (output === 'json') {
-                    console.info(JSON.stringify(compilerStatusToJson(status), null, 4));
-                } else if (output === 'json-raw') {
-                    console.info(JSON.stringify(compilerStatusToJson(status)));
-                } else {
-                    console.info(`Unknown flag "--output ${output}".`);
-                }
-                process.exit(status.error ? 1 : 0);
+        if (exit) {
+            // TODO: !!! Await promises - avoid callback hell + timeout (and timeout as flag)
+            compiler.compilerStatus.pipe(filter(({ ready }) => ready)).subscribe((compilerStatus) => {
+                console.log(`compilerStatus`);
+                server.serverStatus.pipe(filter(({ ready }) => ready)).subscribe(async (serverStatus) => {
+                    console.log(`serverStatus`);
+
+                    await forImmediate();
+                    process.exit(compilerStatus.error || serverStatus.error ? 1 : 0);
+                });
             });
         }
     }

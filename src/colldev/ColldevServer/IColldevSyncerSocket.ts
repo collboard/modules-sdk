@@ -1,10 +1,14 @@
-
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 // tslint:disable:class-name
 // tslint:disable-next-line:no-namespace
 export namespace IColldevSyncerSocket {
+    export interface IError {
+        name: string;
+        message: string;
+        stack?: string;
+    }
     export interface identify {
         // TODO: domain: string_url;
         instanceUUID: string;
@@ -14,7 +18,10 @@ export namespace IColldevSyncerSocket {
     }
 
     export interface clientStatus {
+        version: number;
         connected: boolean;
+        // TODO: !!! errors
+        error: IError | null;
         boardId: string | null;
         url: string;
         modules: Record<
@@ -22,7 +29,8 @@ export namespace IColldevSyncerSocket {
             {
                 declared: boolean;
                 // TODO: installed
-                error?: Error;
+                // TODO: !!! errors
+                error: IError | null;
             }
         >;
     }
