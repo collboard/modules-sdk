@@ -75,7 +75,7 @@ export class Compiler extends Destroyable implements IDestroyable {
                 // TODO: Maybe use webpack watch instead of onchange
                 // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
                 this.webpackConfig,
-                async (__error /* Note: This error is probbably useless */, webpackStats) => {
+                async (uselessError /* Note: This error is probbably useless */, webpackStats) => {
                     const errors: Error[] = [];
                     if (webpackStats?.hasErrors()) {
                         errors.push(

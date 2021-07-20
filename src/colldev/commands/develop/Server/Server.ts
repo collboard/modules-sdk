@@ -81,7 +81,7 @@ export class Server extends Destroyable implements IDestroyable {
     private async init() {
         this.expressApp = express();
         const { port: portAsString, expose } = this.options;
-        const port = parseInt(portAsString);
+        const port = parseInt(portAsString,10);
 
         this.server = http.createServer(this.expressApp);
         this.socket = new SocketIoServer(this.server, { transports: ['websocket', 'polling'] });

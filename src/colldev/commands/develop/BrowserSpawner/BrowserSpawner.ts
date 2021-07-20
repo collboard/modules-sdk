@@ -26,7 +26,7 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
         if (open === 'none') {
             return;
         } else if (open === 'single') {
-            await forTime(parseInt(wait));
+            await forTime(parseInt(wait,10));
             if (Object.values(this.server.serverStatus.value.clients).length) {
                 // Note: There is already some client connected
                 return;
