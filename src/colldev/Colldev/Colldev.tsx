@@ -60,20 +60,29 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 process.exit(1);
                             });
                     } else if (output === 'json') {
-                        // TODO: !!! console.info(JSON.stringify(compilerStatusToJson(status), null, 4));
-
                         // TODO: DRY
                         runningCommand
                             .then(() => {
-                                console.info(command.status());
+                                console.info(JSON.stringify(command.status(), null, 4));
                                 process.exit(0);
                             })
                             .catch((error) => {
-                                console.info(command.status());
+                                console.info(JSON.stringify(command.status(), null, 4));
+                                // TODO: Probbably show the error
                                 process.exit(1);
                             });
                     } else if (output === 'json-raw') {
-                        // TODO: !!!  console.info(JSON.stringify(compilerStatusToJson(status)));
+                        // TODO: DRY
+                        runningCommand
+                            .then(() => {
+                                console.info(JSON.stringify(command.status()));
+                                process.exit(0);
+                            })
+                            .catch((error) => {
+                                console.info(JSON.stringify(command.status()));
+                                // TODO: Probbably show the error
+                                process.exit(1);
+                            });
                     } else {
                         console.info(`Unknown flag "--output ${output}".`);
                     }
