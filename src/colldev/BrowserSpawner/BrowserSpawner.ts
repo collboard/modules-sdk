@@ -43,9 +43,7 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
         if (!this.browser) {
             this.browser = await puppeteer.launch({
                 headless,
-                /*!!! unhardcode and allow to pick executable or browser alias */
-                //executablePath: `C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe`,
-                executablePath: `C:/Program Files (x86)/Google/Chrome/Application/chrome.exe`,
+                executablePath: browser,
             });
             return (await this.browser.pages())[0];
         } else {

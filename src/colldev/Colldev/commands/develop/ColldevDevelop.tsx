@@ -38,10 +38,13 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                     '-b, --browser <browser>',
                     `` /* TODO: Use here spacetrim */ +
                         `Which browser use\n` +
-                        // TODO: !!! options + implement
-                        //`Note: This option is especially usefull when testing` +
+                        `Note: Now it accepts only executable path to browser` +
                         `Note: This flag has no effect with flag "--open none"`,
-                    'default',
+                    // TODO: Accept also values like "chrome", "firefox",...
+
+                    // TODO: Put here just "dafault"
+                    //'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
+                    'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
                 )
                 .option(
                     '-h, --headless',
