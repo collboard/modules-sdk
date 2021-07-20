@@ -86,7 +86,6 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                     false,
                 )
         );
-        // !!! remove .action(this.run.bind(this));
     }
 
     public async run(path: string, options: IColldevDevelopOptions) {
