@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import * as uuid from 'uuid';
 import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
 import { ASSETS_PATH } from '../config';
-import { ICompilerStatus, ICompilerStats } from './ICompilerStatus';
+import { ICompilerStats, ICompilerStatus } from './ICompilerStatus';
 import { cleanupAssets } from './utils/cleanupAssets';
 import { getModulePackageMainPath } from './utils/getModulePackageMainPath';
 import { makeColldevFolder } from './utils/makeColldevFolder';
@@ -23,7 +23,7 @@ export class Compiler extends Destroyable implements IDestroyable {
     /**
      * Note: We are not using here mobx-react because it does not work with ink
      */
-    readonly compilerStatus: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ ready: false, error: null });
+    readonly compilerStatus: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ ready: false, errors: [] });
 
     private get compilerStats(): ICompilerStats {
         const { workingDir, bundleId, bundleFilename, packageMainPath, webpackConfig } = this;
@@ -76,19 +76,21 @@ export class Compiler extends Destroyable implements IDestroyable {
                 // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
                 this.webpackConfig,
                 async (__error /* Note: This error is probbably useless */, webpackStats) => {
-                    let error: Error | null = null;
+                    const errors: Error[] = [];
                     if (webpackStats?.hasErrors()) {
-                        error = new WebpackError(
-                            webpackStats?.toString({
-                                chunks: false, // Makes the build much quieter
-                                colors: true, // Shows colors in the console
-                            }),
+                        errors.push(
+                            new WebpackError(
+                                webpackStats?.toString({
+                                    chunks: false, // Makes the build much quieter
+                                    colors: true, // Shows colors in the console
+                                }),
+                            ),
                         );
                     }
 
                     this.compilerStatus.next({
                         ready: true,
-                        error,
+                        errors,
                         compilerStats: this.compilerStats,
                         webpackStats,
                         bundle: { path: join(ASSETS_PATH, this.bundleFilename) },
@@ -98,11 +100,7 @@ export class Compiler extends Destroyable implements IDestroyable {
         } catch (error) {
             this.compilerStatus.next({
                 ready: true,
-                error /*!!! delete {
-                    name: error.name,
-                    message: error.message,
-                    stack: error.stack,
-                }*/,
+                errors: [error],
                 compilerStats: this.compilerStats,
             });
         }

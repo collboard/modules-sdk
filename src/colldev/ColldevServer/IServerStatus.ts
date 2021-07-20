@@ -2,7 +2,6 @@ import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 
 export interface IServerStatus {
     ready: boolean;
-    // TODO: !!! errors
-    error: IColldevSyncerSocket.IError | null;
+    errors: IColldevSyncerSocket.IError[];
     clients: Record<string, IColldevSyncerSocket.clientStatus>;
 }

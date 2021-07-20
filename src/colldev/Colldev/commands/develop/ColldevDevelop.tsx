@@ -114,7 +114,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                                 !(
                                     (
                                         (compilerStatus.ready && serverStatus.ready) ||
-                                        (compilerStatus.ready && compilerStatus.error)
+                                        (compilerStatus.ready && compilerStatus.errors.length)
                                     ) /* Note: Second condition in case of syntax error */
                                 )
                             ) {
@@ -122,7 +122,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                             }
 
                             await forImmediate();
-                            const error = compilerStatus.error || serverStatus.error;
+                            const error = compilerStatus.errors.length || serverStatus.errors.length;
                             if (error) {
                                 reject(error);
                             } else {

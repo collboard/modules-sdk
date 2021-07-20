@@ -13,18 +13,20 @@ interface IServerStatusOutputComponentProps {
 export function ServerStatusOutputComponent({ server, serverStatus: { clients } }: IServerStatusOutputComponentProps) {
     const data = Object.entries(clients)
         .map(([clientUuid, clientData]) => ({ clientUuid, ...clientData }))
-        .map(({ boardId, connected, ready, error, version, clientUuid, modules }) => ({
+        .map(({ boardId, connected, ready, errors, version, clientUuid, modules }) => ({
             boardId,
             // connected: connected ? '✔' : '✗',
             // ready: ready ? '✔' : '✗',
             // version,
             clientUuid: clientUuid.split('-')[0] + '…',
-            error: error ? error.message : '',
+            error: errors.map(({ message }) => message).join('\n'),
 
             ...objectMap(modules, (key, module) => [
                 // Note: two spaces are after ⛃ intentionally
                 `⛃  ${key}`,
-                /* TODO: !!! detect model working module.declared*/ module.error ? module.error.message : 'Working',
+                /* TODO: !!! detect model working module.declared*/ module.errors.length
+                    ? module.errors.map(({ message }) => message).join('\n')
+                    : 'Working',
             ]),
         }));
 

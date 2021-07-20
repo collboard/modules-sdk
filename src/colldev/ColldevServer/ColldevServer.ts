@@ -49,7 +49,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
      */
     readonly serverStatus: BehaviorSubject<IServerStatus> = new BehaviorSubject({
         ready: false,
-        error: null,
+        errors: [],
         clients: {},
     });
     private serverStatusUpdate(updator: (serverStatusValue: IServerStatus) => void) {
@@ -60,11 +60,10 @@ export class ColldevServer extends Destroyable implements IDestroyable {
             Object.values(serverStatusValue.clients).filter(({ ready }) => ready).length >
             0 /* TODO: Configurable treshold */;
 
-        // TODO: !!! Errors
-        const clientWithError = Object.values(serverStatusValue.clients).find(({ error }) => error);
-        if (clientWithError) {
-            serverStatusValue.error = clientWithError.error;
-        }
+        serverStatusValue.errors = Object.values(serverStatusValue.clients).reduce(
+            (errors, client) => [...errors, ...client.errors],
+            [],
+        );
 
         this.serverStatus.next(serverStatusValue);
     }
@@ -165,7 +164,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                         // TODO: Maybe transfer theese in initial
                         connected: true,
                         ready: false,
-                        error: null,
+                        errors: [],
                         url: '' /* TODO: Better */,
                         boardId: null,
                         modules: {},

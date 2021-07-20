@@ -24,9 +24,9 @@ export function OutputComponent({ compiler, server }: IOutputProps) {
                         borderStyle="round"
                         display="flex"
                         flexDirection="column"
-                        borderColor={compilerStatus.error || serverStatus.error ? 'red' : 'white'}
+                        borderColor={compilerStatus.errors.length || serverStatus.errors.length ? 'red' : 'white'}
                     >
-                        <Box borderStyle="single" borderColor={compilerStatus.error ? 'red' : 'white'}>
+                        <Box borderStyle="single" borderColor={compilerStatus.errors.length ? 'red' : 'white'}>
                             <CompilerStatusOutputComponent {...{ compilerStatus }} />
                         </Box>
 

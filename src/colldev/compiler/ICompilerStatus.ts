@@ -2,8 +2,7 @@ import webpack from 'webpack';
 
 export interface ICompilerStatus {
     ready: boolean;
-    // TODO: !!! errors
-    error: Error | null;
+    errors: Error[];
     compilerStats?: ICompilerStats;
     webpackStats?: webpack.Stats;
     bundle?: { path: string };

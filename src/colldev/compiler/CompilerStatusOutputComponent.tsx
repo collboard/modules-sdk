@@ -7,22 +7,26 @@ interface ICompilerStatusProps {
 }
 
 export function CompilerStatusOutputComponent({
-    compilerStatus: { ready, error, compilerStats, webpackStats, bundle },
+    compilerStatus: { ready, errors, compilerStats, webpackStats, bundle },
 }: ICompilerStatusProps) {
     if (!ready) {
         return <Text color="grey">Compiling...</Text>;
     }
 
-    if (error) {
+    if (errors.length) {
         return (
-            <Text color="red">
-                <Text color="white" backgroundColor="red">
-                    {error.name}
-                    {`: `}
-                </Text>
-                {` `}
-                {error.message}
-            </Text>
+            <>
+                {errors.map((error, i) => (
+                    <Text color="red" key={i}>
+                        <Text color="white" backgroundColor="red">
+                            {error.name}
+                            {`: `}
+                        </Text>
+                        {` `}
+                        {error.message}
+                    </Text>
+                ))}
+            </>
         );
     }
 
