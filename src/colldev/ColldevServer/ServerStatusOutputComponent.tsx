@@ -16,12 +16,16 @@ export function ServerStatusOutputComponent({ server, serverStatus: { clients } 
         .map(({ boardId, connected, ready, error, version, clientUuid, modules }) => ({
             boardId,
             // connected: connected ? '✔' : '✗',
-            ready: ready ? '✔' : '✗',
+            // ready: ready ? '✔' : '✗',
             // version,
             clientUuid: clientUuid.split('-')[0] + '…',
             error: error ? error.message : '',
 
-            ...objectMap(modules, (key, module) => [`⛃  ${key}`, module.declared ? 'Working' : 'Error']),
+            ...objectMap(modules, (key, module) => [
+                // Note: two spaces are after ⛃ intentionally
+                `⛃  ${key}`,
+                /* TODO: !!! detect model working module.declared*/ module.error ? module.error.message : 'Working',
+            ]),
         }));
 
     if (!data.length) {

@@ -1,130 +1,169 @@
 import commander from 'commander';
-import { Destroyable, IDestroyable } from 'destroyable';
-import { render } from 'ink';
-import React from 'react';
-import { filter } from 'rxjs/operators';
-import { forImmediate } from 'waitasecond';
+import { Destroyable } from 'destroyable';
+import * as React from 'react';
+import { combineLatest } from 'rxjs';
+import { forEver, forImmediate } from 'waitasecond';
 import { BrowserSpawner } from '../../../BrowserSpawner/BrowserSpawner';
 import { ColldevServer } from '../../../ColldevServer/ColldevServer';
 import { Compiler } from '../../../Compiler/Compiler';
-import { OutputComponent } from './../../OutputComponent';
+import { compilerStatusToJson } from '../../../Compiler/utils/compilerStatusToJson';
+import { OutputComponent } from '../../OutputComponent';
+import { ICommand } from '../ICommand';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
 
-export class ColldevDevelop extends Destroyable implements IDestroyable {
-    constructor(program: commander.Command) {
-        super();
-        program
-            .command('develop [path]', { isDefault: true })
-            // TODO: browser
-            .alias('start')
-            .description(`Start developing collboard module. Runs compiler+dev server.`)
-            // TODO: What is better collboard-url or collboard?
-            .option('-c, --collboard-url <url>', `Url of development Collboard`, 'https://dev.collboard.com')
-            .option(
-                '-o, --open <openMode>',
-                `` /* TODO: Use here spacetrim */ +
-                    `"none" for just running colldev without opening the browser;\n` +
-                    `"single" for wait some time if the Collboard connects to Colldev, if yes do nothing if no open new browser window with collboard;\n` +
-                    `"multiple" new browser window for each colldev running`,
+export class ColldevDevelop extends Destroyable implements ICommand<IColldevDevelopOptions, any> {
+    private compiler: Compiler;
+    private server: ColldevServer;
+    private browserSpawner: BrowserSpawner;
 
-                'single',
-            )
-            .option(
-                '-b, --browser <browser>',
-                `` /* TODO: Use here spacetrim */ +
-                    `Which browser use\n` +
-                    // TODO: !!! options + implement
-                    //`Note: This option is especially usefull when testing` +
-                    `Note: This flag has no effect with flag "--open none"`,
-                'default',
-            )
-            .option(
-                '-h, --headless',
-                `` /* TODO: Use here spacetrim */ +
-                    `Opens the browser in headless mode\n` +
-                    `Note: This flag is especially usefull when testing` +
-                    `Note: This flag has no effect with flag "--open none"`,
-                false,
-            )
-            // TODO: Browser -  chrome
-            .option(
-                '-w, --wait <miliseconds>',
-                `` /* TODO: Use here spacetrim */ +
-                    `How many miliseconds to wait to connection until opening new browser window with Collboard\n` +
-                    `Note: It can be used only with flag "--open single"`,
+    public init(program: commander.Command) {
+        return (
+            program
+                .command('develop [path]', { isDefault: true })
+                // TODO: browser
+                .alias('start')
+                .description(`Start developing collboard module. Runs compiler+dev server.`)
+                // TODO: What is better collboard-url or collboard?
+                .option('-c, --collboard-url <url>', `Url of development Collboard`, 'https://dev.collboard.com')
+                .option(
+                    '-o, --open <openMode>',
+                    `` /* TODO: Use here spacetrim */ +
+                        `"none" for just running colldev without opening the browser;\n` +
+                        `"single" for wait some time if the Collboard connects to Colldev, if yes do nothing if no open new browser window with collboard;\n` +
+                        `"multiple" new browser window for each colldev running`,
 
-                '2500',
-            )
-            .option(
-                '-e, --exit',
-                `` /* TODO: Use here spacetrim */ +
-                    `Exit the CLI after succesfully started with propper exit code\n` +
-                    `Note: This flag is especially usefull when testing`,
-                false,
-            )
-            .option(
-                '-o, --output <outputType>',
-                `` /* TODO: Use here spacetrim */ +
-                    `Output from the compiler\n` +
-                    `"human" for human readable ASCII like, colorfull output;\n` +
-                    `"json" for pretty JSON;\n` +
-                    `"json-raw" for raw minified JSON;\n`,
-                // !!! delete `Note: It can be used only with flag "--exit"`,
-                'human',
-            )
-            .option(
-                '-d, --disconnect',
-                `` /* TODO: Use here spacetrim */ +
-                    `Exit the CLI when Collboard disconnects from Colldev.\n` +
-                    `Note: It allows closing CLI by closing a browser`,
-                false,
-            )
-            .option(
-                '-p, --port <port>',
-                `On which port will be Colldev server running`,
-                // TODO: Maybe allow option with + suffix
-                '3000',
-            )
-            .option(
-                '-e, --expose',
-                ``, // TODO: !!! options + implement
-                false,
-            )
-            .action(this.run.bind(this));
+                    'single',
+                )
+                .option(
+                    '-b, --browser <browser>',
+                    `` /* TODO: Use here spacetrim */ +
+                        `Which browser use\n` +
+                        // TODO: !!! options + implement
+                        //`Note: This option is especially usefull when testing` +
+                        `Note: This flag has no effect with flag "--open none"`,
+                    'default',
+                )
+                .option(
+                    '-h, --headless',
+                    `` /* TODO: Use here spacetrim */ +
+                        `Opens the browser in headless mode\n` +
+                        `Note: This flag is especially usefull when testing` +
+                        `Note: This flag has no effect with flag "--open none"`,
+                    false,
+                )
+                // TODO: Browser -  chrome
+                .option(
+                    '-w, --wait <miliseconds>',
+                    `` /* TODO: Use here spacetrim */ +
+                        `How many miliseconds to wait to connection until opening new browser window with Collboard\n` +
+                        `Note: It can be used only with flag "--open single"`,
+
+                    '2500',
+                )
+                .option(
+                    '-e, --exit',
+                    `` /* TODO: Use here spacetrim */ +
+                        `Exit the CLI after succesfully started with propper exit code\n` +
+                        `Note: This flag is especially usefull when testing`,
+                    false,
+                )
+                .option(
+                    '-d, --disconnect',
+                    `` /* TODO: Use here spacetrim */ +
+                        `Exit the CLI when Collboard disconnects from Colldev.\n` +
+                        `Note: It allows closing CLI by closing a browser`,
+                    false,
+                )
+                .option(
+                    '-p, --port <port>',
+                    `On which port will be Colldev server running`,
+                    // TODO: Maybe allow option with + suffix
+                    '3000',
+                )
+                .option(
+                    '-e, --expose',
+                    ``, // TODO: !!! options + implement
+                    false,
+                )
+        );
+        // !!! remove .action(this.run.bind(this));
     }
 
-    private async run(path: string, options: IColldevDevelopOptions) {
-        const { exit, output } = options;
-        //console.info('develop:', { path, options });
-        //process.exit();
+    public async run(path: string, options: IColldevDevelopOptions) {
+        const { exit, disconnect } = options;
 
-        const compiler = new Compiler(path || './');
-        const server = new ColldevServer(compiler, { path, ...options });
-        const browserSpawner = new BrowserSpawner(server, options);
+        this.compiler = new Compiler(path || './');
+        this.server = new ColldevServer(this.compiler, { path, ...options });
+        this.browserSpawner = new BrowserSpawner(this.server, options);
 
-        this.addSubdestroyable(compiler, server, browserSpawner);
-
-        if (output === 'human') {
-            render(<OutputComponent {...{ compiler, server }} />);
-        } else if (output === 'json') {
-            // TODO: !!! console.info(JSON.stringify(compilerStatusToJson(status), null, 4));
-        } else if (output === 'json-raw') {
-            // TODO: !!!  console.info(JSON.stringify(compilerStatusToJson(status)));
-        } else {
-            console.info(`Unknown flag "--output ${output}".`);
-        }
+        const endScenarios: Array<Promise<void>> = [forEver()];
 
         if (exit) {
-            // TODO: !!! Await promises - avoid callback hell + timeout (and timeout as flag)
-            compiler.compilerStatus.pipe(filter(({ ready }) => ready)).subscribe((compilerStatus) => {
-                console.log(`compilerStatus`);
-                server.serverStatus.pipe(filter(({ ready }) => ready)).subscribe(async (serverStatus) => {
-                    console.log(`serverStatus`);
+            endScenarios.push(
+                new Promise((resolve, reject) => {
+                    combineLatest([this.compiler.compilerStatus, this.server.serverStatus])
+                        /*.pipe(
+                            filter(
+                                ([{ ready: compilerReady }, { ready: serverReady }]) => compilerReady && serverReady,
+                            ),
+                        )*/
+                        .subscribe(async ([compilerStatus, serverStatus]) => {
+                            if (!compilerStatus.ready || !serverStatus.ready) {
+                                return;
+                            }
 
-                    await forImmediate();
-                    process.exit(compilerStatus.error || serverStatus.error ? 1 : 0);
-                });
-            });
+                            await forImmediate();
+                            const error = compilerStatus.error || serverStatus.error;
+                            if (error) {
+                                reject(error);
+                            } else {
+                                resolve(undefined);
+                            }
+                        });
+                }),
+            );
         }
+
+        if (disconnect) {
+            endScenarios.push(
+                new Promise((resolve, reject) => {
+                    let alreadyConnected = false;
+
+                    // TODO: Await promises - avoid callback hell
+                    this.server.serverStatus.subscribe(({ clients }) => {
+                        if (Object.values(clients).length > 0) {
+                            alreadyConnected = true;
+                        } else if (alreadyConnected) {
+                            reject(
+                                new Error(
+                                    `Stopping Colldev because Collboard has disconnected in combination with option --disconnect`,
+                                ),
+                            );
+                        }
+                    });
+                }),
+            );
+        }
+
+        await Promise.race(endScenarios);
+    }
+
+    public render() {
+        return <OutputComponent {...{ compiler: this.compiler, server: this.server }} />;
+    }
+
+    public status() {
+        // TODO: !!! DRY wit /stats and /stats -> /status
+        return {
+            compiler: compilerStatusToJson(this.compiler.compilerStatus.value),
+            server: this.server.serverStatus.value,
+        };
+    }
+
+    public async destroy() {
+        await super.destroy();
+        await this.compiler.destroy();
+        await this.server.destroy();
+        await this.browserSpawner.destroy();
     }
 }

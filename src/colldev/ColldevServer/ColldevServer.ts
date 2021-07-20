@@ -22,7 +22,10 @@ interface IColldevServerOptions extends IColldevDevelopOptions {
     path: string;
 }
 export class ColldevServer extends Destroyable implements IDestroyable {
-    constructor(private compiler: Compiler, private readonly options: IColldevServerOptions) {
+    constructor(
+        private compiler: Compiler,
+        private readonly options: IColldevServerOptions,
+    ) {
         super();
         this.init();
     }
@@ -183,8 +186,6 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                 });
 
                 socketConnection.on('clientStatus', (clientStatus: IColldevSyncerSocket.clientStatus) => {
-                    console.log({ clientStatus });
-
                     this.serverStatusUpdate((serverStatusValue) => {
                         serverStatusValue.clients[instanceUUID] = clientStatus;
                     });
@@ -197,19 +198,6 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                         delete serverStatusValue.clients[instanceUUID];
                     });
 
-                    if (this.options.disconnect && Object.values(this.serverStatus.value.clients).length === 0) {
-                        /*
-                        TODO: Report or not to report
-                        console.info(
-                            chalk.red(
-                                'Stopping Colldev because Collboard has disconnected in combination with option --disconnect',
-                            ),
-                        );
-                        */
-                        process.exit(
-                            1 /* Note: when the browser in closed in combination with testing it indicates some problem so we want to indicate here error exit code */,
-                        );
-                    }
                 });
             });
 
