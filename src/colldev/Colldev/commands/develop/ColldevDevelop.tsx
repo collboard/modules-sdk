@@ -108,7 +108,14 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                             ),
                         )*/
                         .subscribe(async ([compilerStatus, serverStatus]) => {
-                            if (!compilerStatus.ready || !serverStatus.ready) {
+                            if (
+                                !(
+                                    (
+                                        (compilerStatus.ready && serverStatus.ready) ||
+                                        (compilerStatus.ready && compilerStatus.error)
+                                    ) /* Note: Second condition in case of syntax error */
+                                )
+                            ) {
                                 return;
                             }
 
