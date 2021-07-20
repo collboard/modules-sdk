@@ -2,15 +2,15 @@ import { Box } from 'ink';
 import * as React from 'react';
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ColldevServer } from '../ColldevServer/ColldevServer';
-import { ServerStatusOutputComponent } from '../ColldevServer/ServerStatusOutputComponent';
 import { Compiler } from '../Compiler/Compiler';
 import { CompilerStatusOutputComponent } from '../Compiler/CompilerStatusOutputComponent';
+import { Server } from '../Server/Server';
+import { ServerStatusOutputComponent } from '../Server/ServerStatusOutputComponent';
 import { ObservableContentComponent } from '../utils/ObservableContentComponent';
 
 interface IOutputProps {
     compiler: Compiler;
-    server: ColldevServer;
+    server: Server;
 }
 
 // TODO:  Make simmilar UI for CollboardDevelopmentModule + Colldev Express

@@ -4,16 +4,16 @@ import * as React from 'react';
 import { combineLatest } from 'rxjs';
 import { forEver, forImmediate } from 'waitasecond';
 import { BrowserSpawner } from '../../../BrowserSpawner/BrowserSpawner';
-import { ColldevServer } from '../../../ColldevServer/ColldevServer';
 import { Compiler } from '../../../Compiler/Compiler';
 import { compilerStatusToJson } from '../../../Compiler/utils/compilerStatusToJson';
+import { Server } from '../../../Server/Server';
 import { OutputComponent } from '../../OutputComponent';
 import { ICommand } from '../ICommand';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
 
 export class ColldevDevelop extends Destroyable implements ICommand<IColldevDevelopOptions, any> {
     private compiler: Compiler;
-    private server: ColldevServer;
+    private server: Server;
     private browserSpawner: BrowserSpawner;
 
     public init(program: commander.Command) {
@@ -98,7 +98,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
         const { exit, disconnect } = options;
 
         this.compiler = new Compiler(path || './');
-        this.server = new ColldevServer(this.compiler, { path, ...options });
+        this.server = new Server(this.compiler, { path, ...options });
         this.browserSpawner = new BrowserSpawner(this.server, options);
 
         const endScenarios: Array<Promise<void>> = [forEver()];

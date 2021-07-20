@@ -3,11 +3,11 @@ import Table from 'ink-table';
 import * as React from 'react';
 import { AsyncContentComponent } from '../utils/AsyncContentComponent';
 import { objectMap } from '../utils/objectMap';
-import { ColldevServer } from './ColldevServer';
 import { IServerStatus } from './IServerStatus';
+import { Server } from './Server';
 
 interface IServerStatusOutputComponentProps {
-    server: ColldevServer;
+    server: Server;
     serverStatus: IServerStatus;
 }
 

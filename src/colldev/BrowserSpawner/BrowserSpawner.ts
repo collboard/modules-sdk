@@ -2,7 +2,7 @@ import { Destroyable, IDestroyable } from 'destroyable';
 import puppeteer, { Browser, Page } from 'puppeteer-core';
 import { forTime } from 'waitasecond';
 import { IColldevDevelopOptions } from '../Colldev/commands/develop/IColldevDevelopOptions';
-import { ColldevServer } from '../ColldevServer/ColldevServer';
+import { Server } from '../Server/Server';
 
 /*
 import openBrowser from 'open';
@@ -15,7 +15,7 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
 
     // TODO: maybe create separate puppeteer spawner
 
-    constructor(private server: ColldevServer, private readonly options: IBrowserSpawnerOptions) {
+    constructor(private server: Server, private readonly options: IBrowserSpawnerOptions) {
         super();
         this.init();
     }

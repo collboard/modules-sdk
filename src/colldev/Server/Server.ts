@@ -15,21 +15,19 @@ import { ASSETS_PATH } from '../config';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 import { IServerStatus } from './IServerStatus';
 
-// TODO: !!! Just server
-
 /**
  * Internally using only collboardUrl, port and expose but it is usefull to present all the args in /status route
  */
-interface IColldevServerOptions extends IColldevDevelopOptions {
+interface IServerOptions extends IColldevDevelopOptions {
     path: string;
 }
-export class ColldevServer extends Destroyable implements IDestroyable {
+export class Server extends Destroyable implements IDestroyable {
     private expressApp: Express;
     private server: http.Server;
     private socket: SocketIoServer;
     private tunnel: localtunnel.Tunnel | null = null;
 
-    constructor(private compiler: Compiler, private readonly options: IColldevServerOptions) {
+    constructor(private compiler: Compiler, private readonly options: IServerOptions) {
         super();
         this.init();
     }
