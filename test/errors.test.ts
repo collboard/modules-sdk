@@ -5,6 +5,8 @@ import { getFreshPortflag } from './utils/getFreshPortFlag';
 
 jest.setTimeout(1000 * 60);
 
+// TODO:  !!! Testing exposed
+
 describe('the errored modules', () => {
     /*/
     it('should PASS when testing exit codes', async () => {

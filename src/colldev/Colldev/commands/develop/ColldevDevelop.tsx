@@ -85,7 +85,10 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                 )
                 .option(
                     '-e, --expose',
-                    ``, // TODO: !!! options + implement
+                    `` /* TODO: Use here spacetrim */ +
+                        // TODO: Create own localtunnel server on collboard server and allow to configure it
+                        `Exposes colldev server through internet so you can test modules across devices\n` +
+                        `Note: this option uses internally localtunnel utility`,
                     false,
                 )
         );

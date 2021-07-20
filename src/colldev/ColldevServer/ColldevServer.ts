@@ -2,10 +2,12 @@ import { Destroyable, IDestroyable } from 'destroyable';
 import express, { Express } from 'express';
 import { readFile } from 'fs';
 import http from 'http';
+import localtunnel from 'localtunnel';
 import { join, relative } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
+import { forValueDefined } from 'waitasecond';
 import { IColldevDevelopOptions } from '../Colldev/commands/develop/IColldevDevelopOptions';
 import { Compiler } from '../Compiler/Compiler';
 import { compilerStatusToJson } from '../Compiler/utils/compilerStatusToJson';
@@ -22,26 +24,36 @@ interface IColldevServerOptions extends IColldevDevelopOptions {
     path: string;
 }
 export class ColldevServer extends Destroyable implements IDestroyable {
+    private expressApp: Express;
+    private server: http.Server;
+    private socket: SocketIoServer;
+    private tunnel: localtunnel.Tunnel | null = null;
+
     constructor(private compiler: Compiler, private readonly options: IColldevServerOptions) {
         super();
         this.init();
     }
 
-    public get openCollboardUrl() {
+    public async openCollboardUrl() {
         const { collboardUrl } = this.options;
 
         let uriParams = '';
         if (collboardUrl !== 'https://dev.collboard.com') {
             uriParams = `?collboardUrl=${encodeURIComponent(collboardUrl)}`;
         }
-        const redirectUrl = `${this.colldevUrl}/open-collboard${uriParams}`;
+        const redirectUrl = `${await this.colldevUrl()}/open-collboard${uriParams}`;
 
         return redirectUrl;
     }
 
-    public get colldevUrl() {
+    public async colldevUrl() {
         const { port, expose } = this.options;
-        return /* TODO: On exposed do not hardcode localhost */ `http://localhost:${port}`;
+        if (!expose) {
+            return `http://localhost:${port}`;
+        } else {
+            const tunnel = await forValueDefined(() => this.tunnel);
+            return tunnel.url;
+        }
     }
 
     /**
@@ -68,25 +80,22 @@ export class ColldevServer extends Destroyable implements IDestroyable {
         this.serverStatus.next(serverStatusValue);
     }
 
-    private server: http.Server;
-    private expressApp: Express;
-    private socket: SocketIoServer;
-
-    private init() {
+    private async init() {
         this.expressApp = express();
-        const { port } = this.options;
+        const { port: portAsString, expose } = this.options;
+        const port = parseInt(portAsString);
 
         this.server = http.createServer(this.expressApp);
         this.socket = new SocketIoServer(this.server, { transports: ['websocket', 'polling'] });
         this.socketHandler();
 
-        this.expressApp.get('/', (request, response) => {
+        this.expressApp.get('/', async (request, response) => {
             // TODO: Put here a version
             response.type('text/html').send(`
             <h1>Colldev server</h1>
             <p>Hello from Collboard.com modules SDK toolkit:</p>
             <ul>
-                <li>To test currently developed modules go to <a href="${this.openCollboardUrl}">${this.openCollboardUrl}</a>.</li>
+                <li>To test currently developed modules go to <a href="${await this.openCollboardUrl()}">${await this.openCollboardUrl()}</a>.</li>
                 <li>To show current stats to <a href="/status">/status</a>.</li>
                 <li>To learn more <a href="https://github.com/collboard/modules-sdk">https://github.com/collboard/modules-sdk</a>.</li>
             </ul>
@@ -107,13 +116,13 @@ export class ColldevServer extends Destroyable implements IDestroyable {
             `);
         });
 
-        this.expressApp.get('/status', (req, res) => {
+        this.expressApp.get('/status', async (req, res) => {
             // TODO: Pretty print sended json
             res.type('application/javascript').send({
                 // TODO: Add version
                 links: {
-                    colldevUrl: this.colldevUrl,
-                    openCollboardUrl: this.openCollboardUrl,
+                    colldevUrl: await this.colldevUrl(),
+                    openCollboardUrl: await this.openCollboardUrl(),
                 },
                 args: this.options,
                 // Note: logical order is compiler, server but compiler is a bit verbose so it is at bottom
@@ -149,6 +158,10 @@ export class ColldevServer extends Destroyable implements IDestroyable {
         // TODO: Maybe nicer report of EADDRINUSE and unsafe ports ; this can be coimplemented with port+ option
 
         this.server.listen(port);
+
+        if (expose) {
+            this.tunnel = await localtunnel({ port });
+        }
     }
 
     private async socketHandler() {
@@ -172,11 +185,11 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                 });
 
                 const subscription = this.compiler.compilerStatus.subscribe({
-                    next: ({ bundle }) => {
+                    next: async ({ bundle }) => {
                         if (bundle) {
                             // console.log(`Emmiting bundle for ${instanceUUID}`);
                             socketConnection.emit('bundle', {
-                                bundleUrl: `${this.colldevUrl}/assets/` + relative(ASSETS_PATH, bundle.path),
+                                bundleUrl: `${await this.colldevUrl()}/assets/` + relative(ASSETS_PATH, bundle.path),
                             } as IColldevSyncerSocket.bundle);
                         }
                     },
@@ -205,6 +218,9 @@ export class ColldevServer extends Destroyable implements IDestroyable {
         await super.destroy();
         this.server.close();
         this.socket.close();
+        if (this.tunnel) {
+            this.tunnel.close();
+        }
         // TODO: Also destroy this.expressApp
     }
 }

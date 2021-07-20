@@ -1,6 +1,7 @@
 import { Box, Text } from 'ink';
 import Table from 'ink-table';
 import * as React from 'react';
+import { AsyncContentComponent } from '../utils/AsyncContentComponent';
 import { objectMap } from '../utils/objectMap';
 import { ColldevServer } from './ColldevServer';
 import { IServerStatus } from './IServerStatus';
@@ -32,15 +33,19 @@ export function ServerStatusOutputComponent({ server, serverStatus: { clients } 
         // TODO: Do not show in non-interactive mode
         // TODO: Testing on mobile (with some localtunnel) and QR code
         return (
-            <Box borderStyle="single">
-                <Text color="grey">
-                    Waiting for clients...
-                    <Text color="magenta" bold>
-                        {'\n'}
-                        Please open {server.openCollboardUrl}
-                    </Text>
-                </Text>
-            </Box>
+            <AsyncContentComponent
+                content={async () => (
+                    <Box borderStyle="single">
+                        <Text color="grey">
+                            Waiting for clients...
+                            <Text color="magenta" bold>
+                                {'\n'}
+                                Please open {await server.openCollboardUrl()}
+                            </Text>
+                        </Text>
+                    </Box>
+                )}
+            />
         );
     }
 
