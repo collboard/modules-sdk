@@ -24,9 +24,7 @@ export function ServerStatusOutputComponent({ server, serverStatus: { clients } 
             ...objectMap(modules, (key, module) => [
                 // Note: two spaces are after ⛃ intentionally
                 `⛃  ${key}`,
-                /* TODO: !!! detect model working module.declared*/ module.errors.length
-                    ? module.errors.map(({ message }) => message).join('\n')
-                    : 'Working',
+                module.errors.length ? module.errors.map(({ message }) => message).join('\n') : 'Working',
             ]),
         }));
 
