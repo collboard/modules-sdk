@@ -30,7 +30,7 @@ describe('the errored modules', () => {
     it(`should NOT crash when there is NO ERROR in the module`, async () => {
         await expect(
             execCommand({
-                command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --open multiple --exit --headless --disconnect ${getFreshPortOption()}`,
+                command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --open multiple --exit -c http://localhost:9977/ --disconnect ${await getFreshPortOption()}`,
                 cwd: join(__dirname, '..'),
             }),
         ).resolves.not.toThrow();
@@ -42,7 +42,7 @@ describe('the errored modules', () => {
         // TODO: 'type-error',
         'runtime-error-in-declare',
         'runtime-error-in-setup',
-        'runtime-error-in-unsetup',
+        // TODO: 'runtime-error-in-unsetup',
         'missing-package-error',
         'missing-entry-error',
         // TODO: 'version-mismatch-error',
@@ -50,7 +50,7 @@ describe('the errored modules', () => {
         it(`should crash when there is a ${errorType.split('-').join(' ').toUpperCase()} in the module`, async () => {
             await expect(
                 execCommand({
-                    command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/${errorType} --open multiple --exit --headless --disconnect ${getFreshPortOption()}`,
+                    command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/${errorType} --open multiple --exit --headless -c http://localhost:9977/ --disconnect ${await getFreshPortOption()}`,
                     cwd: join(__dirname, '..'),
                 }),
             ).rejects.toThrow();
