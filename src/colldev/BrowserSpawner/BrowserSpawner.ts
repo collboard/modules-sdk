@@ -1,7 +1,7 @@
 import { Destroyable, IDestroyable } from 'destroyable';
 import puppeteer, { Browser, Page } from 'puppeteer-core';
 import { forTime } from 'waitasecond';
-import { IColldevDevelopOptions } from '../Colldev/commands/develop/IColldevDevelopOptions';
+import { IColldevDevelopOptions } from '../commands/develop/IColldevDevelopOptions';
 import { Server } from '../Server/Server';
 
 /*

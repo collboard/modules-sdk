@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
 import { forValueDefined } from 'waitasecond';
-import { IColldevDevelopOptions } from '../Colldev/commands/develop/IColldevDevelopOptions';
+import { IColldevDevelopOptions } from '../commands/develop/IColldevDevelopOptions';
 import { Compiler } from '../Compiler/Compiler';
 import { compilerStatusToJson } from '../Compiler/utils/compilerStatusToJson';
 import { ASSETS_PATH } from '../config';

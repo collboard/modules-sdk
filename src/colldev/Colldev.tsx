@@ -2,10 +2,10 @@ import chalk from 'chalk';
 import commander from 'commander';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { Instance, render } from 'ink';
-import { getColldevPackageContent } from '../Compiler/utils/colldevPackage';
 import { ColldevDevelop } from './commands/develop/ColldevDevelop';
 import { ICommand } from './commands/ICommand';
 import { ColldevPublish } from './commands/publish/ColldevPublish';
+import { getColldevPackageContent } from './Compiler/utils/colldevPackage';
 import { IColldevOptions } from './IColldevOptions';
 
 export class Colldev extends Destroyable implements IDestroyable {

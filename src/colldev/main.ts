@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import chalk from 'chalk';
-import { Colldev } from './Colldev/Colldev';
+import { Colldev } from './Colldev';
 
 const colldev = new Colldev(process.argv);
 
