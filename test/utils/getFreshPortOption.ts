@@ -1,5 +1,4 @@
-let port = 10050;
-
-export function getFreshPortOption(){
-    return `--port ${port++}`;
+export function getFreshPortOption() {
+    // TODO: Async and detect blocked port
+    return `--port ${Math.floor(10000 + Math.random() * 10000)}`;
 }
