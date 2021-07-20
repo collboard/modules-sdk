@@ -162,7 +162,6 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
     }
 
     public status() {
-        // TODO: !!! DRY wit /status
         return {
             compiler: compilerStatusToJson(this.compiler.compilerStatus.value),
             server: this.server.serverStatus.value,

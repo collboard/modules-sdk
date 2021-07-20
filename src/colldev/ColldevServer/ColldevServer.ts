@@ -117,6 +117,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                     openCollboardUrl: this.openCollboardUrl,
                 },
                 args: this.options,
+                // Note: logical order is compiler, server but compiler is a bit verbose so it is at bottom
                 server: this.serverStatus.value,
                 compiler: compilerStatusToJson(this.compiler.compilerStatus.value),
             });
