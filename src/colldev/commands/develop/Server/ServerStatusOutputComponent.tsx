@@ -1,8 +1,8 @@
 import { Box, Text } from 'ink';
 import Table from 'ink-table';
 import * as React from 'react';
-import { AsyncContentComponent } from '../utils/AsyncContentComponent';
-import { objectMap } from '../utils/objectMap';
+import { AsyncContentComponent } from '../../../utils/AsyncContentComponent';
+import { objectMap } from '../../../utils/objectMap';
 import { IServerStatus } from './IServerStatus';
 import { Server } from './Server';
 

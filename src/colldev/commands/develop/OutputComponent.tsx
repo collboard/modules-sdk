@@ -2,11 +2,11 @@ import { Box } from 'ink';
 import * as React from 'react';
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
 import { Compiler } from './Compiler/Compiler';
 import { CompilerStatusOutputComponent } from './Compiler/CompilerStatusOutputComponent';
 import { Server } from './Server/Server';
 import { ServerStatusOutputComponent } from './Server/ServerStatusOutputComponent';
-import { ObservableContentComponent } from './utils/ObservableContentComponent';
 
 interface IOutputProps {
     compiler: Compiler;

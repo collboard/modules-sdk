@@ -5,8 +5,8 @@ import { Instance, render } from 'ink';
 import { ColldevDevelop } from './commands/develop/ColldevDevelop';
 import { ICommand } from './commands/ICommand';
 import { ColldevPublish } from './commands/publish/ColldevPublish';
-import { getColldevPackageContent } from './Compiler/utils/colldevPackage';
 import { IColldevOptions } from './IColldevOptions';
+import { getColldevPackageContent } from './utils/getColldevPackageContent';
 
 export class Colldev extends Destroyable implements IDestroyable {
     private program: commander.Command;

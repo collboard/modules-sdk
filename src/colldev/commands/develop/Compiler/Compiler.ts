@@ -3,7 +3,7 @@ import { join } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import * as uuid from 'uuid';
 import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
-import { ASSETS_PATH } from '../config';
+import { ASSETS_PATH } from '../../../config';
 import { ICompilerStats, ICompilerStatus } from './ICompilerStatus';
 import { cleanupAssets } from './utils/cleanupAssets';
 import { getModulePackageMainPath } from './utils/getModulePackageMainPath';

@@ -3,13 +3,13 @@ import { Destroyable } from 'destroyable';
 import * as React from 'react';
 import { combineLatest } from 'rxjs';
 import { forEver, forImmediate } from 'waitasecond';
-import { BrowserSpawner } from '../../BrowserSpawner/BrowserSpawner';
-import { Compiler } from '../../Compiler/Compiler';
-import { compilerStatusToJson } from '../../Compiler/utils/compilerStatusToJson';
-import { Server } from '../../Server/Server';
-import { OutputComponent } from '../../OutputComponent';
 import { ICommand } from '../ICommand';
+import { BrowserSpawner } from './BrowserSpawner/BrowserSpawner';
+import { Compiler } from './Compiler/Compiler';
+import { compilerStatusToJson } from './Compiler/utils/compilerStatusToJson';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
+import { OutputComponent } from './OutputComponent';
+import { Server } from './Server/Server';
 
 export class ColldevDevelop extends Destroyable implements ICommand<IColldevDevelopOptions, any> {
     private compiler: Compiler;
