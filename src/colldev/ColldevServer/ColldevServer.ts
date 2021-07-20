@@ -16,16 +16,13 @@ import { IServerStatus } from './IServerStatus';
 // TODO: !!! Just server
 
 /**
- * Internally using only collboardUrl, port and expose but it is usefull to present all the args in /stats route
+ * Internally using only collboardUrl, port and expose but it is usefull to present all the args in /status route
  */
 interface IColldevServerOptions extends IColldevDevelopOptions {
     path: string;
 }
 export class ColldevServer extends Destroyable implements IDestroyable {
-    constructor(
-        private compiler: Compiler,
-        private readonly options: IColldevServerOptions,
-    ) {
+    constructor(private compiler: Compiler, private readonly options: IColldevServerOptions) {
         super();
         this.init();
     }
@@ -91,7 +88,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
             <p>Hello from Collboard.com modules SDK toolkit:</p>
             <ul>
                 <li>To test currently developed modules go to <a href="${this.openCollboardUrl}">${this.openCollboardUrl}</a>.</li>
-                <li>To show current stats to <a href="/stats">/stats</a>.</li>
+                <li>To show current stats to <a href="/status">/status</a>.</li>
                 <li>To learn more <a href="https://github.com/collboard/modules-sdk">https://github.com/collboard/modules-sdk</a>.</li>
             </ul>
 
@@ -111,7 +108,7 @@ export class ColldevServer extends Destroyable implements IDestroyable {
             `);
         });
 
-        this.expressApp.get('/stats', (req, res) => {
+        this.expressApp.get('/status', (req, res) => {
             // TODO: Pretty print sended json
             res.type('application/javascript').send({
                 // TODO: Add version
@@ -197,7 +194,6 @@ export class ColldevServer extends Destroyable implements IDestroyable {
                     this.serverStatusUpdate((serverStatusValue) => {
                         delete serverStatusValue.clients[instanceUUID];
                     });
-
                 });
             });
 

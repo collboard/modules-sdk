@@ -28,7 +28,7 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
     }
 
     public status() {
-        // TODO: !!! DRY wit /stats and /stats -> /status
+        // TODO: !!! DRY wit /status 
         return {
             error: `We are still working on automatical deployment`,
             details: `Please send us your work to dev@collboard.com`,
