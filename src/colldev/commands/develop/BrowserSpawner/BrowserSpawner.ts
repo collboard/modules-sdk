@@ -34,7 +34,11 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
         } /* not else */
 
         const page = await this.newPage();
-        await page.goto(await this.server.openCollboardUrl());
+        await page.setExtraHTTPHeaders({
+            // Note: this is for bypassing localtunnels warning
+            'Bypass-Tunnel-Reminder': 'true',
+        });
+        await page.goto(await this.server.openCollboardUrl(), {});
     }
 
     private async newPage(): Promise<Page> {

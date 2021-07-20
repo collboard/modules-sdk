@@ -5,8 +5,6 @@ import { getFreshPortflag } from './utils/getFreshPortFlag';
 
 jest.setTimeout(1000 * 60);
 
-// TODO:  !!! Testing exposed
-
 describe('the errored modules', () => {
     /*/
     it('should PASS when testing exit codes', async () => {
@@ -31,7 +29,8 @@ describe('the errored modules', () => {
     /**/
 
     async function createFlags() {
-        const popupTestingBrowser = true;
+        const popupTestingBrowser = false;
+        // TODO: Some more systematic exposed, headfull, other browser and combination testing
         return `--open multiple --exit --disconnect ${
             popupTestingBrowser ? '' : '--headless'
         } ${await getFreshPortflag()} ${await getCollboardUrlFlag()}`;
