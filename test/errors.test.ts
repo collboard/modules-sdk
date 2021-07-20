@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { execCommand } from './utils/execCommand';
-import { getFreshPortOption } from './utils/getFreshPortOption';
+import { getFreshPortflag } from './utils/getFreshPortFlag';
 
 jest.setTimeout(1000 * 60);
 
@@ -30,7 +30,7 @@ describe('the errored modules', () => {
     it(`should NOT crash when there is NO ERROR in the module`, async () => {
         await expect(
             execCommand({
-                command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --open multiple --exit -c http://localhost:9977/ --disconnect ${await getFreshPortOption()}`,
+                command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --open multiple --exit -c http://localhost:9977/ --disconnect ${await getFreshPortflag()}`,
                 cwd: join(__dirname, '..'),
             }),
         ).resolves.not.toThrow();
@@ -50,7 +50,7 @@ describe('the errored modules', () => {
         it(`should crash when there is a ${errorType.split('-').join(' ').toUpperCase()} in the module`, async () => {
             await expect(
                 execCommand({
-                    command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/${errorType} --open multiple --exit --headless -c http://localhost:9977/ --disconnect ${await getFreshPortOption()}`,
+                    command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/${errorType} --open multiple --exit --headless -c http://localhost:9977/ --disconnect ${await getFreshPortflag()}`,
                     cwd: join(__dirname, '..'),
                 }),
             ).rejects.toThrow();
