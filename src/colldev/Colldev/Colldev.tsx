@@ -5,11 +5,12 @@ import { Instance, render } from 'ink';
 import { getColldevPackageContent } from '../Compiler/utils/colldevPackage';
 import { ColldevDevelop } from './commands/develop/ColldevDevelop';
 import { ICommand } from './commands/ICommand';
+import { ColldevPublish } from './commands/publish/ColldevPublish';
 import { IColldevOptions } from './IColldevOptions';
 
 export class Colldev extends Destroyable implements IDestroyable {
     private program: commander.Command;
-    private commands: Array<ICommand<IColldevOptions, any>> = [new ColldevDevelop() /* !!! , new ColldevPublish()*/];
+    private commands: Array<ICommand<IColldevOptions, any>> = [new ColldevDevelop(), new ColldevPublish()];
     private renderingInstance: Instance | null = null;
 
     constructor(readonly argv?: string[]) {
