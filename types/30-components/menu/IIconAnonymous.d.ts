@@ -1,7 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IAwaitable } from 'destroyable';
+import { IAwaitable } from '../../40-utils/IAwaitable';
 import { string_char, string_char_emoji } from '../../40-utils/typeAliases';
 import { string_icon } from './icons';
 /**

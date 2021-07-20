@@ -1,7 +1,9 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { Destroyable, IDestroyable, Registration } from 'destroyable';
+import { Destroyable } from '../../40-utils/destroyables/Destroyable';
+import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
+import { Registration } from '../../40-utils/destroyables/Registration';
 import { FocusSystem } from '../FocusSystem/0-FocusSystem';
 import { ShortcutsSystem } from '../ShortcutsSystem/0-ShortcutsSystem';
 import { ToolbarName } from './0-ToolbarSystem';

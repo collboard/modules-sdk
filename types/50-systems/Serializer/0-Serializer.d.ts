@@ -1,8 +1,8 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { Registration } from 'destroyable';
 import { ISerializable, ISerialized, ISerializeRule } from 'everstorage';
+import { Registration } from '../../40-utils/destroyables/Registration';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
 /**

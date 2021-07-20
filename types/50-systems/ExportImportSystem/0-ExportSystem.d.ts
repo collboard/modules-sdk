@@ -1,8 +1,8 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { Registration } from 'destroyable';
 import { IVector } from 'xyzt';
+import { Registration } from '../../40-utils/destroyables/Registration';
 import { AbstractSystem } from '../AbstractSystem';
 import { IExportFileOptions } from './interfaces/IExportFileOptions';
 import { IFileExportSupporter } from './interfaces/IFileExportSupporter';

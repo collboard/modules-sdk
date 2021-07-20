@@ -84,7 +84,7 @@ export declare class ExtraJsxSystem extends AbstractSystem {
      * TODO: Options
      * TODO: !! Rename to registerExtraJsx but before find better name to ExtraJsx
      */
-    register(place: ExtraJsxPlace, order: number, jsx: JSX.Element): import('destroyable').Registration;
+    register(place: ExtraJsxPlace, order: number, jsx: JSX.Element): import('../../CollboardSdk').Registration;
     render(place: ExtraJsxPlace): JSX.Element;
     private getPlaceStorage;
 }

@@ -9,6 +9,7 @@
  */
 export declare class HighOrderError extends Error {
     readonly lowOrderError: Error;
+    readonly highOrderExplanation: string;
     readonly name: string;
-    constructor(lowOrderError: Error, highOrderMessage: string);
+    constructor(lowOrderError: Error, highOrderExplanation: string);
 }

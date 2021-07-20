@@ -2,8 +2,9 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 /// <reference types="react" />
-import { IAwaitable, IDestroyable } from 'destroyable';
 import { IIconAnonymous } from '../../30-components/menu/IIconAnonymous';
+import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
+import { IAwaitable } from '../../40-utils/IAwaitable';
 import { IFactorable, IFactory } from '../../40-utils/IFactory';
 import { string_css_cursor } from '../../40-utils/typeAliases';
 import { FocusScopeName } from '../FocusSystem/0-FocusSystem';
@@ -17,7 +18,7 @@ export interface IToolbarIcon extends IIconAnonymous {
      */
     name?: string;
     /**
-     * This will be called when icon is selected and expect to return registration which will be isDestroyed when user unselects
+     * This will be called when icon is selected and expect to return registration which will be destroyed when user unselects
      * When this is defined, icon on toolbar is selectable.
      * Note: Prefer to use onActivate instead of onClick
      */

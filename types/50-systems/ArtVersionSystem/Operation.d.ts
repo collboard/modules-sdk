@@ -1,8 +1,9 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { Destroyable, IDestroyable } from 'destroyable';
 import { Commit } from '../../10-database/Commit';
+import { Destroyable } from '../../40-utils/destroyables/Destroyable';
+import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
 import { ClosePreventionSystem } from '../ClosePreventionSystem/0-ClosePreventionSystem';
 import { IClosePreventable } from '../ClosePreventionSystem/IClosePreventable';

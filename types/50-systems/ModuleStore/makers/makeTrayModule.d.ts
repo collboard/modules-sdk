@@ -14,7 +14,7 @@ import { IModuleManifest } from '../interfaces/IModuleManifest';
  *
  * @collboard-modules-sdk
  */
-export declare function makeTrayModule<TArt extends Abstract2dArt>(protoModule: {
+export declare function makeTrayModule<Art extends Abstract2dArt>(protoModule: {
     manifest?: IModuleManifest;
     /**
      * Toolbar icon
@@ -27,5 +27,5 @@ export declare function makeTrayModule<TArt extends Abstract2dArt>(protoModule: 
     /**
      * Function returning new Art from id and position
      */
-    newArtMaker: (id: string, position: Vector) => TArt;
+    newArtMaker: (id: string, position: Vector) => Art;
 }): IFactory<IModuleDefinition>;

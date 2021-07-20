@@ -1,7 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IAwaitable } from 'destroyable';
+import { IAwaitable } from '../../../40-utils/IAwaitable';
 import { string_module_name } from '../../../40-utils/typeAliases';
 /**
  * Activator saves the information which module should be synced/installed

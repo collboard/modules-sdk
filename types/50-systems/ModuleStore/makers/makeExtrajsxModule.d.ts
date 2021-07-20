@@ -2,7 +2,7 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 /// <reference types="react" />
-import { IAwaitable } from 'destroyable';
+import { IAwaitable } from '../../../40-utils/IAwaitable';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { ExtraJsxPlace } from '../../ExtraJsxSystem/0-ExtraJsxSystem';
 import { IModuleDefinition } from '../interfaces/IModule';

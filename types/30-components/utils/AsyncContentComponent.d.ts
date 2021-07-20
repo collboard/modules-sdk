@@ -2,7 +2,7 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 /// <reference types="react" />
-import { IAwaitable } from 'destroyable';
+import { IAwaitable } from '../../40-utils/IAwaitable';
 import { IFactorable } from '../../40-utils/IFactory';
 interface IAsyncContentComponentProps {
     /**

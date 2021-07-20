@@ -17,7 +17,7 @@ export interface IWrappedValue {
 export declare class AttributesSystem extends AbstractSystem {
     private attributesRules;
     protected init(): Promise<void>;
-    registerAttributeRule(rule: IAttributeRule<attribute_value>): import('destroyable').Registration;
+    registerAttributeRule(rule: IAttributeRule<attribute_value>): import('../../CollboardSdk').Registration;
     /**
      *
      * Note: this is not async because when it need to do some async stuff it will return AsyncContentComponent immediatelly and load in in the fly

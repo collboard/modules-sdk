@@ -1,7 +1,8 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { Destroyable, IDestroyable } from 'destroyable';
+import { Destroyable } from '../destroyables/Destroyable';
+import { IDestroyable } from '../destroyables/IDestroyable';
 import { IThrottleQueueOptions, ThrottleQueue } from './ThrottleQueue';
 /**
  * @collboard-modules-sdk

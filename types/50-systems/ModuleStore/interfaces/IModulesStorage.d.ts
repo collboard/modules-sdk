@@ -1,8 +1,8 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IDestroyable } from 'destroyable';
 import { BehaviorSubject } from 'rxjs';
+import { IDestroyable } from 'touchcontroller';
 import { string_module_name } from '../../../40-utils/typeAliases';
 import { IModule, IModuleDefinition } from './IModule';
 /**

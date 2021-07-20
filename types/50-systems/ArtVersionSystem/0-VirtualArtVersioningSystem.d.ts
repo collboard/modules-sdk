@@ -1,7 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IDestroyable } from 'destroyable';
+import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
 import { MaterialArtVersioningSystem } from './0-MaterialArtVersioningSystem';
 import { IArtVersioningSystem } from './IArtVersionSystem';
 /**

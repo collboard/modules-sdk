@@ -1,9 +1,9 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IAwaitable } from 'destroyable';
 import * as React from 'react';
 import { IModalProps } from '../../../30-components/modal/Modal';
+import { IAwaitable } from '../../../40-utils/IAwaitable';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { TranslationsSystem } from '../../TranslationsSystem/0-TranslationsSystem';
 import { IModuleDefinition } from '../interfaces/IModule';
