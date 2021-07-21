@@ -26,7 +26,7 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
         if (open === 'none') {
             return;
         } else if (open === 'single') {
-            await forTime(parseInt(wait,10));
+            await forTime(parseInt(wait, 10));
             if (Object.values(this.server.serverStatus.value.clients).length) {
                 // Note: There is already some client connected
                 return;
@@ -39,6 +39,10 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
             'Bypass-Tunnel-Reminder': 'true',
         });
         await page.goto(await this.server.openCollboardUrl(), {});
+        await page.evaluate(() => {
+            localStorage.setItem('Collboard_DevelopmentWarning_accepted', 'true');
+            localStorage.setItem('Collboard_EuCookiesWarning_accepted', 'true');
+        });
     }
 
     private async newPage(): Promise<Page> {
