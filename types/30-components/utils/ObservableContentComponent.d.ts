@@ -2,8 +2,8 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 /// <reference types="react" />
+import { IAwaitable } from 'destroyable';
 import { Observable } from 'rxjs';
-import { IAwaitable } from '../../40-utils/IAwaitable';
 /**
  * TODO: Make from this some microlibrary
  */

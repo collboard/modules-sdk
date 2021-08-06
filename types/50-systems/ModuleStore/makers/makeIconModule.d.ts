@@ -1,7 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IAwaitable } from '../../../40-utils/IAwaitable';
+import { IAwaitable } from 'destroyable';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { ToolbarName } from '../../ToolbarSystem/0-ToolbarSystem';
 import { IToolbarIcon } from '../../ToolbarSystem/IToolbarIcon';

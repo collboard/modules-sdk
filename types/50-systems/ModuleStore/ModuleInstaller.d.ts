@@ -1,9 +1,8 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
+import { Destroyable, IDestroyable } from 'destroyable';
 import { BehaviorSubject } from 'rxjs';
-import { Destroyable } from '../../40-utils/destroyables/Destroyable';
-import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
 import { string_module_name } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { IDependency } from './interfaces/IDependencies';

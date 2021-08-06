@@ -1,7 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IDestroyable } from 'touchcontroller';
+import { IDestroyable } from 'destroyable';
 import { string_module_category } from '../../../40-utils/typeAliases';
 import { AbstractSystem } from '../../AbstractSystem';
 import { IDependency } from '../interfaces/IDependencies';

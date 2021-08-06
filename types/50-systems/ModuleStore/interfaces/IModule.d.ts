@@ -1,8 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IDestroyable } from '../../../40-utils/destroyables/IDestroyable';
-import { IAwaitable } from '../../../40-utils/IAwaitable';
+import { IAwaitable, IDestroyable } from 'destroyable';
 import { IFactorable } from '../../../40-utils/IFactory';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IModuleManifest } from './IModuleManifest';

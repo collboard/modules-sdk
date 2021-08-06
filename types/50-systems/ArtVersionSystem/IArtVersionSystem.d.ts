@@ -1,9 +1,10 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
+import { IDestroyable } from 'destroyable';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Commit } from '../../10-database/Commit';
-import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
+import { ICommitData } from '../../10-database/interfaces/ICommitData';
 import { string_uuid } from '../../40-utils/typeAliases';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
 import { CornerstoneArt } from '../../71-arts/30-CornerstoneArt';
@@ -19,25 +20,25 @@ export interface IArtVersioningSystem extends IDestroyable {
     readonly artsObservable: Observable<AbstractArt>;
     readonly permissions: IPermissions;
     readonly clientUuid: string_uuid;
-    readonly lastCommit: Commit | null;
+    readonly lastCommit: ICommitData | null;
     readonly lastCommitId: number;
-    readonly commits: Commit[];
-    readonly commitsPlaced: Commit[];
+    readonly commits: ICommitData[];
+    readonly commitsPlaced: ICommitData[];
     readonly arts: AbstractArt[];
     readonly artsPlaced: AbstractArt[];
     readonly cornerstoneArts: BehaviorSubject<CornerstoneArt>;
-    readonly sortCommitsByOperationId: Commit[][];
-    findPreviousCommit(commit: Commit): Commit | null;
-    findNextCommits(commit: Commit): Commit[];
-    findNextCommit(commit: Commit): Commit | null;
-    hasNextCommits(commit: Commit): boolean;
-    findOriginCommit(commit: Commit): Commit;
-    isLastInItsTree(commit: Commit): boolean;
-    findLastCommitOfArt(art: AbstractArt): Commit | null;
-    findCommitById(commitId: string_uuid | null | undefined): Commit | null;
-    findCommitsByOperationId(operationId: string_uuid): Commit[];
+    readonly sortCommitsByOperationId: ICommitData[][];
+    findPreviousCommit(commit: ICommitData): ICommitData | null;
+    findNextCommits(commit: ICommitData): ICommitData[];
+    findNextCommit(commit: ICommitData): ICommitData | null;
+    hasNextCommits(commit: ICommitData): boolean;
+    findOriginCommit(commit: ICommitData): ICommitData;
+    isLastInItsTree(commit: ICommitData): boolean;
+    findLastCommitOfArt(art: AbstractArt): ICommitData | null;
+    findCommitById(commitId: string_uuid | null | undefined): ICommitData | null;
+    findCommitsByOperationId(operationId: string_uuid): ICommitData[];
     signAs(moduleSignature: IModuleSignature): IArtVersioningSystem;
     createOperation(operationName: string): IFreshMaterialOperation;
     setCommitWasPersisted(commitId: string_uuid, id: number): void;
-    _USE_ONLY_INSIDE_CORE_pushCommit(...commits: Commit[]): Promise<void>;
+    _USE_ONLY_INSIDE_CORE_pushCommit(...commits: ICommitData[]): Promise<void>;
 }

@@ -2,7 +2,8 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 import { string_uri_part, string_uuid, string_version } from '../40-utils/typeAliases';
-export declare class Commit {
+import { ICommitData } from './interfaces/ICommitData';
+export declare class Commit implements ICommitData {
     [index: string]: string | number | null | any;
     id: number;
     boardId: string_uuid;
@@ -26,5 +27,5 @@ export declare class Commit {
     uriId: string_uri_part | null;
     artPolygon: string | null;
     artClass: string;
-    art: object;
+    art: any;
 }

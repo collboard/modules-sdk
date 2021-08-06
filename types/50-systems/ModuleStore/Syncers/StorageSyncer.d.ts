@@ -1,7 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { IDestroyable } from '../../../40-utils/destroyables/IDestroyable';
+import { IDestroyable } from 'destroyable';
 import { string_module_name } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { IModule } from '../interfaces/IModule';

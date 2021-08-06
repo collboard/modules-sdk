@@ -2,8 +2,8 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 /// <reference types="react" />
+import { IAwaitable } from 'destroyable';
 import { IVector } from 'xyzt';
-import { IAwaitable } from '../40-utils/IAwaitable';
 import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
 import { AbstractPlacedArt } from './25-AbstractPlacedArt';
 /**

@@ -1,9 +1,8 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { Commit } from '../../10-database/Commit';
-import { Destroyable } from '../../40-utils/destroyables/Destroyable';
-import { IDestroyable } from '../../40-utils/destroyables/IDestroyable';
+import { Destroyable, IDestroyable } from 'destroyable';
+import { ICommitData } from '../../10-database/interfaces/ICommitData';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
 import { ClosePreventionSystem } from '../ClosePreventionSystem/0-ClosePreventionSystem';
 import { IClosePreventable } from '../ClosePreventionSystem/IClosePreventable';
@@ -38,7 +37,7 @@ export declare class Operation
      */
     valuable(): this;
     takeArts(...previousArts: AbstractArt[]): this;
-    takeCommits(...previousCommits: Commit[]): this;
+    takeCommits(...previousCommits: ICommitData[]): this;
     private takeArtsOrCommitsOrNullsOrOrigins;
     newArts(...arts: AbstractArt[]): this;
     private unpushedCommits;

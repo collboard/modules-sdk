@@ -87,47 +87,6 @@ export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModa
                     export const create3dRotation = (window as any).CollboardSdk.create3dRotation;
                     
 
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/AlreadyDestroyedError.d.ts
-                    export const AlreadyDestroyedError = (window as any).CollboardSdk.AlreadyDestroyedError;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/Destroyable.d.ts
-                    export const Destroyable = (window as any).CollboardSdk.Destroyable;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/DestroyableLoop.d.ts
-                    export const DestroyableLoop = (window as any).CollboardSdk.DestroyableLoop;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/IDestroyable.d.ts
-                    export const IDestroyable = (window as any).CollboardSdk.IDestroyable;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/IRegisterItemsOptions.d.ts
-                    export const IRegisterItemsOptions = (window as any).CollboardSdk.IRegisterItemsOptions;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/registerItemsInArray.d.ts
-                    export const registerItemsInArray = (window as any).CollboardSdk.registerItemsInArray;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/registerPairsInObject.d.ts
-                    export const registerPairsInObject = (window as any).CollboardSdk.registerPairsInObject;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/Registration.d.ts
-                    export const Registration = (window as any).CollboardSdk.Registration;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/softDestroy.d.ts
-                    export const softDestroy = (window as any).CollboardSdk.softDestroy;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/destroyables/TeardownLogic.d.ts
-                    export const ITeardownLogic = (window as any).CollboardSdk.ITeardownLogic;
-export const teardown = (window as any).CollboardSdk.teardown;
-                    
-
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/dialogues/alertDialogue.d.ts
                     export const alertDialogue = (window as any).CollboardSdk.alertDialogue;
                     
@@ -178,10 +137,6 @@ export const NotFoundErrorForModule = (window as any).CollboardSdk.NotFoundError
                     export const getWindowSize = (window as any).CollboardSdk.getWindowSize;
                     
 
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/IAwaitable.d.ts
-                    export const IAwaitable = (window as any).CollboardSdk.IAwaitable;
-                    
-
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/IFactory.d.ts
                     export const IFactory = (window as any).CollboardSdk.IFactory;
 export const IFactorable = (window as any).CollboardSdk.IFactorable;
@@ -198,10 +153,6 @@ export const factor = (window as any).CollboardSdk.factor;
 
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/isNumeric.d.ts
                     export const isNumeric = (window as any).CollboardSdk.isNumeric;
-                    
-
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/ISubscription.d.ts
-                    export const ISubscription = (window as any).CollboardSdk.ISubscription;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/isValidUriId.d.ts

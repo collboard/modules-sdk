@@ -1,11 +1,11 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { Commit } from '../../10-database/Commit';
+import { ICommitData } from '../../10-database/interfaces/ICommitData';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
 interface GenericFreshOperation<TOngoingOperation extends IOngoingOperation> {
     takeArts(...previousArts: AbstractArt[]): IOngoingOperation;
-    takeCommits(...previousCommits: Commit[]): IOngoingOperation;
+    takeCommits(...previousCommits: ICommitData[]): IOngoingOperation;
     newArts(...arts: AbstractArt[]): IOngoingOperation;
 }
 export declare type IFreshOperation = GenericFreshOperation<IOngoingOperation>;
