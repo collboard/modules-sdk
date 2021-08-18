@@ -69,9 +69,4 @@ export declare type IModuleManifestLicense = string_license | ILicense;
  *
  * @collboard-modules-sdk
  */
-export declare type IModuleManifestTranslation =
-    | string
-    | (Record<string_tranlate_language, string> & {
-          en?: string;
-          cs?: string;
-      });
+export declare type IModuleManifestTranslation = string | Partial<Record<string_tranlate_language, string>>;

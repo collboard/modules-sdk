@@ -2,7 +2,7 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 import * as React from 'react';
-export interface IModalProps extends React.PropsWithChildren<{}> {
+export declare type IModalProps = React.PropsWithChildren<{
     /**
      * Modal title
      */
@@ -31,7 +31,7 @@ export interface IModalProps extends React.PropsWithChildren<{}> {
      * Is the modal full page height?
      */
     fullSize?: boolean;
-}
+}>;
 /**
  * Modal component
  *

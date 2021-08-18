@@ -1,7 +1,8 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { StorageSyncer } from '../../50-systems/ModuleStore/Syncers/StorageSyncer';
+import { ISystemsExtended } from '../../50-systems/00-SystemsContainer/ISystems';
+import { IStorageSyncerOptions, StorageSyncer } from '../../50-systems/ModuleStore/Syncers/StorageSyncer';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 /**
  * ColldevSyncer install/uninstall modules according colldev CLI command server
@@ -17,6 +18,7 @@ export declare class ColldevSyncer extends StorageSyncer {
     get colldevUrl(): string;
     set colldevUrl(colldevUrl: string);
     clientStatus: IColldevSyncerSocket.clientStatus;
+    constructor(systems: ISystemsExtended, options?: IStorageSyncerOptions);
     protected initSyncer(): Promise<void>;
     private reestablishConnection;
     private sendClientStatus;

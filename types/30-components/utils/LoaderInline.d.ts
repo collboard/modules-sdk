@@ -3,9 +3,9 @@
 
 import * as React from 'react';
 import { IArrayable } from '../../40-utils/toArray';
-interface ILoaderInlineProps extends React.PropsWithChildren<{}> {
+declare type ILoaderInlineProps = React.PropsWithChildren<{
     icon?: string;
     animation?: IArrayable<string>;
-}
+}>;
 export declare function LoaderInline({ children, icon, animation }: ILoaderInlineProps): JSX.Element;
 export {};

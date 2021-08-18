@@ -2,7 +2,7 @@
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
 import * as React from 'react';
-interface ICategorizedModalProps extends React.PropsWithChildren<{}> {
+declare type ICategorizedModalProps = React.PropsWithChildren<{
     /**
      * Modal title
      */
@@ -27,7 +27,7 @@ interface ICategorizedModalProps extends React.PropsWithChildren<{}> {
      * *Note: this is highly suggested*
      */
     fullSize?: boolean;
-}
+}>;
 interface ICategorizedModalState {
     menuOpen: boolean;
 }

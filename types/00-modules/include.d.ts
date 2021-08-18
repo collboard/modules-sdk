@@ -90,7 +90,7 @@ import './ui/basic/Error404ForBoard';
 import './ui/basic/Error404ForModule';
 import './ui/basic/EuCookiesWarningModule';
 import './ui/basic/FullscreenModule';
-import './ui/basic/HackathonAnnouncementModule';
+import './ui/basic/RemoteAnnouncementsModule';
 import './ui/basic/Import/Import';
 import './ui/basic/LanguageSelectModule';
 import './ui/basic/Menus';

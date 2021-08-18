@@ -3,6 +3,7 @@
 
 /// <reference types="react" />
 import { string_module_name, string_url } from '../../40-utils/typeAliases';
+import { string_tranlate_language } from '../TranslationsSystem/0-TranslationsSystem';
 /**
  * Similar interface to Notification Web API
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Notification
@@ -16,15 +17,20 @@ export interface INotification {
     readonly tag: string;
     readonly module?: string_module_name;
     readonly actions?: INotificationAction[];
-    readonly title?: string | JSX.Element;
-    readonly subtitle?: string | JSX.Element;
-    readonly body?: string | JSX.Element;
+    readonly title?: INotificationMessage;
+    readonly subtitle?: INotificationMessage;
+    readonly body?: INotificationMessage;
     readonly type?: 'info' | 'warning' | 'error' | 'success';
     readonly priority?: number;
     readonly places?: NotificationPlace[];
     readonly canBeClosed?: boolean;
-    readonly onClick?: INotificationCallback;
+    readonly onClick?: INotificationOnClickHandler;
+    readonly href?: string_url;
 }
+export declare type INotificationMessage =
+    | INotificationBaseMessage
+    | Partial<Record<string_tranlate_language, INotificationBaseMessage>>;
+export declare type INotificationBaseMessage = string | JSX.Element;
 /**
  * @collboard sdk
  */
@@ -43,13 +49,13 @@ export interface INotificationAction {
     /**
      *The string describing the action that is displayed to the user.
      */
-    readonly title: string;
+    readonly title: INotificationMessage;
     /**
      * The URL of the image used to represent the notification when there is not enough space to display the notification itself.
      */
     readonly icon?: string;
     readonly type?: 'ok' | 'cancel' | 'more' | 'primary';
-    readonly onClick?: INotificationCallback;
+    readonly onClick?: INotificationOnClickHandler;
     readonly href?: string_url;
 }
-export declare type INotificationCallback = () => void;
+export declare type INotificationOnClickHandler = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;

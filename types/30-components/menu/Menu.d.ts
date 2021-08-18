@@ -5,7 +5,7 @@ import * as React from 'react';
 /**
  * @collboard-modules-sdk
  */
-interface IMenuProps extends React.PropsWithChildren<{}> {
+declare type IMenuProps = React.PropsWithChildren<{
     /**
      * Menu orientation
      *
@@ -19,7 +19,7 @@ interface IMenuProps extends React.PropsWithChildren<{}> {
      */
     className?: string;
     onClick?: React.MouseEventHandler<any>;
-}
+}>;
 /**
  * Menu component
  *

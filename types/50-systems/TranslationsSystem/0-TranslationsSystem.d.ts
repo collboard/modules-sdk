@@ -1,6 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
+/// <reference types="react" />
 import 'moment/locale/cs';
 import 'moment/locale/sk';
 import { Observable } from 'rxjs';
@@ -18,8 +19,11 @@ export declare type string_tranlate_name = string;
 export declare type string_tranlate_name_not_normalized = string;
 /**
  * Semantic helper; For example "cs" or "en"
+ *
+ * TODO: Maybe use enum
+ * TODO: Rename - remove string_ prefix like ITranslateLanguageCode
  */
-export declare type string_tranlate_language = string;
+export declare type string_tranlate_language = 'en' | 'cs' | 'sk';
 export interface ITranslationMessages {
     [key: string]: string;
 }
@@ -27,6 +31,7 @@ export interface ITranslationMessages {
  * TranslationsSystem manages messages across core, systems and modules.
  *
  * @collboard-system
+ *
  */
 export declare class TranslationsSystem extends AbstractSystem {
     private translateMessagesRecord;
@@ -51,7 +56,10 @@ export declare class TranslationsSystem extends AbstractSystem {
     readonly Translate: any;
     private _Translate;
     useTemplate(html: string): string;
-    pickMessage(messageTranslation: string | Record<string_tranlate_language, string>): string;
+    pickMessage(messageTranslation: string | Partial<Record<string_tranlate_language, string>>): string;
+    pickMessageJsx(
+        messageTranslation: string | JSX.Element | Partial<Record<string_tranlate_language, string | JSX.Element>>,
+    ): JSX.Element;
     private get preferedLanguages();
     private get secondaryLanguage();
     showDateAndTime(date: Date | string): string;

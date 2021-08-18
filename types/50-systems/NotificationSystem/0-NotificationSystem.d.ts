@@ -12,5 +12,10 @@ export declare class NotificationSystem extends AbstractSystem {
     notifications: INotification[];
     protected init(): Promise<void>;
     publish(notification: INotification): NotificationRegistration;
-    constrict(notification: INotification): void;
+    /**
+     * Constricts (unpublish) published notification
+     *
+     * @param notification published notification or its tag as string
+     */
+    constrict(notificationOrTag: INotification | string): void;
 }

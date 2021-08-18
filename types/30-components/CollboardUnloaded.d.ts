@@ -3,11 +3,11 @@
 
 import * as React from 'react';
 import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
-interface ICollboardUnloadedComponentProps extends React.PropsWithChildren<{}> {
+declare type ICollboardUnloadedComponentProps = React.PropsWithChildren<{
     isLoading: boolean;
     renderExtraJsx?: boolean;
     systems: ISystemsExtended;
-}
+}>;
 export declare class CollboardUnloadedComponent extends React.Component<ICollboardUnloadedComponentProps> {
     render(): JSX.Element;
 }

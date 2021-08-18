@@ -9,7 +9,7 @@ import { IModulePersister } from '../interfaces/IModulePersister';
 import { IModulesStorage } from '../interfaces/IModulesStorage';
 import { ISyncer } from '../interfaces/ISyncer';
 import { AbstractSyncer } from './AbstractSyncer';
-interface IStorageSyncerOptions {
+export interface IStorageSyncerOptions {
     activateDeclaredModules: boolean;
 }
 /**
@@ -33,4 +33,3 @@ export declare class StorageSyncer
     moduleDeactivate(moduleName: string_module_name): Promise<void>;
     destroy(): Promise<void>;
 }
-export {};
