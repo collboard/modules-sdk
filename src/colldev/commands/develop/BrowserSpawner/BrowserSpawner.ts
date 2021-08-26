@@ -3,21 +3,22 @@ import puppeteer, { Browser, Page } from 'puppeteer-core';
 import { forTime } from 'waitasecond';
 import { IColldevDevelopOptions } from '../IColldevDevelopOptions';
 import { Server } from '../Server/Server';
-
-/*
-import openBrowser from 'open';
-openBrowser(url);
-*/
+import { locateBrowser } from './locateBrowser';
 
 type IBrowserSpawnerOptions = Pick<IColldevDevelopOptions, 'open' | 'browser' | 'headless' | 'wait'>;
 export class BrowserSpawner extends Destroyable implements IDestroyable {
-    private browser: Browser;
+    private puppeteerBrowser: Browser;
 
     // TODO: maybe create separate puppeteer spawner
 
-    constructor(private server: Server, private readonly options: IBrowserSpawnerOptions) {
+    public static async init(server: Server, options: IBrowserSpawnerOptions): Promise<BrowserSpawner> {
+        const browserSpawner = new this(server, options);
+        await browserSpawner.init();
+        return browserSpawner;
+    }
+
+    private constructor(private server: Server, private readonly options: IBrowserSpawnerOptions) {
         super();
-        this.init();
     }
 
     private async init() {
@@ -46,23 +47,22 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
     }
 
     private async newPage(): Promise<Page> {
-        const { browser, headless } = this.options;
-
-        if (!this.browser) {
-            this.browser = await puppeteer.launch({
+        let { browser, headless } = this.options;
+        if (!this.puppeteerBrowser) {
+            this.puppeteerBrowser = await puppeteer.launch({
                 headless,
-                executablePath: browser,
+                executablePath: await locateBrowser(browser),
             });
-            return (await this.browser.pages())[0];
+            return (await this.puppeteerBrowser.pages())[0];
         } else {
-            return await this.browser.newPage();
+            return await this.puppeteerBrowser.newPage();
         }
     }
 
     public async destroy() {
         await super.destroy();
-        if (this.browser) {
-            this.browser.close();
+        if (this.puppeteerBrowser) {
+            this.puppeteerBrowser.close();
         }
     }
 }

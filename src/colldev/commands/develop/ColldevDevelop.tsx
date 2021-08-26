@@ -38,13 +38,9 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                     '-b, --browser <browser>',
                     `` /* TODO: Use here spacetrim */ +
                         `Which browser use\n` +
-                        `Note: Now it accepts only executable path to browser` +
-                        `Note: This flag has no effect with flag "--open none"`,
-                    // TODO: Accept also values like "chrome", "firefox",...
-
-                    // TODO: Put here just "dafault"
-                    //'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
-                    'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                        `It can be "chrome", "firefox" or "edge"` +
+                        `Or executable path to the browser`,
+                    'default',
                 )
                 .option(
                     '-h, --headless',
@@ -99,7 +95,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
 
         this.compiler = new Compiler(path || './');
         this.server = new Server(this.compiler, { path, ...options });
-        this.browserSpawner = new BrowserSpawner(this.server, options);
+        this.browserSpawner = await BrowserSpawner.init(this.server, options);
 
         const endScenarios: Array<Promise<void>> = [forEver()];
 

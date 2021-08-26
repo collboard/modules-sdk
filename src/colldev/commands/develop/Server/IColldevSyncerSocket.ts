@@ -1,3 +1,4 @@
+
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
@@ -7,7 +8,7 @@ export namespace IColldevSyncerSocket {
     export interface IError {
         name: string;
         message: string;
-        stack?: string;
+        stack: string;
     }
     export interface identify {
         // TODO: domain: string_url;

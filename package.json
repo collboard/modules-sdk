@@ -1,6 +1,6 @@
 {
     "name": "@collboard/modules-sdk",
-    "version": "12.9.0-0",
+    "version": "12.11.0-0",
     "description": "Modules SDK toolkit for Collboard.com",
     "license": "SEE LICENSE IN LICENSE",
     "contributors": [
@@ -21,7 +21,7 @@
     "scripts": {
         "test": "jest --config jestconfig.json",
         "lint": "tslint -p tsconfig.json",
-        "develop": "ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world",
+        "develop": "ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --browser edge",
         "prepare": "tsc",
         "prepack": "npm run lint && npm run test",
         "documentation": "typedoc"
