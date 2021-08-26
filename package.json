@@ -39,7 +39,6 @@
         "ink": "^3.0.8",
         "ink-table": "^3.0.0",
         "localtunnel": "^2.0.1",
-        "open": "^8.0.7",
         "puppeteer-core": "^10.1.0",
         "react": "^16.13.1",
         "react-dom": "16.14.*",
