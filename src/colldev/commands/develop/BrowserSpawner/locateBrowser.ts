@@ -1,47 +1,57 @@
-import { apps } from 'open';
+import { access } from 'fs/promises';
 
 /**
  *
- * @param browser It can be "default", "chrome", "firefox" or "edge" or executable path to the browser
+ * @param browser It can be "default", "chrome", "firefox", "safari", "ie", "msie", "edge" or "msedge" or executable path to the browser
  * @returns executable path to browser
  */
 export async function locateBrowser(browser: string): Promise<string> {
-    if (browser === 'default') {
-        browser = 'chrome';
-    }
-
     let executablePath: string;
 
-    if (/^[a-z]+$/.test(browser)) {
-        const app: string | string[] = apps[browser];
+    if (/^[a-zA-Z]+$/.test(browser)) {
+        browser = browser.toLowerCase();
 
-        console.log({ app }, [apps.edge, apps.chrome, apps.firefox]);
+        if (browser === 'default') {
+            browser = 'chrome';
+            // TODO: Get default system browser DO not expect chrome
+        } /* not else */
 
-        if (typeof app === 'string') {
-            executablePath = app;
-        } else if (app.length === 0) {
+        if (browser === 'chrome') {
+            executablePath = await require('locate-chrome')();
+        } else if (browser === 'firefox') {
+            executablePath = await require('locate-firefox')();
+        } else if (browser === 'safari') {
+            // TODO: Implement
             throw new Error(
-                `Can not locate browser "${browser}" in the operating system. You can pass full executable path to --browser`,
+                `Can not find browser Safari in your OS automatically. You can pass full executable path instead. `,
             );
-        } else if (app.length > 1) {
+        } else if (browser === 'ie' || browser === 'msie') {
+            executablePath = await require('locate-ie')();
+        } else if (browser === 'edge' || browser === 'msedge') {
+            // TODO: Implement
             throw new Error(
-                `zzzzzTODO!!!!!!!!zzzzzzzz browser "${browser}" in the operating system. You can pass full executable path to --browser`,
+                `Can not find browser Edge in your OS automatically. You can pass full executable path instead. `,
             );
         } else {
-            executablePath = app[0];
+            throw new Error(`Unknown browser "${browser}". You can pass full executable path instead. `);
         }
-    } else {
+    } else if (/.*[\\/].*/.test(browser)) {
         executablePath = browser;
+    } else {
+        throw new Error(`"${browser}" is not browser name or executable path to the browser.`);
     }
 
-    /*
     try {
         await access(executablePath);
         return executablePath;
     } catch (error) {
         throw new Error(`Can not access browser executable path "${executablePath}".`);
     }
-    */
-
-    return executablePath;
 }
+
+/**
+ * TODO: Implement other browsers like Brave,...
+ * TODO: Installation of the browser
+ * TODO: Get rid of dependency on require('locate-firefox')
+ * TODO: Test on OSx and old windows and win11
+ */
