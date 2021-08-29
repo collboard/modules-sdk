@@ -38,7 +38,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                     '-b, --browser <browser>',
                     `` /* TODO: Use here spacetrim */ +
                         `Which browser use\n` +
-                        `It can be "chrome", "firefox" or "edge"` +
+                        `It can be "chrome", "firefox", "safari", "ie", "msie", "edge" or "msedge"` +
                         `Or executable path to the browser`,
                     'default',
                 )
