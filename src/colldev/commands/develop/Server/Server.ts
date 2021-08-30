@@ -81,7 +81,7 @@ export class Server extends Destroyable implements IDestroyable {
     private async init() {
         this.expressApp = express();
         const { port: portAsString, expose } = this.options;
-        const port = parseInt(portAsString,10);
+        const port = parseInt(portAsString, 10);
 
         this.server = http.createServer(this.expressApp);
         this.socket = new SocketIoServer(this.server, { transports: ['websocket', 'polling'] });
@@ -106,7 +106,7 @@ export class Server extends Destroyable implements IDestroyable {
 
             response.type('text/html').send(`
             <script>
-                var redirectUrl = '${collboardUrl}?colldevUrl='+encodeURIComponent(window.location.toString().split('/open-collboard')[0]);
+                constredirectUrl = '${collboardUrl}?colldevUrl='+encodeURIComponent(window.location.toString().split('/open-collboard')[0]);
                 document.write('Redirecting to <a href="'+redirectUrl+'">'+redirectUrl+'</a>.');
                 window.location = redirectUrl;
             </script>
