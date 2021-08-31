@@ -39,7 +39,7 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
     }
 
     private async newPage(url: string): Promise<void> {
-        let { browser, headless } = this.options;
+        const { browser, headless } = this.options;
 
         const executablePath = await locateBrowser(browser);
 
