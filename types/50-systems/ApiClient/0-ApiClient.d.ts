@@ -6,6 +6,7 @@ import { string_uri_part, string_url, string_version } from '../../40-utils/type
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
 import { MaterialArtVersioningSystem } from '../ArtVersionSystem/0-MaterialArtVersioningSystem';
+import { string_translate_language } from '../TranslationsSystem/0-TranslationsSystem';
 import { ITranslateMessage } from '../TranslationsSystem/ITranslateMessage';
 import { ICreateBoardOptions } from './ICreateBoardOptions';
 import { IGetMyBoardsResponse } from './interfaces/IGetMyBoards';
@@ -27,7 +28,7 @@ export declare class ApiClient extends AbstractSystem {
     createNewBoard(options: Omit<ICreateBoardOptions, 'redirect'>): Promise<string_uri_part>;
     getMyBoards(): Observable<IGetMyBoardsResponse>;
     fileUpload(file: Blob): Promise<string_url>;
-    translateMessages(): Promise<ITranslateMessage[]>;
+    translateMessages(language: string_translate_language): Promise<ITranslateMessage[]>;
     missingTranslateMessage(missingTranslateMessage: ITranslateMessage): Promise<any>;
     private get;
     private post;

@@ -5,19 +5,24 @@ import { Vector } from 'xyzt';
 import { Commit } from './10-database/Commit';
 import { ICommitData } from './10-database/interfaces/ICommitData';
 import { Serializer } from './50-systems/Serializer/0-Serializer';
+import { string_translate_language } from './50-systems/TranslationsSystem/0-TranslationsSystem';
 import { AbstractArt } from './71-arts/20-AbstractArt';
 export declare type ISerializableTypes = Commit | ICommitData | AbstractArt | Vector;
 export declare type ArtSerializer = Serializer<ISerializableTypes>;
 export declare class CollboardApp {
     private rootElement;
     private apiUrl;
+    private readonly language;
     private systems;
     /**
      *
      * @param rootElement
      * @param apiUrl
+     * @param language
+     *
+     * TODO: Probbably make ICollboardAppOptions
      */
-    constructor(rootElement: HTMLDivElement, apiUrl: string);
+    constructor(rootElement: HTMLDivElement, apiUrl: string, language: string_translate_language);
     private loadTranslator;
     private logVersions;
     private run;

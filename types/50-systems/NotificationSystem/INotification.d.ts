@@ -3,7 +3,7 @@
 
 /// <reference types="react" />
 import { string_module_name, string_url } from '../../40-utils/typeAliases';
-import { string_tranlate_language } from '../TranslationsSystem/0-TranslationsSystem';
+import { string_translate_language } from '../TranslationsSystem/0-TranslationsSystem';
 /**
  * Similar interface to Notification Web API
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Notification
@@ -29,7 +29,7 @@ export interface INotification {
 }
 export declare type INotificationMessage =
     | INotificationBaseMessage
-    | Partial<Record<string_tranlate_language, INotificationBaseMessage>>;
+    | Partial<Record<string_translate_language, INotificationBaseMessage>>;
 export declare type INotificationBaseMessage = string | JSX.Element;
 /**
  * @collboard sdk

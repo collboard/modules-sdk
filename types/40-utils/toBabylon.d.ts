@@ -1,7 +1,7 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 
-import { Vector3 } from 'babylonjs';
+import { Vector3 } from '@babylonjs/core/Maths/math.vector';
 import { Vector } from 'xyzt';
 /**
  *

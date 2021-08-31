@@ -13,7 +13,7 @@ import {
     string_url_image,
     string_version,
 } from '../../../40-utils/typeAliases';
-import { string_tranlate_language } from '../../TranslationsSystem/0-TranslationsSystem';
+import { string_translate_language } from '../../TranslationsSystem/0-TranslationsSystem';
 /**
  * Manifest describes the module.
  *
@@ -69,4 +69,4 @@ export declare type IModuleManifestLicense = string_license | ILicense;
  *
  * @collboard-modules-sdk
  */
-export declare type IModuleManifestTranslation = string | Partial<Record<string_tranlate_language, string>>;
+export declare type IModuleManifestTranslation = string | Partial<Record<string_translate_language, string>>;

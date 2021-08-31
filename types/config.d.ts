@@ -4,7 +4,6 @@
 import { string_version } from './40-utils/typeAliases';
 export declare const clientVersion: string_version;
 export declare const PUBLIC_URL: string;
-export declare const ENVIRONMENT: 'PRODUCTION' | 'DEVELOPMENT';
 export declare const SCALE_PIXELS: {
     field: number;
     centimeter: number;
