@@ -1,3 +1,4 @@
+import { spawn } from 'child_process';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { locateBrowser } from 'locate-app';
 import puppeteer, { Browser, Page } from 'puppeteer-core';
@@ -34,28 +35,39 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
             }
         } /* not else */
 
-        const page = await this.newPage();
-        await page.setExtraHTTPHeaders({
-            // Note: this is for bypassing localtunnels warning
-            'Bypass-Tunnel-Reminder': 'true',
-        });
-        await page.goto(await this.server.openCollboardUrl(), {});
-        await page.evaluate(() => {
-            localStorage.setItem('Collboard_DevelopmentWarning_accepted', 'true');
-            localStorage.setItem('Collboard_EuCookiesWarning_accepted', 'true');
-        });
+        await this.newPage(await this.server.openCollboardUrl());
     }
 
-    private async newPage(): Promise<Page> {
+    private async newPage(url: string): Promise<void> {
         let { browser, headless } = this.options;
-        if (!this.puppeteerBrowser) {
-            this.puppeteerBrowser = await puppeteer.launch({
-                headless,
-                executablePath: await locateBrowser(browser),
+
+        const executablePath = await locateBrowser(browser);
+
+        if (/(chrome|edge)/.test(executablePath)) {
+            let page: Page;
+            if (!this.puppeteerBrowser) {
+                this.puppeteerBrowser = await puppeteer.launch({
+                    headless,
+                    executablePath,
+                });
+                page = (await this.puppeteerBrowser.pages())[0];
+            } else {
+                page = await this.puppeteerBrowser.newPage();
+            }
+
+            await page.setExtraHTTPHeaders({
+                // Note: this is for bypassing localtunnels warning
+                'Bypass-Tunnel-Reminder': 'true',
             });
-            return (await this.puppeteerBrowser.pages())[0];
+            await page.goto(url, {});
+            await page.evaluate(() => {
+                localStorage.setItem('Collboard_DevelopmentWarning_accepted', 'true');
+                localStorage.setItem('Collboard_EuCookiesWarning_accepted', 'true');
+            });
         } else {
-            return await this.puppeteerBrowser.newPage();
+            spawn(executablePath, [url]);
+            // TODO: Save child process to destroy it
+            // TODO: Is this working with safari?
         }
     }
 
