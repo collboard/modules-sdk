@@ -1,9 +1,9 @@
 import { Destroyable, IDestroyable } from 'destroyable';
+import { locateBrowser } from 'locate-app';
 import puppeteer, { Browser, Page } from 'puppeteer-core';
 import { forTime } from 'waitasecond';
 import { IColldevDevelopOptions } from '../IColldevDevelopOptions';
 import { Server } from '../Server/Server';
-import { locateBrowser } from './locate/browsers/locateBrowser';
 
 type IBrowserSpawnerOptions = Pick<IColldevDevelopOptions, 'open' | 'browser' | 'headless' | 'wait'>;
 export class BrowserSpawner extends Destroyable implements IDestroyable {

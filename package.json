@@ -21,7 +21,7 @@
     "scripts": {
         "test": "jest --config jestconfig.json",
         "lint": "tslint -p tsconfig.json",
-        "develop": "ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --browser edge",
+        "develop": "ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --browser firefox",
         "prepare": "tsc",
         "prepack": "npm run lint && npm run test",
         "documentation": "typedoc"
@@ -39,6 +39,7 @@
         "ink": "^3.0.8",
         "ink-table": "^3.0.0",
         "localtunnel": "^2.0.1",
+        "locate-app": "^0.4.0",
         "puppeteer-core": "^10.1.0",
         "react": "^16.13.1",
         "react-dom": "16.14.*",
@@ -48,7 +49,6 @@
         "touchcontroller": "^4.0.0",
         "ts-loader": "^8.2.0",
         "typescript": "^4.0.3",
-        "userhome": "^1.0.0",
         "uuid": "^8.3.2",
         "waitasecond": "^1.7.0",
         "webpack": "^5.35.1",

@@ -106,7 +106,7 @@ export class Server extends Destroyable implements IDestroyable {
 
             response.type('text/html').send(`
             <script>
-                constredirectUrl = '${collboardUrl}?colldevUrl='+encodeURIComponent(window.location.toString().split('/open-collboard')[0]);
+                const redirectUrl = '${collboardUrl}?colldevUrl='+encodeURIComponent(window.location.toString().split('/open-collboard')[0]);
                 document.write('Redirecting to <a href="'+redirectUrl+'">'+redirectUrl+'</a>.');
                 window.location = redirectUrl;
             </script>
