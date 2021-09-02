@@ -1,17 +1,27 @@
 import { Box, Text } from 'ink';
 import Table from 'ink-table';
 import * as React from 'react';
-import { AsyncContentComponent } from '../../../utils/AsyncContentComponent';
 import { objectMap } from '../../../utils/objectMap';
+import { IBrowserSpawnerStatus } from '../BrowserSpawner/IBrowserSpawnerStatus';
+import { IColldevDevelopOptions } from '../IColldevDevelopOptions';
 import { IServerStatus } from './IServerStatus';
-import { Server } from './Server';
 
 interface IServerStatusOutputComponentProps {
-    server: Server;
+    openCollboardUrl: string;
+    browserSpawnerStatus: IBrowserSpawnerStatus;
     serverStatus: IServerStatus;
+    options: Pick<IColldevDevelopOptions, 'open' | 'wait'>;
 }
 
-export function ServerStatusOutputComponent({ server, serverStatus: { clients } }: IServerStatusOutputComponentProps) {
+/*
+TODO: !!! Matbe name to ServerAndBrowserSpawnerStatusOutputComponent
+*/
+export function ServerStatusOutputComponent({
+    openCollboardUrl,
+    serverStatus: { clients },
+    browserSpawnerStatus: { browserName, spawned },
+    options: { open, wait },
+}: IServerStatusOutputComponentProps) {
     const data = Object.entries(clients)
         .map(([clientUuid, clientData]) => ({ clientUuid, ...clientData }))
         .map(({ boardId, connected, ready, errors, version, clientUuid, modules }) => ({
@@ -33,19 +43,53 @@ export function ServerStatusOutputComponent({ server, serverStatus: { clients } 
         // TODO: Do not show in non-interactive mode
         // TODO: Testing on mobile (with some localtunnel) and QR code
         return (
-            <AsyncContentComponent
-                content={async () => (
-                    <Box borderStyle="single">
-                        <Text color="grey">
-                            Waiting for clients...
-                            <Text color="magenta" bold>
-                                {'\n'}
-                                Please open {await server.openCollboardUrl()}
-                            </Text>
-                        </Text>
-                    </Box>
-                )}
-            />
+            <Box borderStyle="single">
+                <Text color="grey">
+                    {(() => {
+                        switch (open) {
+                            case 'none':
+                                return (
+                                    <Text color="grey">
+                                        Waiting for connection from Collboard...
+                                        <Text color="magenta" bold>
+                                            {`\nPlease open ${openCollboardUrl}`}
+                                        </Text>
+                                    </Text>
+                                );
+                            case 'single':
+                                return (
+                                    <Text color="grey">
+                                        Waiting for {wait} miliseconds connection from Collboard...
+                                        <Text color="magenta" bold>
+                                            {`\n`}
+                                            If there will no connection until then, {browserName} TODO: !!! Real browser
+                                            not deault or invalid on url {openCollboardUrl} will be spawned TODO: Spawn
+                                            status waiting/spawning/sonnected
+                                        </Text>
+                                    </Text>
+                                );
+
+                            case 'multiple':
+                                return (
+                                    <>
+                                        <Text color="grey">Waiting for connection from Collboard...</Text>
+                                        {!spawned ? (
+                                            <Text color="yellow" bold>
+                                                Spawning {browserName} TODO: !!! Real browser not deault or invalid on
+                                                url {openCollboardUrl}
+                                                TODO: Spawn status waiting/spawning/sonnected
+                                            </Text>
+                                        ) : (
+                                            <Text color="green" bold>
+                                                Browser spawned
+                                            </Text>
+                                        )}
+                                    </>
+                                );
+                        }
+                    })()}
+                </Text>
+            </Box>
         );
     }
 
