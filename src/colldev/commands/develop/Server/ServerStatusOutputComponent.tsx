@@ -1,4 +1,5 @@
 import { Box, Text } from 'ink';
+import Spinner from 'ink-spinner';
 import Table from 'ink-table';
 import * as React from 'react';
 import { objectMap } from '../../../utils/objectMap';
@@ -14,7 +15,9 @@ interface IServerStatusOutputComponentProps {
 }
 
 /*
-TODO: !!! Matbe name to ServerAndBrowserSpawnerStatusOutputComponent
+TODO: !!! name to ServerAndBrowserSpawnerStatusOutputComponent
+TODO: !!! Split loading and table phase
+
 */
 export function ServerStatusOutputComponent({
     openCollboardUrl,
@@ -70,20 +73,23 @@ export function ServerStatusOutputComponent({
                                 );
 
                             case 'multiple':
+                                //✔✗
                                 return (
                                     <>
-                                        <Text color="grey">Waiting for connection from Collboard...</Text>
                                         {!spawned ? (
                                             <Text color="yellow" bold>
-                                                Spawning {browserName} TODO: !!! Real browser not deault or invalid on
-                                                url {openCollboardUrl}
-                                                TODO: Spawn status waiting/spawning/sonnected
+                                                [<Spinner type="arrow" />] Spawning {browserName} on url{' '}
+                                                {openCollboardUrl}
                                             </Text>
                                         ) : (
                                             <Text color="green" bold>
-                                                Browser spawned
+                                                [✔] Browser spawned
                                             </Text>
                                         )}
+                                        {'\n'}
+                                        <Text color="yellow">
+                                            [<Spinner type="arrow" />] Waiting for connection from Collboard...
+                                        </Text>
                                     </>
                                 );
                         }
