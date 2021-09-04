@@ -35,11 +35,7 @@ export function OutputComponent({ compiler, server, browserSpawner, options }: I
                         flexDirection="column"
                         borderColor={compilerStatus.errors.length || serverStatus.errors.length ? 'red' : 'white'}
                     >
-                        {/* TODO: !!! Move Box inside CompilerStatusOutputComponent */}
-                        <Box borderStyle="single" borderColor={compilerStatus.errors.length ? 'red' : 'white'}>
-                            <CompilerStatusOutputComponent {...{ compilerStatus }} />
-                        </Box>
-
+                        <CompilerStatusOutputComponent {...{ compilerStatus }} />
                         <ServerStatusOutputComponent
                             {...{ openCollboardUrl, browserSpawnerStatus, serverStatus, options }}
                         />
