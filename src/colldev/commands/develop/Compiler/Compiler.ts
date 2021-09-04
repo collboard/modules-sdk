@@ -108,8 +108,7 @@ export class Compiler extends Destroyable implements IDestroyable {
 
     public async destroy() {
         await super.destroy();
-        // !!! console.log(`--------`);
-        // !!! await cleanupAssets();
+        // TODO: await cleanupAssets();
         this.compiler.close(() => {
             /* TODO: What is this callback about */
         });

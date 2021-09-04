@@ -37,11 +37,8 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
         }
 
         try {
-            await forTime(10 /* !!! */);
             const executablePath = await locateBrowser(browser);
             const browserName = await getAppName(executablePath);
-
-            await forTime(10 /* !!! */);
 
             this.browserSpawnerStatus.next({ ready: false, errors: [], browserName, spawned: false });
 
