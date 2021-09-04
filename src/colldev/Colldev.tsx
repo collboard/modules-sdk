@@ -45,7 +45,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                     const runningCommand = command.run(path, options);
 
                     if (output === 'human') {
-                        this.renderingInstance = render(command.render());
+                        this.renderingInstance = render(command.render(options));
 
                         // TODO: DRY
                         runningCommand

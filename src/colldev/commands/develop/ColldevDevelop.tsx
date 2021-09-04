@@ -30,7 +30,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                     `` /* TODO: Use here spacetrim */ +
                         `"none" for just running colldev without opening the browser;\n` +
                         `"single" for wait some time if the Collboard connects to Colldev, if yes do nothing if no open new browser window with collboard;\n` +
-                        `"multiple" new browser window for each colldev running`,
+                        `"multiple" new browser window for each Colldev running`,
 
                     'single',
                 )
@@ -95,7 +95,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
 
         this.compiler = new Compiler(path || './');
         this.server = new Server(this.compiler, { path, ...options });
-        this.browserSpawner = await BrowserSpawner.init(this.server, options);
+        this.browserSpawner = new BrowserSpawner(this.server, options);
 
         const endScenarios: Array<Promise<void>> = [forEver()];
 
@@ -156,8 +156,17 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
         await Promise.race(endScenarios);
     }
 
-    public render() {
-        return <OutputComponent {...{ compiler: this.compiler, server: this.server }} />;
+    public render(/* Maybe also path*/ options: IColldevDevelopOptions) {
+        return (
+            <OutputComponent
+                {...{
+                    compiler: this.compiler,
+                    server: this.server,
+                    browserSpawner: this.browserSpawner,
+                    options,
+                }}
+            />
+        );
     }
 
     public status() {
