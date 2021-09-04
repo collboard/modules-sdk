@@ -34,5 +34,21 @@ describe('wrong usage of Colldev CLI command', () => {
         expect.assertions(1);
     });
 
+    it(`makes no sense to use json output without exit flag`, async () => {
+        await expect(
+            execCommand({
+                command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --output json`,
+                cwd: join(__dirname, '..'),
+            }),
+        ).rejects.toThrow();
+        await expect(
+            execCommand({
+                command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --output json-raw`,
+                cwd: join(__dirname, '..'),
+            }),
+        ).rejects.toThrow();
+        expect.assertions(2);
+    });
+
     // TODO: More
 });

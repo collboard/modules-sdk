@@ -68,7 +68,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 process.exit(0);
                             })
                             .catch((error) => {
-                                console.info(JSON.stringify(command.status(), jsonReplacer, 4));
+                                console.info(JSON.stringify({ ...command.status(), error }, jsonReplacer, 4));
                                 // TODO: Probbably show the error
                                 process.exit(1);
                             });
@@ -80,7 +80,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 process.exit(0);
                             })
                             .catch((error) => {
-                                console.info(JSON.stringify(command.status(), jsonReplacer));
+                                console.info(JSON.stringify({ ...command.status(), error }, jsonReplacer));
                                 // TODO: Probbably show the error
                                 process.exit(1);
                             });

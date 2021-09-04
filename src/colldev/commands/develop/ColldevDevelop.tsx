@@ -92,7 +92,13 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
     }
 
     public async run(path: string, options: IColldevDevelopOptions) {
-        const { exit, disconnect } = options;
+        const { exit, output, disconnect } = options;
+
+        if (!exit && output !== 'human') {
+            throw new Error(
+                `It makes no sense to use "--output ${output}" without --exit flag. Please change one or another.`,
+            );
+        }
 
         this.compiler = new Compiler(path || './');
         this.server = new Server(this.compiler, { path, ...options });
@@ -185,9 +191,9 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
 
     public status() {
         return {
-            compiler: compilerStatusToJson(this.compiler.compilerStatus.value),
-            server: this.server.serverStatus.value,
-            browserSpawner: this.browserSpawner.browserSpawnerStatus.value,
+            compiler: this.compiler && compilerStatusToJson(this.compiler.compilerStatus.value),
+            server: this.server && this.server.serverStatus.value,
+            browserSpawner: this.browserSpawner && this.browserSpawner.browserSpawnerStatus.value,
         };
     }
 
