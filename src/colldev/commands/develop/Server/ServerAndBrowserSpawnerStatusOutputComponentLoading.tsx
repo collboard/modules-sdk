@@ -32,7 +32,7 @@ export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
                                 <AsyncContentComponent
                                     loader={<Point>Waiting {wait} miliseconds for connection from Collboard</Point>}
                                     content={async () => {
-                                        await forTime(parseInt(wait));
+                                        await forTime(parseInt(wait, 10));
                                         return (
                                             <>
                                                 <Point skipped>
