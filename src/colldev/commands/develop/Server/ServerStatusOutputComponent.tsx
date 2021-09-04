@@ -70,7 +70,7 @@ export function ServerStatusOutputComponent({
                                             await forTime(parseInt(wait));
                                             return (
                                                 <>
-                                                    <Point failed>
+                                                    <Point skipped>
                                                         Waiting {wait} miliseconds for connection from Collboard
                                                     </Point>
                                                     {'\n'}
