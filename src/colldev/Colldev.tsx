@@ -85,7 +85,10 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 process.exit(1);
                             });
                     } else {
-                        console.info(`Unknown flag "--output ${output}".`);
+                        console.info(
+                            chalk.red(`Unknown type of output "${output}", please use "human", "json" or "json-raw".`),
+                        );
+                        process.exit(1);
                     }
                 });
         }
