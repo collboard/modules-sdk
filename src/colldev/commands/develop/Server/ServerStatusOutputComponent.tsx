@@ -48,7 +48,7 @@ export function ServerStatusOutputComponent({
         // TODO: Do not show in non-interactive mode
         // TODO: Testing on mobile (with some localtunnel) and QR code
         return (
-            <Box borderStyle="single">
+            <Box borderStyle="single" borderColor="yellow">
                 <Text color="grey">
                     {(() => {
                         switch (open) {
