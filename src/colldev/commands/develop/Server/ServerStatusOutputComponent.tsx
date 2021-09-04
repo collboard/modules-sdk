@@ -1,8 +1,10 @@
 import { Box, Text } from 'ink';
-import Spinner from 'ink-spinner';
 import Table from 'ink-table';
 import * as React from 'react';
+import { forTime } from 'waitasecond';
+import { AsyncContentComponent } from '../../../utils/AsyncContentComponent';
 import { objectMap } from '../../../utils/objectMap';
+import { Point } from '../../../utils/Point';
 import { IBrowserSpawnerStatus } from '../BrowserSpawner/IBrowserSpawnerStatus';
 import { IColldevDevelopOptions } from '../IColldevDevelopOptions';
 import { IServerStatus } from './IServerStatus';
@@ -53,43 +55,40 @@ export function ServerStatusOutputComponent({
                             case 'none':
                                 return (
                                     <Text color="grey">
-                                        Waiting for connection from Collboard...
                                         <Text color="magenta" bold>
-                                            {`\nPlease open ${openCollboardUrl}`}
+                                            {`Please open ${openCollboardUrl}`}
                                         </Text>
+                                        {'\n'}
+                                        <Point>Waiting for connection from Collboard</Point>
                                     </Text>
                                 );
                             case 'single':
                                 return (
-                                    <Text color="grey">
-                                        Waiting for {wait} miliseconds connection from Collboard...
-                                        <Text color="magenta" bold>
-                                            {`\n`}
-                                            If there will no connection until then, {browserName} TODO: !!! Real browser
-                                            not deault or invalid on url {openCollboardUrl} will be spawned TODO: Spawn
-                                            status waiting/spawning/sonnected
-                                        </Text>
-                                    </Text>
+                                    <AsyncContentComponent
+                                        loader={<Point>Waiting {wait} miliseconds for connection from Collboard</Point>}
+                                        content={async () => {
+                                            await forTime(parseInt(wait));
+                                            return (
+                                                <>
+                                                    <Point failed>
+                                                        Waiting {wait} miliseconds for connection from Collboard
+                                                    </Point>
+                                                    {'\n'}
+                                                    <Point done={spawned}>Spawning {browserName}</Point>
+                                                    {'\n'}
+                                                    <Point>Connection from Collboard</Point>
+                                                </>
+                                            );
+                                        }}
+                                    />
                                 );
 
                             case 'multiple':
-                                //✔✗
                                 return (
                                     <>
-                                        {!spawned ? (
-                                            <Text color="yellow" bold>
-                                                [<Spinner type="arrow" />] Spawning {browserName} on url{' '}
-                                                {openCollboardUrl}
-                                            </Text>
-                                        ) : (
-                                            <Text color="green" bold>
-                                                [✔] Browser spawned
-                                            </Text>
-                                        )}
+                                        <Point done={spawned}>Spawning {browserName}</Point>
                                         {'\n'}
-                                        <Text color="yellow">
-                                            [<Spinner type="arrow" />] Waiting for connection from Collboard...
-                                        </Text>
+                                        <Point done={false}>Connection from Collboard</Point>
                                     </>
                                 );
                         }
