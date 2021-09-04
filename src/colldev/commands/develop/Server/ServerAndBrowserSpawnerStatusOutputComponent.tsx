@@ -9,7 +9,7 @@ import { IBrowserSpawnerStatus } from '../BrowserSpawner/IBrowserSpawnerStatus';
 import { IColldevDevelopOptions } from '../IColldevDevelopOptions';
 import { IServerStatus } from './IServerStatus';
 
-interface IServerStatusOutputComponentProps {
+interface IServerAndBrowserSpawnerStatusOutputComponentProps {
     openCollboardUrl: string;
     browserSpawnerStatus: IBrowserSpawnerStatus;
     serverStatus: IServerStatus;
@@ -17,16 +17,15 @@ interface IServerStatusOutputComponentProps {
 }
 
 /*
-TODO: !!! name to ServerAndBrowserSpawnerStatusOutputComponent
 TODO: !!! Split loading and table phase
 
 */
-export function ServerStatusOutputComponent({
+export function ServerAndBrowserSpawnerStatusOutputComponent({
     openCollboardUrl,
     serverStatus: { clients },
     browserSpawnerStatus: { errors, browserName, spawned },
     options: { open, wait },
-}: IServerStatusOutputComponentProps) {
+}: IServerAndBrowserSpawnerStatusOutputComponentProps) {
     const data = Object.entries(clients)
         .map(([clientUuid, clientData]) => ({ clientUuid, ...clientData }))
         .map(({ boardId, connected, ready, errors, version, clientUuid, modules }) => ({

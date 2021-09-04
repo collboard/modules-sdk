@@ -8,7 +8,7 @@ import { Compiler } from './Compiler/Compiler';
 import { CompilerStatusOutputComponent } from './Compiler/CompilerStatusOutputComponent';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
 import { Server } from './Server/Server';
-import { ServerStatusOutputComponent } from './Server/ServerStatusOutputComponent';
+import { ServerAndBrowserSpawnerStatusOutputComponent } from './Server/ServerAndBrowserSpawnerStatusOutputComponent';
 
 interface IOutputProps {
     compiler: Compiler;
@@ -44,7 +44,7 @@ export function OutputComponent({ compiler, server, browserSpawner, options }: I
                         }
                     >
                         <CompilerStatusOutputComponent {...{ compilerStatus }} />
-                        <ServerStatusOutputComponent
+                        <ServerAndBrowserSpawnerStatusOutputComponent
                             {...{ openCollboardUrl, browserSpawnerStatus, serverStatus, options }}
                         />
                     </Box>
