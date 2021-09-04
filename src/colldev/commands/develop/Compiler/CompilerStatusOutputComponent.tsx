@@ -12,7 +12,7 @@ export function CompilerStatusOutputComponent({
     if (!ready) {
         return (
             <Box borderStyle="single" borderColor="yellow">
-                <Text color="grey">Compiling...</Text>
+                <Text color="yellow">Compiling...</Text>
             </Box>
         );
     }

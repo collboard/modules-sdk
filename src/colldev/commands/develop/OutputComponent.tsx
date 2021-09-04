@@ -33,7 +33,15 @@ export function OutputComponent({ compiler, server, browserSpawner, options }: I
                         borderStyle="round"
                         display="flex"
                         flexDirection="column"
-                        borderColor={compilerStatus.errors.length || serverStatus.errors.length ? 'red' : 'white'}
+                        borderColor={
+                            compilerStatus.errors.length ||
+                            serverStatus.errors.length ||
+                            browserSpawnerStatus.errors.length
+                                ? 'red'
+                                : !(compilerStatus.ready && serverStatus.ready && browserSpawnerStatus.ready)
+                                ? 'yellow'
+                                : 'white'
+                        }
                     >
                         <CompilerStatusOutputComponent {...{ compilerStatus }} />
                         <ServerStatusOutputComponent
