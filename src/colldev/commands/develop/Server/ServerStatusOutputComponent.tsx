@@ -24,7 +24,7 @@ TODO: !!! Split loading and table phase
 export function ServerStatusOutputComponent({
     openCollboardUrl,
     serverStatus: { clients },
-    browserSpawnerStatus: { browserName, spawned },
+    browserSpawnerStatus: { errors, browserName, spawned },
     options: { open, wait },
 }: IServerStatusOutputComponentProps) {
     const data = Object.entries(clients)
@@ -74,7 +74,9 @@ export function ServerStatusOutputComponent({
                                                         Waiting {wait} miliseconds for connection from Collboard
                                                     </Point>
                                                     {'\n'}
-                                                    <Point done={spawned}>Spawning {browserName}</Point>
+                                                    <Point done={spawned} error={errors.length !== 0}>
+                                                        Spawning {browserName}
+                                                    </Point>
                                                     {'\n'}
                                                     <Point>Connection from Collboard</Point>
                                                 </>

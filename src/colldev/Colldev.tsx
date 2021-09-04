@@ -7,6 +7,7 @@ import { ICommand } from './commands/ICommand';
 import { ColldevPublish } from './commands/publish/ColldevPublish';
 import { IColldevOptions } from './IColldevOptions';
 import { getColldevPackageContent } from './utils/getColldevPackageContent';
+import { jsonReplacer } from './utils/jsonReplacer';
 
 export class Colldev extends Destroyable implements IDestroyable {
     private program: commander.Command;
@@ -51,7 +52,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                         runningCommand
                             .then(() => {
                                 this.renderingInstance?.unmount();
-                                console.info(chalk.green(`Success`));
+                                console.info(chalk.green(`Module is working successfully.`));
                                 process.exit(0);
                             })
                             .catch((error) => {
@@ -63,11 +64,11 @@ export class Colldev extends Destroyable implements IDestroyable {
                         // TODO: DRY
                         runningCommand
                             .then(() => {
-                                console.info(JSON.stringify(command.status(), null, 4));
+                                console.info(JSON.stringify(command.status(), jsonReplacer, 4));
                                 process.exit(0);
                             })
                             .catch((error) => {
-                                console.info(JSON.stringify(command.status(), null, 4));
+                                console.info(JSON.stringify(command.status(), jsonReplacer, 4));
                                 // TODO: Probbably show the error
                                 process.exit(1);
                             });
@@ -75,11 +76,11 @@ export class Colldev extends Destroyable implements IDestroyable {
                         // TODO: DRY
                         runningCommand
                             .then(() => {
-                                console.info(JSON.stringify(command.status()));
+                                console.info(JSON.stringify(command.status(), jsonReplacer));
                                 process.exit(0);
                             })
                             .catch((error) => {
-                                console.info(JSON.stringify(command.status()));
+                                console.info(JSON.stringify(command.status(), jsonReplacer));
                                 // TODO: Probbably show the error
                                 process.exit(1);
                             });

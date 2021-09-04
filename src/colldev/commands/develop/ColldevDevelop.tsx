@@ -3,6 +3,7 @@ import { Destroyable } from 'destroyable';
 import * as React from 'react';
 import { combineLatest } from 'rxjs';
 import { forEver, forImmediate } from 'waitasecond';
+import { joinErrors } from '../../utils/joinErrors';
 import { ICommand } from '../ICommand';
 import { BrowserSpawner } from './BrowserSpawner/BrowserSpawner';
 import { Compiler } from './Compiler/Compiler';
@@ -100,39 +101,40 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
         const endScenarios: Array<Promise<void>> = [forEver()];
 
         if (exit) {
+            // 📝 Ending when the command is finished [*] (and Colldev is running with flag --exit)
             endScenarios.push(
                 new Promise((resolve, reject) => {
-                    combineLatest([this.compiler.compilerStatus, this.server.serverStatus])
-                        /*.pipe(
-                            filter(
-                                ([{ ready: compilerReady }, { ready: serverReady }]) => compilerReady && serverReady,
-                            ),
-                        )*/
-                        .subscribe(async ([compilerStatus, serverStatus]) => {
-                            if (
-                                !(
-                                    (
-                                        (compilerStatus.ready && serverStatus.ready) ||
-                                        (compilerStatus.ready && compilerStatus.errors.length)
-                                    ) /* Note: Second condition in case of syntax error */
-                                )
-                            ) {
-                                return;
-                            }
-
+                    combineLatest([
+                        this.compiler.compilerStatus,
+                        this.server.serverStatus,
+                        this.browserSpawner.browserSpawnerStatus,
+                    ]).subscribe(async ([compilerStatus, serverStatus, browserSpawnerStatus]) => {
+                        if (
+                            /* 📝[*] Command is finished when: */
+                            (compilerStatus.ready && serverStatus.ready) /* 📝 Compiler and server are ready OR */ ||
+                            (compilerStatus.ready &&
+                                compilerStatus.errors.length) /* 📝 OR There is error with compilation OR */ ||
+                            browserSpawnerStatus.errors.length /* 📝 OR There is error with spawning of the browser */
+                        ) {
                             await forImmediate();
-                            const error = compilerStatus.errors.length || serverStatus.errors.length;
+                            const error = joinErrors(
+                                ...compilerStatus.errors,
+                                ...serverStatus.errors,
+                                ...browserSpawnerStatus.errors,
+                            );
                             if (error) {
                                 reject(error);
                             } else {
                                 resolve(undefined);
                             }
-                        });
+                        }
+                    });
                 }),
             );
         }
 
         if (disconnect) {
+            // Note: Ending when last client disconnects from Colldev server (and Colldev is running with flag --disconnect)
             endScenarios.push(
                 new Promise((resolve, reject) => {
                     let alreadyConnected = false;
@@ -152,6 +154,18 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                 }),
             );
         }
+
+        // 📝 Ending always when there is problem with spawning of the browser
+        endScenarios.push(
+            new Promise((resolve, reject) => {
+                this.browserSpawner.browserSpawnerStatus.subscribe(async (browserSpawnerStatus) => {
+                    if (browserSpawnerStatus.errors.length) {
+                        await forImmediate();
+                        reject(joinErrors(...browserSpawnerStatus.errors));
+                    }
+                });
+            }),
+        );
 
         await Promise.race(endScenarios);
     }
@@ -173,6 +187,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
         return {
             compiler: compilerStatusToJson(this.compiler.compilerStatus.value),
             server: this.server.serverStatus.value,
+            browserSpawner: this.browserSpawner.browserSpawnerStatus.value,
         };
     }
 
