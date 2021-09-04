@@ -39,7 +39,7 @@
         "ink-spinner": "^4.0.2",
         "ink-table": "^3.0.0",
         "localtunnel": "^2.0.1",
-        "locate-app": "^1.0.0",
+        "locate-app": "^1.2.0",
         "puppeteer-core": "^10.1.0",
         "react": "^16.13.1",
         "react-dom": "16.14.*",
