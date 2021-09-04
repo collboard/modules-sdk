@@ -1,7 +1,7 @@
 import { join } from 'path';
-import { execCommand } from './utils/execCommand';
-import { getCollboardUrlFlag } from './utils/getCollboardUrlFlag';
-import { getFreshPortflag } from './utils/getFreshPortFlag';
+import { execCommand } from './test-utils/execCommand';
+import { getCollboardUrlFlag } from './test-utils/getCollboardUrlFlag';
+import { getFreshPortflag } from './test-utils/getFreshPortFlag';
 
 jest.setTimeout(1000 * 60);
 
