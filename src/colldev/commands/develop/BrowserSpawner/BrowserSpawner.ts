@@ -1,33 +1,47 @@
-import { spawn } from 'child_process';
+import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
 import { Destroyable, IDestroyable } from 'destroyable';
-import { locateBrowser } from 'locate-app';
+import { getAppName, locateBrowser } from 'locate-app';
 import puppeteer, { Browser, Page } from 'puppeteer-core';
+import { BehaviorSubject } from 'rxjs';
 import { forTime } from 'waitasecond';
 import { IColldevDevelopOptions } from '../IColldevDevelopOptions';
 import { Server } from '../Server/Server';
+import { IBrowserSpawnerStatus } from './IBrowserSpawnerStatus';
 
 type IBrowserSpawnerOptions = Pick<IColldevDevelopOptions, 'open' | 'browser' | 'headless' | 'wait'>;
 export class BrowserSpawner extends Destroyable implements IDestroyable {
+    /**
+     * Note: We are not using here mobx-react because it does not work with ink
+     */
+    readonly browserSpawnerStatus = new BehaviorSubject<IBrowserSpawnerStatus>({
+        browserName: 'Browser',
+        spawned: false,
+    });
+
     private puppeteerBrowser: Browser;
+    private process: ChildProcessWithoutNullStreams;
 
-    // TODO: maybe create separate puppeteer spawner
-
-    public static async init(server: Server, options: IBrowserSpawnerOptions): Promise<BrowserSpawner> {
-        const browserSpawner = new this(server, options);
-        await browserSpawner.init();
-        return browserSpawner;
-    }
-
-    private constructor(private server: Server, private readonly options: IBrowserSpawnerOptions) {
+    public constructor(private server: Server, private readonly options: IBrowserSpawnerOptions) {
         super();
+        this.init();
     }
 
     private async init() {
-        const { open, wait } = this.options;
+        const { open, wait, browser, headless } = this.options;
 
         if (open === 'none') {
             return;
-        } else if (open === 'single') {
+        }
+
+        await forTime(1000);
+        const executablePath = await locateBrowser(browser);
+        const browserName = await getAppName(executablePath);
+
+        await forTime(1000);
+
+        this.browserSpawnerStatus.next({ browserName, spawned: false });
+
+        if (open === 'single') {
             await forTime(parseInt(wait, 10));
             if (Object.values(this.server.serverStatus.value.clients).length) {
                 // Note: There is already some client connected
@@ -35,46 +49,63 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
             }
         } /* not else */
 
-        await this.newPage(await this.server.openCollboardUrl());
-    }
+        const openCollboardUrl = await this.server.openCollboardUrl();
+        const colldevUrl = await this.server.colldevUrl();
 
-    private async newPage(url: string): Promise<void> {
-        const { browser, headless } = this.options;
-
-        const executablePath = await locateBrowser(browser);
-
-        if (/(chrome|edge)/.test(executablePath)) {
+        if (/* TODO: spawnMethod */ /(chrome|edge)/.test(executablePath)) {
             let page: Page;
             if (!this.puppeteerBrowser) {
                 this.puppeteerBrowser = await puppeteer.launch({
                     headless,
                     executablePath,
+                    // TODO: --disable-web-security
                 });
                 page = (await this.puppeteerBrowser.pages())[0];
             } else {
                 page = await this.puppeteerBrowser.newPage();
             }
 
-            await page.setExtraHTTPHeaders({
-                // Note: this is for bypassing localtunnels warning
-                'Bypass-Tunnel-Reminder': 'true',
+            await page.setRequestInterception(true);
+            page.on('request', (request) => {
+                if (!request.url().includes(colldevUrl)) {
+                    // console.log(`NOT adding headers for ${request.url()}`);
+                    request.continue();
+                    return;
+                } else {
+                    // console.log(`Adding headers for ${request.url()}`);
+
+                    const headers = request.headers();
+
+                    // TODO: Make own instance of localtunnel without this issue
+                    // Note: this is for bypassing localtunnels warning
+                    headers['Bypass-Tunnel-Reminder'] = 'true';
+                    request.continue({ headers });
+                }
             });
-            await page.goto(url, {});
+
+            await page.goto(openCollboardUrl, {});
             await page.evaluate(() => {
                 localStorage.setItem('Collboard_DevelopmentWarning_accepted', 'true');
                 localStorage.setItem('Collboard_EuCookiesWarning_accepted', 'true');
             });
         } else {
-            spawn(executablePath, [url]);
+            this.process = spawn(executablePath, [openCollboardUrl]);
             // TODO: Save child process to destroy it
             // TODO: Is this working with safari?
         }
+
+        this.browserSpawnerStatus.next({ browserName, spawned: true });
     }
 
     public async destroy() {
         await super.destroy();
+
+        // TODO: This bellow is not working
         if (this.puppeteerBrowser) {
             this.puppeteerBrowser.close();
+        }
+        if (this.process) {
+            this.process.kill();
         }
     }
 }
