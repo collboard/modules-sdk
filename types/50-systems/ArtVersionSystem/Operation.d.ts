@@ -13,7 +13,8 @@ import { IFreshMaterialOperation, IOngoingMaterialOperation } from './IOperation
  */
 export declare class Operation
     extends Destroyable
-    implements IClosePreventable, IDestroyable, IFreshMaterialOperation, IOngoingMaterialOperation {
+    implements IClosePreventable, IDestroyable, IFreshMaterialOperation, IOngoingMaterialOperation
+{
     private artVersioningSystem;
     private closePreventionSystem;
     private operationId;

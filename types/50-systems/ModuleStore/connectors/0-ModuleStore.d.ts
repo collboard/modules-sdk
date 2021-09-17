@@ -18,9 +18,7 @@ export declare class ModuleStore extends AbstractSystem implements IModuleStoreC
     init(): Promise<void>;
     registerModuleStoreConnector(modulesConnector: IModuleStoreConnector): IDestroyable;
     registerModuleStorage(modulesStorage: Pick<IModulesStorage, 'modules'>): IDestroyable;
-    search(
-        searchCriteria: IModuleStoreConnectorSearchQuery,
-    ): Promise<{
+    search(searchCriteria: IModuleStoreConnectorSearchQuery): Promise<{
         modules: (IDependency & Partial<import('../interfaces/IModuleManifest').IModuleManifest>)[];
     }>;
     download(

@@ -11,9 +11,7 @@ import { IModuleStoreConnectorSearchQuery } from '../interfaces/IModuleStoreConn
  *
  */
 export declare class ExternalModuleStoreConnector extends Destroyable implements IModuleStoreConnector {
-    search(
-        searchCriteria: IModuleStoreConnectorSearchQuery,
-    ): Promise<{
+    search(searchCriteria: IModuleStoreConnectorSearchQuery): Promise<{
         modules: never[];
     }>;
     download(...modules: IDependency[]): Promise<never[]>;

@@ -21,7 +21,8 @@ import { Abstract2dArt } from './26-Abstract2dArt';
  */
 export declare class CornerstoneArt
     extends Abstract2dArt /* TODO: maybe only AbstractPlacedArt */
-    implements IModulePersister {
+    implements IModulePersister
+{
     /**
      * String containing user-editable board name
      */

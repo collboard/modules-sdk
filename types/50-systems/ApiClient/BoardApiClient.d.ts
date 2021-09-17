@@ -12,7 +12,8 @@ import { IClosePreventable } from '../ClosePreventionSystem/IClosePreventable';
  */
 export declare class BoardApiClient
     extends MaterialArtVersioningSystem
-    implements IClosePreventable, IDestroyable, IArtVersioningSystem {
+    implements IClosePreventable, IDestroyable, IArtVersioningSystem
+{
     private apiUrl;
     private uriId;
     private socketClient;

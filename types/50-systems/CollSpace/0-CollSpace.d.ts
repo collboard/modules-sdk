@@ -19,9 +19,7 @@ export declare class CollSpace extends AbstractSystem {
     private get sceneSync();
     private shadowGenerator;
     private createScene;
-    pickPoint(
-        point: IVector,
-    ): {
+    pickPoint(point: IVector): {
         point: Vector;
         normal: Vector;
     };

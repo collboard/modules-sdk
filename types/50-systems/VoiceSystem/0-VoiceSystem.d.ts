@@ -12,3 +12,6 @@ import { AbstractSystem } from '../AbstractSystem';
 export declare class VoiceSystem extends AbstractSystem {
     protected init(): Promise<void>;
 }
+/**
+ * TODO: Define boundary between SoundSystem and VoiceSystem
+ */

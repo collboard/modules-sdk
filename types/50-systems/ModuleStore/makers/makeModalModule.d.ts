@@ -4,12 +4,13 @@
 import { IAwaitable } from 'destroyable';
 import * as React from 'react';
 import { IModalProps } from '../../../30-components/modal/Modal';
+import { IFactorable } from '../../../40-utils/IFactory';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { TranslationsSystem } from '../../TranslationsSystem/0-TranslationsSystem';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 declare type ICreateModalReturn = Partial<Omit<IModalProps, 'children'>> & {
-    content: JSX.Element;
+    content: IFactorable<JSX.Element>;
     wrapModalManually?: boolean;
 };
 /**

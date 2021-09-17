@@ -23,7 +23,8 @@ export interface IStorageSyncerOptions {
  */
 export declare class StorageSyncer
     extends AbstractSyncer
-    implements ISyncer, IModulePersister, IModulesStorage, IDestroyable {
+    implements ISyncer, IModulePersister, IModulesStorage, IDestroyable
+{
     private readonly options;
     modulesStorage: IModulesStorage;
     constructor(systems: ISystemsExtended, options?: IStorageSyncerOptions);

@@ -19,9 +19,7 @@ export declare class StorageModuleStoreConnector extends Destroyable implements 
     constructor(systems: ISystemsExtended, modulesStorage: Pick<IModulesStorage, 'modules'>);
     download(...identificators: IDependency[]): Promise<IModuleDefinition[]>;
     getCategories(): Promise<Set<string_module_category>>;
-    search(
-        searchCriteria: IModuleStoreConnectorSearchQuery,
-    ): Promise<{
+    search(searchCriteria: IModuleStoreConnectorSearchQuery): Promise<{
         modules: import('../interfaces/IModuleManifest').IModuleManifest[];
     }>;
 }

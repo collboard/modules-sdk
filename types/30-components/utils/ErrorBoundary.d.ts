@@ -8,9 +8,7 @@ interface IErrorBoundaryState {
 }
 export declare class ErrorBoundary extends React.Component<IErrorBoundaryProps, IErrorBoundaryState> {
     constructor(props: IErrorBoundaryProps);
-    static getDerivedStateFromError(
-        error: Error,
-    ): {
+    static getDerivedStateFromError(error: Error): {
         hasError: boolean;
     };
     componentDidCatch(error: Error): void;
