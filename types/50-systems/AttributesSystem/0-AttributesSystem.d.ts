@@ -1,5 +1,9 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
+// TODO: This file should be excluded from (not only VSCode) auto-importing.
+//       @see https://github.com/Microsoft/vscode/issues/40248
+//       @see https://github.com/microsoft/TypeScript/issues/35395
+//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /// <reference types="react" />
 import { string_attribute, string_context } from '../../40-utils/typeAliases';
@@ -10,7 +14,7 @@ export interface IWrappedValue {
     value: attribute_value;
 }
 /**
- * AttributesSystem manages shared art attributes and modules capable of selecting from them. It auto-install/uninstall attribute modules.
+ * AttributesSystem manages shared art attributes and modules capable of selecting from them. It auto-installs / uninstalls attribute modules.
  *
  * @collboard-system
  */

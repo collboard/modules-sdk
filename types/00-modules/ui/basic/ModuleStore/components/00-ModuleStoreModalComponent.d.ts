@@ -1,27 +1,21 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
+// TODO: This file should be excluded from (not only VSCode) auto-importing.
+//       @see https://github.com/Microsoft/vscode/issues/40248
+//       @see https://github.com/microsoft/TypeScript/issues/35395
+//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /// <reference types="react" />
-import { IHandler } from '../../../../../40-utils/IHandler';
-import { ModuleStore } from '../../../../../50-systems/ModuleStore/connectors/0-ModuleStore';
-import { IModuleStoreConnectorSearchQuery } from '../../../../../50-systems/ModuleStore/interfaces/IModuleStoreConnectorSearch';
-import { CornerstoneSyncer } from '../../../../../50-systems/ModuleStore/Syncers/CornerstoneSyncer';
-import { RoutingSystem } from '../../../../../50-systems/RoutingSystem/0-RoutingSystem';
-import { TranslationsSystem } from '../../../../../50-systems/TranslationsSystem/0-TranslationsSystem';
-interface IModuleStoreModalComponentProps {
-    routingSystem: RoutingSystem;
-    moduleStore: ModuleStore;
-    cornerstoneSyncer: CornerstoneSyncer;
-    translationsSystem: TranslationsSystem;
-    search: IModuleStoreConnectorSearchQuery;
-    onSearchChange: IHandler<IModuleStoreConnectorSearchQuery>;
-}
+import { IModuleStoreModalComponentProps } from './IModuleStoreModalComponentProps';
 export declare function ModuleStoreModalComponent({
+    translationsSystem,
     routingSystem,
     moduleStore,
     cornerstoneSyncer,
-    translationsSystem,
+    routeAndBusinessSyncer,
+    attributeSupportSyncer,
+    artSupportSyncer,
+    businessSystem,
     search,
     onSearchChange,
 }: IModuleStoreModalComponentProps): JSX.Element;
-export {};

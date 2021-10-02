@@ -1,9 +1,13 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
+// TODO: This file should be excluded from (not only VSCode) auto-importing.
+//       @see https://github.com/Microsoft/vscode/issues/40248
+//       @see https://github.com/microsoft/TypeScript/issues/35395
+//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-/// <reference types="react" />
 import 'moment/locale/cs';
 import 'moment/locale/sk';
+import * as React from 'react';
 import { Observable } from 'rxjs';
 import { IReplacer } from '../../40-utils/applyParamsOnTemplate';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
@@ -55,7 +59,13 @@ export declare class TranslationsSystem extends AbstractSystem {
         },
     ): string;
     readonly replacer: IReplacer;
-    readonly Translate: any;
+    readonly Translate: (
+        props: React.PropsWithChildren<{
+            name: string_translate_name_not_normalized;
+            html?: boolean;
+            parameters?: any;
+        }>,
+    ) => JSX.Element;
     private _Translate;
     useTemplate(html: string): string;
     pickMessage(messageTranslation: string | Partial<Record<string_translate_language, string>>): string;

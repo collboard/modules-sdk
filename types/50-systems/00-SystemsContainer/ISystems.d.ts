@@ -1,5 +1,9 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
+// TODO: This file should be excluded from (not only VSCode) auto-importing.
+//       @see https://github.com/Microsoft/vscode/issues/40248
+//       @see https://github.com/microsoft/TypeScript/issues/35395
+//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { TouchController } from 'touchcontroller';
 import { ArtSerializer } from '../../CollboardApp';
@@ -9,6 +13,7 @@ import { AppState } from './../AppState/0-AppState';
 import { MaterialArtVersioningSystem } from './../ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { VirtualArtVersioningSystem } from './../ArtVersionSystem/0-VirtualArtVersioningSystem';
 import { AttributesSystem } from './../AttributesSystem/0-AttributesSystem';
+import { BusinessSystem } from './../BusinessSystem/0-BusinessSystem';
 import { ClosePreventionSystem } from './../ClosePreventionSystem/0-ClosePreventionSystem';
 import { CollSpace } from './../CollSpace/0-CollSpace';
 import { CreateSystem } from './../CreateSystem/0-CreateSystem';
@@ -25,10 +30,8 @@ import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
 import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
 import { AttributeSupportSyncer } from './../ModuleStore/Syncers/AttributeSupportSyncer';
-import { BusinessSyncer } from './../ModuleStore/Syncers/BusinessSyncer';
 import { CornerstoneSyncer } from './../ModuleStore/Syncers/CornerstoneSyncer';
-import { RouteSyncer } from './../ModuleStore/Syncers/RouteSyncer';
-import { StorageSyncer } from './../ModuleStore/Syncers/StorageSyncer';
+import { RouteAndBusinessSyncer } from './../ModuleStore/Syncers/RouteAndBusinessSyncer';
 import { NotificationSystem } from './../NotificationSystem/0-NotificationSystem';
 import { PointerSystem } from './../PointerSystem/0-PointerSystem';
 import { RoutingSystem } from './../RoutingSystem/0-RoutingSystem';
@@ -67,6 +70,7 @@ export interface ISystemsExtended {
     readonly materialArtVersioningSystem: Promise<MaterialArtVersioningSystem>;
     readonly virtualArtVersioningSystem: Promise<VirtualArtVersioningSystem>;
     readonly attributesSystem: Promise<AttributesSystem>;
+    readonly businessSystem: Promise<BusinessSystem>;
     readonly closePreventionSystem: Promise<ClosePreventionSystem>;
     readonly collSpace: Promise<CollSpace>;
     readonly createSystem: Promise<CreateSystem>;
@@ -83,10 +87,8 @@ export interface ISystemsExtended {
     readonly moduleStore: Promise<ModuleStore>;
     readonly artSupportSyncer: Promise<ArtSupportSyncer>;
     readonly attributeSupportSyncer: Promise<AttributeSupportSyncer>;
-    readonly businessSyncer: Promise<BusinessSyncer>;
     readonly cornerstoneSyncer: Promise<CornerstoneSyncer>;
-    readonly routeSyncer: Promise<RouteSyncer>;
-    readonly storageSyncer: Promise<StorageSyncer>;
+    readonly routeAndBusinessSyncer: Promise<RouteAndBusinessSyncer>;
     readonly notificationSystem: Promise<NotificationSystem>;
     readonly pointerSystem: Promise<PointerSystem>;
     readonly routingSystem: Promise<RoutingSystem>;

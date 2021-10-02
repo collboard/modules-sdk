@@ -1,5 +1,9 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
+// TODO: This file should be excluded from (not only VSCode) auto-importing.
+//       @see https://github.com/Microsoft/vscode/issues/40248
+//       @see https://github.com/microsoft/TypeScript/issues/35395
+//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 export * from './30-components/menu/Icon';
 export * from './30-components/menu/icons';
@@ -99,9 +103,8 @@ export * from './50-systems/ModuleStore/makers/makeMultiModule';
 export * from './50-systems/ModuleStore/makers/makeTrayModule';
 export * from './50-systems/ModuleStore/Syncers/ArtSupportSyncer';
 export * from './50-systems/ModuleStore/Syncers/AttributeSupportSyncer';
-export * from './50-systems/ModuleStore/Syncers/BusinessSyncer';
 export * from './50-systems/ModuleStore/Syncers/CornerstoneSyncer';
-export * from './50-systems/ModuleStore/Syncers/RouteSyncer';
+export * from './50-systems/ModuleStore/Syncers/RouteAndBusinessSyncer';
 export * from './50-systems/ModuleStore/Syncers/StorageSyncer';
 export * from './50-systems/ModuleStore/utils/parseKeywordsFromManifest';
 export * from './50-systems/NotificationSystem/0-NotificationSystem';
@@ -129,7 +132,7 @@ export * from './71-arts/40-BackgroundWallpaperArt';
 export * from './71-arts/50-HTMLArt';
 export * from './71-arts/50-ImageArt';
 export * from './72-tools/behaviors/IBehavoirProps';
-export * from './72-tools/behaviors/selectionTool/_selectionToolBehavior';
 export * from './72-tools/behaviors/selectionTool/selectionToolDraggingBehavior';
 export * from './72-tools/behaviors/selectionTool/selectionToolScalingBehavior';
 export * from './72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior';
+export * from './72-tools/behaviors/selectionTool/_selectionToolBehavior';
