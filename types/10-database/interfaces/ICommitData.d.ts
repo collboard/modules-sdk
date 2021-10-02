@@ -39,7 +39,6 @@ export interface ICommitData {
     created: Date;
     businessName: BusinessName;
     uriId: string_uri_part | null;
-    artPolygon: string | null;
     artClass: string;
     /**
      * TODO: Create IAbstractArt and use it here and in other places

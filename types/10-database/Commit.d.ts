@@ -31,7 +31,6 @@ export declare class Commit implements ICommitData {
     created: Date;
     businessName: BusinessName;
     uriId: string_uri_part | null;
-    artPolygon: string | null;
     artClass: string;
     art: any;
 }

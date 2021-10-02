@@ -15,5 +15,6 @@ import { BusinessName } from '../configuration/BusinessName';
  */
 export declare function hostToBusiness(host: string_host): {
     normalizedHost: string_host;
+    enforceHttps: boolean;
     businessName: BusinessName;
 };
