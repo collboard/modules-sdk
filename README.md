@@ -161,7 +161,15 @@ ArtVersionSystem synchronizes the arts with the remote server.
 
 ### [AttributesSystem](https://collboard.github.io/modules-sdk/classes/attributessystem.html)
 
-AttributesSystem manages shared art attributes and modules capable of selecting from them. It auto-install/uninstall attribute modules.
+AttributesSystem manages shared art attributes and modules capable of selecting from them. It auto-installs / uninstalls attribute modules.
+
+<!--Private system:
+### [BusinessSystem](https://collboard.github.io/modules-sdk/classes/businesssystem.html)
+BusinessSystem tell things about currently used business
+
+
+
+-->
 
 ### [ClosePreventionSystem](https://collboard.github.io/modules-sdk/classes/closepreventionsystem.html)
 
@@ -184,7 +192,7 @@ Note: This system is not just for exporting but also saves to native format.
 ### [ImportSystem](https://collboard.github.io/modules-sdk/classes/importsystem.html)
 
 Import system makes support for files which are dragged onto board, imporded or pasted
-It auto-install/uninstall file support modules.
+It auto-installs / uninstalls file support modules.
 
 ### [ExtraJsxSystem](https://collboard.github.io/modules-sdk/classes/extrajsxsystem.html)
 
@@ -249,7 +257,7 @@ ModuleStore unites all module store connectors into one API, so consumer have sa
 
 <!--Private system:
 ### [ArtSupportSyncer](https://collboard.github.io/modules-sdk/classes/artsupportsyncer.html)
-ArtSupportSyncer install/uninstall art support modules
+ArtSupportSyncer installs / uninstalls art support modules
 
 
 
@@ -257,15 +265,7 @@ ArtSupportSyncer install/uninstall art support modules
 
 <!--Private system:
 ### [AttributeSupportSyncer](https://collboard.github.io/modules-sdk/classes/attributesupportsyncer.html)
-AttributeSupportSyncer install/uninstall ONLY STANDARD attribute modules when needed
-
-
-
--->
-
-<!--Private system:
-### [BusinessSyncer](https://collboard.github.io/modules-sdk/classes/businesssyncer.html)
-BusinessSyncer install(TODO: /uninstall) modules according to bussiness (like development)
+AttributeSupportSyncer installs / uninstalls ONLY STANDARD attribute modules when needed
 
 
 
@@ -273,25 +273,15 @@ BusinessSyncer install(TODO: /uninstall) modules according to bussiness (like de
 
 <!--Private system:
 ### [CornerstoneSyncer](https://collboard.github.io/modules-sdk/classes/cornerstonesyncer.html)
-CornerstoneSyncer watches on cornerstone of current board and install/uninstall modules according to it
+CornerstoneSyncer watches on cornerstone of current board and installs / uninstalls modules according to it
 
 
 
 -->
 
 <!--Private system:
-### [RouteSyncer](https://collboard.github.io/modules-sdk/classes/routesyncer.html)
-RouteSyncer install/uninstall modules according to the app URI
-
-
-
--->
-
-<!--Private system:
-### [StorageSyncer](https://collboard.github.io/modules-sdk/classes/storagesyncer.html)
-StorageSyncer will install every module what is declared into the storage
-When the module is redeclared, module is installed and uninstalled
-
+### [RouteAndBusinessSyncer](https://collboard.github.io/modules-sdk/classes/routeandbusinesssyncer.html)
+RouteAndBusinessSyncer installs / uninstalls modules according to the app URI
 
 
 
