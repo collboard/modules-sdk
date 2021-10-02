@@ -30,7 +30,7 @@ export async function execCommand(
     console.info(chalk.yellow(cwd) + ' ' + chalk.blue(command));
 
     try {
-        const { stdout, stderr } = await execAsync(command, { cwd });
+        const { stdout, stderr } = await execAsync(command, { cwd, maxBuffer: 1024 * 1024 * 3 /* mb */ });
 
         console.info(stdout);
 
