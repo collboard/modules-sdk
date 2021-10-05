@@ -1,9 +1,5 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
-// TODO: This file should be excluded from (not only VSCode) auto-importing.
-//       @see https://github.com/Microsoft/vscode/issues/40248
-//       @see https://github.com/microsoft/TypeScript/issues/35395
-//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /**
  * Semantic helper
@@ -70,26 +66,6 @@ export declare type string_uri = string;
  * @collboard-modules-sdk
  */
 export declare type string_uri_part = string;
-/**
- * Semantic helper
- *
- * @collboard-modules-sdk
- */
-export declare type string_protocol = 'http:' | 'https:';
-/**
- * Semantic helper
- *
- * For example `"localhost"` or `"collboard.com"`
- * @collboard-modules-sdk
- */
-export declare type string_hostname = string;
-/**
- * Semantic helper
- *
- * For example `"localhost:9977"` or `"collboard.com"`
- * @collboard-modules-sdk
- */
-export declare type string_host = string;
 /**
  * Semantic helper
  *
@@ -278,10 +254,16 @@ export declare type string_attribute = string;
  * @collboard-modules-sdk
  */
 export declare type string_context = string;
-/**
- * Semantic helper for css/html colors
- *
- * For example `"white"` or `"#906090"`
- * @collboard-modules-sdk
- */
-export declare type string_color = string;
+export declare type number_miliseconds = number;
+export declare type number_seconds = number;
+export declare type number_minutes = number;
+export declare type number_hours = number;
+export declare type number_days = number;
+export declare type number_weeks = number;
+export declare type number_months = number;
+export declare type number_years = number;
+export declare type number_bytes = number;
+export declare type number_kilobytes = number;
+export declare type number_megabytes = number;
+export declare type number_gigabytes = number;
+export declare type number_terabytes = number;

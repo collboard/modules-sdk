@@ -1,9 +1,5 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
-// TODO: This file should be excluded from (not only VSCode) auto-importing.
-//       @see https://github.com/Microsoft/vscode/issues/40248
-//       @see https://github.com/microsoft/TypeScript/issues/35395
-//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { TouchController } from 'touchcontroller';
 import { ArtSerializer } from '../../CollboardApp';
@@ -13,7 +9,6 @@ import { AppState } from './../AppState/0-AppState';
 import { MaterialArtVersioningSystem } from './../ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { VirtualArtVersioningSystem } from './../ArtVersionSystem/0-VirtualArtVersioningSystem';
 import { AttributesSystem } from './../AttributesSystem/0-AttributesSystem';
-import { BusinessSystem } from './../BusinessSystem/0-BusinessSystem';
 import { ClosePreventionSystem } from './../ClosePreventionSystem/0-ClosePreventionSystem';
 import { CollSpace } from './../CollSpace/0-CollSpace';
 import { CreateSystem } from './../CreateSystem/0-CreateSystem';
@@ -30,8 +25,10 @@ import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
 import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
 import { AttributeSupportSyncer } from './../ModuleStore/Syncers/AttributeSupportSyncer';
+import { BusinessSyncer } from './../ModuleStore/Syncers/BusinessSyncer';
 import { CornerstoneSyncer } from './../ModuleStore/Syncers/CornerstoneSyncer';
-import { RouteAndBusinessSyncer } from './../ModuleStore/Syncers/RouteAndBusinessSyncer';
+import { RouteSyncer } from './../ModuleStore/Syncers/RouteSyncer';
+import { StorageSyncer } from './../ModuleStore/Syncers/StorageSyncer';
 import { NotificationSystem } from './../NotificationSystem/0-NotificationSystem';
 import { PointerSystem } from './../PointerSystem/0-PointerSystem';
 import { RoutingSystem } from './../RoutingSystem/0-RoutingSystem';
@@ -64,7 +61,6 @@ export declare class SystemsContainer implements ISystemsExtended {
     private materialArtVersioningSystemSubject;
     private virtualArtVersioningSystemSubject;
     private attributesSystemSubject;
-    private businessSystemSubject;
     private closePreventionSystemSubject;
     private collSpaceSubject;
     private createSystemSubject;
@@ -81,8 +77,10 @@ export declare class SystemsContainer implements ISystemsExtended {
     private moduleStoreSubject;
     private artSupportSyncerSubject;
     private attributeSupportSyncerSubject;
+    private businessSyncerSubject;
     private cornerstoneSyncerSubject;
-    private routeAndBusinessSyncerSubject;
+    private routeSyncerSubject;
+    private storageSyncerSubject;
     private notificationSystemSubject;
     private pointerSystemSubject;
     private routingSystemSubject;
@@ -139,8 +137,6 @@ export declare class SystemsContainer implements ISystemsExtended {
     setVirtualArtVersioningSystem(virtualArtVersioningSystem: VirtualArtVersioningSystem | null): Promise<void>;
     get attributesSystem(): Promise<AttributesSystem>;
     setAttributesSystem(attributesSystem: AttributesSystem | null): Promise<void>;
-    get businessSystem(): Promise<BusinessSystem>;
-    setBusinessSystem(businessSystem: BusinessSystem | null): Promise<void>;
     get closePreventionSystem(): Promise<ClosePreventionSystem>;
     setClosePreventionSystem(closePreventionSystem: ClosePreventionSystem | null): Promise<void>;
     get collSpace(): Promise<CollSpace>;
@@ -173,10 +169,14 @@ export declare class SystemsContainer implements ISystemsExtended {
     setArtSupportSyncer(artSupportSyncer: ArtSupportSyncer | null): Promise<void>;
     get attributeSupportSyncer(): Promise<AttributeSupportSyncer>;
     setAttributeSupportSyncer(attributeSupportSyncer: AttributeSupportSyncer | null): Promise<void>;
+    get businessSyncer(): Promise<BusinessSyncer>;
+    setBusinessSyncer(businessSyncer: BusinessSyncer | null): Promise<void>;
     get cornerstoneSyncer(): Promise<CornerstoneSyncer>;
     setCornerstoneSyncer(cornerstoneSyncer: CornerstoneSyncer | null): Promise<void>;
-    get routeAndBusinessSyncer(): Promise<RouteAndBusinessSyncer>;
-    setRouteAndBusinessSyncer(routeAndBusinessSyncer: RouteAndBusinessSyncer | null): Promise<void>;
+    get routeSyncer(): Promise<RouteSyncer>;
+    setRouteSyncer(routeSyncer: RouteSyncer | null): Promise<void>;
+    get storageSyncer(): Promise<StorageSyncer>;
+    setStorageSyncer(storageSyncer: StorageSyncer | null): Promise<void>;
     get notificationSystem(): Promise<NotificationSystem>;
     setNotificationSystem(notificationSystem: NotificationSystem | null): Promise<void>;
     get pointerSystem(): Promise<PointerSystem>;

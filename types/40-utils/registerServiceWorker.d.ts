@@ -1,9 +1,5 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
-// TODO: This file should be excluded from (not only VSCode) auto-importing.
-//       @see https://github.com/Microsoft/vscode/issues/40248
-//       @see https://github.com/microsoft/TypeScript/issues/35395
-//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /**
  * This lets the app load faster on subsequent visits in production, and gives it offline capabilities. However, it also means that developers (and users) will only see deployed updates on subsequent visits to a page, after all the existing tabs open on the page have been closed, since previously cached resources are updated in the background. To learn more about the benefits of this model and instructions on how to opt-in, read https://bit.ly/CRA-PWA

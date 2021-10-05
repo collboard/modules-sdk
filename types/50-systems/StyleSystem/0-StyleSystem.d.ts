@@ -1,16 +1,8 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
-// TODO: This file should be excluded from (not only VSCode) auto-importing.
-//       @see https://github.com/Microsoft/vscode/issues/40248
-//       @see https://github.com/microsoft/TypeScript/issues/35395
-//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import * as React from 'react';
-import { BehaviorSubject, ReplaySubject } from 'rxjs';
+/// <reference types="react" />
 import { AbstractSystem } from '../AbstractSystem';
-import { ISkin } from './ISkin';
-import { ColorScheme } from './utils/watchPreferedColorScheme';
-export declare const SkinContext: React.Context<ISkin>;
 /**
  * StyleSystem can register and manage additional CSS styles for modules. It can scope CSS so it will do not affect others.
  * TODO: Maybe use it for core and systems.
@@ -30,22 +22,5 @@ export declare class StyleSystem extends AbstractSystem {
      */
     registerGlobalStyle(style: string): import('destroyable').Registration;
     renderStyles(): JSX.Element;
-    colorScheme: BehaviorSubject<ColorScheme>;
-    readonly skin: ReplaySubject<ISkin>;
-    /**
-     * Renders content with the current skin
-     */
-    readonly WithSkin: ({ content }: { content: (skin: ISkin) => JSX.Element }) => JSX.Element;
-    /**
-     * Creates context for providing skin
-     *
-     * You want to probbably use WithSkin
-     * Use always and only for wrpaiing content in ReactDOM.render(<styleSystem.WithSkinContext>...</styleSystem.WithSkinContext>)
-     */
-    readonly WithSkinContext: ({ children }: React.PropsWithChildren<{}>) => JSX.Element;
-    private _WithSkin;
-    private _WithSkinContext;
-    private skins;
-    registerSkin({ skin }: { skin: ISkin; priority?: number }): import('destroyable').Registration;
     destroy(): Promise<void>;
 }

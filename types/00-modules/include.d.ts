@@ -1,9 +1,5 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
-// TODO: This file should be excluded from (not only VSCode) auto-importing.
-//       @see https://github.com/Microsoft/vscode/issues/40248
-//       @see https://github.com/microsoft/TypeScript/issues/35395
-//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import './../50-systems/ModuleStore/connectors/ModulesStorage';
 import './../50-systems/ModuleStore/interfaces/IModulesStorage';
@@ -76,9 +72,6 @@ import './shortcuts/delete/DeleteShortcutModule';
 import './shortcuts/scrollwheel/ScroolwheelShortcutModule';
 import './shortcuts/selectAll/SelectAllShortcutModule';
 import './shortcuts/undo-redo/UndoButton';
-import './skins/defaultBusinessSkin/DefaultBusinessSkinModule';
-import './skins/defaultDevelopmentSkin/00-DefaultDevelopmentSkinModule';
-import './skins/defaultEducationSkin/DefaultEducationSkinModule';
 import './templates/papers/declaration';
 import './timer/StopwatchArtModule';
 import './timer/StopwatchControlsAttributeModule';
@@ -98,14 +91,13 @@ import './ui/basic/Error404ForModule';
 import './ui/basic/EuCookiesWarningModule';
 import './ui/basic/FullscreenModule';
 import './ui/basic/Import/Import';
-import './ui/basic/LanguageSelectModule/LanguageSelectModule';
+import './ui/basic/LanguageSelectModule';
 import './ui/basic/Menus';
 import './ui/basic/ModuleStore/ModuleStore';
 import './ui/basic/ModuleStore/ShareIcon';
-import './ui/basic/RemoteAnnouncementsModule/RemoteAnnouncementsModule';
-import './ui/basic/ThemeSelectModule/ThemeSelectModule';
+import './ui/basic/RemoteAnnouncementsModule';
 import './ui/basic/Upload/Upload';
-import './ui/basic/welcome/WelcomeModules';
+import './ui/basic/welcome/WelcomeModalModule';
 import './ui/clone/CloneBoardButton';
 import './weightPickers/Weight2AttributeModule';
 import './xmas/CollboardXmasLogoModule';

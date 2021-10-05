@@ -1,23 +1,27 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
-// TODO: This file should be excluded from (not only VSCode) auto-importing.
-//       @see https://github.com/Microsoft/vscode/issues/40248
-//       @see https://github.com/microsoft/TypeScript/issues/35395
-//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import * as React from 'react';
-declare type IPageOverlayProps = React.PropsWithChildren<{
-    onPointerDown?: () => void;
-}>;
+export declare const OVERLAY_CONTAINER_ID = 'custom-modal-container';
+interface IPageOverlayProps {
+    children?: Array<JSX.Element | false> | JSX.Element;
+    onClick?: () => void;
+}
 /**
  * Renders the content inside a darkened page overlay blocking all
  * interactions with page behind
  *
  * **You probably want to use Modal or CategorizedModal instead.**
  *
- * **Warning: Do not try to use more, than one PageOverlay at a time.
+ * **Warning: Do not try to mount more, than one PageOverlay at a time,
+ * it may lead to undefined behavior!**
  *
  * @collboard-modules-sdk
  */
-export declare function PageOverlay({ onPointerDown, children }: IPageOverlayProps): JSX.Element;
+export declare class PageOverlay extends React.Component<IPageOverlayProps> {
+    componentDidMount(): void;
+    componentDidUpdate(): void;
+    componentWillUnmount(): void;
+    render(): JSX.Element;
+}
 export {};
