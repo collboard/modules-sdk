@@ -1,6 +1,10 @@
 
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
+// TODO: This file should be excluded from (not only VSCode) auto-importing.
+//       @see https://github.com/Microsoft/vscode/issues/40248
+//       @see https://github.com/microsoft/TypeScript/issues/35395
+//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 // tslint:disable
 
@@ -107,6 +111,14 @@ export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModa
                     export const enumToArray = (window as any).CollboardSdk.enumToArray;
                     
 
+                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/BoardAlreadyExistsError.d.ts
+                    export const BoardAlreadyExistsError = (window as any).CollboardSdk.BoardAlreadyExistsError;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/BoardNotFoundError.d.ts
+                    export const BoardNotFoundError = (window as any).CollboardSdk.BoardNotFoundError;
+                    
+
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/CollisionError.d.ts
                     export const CollisionError = (window as any).CollboardSdk.CollisionError;
                     
@@ -119,10 +131,16 @@ export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModa
                     export const HighOrderError = (window as any).CollboardSdk.HighOrderError;
                     
 
+                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/ModuleNotFoundError.d.ts
+                    export const ModuleNotFoundError = (window as any).CollboardSdk.ModuleNotFoundError;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/NotBoardError.d.ts
+                    export const NotBoardError = (window as any).CollboardSdk.NotBoardError;
+                    
+
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/NotFoundError.d.ts
                     export const NotFoundError = (window as any).CollboardSdk.NotFoundError;
-export const NotFoundErrorForBoard = (window as any).CollboardSdk.NotFoundErrorForBoard;
-export const NotFoundErrorForModule = (window as any).CollboardSdk.NotFoundErrorForModule;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/flatternArray.d.ts
@@ -248,6 +266,9 @@ export const string_url = (window as any).CollboardSdk.string_url;
 export const string_url_image = (window as any).CollboardSdk.string_url_image;
 export const string_uri = (window as any).CollboardSdk.string_uri;
 export const string_uri_part = (window as any).CollboardSdk.string_uri_part;
+export const string_protocol = (window as any).CollboardSdk.string_protocol;
+export const string_hostname = (window as any).CollboardSdk.string_hostname;
+export const string_host = (window as any).CollboardSdk.string_host;
 export const string_email = (window as any).CollboardSdk.string_email;
 export const string_uuid = (window as any).CollboardSdk.string_uuid;
 export const string_sha256 = (window as any).CollboardSdk.string_sha256;
@@ -267,6 +288,7 @@ export const IKeywords = (window as any).CollboardSdk.IKeywords;
 export const string_css_cursor = (window as any).CollboardSdk.string_css_cursor;
 export const string_attribute = (window as any).CollboardSdk.string_attribute;
 export const string_context = (window as any).CollboardSdk.string_context;
+export const string_color = (window as any).CollboardSdk.string_color;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/typeHelpers.d.ts
@@ -300,6 +322,14 @@ export const RequireOnlyOne = (window as any).CollboardSdk.RequireOnlyOne;
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/AttributesSystem/0-AttributesSystem.d.ts
                     export const AttributesSystem = (window as any).CollboardSdk.AttributesSystem;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/BusinessSystem/0-BusinessSystem.d.ts
+                    export const BusinessSystem = (window as any).CollboardSdk.BusinessSystem;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/BusinessSystem/configuration/BusinessName.d.ts
+                    export const BusinessName = (window as any).CollboardSdk.BusinessName;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ClosePreventionSystem/0-ClosePreventionSystem.d.ts
@@ -393,6 +423,10 @@ export const IModuleManifestTranslation = (window as any).CollboardSdk.IModuleMa
                     export const IModulePersister = (window as any).CollboardSdk.IModulePersister;
                     
 
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModuleStatusReporter.d.ts
+                    export const IModuleStatusReporter = (window as any).CollboardSdk.IModuleStatusReporter;
+                    
+
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModuleStoreConnector.d.ts
                     export const IModuleStoreConnector = (window as any).CollboardSdk.IModuleStoreConnector;
                     
@@ -454,16 +488,12 @@ export const IModuleStoreConnectorSearchResult = (window as any).CollboardSdk.IM
                     export const AttributeSupportSyncer = (window as any).CollboardSdk.AttributeSupportSyncer;
                     
 
-                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/Syncers/BusinessSyncer.d.ts
-                    export const BusinessSyncer = (window as any).CollboardSdk.BusinessSyncer;
-                    
-
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/Syncers/CornerstoneSyncer.d.ts
                     export const CornerstoneSyncer = (window as any).CollboardSdk.CornerstoneSyncer;
                     
 
-                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/Syncers/RouteSyncer.d.ts
-                    export const RouteSyncer = (window as any).CollboardSdk.RouteSyncer;
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/Syncers/RouteAndBusinessSyncer.d.ts
+                    export const RouteAndBusinessSyncer = (window as any).CollboardSdk.RouteAndBusinessSyncer;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/Syncers/StorageSyncer.d.ts
@@ -504,6 +534,14 @@ export const IModuleStoreConnectorSearchResult = (window as any).CollboardSdk.IM
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/StyleSystem/0-StyleSystem.d.ts
                     export const StyleSystem = (window as any).CollboardSdk.StyleSystem;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/StyleSystem/ISkin.d.ts
+                    export const ISkin = (window as any).CollboardSdk.ISkin;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/StyleSystem/makers/makeSkinModule.d.ts
+                    export const makeSkinModule = (window as any).CollboardSdk.makeSkinModule;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ToolbarSystem/0-ToolbarSystem.d.ts

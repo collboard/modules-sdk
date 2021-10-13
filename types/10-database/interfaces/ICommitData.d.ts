@@ -1,7 +1,12 @@
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
+// TODO: This file should be excluded from (not only VSCode) auto-importing.
+//       @see https://github.com/Microsoft/vscode/issues/40248
+//       @see https://github.com/microsoft/TypeScript/issues/35395
+//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { string_uri_part, string_uuid, string_version } from '../../40-utils/typeAliases';
+import { BusinessName } from '../../50-systems/BusinessSystem/configuration/BusinessName';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
 import { CornerstoneArt } from '../../71-arts/30-CornerstoneArt';
 /**
@@ -32,8 +37,8 @@ export interface ICommitData {
     seenBy: object;
     persist: number;
     created: Date;
+    businessName: BusinessName;
     uriId: string_uri_part | null;
-    artPolygon: string | null;
     artClass: string;
     /**
      * TODO: Create IAbstractArt and use it here and in other places
