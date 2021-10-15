@@ -7,29 +7,27 @@ jest.setTimeout(1000 * 60);
 
 describe('the errored modules', () => {
     /*/
-    it('should PASS when testing exit codes', async () => {
-        await expect(
+    it('should PASS when testing exit codes', () => {
+        return expect(
             execCommand({
                 command: 'ts-node ./test/utils/exitCodes/success.ts',
                 cwd: join(__dirname, '..'),
             }),
         ).resolves.not.toThrow();
-        expect.assertions(1);
     });
 
-    it('should FAIL when testing exit codes', async () => {
-        await expect(
+    it('should FAIL when testing exit codes', () => {
+        return expect(
             execCommand({
                 command: 'ts-node ./test/utils/exitCodes/error.ts',
                 cwd: join(__dirname, '..'),
             }),
         ).rejects.toThrow();
-        expect.assertions(1);
     });
     /**/
 
     async function createFlags() {
-        const popupTestingBrowser = false;
+        const popupTestingBrowser = true;
         // TODO: Some more systematic exposed, headfull, other browser and combination testing
         return `--open multiple --exit --disconnect ${
             popupTestingBrowser ? '' : '--headless'
@@ -37,13 +35,13 @@ describe('the errored modules', () => {
     }
 
     it(`should NOT crash when there is NO ERROR in the module`, async () => {
-        await expect(
+        expect.assertions(1);
+        return expect(
             execCommand({
                 command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error ${await createFlags()}`,
                 cwd: join(__dirname, '..'),
             }),
         ).resolves.not.toThrow();
-        expect.assertions(1);
     });
 
     [

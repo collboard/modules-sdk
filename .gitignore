@@ -4,3 +4,4 @@ dist
 node_modules
 .colldev
 coverage
+bash.exe.stackdump
