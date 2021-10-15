@@ -147,10 +147,6 @@ export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModa
                     export const flatternArray = (window as any).CollboardSdk.flatternArray;
                     
 
-                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/getUrlParam.d.ts
-                    export const getUrlParam = (window as any).CollboardSdk.getUrlParam;
-                    
-
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/getWindowSize.d.ts
                     export const getWindowSize = (window as any).CollboardSdk.getWindowSize;
                     

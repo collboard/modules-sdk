@@ -42,7 +42,6 @@ export * from './40-utils/errors/ModuleNotFoundError';
 export * from './40-utils/errors/NotBoardError';
 export * from './40-utils/errors/NotFoundError';
 export * from './40-utils/flatternArray';
-export * from './40-utils/getUrlParam';
 export * from './40-utils/getWindowSize';
 export * from './40-utils/IFactory';
 export * from './40-utils/IHandler';

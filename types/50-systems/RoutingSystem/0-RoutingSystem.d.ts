@@ -21,6 +21,11 @@ export declare let routingSystem: RoutingSystem;
  * @collboard-system
  */
 export declare class RoutingSystem extends AbstractSystem {
+    /**
+     * Original url from startup of the application
+     * Note: Collboard normalizes URL and this method is a way how to get the original query params and other things in the URL
+     */
+    readonly originalUrl: URL;
     viewUriId: string_uri_part | null;
     get viewUrl(): URL;
     private storageSystem;
