@@ -96,7 +96,9 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
 
         if (!exit && output !== 'human') {
             throw new Error(
-                `It makes no sense to use "--output ${output}" without --exit flag. Please change one or another.`,
+                `It makes no sense to use "--output ${output}" without --exit flag. Please change one or another.\n You have used ${JSON.stringify(
+                    options,
+                )}`,
             );
         }
 

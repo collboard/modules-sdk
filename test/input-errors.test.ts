@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { execCommand } from './test-utils/execCommand';
 
-jest.setTimeout(1000 * 60);
+jest.setTimeout(1000 * 15);
 
 describe('wrong usage of Colldev CLI command', () => {
     it(`should crash when you specify unknown flag`, () => {
@@ -31,21 +31,16 @@ describe('wrong usage of Colldev CLI command', () => {
         ).rejects.toThrow();
     });
 
-    it(`makes no sense to use json output without exit flag`, async () => {
-        await expect(
-            execCommand({
-                command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --output json`,
-                cwd: join(__dirname, '..'),
-            }),
-        ).rejects.toThrow();
-        await expect(
-            execCommand({
-                command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --output json-raw`,
-                cwd: join(__dirname, '..'),
-            }),
-        ).rejects.toThrow();
-        expect.assertions(2);
-    });
+    for (const outputMode of ['minimal', 'minimal-strict', 'json', 'json-raw']) {
+        it(`makes no sense to use ${outputMode} output without exit flag`, () => {
+            return expect(
+                execCommand({
+                    command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --output ${outputMode}`,
+                    cwd: join(__dirname, '..'),
+                }),
+            ).rejects.toThrow();
+        });
+    }
 
     // TODO: More
 });

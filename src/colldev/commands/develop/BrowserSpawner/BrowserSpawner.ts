@@ -59,7 +59,10 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
                     this.puppeteerBrowser = await puppeteer.launch({
                         headless,
                         executablePath,
-                        // TODO: --disable-web-security
+                        defaultViewport: null,
+
+                        // TODO: maybe VPN args: ['--proxy-server=socks5://127.0.0.1:9050']
+                        // TODO: maybe --disable-web-security
                     });
                     page = (await this.puppeteerBrowser.pages())[0];
                 } else {

@@ -1,3 +1,4 @@
 export async function getBrowserFlag() {
-    return `--browser chrome --headless`;
+    const headless = true;
+    return `--browser chrome${headless ? ` --headless` : ``}`;
 }

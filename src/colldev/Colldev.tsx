@@ -33,6 +33,8 @@ export class Colldev extends Destroyable implements IDestroyable {
                     `` /* TODO: Use here spacetrim */ +
                         `Output from the compiler\n` +
                         `"human" for human readable ASCII like, colorfull output;\n` +
+                        `"minimal" for just saying "OK" or report error;\n` +
+                        `"minimal-strict" for just saying "OK" or report FIRST LINE of error;\n` +
                         `"json" for pretty JSON;\n` +
                         `"json-raw" for raw minified JSON;\n`,
                     'human',
@@ -70,6 +72,28 @@ export class Colldev extends Destroyable implements IDestroyable {
                             .catch((error) => {
                                 console.info(JSON.stringify({ ...command.status(), error }, jsonReplacer, 4));
                                 // TODO: Probbably show the error
+                                process.exit(1);
+                            });
+                    } else if (output === 'minimal') {
+                        // TODO: DRY
+                        runningCommand
+                            .then(() => {
+                                console.info(chalk.green(chalk.bold(`OK`)));
+                                process.exit(0);
+                            })
+                            .catch((error) => {
+                                console.info(chalk.red(error));
+                                process.exit(1);
+                            });
+                    } else if (output === 'minimal-strict') {
+                        // TODO: DRY
+                        runningCommand
+                            .then(() => {
+                                console.info(chalk.green(chalk.bold(`OK`)));
+                                process.exit(0);
+                            })
+                            .catch((error) => {
+                                console.info(chalk.red(error.message.split('\n')[0]));
                                 process.exit(1);
                             });
                     } else if (output === 'json-raw') {

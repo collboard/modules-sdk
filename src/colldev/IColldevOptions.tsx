@@ -1,3 +1,3 @@
 export interface IColldevOptions {
-    output: 'human' | 'json' | 'json-raw';
+    output: 'human' | 'minimal' | 'minimal-strict' | 'json' | 'json-raw';
 }
