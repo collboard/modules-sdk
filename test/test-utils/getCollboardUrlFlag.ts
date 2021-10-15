@@ -9,3 +9,5 @@ export async function getCollboardUrlFlag() {
         return `--collboard-url https://dev.collboard.com`;
     }
 }
+
+

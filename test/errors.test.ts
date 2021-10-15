@@ -1,5 +1,6 @@
 import { join } from 'path';
 import { execCommand } from './test-utils/execCommand';
+import { getBrowserFlag } from './test-utils/getBrowserFlag';
 import { getCollboardUrlFlag } from './test-utils/getCollboardUrlFlag';
 import { getFreshPortflag } from './test-utils/getFreshPortFlag';
 
@@ -28,10 +29,10 @@ describe('the errored modules', () => {
 
     async function createFlags() {
         const popupTestingBrowser = true;
-        // TODO: Some more systematic exposed, headfull, other browser and combination testing
-        return `--open multiple --exit --disconnect ${
-            popupTestingBrowser ? '' : '--headless'
-        } ${await getFreshPortflag()} ${await getCollboardUrlFlag()}`;
+        // TODO: Some more systematic exposed, headfull, other browser
+        // TODO: Combination testing
+        // TODO: Testing on multiple platforms - Linux, Windows, Mac, Docker, (maybe Android)
+        return `--open multiple --exit --disconnect ${await getBrowserFlag()} ${await getFreshPortflag()} ${await getCollboardUrlFlag()}`;
     }
 
     it(`should NOT crash when there is NO ERROR in the module`, async () => {
