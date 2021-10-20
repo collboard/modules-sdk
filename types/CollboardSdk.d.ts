@@ -140,7 +140,7 @@ export * from './71-arts/40-BackgroundWallpaperArt';
 export * from './71-arts/50-HTMLArt';
 export * from './71-arts/50-ImageArt';
 export * from './72-tools/behaviors/IBehavoirProps';
+export * from './72-tools/behaviors/selectionTool/_selectionToolBehavior';
 export * from './72-tools/behaviors/selectionTool/selectionToolDraggingBehavior';
 export * from './72-tools/behaviors/selectionTool/selectionToolScalingBehavior';
 export * from './72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior';
-export * from './72-tools/behaviors/selectionTool/_selectionToolBehavior';
