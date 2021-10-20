@@ -12,8 +12,8 @@ interface IConfirmIconProps {
     onConfirm: () => void;
     className?: string;
     inactive?: boolean;
-    title: string;
-    subtitle?: string;
+    title: string | JSX.Element;
+    subtitle?: string | JSX.Element;
 }
 interface IConfirmIconState {
     modalOpen: boolean;

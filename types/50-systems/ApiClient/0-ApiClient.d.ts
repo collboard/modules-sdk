@@ -6,11 +6,10 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { Observable } from 'rxjs';
-import { string_uri_part, string_url, string_version } from '../../40-utils/typeAliases';
+import { string_translate_language, string_uri_part, string_url, string_version } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
 import { MaterialArtVersioningSystem } from '../ArtVersionSystem/0-MaterialArtVersioningSystem';
-import { string_translate_language } from '../TranslationsSystem/0-TranslationsSystem';
 import { ITranslateMessage } from '../TranslationsSystem/ITranslateMessage';
 import { ICreateBoardOptions } from './ICreateBoardOptions';
 import { IGetMyBoardsResponse } from './interfaces/IGetMyBoards';

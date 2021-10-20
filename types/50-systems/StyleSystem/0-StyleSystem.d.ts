@@ -10,7 +10,6 @@ import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import { AbstractSystem } from '../AbstractSystem';
 import { ISkin } from './ISkin';
 import { ColorScheme } from './utils/watchPreferedColorScheme';
-export declare const SkinContext: React.Context<ISkin>;
 /**
  * StyleSystem can register and manage additional CSS styles for modules. It can scope CSS so it will do not affect others.
  * TODO: Maybe use it for core and systems.

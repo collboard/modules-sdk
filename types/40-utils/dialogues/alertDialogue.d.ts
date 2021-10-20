@@ -5,15 +5,16 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
+/// <reference types="react" />
 interface IAlertDialogueOptions {
     /**
      * TODO: Accept JSX when maked betted
      */
-    message: string;
+    message: string | JSX.Element;
 }
 /**
  *
  * @collboard-modules-sdk
  */
-export declare function alertDialogue(options: IAlertDialogueOptions | string): Promise<void>;
+export declare function alertDialogue(options: IAlertDialogueOptions | string | JSX.Element): Promise<void>;
 export {};

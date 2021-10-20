@@ -6,17 +6,11 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import * as React from 'react';
-declare type ICollboardUnloadedProps = React.PropsWithChildren<
-    | {
-          isLoading: false;
-      }
-    | {
-          /**
-           * Describe why is the loader used
-           */
-          description: string;
-          isLoading: true;
-      }
->;
-export declare function CollboardUnloaded(props: ICollboardUnloadedProps): JSX.Element;
-export {};
+import { string_translate_name_not_normalized } from '../../../40-utils/typeAliases';
+export declare function Translate(
+    props: React.PropsWithChildren<{
+        name: string_translate_name_not_normalized;
+        html?: boolean;
+        parameters?: any;
+    }>,
+): JSX.Element;

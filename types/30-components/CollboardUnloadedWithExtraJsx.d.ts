@@ -7,15 +7,22 @@
 
 import * as React from 'react';
 import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
-declare type ICollboardUnloadedWithExtraJsxProps = React.PropsWithChildren<{
-    isLoading: boolean;
-    renderExtraJsx?: boolean;
-    systems: ISystemsExtended;
-}>;
-export declare function CollboardUnloadedWithExtraJsx({
-    isLoading,
-    renderExtraJsx,
-    systems,
-    children,
-}: ICollboardUnloadedWithExtraJsxProps): JSX.Element;
+declare type ICollboardUnloadedWithExtraJsxProps = React.PropsWithChildren<
+    {
+        renderExtraJsx?: boolean;
+        systems: ISystemsExtended;
+    } & (
+        | {
+              isLoading: false;
+          }
+        | {
+              /**
+               * Describe why is the loader used
+               */
+              description: string;
+              isLoading: true;
+          }
+    )
+>;
+export declare function CollboardUnloadedWithExtraJsx(props: ICollboardUnloadedWithExtraJsxProps): JSX.Element;
 export {};

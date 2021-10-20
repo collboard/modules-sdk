@@ -259,6 +259,7 @@ export const string_char = (window as any).CollboardSdk.string_char;
 export const string_char_emoji = (window as any).CollboardSdk.string_char_emoji;
 export const string_html = (window as any).CollboardSdk.string_html;
 export const string_url = (window as any).CollboardSdk.string_url;
+export const string_href = (window as any).CollboardSdk.string_href;
 export const string_url_image = (window as any).CollboardSdk.string_url_image;
 export const string_uri = (window as any).CollboardSdk.string_uri;
 export const string_uri_part = (window as any).CollboardSdk.string_uri_part;

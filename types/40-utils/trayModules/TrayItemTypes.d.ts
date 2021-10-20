@@ -15,12 +15,12 @@ export declare type ITrayItemList = {
     [key: string]: ITrayItem;
 };
 export declare type ITrayToolbarGroup = Array<{
-    title: string;
+    title: JSX.Element;
     itemIds: string[];
     scale?: number;
 }>;
 export declare type ITrayToolbarItems = Array<{
-    name: string;
+    name: JSX.Element;
     scale: number;
     icon: string;
     items: ITrayToolbarGroup;

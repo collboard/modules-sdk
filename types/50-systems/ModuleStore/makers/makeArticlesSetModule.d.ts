@@ -5,8 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { string_uri_part, string_url } from '../../../40-utils/typeAliases';
-import { string_translate_language } from '../../TranslationsSystem/0-TranslationsSystem';
+import { string_translate_language, string_uri_part, string_url } from '../../../40-utils/typeAliases';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 /**

@@ -14,10 +14,10 @@ import {
     string_module_category,
     string_module_name,
     string_person_profile,
+    string_translate_language,
     string_url_image,
     string_version,
 } from '../../../40-utils/typeAliases';
-import { string_translate_language } from '../../TranslationsSystem/0-TranslationsSystem';
 /**
  * Manifest describes the module.
  *

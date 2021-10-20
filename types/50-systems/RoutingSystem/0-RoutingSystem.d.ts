@@ -33,10 +33,15 @@ export declare class RoutingSystem extends AbstractSystem {
     protected init(): Promise<void>;
     readonly urlVariables: BrowserHistoryUrlStorage<IUrlVariables>;
     navigateHome(): void;
+    get homeUrl(): URL;
+    private get home();
     /**
      * TODO: !! Use this in all places
      */
     navigateBoardHome(): void;
+    /**
+     *  TODO: Make this save to history and check that is is working together with urlVariabiles in routingSystem
+     */
     registerQuery<TValue extends IJson>(
         defaultParams: TValue,
         options?: Partial<IBrowserHistoryStorageOptions>,

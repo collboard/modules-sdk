@@ -5,8 +5,13 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { TranslationsSystem } from './0-TranslationsSystem';
-export declare let translate: typeof TranslationsSystem.prototype.translate;
-export declare let Translate: typeof TranslationsSystem.prototype.Translate;
-export declare function registerTranslateSingleton(translationsSystem: TranslationsSystem): void;
-export declare const workOnlyOnFrontend: Window & typeof globalThis;
+import * as React from 'react';
+import { TranslationsSystem } from '../0-TranslationsSystem';
+import './TranslatorEditorComponent.css';
+interface ITranslatorEditorComponentProps {
+    translator: TranslationsSystem;
+}
+export declare class TranslatorEditorComponent extends React.Component<ITranslatorEditorComponentProps> {
+    render(): null;
+}
+export {};

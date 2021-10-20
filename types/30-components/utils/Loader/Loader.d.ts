@@ -6,4 +6,11 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /// <reference types="react" />
-export declare function Loader(): JSX.Element;
+interface ILoaderProps {
+    /**
+     * Describe why is the loader used
+     */
+    description: string;
+}
+export declare function Loader({ description }: ILoaderProps): JSX.Element;
+export {};

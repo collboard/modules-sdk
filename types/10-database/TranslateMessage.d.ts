@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { string_translate_name } from '../50-systems/TranslationsSystem/0-TranslationsSystem';
+import { string_translate_name } from '../40-utils/typeAliases';
 export declare class __REMOVE_TranslateMessage {
     id: number;
     name: string_translate_name;

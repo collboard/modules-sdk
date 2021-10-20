@@ -10,24 +10,10 @@ import 'moment/locale/sk';
 import * as React from 'react';
 import { Observable } from 'rxjs';
 import { IReplacer } from '../../40-utils/applyParamsOnTemplate';
+import { string_translate_language, string_translate_name_not_normalized } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
 import { ITranslateMessage } from './ITranslateMessage';
-/**
- * Semantic helper; For example "SHARE_ICON/EDIT_LINK"
- */
-export declare type string_translate_name = string;
-/**
- * Semantic helper; For example "ShareIcon/ edit link"
- */
-export declare type string_translate_name_not_normalized = string;
-/**
- * Semantic helper; For example "cs" or "en"
- *
- * TODO: Maybe use enum
- * TODO: Rename - remove string_ prefix like ITranslateLanguageCode
- */
-export declare type string_translate_language = 'en' | 'cs' | 'sk';
 export interface ITranslationMessages {
     [key: string]: string;
 }
@@ -51,6 +37,11 @@ export declare class TranslationsSystem extends AbstractSystem {
     set language(language: string_translate_language);
     pushMessages(...translateMessages: ITranslateMessage[]): void;
     private missingTranslation;
+    /**
+     * Translate message
+     *
+     * Note: Prefer to use component <Translate... because component can be updated during a livetime of the page
+     */
     translate(
         nameNN: string_translate_name_not_normalized,
         note?: string,
@@ -66,7 +57,15 @@ export declare class TranslationsSystem extends AbstractSystem {
             parameters?: any;
         }>,
     ) => JSX.Element;
+    /**
+     * Creates context for providing translator
+     *
+     * You want to probbably use <Translate...
+     * Use always and only for wrpaiing content in ReactDOM.render(<translationsSystem.WithTranslateContext>...</translationsSystem.WithTranslateContext>)
+     */
+    readonly WithTranslateContext: ({ children }: React.PropsWithChildren<{}>) => JSX.Element;
     private _Translate;
+    private _WithTranslateContext;
     useTemplate(html: string): string;
     pickMessage(messageTranslation: string | Partial<Record<string_translate_language, string>>): string;
     pickMessageJsx(

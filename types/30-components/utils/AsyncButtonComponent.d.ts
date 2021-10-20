@@ -6,8 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import * as React from 'react';
-interface IAsyncButtonComponentProps
-    extends React.PropsWithChildren<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>> {
+import { string_href } from '../../40-utils/typeAliases';
+declare type IAsyncButtonComponentProps = React.PropsWithChildren<{
     /**
      * Component to be rendered after button is clicked and before onClick fullfils
      *
@@ -15,11 +15,21 @@ interface IAsyncButtonComponentProps
      */
     loader?: JSX.Element;
     onClick: React.MouseEventHandler<any>;
-}
+    href?: string_href;
+    className?: string;
+    style?: any;
+}>;
 /**
  * Utility for button with pending state after click
  *
  * @collboard-modules-sdk
  */
-export declare function AsyncButtonComponent(props: IAsyncButtonComponentProps): JSX.Element;
+export declare function AsyncButtonComponent({
+    loader,
+    onClick,
+    href,
+    className,
+    style,
+    children,
+}: IAsyncButtonComponentProps): JSX.Element;
 export {};

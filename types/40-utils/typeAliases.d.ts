@@ -52,6 +52,13 @@ export declare type string_url = string;
 /**
  * Semantic helper
  *
+ * For example `"https://collboard.com/9SeSQTupmQHwuSrLi"` OR `/9SeSQTupmQHwuSrLi`
+ * @collboard-modules-sdk
+ */
+export declare type string_href = string;
+/**
+ * Semantic helper
+ *
  * For example `"https://collboard.com/9SeSQTupmQHwuSrLi.png?width=1200&height=630"`
  * @collboard-modules-sdk
  */
@@ -298,3 +305,18 @@ export declare type number_kilobytes = number;
 export declare type number_megabytes = number;
 export declare type number_gigabytes = number;
 export declare type number_terabytes = number;
+/**
+ * Semantic helper; For example "SHARE_ICON/EDIT_LINK"
+ */
+export declare type string_translate_name = string;
+/**
+ * Semantic helper; For example "ShareIcon/ edit link"
+ */
+export declare type string_translate_name_not_normalized = string;
+/**
+ * Semantic helper; For example "cs" or "en"
+ *
+ * TODO: Maybe use enum
+ * TODO: Rename - remove string_ prefix like ITranslateLanguageCode
+ */
+export declare type string_translate_language = 'en' | 'cs' | 'sk';

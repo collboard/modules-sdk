@@ -7,8 +7,12 @@
 
 import * as React from 'react';
 declare type IObfuscateProps = React.PropsWithChildren<{
-    description: string;
-    button: string;
+    content: string | JSX.Element;
+    buttonContent: string | JSX.Element;
 }>;
-export declare function Obfuscate({ children, description, button }: IObfuscateProps): JSX.Element;
+export declare function Obfuscate({
+    children,
+    content: description,
+    buttonContent: button,
+}: IObfuscateProps): JSX.Element;
 export {};

@@ -6,8 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /// <reference types="react" />
-import { string_module_name, string_url } from '../../40-utils/typeAliases';
-import { string_translate_language } from '../TranslationsSystem/0-TranslationsSystem';
+import { string_module_name, string_translate_language, string_url } from '../../40-utils/typeAliases';
 /**
  * Similar interface to Notification Web API
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Notification

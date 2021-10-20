@@ -7,7 +7,7 @@
 
 import * as React from 'react';
 declare type IModalGroupProps = React.PropsWithChildren<{
-    title?: string;
+    title?: string | JSX.Element;
 }>;
 export declare function ModalGroup({ children, title }: IModalGroupProps): JSX.Element;
 export {};
