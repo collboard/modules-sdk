@@ -4,8 +4,9 @@ import { Box, Text } from 'ink';
 import * as React from 'react';
 import { ICommand } from '../ICommand';
 import { IColldevPublishOptions } from './IColldevPublishOptions';
+import { IColldevPublishStatus } from './IColldevPublishStatus';
 
-export class ColldevPublish extends Destroyable implements ICommand<IColldevPublishOptions, any> {
+export class ColldevPublish extends Destroyable implements ICommand<IColldevPublishOptions, IColldevPublishStatus> {
     public init(program: commander.Command) {
         return program
             .command('publish [path]')

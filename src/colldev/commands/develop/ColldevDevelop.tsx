@@ -9,10 +9,11 @@ import { BrowserSpawner } from './BrowserSpawner/BrowserSpawner';
 import { Compiler } from './Compiler/Compiler';
 import { compilerStatusToJson } from './Compiler/utils/compilerStatusToJson';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
+import { IColldevDevelopStatus } from './IColldevDevelopStatus';
 import { OutputComponent } from './OutputComponent';
 import { Server } from './Server/Server';
 
-export class ColldevDevelop extends Destroyable implements ICommand<IColldevDevelopOptions, any> {
+export class ColldevDevelop extends Destroyable implements ICommand<IColldevDevelopOptions, IColldevDevelopStatus> {
     private compiler: Compiler;
     private server: Server;
     private browserSpawner: BrowserSpawner;
