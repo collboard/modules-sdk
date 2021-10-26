@@ -57,7 +57,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 console.info(chalk.green(`Module is working successfully.`));
                                 process.exit(0);
                             })
-                            .catch((error) => {
+                            .catch((error: Error) => {
                                 this.renderingInstance?.unmount();
                                 console.info(chalk.red(error.message));
                                 process.exit(1);
@@ -69,7 +69,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 console.info(JSON.stringify(command.status(), jsonReplacer, 4));
                                 process.exit(0);
                             })
-                            .catch((error) => {
+                            .catch((error: Error) => {
                                 console.info(JSON.stringify({ ...command.status(), error }, jsonReplacer, 4));
                                 // TODO: Probbably show the error
                                 process.exit(1);
@@ -81,7 +81,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 console.info(chalk.green(chalk.bold(`OK`)));
                                 process.exit(0);
                             })
-                            .catch((error) => {
+                            .catch((error: Error) => {
                                 console.info(chalk.red(error));
                                 process.exit(1);
                             });
@@ -92,7 +92,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 console.info(chalk.green(chalk.bold(`OK`)));
                                 process.exit(0);
                             })
-                            .catch((error) => {
+                            .catch((error: Error) => {
                                 console.info(chalk.red(error.message.split('\n')[0]));
                                 process.exit(1);
                             });
@@ -103,7 +103,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 console.info(JSON.stringify(command.status(), jsonReplacer));
                                 process.exit(0);
                             })
-                            .catch((error) => {
+                            .catch((error: Error) => {
                                 console.info(JSON.stringify({ ...command.status(), error }, jsonReplacer));
                                 // TODO: Probbably show the error
                                 process.exit(1);
