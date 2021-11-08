@@ -38,7 +38,7 @@ export declare class MaterialArtVersioningSystem extends AbstractSystem implemen
     private closePreventionSystem;
     private artSerializer;
     protected init(): Promise<void>;
-    get clientUuid(): string;
+    get clientId(): string;
     signAs(moduleSignature: IModuleSignature): MaterialArtVersioningSystem;
     createOperation(operationName: string): Operation;
     createPrimaryOperation(): Operation;

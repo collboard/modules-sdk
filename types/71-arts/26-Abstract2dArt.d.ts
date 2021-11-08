@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /// <reference types="react" />
-import { IAwaitable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { IVector } from 'xyzt';
 import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
 import { AbstractPlacedArt } from './25-AbstractPlacedArt';
@@ -49,7 +49,7 @@ export declare abstract class Abstract2dArt extends AbstractPlacedArt {
      * *Note: This can be called many times a second when user is scrolling
      * or not at all when art is out of screen*
      */
-    abstract render(selected: boolean, systems: ISystemsExtended): IAwaitable<JSX.Element>;
+    abstract render(selected: boolean, systems: ISystemsExtended): Promisable<JSX.Element>;
     /**
      * Default z-index of art
      *

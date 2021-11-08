@@ -10,18 +10,17 @@ import { AbstractSystem } from '../AbstractSystem';
 import { IBoardApiIdentity, IConnectionIdentity, IInstanceIdentity } from './IIdentity';
 /**
  * IdentitySystem identifies the User by a pseudonym.
- * TODO: Rename all UUID UPPERCASE strings to Uuid
  *
  * @collboard-system
  */
 export declare class IdentitySystem extends AbstractSystem {
-    readonly instanceUUID: string_uuid;
+    readonly instanceId: string_uuid;
     private storage;
-    private _browserUUID;
-    private _sessionUUID;
+    private _browserId;
+    private _sessionId;
     protected init(): Promise<void>;
-    get browserUUID(): string_uuid;
-    get sessionUUID(): string_uuid;
+    get browserId(): string_uuid;
+    get sessionId(): string_uuid;
     createInstanceIdentity(): IInstanceIdentity;
     createBoardApiIdentity(): IBoardApiIdentity;
     createConnectionIdentity(boardApiIdentity: IBoardApiIdentity): IConnectionIdentity;

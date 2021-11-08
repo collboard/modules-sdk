@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IAwaitable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { IFactory } from '../IFactory';
 /**
  * This util catches an error and rethrows more meaningfull error messege to better debugging
@@ -13,4 +13,4 @@ import { IFactory } from '../IFactory';
  *
  * @collboard-modules-sdk
  */
-export declare function errorBoundary<T>(valueFactory: IFactory<IAwaitable<T>>, errorMessage: string): Promise<T>;
+export declare function errorBoundary<T>(valueFactory: IFactory<Promisable<T>>, errorMessage: string): Promise<T>;

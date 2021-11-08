@@ -6,7 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /// <reference types="react" />
-import { IAwaitable, IDestroyable } from 'destroyable';
+import { IDestroyable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { IIconAnonymous } from '../../30-components/menu/IIconAnonymous';
 import { IFactorable, IFactory } from '../../40-utils/IFactory';
 import { string_css_cursor } from '../../40-utils/typeAliases';
@@ -25,7 +26,7 @@ export interface IToolbarIcon extends IIconAnonymous {
      * When this is defined, icon on toolbar is selectable.
      * Note: Prefer to use onActivate instead of onClick
      */
-    onSelect?: IFactory<IAwaitable<IDestroyable>>;
+    onSelect?: IFactory<Promisable<IDestroyable>>;
     /**
      * Select immediatelly when is ihis icon added into toolbar
      * Note: working only with onSelect (not onClick)
@@ -70,5 +71,5 @@ export interface IToolbarIcon extends IIconAnonymous {
      * Extra menu which will be
      *
      */
-    menu?: IFactorable<IAwaitable<JSX.Element>>;
+    menu?: IFactorable<Promisable<JSX.Element>>;
 }

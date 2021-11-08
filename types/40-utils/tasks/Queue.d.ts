@@ -5,7 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { Destroyable, IAwaitable, IDestroyable } from 'destroyable';
+import { Destroyable, IDestroyable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { ITaskRunner } from './ITaskRunner';
 /**
  * Queue manages tasks running in queue and ensures that every task run (function run) run one after another and not mixed up
@@ -27,6 +28,6 @@ import { ITaskRunner } from './ITaskRunner';
  */
 export declare class Queue<TTaskResult> extends Destroyable implements IDestroyable, ITaskRunner<TTaskResult> {
     private taskToWait;
-    task(runner: () => IAwaitable<TTaskResult>): Promise<TTaskResult>;
+    task(runner: () => Promisable<TTaskResult>): Promise<TTaskResult>;
     destroy(): Promise<void>;
 }

@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IAwaitable } from 'destroyable';
+import { Promisable } from 'type-fest';
 declare global {
     interface Array<T> {
         /**
@@ -14,7 +14,7 @@ declare global {
          * @param thisArg An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.
          */
         filterAsync(
-            predicate: (value: T, index: number, array: T[]) => IAwaitable<unknown>,
+            predicate: (value: T, index: number, array: T[]) => Promisable<unknown>,
             thisArg?: any,
         ): Promise<T[]>;
     }

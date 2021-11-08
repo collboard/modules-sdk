@@ -6,8 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /// <reference types="react" />
-import { IAwaitable } from 'destroyable';
 import { Observable } from 'rxjs';
+import { Promisable } from 'type-fest';
 /**
  * TODO: Make from this some microlibrary
  */
@@ -21,7 +21,7 @@ interface IObservableContentComponentProps {
     /**
      * You can put here any RxJS observable. For example BehaviorSubject.
      */
-    content: Observable<IAwaitable<JSX.Element>>;
+    content: Observable<Promisable<JSX.Element>>;
 }
 /**
  * Utility for mounting RxJS observable content

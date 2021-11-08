@@ -10,36 +10,36 @@ export interface IUserIdentity {
     /**
      *
      */
-    userUUID: string_uuid | null;
+    userId: string_uuid | null;
 }
 export interface IBrowserIdentity extends IUserIdentity {
     /**
      *
      */
-    browserUUID: string_uuid;
+    browserId: string_uuid;
 }
 export interface ISessionIdentity extends IBrowserIdentity {
     /**
      *
      */
-    sessionUUID: string_uuid;
+    sessionId: string_uuid;
 }
 export interface IInstanceIdentity extends ISessionIdentity {
     /**
      *
      */
-    instanceUUID: string_uuid;
+    instanceId: string_uuid;
 }
 export interface IBoardApiIdentity extends IInstanceIdentity {
     /**
      *
      */
-    boardApiUUID: string_uuid;
+    boardApiId: string_uuid;
 }
 export interface IConnectionIdentity extends IBoardApiIdentity {
     /**
      *
      */
-    connectionUUID: string_uuid;
+    connectionId: string_uuid;
 }
 export declare const IDENTITY_KEYS: Array<keyof IConnectionIdentity>;

@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /// <reference types="react" />
-import { IAwaitable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { IFactorable } from '../../40-utils/IFactory';
 interface IAsyncContentComponentProps {
     /**
@@ -18,7 +18,7 @@ interface IAsyncContentComponentProps {
     /**
      * The async content to be rendered
      */
-    content: IFactorable<IAwaitable<JSX.Element>>;
+    content: IFactorable<Promisable<JSX.Element>>;
 }
 /**
  * Utility for mounting RxJS observable content

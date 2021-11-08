@@ -165,12 +165,12 @@ export class Server extends Destroyable implements IDestroyable {
     private async socketHandler() {
         this.socket.on('connection', (socketConnection) => {
             socketConnection.on('identify', (clientIdentification: IColldevSyncerSocket.identify) => {
-                const { instanceUUID } = clientIdentification;
+                const { instanceId } = clientIdentification;
 
-                // console.log(`Client ${instanceUUID} connected and identified`);
+                // console.log(`Client ${instanceId} connected and identified`);
 
                 this.serverStatusUpdate((serverStatusValue) => {
-                    serverStatusValue.clients[instanceUUID] = {
+                    serverStatusValue.clients[instanceId] = {
                         version: -1,
                         // TODO: Maybe transfer theese in initial
                         connected: true,
@@ -185,7 +185,7 @@ export class Server extends Destroyable implements IDestroyable {
                 const subscription = this.compiler.compilerStatus.subscribe({
                     next: async ({ bundle }) => {
                         if (bundle) {
-                            // console.log(`Emmiting bundle for ${instanceUUID}`);
+                            // console.log(`Emmiting bundle for ${instanceId}`);
                             socketConnection.emit('bundle', {
                                 bundleUrl: `${await this.colldevUrl()}/assets/` + relative(ASSETS_PATH, bundle.path),
                             } as IColldevSyncerSocket.bundle);
@@ -195,7 +195,7 @@ export class Server extends Destroyable implements IDestroyable {
 
                 socketConnection.on('clientStatus', (clientStatus: IColldevSyncerSocket.clientStatus) => {
                     this.serverStatusUpdate((serverStatusValue) => {
-                        serverStatusValue.clients[instanceUUID] = clientStatus;
+                        serverStatusValue.clients[instanceId] = clientStatus;
                     });
                 });
 
@@ -203,7 +203,7 @@ export class Server extends Destroyable implements IDestroyable {
                     subscription.unsubscribe();
 
                     this.serverStatusUpdate((serverStatusValue) => {
-                        delete serverStatusValue.clients[instanceUUID];
+                        delete serverStatusValue.clients[instanceId];
                     });
                 });
             });

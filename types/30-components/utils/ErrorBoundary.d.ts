@@ -16,6 +16,6 @@ export declare class ErrorBoundary extends React.Component<IErrorBoundaryProps, 
         hasError: boolean;
     };
     componentDidCatch(error: Error): void;
-    render(): {} | null | undefined;
+    render(): React.ReactNode;
 }
 export {};

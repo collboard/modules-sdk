@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IAwaitable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { string_module_name } from '../../../40-utils/typeAliases';
 /**
  * Activator saves the information which module should be synced/installed
@@ -16,6 +16,6 @@ import { string_module_name } from '../../../40-utils/typeAliases';
  * @collboard-modules-sdk
  */
 export interface IModulePersister {
-    moduleActivate(moduleName: string_module_name): IAwaitable<void>;
-    moduleDeactivate(moduleName: string_module_name): IAwaitable<void>;
+    moduleActivate(moduleName: string_module_name): Promisable<void>;
+    moduleDeactivate(moduleName: string_module_name): Promisable<void>;
 }

@@ -5,19 +5,19 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { ITunnelData } from './interfaces/ITunnelData';
-export declare class Tunnel implements ITunnelData {
-    id: number;
-    userId: string | null;
-    browserId: string;
-    sessionId: string;
-    instanceId: string;
-    boardApiId: string;
-    connectionId: string;
-    remoteInstanceId: string;
-    uriId: string;
-    clientVersion: string;
+import { BusinessName } from '../50-systems/BusinessSystem/configuration/BusinessName';
+export declare class ServiceLog {
+    serviceName: string;
+    description: string;
+    options: object;
+    businessName: BusinessName;
     remoteVersion: string;
-    start: Date;
-    end: Date | null;
+    remoteInstanceId: string;
+    stats: object | null;
+    lastStats: object | null;
+    lastRealStats: object | null;
+    lastLogs: string | null;
+    lastRealLogs: string | null;
+    lastRun: Date | null;
+    lastRealRun: Date | null;
 }

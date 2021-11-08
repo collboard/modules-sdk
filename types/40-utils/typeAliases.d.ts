@@ -78,6 +78,13 @@ export declare type string_uri = string;
  */
 export declare type string_uri_part = string;
 /**
+ * Semantic helper, ID of the board used in URL and API
+ *
+ * For example `"9SeSQTupmQHwuSrLi"`
+ * @collboard-modules-sdk
+ */
+export declare type string_uriid = string_uri_part;
+/**
  * Semantic helper
  *
  * @collboard-modules-sdk
@@ -146,6 +153,13 @@ export declare type string_file_extension = string;
  * @collboard-modules-sdk
  */
 export declare type string_file_path = string;
+/**
+ * Semantic helper
+ *
+ * For example `"/foo/bar"`
+ * @collboard-modules-sdk
+ */
+export declare type string_folder_path = string;
 /**
  * Semantic helper
  *

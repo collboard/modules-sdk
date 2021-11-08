@@ -25,7 +25,7 @@ export declare class ApiClient extends AbstractSystem {
     protected init(): Promise<void>;
     getAbout(): Promise<{
         version: string;
-        remoteInstanceUUID: string_version;
+        remoteInstanceId: string_version;
     }>;
     connectToBoard(uriId: string_uri_part): Promise<MaterialArtVersioningSystem>;
     createNewBoard(options: Omit<ICreateBoardOptions, 'redirect'>): Promise<string_uri_part>;

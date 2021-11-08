@@ -9,10 +9,10 @@ export declare namespace IColldevSyncerSocket {
     interface IError {
         name: string;
         message: string;
-        stack: string;
+        stack?: string;
     }
     interface identify {
-        instanceUUID: string;
+        instanceId: string;
     }
     interface bundle {
         bundleUrl: string;

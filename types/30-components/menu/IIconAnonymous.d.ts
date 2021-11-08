@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IAwaitable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { string_char, string_char_emoji } from '../../40-utils/typeAliases';
 import { string_icon } from './icons';
 /**
@@ -21,7 +21,7 @@ export interface IIconAnonymous {
      *
      * *Note: Prefer to use onActivate when using IToolbarIcon*
      */
-    onClick?: () => IAwaitable<void>;
+    onClick?: () => Promisable<void>;
     /**
      * Marks if the icon should appear selected
      */

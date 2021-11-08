@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IAwaitable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { ToolbarName } from '../../ToolbarSystem/0-ToolbarSystem';
 import { IToolbarIcon } from '../../ToolbarSystem/IToolbarIcon';
@@ -20,6 +20,6 @@ import { IModuleManifest } from '../interfaces/IModuleManifest';
 export declare function makeIconModuleOnModule(protoModule: {
     manifest?: IModuleManifest;
     toolbar: ToolbarName;
-    icon: IToolbarIcon | ((systems: ISystems) => IAwaitable<IToolbarIcon>);
+    icon: IToolbarIcon | ((systems: ISystems) => Promisable<IToolbarIcon>);
     moduleActivatedByIcon: IModule;
 }): IModuleDefinition;

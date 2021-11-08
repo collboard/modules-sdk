@@ -5,7 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IAwaitable, IDestroyable } from 'destroyable';
+import { IDestroyable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { string_module_category } from '../../../40-utils/typeAliases';
 import { IDependency } from './IDependencies';
 import { IModule } from './IModule';
@@ -16,7 +17,7 @@ import { IModuleStoreConnectorSearchQuery, IModuleStoreConnectorSearchResult } f
  * @collboard-modules-sdk
  */
 export interface IModuleStoreConnector extends IDestroyable {
-    search(searchCriteria: IModuleStoreConnectorSearchQuery): IAwaitable<IModuleStoreConnectorSearchResult>;
-    download(...modules: IDependency[]): IAwaitable<IModule[]>;
+    search(searchCriteria: IModuleStoreConnectorSearchQuery): Promisable<IModuleStoreConnectorSearchResult>;
+    download(...modules: IDependency[]): Promisable<IModule[]>;
     getCategories(): Promise<Set<string_module_category>>;
 }

@@ -25,8 +25,8 @@ export declare class Commit implements ICommitData {
     operationId: string | null;
     author: string;
     seenBy: object;
-    isSeenBy(clientUuid: string): boolean;
-    addSeenBy(clientUuid: string): void;
+    isSeenBy(clientId: string): boolean;
+    addSeenBy(clientId: string): void;
     persist: number;
     created: Date;
     businessName: BusinessName;

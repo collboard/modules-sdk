@@ -9,9 +9,11 @@
 export declare const LoaderInlineContainer: import('styled-components').StyledComponent<
     'div',
     any,
-    import('react').PropsWithChildren<{
+    {
         icon?: string | undefined;
-        animation?: string | string[] | Set<string> | undefined;
-    }>,
+        animation?: import('../../../40-utils/toArray').IArrayable<string> | undefined;
+    } & {
+        children?: import('react').ReactNode;
+    },
     never
 >;

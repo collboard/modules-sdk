@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /// <reference types="react" />
-import { IAwaitable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { ExtraJsxPlace } from '../../ExtraJsxSystem/0-ExtraJsxSystem';
 import { IModuleDefinition } from '../interfaces/IModule';
@@ -19,5 +19,5 @@ export declare function makeExtrajsxModule(protoModule: {
     manifest?: IModuleManifest;
     place: ExtraJsxPlace;
     order?: number;
-    createExtraJsx(systems: ISystems): IAwaitable<JSX.Element>;
+    createExtraJsx(systems: ISystems): Promisable<JSX.Element>;
 }): IModuleDefinition;

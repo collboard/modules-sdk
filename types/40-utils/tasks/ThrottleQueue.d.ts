@@ -5,7 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { Destroyable, IAwaitable, IDestroyable } from 'destroyable';
+import { Destroyable, IDestroyable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { ITaskRunner } from './ITaskRunner';
 /**
  * @collboard-modules-sdk
@@ -37,6 +38,6 @@ export declare class ThrottleQueue<TTaskResult> extends Destroyable implements I
     private throttles;
     private result;
     constructor(options: IThrottleQueueOptions);
-    task(runner: () => IAwaitable<TTaskResult>): Promise<TTaskResult>;
+    task(runner: () => Promisable<TTaskResult>): Promise<TTaskResult>;
     destroy(): Promise<void>;
 }

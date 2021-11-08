@@ -12,11 +12,11 @@ export namespace IColldevSyncerSocket {
     export interface IError {
         name: string;
         message: string;
-        stack: string;
+        stack?: string;
     }
     export interface identify {
         // TODO: domain: string_url;
-        instanceUUID: string;
+        instanceId: string;
     }
     export interface bundle {
         bundleUrl: string;

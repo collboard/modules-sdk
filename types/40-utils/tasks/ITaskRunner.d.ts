@@ -5,7 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IAwaitable, IDestroyable } from 'destroyable';
+import { IDestroyable } from 'destroyable';
+import { Promisable } from 'type-fest';
 export interface ITaskRunner<TTaskResult> extends IDestroyable {
-    task(runner: () => IAwaitable<TTaskResult>): Promise<TTaskResult>;
+    task(runner: () => Promisable<TTaskResult>): Promise<TTaskResult>;
 }

@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IAwaitable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { IShortcut } from '../interfaces/IShortcut';
 export declare type IRegisterShortcutOptions<TValue> =
     | IRegisterShortcutOptionsSingle
@@ -15,10 +15,10 @@ export declare function multipleRegisterShortcutOptions<TValue>(
 ): IRegisterShortcutOptionsMultiple<TValue>;
 interface IRegisterShortcutOptionsSingle {
     shortcut: IShortcut;
-    executor: () => IAwaitable<void>;
+    executor: () => Promisable<void>;
 }
 interface IRegisterShortcutOptionsMultiple<TValue> {
     shortcuts: Map<IShortcut, TValue>;
-    executor: (options: { value: TValue }) => IAwaitable<void>;
+    executor: (options: { value: TValue }) => Promisable<void>;
 }
 export {};

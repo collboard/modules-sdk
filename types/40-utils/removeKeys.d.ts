@@ -5,19 +5,15 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { ITunnelData } from './interfaces/ITunnelData';
-export declare class Tunnel implements ITunnelData {
-    id: number;
-    userId: string | null;
-    browserId: string;
-    sessionId: string;
-    instanceId: string;
-    boardApiId: string;
-    connectionId: string;
-    remoteInstanceId: string;
-    uriId: string;
-    clientVersion: string;
-    remoteVersion: string;
-    start: Date;
-    end: Date | null;
-}
+/**
+ * Remove given keys from the recieved options array.
+ * Note: It does not mutate recieved object
+ *
+ * @param options
+ * @param keys
+ * @returns stripped object
+ */
+export declare function removeKeys<TObject, TRemove extends keyof TObject>(
+    options: TObject,
+    keys: TRemove[],
+): Omit<TObject, TRemove>;

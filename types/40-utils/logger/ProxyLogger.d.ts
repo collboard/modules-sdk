@@ -5,19 +5,11 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { ITunnelData } from './interfaces/ITunnelData';
-export declare class Tunnel implements ITunnelData {
-    id: number;
-    userId: string | null;
-    browserId: string;
-    sessionId: string;
-    instanceId: string;
-    boardApiId: string;
-    connectionId: string;
-    remoteInstanceId: string;
-    uriId: string;
-    clientVersion: string;
-    remoteVersion: string;
-    start: Date;
-    end: Date | null;
+import { ILogger } from './ILogger';
+export declare class ProxyLogger implements ILogger {
+    private readonly loggers;
+    constructor(...loggers: ILogger[]);
+    info(message?: any, ...optionalParams: any[]): void;
+    warn(warning?: any, ...optionalParams: any[]): void;
+    error(error?: Error | any, ...optionalParams: any[]): void;
 }

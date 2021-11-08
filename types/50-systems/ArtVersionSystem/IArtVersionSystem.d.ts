@@ -23,7 +23,7 @@ export interface IArtVersioningSystem extends IDestroyable {
     readonly commitsObservable: Observable<Commit>;
     readonly artsObservable: Observable<AbstractArt>;
     readonly permissions: IPermissions;
-    readonly clientUuid: string_uuid;
+    readonly clientId: string_uuid;
     readonly lastCommit: ICommitData | null;
     readonly lastCommitId: number;
     readonly commits: ICommitData[];

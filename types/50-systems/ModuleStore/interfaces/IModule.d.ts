@@ -5,7 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IAwaitable, IDestroyable } from 'destroyable';
+import { IDestroyable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { IFactorable } from '../../../40-utils/IFactory';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IModuleManifest } from './IModuleManifest';
@@ -48,4 +49,4 @@ export interface IModuleDefinition {
  *
  * @collboard-modules-sdk
  */
-export declare type IModuleSetup = (systems: ISystems) => IAwaitable<IDestroyable>;
+export declare type IModuleSetup = (systems: ISystems) => Promisable<IDestroyable>;
