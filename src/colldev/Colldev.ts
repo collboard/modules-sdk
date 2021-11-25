@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import commander from 'commander';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { Instance, render } from 'ink';
+import { ColldevBuild } from './commands/build/ColldevBuild';
 import { ColldevDevelop } from './commands/develop/ColldevDevelop';
 import { ICommand } from './commands/ICommand';
 import { ColldevPublish } from './commands/publish/ColldevPublish';
@@ -11,7 +12,11 @@ import { jsonReplacer } from './utils/jsonReplacer';
 
 export class Colldev extends Destroyable implements IDestroyable {
     private program: commander.Command;
-    private commands: Array<ICommand<IColldevOptions, any>> = [new ColldevDevelop(), new ColldevPublish()];
+    private commands: Array<ICommand<IColldevOptions, any>> = [
+        new ColldevDevelop(),
+        new ColldevBuild(),
+        new ColldevPublish(),
+    ];
     private renderingInstance: Instance | null = null;
 
     constructor(readonly argv?: string[]) {
