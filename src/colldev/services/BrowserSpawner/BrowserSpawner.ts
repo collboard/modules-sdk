@@ -4,7 +4,7 @@ import { getAppName, locateBrowser } from 'locate-app';
 import puppeteer, { Browser, Page } from 'puppeteer-core';
 import { BehaviorSubject } from 'rxjs';
 import { forTime } from 'waitasecond';
-import { IColldevDevelopOptions } from '../IColldevDevelopOptions';
+import { IColldevDevelopOptions } from '../../commands/develop/IColldevDevelopOptions';
 import { Server } from '../Server/Server';
 import { IBrowserSpawnerStatus } from './IBrowserSpawnerStatus';
 

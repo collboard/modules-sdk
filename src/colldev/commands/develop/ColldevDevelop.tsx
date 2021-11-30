@@ -3,15 +3,15 @@ import { Destroyable } from 'destroyable';
 import * as React from 'react';
 import { combineLatest } from 'rxjs';
 import { forEver, forImmediate } from 'waitasecond';
+import { BrowserSpawner } from '../../services/BrowserSpawner/BrowserSpawner';
+import { DevelopmentCompiler } from '../../services/Compiler/DevelopmentCompiler';
+import { compilerStatusToJson } from '../../services/Compiler/utils/compilerStatusToJson';
+import { Server } from '../../services/Server/Server';
 import { joinErrors } from '../../utils/joinErrors';
 import { ICommand } from '../ICommand';
-import { BrowserSpawner } from './BrowserSpawner/BrowserSpawner';
-import { DevelopmentCompiler } from './Compiler/DevelopmentCompiler';
-import { compilerStatusToJson } from './Compiler/utils/compilerStatusToJson';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
 import { IColldevDevelopStatus } from './IColldevDevelopStatus';
 import { OutputComponent } from './OutputComponent';
-import { Server } from './Server/Server';
 
 export class ColldevDevelop extends Destroyable implements ICommand<IColldevDevelopOptions, IColldevDevelopStatus> {
     private compiler: DevelopmentCompiler;

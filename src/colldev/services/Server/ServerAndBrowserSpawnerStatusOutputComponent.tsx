@@ -1,8 +1,8 @@
 import Table from 'ink-table';
 import * as React from 'react';
-import { objectMap } from '../../../utils/objectMap';
+import { IColldevDevelopOptions } from '../../commands/develop/IColldevDevelopOptions';
+import { objectMap } from '../../utils/objectMap';
 import { IBrowserSpawnerStatus } from '../BrowserSpawner/IBrowserSpawnerStatus';
-import { IColldevDevelopOptions } from '../IColldevDevelopOptions';
 import { IServerStatus } from './IServerStatus';
 import { ServerAndBrowserSpawnerStatusOutputComponentLoading } from './ServerAndBrowserSpawnerStatusOutputComponentLoading';
 

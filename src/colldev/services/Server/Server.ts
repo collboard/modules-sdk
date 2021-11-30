@@ -8,14 +8,12 @@ import { BehaviorSubject } from 'rxjs';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
 import { forValueDefined } from 'waitasecond';
-import { ASSETS_PATH } from '../../../config';
+import { IColldevDevelopOptions } from '../../commands/develop/IColldevDevelopOptions';
+import { ASSETS_PATH } from '../../config';
 import { Compiler } from '../Compiler/Compiler';
 import { compilerStatusToJson } from '../Compiler/utils/compilerStatusToJson';
-import { IColldevDevelopOptions } from '../IColldevDevelopOptions';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 import { IServerStatus } from './IServerStatus';
-
-// TODO: !!! Outside of develop folder
 
 /**
  * Internally using only collboardUrl, port and expose but it is usefull to present all the args in /status route

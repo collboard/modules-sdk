@@ -1,8 +1,8 @@
 import { Box, Text } from 'ink';
 import * as React from 'react';
 import { forTime } from 'waitasecond';
-import { AsyncContentComponent } from '../../../utils/AsyncContentComponent';
-import { Point } from '../../../utils/Point';
+import { AsyncContentComponent } from '../../utils/AsyncContentComponent';
+import { Point } from '../../utils/Point';
 import { IServerAndBrowserSpawnerStatusOutputComponentProps } from './ServerAndBrowserSpawnerStatusOutputComponent';
 
 export function ServerAndBrowserSpawnerStatusOutputComponentLoading({

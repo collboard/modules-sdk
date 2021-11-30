@@ -2,13 +2,13 @@ import { Box } from 'ink';
 import * as React from 'react';
 import { combineLatest, from } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { BrowserSpawner } from '../../services/BrowserSpawner/BrowserSpawner';
+import { Compiler } from '../../services/Compiler/Compiler';
+import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
+import { Server } from '../../services/Server/Server';
+import { ServerAndBrowserSpawnerStatusOutputComponent } from '../../services/Server/ServerAndBrowserSpawnerStatusOutputComponent';
 import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
-import { BrowserSpawner } from './BrowserSpawner/BrowserSpawner';
-import { Compiler } from './Compiler/Compiler';
-import { CompilerStatusOutputComponent } from './Compiler/CompilerStatusOutputComponent';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
-import { Server } from './Server/Server';
-import { ServerAndBrowserSpawnerStatusOutputComponent } from './Server/ServerAndBrowserSpawnerStatusOutputComponent';
 
 interface IOutputProps {
     compiler: Compiler<any>;

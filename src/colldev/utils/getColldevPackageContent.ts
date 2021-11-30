@@ -1,8 +1,7 @@
 import { access, constants, readFile } from 'fs';
 import { promisify } from 'util';
-import { InternalError } from "../commands/develop/Compiler/errors/InternalError";
+import { InternalError } from '../services/Compiler/errors/InternalError';
 import { getColldevPackagePath } from './getColldevPackagePath';
-
 
 export async function getColldevPackageContent(): Promise<any> {
     try {

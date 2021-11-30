@@ -2,7 +2,7 @@ import commander from 'commander';
 import { Destroyable } from 'destroyable';
 import { Box, Text } from 'ink';
 import * as React from 'react';
-import { ProductionCompiler } from "../develop/Compiler/ProductionCompiler";
+import { ProductionCompiler } from "../../services/Compiler/ProductionCompiler";
 import { ICommand } from '../ICommand';
 import { IColldevPublishOptions } from './IColldevPublishOptions';
 import { IColldevPublishStatus } from './IColldevPublishStatus';

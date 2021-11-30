@@ -2,6 +2,8 @@ import { Text } from 'ink';
 import Spinner from 'ink-spinner';
 import * as React from 'react';
 
+// !!! Bullet
+
 export function Point({
     children,
     done,

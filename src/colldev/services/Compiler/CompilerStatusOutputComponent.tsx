@@ -1,6 +1,6 @@
 import { Box, Text } from 'ink';
 import * as React from 'react';
-import { Point } from '../../../utils/Point';
+import { Point } from '../../utils/Point';
 import { ICompilerStatus } from './ICompilerStatus';
 
 interface ICompilerStatusProps {
