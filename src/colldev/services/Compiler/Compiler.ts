@@ -2,6 +2,7 @@ import { Destroyable, IDestroyable } from 'destroyable';
 import { unlink } from 'fs/promises';
 import { join } from 'path';
 import { BehaviorSubject } from 'rxjs';
+import { Promisable } from 'type-fest';
 import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
 import { ICompilerStats, ICompilerStatus } from './ICompilerStatus';
 import { getModulePackageMainPath } from './utils/getModulePackageMainPath';
@@ -36,7 +37,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions> extends Destro
 
     private compiler: WebpackCompiler;
 
-    protected abstract getWebpackConfig(): Promise<
+    protected abstract getWebpackConfig(): Promisable<
         Partial<webpack.Configuration> & Pick<webpack.Configuration, 'mode' | 'output'>
     >;
 

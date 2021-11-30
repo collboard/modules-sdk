@@ -1,9 +1,10 @@
 import { access, constants, readFile } from 'fs';
+import { PackageJson } from 'type-fest';
 import { promisify } from 'util';
-import { PackageNotFoundError } from "../errors/PackageNotFoundError";
+import { PackageNotFoundError } from '../errors/PackageNotFoundError';
 import { getModulePackagePath } from './getModulePackagePath';
 
-export async function getModulePackageContent(workingDir: string): Promise<any> {
+export async function getModulePackageContent(workingDir: string): Promise<PackageJson> {
     const packagePath = getModulePackagePath(workingDir);
     try {
         await promisify(access)(packagePath, constants.R_OK);
