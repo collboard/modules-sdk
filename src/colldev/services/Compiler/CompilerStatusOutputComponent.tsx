@@ -1,6 +1,6 @@
 import { Box, Text } from 'ink';
 import * as React from 'react';
-import { Point } from '../../utils/Point';
+import { Bullet } from '../../utils/Bullet';
 import { ICompilerStatus } from './ICompilerStatus';
 
 interface ICompilerStatusProps {
@@ -13,7 +13,7 @@ export function CompilerStatusOutputComponent({
     if (!ready) {
         return (
             <Box borderStyle="single" borderColor="yellow">
-                <Point>Compiling</Point>
+                <Bullet>Compiling</Bullet>
             </Box>
         );
     }

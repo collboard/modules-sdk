@@ -2,7 +2,7 @@ import { Box, Text } from 'ink';
 import * as React from 'react';
 import { forTime } from 'waitasecond';
 import { AsyncContentComponent } from '../../utils/AsyncContentComponent';
-import { Point } from '../../utils/Point';
+import { Bullet } from '../../utils/Bullet';
 import { IServerAndBrowserSpawnerStatusOutputComponentProps } from './ServerAndBrowserSpawnerStatusOutputComponent';
 
 export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
@@ -24,26 +24,26 @@ export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
                                         {`Please open ${openCollboardUrl}`}
                                     </Text>
                                     {'\n'}
-                                    <Point>Waiting for connection from Collboard</Point>
+                                    <Bullet>Waiting for connection from Collboard</Bullet>
                                 </Text>
                             );
                         case 'single':
                             return (
                                 <AsyncContentComponent
-                                    loader={<Point>Waiting {wait} miliseconds for connection from Collboard</Point>}
+                                    loader={<Bullet>Waiting {wait} miliseconds for connection from Collboard</Bullet>}
                                     content={async () => {
                                         await forTime(parseInt(wait, 10));
                                         return (
                                             <>
-                                                <Point skipped>
+                                                <Bullet skipped>
                                                     Waiting {wait} miliseconds for connection from Collboard
-                                                </Point>
+                                                </Bullet>
                                                 {'\n'}
-                                                <Point done={spawned} error={errors.length !== 0}>
+                                                <Bullet done={spawned} error={errors.length !== 0}>
                                                     Spawning {browserName}
-                                                </Point>
+                                                </Bullet>
                                                 {'\n'}
-                                                <Point>Connection from Collboard</Point>
+                                                <Bullet>Connection from Collboard</Bullet>
                                             </>
                                         );
                                     }}
@@ -53,9 +53,9 @@ export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
                         case 'multiple':
                             return (
                                 <>
-                                    <Point done={spawned}>Spawning {browserName}</Point>
+                                    <Bullet done={spawned}>Spawning {browserName}</Bullet>
                                     {'\n'}
-                                    <Point done={false}>Connection from Collboard</Point>
+                                    <Bullet done={false}>Connection from Collboard</Bullet>
                                 </>
                             );
                     }
