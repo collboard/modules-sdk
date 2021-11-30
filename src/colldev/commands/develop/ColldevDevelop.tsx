@@ -6,7 +6,7 @@ import { forEver, forImmediate } from 'waitasecond';
 import { joinErrors } from '../../utils/joinErrors';
 import { ICommand } from '../ICommand';
 import { BrowserSpawner } from './BrowserSpawner/BrowserSpawner';
-import { Compiler } from './Compiler/Compiler';
+import { DevelopmentCompiler } from './Compiler/DevelopmentCompiler';
 import { compilerStatusToJson } from './Compiler/utils/compilerStatusToJson';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
 import { IColldevDevelopStatus } from './IColldevDevelopStatus';
@@ -14,7 +14,7 @@ import { OutputComponent } from './OutputComponent';
 import { Server } from './Server/Server';
 
 export class ColldevDevelop extends Destroyable implements ICommand<IColldevDevelopOptions, IColldevDevelopStatus> {
-    private compiler: Compiler;
+    private compiler: DevelopmentCompiler;
     private server: Server;
     private browserSpawner: BrowserSpawner;
 
@@ -103,7 +103,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
             );
         }
 
-        this.compiler = new Compiler(path || './');
+        this.compiler = new DevelopmentCompiler({ workingDir: path || './' });
         this.server = new Server(this.compiler, { path, ...options });
         this.browserSpawner = new BrowserSpawner(this.server, options);
 

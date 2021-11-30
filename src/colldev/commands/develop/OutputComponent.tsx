@@ -11,7 +11,7 @@ import { Server } from './Server/Server';
 import { ServerAndBrowserSpawnerStatusOutputComponent } from './Server/ServerAndBrowserSpawnerStatusOutputComponent';
 
 interface IOutputProps {
-    compiler: Compiler;
+    compiler: Compiler<any>;
     server: Server;
     browserSpawner: BrowserSpawner;
     options: Pick<IColldevDevelopOptions, 'open' | 'wait'>;

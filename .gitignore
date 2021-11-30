@@ -1,6 +1,7 @@
 # Note: types folder cannot be ignored because then will be not published with NPM
 
 dist
+build
 node_modules
 .colldev
 coverage

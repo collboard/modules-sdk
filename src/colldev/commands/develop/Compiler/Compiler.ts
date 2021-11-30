@@ -9,13 +9,17 @@ import { cleanupAssets } from './utils/cleanupAssets';
 import { getModulePackageMainPath } from './utils/getModulePackageMainPath';
 import { makeColldevFolder } from './utils/makeColldevFolder';
 
-export class Compiler extends Destroyable implements IDestroyable {
-    private bundleId: string;
-    private bundleFilename: string;
-    private packageMainPath: string;
-    private webpackConfig: webpack.Configuration;
+export interface ICompilerOptions {
+    workingDir: string;
+}
 
-    constructor(private readonly workingDir: string) {
+export abstract class Compiler<TOptions extends ICompilerOptions> extends Destroyable implements IDestroyable {
+    protected bundleId: string;
+    protected bundleFilename: string;
+    protected packageMainPath: string;
+    protected webpackConfig: webpack.Configuration;
+
+    public constructor(protected readonly options: TOptions) {
         super();
         this.init();
     }
@@ -26,7 +30,8 @@ export class Compiler extends Destroyable implements IDestroyable {
     readonly compilerStatus: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ ready: false, errors: [] });
 
     private get compilerStats(): ICompilerStats {
-        const { workingDir, bundleId, bundleFilename, packageMainPath, webpackConfig } = this;
+        const { workingDir } = this.options;
+        const { bundleId, bundleFilename, packageMainPath, webpackConfig } = this;
         return {
             workingDir,
             bundleId,
@@ -38,6 +43,9 @@ export class Compiler extends Destroyable implements IDestroyable {
 
     private compiler: WebpackCompiler;
 
+    protected abstract getWebpackConfig(): Partial<webpack.Configuration> &
+        Pick<webpack.Configuration, 'mode' | 'output'>;
+
     private async init() {
         try {
             await makeColldevFolder();
@@ -45,11 +53,10 @@ export class Compiler extends Destroyable implements IDestroyable {
 
             this.bundleId = uuid.v4();
             this.bundleFilename = `bundle-${this.bundleId}.min.js`;
-            this.packageMainPath = await getModulePackageMainPath(this.workingDir);
+            this.packageMainPath = await getModulePackageMainPath(this.options.workingDir);
             this.webpackConfig = {
-                // TODO: Generate sourcemaps
-                watch: true,
-                mode: 'development', //'production',
+                ...this.getWebpackConfig(),
+                // TODO: !!! Generate sourcemaps
                 devtool: 'source-map',
                 entry: this.packageMainPath,
                 module: {
@@ -63,11 +70,6 @@ export class Compiler extends Destroyable implements IDestroyable {
                 },
                 resolve: {
                     extensions: ['.tsx', '.ts', '.js'],
-                },
-                output: {
-                    // TODO: Bypass files and just keep output in memory probbably via "compiler.outputFileSystem = fs;"
-                    filename: this.bundleFilename,
-                    path: ASSETS_PATH,
                 },
             };
 

@@ -15,6 +15,8 @@ import { IColldevDevelopOptions } from '../IColldevDevelopOptions';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 import { IServerStatus } from './IServerStatus';
 
+// TODO: !!! Outside of develop folder
+
 /**
  * Internally using only collboardUrl, port and expose but it is usefull to present all the args in /status route
  */
@@ -27,7 +29,7 @@ export class Server extends Destroyable implements IDestroyable {
     private socket: SocketIoServer;
     private tunnel: localtunnel.Tunnel | null = null;
 
-    constructor(private compiler: Compiler, private readonly options: IServerOptions) {
+    constructor(private compiler: Compiler<any>, private readonly options: IServerOptions) {
         super();
         this.init();
     }
