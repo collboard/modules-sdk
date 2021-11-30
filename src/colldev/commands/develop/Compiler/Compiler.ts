@@ -1,4 +1,5 @@
 import { Destroyable, IDestroyable } from 'destroyable';
+import { unlink } from 'fs/promises';
 import { join } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
@@ -64,12 +65,16 @@ export abstract class Compiler<TOptions extends ICompilerOptions> extends Destro
             // console.log(this.webpackConfig);
             // process.exit(0);
 
+            const bundle = {
+                path: join(this.webpackConfig!.output!.path!, this.webpackConfig!.output!.filename! as string),
+            };
+
             this.compiler = webpack(
                 // TODO: Maybe use webpack watch instead of onchange
                 // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
                 this.webpackConfig,
                 async (uselessError /* Note: This error is probbably useless */, webpackStats) => {
-                    // TODO: !!! Delete *.min.js.LICENSE.txt file
+                    await unlink(bundle.path + '.LICENSE.txt').catch(() => false);
 
                     const errors: Error[] = [];
                     if (webpackStats?.hasErrors()) {
@@ -88,12 +93,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions> extends Destro
                         errors,
                         compilerStats: this.compilerStats,
                         webpackStats,
-                        bundle: {
-                            path: join(
-                                this.webpackConfig!.output!.path!,
-                                this.webpackConfig!.output!.filename! as string,
-                            ),
-                        },
+                        bundle,
                     });
                 },
             );
