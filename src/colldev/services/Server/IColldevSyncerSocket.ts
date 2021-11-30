@@ -1,4 +1,3 @@
-
 // GENERATED WITH generate-modules-sdk
 // Warning: Do not edit by hand, all changes will be lost on next execution!
 // TODO: This file should be excluded from (not only VSCode) auto-importing.
@@ -24,16 +23,16 @@ export namespace IColldevSyncerSocket {
 
     export interface clientStatus {
         version: number;
-        connected: boolean;
-        ready: boolean;
+        isConnected: boolean;
+        isReady: boolean;
         errors: IError[];
         boardId: string | null;
         url: string;
         modules: Record<
             string,
             {
-                declared: boolean;
-                // TODO: installed
+                isDeclared: boolean;
+                isInstalled: boolean;
                 errors: IError[];
             }
         >;

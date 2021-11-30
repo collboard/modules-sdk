@@ -31,7 +31,7 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
 
         // TODO: Make some util for translating (compiler)Status to promise
         await new Promise((resolve, reject) => {
-            this.compiler.compilerStatus.subscribe(async ({ errors, ready }) => {
+            this.compiler.compilerStatus.subscribe(async ({ errors, isReady: ready }) => {
                 if (ready) {
                     await forImmediate();
                     const error = joinErrors(...errors);
@@ -56,7 +56,7 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
                                 display="flex"
                                 flexDirection="column"
                                 borderColor={
-                                    compilerStatus.errors.length ? 'red' : !compilerStatus.ready ? 'yellow' : 'white'
+                                    compilerStatus.errors.length ? 'red' : !compilerStatus.isReady ? 'yellow' : 'white'
                                 }
                             >
                                 <CompilerStatusOutputComponent {...{ compilerStatus }} />

@@ -14,10 +14,10 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
      * Note: We are not using here mobx-react because it does not work with ink
      */
     readonly browserSpawnerStatus = new BehaviorSubject<IBrowserSpawnerStatus>({
-        ready: false,
+        isReady: false,
         errors: [],
         browserName: 'Browser',
-        spawned: false,
+        isSpawned: false,
     });
 
     private puppeteerBrowser: Browser;
@@ -32,7 +32,7 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
         const { open, wait, browser, headless } = this.options;
 
         if (open === 'none') {
-            this.browserSpawnerStatus.next({ ...this.browserSpawnerStatus.value, ready: true });
+            this.browserSpawnerStatus.next({ ...this.browserSpawnerStatus.value, isReady: true });
             return;
         }
 
@@ -40,7 +40,7 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
             const executablePath = await locateBrowser(browser);
             const browserName = await getAppName(executablePath);
 
-            this.browserSpawnerStatus.next({ ready: false, errors: [], browserName, spawned: false });
+            this.browserSpawnerStatus.next({ isReady: false, errors: [], browserName, isSpawned: false });
 
             if (open === 'single') {
                 await forTime(parseInt(wait, 10));
@@ -98,9 +98,9 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
                 // TODO: Is this working with safari?
             }
 
-            this.browserSpawnerStatus.next({ ready: true, errors: [], browserName, spawned: true });
+            this.browserSpawnerStatus.next({ isReady: true, errors: [], browserName, isSpawned: true });
         } catch (error) {
-            this.browserSpawnerStatus.next({ ...this.browserSpawnerStatus.value, ready: true, errors: [error] });
+            this.browserSpawnerStatus.next({ ...this.browserSpawnerStatus.value, isReady: true, errors: [error] });
         }
     }
 

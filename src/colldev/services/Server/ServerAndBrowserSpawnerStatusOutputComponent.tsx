@@ -21,10 +21,10 @@ export function ServerAndBrowserSpawnerStatusOutputComponent({
 }: IServerAndBrowserSpawnerStatusOutputComponentProps) {
     const data = Object.entries(clients)
         .map(([clientUuid, clientData]) => ({ clientUuid, ...clientData }))
-        .map(({ boardId, connected, ready, errors, version, clientUuid, modules }) => ({
+        .map(({ boardId, isConnected, isReady, errors, version, clientUuid, modules }) => ({
             boardId,
-            // connected: connected ? '✔' : '✗',
-            // ready: ready ? '✔' : '✗',
+            // connected: isConnected ? '✔' : '✗',
+            // ready: isReady ? '✔' : '✗',
             // version,
             clientUuid: clientUuid.split('-')[0] + '…',
             error: errors.map(({ message }) => message).join('\n'),

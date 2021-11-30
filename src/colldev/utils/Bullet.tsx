@@ -2,25 +2,22 @@ import { Text } from 'ink';
 import Spinner from 'ink-spinner';
 import * as React from 'react';
 
-export function Bullet({
-    children,
-    done,
-    error,
-    skipped,
-}: React.PropsWithChildren<{ done?: boolean; error?: boolean; skipped?: boolean }>) {
-    if (error) {
+type IBulletProps = React.PropsWithChildren<{ isDone?: boolean; isError?: boolean; isSkipped?: boolean }>;
+
+export function Bullet({ children, isDone, isError, isSkipped }: IBulletProps) {
+    if (isError) {
         return (
             <Text color="red" bold>
                 [✗] {children}
             </Text>
         );
-    } else if (done) {
+    } else if (isDone) {
         return (
             <Text color="green" bold>
                 [✔] {children}
             </Text>
         );
-    } else if (skipped) {
+    } else if (isSkipped) {
         return (
             <Text color="magenta" bold>
                 [‒] {children}

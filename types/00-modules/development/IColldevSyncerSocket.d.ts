@@ -5,31 +5,41 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-export declare namespace IColldevSyncerSocket {
-    interface IError {
+// tslint:disable:class-name
+// tslint:disable-next-line:no-namespace
+export namespace IColldevSyncerSocket {
+    export interface IError {
         name: string;
         message: string;
         stack?: string;
     }
-    interface identify {
+    export interface identify {
+        // TODO: domain: string_url;
         instanceId: string;
     }
-    interface bundle {
+    export interface bundle {
         bundleUrl: string;
     }
-    interface clientStatus {
+
+    export interface clientStatus {
         version: number;
-        connected: boolean;
-        ready: boolean;
+        isConnected: boolean;
+        isReady: boolean;
         errors: IError[];
         boardId: string | null;
         url: string;
         modules: Record<
             string,
             {
-                declared: boolean;
+                isDeclared: boolean;
+                isInstalled: boolean;
                 errors: IError[];
             }
         >;
     }
 }
+
+// Note: Not using string semantic helpers because this file is copyied to modules-sdk repository
+//       And it is benefital for us to be easily copyable
+//
+//       import { string_url, string_uuid } from '../../40-utils/typeAliases';

@@ -58,7 +58,7 @@ export class Server extends Destroyable implements IDestroyable {
      * Note: We are not using here mobx-react because it does not work with ink
      */
     readonly serverStatus: BehaviorSubject<IServerStatus> = new BehaviorSubject({
-        ready: false,
+        isReady: false,
         errors: [],
         clients: {},
     });
@@ -66,8 +66,8 @@ export class Server extends Destroyable implements IDestroyable {
         const serverStatusValue = { ...this.serverStatus.value };
         updator(serverStatusValue);
 
-        serverStatusValue.ready =
-            Object.values(serverStatusValue.clients).filter(({ ready }) => ready).length >
+        serverStatusValue.isReady =
+            Object.values(serverStatusValue.clients).filter(({ isReady }) => isReady).length >
             0 /* TODO: Configurable treshold */;
 
         serverStatusValue.errors = Object.values(serverStatusValue.clients).reduce(
@@ -173,8 +173,8 @@ export class Server extends Destroyable implements IDestroyable {
                     serverStatusValue.clients[instanceId] = {
                         version: -1,
                         // TODO: Maybe transfer theese in initial
-                        connected: true,
-                        ready: false,
+                        isConnected: true,
+                        isReady: false,
                         errors: [],
                         url: '' /* TODO: Better */,
                         boardId: null,

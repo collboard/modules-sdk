@@ -1,8 +1,7 @@
 import webpack from 'webpack';
 
 export interface ICompilerStatus {
-    // TODO: !!! Rename to isReady + do it with all boolean values
-    ready: boolean;
+    isReady: boolean;
     errors: Error[];
     compilerStats?: ICompilerStats;
     webpackStats?: webpack.Stats;

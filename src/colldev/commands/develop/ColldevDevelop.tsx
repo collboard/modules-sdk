@@ -120,8 +120,8 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                     ]).subscribe(async ([compilerStatus, serverStatus, browserSpawnerStatus]) => {
                         if (
                             /* 📝[*] Command is finished when: */
-                            (compilerStatus.ready && serverStatus.ready) /* 📝 Compiler and server are ready OR */ ||
-                            (compilerStatus.ready &&
+                            (compilerStatus.isReady && serverStatus.isReady) /* 📝 Compiler and server are ready OR */ ||
+                            (compilerStatus.isReady &&
                                 compilerStatus.errors.length) /* 📝 OR There is error with compilation OR */ ||
                             browserSpawnerStatus.errors.length /* 📝 OR There is error with spawning of the browser */
                         ) {

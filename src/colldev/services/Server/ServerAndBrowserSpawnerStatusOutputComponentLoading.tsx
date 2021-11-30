@@ -7,7 +7,7 @@ import { IServerAndBrowserSpawnerStatusOutputComponentProps } from './ServerAndB
 
 export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
     openCollboardUrl,
-    browserSpawnerStatus: { errors, browserName, spawned },
+    browserSpawnerStatus: { errors, browserName, isSpawned: spawned },
     options: { open, wait },
 }: Omit<IServerAndBrowserSpawnerStatusOutputComponentProps, 'serverStatus'>) {
     // TODO: Do not show in non-interactive mode
@@ -35,11 +35,11 @@ export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
                                         await forTime(parseInt(wait, 10));
                                         return (
                                             <>
-                                                <Bullet skipped>
+                                                <Bullet isSkipped>
                                                     Waiting {wait} miliseconds for connection from Collboard
                                                 </Bullet>
                                                 {'\n'}
-                                                <Bullet done={spawned} error={errors.length !== 0}>
+                                                <Bullet isDone={spawned} isError={errors.length !== 0}>
                                                     Spawning {browserName}
                                                 </Bullet>
                                                 {'\n'}
@@ -53,9 +53,9 @@ export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
                         case 'multiple':
                             return (
                                 <>
-                                    <Bullet done={spawned}>Spawning {browserName}</Bullet>
+                                    <Bullet isDone={spawned}>Spawning {browserName}</Bullet>
                                     {'\n'}
-                                    <Bullet done={false}>Connection from Collboard</Bullet>
+                                    <Bullet isDone={false}>Connection from Collboard</Bullet>
                                 </>
                             );
                     }

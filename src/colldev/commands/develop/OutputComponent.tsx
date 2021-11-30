@@ -38,7 +38,7 @@ export function OutputComponent({ compiler, server, browserSpawner, options }: I
                             serverStatus.errors.length ||
                             browserSpawnerStatus.errors.length
                                 ? 'red'
-                                : !(compilerStatus.ready && serverStatus.ready && browserSpawnerStatus.ready)
+                                : !(compilerStatus.isReady && serverStatus.isReady && browserSpawnerStatus.isReady)
                                 ? 'yellow'
                                 : 'white'
                         }
