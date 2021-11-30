@@ -6,11 +6,12 @@ interface IDevelopmentCompilerOptions extends ICompilerOptions {
 }
 
 export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
-    protected getWebpackConfig() {
+    protected async getWebpackConfig() {
         return {
             mode: 'production' as 'production',
             output: {
-                filename: this.bundleFilename,
+                // TODO: !!! module-name@version
+                filename: 'main.min.js',
                 path: join(process.cwd(), this.options.outDir),
             },
         };

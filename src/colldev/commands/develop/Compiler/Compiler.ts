@@ -1,21 +1,15 @@
 import { Destroyable, IDestroyable } from 'destroyable';
 import { join } from 'path';
 import { BehaviorSubject } from 'rxjs';
-import * as uuid from 'uuid';
 import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
-import { ASSETS_PATH } from '../../../config';
 import { ICompilerStats, ICompilerStatus } from './ICompilerStatus';
-import { cleanupAssets } from './utils/cleanupAssets';
 import { getModulePackageMainPath } from './utils/getModulePackageMainPath';
-import { makeColldevFolder } from './utils/makeColldevFolder';
 
 export interface ICompilerOptions {
     workingDir: string;
 }
 
 export abstract class Compiler<TOptions extends ICompilerOptions> extends Destroyable implements IDestroyable {
-    protected bundleId: string;
-    protected bundleFilename: string;
     protected packageMainPath: string;
     protected webpackConfig: webpack.Configuration;
 
@@ -31,11 +25,9 @@ export abstract class Compiler<TOptions extends ICompilerOptions> extends Destro
 
     private get compilerStats(): ICompilerStats {
         const { workingDir } = this.options;
-        const { bundleId, bundleFilename, packageMainPath, webpackConfig } = this;
+        const { packageMainPath, webpackConfig } = this;
         return {
             workingDir,
-            bundleId,
-            bundleFilename,
             packageMainPath,
             webpackConfig,
         };
@@ -43,22 +35,18 @@ export abstract class Compiler<TOptions extends ICompilerOptions> extends Destro
 
     private compiler: WebpackCompiler;
 
-    protected abstract getWebpackConfig(): Partial<webpack.Configuration> &
-        Pick<webpack.Configuration, 'mode' | 'output'>;
+    protected abstract getWebpackConfig(): Promise<
+        Partial<webpack.Configuration> & Pick<webpack.Configuration, 'mode' | 'output'>
+    >;
 
     private async init() {
         try {
-            await makeColldevFolder();
-            await cleanupAssets();
-
-            this.bundleId = uuid.v4();
-            this.bundleFilename = `bundle-${this.bundleId}.min.js`;
             this.packageMainPath = await getModulePackageMainPath(this.options.workingDir);
+
             this.webpackConfig = {
-                ...this.getWebpackConfig(),
-                // TODO: !!! Generate sourcemaps
-                devtool: 'source-map',
+                ...(await this.getWebpackConfig()),
                 entry: this.packageMainPath,
+                devtool: 'source-map',
                 module: {
                     rules: [
                         {
@@ -73,11 +61,16 @@ export abstract class Compiler<TOptions extends ICompilerOptions> extends Destro
                 },
             };
 
+            // console.log(this.webpackConfig);
+            // process.exit(0);
+
             this.compiler = webpack(
                 // TODO: Maybe use webpack watch instead of onchange
                 // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
                 this.webpackConfig,
                 async (uselessError /* Note: This error is probbably useless */, webpackStats) => {
+                    // TODO: !!! Delete *.min.js.LICENSE.txt file
+
                     const errors: Error[] = [];
                     if (webpackStats?.hasErrors()) {
                         errors.push(
@@ -95,7 +88,12 @@ export abstract class Compiler<TOptions extends ICompilerOptions> extends Destro
                         errors,
                         compilerStats: this.compilerStats,
                         webpackStats,
-                        bundle: { path: join(ASSETS_PATH, this.bundleFilename) },
+                        bundle: {
+                            path: join(
+                                this.webpackConfig!.output!.path!,
+                                this.webpackConfig!.output!.filename! as string,
+                            ),
+                        },
                     });
                 },
             );

@@ -10,8 +10,6 @@ export interface ICompilerStatus {
 }
 export interface ICompilerStats {
     workingDir: string;
-    bundleId: string;
-    bundleFilename: string;
     packageMainPath: string;
     webpackConfig: webpack.Configuration;
 }
