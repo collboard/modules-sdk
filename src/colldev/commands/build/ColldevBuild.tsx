@@ -1,8 +1,10 @@
 import commander from 'commander';
 import { Destroyable } from 'destroyable';
+import { readFile, writeFile } from 'fs';
 import { Box } from 'ink';
 import * as React from 'react';
 import { map } from 'rxjs/operators';
+import { promisify } from 'util';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { ProductionCompiler } from '../../services/Compiler/ProductionCompiler';
 import { compilerStatusToJson } from '../../services/Compiler/utils/compilerStatusToJson';
@@ -26,9 +28,35 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
 
     public async run(path: string, options: IColldevBuildOptions) {
         const { outDir } = options;
+
         this.compiler = new ProductionCompiler({ workingDir: path || './', outDir });
 
         await forServicesReady(this.compiler);
+
+        // TODO: !!! Test that package.json and manifest has same content
+        // TODO: Maybe some service called "Verifier"
+        const bundleContent = await promisify(readFile)(this.compiler.status.value.bundle!.path, 'utf8');
+
+        const extractManifestsRuntime = await promisify(readFile)('./src/runtime/extractManifestsRuntime.js', 'utf8');
+        const extractManifestsRuntimeWithBundleContent = extractManifestsRuntime.replace(
+            /^.*bundle content.*$/m,
+            '\n' + bundleContent,
+        );
+
+        // TODO: !!! Isolate into function like evaluate + in tmp folder + cleanup (and strategy how to garbage collect files that wasnt deleted propperly)
+        await promisify(writeFile)('./build/fake.js', extractManifestsRuntimeWithBundleContent);
+
+        //const manifests = await eval(fakeRuntimeWithBundleContent);
+
+        const manifests = await require('../../../../build/fake.js');
+
+        // TODO: !!! Add info from package.json to manifists
+        // TODO: !!! Test that package.json and manifest has same content
+
+        await promisify(writeFile)(
+            this.compiler.status.value.bundle!.path + '.manifests.json',
+            JSON.stringify(manifests, null, 4),
+        );
     }
 
     public render() {
