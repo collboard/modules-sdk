@@ -24,9 +24,9 @@ export function OutputComponent({ compiler, server, browserSpawner, options }: I
         <ObservableContentComponent
             content={combineLatest([
                 from(server.openCollboardUrl()),
-                compiler.compilerStatus,
-                server.serverStatus,
-                browserSpawner.browserSpawnerStatus,
+                compiler.status,
+                server.status,
+                browserSpawner.status,
             ]).pipe(
                 map(([openCollboardUrl, compilerStatus, serverStatus, browserSpawnerStatus]) => (
                     <Box

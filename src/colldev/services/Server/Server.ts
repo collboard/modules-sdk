@@ -12,6 +12,7 @@ import { IColldevDevelopOptions } from '../../commands/develop/IColldevDevelopOp
 import { ASSETS_PATH } from '../../config';
 import { Compiler } from '../Compiler/Compiler';
 import { compilerStatusToJson } from '../Compiler/utils/compilerStatusToJson';
+import { IService } from '../IService';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 import { IServerStatus } from './IServerStatus';
 
@@ -21,7 +22,7 @@ import { IServerStatus } from './IServerStatus';
 interface IServerOptions extends IColldevDevelopOptions {
     path: string;
 }
-export class Server extends Destroyable implements IDestroyable {
+export class Server extends Destroyable implements IService, IDestroyable {
     private expressApp: Express;
     private server: http.Server;
     private socket: SocketIoServer;
@@ -57,13 +58,13 @@ export class Server extends Destroyable implements IDestroyable {
     /**
      * Note: We are not using here mobx-react because it does not work with ink
      */
-    readonly serverStatus: BehaviorSubject<IServerStatus> = new BehaviorSubject({
+    readonly status: BehaviorSubject<IServerStatus> = new BehaviorSubject({
         isReady: false,
         errors: [],
         clients: {},
     });
     private serverStatusUpdate(updator: (serverStatusValue: IServerStatus) => void) {
-        const serverStatusValue = { ...this.serverStatus.value };
+        const serverStatusValue = { ...this.status.value };
         updator(serverStatusValue);
 
         serverStatusValue.isReady =
@@ -75,7 +76,7 @@ export class Server extends Destroyable implements IDestroyable {
             [],
         );
 
-        this.serverStatus.next(serverStatusValue);
+        this.status.next(serverStatusValue);
     }
 
     private async init() {
@@ -124,8 +125,8 @@ export class Server extends Destroyable implements IDestroyable {
                 },
                 args: this.options,
                 // Note: logical order is compiler, server but compiler is a bit verbose so it is at bottom
-                server: this.serverStatus.value,
-                compiler: compilerStatusToJson(this.compiler.compilerStatus.value),
+                server: this.status.value,
+                compiler: compilerStatusToJson(this.compiler.status.value),
             });
         });
 
@@ -182,7 +183,7 @@ export class Server extends Destroyable implements IDestroyable {
                     };
                 });
 
-                const subscription = this.compiler.compilerStatus.subscribe({
+                const subscription = this.compiler.status.subscribe({
                     next: async ({ bundle }) => {
                         if (bundle) {
                             // console.log(`Emmiting bundle for ${instanceId}`);

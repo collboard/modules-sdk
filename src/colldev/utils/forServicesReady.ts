@@ -1,18 +1,19 @@
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest } from 'rxjs';
+import { IService } from '../services/IService';
 import { flatternArray } from './flatternArray';
 import { joinErrors } from './joinErrors';
 
-export function forServicesReady(...statuses: Array<Observable<{ isReady: boolean; errors: Error[] }>>): Promise<void> {
+export function forServicesReady(...services: IService[]): Promise<void> {
     return new Promise((resolve, reject) => {
-        const subscription = combineLatest(statuses).subscribe(async (currentStatuses) => {
+        const subscription = combineLatest(services.map(({ status }) => status)).subscribe(async (statuses) => {
             // Reject if there is some error
-            if (currentStatuses.some((status) => status.errors.length > 0)) {
+            if (statuses.some((status) => status.errors.length > 0)) {
                 subscription.unsubscribe();
-                reject(joinErrors(...flatternArray(currentStatuses.map((status) => status.errors))));
+                reject(joinErrors(...flatternArray(statuses.map((status) => status.errors))));
             }
 
             // Resolve if every status is ready
-            if (currentStatuses.every((status) => status.isReady)) {
+            if (statuses.every((status) => status.isReady)) {
                 subscription.unsubscribe();
                 resolve();
             }

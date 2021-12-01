@@ -5,15 +5,16 @@ import puppeteer, { Browser, Page } from 'puppeteer-core';
 import { BehaviorSubject } from 'rxjs';
 import { forTime } from 'waitasecond';
 import { IColldevDevelopOptions } from '../../commands/develop/IColldevDevelopOptions';
+import { IService } from '../IService';
 import { Server } from '../Server/Server';
 import { IBrowserSpawnerStatus } from './IBrowserSpawnerStatus';
 
 type IBrowserSpawnerOptions = Pick<IColldevDevelopOptions, 'open' | 'browser' | 'headless' | 'wait'>;
-export class BrowserSpawner extends Destroyable implements IDestroyable {
+export class BrowserSpawner extends Destroyable implements IService, IDestroyable {
     /**
      * Note: We are not using here mobx-react because it does not work with ink
      */
-    readonly browserSpawnerStatus = new BehaviorSubject<IBrowserSpawnerStatus>({
+    readonly status = new BehaviorSubject<IBrowserSpawnerStatus>({
         isReady: false,
         errors: [],
         browserName: 'Browser',
@@ -32,7 +33,7 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
         const { open, wait, browser, headless } = this.options;
 
         if (open === 'none') {
-            this.browserSpawnerStatus.next({ ...this.browserSpawnerStatus.value, isReady: true });
+            this.status.next({ ...this.status.value, isReady: true });
             return;
         }
 
@@ -40,11 +41,11 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
             const executablePath = await locateBrowser(browser);
             const browserName = await getAppName(executablePath);
 
-            this.browserSpawnerStatus.next({ isReady: false, errors: [], browserName, isSpawned: false });
+            this.status.next({ isReady: false, errors: [], browserName, isSpawned: false });
 
             if (open === 'single') {
                 await forTime(parseInt(wait, 10));
-                if (Object.values(this.server.serverStatus.value.clients).length) {
+                if (Object.values(this.server.status.value.clients).length) {
                     // Note: There is already some client connected
                     return;
                 }
@@ -98,9 +99,9 @@ export class BrowserSpawner extends Destroyable implements IDestroyable {
                 // TODO: Is this working with safari?
             }
 
-            this.browserSpawnerStatus.next({ isReady: true, errors: [], browserName, isSpawned: true });
+            this.status.next({ isReady: true, errors: [], browserName, isSpawned: true });
         } catch (error) {
-            this.browserSpawnerStatus.next({ ...this.browserSpawnerStatus.value, isReady: true, errors: [error] });
+            this.status.next({ ...this.status.value, isReady: true, errors: [error] });
         }
     }
 

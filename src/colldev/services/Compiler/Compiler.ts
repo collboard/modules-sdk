@@ -4,6 +4,7 @@ import { join } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import { Promisable } from 'type-fest';
 import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
+import { IService } from '../IService';
 import { ICompilerStats, ICompilerStatus } from './ICompilerStatus';
 import { getModulePackageMainPath } from './utils/getModulePackageMainPath';
 
@@ -11,7 +12,7 @@ export interface ICompilerOptions {
     workingDir: string;
 }
 
-export abstract class Compiler<TOptions extends ICompilerOptions> extends Destroyable implements IDestroyable {
+export abstract class Compiler<TOptions extends ICompilerOptions> extends Destroyable implements IService,IDestroyable {
     protected packageMainPath: string;
     protected webpackConfig: webpack.Configuration;
 
@@ -23,7 +24,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions> extends Destro
     /**
      * Note: We are not using here mobx-react because it does not work with ink
      */
-    readonly compilerStatus: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ isReady: false, errors: [] });
+    readonly status: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ isReady: false, errors: [] });
 
     private get compilerStats(): ICompilerStats {
         const { workingDir } = this.options;
@@ -89,7 +90,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions> extends Destro
                         );
                     }
 
-                    this.compilerStatus.next({
+                    this.status.next({
                         isReady: true,
                         errors,
                         compilerStats: this.compilerStats,
@@ -99,7 +100,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions> extends Destro
                 },
             );
         } catch (error) {
-            this.compilerStatus.next({
+            this.status.next({
                 isReady: true,
                 errors: [error],
                 compilerStats: this.compilerStats,

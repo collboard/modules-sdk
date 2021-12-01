@@ -28,14 +28,14 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
         const { outDir } = options;
         this.compiler = new ProductionCompiler({ workingDir: path || './', outDir });
 
-        await forServicesReady(this.compiler.compilerStatus);
+        await forServicesReady(this.compiler);
     }
 
     public render() {
         return (
             <>
                 <ObservableContentComponent
-                    content={this.compiler.compilerStatus.pipe(
+                    content={this.compiler.status.pipe(
                         map((compilerStatus) => (
                             <Box
                                 borderStyle="round"
@@ -56,7 +56,7 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
 
     public status() {
         return {
-            compiler: this.compiler && compilerStatusToJson(this.compiler.compilerStatus.value),
+            compiler: this.compiler && compilerStatusToJson(this.compiler.status.value),
         };
     }
 }

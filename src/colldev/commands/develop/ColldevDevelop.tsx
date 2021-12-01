@@ -112,13 +112,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
         if (exit) {
             // 📝 Ending when the command is finished (and Colldev is running with flag --exit)
 
-            endScenarios.push(
-                forServicesReady(
-                    this.compiler.compilerStatus,
-                    this.server.serverStatus,
-                    this.browserSpawner.browserSpawnerStatus,
-                ),
-            );
+            endScenarios.push(forServicesReady(this.compiler, this.server, this.browserSpawner));
         }
 
         if (disconnect) {
@@ -128,7 +122,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                     let alreadyConnected = false;
 
                     // TODO: Await promises - avoid callback hell
-                    this.server.serverStatus.subscribe(({ clients }) => {
+                    this.server.status.subscribe(({ clients }) => {
                         if (Object.values(clients).length > 0) {
                             alreadyConnected = true;
                         } else if (alreadyConnected) {
@@ -146,7 +140,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
         // 📝 Ending always when there is problem with spawning of the browser
         endScenarios.push(
             new Promise((resolve, reject) => {
-                this.browserSpawner.browserSpawnerStatus.subscribe(async (browserSpawnerStatus) => {
+                this.browserSpawner.status.subscribe(async (browserSpawnerStatus) => {
                     if (browserSpawnerStatus.errors.length) {
                         await forImmediate();
                         reject(joinErrors(...browserSpawnerStatus.errors));
@@ -173,9 +167,9 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
 
     public status() {
         return {
-            compiler: this.compiler && compilerStatusToJson(this.compiler.compilerStatus.value),
-            server: this.server && this.server.serverStatus.value,
-            browserSpawner: this.browserSpawner && this.browserSpawner.browserSpawnerStatus.value,
+            compiler: this.compiler && compilerStatusToJson(this.compiler.status.value),
+            server: this.server && this.server.status.value,
+            browserSpawner: this.browserSpawner && this.browserSpawner.status.value,
         };
     }
 
