@@ -8,6 +8,7 @@ import { promisify } from 'util';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { ProductionCompiler } from '../../services/Compiler/ProductionCompiler';
 import { compilerStatusToJson } from '../../services/Compiler/utils/compilerStatusToJson';
+import { createManifests } from '../../services/Compiler/utils/createManifests';
 import { forServicesReady } from '../../utils/forServicesReady';
 import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
 import { ICommand } from '../ICommand';
@@ -32,31 +33,8 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
         this.compiler = new ProductionCompiler({ workingDir: path || './', outDir });
 
         await forServicesReady(this.compiler);
-
-        // TODO: !!! Test that package.json and manifest has same content
-        // TODO: Maybe some service called "Verifier"
-        const bundleContent = await promisify(readFile)(this.compiler.status.value.bundle!.path, 'utf8');
-
-        const extractManifestsRuntime = await promisify(readFile)('./src/runtime/extractManifestsRuntime.js', 'utf8');
-        const extractManifestsRuntimeWithBundleContent = extractManifestsRuntime.replace(
-            /^.*bundle content.*$/m,
-            '\n' + bundleContent,
-        );
-
-        // TODO: !!! Isolate into function like evaluate + in tmp folder + cleanup (and strategy how to garbage collect files that wasnt deleted propperly)
-        await promisify(writeFile)('./build/fake.js', extractManifestsRuntimeWithBundleContent);
-
-        //const manifests = await eval(fakeRuntimeWithBundleContent);
-
-        const manifests = await require('../../../../build/fake.js');
-
-        // TODO: !!! Add info from package.json to manifists
-        // TODO: !!! Test that package.json and manifest has same content
-
-        await promisify(writeFile)(
-            this.compiler.status.value.bundle!.path + '.manifests.json',
-            JSON.stringify(manifests, null, 4),
-        );
+        await createManifests(this.compiler.status.value.bundle!.path);
+      
     }
 
     public render() {

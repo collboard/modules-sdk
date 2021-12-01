@@ -12,7 +12,10 @@ export interface ICompilerOptions {
     workingDir: string;
 }
 
-export abstract class Compiler<TOptions extends ICompilerOptions> extends Destroyable implements IService,IDestroyable {
+export abstract class Compiler<TOptions extends ICompilerOptions>
+    extends Destroyable
+    implements IService, IDestroyable
+{
     protected packageMainPath: string;
     protected webpackConfig: webpack.Configuration;
 
@@ -76,6 +79,8 @@ export abstract class Compiler<TOptions extends ICompilerOptions> extends Destro
                 // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
                 this.webpackConfig,
                 async (uselessError /* Note: This error is probbably useless */, webpackStats) => {
+                    //---
+                    // TODO: Also remove mentioned license in bundle file
                     await unlink(bundle.path + '.LICENSE.txt').catch(() => false);
 
                     const errors: Error[] = [];

@@ -11,6 +11,8 @@ export class DevelopmentCompiler extends Compiler<IDevelopmentCompilerOptions> {
     protected bundleFilename: string;
 
     protected async getWebpackConfig() {
+
+        // TODO: Consistent strategy how to garbage collect files that wasnt deleted propperly
         await makeColldevFolder();
         await cleanupAssets();
 

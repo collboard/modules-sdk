@@ -7,7 +7,7 @@ module.exports = (async () => {
         declareModule: (module) => {
             // console.info(`declareModule`, module);
 
-            // TODO: !!! Factory and async
+            // TODO: !!! Factory and async - and test it
             manifests.push(module.manifest);
         },
         CollboardSdk: new Proxy(
