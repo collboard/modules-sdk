@@ -3,11 +3,10 @@ import { Destroyable } from 'destroyable';
 import { Box } from 'ink';
 import * as React from 'react';
 import { map } from 'rxjs/operators';
-import { forImmediate } from 'waitasecond';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { ProductionCompiler } from '../../services/Compiler/ProductionCompiler';
 import { compilerStatusToJson } from '../../services/Compiler/utils/compilerStatusToJson';
-import { joinErrors } from '../../utils/joinErrors';
+import { forServicesReady } from '../../utils/forServicesReady';
 import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
 import { ICommand } from '../ICommand';
 import { IColldevBuildOptions } from './IColldevBuildOptions';
@@ -29,20 +28,7 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
         const { outDir } = options;
         this.compiler = new ProductionCompiler({ workingDir: path || './', outDir });
 
-        // TODO: Make some util for translating (compiler)Status to promise
-        await new Promise((resolve, reject) => {
-            this.compiler.compilerStatus.subscribe(async ({ errors, isReady: ready }) => {
-                if (ready) {
-                    await forImmediate();
-                    const error = joinErrors(...errors);
-                    if (error) {
-                        reject(error);
-                    } else {
-                        resolve(undefined);
-                    }
-                }
-            });
-        });
+        await forServicesReady(this.compiler.compilerStatus);
     }
 
     public render() {

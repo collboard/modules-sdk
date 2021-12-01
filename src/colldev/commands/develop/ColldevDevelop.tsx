@@ -1,12 +1,12 @@
 import commander from 'commander';
 import { Destroyable } from 'destroyable';
 import * as React from 'react';
-import { combineLatest } from 'rxjs';
 import { forEver, forImmediate } from 'waitasecond';
 import { BrowserSpawner } from '../../services/BrowserSpawner/BrowserSpawner';
 import { DevelopmentCompiler } from '../../services/Compiler/DevelopmentCompiler';
 import { compilerStatusToJson } from '../../services/Compiler/utils/compilerStatusToJson';
 import { Server } from '../../services/Server/Server';
+import { forServicesReady } from '../../utils/forServicesReady';
 import { joinErrors } from '../../utils/joinErrors';
 import { ICommand } from '../ICommand';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
@@ -110,35 +110,14 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
         const endScenarios: Array<Promise<void>> = [forEver()];
 
         if (exit) {
-            // 📝 Ending when the command is finished [*] (and Colldev is running with flag --exit)
+            // 📝 Ending when the command is finished (and Colldev is running with flag --exit)
+
             endScenarios.push(
-                new Promise((resolve, reject) => {
-                    combineLatest([
-                        this.compiler.compilerStatus,
-                        this.server.serverStatus,
-                        this.browserSpawner.browserSpawnerStatus,
-                    ]).subscribe(async ([compilerStatus, serverStatus, browserSpawnerStatus]) => {
-                        if (
-                            /* 📝[*] Command is finished when: */
-                            (compilerStatus.isReady && serverStatus.isReady) /* 📝 Compiler and server are ready OR */ ||
-                            (compilerStatus.isReady &&
-                                compilerStatus.errors.length) /* 📝 OR There is error with compilation OR */ ||
-                            browserSpawnerStatus.errors.length /* 📝 OR There is error with spawning of the browser */
-                        ) {
-                            await forImmediate();
-                            const error = joinErrors(
-                                ...compilerStatus.errors,
-                                ...serverStatus.errors,
-                                ...browserSpawnerStatus.errors,
-                            );
-                            if (error) {
-                                reject(error);
-                            } else {
-                                resolve(undefined);
-                            }
-                        }
-                    });
-                }),
+                forServicesReady(
+                    this.compiler.compilerStatus,
+                    this.server.serverStatus,
+                    this.browserSpawner.browserSpawnerStatus,
+                ),
             );
         }
 
