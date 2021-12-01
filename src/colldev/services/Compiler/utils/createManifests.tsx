@@ -2,9 +2,6 @@ import { readFile, writeFile } from 'fs';
 import { promisify } from 'util';
 import { evaluate } from '../../../utils/evaluate';
 
-/**
- * Note: This util function is standalone and not part of the Compiler class and its workflows.
- */
 export async function createManifests(bundlePath: string): Promise<void> {
     // TODO: !!! Test that package.json and manifest has same content
     // TODO: Maybe some service called "Verifier"

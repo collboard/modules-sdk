@@ -1,14 +1,11 @@
 import commander from 'commander';
 import { Destroyable } from 'destroyable';
-import { readFile, writeFile } from 'fs';
 import { Box } from 'ink';
 import * as React from 'react';
 import { map } from 'rxjs/operators';
-import { promisify } from 'util';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { ProductionCompiler } from '../../services/Compiler/ProductionCompiler';
 import { compilerStatusToJson } from '../../services/Compiler/utils/compilerStatusToJson';
-import { createManifests } from '../../services/Compiler/utils/createManifests';
 import { forServicesReady } from '../../utils/forServicesReady';
 import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
 import { ICommand } from '../ICommand';
@@ -31,10 +28,7 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
         const { outDir } = options;
 
         this.compiler = new ProductionCompiler({ workingDir: path || './', outDir });
-
         await forServicesReady(this.compiler);
-        await createManifests(this.compiler.status.value.bundle!.path);
-      
     }
 
     public render() {

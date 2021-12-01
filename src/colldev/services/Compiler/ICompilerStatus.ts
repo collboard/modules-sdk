@@ -5,7 +5,7 @@ export interface ICompilerStatus {
     errors: Error[];
     compilerStats?: ICompilerStats;
     webpackStats?: webpack.Stats;
-    bundle?: { path: string };
+    mainBundlePath?: string;
 }
 export interface ICompilerStats {
     workingDir: string;

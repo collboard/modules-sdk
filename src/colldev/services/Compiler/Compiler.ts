@@ -1,5 +1,4 @@
 import { Destroyable, IDestroyable } from 'destroyable';
-import { unlink } from 'fs/promises';
 import { join } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import { Promisable } from 'type-fest';
@@ -41,16 +40,18 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
 
     private compiler: WebpackCompiler;
 
-    protected abstract getWebpackConfig(): Promisable<
+    protected abstract createWebpackConfig(): Promisable<
         Partial<webpack.Configuration> & Pick<webpack.Configuration, 'mode' | 'output'>
     >;
+
+    protected abstract runPostprocessing(mainBundlePath: string): Promisable<void>;
 
     private async init() {
         try {
             this.packageMainPath = await getModulePackageMainPath(this.options.workingDir);
 
             this.webpackConfig = {
-                ...(await this.getWebpackConfig()),
+                ...(await this.createWebpackConfig()),
                 entry: this.packageMainPath,
                 devtool: 'source-map',
                 module: {
@@ -70,19 +71,16 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
             // console.log(this.webpackConfig);
             // process.exit(0);
 
-            const bundle = {
-                path: join(this.webpackConfig!.output!.path!, this.webpackConfig!.output!.filename! as string),
-            };
+            const mainBundlePath = join(
+                this.webpackConfig!.output!.path!,
+                this.webpackConfig!.output!.filename! as string,
+            );
 
             this.compiler = webpack(
                 // TODO: Maybe use webpack watch instead of onchange
                 // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
                 this.webpackConfig,
                 async (uselessError /* Note: This error is probbably useless */, webpackStats) => {
-                    //---
-                    // TODO: Also remove mentioned license in bundle file
-                    await unlink(bundle.path + '.LICENSE.txt').catch(() => false);
-
                     const errors: Error[] = [];
                     if (webpackStats?.hasErrors()) {
                         errors.push(
@@ -95,12 +93,14 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                         );
                     }
 
+                    await this.runPostprocessing(mainBundlePath);
+
                     this.status.next({
                         isReady: true,
                         errors,
                         compilerStats: this.compilerStats,
                         webpackStats,
-                        bundle,
+                        mainBundlePath,
                     });
                 },
             );

@@ -10,8 +10,7 @@ export class DevelopmentCompiler extends Compiler<IDevelopmentCompilerOptions> {
     protected bundleId: string;
     protected bundleFilename: string;
 
-    protected async getWebpackConfig() {
-
+    protected async createWebpackConfig() {
         // TODO: Consistent strategy how to garbage collect files that wasnt deleted propperly
         await makeColldevFolder();
         await cleanupAssets();
@@ -28,5 +27,9 @@ export class DevelopmentCompiler extends Compiler<IDevelopmentCompilerOptions> {
                 path: ASSETS_PATH,
             },
         };
+    }
+
+    protected async runPostprocessing() {
+        // Note: No postprocessing needed
     }
 }

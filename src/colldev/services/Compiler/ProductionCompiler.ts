@@ -1,5 +1,7 @@
+import { unlink } from 'fs/promises';
 import { join } from 'path';
 import { Compiler, ICompilerOptions } from './Compiler';
+import { createManifests } from './utils/createManifests';
 import { getModulePackageContent } from './utils/getModulePackageContent';
 import { getModulePackagePath } from './utils/getModulePackagePath';
 
@@ -8,7 +10,7 @@ interface IDevelopmentCompilerOptions extends ICompilerOptions {
 }
 
 export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
-    protected async getWebpackConfig() {
+    protected async createWebpackConfig() {
         const { name, version } = await getModulePackageContent(this.options.workingDir);
 
         if (!name) {
@@ -30,5 +32,11 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
                 path: join(process.cwd(), this.options.outDir),
             },
         };
+    }
+
+    protected async runPostprocessing(mainBundlePath: string) {
+        // TODO: Also remove mentioned license in bundle file
+        await unlink(mainBundlePath + '.LICENSE.txt').catch(() => false);
+        await createManifests(mainBundlePath);
     }
 }
