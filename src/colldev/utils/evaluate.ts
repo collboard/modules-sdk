@@ -11,6 +11,7 @@ import { makeColldevFolder } from '../services/Compiler/utils/makeColldevFolder'
  */
 export async function evaluate<T>(javascriptContent: string): Promise<T> {
     // TODO: Consistent and DRY strategy how to create temporary files and garbage collect files that wasnt deleted propperly
+    // TODO: Make colldev lock file to prevent multiple instances of colldev to run at the same time - this mechanism can invoke garbage collection
     await makeColldevFolder();
     const tmpPath = join(ASSETS_PATH, `evaluate-${uuid.v4()}.js`);
     await promisify(writeFile)(tmpPath, javascriptContent);

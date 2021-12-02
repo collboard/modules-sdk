@@ -1,12 +1,19 @@
 // Note: This script fakes the runtime environment of the browser and exports all declared module manifests
 
 module.exports = (async () => {
+    function factor(factorable) {
+        if (typeof factorable === 'function') {
+            return factorable();
+        } else {
+            return factorable;
+        }
+    }
+
     const manifests = [];
     const fake = new Proxy({}, { get: () => fake });
     const window = {
         declareModule: (module) => {
-            // TODO: !!! Factory and async - and test it
-            manifests.push(module.manifest);
+            manifests.push(factor(module).manifest);
         },
         CollboardSdk: new Proxy(
             {
@@ -15,7 +22,7 @@ module.exports = (async () => {
             {
                 get: (target, property, receiver) => {
                     if (/^make/.test(property)) {
-                        // TODO: !! Makersw should be in external library
+                        // TODO: !! Makers should be in external library
                         return (protoModule) => {
                             return protoModule;
                         };
@@ -36,3 +43,7 @@ module.exports = (async () => {
 
     return manifests;
 })();
+
+/**
+ * TODO: How to deal with anonymous modules?
+ */
