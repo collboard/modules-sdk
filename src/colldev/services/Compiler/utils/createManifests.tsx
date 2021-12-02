@@ -26,14 +26,7 @@ export async function createManifests({
     return manifestsWithPackages;
 }
 
-
 /**
  *
- * TODO: Maybe some service called "Verifier"
- * TODO: !!! Add info from package.json to manifests
- * TODO: !!! Test that package.json and manifest has same content
+ * TODO: Maybe some service called "Verifier" that will test advanced things like performance profile, memory leaks, etc.
  */
-
-
-
-
