@@ -1,9 +1,11 @@
+import { readFile, writeFile } from 'fs';
 import { unlink } from 'fs/promises';
 import { join } from 'path';
+import { promisify } from 'util';
 import { Compiler, ICompilerOptions } from './Compiler';
 import { createManifests } from './utils/createManifests';
-import { getModulePackageContent } from './utils/getModulePackageContent';
-import { getModulePackagePath } from './utils/getModulePackagePath';
+import { getModulePackageJsonContent } from './utils/getModulePackageJsonContent';
+import { getModulePackageJsonPath } from './utils/getModulePackageJsonPath';
 
 interface IDevelopmentCompilerOptions extends ICompilerOptions {
     outDir: string;
@@ -11,17 +13,17 @@ interface IDevelopmentCompilerOptions extends ICompilerOptions {
 
 export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
     protected async createWebpackConfig() {
-        const { name, version } = await getModulePackageContent(this.options.workingDir);
+        const { name, version } = await getModulePackageJsonContent(this.options.workingDir);
 
         if (!name) {
             throw new Error(
-                `You need to provide "name" in package.json\n${getModulePackagePath(this.options.workingDir)}`,
+                `You need to provide "name" in package.json\n${getModulePackageJsonPath(this.options.workingDir)}`,
             );
         }
 
         if (!version) {
             throw new Error(
-                `You need to provide "version" in package.json\n${getModulePackagePath(this.options.workingDir)}`,
+                `You need to provide "version" in package.json\n${getModulePackageJsonPath(this.options.workingDir)}`,
             );
         }
 
@@ -37,6 +39,17 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
     protected async runPostprocessing(mainBundlePath: string) {
         // TODO: Also remove mentioned license in bundle file
         await unlink(mainBundlePath + '.LICENSE.txt').catch(() => false);
-        await createManifests(mainBundlePath);
+
+        await promisify(writeFile)(
+            `${mainBundlePath}.manifests.json`,
+            JSON.stringify(
+                await createManifests({
+                    bundleContent: await promisify(readFile)(mainBundlePath, 'utf8'),
+                    packageJson: await getModulePackageJsonContent(this.options.workingDir),
+                }),
+                null,
+                4,
+            ),
+        );
     }
 }

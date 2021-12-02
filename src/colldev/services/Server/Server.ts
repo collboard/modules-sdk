@@ -184,11 +184,11 @@ export class Server extends Destroyable implements IService, IDestroyable {
                 });
 
                 const subscription = this.compiler.status.subscribe({
-                    next: async ({ bundle }) => {
-                        if (bundle) {
+                    next: async ({ mainBundlePath }) => {
+                        if (mainBundlePath) {
                             // console.log(`Emmiting bundle for ${instanceId}`);
                             socketConnection.emit('bundle', {
-                                bundleUrl: `${await this.colldevUrl()}/assets/` + relative(ASSETS_PATH, bundle.path),
+                                bundleUrl: `${await this.colldevUrl()}/assets/` + relative(ASSETS_PATH, mainBundlePath),
                             } as IColldevSyncerSocket.bundle);
                         }
                     },

@@ -12,35 +12,35 @@
             "onlySingle": true
         },
         {
-            "name": "👨🏽‍💻✔️ Develop 'hello-world'",
+            "name": "🧪👨🏽‍💻✔️ Develop 'hello-world'",
             "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4000 --open multiple"
         },
         {
-            "name": "👨🏽‍💻🖥️ Develop on local Collboard",
+            "name": "🧪👨🏽‍💻🖥️ Develop on local Collboard",
             "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4001 --collboard-url http://localhost:9977/ --open multiple"
         },
         {
-            "name": "👨🏽‍💻❌ Develop 'syntax-error'",
+            "name": "🧪👨🏽‍💻❌ Develop 'syntax-error'",
             "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/errors/syntax-error --port 4002 --open multiple"
         },
         {
-            "name": "👨🏽‍💻🧻 Develop with output json",
+            "name": "🧪👨🏽‍💻🧻 Develop with json output",
             "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4003 --open multiple --exit --disconnect --output json"
         },
         {
-            "name": "👨🏽‍💻🌎 Develop with expose",
+            "name": "🧪👨🏽‍💻🌎 Develop with expose",
             "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4004 --open multiple --expose"
         },
         {
-            "name": "👨🏽‍💻✔️ Develop with Firefox",
+            "name": "🧪👨🏽‍💻🦊 Develop with Firefox",
             "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4005 --open multiple --browser firefox"
         },
         {
-            "name": "👨🏽‍💻✔️ Develop with Edge",
+            "name": "🧪👨🏽‍💻🐢 Develop with Edge",
             "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4006 --open multiple --browser edge"
         },
         {
-            "name": "👨🏽‍💻✔️ Build 'hello-world'",
+            "name": "🧪🏭 Build 'hello-world'",
             "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/hello-world"
         }
     ]

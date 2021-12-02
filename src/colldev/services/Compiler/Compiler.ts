@@ -5,7 +5,7 @@ import { Promisable } from 'type-fest';
 import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
 import { IService } from '../IService';
 import { ICompilerStats, ICompilerStatus } from './ICompilerStatus';
-import { getModulePackageMainPath } from './utils/getModulePackageMainPath';
+import { getModuleEntryPath } from './utils/getModuleEntryPath';
 
 export interface ICompilerOptions {
     workingDir: string;
@@ -15,7 +15,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
     extends Destroyable
     implements IService, IDestroyable
 {
-    protected packageMainPath: string;
+    protected moduleEntryPath: string;
     protected webpackConfig: webpack.Configuration;
 
     public constructor(protected readonly options: TOptions) {
@@ -30,10 +30,10 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
 
     private get compilerStats(): ICompilerStats {
         const { workingDir } = this.options;
-        const { packageMainPath, webpackConfig } = this;
+        const { moduleEntryPath, webpackConfig } = this;
         return {
             workingDir,
-            packageMainPath,
+            moduleEntryPath: moduleEntryPath,
             webpackConfig,
         };
     }
@@ -48,11 +48,11 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
 
     private async init() {
         try {
-            this.packageMainPath = await getModulePackageMainPath(this.options.workingDir);
+            this.moduleEntryPath = await getModuleEntryPath(this.options.workingDir);
 
             this.webpackConfig = {
                 ...(await this.createWebpackConfig()),
-                entry: this.packageMainPath,
+                entry: this.moduleEntryPath,
                 devtool: 'source-map',
                 module: {
                     rules: [

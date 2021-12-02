@@ -9,6 +9,6 @@ export interface ICompilerStatus {
 }
 export interface ICompilerStats {
     workingDir: string;
-    packageMainPath: string;
+    moduleEntryPath: string;
     webpackConfig: webpack.Configuration;
 }

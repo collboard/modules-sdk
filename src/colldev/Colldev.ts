@@ -7,7 +7,7 @@ import { ColldevDevelop } from './commands/develop/ColldevDevelop';
 import { ICommand } from './commands/ICommand';
 import { ColldevPublish } from './commands/publish/ColldevPublish';
 import { IColldevOptions } from './IColldevOptions';
-import { getColldevPackageContent } from './utils/getColldevPackageContent';
+import { getColldevPackageJsonContent } from './utils/getColldevPackageJsonContent';
 import { jsonReplacer } from './utils/jsonReplacer';
 
 export class Colldev extends Destroyable implements IDestroyable {
@@ -28,7 +28,7 @@ export class Colldev extends Destroyable implements IDestroyable {
         //const { program } = await this.createProgram();
 
         this.program = new commander.Command();
-        this.program.version((await getColldevPackageContent()).version);
+        this.program.version((await getColldevPackageJsonContent()).version);
 
         for (const command of this.commands) {
             command

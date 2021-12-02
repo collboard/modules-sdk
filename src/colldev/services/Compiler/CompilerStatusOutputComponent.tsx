@@ -8,7 +8,7 @@ interface ICompilerStatusProps {
 }
 
 export function CompilerStatusOutputComponent({
-    compilerStatus: { isReady: ready, errors, compilerStats, webpackStats, bundle },
+    compilerStatus: { isReady: ready, errors, compilerStats, webpackStats, mainBundlePath },
 }: ICompilerStatusProps) {
     if (!ready) {
         return (

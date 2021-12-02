@@ -5,21 +5,18 @@ module.exports = (async () => {
     const fake = new Proxy({}, { get: () => fake });
     const window = {
         declareModule: (module) => {
-            // console.info(`declareModule`, module);
-
             // TODO: !!! Factory and async - and test it
             manifests.push(module.manifest);
         },
         CollboardSdk: new Proxy(
-            {},
+            {
+                // Note: Faking CollboardSdk
+            },
             {
                 get: (target, property, receiver) => {
-                    // console.info('property', property);
-
                     if (/^make/.test(property)) {
-                        // Note: ....
+                        // TODO: !! Makersw should be in external library
                         return (protoModule) => {
-                            console.info('protoModule'.protoModule);
                             return protoModule;
                         };
                     } else {
@@ -34,6 +31,7 @@ module.exports = (async () => {
 
     (() => {
         // Note: Here is the bundle content
+        // TODO: Some better form of isolation and sandboxing here
     })();
 
     return manifests;
