@@ -39,6 +39,9 @@ export interface IModuleManifest {
     licenses?: IModuleManifestLicense[];
     author?: IModuleManifestAuthor;
     contributors?: IModuleManifestAuthor[];
+    repository?: any;
+    homepage?: any;
+
     /**
      * This determinates the priority of module as a supporter
      */
@@ -51,10 +54,11 @@ export interface IModuleManifest {
  * @collboard-modules-sdk
  */
 export interface IModuleFlags {
-    hidden: boolean;
-    deprecated: boolean;
-    development: boolean;
-    experimental: boolean;
+    isPrivate: boolean;
+    isHidden: boolean;
+    isDeprecated: boolean;
+    isDevelopment: boolean;
+    isExperimental: boolean;
 }
 /**
  * Describes author or contributor of a module. It is in same format as in package.json.
