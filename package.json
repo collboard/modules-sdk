@@ -4,8 +4,8 @@
     "description": "Modules SDK toolkit for Collboard.com",
     "license": "SEE LICENSE IN LICENSE",
     "contributors": [
-        "Pavol Hejný <me@pavolhejny.com> (https://pavolhejny.com)",
-        "Jonáš Rosecký <jonas.rosecky@h-edu.cz>"
+        "Pavol Hejný <pavol.hejny@collboard.com> (https://collboard.com/-/about/team)",
+        "Jonáš Rosecký <jonas.rosecky@collboard.com> (https://collboard.com/-/about/team)"
     ],
     "repository": {
         "type": "git",
