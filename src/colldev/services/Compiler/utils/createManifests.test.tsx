@@ -87,5 +87,20 @@ describe(`how are manifests extracted from the bundle`, () => {
             }),
         ).toEqual([{ name: 'moduleMakedByMaker' }]));
 
+    it(`deanonymizace module with package.json`, async () =>
+        expect(
+            await createManifests({
+                bundleContent: `
+                window.declareModule({
+                    // No manifest
+                    setup: () => { /* ... */ }
+                });
+            `,
+                packageJson: {
+                    name: 'moduleNameFromPackageJson',
+                },
+            }),
+        ).toEqual([{ name: 'moduleNameFromPackageJson' }]));
+
     // TODO: Combining multiple modules and packageJson
 });
