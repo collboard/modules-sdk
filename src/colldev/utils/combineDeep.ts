@@ -28,10 +28,7 @@ export function combineDeep<T>(...values: T[]): T {
         }
     } else {
         if (!valuesDefined.every((value) => value === valuesDefined[0])) {
-            throw new Error(
-                `Primitive ${typeof valuesDefined[0]} values must be equal
-                 Try to combine values ${valuesDefined.map((v) => `"${v}"`).join(', ')}`,
-            );
+            throw new Error(`Can not combine values ${[...new Set(valuesDefined)].map((v) => `"${v}"`).join(', ')}`);
         }
 
         return valuesDefined[0];

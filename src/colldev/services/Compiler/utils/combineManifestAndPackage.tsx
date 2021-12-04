@@ -21,6 +21,10 @@ export function combineManifestAndPackage({
         }
         return manifestFromPackage;
     } else {
+        try{
         return combineDeep(manifest, manifestFromPackage as IModuleManifest);
+        }catch(error){
+            throw new Error(`Module manifest is incompatible with package.json\n${error.message}`);
+        }
     }
 }

@@ -2,7 +2,7 @@ import { declareModule } from '../../../src/runtime/runtime';
 
 declareModule({
     manifest: {
-        name: 'TypeErrorModule',
+        name: 'type-error-module',
     },
     setup() {
         return {

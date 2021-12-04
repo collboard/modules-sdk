@@ -93,7 +93,11 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                         );
                     }
 
-                    await this.runPostprocessing(mainBundlePath);
+                    try {
+                        await this.runPostprocessing(mainBundlePath);
+                    } catch (error) {
+                        errors.push(error);
+                    }
 
                     this.status.next({
                         isReady: true,

@@ -2,7 +2,7 @@ import { declareModule } from '../../../src/runtime/runtime';
 
 declareModule({
     manifest: {
-        name: 'RuntimeErrorInUnsetupModule',
+        name: 'runtime-error-in-unsetup-module',
     },
     setup() {
         return {

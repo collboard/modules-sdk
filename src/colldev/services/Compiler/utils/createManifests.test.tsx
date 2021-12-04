@@ -63,14 +63,14 @@ describe(`how are manifests extracted from the bundle`, () => {
                     window.declareModule(
                         window.CollboardSdk.makeFooBarModule({
                             manifest: {
-                                name: 'moduleMakedByMaker',
+                                name: 'module-maked-by-maker',
                             },
                         }),
                     );
                 `,
                 packageJson: {},
             }),
-        ).toEqual([{ name: 'moduleMakedByMaker' }]));
+        ).toEqual([{ name: 'module-maked-by-maker' }]));
 
     it(`works with module created by maker that manipulates manifest`, async () =>
         expect(
@@ -79,13 +79,13 @@ describe(`how are manifests extracted from the bundle`, () => {
                 // TODO: When makers in external library, test this propperly
                     window.declareModule({
                         manifest: {
-                            name: 'moduleMakedByMaker',
+                            name: 'module-maked-by-maker',
                         }
                     });
                 `,
                 packageJson: {},
             }),
-        ).toEqual([{ name: 'moduleMakedByMaker' }]));
+        ).toEqual([{ name: 'module-maked-by-maker' }]));
 
     it(`deanonymizace module with package.json`, async () =>
         expect(

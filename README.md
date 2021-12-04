@@ -45,7 +45,7 @@ import * as React from 'react';
 declareModule(
     makeExtrajsxModule({
         manifest: {
-            name: 'MyFirstModule',
+            name: 'my-first-module',
         },
         place: ExtraJsxPlace.EdgeRight,
         createExtraJsx({
