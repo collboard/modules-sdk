@@ -36,6 +36,14 @@ describe('the errored modules', () => {
         ).resolves.not.toThrow();
     });
 
+    // Note: To run automatically generated tests bellow, you can use the following shortcuts:
+    it(`should crash when there is a SYNTAX ERROR in the module`, () => {});
+    it(`should crash when there is a RUNTIME ERROR IN DECLARE in the module`, () => {});
+    it(`should crash when there is a RUNTIME ERROR IN SETUP in the module`, () => {});
+    it(`should crash when there is a MISSING PACKAGE ERROR in the module`, () => {});
+    it(`should crash when there is a MISSING ENTRY ERROR in the module`, () => {});
+    // TODO: it(`should crash when there is a EMPTY PROJECT in the module`, () => {});
+
     [
         'syntax-error',
         // TODO: 'type-error',
@@ -45,6 +53,7 @@ describe('the errored modules', () => {
         'missing-package-error',
         'missing-entry-error',
         // TODO: 'version-mismatch-error',
+        // TODO: 'empty-project',
     ].forEach((errorType) => {
         it(`should crash when there is a ${errorType.split('-').join(' ').toUpperCase()} in the module`, () => {
             return expect(
