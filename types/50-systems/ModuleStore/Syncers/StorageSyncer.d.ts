@@ -10,7 +10,7 @@ import { string_module_name } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { IModule } from '../interfaces/IModule';
 import { IModulePersister } from '../interfaces/IModulePersister';
-import { IModulesStorage } from '../interfaces/IModulesStorage';
+import { IModulesStorageWithDeclare } from '../interfaces/IModulesStorage';
 import { ISyncer } from '../interfaces/ISyncer';
 import { AbstractSyncer } from './AbstractSyncer';
 export interface IStorageSyncerOptions {
@@ -27,10 +27,10 @@ export interface IStorageSyncerOptions {
  */
 export declare abstract class StorageSyncer
     extends AbstractSyncer
-    implements ISyncer, IModulePersister, IModulesStorage, IDestroyable
+    implements ISyncer, IModulePersister, IModulesStorageWithDeclare, IDestroyable
 {
     private readonly options;
-    modulesStorage: IModulesStorage;
+    modulesStorage: IModulesStorageWithDeclare;
     constructor(systems: ISystemsExtended, options?: IStorageSyncerOptions);
     get modules(): import('rxjs').BehaviorSubject<Record<string, import('../interfaces/IModule').IModuleDefinition>>;
     declareModule(module: IModule): Promise<void>;

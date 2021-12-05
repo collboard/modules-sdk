@@ -22,7 +22,7 @@ export declare class ExportArt extends Abstract2dArt {
     get bottomRightCorner(): import('xyzt').IVectorObject;
     isNear(point2: IVector): boolean;
     get acceptedAttributes(): never[];
-    render(selected: boolean): JSX.Element;
+    render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
 }
 /**
  * Note: number is just a file prefix to feep it on the top of file list.

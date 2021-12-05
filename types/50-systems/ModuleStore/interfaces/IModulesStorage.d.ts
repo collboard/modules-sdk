@@ -9,20 +9,21 @@ import { IDestroyable } from 'destroyable';
 import { BehaviorSubject } from 'rxjs';
 import { string_module_name } from '../../../40-utils/typeAliases';
 import { IModule, IModuleDefinition } from './IModule';
+export interface IModulesStorage extends IDestroyable {
+    readonly modules: BehaviorSubject<Record<string_module_name, IModuleDefinition>>;
+}
+export interface IModulesStorageWithDeclare extends IModulesStorage {
+    declareModule(module: IModule): Promise<void>;
+}
+/**
+ * TODO: !!! Anotate - store vs storage
+ * TODO: Undeclaring modules
+ * TODO: Maybe modules Map not Record
+ *
+ */
 /**
  * IModulesStorage represents modules, which are already delcared in memory.
  * This is used for internal modules + modules in development by colldev
  *
- *
- */
-export interface IModulesStorage extends IDestroyable {
-    declareModule(module: IModule): Promise<void>;
-    readonly modules: BehaviorSubject<Record<string_module_name, IModuleDefinition>>;
-}
-/**
- *
- * TODO: Maybe split up between declareModule and modules part
- * TODO: Undeclaring modules
- * TODO: Maybe modules Map not Record
  *
  */

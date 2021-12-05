@@ -7,17 +7,17 @@
 
 import { Destroyable } from 'destroyable';
 import { string_module_category } from '../../../40-utils/typeAliases';
-import { IDependency } from '../interfaces/IDependencies';
+import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
+import { IModulesStorage } from '../interfaces/IModulesStorage';
 import { IModuleStoreConnector } from '../interfaces/IModuleStoreConnector';
-import { IModuleStoreConnectorSearchQuery } from '../interfaces/IModuleStoreConnectorSearch';
 /**
  * ExternalModuleStoreConnector communicates with the server via API and downloads modules from there
  *
  */
 export declare class ExternalModuleStoreConnector extends Destroyable implements IModuleStoreConnector {
-    search(searchCriteria: IModuleStoreConnectorSearchQuery): Promise<{
-        modules: never[];
+    moduleStorage: IModulesStorage;
+    search(searchCriteria: IModuleSearchCriteria): Promise<{
+        manifests: never[];
     }>;
-    download(...modules: IDependency[]): Promise<never[]>;
     getCategories(): Promise<Set<string_module_category>>;
 }

@@ -7,10 +7,13 @@
 
 import { BusinessSystem } from '../../BusinessSystem/0-BusinessSystem';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
-/**
- * Has this module finished its profile in manifest so it will be presented in the store
- * @param manifest of the module
- * @param installer which will be asked if this module is installed and if yes, module will be presented
- * @returns whether module should be shown publically or not (be hidden to user)
- */
-export declare function isPresented(manifest: IModuleManifest, businessSystem?: BusinessSystem): boolean;
+import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
+export declare function isModulePassingSearchCriteria({
+    moduleManifest,
+    searchCriteria,
+    businessSystem,
+}: {
+    searchCriteria: IModuleSearchCriteria;
+    moduleManifest?: IModuleManifest;
+    businessSystem?: BusinessSystem;
+}): boolean;

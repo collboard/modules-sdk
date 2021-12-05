@@ -8,22 +8,18 @@
 import { Destroyable } from 'destroyable';
 import { string_module_category } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
-import { IDependency } from '../interfaces/IDependencies';
-import { IModuleDefinition } from '../interfaces/IModule';
+import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
 import { IModulesStorage } from '../interfaces/IModulesStorage';
 import { IModuleStoreConnector } from '../interfaces/IModuleStoreConnector';
-import { IModuleStoreConnectorSearchQuery } from '../interfaces/IModuleStoreConnectorSearch';
+import { IModuleStoreConnectorSearchResult } from '../interfaces/IModuleStoreConnectorSearchResult';
 /**
  * StorageModuleStoreConnector searches through IModulesStorage modules (which are already delcared in memory).
  * This is used for internal modules + modules in development by colldev
  */
 export declare class StorageModuleStoreConnector extends Destroyable implements IModuleStoreConnector {
     private systems;
-    private modulesStorage;
-    constructor(systems: ISystemsExtended, modulesStorage: Pick<IModulesStorage, 'modules'>);
-    download(...identificators: IDependency[]): Promise<IModuleDefinition[]>;
+    readonly moduleStorage: IModulesStorage;
+    constructor(systems: ISystemsExtended, moduleStorage: IModulesStorage);
     getCategories(): Promise<Set<string_module_category>>;
-    search(searchCriteria: IModuleStoreConnectorSearchQuery): Promise<{
-        modules: import('../interfaces/IModuleManifest').IModuleManifest[];
-    }>;
+    search(searchCriteria: IModuleSearchCriteria): Promise<IModuleStoreConnectorSearchResult>;
 }

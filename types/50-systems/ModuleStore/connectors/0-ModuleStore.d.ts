@@ -8,10 +8,10 @@
 import { IDestroyable } from 'destroyable';
 import { string_module_category } from '../../../40-utils/typeAliases';
 import { AbstractSystem } from '../../AbstractSystem';
-import { IDependency } from '../interfaces/IDependencies';
+import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
 import { IModulesStorage } from '../interfaces/IModulesStorage';
 import { IModuleStoreConnector } from '../interfaces/IModuleStoreConnector';
-import { IModuleStoreConnectorSearchQuery } from '../interfaces/IModuleStoreConnectorSearch';
+import { ModulesStorage } from './ModulesStorage';
 /**
  * ModuleStore unites all module store connectors into one API, so consumer have same way how to get internal or external module
  *
@@ -19,12 +19,12 @@ import { IModuleStoreConnectorSearchQuery } from '../interfaces/IModuleStoreConn
  */
 export declare class ModuleStore extends AbstractSystem implements IModuleStoreConnector {
     private connectors;
+    get moduleStorage(): ModulesStorage;
     init(): Promise<void>;
     registerModuleStoreConnector(modulesConnector: IModuleStoreConnector): IDestroyable;
-    registerModuleStorage(modulesStorage: Pick<IModulesStorage, 'modules'>): IDestroyable;
-    search(searchCriteria: IModuleStoreConnectorSearchQuery): Promise<{
-        modules: (IDependency & Partial<import('../interfaces/IModuleManifest').IModuleManifest>)[];
+    registerModuleStorage(modulesStorage: IModulesStorage): IDestroyable;
+    search(searchCriteria: IModuleSearchCriteria): Promise<{
+        manifests: import('../interfaces/IModuleManifest').IModuleManifest[];
     }>;
-    download(...modules: IDependency[]): Promise<import('../interfaces/IModule').IModule[]>;
     getCategories(): Promise<Set<string_module_category>>;
 }

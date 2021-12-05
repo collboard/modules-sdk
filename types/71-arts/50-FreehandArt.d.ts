@@ -27,7 +27,7 @@ export declare class FreehandArt extends Abstract2dArt {
     isNear(point2: IVector): boolean;
     get acceptedAttributes(): string[];
     private calculateBoundingBox;
-    render(selected: boolean): JSX.Element;
+    render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
 }
 /**
  * Note: number is just a file prefix to feep it on the top of file list.

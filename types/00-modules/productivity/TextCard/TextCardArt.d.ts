@@ -36,5 +36,5 @@ export declare class TextCardArt extends Abstract2dArt {
     get bottomRightCorner(): Vector;
     isNear(point2: IVector): boolean;
     get acceptedAttributes(): string[];
-    render(selected: boolean): JSX.Element;
+    render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
 }

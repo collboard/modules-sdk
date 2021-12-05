@@ -5,8 +5,18 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IModulesStorageWithDeclare } from './interfaces/IModulesStorage';
+import { IJson } from 'everstorage';
+import { string_attribute, string_module_category } from '../../../40-utils/typeAliases';
 /**
- * Note: Probbably the only place where singleton makes sence
+ * Represents a query to modules repository
+ *
+ * @collboard-modules-sdk
  */
-export declare const internalModules: IModulesStorageWithDeclare;
+export interface IModuleSearchCriteria extends IJson {
+    needle?: string;
+    category?: string_module_category;
+    supports?: {
+        art?: string | any;
+        attribute?: string_attribute;
+    };
+}

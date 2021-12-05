@@ -15,7 +15,7 @@ import { AbstractSyncer } from './AbstractSyncer';
  * @collboard-system
  */
 export declare class ArtSupportSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
-    modulesStorage: import('../interfaces/IModulesStorage').IModulesStorage;
+    modulesStorage: import('../interfaces/IModulesStorage').IModulesStorageWithDeclare;
     private artDependencies;
     private throttleQueues;
     activateModuleSupportForArt(classNameOrInstance: string | any): Promise<unknown>;

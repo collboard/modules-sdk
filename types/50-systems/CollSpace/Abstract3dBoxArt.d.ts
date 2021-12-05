@@ -23,7 +23,7 @@ export declare abstract class Abstract3dBoxArt extends Abstract3dArt<IRenderCach
     get topLeftCorner(): import('xyzt').IVectorObject;
     get bottomRightCorner(): Vector;
     get acceptedAttributes(): string_attribute[];
-    render(selected: boolean, scene: Scene, renderCache?: IRenderCache): IRenderCache;
+    render(/* TODO: ✨ Add is prefix */ selected: boolean, scene: Scene, renderCache?: IRenderCache): IRenderCache;
     abstract renderBox(scene: Scene): AbstractMesh;
 }
 /**

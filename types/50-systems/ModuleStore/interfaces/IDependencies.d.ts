@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { string_module_name, string_url, string_version_dependency } from '../../../40-utils/typeAliases';
+import { IRepository, string_module_name, string_url, string_version_dependency } from '../../../40-utils/typeAliases';
 /**
  * Record of modules which are dependencies. It contains dependency name + details
  * Note: IDependenciesRecord and IDependenciesSet carries same information but in different form
@@ -36,7 +36,7 @@ export interface IDependency extends IDependencyDetail {
  * TODO: Make value true as shortcut for { priority: 0 }
  */
 export interface IDependencyDetail {
-    repository?: string_url;
+    repository?: string_url | IRepository;
     version?: string_version_dependency;
     instances?:
         | number

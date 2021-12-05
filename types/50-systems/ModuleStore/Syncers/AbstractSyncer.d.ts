@@ -5,11 +5,12 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
+import { Promisable } from 'type-fest';
 import { string_module_name } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../../AbstractSystem';
 import { IDependenciesRecord, IDependency } from '../interfaces/IDependencies';
-import { IModulesStorage } from '../interfaces/IModulesStorage';
+import { IModulesStorageWithDeclare } from '../interfaces/IModulesStorage';
 import { ISyncer } from '../interfaces/ISyncer';
 /**
  * This class represents entity which synchonizes installs / uninstalls modules for some reason. For each reason there will be separate extended syncer from this abstract class.
@@ -17,7 +18,7 @@ import { ISyncer } from '../interfaces/ISyncer';
  * Syncers are aviable in systems container and some of them can have methods to iteract with them for example to actovate some support
  */
 export declare abstract class AbstractSyncer extends AbstractSystem implements ISyncer {
-    abstract modulesStorage: IModulesStorage;
+    protected abstract modulesStorage: Promisable<IModulesStorageWithDeclare>;
     private moduleInstaller;
     private throttleQueue;
     get statusOf(): (moduleName: string) => import('rxjs').BehaviorSubject<import('../ModuleStatus').ModuleStatus>;

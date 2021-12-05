@@ -216,12 +216,21 @@ export interface IPersonProfile {
  */
 export declare type string_license = string;
 /**
- * License with its name and url like in package.json
+ * License with its type and url like in package.json
  *
  * @collboard-modules-sdk
  */
 export interface ILicense {
     type?: string_license;
+    url?: string;
+}
+/**
+ * Repository with its type and url like in package.json
+ *
+ * @collboard-modules-sdk
+ */
+export interface IRepository {
+    type?: string | 'git';
     url?: string;
 }
 /**

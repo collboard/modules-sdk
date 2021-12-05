@@ -95,7 +95,7 @@ export * from './50-systems/ModuleStore/interfaces/IModuleManifest';
 export * from './50-systems/ModuleStore/interfaces/IModulePersister';
 export * from './50-systems/ModuleStore/interfaces/IModuleStatusReporter';
 export * from './50-systems/ModuleStore/interfaces/IModuleStoreConnector';
-export * from './50-systems/ModuleStore/interfaces/IModuleStoreConnectorSearch';
+export * from './50-systems/ModuleStore/interfaces/IModuleSearchCriteria';
 export * from './50-systems/ModuleStore/makers/makeArticlesSetModule';
 export * from './50-systems/ModuleStore/makers/makeArtModule';
 export * from './50-systems/ModuleStore/makers/makeAttributeModule';

@@ -41,5 +41,5 @@ export declare class FunctionBuilderArt extends Abstract2dArt {
     getOutputPosition(collSpace: CollSpace): Vector;
     getInputPosition(key: string, collSpace: CollSpace): Vector;
     evaluate(x: number, seenNodes: string[], materialArtVersioningSystem: MaterialArtVersioningSystem): number | null;
-    render(_selected: boolean, systems: ISystems): Promise<JSX.Element>;
+    render(/* TODO: ✨ Add is prefix */ _selected: boolean, systems: ISystems): Promise<JSX.Element>;
 }

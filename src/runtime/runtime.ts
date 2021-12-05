@@ -282,6 +282,7 @@ export const string_person_profile = (window as any).CollboardSdk.string_person_
 export const IPersonProfile = (window as any).CollboardSdk.IPersonProfile;
 export const string_license = (window as any).CollboardSdk.string_license;
 export const ILicense = (window as any).CollboardSdk.ILicense;
+export const IRepository = (window as any).CollboardSdk.IRepository;
 export const string_keyword = (window as any).CollboardSdk.string_keyword;
 export const IKeywords = (window as any).CollboardSdk.IKeywords;
 export const string_css_cursor = (window as any).CollboardSdk.string_css_cursor;
@@ -422,6 +423,10 @@ export const IModuleManifestTranslation = (window as any).CollboardSdk.IModuleMa
                     export const IModulePersister = (window as any).CollboardSdk.IModulePersister;
                     
 
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModuleSearchCriteria.d.ts
+                    export const IModuleSearchCriteria = (window as any).CollboardSdk.IModuleSearchCriteria;
+                    
+
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModuleStatusReporter.d.ts
                     export const IModuleStatusReporter = (window as any).CollboardSdk.IModuleStatusReporter;
                     
@@ -430,9 +435,8 @@ export const IModuleManifestTranslation = (window as any).CollboardSdk.IModuleMa
                     export const IModuleStoreConnector = (window as any).CollboardSdk.IModuleStoreConnector;
                     
 
-                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModuleStoreConnectorSearch.d.ts
-                    export const IModuleStoreConnectorSearchQuery = (window as any).CollboardSdk.IModuleStoreConnectorSearchQuery;
-export const IModuleStoreConnectorSearchResult = (window as any).CollboardSdk.IModuleStoreConnectorSearchResult;
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModuleStoreConnectorSearchResult.d.ts
+                    export const IModuleStoreConnectorSearchResult = (window as any).CollboardSdk.IModuleStoreConnectorSearchResult;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeArticlesSetModule.d.ts

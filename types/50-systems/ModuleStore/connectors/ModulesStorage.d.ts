@@ -8,8 +8,8 @@
 import { Destroyable, IDestroyable } from 'destroyable';
 import { BehaviorSubject } from 'rxjs';
 import { IModule, IModuleDefinition } from '../interfaces/IModule';
-import { IModulesStorage } from '../interfaces/IModulesStorage';
-export declare class ModulesStorage extends Destroyable implements IModulesStorage, IDestroyable {
+import { IModulesStorageWithDeclare } from '../interfaces/IModulesStorage';
+export declare class ModulesStorage extends Destroyable implements IModulesStorageWithDeclare, IDestroyable {
     readonly modules: BehaviorSubject<Record<string, IModuleDefinition>>;
     declareModule(module: IModule): Promise<void>;
     destroy(): Promise<void>;

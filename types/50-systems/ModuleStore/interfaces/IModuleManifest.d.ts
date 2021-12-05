@@ -5,16 +5,17 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IFlags } from '../../../40-utils/flagsToObject';
 import {
     ILicense,
     IPersonProfile,
+    IRepository,
     string_char_emoji,
     string_license,
     string_module_category,
     string_module_name,
     string_person_profile,
     string_translate_language,
+    string_url,
     string_url_image,
     string_version,
 } from '../../../40-utils/typeAliases';
@@ -31,7 +32,7 @@ export interface IModuleManifest {
     title?: IModuleManifestTranslation;
     description?: IModuleManifestTranslation;
     keywords?: string[];
-    flags?: IFlags<IModuleFlags>;
+    flags?: Partial<IModuleFlags>;
     categories?: string_module_category[];
     icon?: string_url_image | string_char_emoji;
     screenshots?: string_url_image[];
@@ -39,9 +40,8 @@ export interface IModuleManifest {
     licenses?: IModuleManifestLicense[];
     author?: IModuleManifestAuthor;
     contributors?: IModuleManifestAuthor[];
-    repository?: any;
-    homepage?: any;
-
+    repository?: string_url | IRepository;
+    homepage?: string_url;
     /**
      * This determinates the priority of module as a supporter
      */

@@ -8,16 +8,16 @@
 import { IDestroyable } from 'destroyable';
 import { Promisable } from 'type-fest';
 import { string_module_category } from '../../../40-utils/typeAliases';
-import { IDependency } from './IDependencies';
-import { IModule } from './IModule';
-import { IModuleStoreConnectorSearchQuery, IModuleStoreConnectorSearchResult } from './IModuleStoreConnectorSearch';
+import { IModulesStorage } from './IModulesStorage';
+import { IModuleSearchCriteria } from './IModuleSearchCriteria';
+import { IModuleStoreConnectorSearchResult } from './IModuleStoreConnectorSearchResult';
 /**
  * Connect to molules repository and pull modules from there
  *
  * @collboard-modules-sdk
  */
 export interface IModuleStoreConnector extends IDestroyable {
-    search(searchCriteria: IModuleStoreConnectorSearchQuery): Promisable<IModuleStoreConnectorSearchResult>;
-    download(...modules: IDependency[]): Promisable<IModule[]>;
+    moduleStorage: IModulesStorage;
+    search(searchCriteria: IModuleSearchCriteria): Promisable<IModuleStoreConnectorSearchResult>;
     getCategories(): Promise<Set<string_module_category>>;
 }

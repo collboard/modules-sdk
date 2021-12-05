@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { IDependenciesRecord, IDependenciesSet, IDependency } from '../interfaces/IDependencies';
+import { IModuleManifest } from '../interfaces/IModuleManifest';
 export declare function dependenciesSetToDependenciesRecord(
-    dependenciesSetOrArray: IDependenciesSet | IDependency[],
+    dependenciesSetOrArray: IDependenciesSet | (IDependency | IModuleManifest)[],
 ): IDependenciesRecord;
