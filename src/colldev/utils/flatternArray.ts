@@ -11,3 +11,5 @@ export function flatternArray<T>(array: T[][]): T[] {
     }
     return flattened;
 }
+
+// TODO: Use instead Array.prototype.flat @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
