@@ -40,6 +40,8 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
         // TODO: Also remove mentioned license in bundle file
         await unlink(mainBundlePath + '.LICENSE.txt').catch(() => false);
 
+        // TODO: !!! Mainifests should implement also IExternalModuleManifest interface
+
         await promisify(writeFile)(
             `${mainBundlePath}.manifests.json`,
             JSON.stringify(
