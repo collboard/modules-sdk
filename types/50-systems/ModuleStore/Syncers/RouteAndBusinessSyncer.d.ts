@@ -17,7 +17,6 @@ import { AbstractSyncer } from './AbstractSyncer';
  * @collboard-system
  */
 export declare class RouteAndBusinessSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
-    modulesStorage: import('../interfaces/IModulesStorage').IModulesStorageWithDeclare;
     private subscription;
     protected initSyncer(): Promise<void>;
     /**

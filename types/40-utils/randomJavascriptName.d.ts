@@ -5,4 +5,11 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-export declare function randomJavascriptName({ length, prefix }: { length?: number; prefix?: string }): string;
+import { string_javascript_name } from './typeAliases';
+export declare function randomJavascriptName({
+    length,
+    prefix,
+}: {
+    length?: number;
+    prefix?: string;
+}): string_javascript_name;

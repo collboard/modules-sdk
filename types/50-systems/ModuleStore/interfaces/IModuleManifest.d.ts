@@ -5,10 +5,12 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
+import { IArrayable } from '../../../40-utils/toArray';
 import {
     ILicense,
     IPersonProfile,
     IRepository,
+    string_attribute,
     string_char_emoji,
     string_license,
     string_module_category,
@@ -47,6 +49,10 @@ export interface IModuleManifest {
      */
     priority?: number;
     version?: string_version;
+    supports?: {
+        art?: IArrayable<string>;
+        attribute?: IArrayable<string_attribute>;
+    };
 }
 /**
  *

@@ -6,11 +6,16 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { Destroyable, IDestroyable } from 'destroyable';
-import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { string_module_name } from '../../../40-utils/typeAliases';
 import { IModule, IModuleDefinition } from '../interfaces/IModule';
-import { IModulesStorageWithDeclare } from '../interfaces/IModulesStorage';
-export declare class ModulesStorage extends Destroyable implements IModulesStorageWithDeclare, IDestroyable {
-    readonly modules: BehaviorSubject<Record<string, IModuleDefinition>>;
+import { IModulesStorageStrong } from '../interfaces/IModulesStorage';
+export declare class ModulesStorage extends Destroyable implements IModulesStorageStrong, IDestroyable {
+    private modulesObservable;
+    private modules;
+    getModule(name: string_module_name): IModuleDefinition | null;
+    getAllModules(): IModuleDefinition[];
+    observeAllModules(): Observable<IModuleDefinition[]>;
     declareModule(module: IModule): Promise<void>;
     destroy(): Promise<void>;
 }

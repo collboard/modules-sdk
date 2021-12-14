@@ -343,3 +343,8 @@ export declare type string_translate_name_not_normalized = string;
  * TODO: Rename - remove string_ prefix like ITranslateLanguageCode
  */
 export declare type string_translate_language = 'en' | 'cs' | 'sk';
+/**
+ * Semantic helper; For example "callbackName" or "renderMe"
+ *
+ */
+export declare type string_javascript_name = string;

@@ -17,4 +17,4 @@ import { IArtVersioningSystem } from './IArtVersionSystem';
  */
 export declare class VirtualArtVersioningSystem
     extends MaterialArtVersioningSystem
-    implements IDestroyable, IArtVersioningSystem {}
+    implements IArtVersioningSystem, IDestroyable {}

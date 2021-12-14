@@ -16,7 +16,6 @@ import { AbstractSyncer } from './AbstractSyncer';
  * @collboard-system
  */
 export declare class AttributeSupportSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
-    modulesStorage: import('../interfaces/IModulesStorage').IModulesStorageWithDeclare;
     private attributeDependencies;
     private throttleQueues;
     activateModuleSupportForAttribute(attributeName: string_attribute): Promise<unknown>;

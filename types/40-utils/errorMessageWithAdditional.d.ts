@@ -5,19 +5,10 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IJson } from 'everstorage';
-import { string_attribute, string_module_category } from '../../../40-utils/typeAliases';
 /**
- * Represents a query to modules repository
+ * Wraps the error message with additional info that will be nicely logged to the console bellow thrown error
  *
- * @collboard-modules-sdk
+ * @param errorMessage
+ * @returns {string} - error message with reference to additional info in console appended to the end
  */
-export interface IModuleSearchCriteria extends IJson {
-    needle?: string;
-    category?: string_module_category;
-    supports?: {
-        art?: string;
-        attribute?: string_attribute;
-    };
-    limit?: number;
-}
+export declare function errorMessageWithAdditional(errorMessage: string, additional: Record<string, any>): string;

@@ -6,10 +6,11 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { Destroyable } from 'destroyable';
-import { string_module_category } from '../../../40-utils/typeAliases';
+import { string_module_category, string_module_name } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
+import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
-import { IModulesStorage } from '../interfaces/IModulesStorage';
+import { IModulesStorageStrong } from '../interfaces/IModulesStorage';
 import { IModuleStoreConnector } from '../interfaces/IModuleStoreConnector';
 import { IModuleStoreConnectorSearchResult } from '../interfaces/IModuleStoreConnectorSearchResult';
 /**
@@ -18,8 +19,13 @@ import { IModuleStoreConnectorSearchResult } from '../interfaces/IModuleStoreCon
  */
 export declare class StorageModuleStoreConnector extends Destroyable implements IModuleStoreConnector {
     private systems;
-    readonly moduleStorage: IModulesStorage;
-    constructor(systems: ISystemsExtended, moduleStorage: IModulesStorage);
+    private readonly moduleStorage;
+    constructor(systems: ISystemsExtended, moduleStorage: IModulesStorageStrong);
+    /**
+     *
+     * @proxy
+     */
+    getModule(name: string_module_name): IModuleDefinition | null;
     getCategories(): Promise<Set<string_module_category>>;
     search(searchCriteria: IModuleSearchCriteria): Promise<IModuleStoreConnectorSearchResult>;
 }

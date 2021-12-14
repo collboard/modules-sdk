@@ -201,6 +201,10 @@ export const factor = (window as any).CollboardSdk.factor;
                     export const searchKeywords = (window as any).CollboardSdk.searchKeywords;
                     
 
+                    // C:/Users/me/work/collboard/modules-sdk/types/40-utils/randomEmoji.d.ts
+                    export const randomEmoji = (window as any).CollboardSdk.randomEmoji;
+                    
+
                     // C:/Users/me/work/collboard/modules-sdk/types/40-utils/randomItem.d.ts
                     export const randomItem = (window as any).CollboardSdk.randomItem;
                     
@@ -453,6 +457,10 @@ export const IModuleManifestTranslation = (window as any).CollboardSdk.IModuleMa
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeEmojisToolModule.d.ts
                     export const makeEmojisToolModule = (window as any).CollboardSdk.makeEmojisToolModule;
+                    
+
+                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeExternalModule.d.ts
+                    export const IExternalModuleManifest = (window as any).CollboardSdk.IExternalModuleManifest;
                     
 
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeExtrajsxModule.d.ts

@@ -6,11 +6,12 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { IDestroyable } from 'destroyable';
+import { Observable } from 'rxjs';
 import { string_module_name } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
-import { IModule } from '../interfaces/IModule';
+import { IModule, IModuleDefinition } from '../interfaces/IModule';
 import { IModulePersister } from '../interfaces/IModulePersister';
-import { IModulesStorageWithDeclare } from '../interfaces/IModulesStorage';
+import { IModulesStorageStrong } from '../interfaces/IModulesStorage';
 import { ISyncer } from '../interfaces/ISyncer';
 import { AbstractSyncer } from './AbstractSyncer';
 export interface IStorageSyncerOptions {
@@ -27,12 +28,23 @@ export interface IStorageSyncerOptions {
  */
 export declare abstract class StorageSyncer
     extends AbstractSyncer
-    implements ISyncer, IModulePersister, IModulesStorageWithDeclare, IDestroyable
+    implements ISyncer, IModulePersister, IModulesStorageStrong, IDestroyable
 {
     private readonly options;
-    modulesStorage: IModulesStorageWithDeclare;
+    private readonly modulesStorage;
     constructor(systems: ISystemsExtended, options?: IStorageSyncerOptions);
-    get modules(): import('rxjs').BehaviorSubject<Record<string, import('../interfaces/IModule').IModuleDefinition>>;
+    /**
+     * @proxy
+     */
+    getModule(name: string_module_name): IModuleDefinition | null;
+    /**
+     * @proxy
+     */
+    getAllModules(): IModuleDefinition[];
+    /**
+     * @proxy
+     */
+    observeAllModules(): Observable<IModuleDefinition[]>;
     declareModule(module: IModule): Promise<void>;
     moduleActivate(moduleName: string_module_name): Promise<void>;
     moduleDeactivate(moduleName: string_module_name): Promise<void>;

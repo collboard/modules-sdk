@@ -6,24 +6,31 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { IDestroyable } from 'destroyable';
-import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { string_module_name } from '../../../40-utils/typeAliases';
 import { IModule, IModuleDefinition } from './IModule';
-export interface IModulesStorage extends IDestroyable {
-    readonly modules: BehaviorSubject<Record<string_module_name, IModuleDefinition>>;
+/**
+ * IModulesStorageWeak represents object that can return IModuleDefinition from name.
+ * This module definition can be already stored in the memory (for this is used IModulesStorageStrong) or created ad-hod from the name (this is used for external modules)
+ *
+ * Note: Modules storage - is just getter / setter for modules
+ *       Modules store   - has full logic of mudules domain
+ */
+export interface IModulesStorageWeak {
+    getModule(name: string_module_name): IModuleDefinition | null;
 }
-export interface IModulesStorageWithDeclare extends IModulesStorage {
+/**
+ * IModulesStorageStrong represents modules, which are already delcared in memory.
+ * This is used for internal modules + modules in development by colldev
+ *
+ * Note: Modules storage - is just getter / setter for modules
+ *       Modules store   - has full logic of mudules domain
+ */
+export interface IModulesStorageStrong extends IModulesStorageWeak, IDestroyable {
+    getAllModules(): IModuleDefinition[];
+    observeAllModules(): Observable<IModuleDefinition[]>;
     declareModule(module: IModule): Promise<void>;
 }
 /**
- * TODO: !!! Anotate - store vs storage
- * TODO: Undeclaring modules
- * TODO: Maybe modules Map not Record
- *
- */
-/**
- * IModulesStorage represents modules, which are already delcared in memory.
- * This is used for internal modules + modules in development by colldev
- *
- *
+ * TODO: Undeclaring modules in IModulesStorageStrong
  */
