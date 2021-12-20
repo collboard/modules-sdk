@@ -33,7 +33,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
         const { moduleEntryPath, webpackConfig } = this;
         return {
             workingDir,
-            moduleEntryPath: moduleEntryPath,
+            moduleEntryPath,
             webpackConfig,
         };
     }

@@ -196,6 +196,11 @@ export class Server extends Destroyable implements IService, IDestroyable {
 
                 socketConnection.on('clientStatus', (clientStatus: IColldevSyncerSocket.clientStatus) => {
                     this.serverStatusUpdate((serverStatusValue) => {
+                        // Note: Compatibility with old Collboards
+                        if ((clientStatus as any).ready) {
+                            clientStatus.isReady = true;
+                        }
+
                         serverStatusValue.clients[instanceId] = clientStatus;
                     });
                 });

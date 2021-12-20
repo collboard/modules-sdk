@@ -1,6 +1,8 @@
 import { IModuleManifest } from '../../../../../types';
 import { parsePackageName } from '../../../utils/parsePackageName';
 import { checkManifest } from './checkManifest';
+import { isEveryItemDifferent } from './isEveryItemDifferent';
+import { isEveryItemSame } from './isEveryItemSame';
 
 /**
  * Check module maniests validity and they consistency as a whole
@@ -23,25 +25,16 @@ export async function checkManifests(...manifests: IModuleManifest[]): Promise<v
     const names = namesAndScopes.map(({ name }) => name);
     const scopes = namesAndScopes.map(({ scope }) => scope);
 
-    if (!isEveryItemDifferent(...names)) {
-        throw new Error('All modules must have different names');
-    }
-
     if (!isEveryItemSame(...scopes)) {
         throw new Error('All modules must have the same scope');
+    }
+
+    if (!isEveryItemDifferent(...names)) {
+        throw new Error('All modules must have different names');
     }
 }
 
 /**
  * TODO: Check more interoperability things
+ * TODO: Check against server
  */
-
-function isEveryItemDifferent<T>(...values: T[]): boolean {
-    const set = new Set(values);
-    return set.size === values.length;
-}
-
-function isEveryItemSame<T>(...values: T[]): boolean {
-    const set = new Set(values);
-    return set.size === 1;
-}

@@ -22,4 +22,5 @@ export async function evaluate<T>(javascriptContent: string): Promise<T> {
 
 /**
  * TODO: Probbably make some sandboxing protections here
+ * TODO: Probbably use safe-eval library
  */

@@ -63,7 +63,7 @@ describe(`how are manifests extracted from the bundle`, () => {
             await createManifests({
                 bundleContent: `
                     window.declareModule(() => {
-                        const name = '@foo/lambdaModule';
+                        const name = '@foo/lambda-module';
                         return {
                             manifest: {
                                 name,
@@ -73,7 +73,7 @@ describe(`how are manifests extracted from the bundle`, () => {
                 `,
                 packageJson: {},
             }),
-        ).toEqual([{ name: '@foo/lambdaModule' }]));
+        ).toEqual([{ name: '@foo/lambda-module' }]));
 
     it(`works with module created by simple maker`, async () =>
         expect(
@@ -116,10 +116,10 @@ describe(`how are manifests extracted from the bundle`, () => {
                 });
             `,
                 packageJson: {
-                    name: '@foo/moduleNameFromPackageJson',
+                    name: '@foo/module-name-from-package-json',
                 },
             }),
-        ).toEqual([{ name: '@foo/moduleNameFromPackageJson' }]));
+        ).toEqual([{ name: '@foo/module-name-from-package-json' }]));
 
     // TODO: Combining multiple modules and packageJson
 });

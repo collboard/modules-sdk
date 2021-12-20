@@ -4,9 +4,9 @@ import { Compiler, ICompilerOptions } from './Compiler';
 import { cleanupAssets } from './utils/cleanupAssets';
 import { makeColldevFolder } from './utils/makeColldevFolder';
 
-interface IDevelopmentCompilerOptions extends ICompilerOptions {}
+// interface IDevelopmentCompilerOptions extends ICompilerOptions {}
 
-export class DevelopmentCompiler extends Compiler<IDevelopmentCompilerOptions> {
+export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
     protected bundleId: string;
     protected bundleFilename: string;
 

@@ -4,7 +4,7 @@ import { PackageJson } from 'type-fest';
 import { promisify } from 'util';
 import { IModuleManifest } from '../../../../../types';
 import { evaluate } from '../../../utils/evaluate';
-import { checkManifest } from './checkManifest';
+import { checkManifests } from './checkManifests';
 import { combineManifestAndPackage } from './combineManifestAndPackage';
 
 interface ICreateManifestsOptions {
@@ -35,11 +35,7 @@ export async function createManifests({
 
     const manifestsWithPackages = manifests.map((manifest) => combineManifestAndPackage({ manifest, packageJson }));
 
-    // TODO: Add scope to names
-
-    for (const manifestWithPackage of manifestsWithPackages) {
-        await checkManifest(manifestWithPackage);
-    }
+    await checkManifests(...manifestsWithPackages);
 
     return manifestsWithPackages;
 }

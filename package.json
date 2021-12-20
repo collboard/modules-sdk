@@ -19,7 +19,7 @@
         "colldev": "dist/colldev/main.js"
     },
     "scripts": {
-        "test": "jest --config jestconfig.json",
+        "test": "npx jest",
         "lint": "tslint -p tsconfig.json",
         "prepare": "tsc",
         "prepack": "npm run lint && npm run test",

@@ -111,12 +111,11 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
 
         if (exit) {
             // 📝 Ending when the command is finished (and Colldev is running with flag --exit)
-
             endScenarios.push(forServicesReady(this.compiler, this.server, this.browserSpawner));
         }
 
         if (disconnect) {
-            // Note: Ending when last client disconnects from Colldev server (and Colldev is running with flag --disconnect)
+            // 📝 Ending when last client disconnects from Colldev server (and Colldev is running with flag --disconnect)
             endScenarios.push(
                 new Promise((resolve, reject) => {
                     let alreadyConnected = false;
