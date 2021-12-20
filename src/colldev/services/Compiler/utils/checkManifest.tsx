@@ -12,5 +12,6 @@ export async function checkManifest(manifest: IModuleManifest): Promise<void> {
 
 /**
  * TODO:
- * Check that name is not occupied by another module in same scope
+ * !!! Check that name is not occupied by another module in same scope
+ * !!! Check that all modules are in the same scope
  */
