@@ -1,3 +1,5 @@
+import spaceTrim from 'spacetrim';
+
 export function parsePackageName(options: { packageName: string; requireScope: true }): { scope: string; name: string };
 export function parsePackageName(options: { packageName: string; requireScope?: boolean }): {
     scope: string | null;
@@ -10,13 +12,23 @@ export function parsePackageName({ packageName, requireScope }: { packageName: s
     const match = /^(@(?<scope>[a-z0-9-*~][a-z0-9-*._~]*)\/)?(?<name>[a-z0-9-~][a-z0-9-._~]*)$/.exec(packageName);
 
     if (!match?.groups) {
-        throw new Error(`Invalid package name "${packageName}"`);
+        throw new Error(
+            spaceTrim(`
+                Invalid module name "${packageName}"
+                Module name must be in format "@scope/name"
+            `),
+        );
     }
 
     const { scope, name } = match.groups;
 
     if (!scope && requireScope) {
-        throw new Error(`Scope is required for package name "${packageName}"`);
+        throw new Error(
+            spaceTrim(`
+                Scope is required for module name "${packageName}"
+                Module name must be in format "@scope/name" in your case for example "@my-username/${packageName}"
+            `),
+        );
     }
 
     return { scope: scope || null, name };

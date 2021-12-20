@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'fs';
-import { unlink } from 'fs/promises';
+//import { unlink } from 'fs/promises';
 import { join } from 'path';
 import { promisify } from 'util';
 import { Compiler, ICompilerOptions } from './Compiler';
@@ -37,10 +37,9 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
     }
 
     protected async runPostprocessing(mainBundlePath: string) {
+        // TODO: Flag keep-license-information
         // TODO: Also remove mentioned license in bundle file
-        await unlink(mainBundlePath + '.LICENSE.txt').catch(() => false);
-
-        // TODO: !!! Mainifests should implement also IExternalModuleManifest interface
+        //await unlink(mainBundlePath + '.LICENSE.txt').catch(() => false);
 
         await promisify(writeFile)(
             `${mainBundlePath}.manifests.json`,
