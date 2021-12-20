@@ -2,7 +2,7 @@ import { declareModule } from '../../../src/runtime/runtime';
 
 declareModule({
     manifest: {
-        name: 'no-error-module',
+        name: '@collboard/no-error-module',
     },
     setup() {
         return {

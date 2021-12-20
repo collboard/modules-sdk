@@ -5,7 +5,7 @@ describe(`how module manifest with package.json is combined`, () => {
         expect(
             combineManifestAndPackage({
                 manifest: {
-                    name: 'foo',
+                    name: '@foo/bar',
                     license: 'Apache',
                     author: 'Pavol Hejný <pavol.hejny@collboard.com>',
                     description: 'Foo bar',
@@ -14,7 +14,7 @@ describe(`how module manifest with package.json is combined`, () => {
                 packageJson: {},
             }),
         ).toEqual({
-            name: 'foo',
+            name: '@foo/bar',
             license: 'Apache',
             author: 'Pavol Hejný <pavol.hejny@collboard.com>',
             description: 'Foo bar',
@@ -27,14 +27,14 @@ describe(`how module manifest with package.json is combined`, () => {
             combineManifestAndPackage({
                 manifest: undefined,
                 packageJson: {
-                    name: 'foo',
+                    name: '@foo/bar',
                     license: 'Apache',
                     author: 'Pavol Hejný <pavol.hejny@collboard.com>',
                     description: 'Foo bar',
                 },
             }),
         ).toEqual({
-            name: 'foo',
+            name: '@foo/bar',
             license: 'Apache',
             author: 'Pavol Hejný <pavol.hejny@collboard.com>',
             description: 'Foo bar',
@@ -45,7 +45,7 @@ describe(`how module manifest with package.json is combined`, () => {
         expect(
             combineManifestAndPackage({
                 manifest: {
-                    name: 'foo',
+                    name: '@foo/bar',
                     license: 'Apache',
                 },
                 packageJson: {
@@ -54,7 +54,7 @@ describe(`how module manifest with package.json is combined`, () => {
                 },
             }),
         ).toEqual({
-            name: 'foo',
+            name: '@foo/bar',
             license: 'Apache',
             author: 'Pavol Hejný <pavol.hejny@collboard.com>',
             description: 'Foo bar',
@@ -65,7 +65,7 @@ describe(`how module manifest with package.json is combined`, () => {
         expect(
             combineManifestAndPackage({
                 manifest: {
-                    name: 'foo',
+                    name: '@foo/bar',
                 },
                 packageJson: {
                     version: '42.256.83',
@@ -137,7 +137,7 @@ describe(`how module manifest with package.json is combined`, () => {
                 },
             }),
         ).toEqual({
-            name: 'foo',
+            name: '@foo/bar',
             version: '42.256.83',
             description: 'Modules SDK toolkit for Collboard.com',
             license: 'SEE LICENSE IN LICENSE',
@@ -160,20 +160,20 @@ describe(`how module manifest with package.json is combined`, () => {
         expect(
             combineManifestAndPackage({
                 manifest: {
-                    name: 'foo',
+                    name: '@foo/bar',
                     license: 'Apache',
                     author: 'Pavol Hejný <pavol.hejny@collboard.com>',
                     description: 'Foo bar',
                 },
                 packageJson: {
-                    name: 'foo',
+                    name: '@foo/bar',
                     license: 'Apache',
                     author: 'Pavol Hejný <pavol.hejny@collboard.com>',
                     description: 'Foo bar',
                 },
             }),
         ).toEqual({
-            name: 'foo',
+            name: '@foo/bar',
             license: 'Apache',
             author: 'Pavol Hejný <pavol.hejny@collboard.com>',
             description: 'Foo bar',
@@ -187,23 +187,44 @@ describe(`how module manifest with package.json is combined`, () => {
                 packageJson: {},
             }),
         ).toThrowError());
+
     //=======================================================================================
 
     it(`throws when some properties are in manifest and SAME WITH CONFLICTING values in package.json`, async () =>
         expect(() =>
             combineManifestAndPackage({
                 manifest: {
-                    name: 'foo',
+                    name: '@foo/bar',
                     license: 'Apache',
                     author: 'Pavol Hejný <pavol.hejny@collboard.com>',
                     description: 'Foo bar',
                 },
                 packageJson: {
-                    name: 'foo',
+                    name: '@foo/bar',
                     license: 'Apache',
                     author: 'Jonáš Rosecký <jonas.rosecky@collboard.com>',
                     description: 'Foo bar',
                 },
             }),
         ).toThrowError());
+
+    //=======================================================================================
+
+    it(`throws when scopes are not same`, async () =>
+        expect(() =>
+            combineManifestAndPackage({
+                manifest: { name: '@foo/bar' },
+                packageJson: { name: '@fiz/bar' },
+            }),
+        ).toThrowError());
+
+    it(`combines package without scope and manifest with scope`, async () =>
+        expect(
+            combineManifestAndPackage({
+                manifest: { name: '@foo/bar' },
+                packageJson: { name: 'bar' },
+            }),
+        ).toEqual({
+            name: '@foo/bar',
+        }));
 });

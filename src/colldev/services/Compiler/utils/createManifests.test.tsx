@@ -7,13 +7,13 @@ describe(`how are manifests extracted from the bundle`, () => {
                 bundleContent: `
                     window.declareModule({
                         manifest: {
-                            name: 'foo',
+                            name: '@foo/bar',
                         }
                     });
                 `,
                 packageJson: {},
             }),
-        ).toEqual([{ name: 'foo' }]));
+        ).toEqual([{ name: '@foo/bar' }]));
 
     it(`works with multiple modules`, async () =>
         expect(
@@ -21,30 +21,49 @@ describe(`how are manifests extracted from the bundle`, () => {
                 bundleContent: `
                     window.declareModule({
                         manifest: {
-                            name: 'foo',
+                            name: '@foo/bar',
                         }
                     });
                     window.declareModule({
                         manifest: {
-                            name: 'bar',
+                            name: '@foo/foo',
                         }
                     });
                     window['declareModule']({
                         manifest: {
-                            name: 'foo'+'bar',
+                            name: '@foo/foo'+'bar',
                         }
                     });
                 `,
                 packageJson: {},
             }),
-        ).toEqual([{ name: 'foo' }, { name: 'bar' }, { name: 'foobar' }]));
+        ).toEqual([{ name: '@foo/bar' }, { name: '@foo/foo' }, { name: '@foo/foobar' }]));
+
+    it(`detects duplicite module names`, () =>
+        expect(
+            createManifests({
+                bundleContent: `
+                    window.declareModule({
+                        manifest: {
+                            name: '@foo/bar',
+                        }
+                    });
+                    window.declareModule({
+                        manifest: {
+                            name: '@foo/bar',
+                        }
+                    });
+                `,
+                packageJson: {},
+            }),
+        ).rejects.toThrowError());
 
     it(`works with module returned by lambda`, async () =>
         expect(
             await createManifests({
                 bundleContent: `
                     window.declareModule(() => {
-                        const name = 'lambdaModule';
+                        const name = '@foo/lambdaModule';
                         return {
                             manifest: {
                                 name,
@@ -54,7 +73,7 @@ describe(`how are manifests extracted from the bundle`, () => {
                 `,
                 packageJson: {},
             }),
-        ).toEqual([{ name: 'lambdaModule' }]));
+        ).toEqual([{ name: '@foo/lambdaModule' }]));
 
     it(`works with module created by simple maker`, async () =>
         expect(
@@ -63,14 +82,14 @@ describe(`how are manifests extracted from the bundle`, () => {
                     window.declareModule(
                         window.CollboardSdk.makeFooBarModule({
                             manifest: {
-                                name: 'module-maked-by-maker',
+                                name: '@foo/module-maked-by-maker',
                             },
                         }),
                     );
                 `,
                 packageJson: {},
             }),
-        ).toEqual([{ name: 'module-maked-by-maker' }]));
+        ).toEqual([{ name: '@foo/module-maked-by-maker' }]));
 
     it(`works with module created by maker that manipulates manifest`, async () =>
         expect(
@@ -79,13 +98,13 @@ describe(`how are manifests extracted from the bundle`, () => {
                 // TODO: When makers in external library, test this propperly
                     window.declareModule({
                         manifest: {
-                            name: 'module-maked-by-maker',
+                            name: '@foo/module-maked-by-maker',
                         }
                     });
                 `,
                 packageJson: {},
             }),
-        ).toEqual([{ name: 'module-maked-by-maker' }]));
+        ).toEqual([{ name: '@foo/module-maked-by-maker' }]));
 
     it(`deanonymizace module with package.json`, async () =>
         expect(
@@ -97,10 +116,10 @@ describe(`how are manifests extracted from the bundle`, () => {
                 });
             `,
                 packageJson: {
-                    name: 'moduleNameFromPackageJson',
+                    name: '@foo/moduleNameFromPackageJson',
                 },
             }),
-        ).toEqual([{ name: 'moduleNameFromPackageJson' }]));
+        ).toEqual([{ name: '@foo/moduleNameFromPackageJson' }]));
 
     // TODO: Combining multiple modules and packageJson
 });
