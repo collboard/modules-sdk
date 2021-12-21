@@ -1,8 +1,11 @@
 import commander from 'commander';
 import { Destroyable } from 'destroyable';
+import { readFile } from 'fs';
 import { Box, Text } from 'ink';
+import fetch from 'node-fetch';
 import * as React from 'react';
 import { map } from 'rxjs/operators';
+import { promisify } from 'util';
 import { PUBLISH_BUILD_PATH } from '../../config';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { ProductionCompiler } from '../../services/Compiler/ProductionCompiler';
@@ -29,8 +32,23 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
     public async run(path: string, options: IColldevPublishOptions) {
         const { moduleStoreUrl, token, output } = options;
 
-        this.compiler = new ProductionCompiler({ workingDir: path || './', outDir: PUBLISH_BUILD_PATH });
-        await forServicesReady(this.compiler);
+        if (false) {
+            this.compiler = new ProductionCompiler({ workingDir: path || './', outDir: PUBLISH_BUILD_PATH });
+            await forServicesReady(this.compiler);
+        }
+
+        const url = new URL(moduleStoreUrl);
+        url.pathname = '/publish';
+        const response = await fetch(url.href, {
+            method: 'POST',
+            headers: { 'X-Token': token, 'Content-Type': 'application/tar+gzip' },
+            body: await promisify(readFile)(
+                'C:/Users/me/work/collboard/modules-sdk/.colldev/publish/collboard@sample-colldev-module@1.0.0.tar.gz' /*!!!this.compiler.tarFilePath*/,
+            ),
+        });
+        const content = await response.json();
+
+        console.log({ content });
     }
 
     public render() {

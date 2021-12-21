@@ -26,6 +26,11 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
         };
     }
 
+    public get tarFilePath() {
+        return this._tarFilePath;
+    }
+    private _tarFilePath: string;
+
     protected async runPostprocessing(mainBundlePath: string) {
         // TODO: Flag keep-license-information
         // TODO: Also remove mentioned license in bundle file
@@ -52,9 +57,7 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
         }
         tar.finalize();
 
-        await promisify(writeFile)(
-            join(dirname(mainBundlePath), `${scope}@${name}@${version}.tar.gz`),
-            await gzip(await streamTobuffer(tar)),
-        );
+        this._tarFilePath = join(dirname(mainBundlePath), `${scope}@${name}@${version}.tar.gz`);
+        await promisify(writeFile)(this._tarFilePath, await gzip(await streamTobuffer(tar)));
     }
 }
