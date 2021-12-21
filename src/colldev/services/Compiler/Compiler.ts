@@ -26,7 +26,11 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
     /**
      * Note: We are not using here mobx-react because it does not work with ink
      */
-    readonly status: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({ isReady: false, errors: [] });
+    readonly status: BehaviorSubject<ICompilerStatus> = new BehaviorSubject({
+        isReady: false,
+        stage: 'INITIALIZED',
+        errors: [],
+    });
 
     private get compilerStats(): ICompilerStats {
         const { workingDir } = this.options;
@@ -76,6 +80,11 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 this.webpackConfig!.output!.filename! as string,
             );
 
+            this.status.next({
+                ...this.status.value,
+                stage: 'COMPILING',
+            });
+
             this.compiler = webpack(
                 // TODO: Maybe use webpack watch instead of onchange
                 // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
@@ -94,6 +103,10 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                     }
 
                     try {
+                        this.status.next({
+                            ...this.status.value,
+                            stage: 'POSTPROCESSING',
+                        });
                         await this.runPostprocessing(mainBundlePath);
                     } catch (error) {
                         errors.push(error);
@@ -101,6 +114,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
 
                     this.status.next({
                         isReady: true,
+                        stage: 'DONE',
                         errors,
                         compilerStats: this.compilerStats,
                         webpackStats,
@@ -111,6 +125,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
         } catch (error) {
             this.status.next({
                 isReady: true,
+                stage: 'ERROR',
                 errors: [error],
                 compilerStats: this.compilerStats,
             });

@@ -2,18 +2,19 @@ import { Box, Text } from 'ink';
 import * as React from 'react';
 import { Bullet } from '../../utils/Bullet';
 import { ICompilerStatus } from './ICompilerStatus';
+import { capitalizeFirstLetter } from './utils/capitalizeFirstLetter';
 
 interface ICompilerStatusProps {
     compilerStatus: ICompilerStatus;
 }
 
 export function CompilerStatusOutputComponent({
-    compilerStatus: { isReady: ready, errors, compilerStats, webpackStats, mainBundlePath },
+    compilerStatus: { isReady, stage, errors, compilerStats, webpackStats, mainBundlePath },
 }: ICompilerStatusProps) {
-    if (!ready) {
+    if (!isReady) {
         return (
             <Box borderStyle="single" borderColor="yellow">
-                <Bullet>Compiling</Bullet>
+                <Bullet>{capitalizeFirstLetter(stage)}</Bullet>
             </Box>
         );
     }
