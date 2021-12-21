@@ -32,6 +32,7 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
     }
 
     public render() {
+        // TODO: DRY ColldevBuild and ColldevPublish
         return (
             <>
                 <ObservableContentComponent

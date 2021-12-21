@@ -1,5 +1,6 @@
-import { ICompilerStatus } from '../develop/Compiler/ICompilerStatus';
-import { Serializable } from '../develop/Compiler/utils/Serializable';
+import { ICompilerStatus } from "../../services/Compiler/ICompilerStatus";
+import { Serializable } from "../../services/Compiler/utils/Serializable";
+
 
 export interface IColldevBuildStatus {
     compiler?: Serializable<ICompilerStatus>;

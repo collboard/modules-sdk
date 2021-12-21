@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'fs';
+import { mkdir, readFile, writeFile } from 'fs';
 import { gzip } from 'node-gzip';
 //import { unlink } from 'fs/promises';
 import { basename, dirname, join } from 'path';
@@ -16,11 +16,12 @@ interface IDevelopmentCompilerOptions extends ICompilerOptions {
 
 export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
     protected async createWebpackConfig() {
+        await promisify(mkdir)(this.options.outDir, { recursive: true });
         return {
             mode: 'production' as 'production',
             output: {
                 filename: `bundle.min.js`,
-                path: join(process.cwd(), this.options.outDir),
+                path: this.options.outDir,
             },
         };
     }

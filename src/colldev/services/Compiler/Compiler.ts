@@ -72,8 +72,8 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 },
             };
 
-            // console.log(this.webpackConfig);
-            // process.exit(0);
+            //console.log(this.webpackConfig);
+            //process.exit(0);
 
             const mainBundlePath = join(
                 this.webpackConfig!.output!.path!,
@@ -123,12 +123,15 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 },
             );
         } catch (error) {
-            this.status.next({
-                isReady: true,
-                stage: 'ERROR',
-                errors: [error],
-                compilerStats: this.compilerStats,
-            });
+            // TODO: Same pattern on every error >  } catch (error) {
+            if (error instanceof Error) {
+                this.status.next({
+                    isReady: true,
+                    stage: 'ERROR',
+                    errors: [error],
+                    compilerStats: this.compilerStats,
+                });
+            }
         }
     }
 
