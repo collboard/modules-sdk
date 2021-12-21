@@ -33,6 +33,8 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
     public async run(path: string, options: IColldevPublishOptions) {
         const { moduleStoreUrl, token, output } = options;
 
+        // TODO: !!! for every module different PUBLISH_BUILD_PATH
+
         this.compiler = new ProductionCompiler({ workingDir: path || './', outDir: PUBLISH_BUILD_PATH });
         await forServicesReady(this.compiler);
 

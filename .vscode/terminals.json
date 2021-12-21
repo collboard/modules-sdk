@@ -50,6 +50,10 @@
         {
             "name": "🧪🔼 Publish 'hello-world'",
             "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/hello-world --module-store-url http://localhost:9988/ --token test"
+        },
+        {
+            "name": "🧪🔼 Publish 'multimodule'",
+            "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/multimodule --module-store-url http://localhost:9988/ --token test"
         }
     ]
 }
