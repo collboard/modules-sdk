@@ -6,7 +6,12 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { Destroyable } from 'destroyable';
-import { string_module_category, string_module_name } from '../../../40-utils/typeAliases';
+import {
+    string_module_category,
+    string_module_name,
+    string_url,
+    string_version_dependency,
+} from '../../../40-utils/typeAliases';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
 import { IModuleStoreConnector } from '../interfaces/IModuleStoreConnector';
@@ -16,31 +21,14 @@ import { IModuleStoreConnectorSearchResult } from '../interfaces/IModuleStoreCon
  *
  */
 export declare class ExternalModuleStoreConnector extends Destroyable implements IModuleStoreConnector {
-    getModule(name: string_module_name): IModuleDefinition;
+    private readonly moduleStoreUrl;
+    constructor(moduleStoreUrl: string_url);
+    private readonly externalModules;
+    getModule(packageName: string_module_name, version?: string_version_dependency): IModuleDefinition;
     search(searchCriteria: IModuleSearchCriteria): Promise<IModuleStoreConnectorSearchResult>;
     getCategories(): Promise<Set<string_module_category>>;
 }
 /**
- * TODO: !!! Remove from console:
- *
- * BackgroundPattern ['TextCard']
- * BackgroundPattern ['FunctionBuilder']
- *
- */
-/**
- * TODO: !!! Uninstalling of external modules occures looot of times.
- *
- * [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✗] Uninstalling sample-colldev-module (with CornerstoneSyncer)
-instrument.ts:129 [✓] Installing sample-colldev-module (with CornerstoneSyncer
+ * TODO: [🥝] Maybe use this shortcut how to get assets url in the future
+ * TODO: Maybe something like getModuleScript via safe-eval
  */

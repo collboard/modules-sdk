@@ -17,3 +17,6 @@ export declare function isModulePassingSearchCriteria({
     moduleManifest?: IModuleManifest;
     businessSystem?: BusinessSystem;
 }): boolean;
+/**
+ *  TODO:  Unit test
+ */

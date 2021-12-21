@@ -7,7 +7,7 @@
 
 import { IDestroyable } from 'destroyable';
 import { Observable } from 'rxjs';
-import { string_module_name } from '../../../40-utils/typeAliases';
+import { string_module_name, string_version_dependency } from '../../../40-utils/typeAliases';
 import { IModule, IModuleDefinition } from './IModule';
 /**
  * IModulesStorageWeak represents object that can return IModuleDefinition from name.
@@ -17,7 +17,7 @@ import { IModule, IModuleDefinition } from './IModule';
  *       Modules store   - has full logic of mudules domain
  */
 export interface IModulesStorageWeak {
-    getModule(name: string_module_name): IModuleDefinition | null;
+    getModule(name: string_module_name, version?: string_version_dependency): IModuleDefinition | null;
 }
 /**
  * IModulesStorageStrong represents modules, which are already delcared in memory.

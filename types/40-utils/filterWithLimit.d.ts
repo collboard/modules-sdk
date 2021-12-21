@@ -5,8 +5,10 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IModuleManifest } from '../interfaces/IModuleManifest';
-export declare function isExperimental(manifest: IModuleManifest): boolean;
-/**
- *  TODO:  Unit test
- */
+interface IFilterWithLimitOptions<T> {
+    array: T[];
+    limit: number;
+    predicate: (value: T, index?: number, array?: T[]) => boolean;
+}
+export declare function filterWithLimit<T>({ array, limit, predicate }: IFilterWithLimitOptions<T>): T[];
+export {};

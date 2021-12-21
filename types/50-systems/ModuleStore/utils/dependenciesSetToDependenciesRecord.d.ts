@@ -8,5 +8,5 @@
 import { IDependenciesRecord, IDependenciesSet, IDependency } from '../interfaces/IDependencies';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 export declare function dependenciesSetToDependenciesRecord(
-    dependenciesSetOrArray: IDependenciesSet | (IDependency | IModuleManifest)[],
+    dependenciesSetOrArray: IDependenciesSet | Array<IDependency | IModuleManifest>,
 ): IDependenciesRecord;

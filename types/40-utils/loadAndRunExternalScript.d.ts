@@ -6,4 +6,4 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { string_url } from './typeAliases';
-export declare function loadAndRunExternalScript(src: string_url): void;
+export declare function loadAndRunExternalScript(src: string_url): Promise<void>;

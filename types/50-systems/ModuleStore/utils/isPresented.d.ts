@@ -14,3 +14,6 @@ import { IModuleManifest } from '../interfaces/IModuleManifest';
  * @returns whether module should be shown publically or not (be hidden to user)
  */
 export declare function isPresented(manifest: IModuleManifest, businessSystem?: BusinessSystem): boolean;
+/**
+ *  TODO:  Unit test
+ */

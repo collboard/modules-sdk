@@ -5,8 +5,5 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IModuleManifest } from '../interfaces/IModuleManifest';
-export declare function isExperimental(manifest: IModuleManifest): boolean;
-/**
- *  TODO:  Unit test
- */
+/// <reference types="react" />
+export declare function compareJsxs(a: JSX.Element, b: JSX.Element): 1 | -1 | 0;

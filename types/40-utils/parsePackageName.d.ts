@@ -5,8 +5,11 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IModuleManifest } from '../interfaces/IModuleManifest';
-export declare function isExperimental(manifest: IModuleManifest): boolean;
-/**
- *  TODO:  Unit test
- */
+export declare function parsePackageName(options: { packageName: string; requireScope: true }): {
+    scope: string;
+    name: string;
+};
+export declare function parsePackageName(options: { packageName: string; requireScope?: boolean }): {
+    scope: string | null;
+    name: string;
+};

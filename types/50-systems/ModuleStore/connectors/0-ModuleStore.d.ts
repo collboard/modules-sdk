@@ -28,7 +28,13 @@ export declare class ModuleStore extends AbstractSystem implements IModuleStoreC
      */
     getModule(name: string_module_name): IModuleDefinition | null;
     init(): Promise<void>;
+    /**
+     * Note: When searching with limit, it depends on order of connectors registration
+     */
     registerModuleStoreConnector(modulesConnector: IModuleStoreConnector): IDestroyable;
+    /**
+     * Note: When searching with limit, it depends on order of connectors registration
+     */
     registerModuleStorage(modulesStorage: IModulesStorageStrong): IDestroyable;
     search(searchCriteria: IModuleSearchCriteria): Promise<IModuleStoreConnectorSearchResult>;
     getCategories(): Promise<Set<string_module_category>>;

@@ -5,42 +5,32 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { string_javascript_name, string_url } from '../../../40-utils/typeAliases';
+import { Promisable } from 'type-fest';
+import { string_url } from '../../../40-utils/typeAliases';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 import { IModulesStorageStrong } from '../interfaces/IModulesStorage';
-interface IExternalModuleOptions extends IExternalModuleManifest {
+interface IExternalModuleOptions {
     expectedManifest: IModuleManifest;
-    /**
-     * It is strongly recommended to provide cache
-     */
-    cache?: IModulesStorageStrong;
+    cache: IModulesStorageStrong;
+    script: Promisable<{
+        src: string_url;
+    }>;
 }
 /**
  *
  * @not-collboard-modules-sdk
+ *
+ * Warning: This is NOT A PURE function.
+ *          It creates global `window.declareCallback` function SO use it only once per one cache.
  */
 export declare function makeExternalModule({
     expectedManifest,
     cache,
-    script: { src, declareCallback },
+    script,
 }: IExternalModuleOptions): IModuleDefinition;
-/**
- *
- * @collboard-modules-sdk
- */
-export interface IExternalModuleManifest {
-    script: {
-        src: string_url;
-        declareCallback: string_javascript_name;
-    };
-}
 export {};
 /**
- * TODO: !!! External modules should be loaded after the internal ones
- * TODO: !!! Order of extra JSX UI additions should be agnostic to order of its carry modules installation/uninstallation
- * TODO: !!! Bundele can contain multiple modules.
- * TODO: !!! Verify that module has expected manifest
- * TODO: !!! Timeout
- * TODO: !!! Hande errors
+ * TODO: Verify better that module has expected manifest
+ * TODO: Add emoji before all `Warning:`
  */

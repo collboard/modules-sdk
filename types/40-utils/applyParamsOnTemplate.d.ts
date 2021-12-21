@@ -9,7 +9,7 @@ export declare type IReplacer = (key: string, note?: string) => string;
 interface ITemplateArguments {
     template: string;
     replace?: IReplacer;
-    params?: Record<string, string | null>;
+    params?: Record<string, string | URL | null | undefined>;
 }
 /**
  *

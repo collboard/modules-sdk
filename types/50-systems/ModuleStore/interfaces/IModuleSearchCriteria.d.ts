@@ -21,3 +21,9 @@ export interface IModuleSearchCriteria extends IJson {
     };
     limit?: number;
 }
+/**
+ * TODOs:
+ * - Searching author
+ * - Combinating - AND and OR (combination of supports)
+ * - How to deal with standard and bonus attribute modules - now it searches only through standard ones
+ */

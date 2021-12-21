@@ -14,6 +14,7 @@ import { string_translate_language, string_translate_name_not_normalized } from 
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
 import { ITranslateMessage } from './ITranslateMessage';
+import { ITranslateMessagePicker } from './ITranslateMessagePicker';
 export interface ITranslationMessages {
     [key: string]: string;
 }
@@ -23,7 +24,7 @@ export interface ITranslationMessages {
  * @collboard-system
  *
  */
-export declare class TranslationsSystem extends AbstractSystem {
+export declare class TranslationsSystem extends AbstractSystem implements ITranslateMessagePicker {
     private translateMessagesRecord;
     readonly missingTranslateMessages: Observable<ITranslateMessage>;
     private missingTranslateMessagesObserver?;

@@ -5,8 +5,9 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { IModuleManifest } from '../interfaces/IModuleManifest';
-export declare function isExperimental(manifest: IModuleManifest): boolean;
+/// <reference types="react" />
+import { string_html } from './typeAliases';
+export declare function jsxToHtml(element?: string | JSX.Element): string_html;
 /**
- *  TODO:  Unit test
+ * TODO: Maybe just use ReactDOMServer.renderToStaticMarkup
  */

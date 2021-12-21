@@ -459,10 +459,6 @@ export const IModuleManifestTranslation = (window as any).CollboardSdk.IModuleMa
                     export const makeEmojisToolModule = (window as any).CollboardSdk.makeEmojisToolModule;
                     
 
-                    // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeExternalModule.d.ts
-                    export const IExternalModuleManifest = (window as any).CollboardSdk.IExternalModuleManifest;
-                    
-
                     // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeExtrajsxModule.d.ts
                     export const makeExtrajsxModule = (window as any).CollboardSdk.makeExtrajsxModule;
                     

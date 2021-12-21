@@ -107,7 +107,6 @@ export * from './50-systems/ModuleStore/makers/makeArticlesSetModule';
 export * from './50-systems/ModuleStore/makers/makeArtModule';
 export * from './50-systems/ModuleStore/makers/makeAttributeModule';
 export * from './50-systems/ModuleStore/makers/makeEmojisToolModule';
-export * from './50-systems/ModuleStore/makers/makeExternalModule';
 export * from './50-systems/ModuleStore/makers/makeExtrajsxModule';
 export * from './50-systems/ModuleStore/makers/makeIconModule';
 export * from './50-systems/ModuleStore/makers/makeIconModuleOnModule';

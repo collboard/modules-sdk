@@ -8,15 +8,19 @@
 import { Vector } from 'xyzt';
 import { Commit } from './10-database/Commit';
 import { ICommitData } from './10-database/interfaces/ICommitData';
-import { string_translate_language } from './40-utils/typeAliases';
+import { string_translate_language, string_url } from './40-utils/typeAliases';
 import { Serializer } from './50-systems/Serializer/0-Serializer';
 import { AbstractArt } from './71-arts/20-AbstractArt';
+interface ICollboardAppOptions {
+    rootElement: HTMLDivElement;
+    language: string_translate_language;
+    apiUrl: string_url;
+    moduleStoreUrl: string_url;
+}
 export declare type ISerializableTypes = Commit | ICommitData | AbstractArt | Vector;
 export declare type ArtSerializer = Serializer<ISerializableTypes>;
 export declare class CollboardApp {
-    private rootElement;
-    private apiUrl;
-    private readonly language;
+    private readonly options;
     private systems;
     /**
      *
@@ -26,10 +30,11 @@ export declare class CollboardApp {
      *
      * TODO: Probbably make ICollboardAppOptions
      */
-    constructor(rootElement: HTMLDivElement, apiUrl: string, language: string_translate_language);
+    constructor(options: ICollboardAppOptions);
     private loadTranslator;
     private logVersions;
     private render;
+    private setupModuleStore;
     private run;
     /**
      * TODO: !!  To some util which is destroyable and prepairs systems with a container as a whole
@@ -37,6 +42,9 @@ export declare class CollboardApp {
     private changeVersioningSystems;
     private initConsoleAccess;
 }
+export {};
 /**
-TODO: This file is too big
+ * TODO: This file is too big
+ * TODO: Join app and createApp
+ *
  */
