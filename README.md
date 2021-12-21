@@ -384,5 +384,5 @@ Makers are helpers which helps to create an module. Maker is a pure function tha
 ### makeMultiModule
 
 <!--
-TODO: !!! ## Multimodules
+TODO: !! ## Multimodules
 -->

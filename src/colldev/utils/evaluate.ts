@@ -15,7 +15,7 @@ export async function evaluate<T>(javascriptContent: string): Promise<T> {
     await makeColldevFolder();
     const tmpPath = join(ASSETS_PATH, `evaluate-${uuid.v4()}.js`);
     await promisify(writeFile)(tmpPath, javascriptContent);
-    const exported = await require(/*!!! relative*/ tmpPath);
+    const exported = await require(/* TODO: ? relative*/ tmpPath);
     await promisify(unlink)(tmpPath);
     return exported;
 }
