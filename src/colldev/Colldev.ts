@@ -57,9 +57,9 @@ export class Colldev extends Destroyable implements IDestroyable {
 
                         // TODO: DRY
                         runningCommand
-                            .then(() => {
+                            .then((finalSuccessMessage) => {
                                 this.renderingInstance?.unmount();
-                                console.info(chalk.green(`Module is working successfully.`));
+                                console.info(chalk.green(finalSuccessMessage));
                                 process.exit(0);
                             })
                             .catch((error: Error) => {

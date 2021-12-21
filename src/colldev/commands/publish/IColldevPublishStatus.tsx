@@ -5,4 +5,5 @@ export interface IColldevPublishStatus {
     warning?: string;
     details?: string;
     compiler?: Serializable<ICompilerStatus>;
+    moduleStoreResponse: null|any;
 }

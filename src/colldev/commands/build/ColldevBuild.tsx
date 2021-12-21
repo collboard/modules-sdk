@@ -29,6 +29,8 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
 
         this.compiler = new ProductionCompiler({ workingDir: path || './', outDir });
         await forServicesReady(this.compiler);
+
+        return `Module was build to "${outDir}".`;
     }
 
     public render() {
