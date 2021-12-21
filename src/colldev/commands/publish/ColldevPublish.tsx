@@ -3,9 +3,11 @@ import { Destroyable } from 'destroyable';
 import { readFile } from 'fs';
 import { Box, Text } from 'ink';
 import fetch from 'node-fetch';
+import { join } from 'path';
 import * as React from 'react';
 import { map } from 'rxjs/operators';
 import { promisify } from 'util';
+import * as uuid from 'uuid';
 import { PUBLISH_BUILD_PATH } from '../../config';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { PublishingError } from '../../services/Compiler/errors/PublishingError';
@@ -31,11 +33,14 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
     }
 
     public async run(path: string, options: IColldevPublishOptions) {
-        const { moduleStoreUrl, token, output } = options;
+        const { moduleStoreUrl, token } = options;
 
-        // TODO: !!! for every module different PUBLISH_BUILD_PATH
+        // TODO: Cleanup of .colldev folder
 
-        this.compiler = new ProductionCompiler({ workingDir: path || './', outDir: PUBLISH_BUILD_PATH });
+        this.compiler = new ProductionCompiler({
+            workingDir: path || './',
+            outDir: join(PUBLISH_BUILD_PATH, uuid.v4()),
+        });
         await forServicesReady(this.compiler);
 
         const url = new URL(moduleStoreUrl);
