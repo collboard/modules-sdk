@@ -2,7 +2,7 @@ import { declareModule } from '../../../src/runtime/runtime';
 
 declareModule({
     manifest: {
-        name: 'TypeErrorModule',
+        name: '@collboard/type-error-module',
     },
     setup() {
         return {

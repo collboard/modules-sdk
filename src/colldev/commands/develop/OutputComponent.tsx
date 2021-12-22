@@ -2,16 +2,16 @@ import { Box } from 'ink';
 import * as React from 'react';
 import { combineLatest, from } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { BrowserSpawner } from '../../services/BrowserSpawner/BrowserSpawner';
+import { Compiler } from '../../services/Compiler/Compiler';
+import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
+import { Server } from '../../services/Server/Server';
+import { ServerAndBrowserSpawnerStatusOutputComponent } from '../../services/Server/ServerAndBrowserSpawnerStatusOutputComponent';
 import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
-import { BrowserSpawner } from './BrowserSpawner/BrowserSpawner';
-import { Compiler } from './Compiler/Compiler';
-import { CompilerStatusOutputComponent } from './Compiler/CompilerStatusOutputComponent';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
-import { Server } from './Server/Server';
-import { ServerAndBrowserSpawnerStatusOutputComponent } from './Server/ServerAndBrowserSpawnerStatusOutputComponent';
 
 interface IOutputProps {
-    compiler: Compiler;
+    compiler: Compiler<any>;
     server: Server;
     browserSpawner: BrowserSpawner;
     options: Pick<IColldevDevelopOptions, 'open' | 'wait'>;
@@ -24,9 +24,9 @@ export function OutputComponent({ compiler, server, browserSpawner, options }: I
         <ObservableContentComponent
             content={combineLatest([
                 from(server.openCollboardUrl()),
-                compiler.compilerStatus,
-                server.serverStatus,
-                browserSpawner.browserSpawnerStatus,
+                compiler.status,
+                server.status,
+                browserSpawner.status,
             ]).pipe(
                 map(([openCollboardUrl, compilerStatus, serverStatus, browserSpawnerStatus]) => (
                     <Box
@@ -38,7 +38,7 @@ export function OutputComponent({ compiler, server, browserSpawner, options }: I
                             serverStatus.errors.length ||
                             browserSpawnerStatus.errors.length
                                 ? 'red'
-                                : !(compilerStatus.ready && serverStatus.ready && browserSpawnerStatus.ready)
+                                : !(compilerStatus.isReady && serverStatus.isReady && browserSpawnerStatus.isReady)
                                 ? 'yellow'
                                 : 'white'
                         }

@@ -6,23 +6,31 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { IDestroyable } from 'destroyable';
-import { BehaviorSubject } from 'rxjs';
-import { string_module_name } from '../../../40-utils/typeAliases';
+import { Observable } from 'rxjs';
+import { string_module_name, string_version_dependency } from '../../../40-utils/typeAliases';
 import { IModule, IModuleDefinition } from './IModule';
 /**
- * IModulesStorage represents modules, which are already delcared in memory.
- * This is used for internal modules + modules in development by colldev
+ * IModulesStorageWeak represents object that can return IModuleDefinition from name.
+ * This module definition can be already stored in the memory (for this is used IModulesStorageStrong) or created ad-hod from the name (this is used for external modules)
  *
- *
+ * Note: Modules storage - is just getter / setter for modules
+ *       Modules store   - has full logic of mudules domain
  */
-export interface IModulesStorage extends IDestroyable {
-    declareModule(module: IModule): Promise<void>;
-    readonly modules: BehaviorSubject<Record<string_module_name, IModuleDefinition>>;
+export interface IModulesStorageWeak {
+    getModule(name: string_module_name, version?: string_version_dependency): IModuleDefinition | null;
 }
 /**
+ * IModulesStorageStrong represents modules, which are already delcared in memory.
+ * This is used for internal modules + modules in development by colldev
  *
- * TODO: Maybe split up between declareModule and modules part
- * TODO: Undeclaring modules
- * TODO: Maybe modules Map not Record
- *
+ * Note: Modules storage - is just getter / setter for modules
+ *       Modules store   - has full logic of mudules domain
+ */
+export interface IModulesStorageStrong extends IModulesStorageWeak, IDestroyable {
+    getAllModules(): IModuleDefinition[];
+    observeAllModules(): Observable<IModuleDefinition[]>;
+    declareModule(module: IModule): Promise<void>;
+}
+/**
+ * TODO: Undeclaring modules in IModulesStorageStrong
  */

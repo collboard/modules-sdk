@@ -13,7 +13,7 @@ export declare class ServiceLog {
     businessName: BusinessName;
     remoteVersion: string;
     remoteInstanceId: string;
-    stats: object | null;
+    stats: object;
     lastStats: object | null;
     lastRealStats: object | null;
     lastLogs: string | null;

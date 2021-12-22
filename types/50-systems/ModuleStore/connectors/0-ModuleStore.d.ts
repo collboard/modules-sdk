@@ -6,25 +6,36 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { IDestroyable } from 'destroyable';
-import { string_module_category } from '../../../40-utils/typeAliases';
+import { string_module_category, string_module_name } from '../../../40-utils/typeAliases';
 import { AbstractSystem } from '../../AbstractSystem';
-import { IDependency } from '../interfaces/IDependencies';
-import { IModulesStorage } from '../interfaces/IModulesStorage';
+import { IModuleDefinition } from '../interfaces/IModule';
+import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
+import { IModulesStorageStrong } from '../interfaces/IModulesStorage';
 import { IModuleStoreConnector } from '../interfaces/IModuleStoreConnector';
-import { IModuleStoreConnectorSearchQuery } from '../interfaces/IModuleStoreConnectorSearch';
+import { IModuleStoreConnectorSearchResult } from '../interfaces/IModuleStoreConnectorSearchResult';
 /**
  * ModuleStore unites all module store connectors into one API, so consumer have same way how to get internal or external module
+ *
+ * Note: Modules storage - is just getter / setter for modules
+ *       Modules store   - has full logic of mudules domain
  *
  * @collboard-system
  */
 export declare class ModuleStore extends AbstractSystem implements IModuleStoreConnector {
     private connectors;
+    /**
+     * @proxy
+     */
+    getModule(name: string_module_name): IModuleDefinition | null;
     init(): Promise<void>;
+    /**
+     * Note: When searching with limit, it depends on order of connectors registration
+     */
     registerModuleStoreConnector(modulesConnector: IModuleStoreConnector): IDestroyable;
-    registerModuleStorage(modulesStorage: Pick<IModulesStorage, 'modules'>): IDestroyable;
-    search(searchCriteria: IModuleStoreConnectorSearchQuery): Promise<{
-        modules: (IDependency & Partial<import('../interfaces/IModuleManifest').IModuleManifest>)[];
-    }>;
-    download(...modules: IDependency[]): Promise<import('../interfaces/IModule').IModule[]>;
+    /**
+     * Note: When searching with limit, it depends on order of connectors registration
+     */
+    registerModuleStorage(modulesStorage: IModulesStorageStrong): IDestroyable;
+    search(searchCriteria: IModuleSearchCriteria): Promise<IModuleStoreConnectorSearchResult>;
     getCategories(): Promise<Set<string_module_category>>;
 }

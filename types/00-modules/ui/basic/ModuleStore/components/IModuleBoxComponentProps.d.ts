@@ -11,7 +11,7 @@ import { IModulePersister } from '../../../../../50-systems/ModuleStore/interfac
 import { IModuleStatusReporter } from '../../../../../50-systems/ModuleStore/interfaces/IModuleStatusReporter';
 import { TranslationsSystem } from '../../../../../50-systems/TranslationsSystem/0-TranslationsSystem';
 export interface IModuleBoxComponentProps {
-    shownModule: IModuleManifest;
+    manifest: IModuleManifest;
     moduleStatusReporter: IModuleStatusReporter;
     persister: IModulePersister;
     translationsSystem: TranslationsSystem;

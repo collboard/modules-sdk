@@ -25,7 +25,7 @@ import { Operation } from './Operation';
  *
  * @collboard-system
  */
-export declare class MaterialArtVersioningSystem extends AbstractSystem implements IDestroyable, IArtVersioningSystem {
+export declare class MaterialArtVersioningSystem extends AbstractSystem implements IArtVersioningSystem, IDestroyable {
     readonly moduleSignature: IModuleSignature;
     readonly commitsObservable: Observable<Commit>;
     readonly artsObservable: Observable<AbstractArt>;

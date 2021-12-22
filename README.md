@@ -45,7 +45,7 @@ import * as React from 'react';
 declareModule(
     makeExtrajsxModule({
         manifest: {
-            name: 'MyFirstModule',
+            name: '@my-username/first-module',
         },
         place: ExtraJsxPlace.EdgeRight,
         createExtraJsx({
@@ -254,6 +254,8 @@ IdentitySystem identifies the User by a pseudonym.
 ### [ModuleStore](https://collboard.github.io/modules-sdk/classes/modulestore.html)
 
 ModuleStore unites all module store connectors into one API, so consumer have same way how to get internal or external module
+Note: Modules storage - is just getter / setter for modules
+Modules store - has full logic of mudules domain
 
 <!--Private system:
 ### [ArtSupportSyncer](https://collboard.github.io/modules-sdk/classes/artsupportsyncer.html)
@@ -382,5 +384,5 @@ Makers are helpers which helps to create an module. Maker is a pure function tha
 ### makeMultiModule
 
 <!--
-TODO: !!! ## Multimodules
+TODO: !! ## Multimodules
 -->

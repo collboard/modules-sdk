@@ -17,7 +17,6 @@ import { AbstractSyncer } from './AbstractSyncer';
  * @collboard-system
  */
 export declare class CornerstoneSyncer extends AbstractSyncer implements ISyncer, IModulePersister, IDestroyable {
-    modulesStorage: import('../interfaces/IModulesStorage').IModulesStorage;
     private subscription;
     protected initSyncer(): Promise<void>;
     moduleActivate(moduleName: string_module_name): Promise<void>;

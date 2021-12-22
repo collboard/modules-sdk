@@ -26,7 +26,7 @@ import { ITaskRunner } from './ITaskRunner';
  *
  * @collboard-modules-sdk
  */
-export declare class Queue<TTaskResult> extends Destroyable implements IDestroyable, ITaskRunner<TTaskResult> {
+export declare class Queue<TTaskResult> extends Destroyable implements ITaskRunner<TTaskResult>, IDestroyable {
     private taskToWait;
     task(runner: () => Promisable<TTaskResult>): Promise<TTaskResult>;
     destroy(): Promise<void>;

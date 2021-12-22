@@ -11,7 +11,7 @@ import { string_module_name } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { IDependency } from './interfaces/IDependencies';
 import { IInstaller } from './interfaces/IInstaller';
-import { IModulesStorage } from './interfaces/IModulesStorage';
+import { IModulesStorageWeak } from './interfaces/IModulesStorage';
 import { ModuleInstallation } from './ModuleInstallation';
 import { ModuleStatus } from './ModuleStatus';
 /**
@@ -20,10 +20,10 @@ import { ModuleStatus } from './ModuleStatus';
  * TODO: Refactor installer and when uninstall automatically remove item from installations
  * TODO: Convert to fully destroyable pattetn
  */
-export declare class ModuleInstaller extends Destroyable implements IDestroyable, IInstaller {
+export declare class ModuleInstaller extends Destroyable implements IInstaller, IDestroyable {
     private modulesStorage;
     readonly installations: ModuleInstallation[];
-    constructor(modulesStorage: IModulesStorage);
+    constructor(modulesStorage: IModulesStorageWeak);
     install(dependency: IDependency, systems: ISystemsExtended, syncerName?: string): Promise<void>;
     private statuses;
     statusOf(moduleName: string_module_name): BehaviorSubject<ModuleStatus>;

@@ -8,7 +8,7 @@
 /// <reference types="react" />
 import { IModuleBoxComponentProps } from './IModuleBoxComponentProps';
 export declare function ModuleBoxComponent({
-    shownModule,
+    manifest,
     moduleStatusReporter,
     persister,
     translationsSystem,

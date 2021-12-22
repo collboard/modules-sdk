@@ -1,0 +1,5 @@
+{
+    "name": "never-declared-module",
+    "version": "1.0.0",
+    "main": "./src/neverDeclaredModule.tsx"
+}

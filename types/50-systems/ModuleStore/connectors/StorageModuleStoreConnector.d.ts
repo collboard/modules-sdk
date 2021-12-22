@@ -6,24 +6,26 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { Destroyable } from 'destroyable';
-import { string_module_category } from '../../../40-utils/typeAliases';
+import { string_module_category, string_module_name } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
-import { IDependency } from '../interfaces/IDependencies';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModulesStorage } from '../interfaces/IModulesStorage';
+import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
+import { IModulesStorageStrong } from '../interfaces/IModulesStorage';
 import { IModuleStoreConnector } from '../interfaces/IModuleStoreConnector';
-import { IModuleStoreConnectorSearchQuery } from '../interfaces/IModuleStoreConnectorSearch';
+import { IModuleStoreConnectorSearchResult } from '../interfaces/IModuleStoreConnectorSearchResult';
 /**
  * StorageModuleStoreConnector searches through IModulesStorage modules (which are already delcared in memory).
  * This is used for internal modules + modules in development by colldev
  */
 export declare class StorageModuleStoreConnector extends Destroyable implements IModuleStoreConnector {
     private systems;
-    private modulesStorage;
-    constructor(systems: ISystemsExtended, modulesStorage: Pick<IModulesStorage, 'modules'>);
-    download(...identificators: IDependency[]): Promise<IModuleDefinition[]>;
+    private readonly moduleStorage;
+    constructor(systems: ISystemsExtended, moduleStorage: IModulesStorageStrong);
+    /**
+     *
+     * @proxy
+     */
+    getModule(name: string_module_name): IModuleDefinition | null;
     getCategories(): Promise<Set<string_module_category>>;
-    search(searchCriteria: IModuleStoreConnectorSearchQuery): Promise<{
-        modules: import('../interfaces/IModuleManifest').IModuleManifest[];
-    }>;
+    search(searchCriteria: IModuleSearchCriteria): Promise<IModuleStoreConnectorSearchResult>;
 }

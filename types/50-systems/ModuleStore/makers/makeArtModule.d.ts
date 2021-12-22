@@ -5,18 +5,17 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
-import { ISerializeRule } from 'everstorage';
+import { IInstantiable } from 'everstorage';
 import { AbstractArt } from '../../../71-arts/20-AbstractArt';
-import { IModule, IModuleDefinition } from '../interfaces/IModule';
-export declare const artModules: Array<
-    IModule & {
-        artSerializeRule: ISerializeRule<any>;
-    }
->;
+import { IModuleDefinition } from '../interfaces/IModule';
 /**
  * makeArtModule will make UI module
  *
  * Note: Module still needs to be declared
  * @collboard-modules-sdk
  */
-export declare function makeArtModule(artSerializeRule: ISerializeRule<AbstractArt>): IModuleDefinition;
+export declare function makeArtModule(artClass: IInstantiable<AbstractArt>): IModuleDefinition;
+/** TODO:
+ *  - And also support extended mode with :artSerializeRule: ISerializeRule<AbstractArt>
+ *
+ */

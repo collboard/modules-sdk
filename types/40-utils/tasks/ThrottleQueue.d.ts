@@ -32,7 +32,7 @@ export interface IThrottleQueueOptions {
  *
  * @collboard-modules-sdk
  */
-export declare class ThrottleQueue<TTaskResult> extends Destroyable implements IDestroyable, ITaskRunner<TTaskResult> {
+export declare class ThrottleQueue<TTaskResult> extends Destroyable implements ITaskRunner<TTaskResult>, IDestroyable {
     private options;
     private runner;
     private throttles;

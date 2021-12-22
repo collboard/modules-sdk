@@ -2,16 +2,21 @@ import chalk from 'chalk';
 import commander from 'commander';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { Instance, render } from 'ink';
+import { ColldevBuild } from './commands/build/ColldevBuild';
 import { ColldevDevelop } from './commands/develop/ColldevDevelop';
 import { ICommand } from './commands/ICommand';
 import { ColldevPublish } from './commands/publish/ColldevPublish';
 import { IColldevOptions } from './IColldevOptions';
-import { getColldevPackageContent } from './utils/getColldevPackageContent';
+import { getColldevPackageJsonContent } from './utils/getColldevPackageJsonContent';
 import { jsonReplacer } from './utils/jsonReplacer';
 
 export class Colldev extends Destroyable implements IDestroyable {
     private program: commander.Command;
-    private commands: Array<ICommand<IColldevOptions, any>> = [new ColldevDevelop(), new ColldevPublish()];
+    private commands: Array<ICommand<IColldevOptions, any>> = [
+        new ColldevDevelop(),
+        new ColldevBuild(),
+        new ColldevPublish(),
+    ];
     private renderingInstance: Instance | null = null;
 
     constructor(readonly argv?: string[]) {
@@ -23,7 +28,7 @@ export class Colldev extends Destroyable implements IDestroyable {
         //const { program } = await this.createProgram();
 
         this.program = new commander.Command();
-        this.program.version((await getColldevPackageContent()).version);
+        this.program.version((await getColldevPackageJsonContent()).version);
 
         for (const command of this.commands) {
             command
@@ -52,9 +57,9 @@ export class Colldev extends Destroyable implements IDestroyable {
 
                         // TODO: DRY
                         runningCommand
-                            .then(() => {
+                            .then((finalSuccessMessage) => {
                                 this.renderingInstance?.unmount();
-                                console.info(chalk.green(`Module is working successfully.`));
+                                console.info(chalk.green(finalSuccessMessage));
                                 process.exit(0);
                             })
                             .catch((error: Error) => {

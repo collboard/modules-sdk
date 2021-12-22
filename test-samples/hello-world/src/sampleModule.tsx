@@ -4,7 +4,7 @@ import { declareModule, ExtraJsxPlace, makeExtrajsxModule } from '../../../src/r
 declareModule(
     makeExtrajsxModule({
         manifest: {
-            name: 'SampleColldevModule',
+            name: '@collboard/sample-colldev-module',
             title: { en: 'Hello world' },
             description: {
                 en: 'Simple sample hello world button for Collboard.com',

@@ -1,11 +1,11 @@
 {
     "name": "@collboard/modules-sdk",
-    "version": "16.0.2-0",
+    "version": "16.0.2-1",
     "description": "Modules SDK toolkit for Collboard.com",
     "license": "SEE LICENSE IN LICENSE",
     "contributors": [
-        "Pavol Hejný <me@pavolhejny.com> (https://pavolhejny.com)",
-        "Jonáš Rosecký <jonas.rosecky@h-edu.cz>"
+        "Pavol Hejný <pavol.hejny@collboard.com> (https://collboard.com/-/about/team)",
+        "Jonáš Rosecký <jonas.rosecky@collboard.com> (https://collboard.com/-/about/team)"
     ],
     "repository": {
         "type": "git",
@@ -19,7 +19,7 @@
         "colldev": "dist/colldev/main.js"
     },
     "scripts": {
-        "test": "jest --config jestconfig.json",
+        "test": "npx jest",
         "lint": "tslint -p tsconfig.json",
         "prepare": "tsc",
         "prepack": "npm run lint && npm run test",
@@ -28,7 +28,9 @@
     "dependencies": {
         "@types/express": "^4.17.11",
         "@types/localtunnel": "^2.0.1",
+        "@types/node-gzip": "^1.1.0",
         "@types/react": "^16.9.49",
+        "@types/tar-stream": "^2.2.2",
         "@types/uuid": "^8.3.0",
         "babylonjs": "^4.2.0",
         "chalk": "^4.1.2",
@@ -41,14 +43,18 @@
         "ink-table": "^3.0.0",
         "localtunnel": "^2.0.1",
         "locate-app": "^1.2.0",
+        "node-gzip": "^1.1.2",
         "puppeteer-core": "^10.1.0",
         "react": "^16.13.1",
         "react-dom": "16.14.*",
         "rxjs": "^6.6.7",
         "serve-static": "^1.14.1",
         "socket.io": "^4.0.1",
+        "spacetrim": "^0.6.0",
+        "tar-stream": "^2.2.0",
         "touchcontroller": "^4.0.0",
         "ts-loader": "^8.2.0",
+        "type-fest": "^2.7.0",
         "typescript": "^4.0.3",
         "uuid": "^8.3.2",
         "waitasecond": "^1.7.0",

@@ -216,12 +216,21 @@ export interface IPersonProfile {
  */
 export declare type string_license = string;
 /**
- * License with its name and url like in package.json
+ * License with its type and url like in package.json
  *
  * @collboard-modules-sdk
  */
 export interface ILicense {
     type?: string_license;
+    url?: string;
+}
+/**
+ * Repository with its type and url like in package.json
+ *
+ * @collboard-modules-sdk
+ */
+export interface IRepository {
+    type?: string | 'git';
     url?: string;
 }
 /**
@@ -334,3 +343,12 @@ export declare type string_translate_name_not_normalized = string;
  * TODO: Rename - remove string_ prefix like ITranslateLanguageCode
  */
 export declare type string_translate_language = 'en' | 'cs' | 'sk';
+/**
+ * Semantic helper; For example "callbackName" or "renderMe"
+ *
+ */
+export declare type string_javascript_name = string;
+export declare type string_token = string;
+export declare type string_password = string;
+export declare type string_ssh_key = string;
+export declare type string_pgp_key = string;

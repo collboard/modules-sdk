@@ -13,3 +13,6 @@ import { IModuleManifest } from '../interfaces/IModuleManifest';
  * @collboard-modules-sdk
  */
 export declare function parseKeywordsFromManifest(manifest: IModuleManifest): IKeywords;
+/**
+ *  TODO:  Unit test
+ */

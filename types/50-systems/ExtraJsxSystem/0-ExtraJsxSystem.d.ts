@@ -74,6 +74,11 @@ export declare enum ExtraJsxPlace {
      */
     WelcomeModalAdjacent = 'WELCOME_MODAL_ADJACENT',
 }
+interface IExtraJsxItem {
+    place: ExtraJsxPlace;
+    jsx: JSX.Element;
+    order?: number;
+}
 /**
  * ExtraJsxSystem can register and manage additional JSX
  * Note: ExtraJSXSystem is for JSX (HTML) vs. StyleSystem is for CSS styles
@@ -88,7 +93,8 @@ export declare class ExtraJsxSystem extends AbstractSystem {
      * TODO: Options
      * TODO: !! Rename to registerExtraJsx but before find better name to ExtraJsx
      */
-    register(place: ExtraJsxPlace, order: number, jsx: JSX.Element): import('destroyable').Registration;
+    register({ place, order, jsx }: IExtraJsxItem): import('destroyable').Registration;
     render(place: ExtraJsxPlace): JSX.Element;
     private getPlaceStorage;
 }
+export {};

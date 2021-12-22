@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "jsx": "react",
+        "noEmit": false,
+        "downlevelIteration": true,
+        "esModuleInterop": true,
+        "strict": true
+    }
+}

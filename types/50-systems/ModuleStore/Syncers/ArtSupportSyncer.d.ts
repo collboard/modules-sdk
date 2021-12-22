@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { IDestroyable } from 'destroyable';
+import { AbstractArt } from '../../../71-arts/20-AbstractArt';
 import { ISyncer } from '../interfaces/ISyncer';
 import { AbstractSyncer } from './AbstractSyncer';
 /**
@@ -15,9 +16,8 @@ import { AbstractSyncer } from './AbstractSyncer';
  * @collboard-system
  */
 export declare class ArtSupportSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
-    modulesStorage: import('../interfaces/IModulesStorage').IModulesStorage;
     private artDependencies;
     private throttleQueues;
-    activateModuleSupportForArt(classNameOrInstance: string | any): Promise<unknown>;
+    activateModuleSupportForArt(classNameOrInstance: string | AbstractArt): Promise<unknown>;
     destroy(): Promise<void>;
 }

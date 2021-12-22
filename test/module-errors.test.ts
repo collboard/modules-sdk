@@ -2,59 +2,65 @@ import { join } from 'path';
 import { execCommand } from './test-utils/execCommand';
 import { getFlags } from './test-utils/getFlags';
 
-jest.setTimeout(1000 * 30);
+ jest.setTimeout(1000 * 15);
 
-describe('the errored modules', () => {
-    /*/
-    it('should PASS when testing exit codes', () => {
-        return expect(
-            execCommand({
-                command: 'ts-node ./test/utils/exitCodes/success.ts',
-                cwd: join(__dirname, '..'),
-            }),
-        ).resolves.not.toThrow();
-    });
-
-    it('should FAIL when testing exit codes', () => {
-        return expect(
-            execCommand({
-                command: 'ts-node ./test/utils/exitCodes/error.ts',
-                cwd: join(__dirname, '..'),
-            }),
-        ).rejects.toThrow();
-    });
-    /**/
-
-    it(`should NOT crash when there is NO ERROR in the module`, () => {
-        return expect(
-            getFlags().then((flags) =>
-                execCommand({
-                    command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error ${flags}`,
-                    cwd: join(__dirname, '..'),
-                }),
-            ),
-        ).resolves.not.toThrow();
-    });
-
-    [
-        'syntax-error',
-        // TODO: 'type-error',
-        'runtime-error-in-declare',
-        'runtime-error-in-setup',
-        // TODO: 'runtime-error-in-unsetup',
-        'missing-package-error',
-        'missing-entry-error',
-        // TODO: 'version-mismatch-error',
-    ].forEach((errorType) => {
-        it(`should crash when there is a ${errorType.split('-').join(' ').toUpperCase()} in the module`, () => {
-            return expect(
+function createModuleDevelopTest(errorType: string, shouldNotCrash: boolean): any {
+    console.log(errorType);
+    if (shouldNotCrash) {
+        return () =>
+            expect(
                 getFlags().then((flags) =>
                     execCommand({
                         command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/${errorType} ${flags}`,
                         cwd: join(__dirname, '..'),
                     }),
                 ),
-            ).rejects.toThrow();
-        });
-    });
+            ).resolves.not.toThrowError();
+    } else {
+        return () =>
+            expect(
+                getFlags().then((flags) =>
+                    execCommand({
+                        command: `ts-node ./src/colldev/main.ts develop ./test-samples/errors/${errorType} ${flags}`,
+                        cwd: join(__dirname, '..'),
+                    }),
+                ),
+            ).rejects.toThrowError();
+    }
+}
+
+describe('the errored modules', () => {
+    it(`should not crash when there is no error in the module`, createModuleDevelopTest('no-error', true));
+    it(`should crash when there is a syntax-error in the module`, createModuleDevelopTest('syntax-error', false));
+    it(
+        `should crash when there is a type-error IN DECLARE in the module`,
+        createModuleDevelopTest('type-error', false),
+    );
+    it(
+        `should crash when there is a runtime-error-in-declare in the module`,
+        createModuleDevelopTest('runtime-error-in-declare', false),
+    );
+    it(
+        `should crash when there is a runtime-error-in-setup in the module`,
+        createModuleDevelopTest('runtime-error-in-setup', false),
+    );
+    it(
+        `should crash when there is a runtime-error-in-unsetup in the module`,
+        createModuleDevelopTest('runtime-error-in-unsetup', false),
+    );
+    it(
+        `should crash when there is a missing-package-error in the module`,
+        createModuleDevelopTest('missing-package-error', false),
+    );
+    it(
+        `should crash when there is a missing-entry-error in the module`,
+        createModuleDevelopTest('missing-entry-error', false),
+    );
+    it(
+        `should crash when there is a version-mismatch-error in the module`,
+        createModuleDevelopTest('version-mismatch-error', false),
+    );
+    it(`should crash when there is a empty-project in the module`, createModuleDevelopTest('empty-project', false));
+    it(`should crash when there is a missing-scope in the module`, createModuleDevelopTest('missing-scope', false));
+    it(`should crash when there is a name-collision in the module`, createModuleDevelopTest('name-collision', false));
 });

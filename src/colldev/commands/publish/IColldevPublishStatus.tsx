@@ -1,4 +1,9 @@
+import { ICompilerStatus } from '../../services/Compiler/ICompilerStatus';
+import { Serializable } from '../../services/Compiler/utils/Serializable';
+
 export interface IColldevPublishStatus {
-    error: string;
-    details: string;
+    warning?: string;
+    details?: string;
+    compiler?: Serializable<ICompilerStatus>;
+    moduleStoreResponse: null|any;
 }

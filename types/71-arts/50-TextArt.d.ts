@@ -37,7 +37,7 @@ export declare class TextArt extends Abstract2dArt {
     get acceptedAttributes(): string[];
     setTempText(): void;
     renderTextField(onKeyPress: (event: React.KeyboardEvent<HTMLDivElement>) => void): JSX.Element;
-    render(selected: boolean): JSX.Element;
+    render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
 }
 /**
  * Note: number is just a file prefix to feep it on the top of file list.

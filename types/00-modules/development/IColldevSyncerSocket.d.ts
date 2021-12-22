@@ -19,15 +19,16 @@ export declare namespace IColldevSyncerSocket {
     }
     interface clientStatus {
         version: number;
-        connected: boolean;
-        ready: boolean;
+        isConnected: boolean;
+        isReady: boolean;
         errors: IError[];
         boardId: string | null;
         url: string;
         modules: Record<
             string,
             {
-                declared: boolean;
+                isDeclared: boolean;
+                isInstalled: boolean;
                 errors: IError[];
             }
         >;

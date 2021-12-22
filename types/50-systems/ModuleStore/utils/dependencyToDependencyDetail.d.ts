@@ -6,8 +6,9 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { IDependency, IDependencyDetail } from '../interfaces/IDependencies';
+import { IModuleManifest } from '../interfaces/IModuleManifest';
 /**
  * Strips name from dependency so it became dependency detail
  * @param dependency
  */
-export declare function dependencyToDependencyDetail(dependency: IDependency): IDependencyDetail;
+export declare function dependencyToDependencyDetail(dependency: IDependency | IModuleManifest): IDependencyDetail;

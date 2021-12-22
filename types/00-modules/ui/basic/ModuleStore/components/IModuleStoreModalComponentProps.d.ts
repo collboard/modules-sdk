@@ -8,7 +8,7 @@
 import { IHandler } from '../../../../../40-utils/IHandler';
 import { BusinessSystem } from '../../../../../50-systems/BusinessSystem/0-BusinessSystem';
 import { ModuleStore } from '../../../../../50-systems/ModuleStore/connectors/0-ModuleStore';
-import { IModuleStoreConnectorSearchQuery } from '../../../../../50-systems/ModuleStore/interfaces/IModuleStoreConnectorSearch';
+import { IModuleSearchCriteria } from '../../../../../50-systems/ModuleStore/interfaces/IModuleSearchCriteria';
 import { ArtSupportSyncer } from '../../../../../50-systems/ModuleStore/Syncers/ArtSupportSyncer';
 import { AttributeSupportSyncer } from '../../../../../50-systems/ModuleStore/Syncers/AttributeSupportSyncer';
 import { CornerstoneSyncer } from '../../../../../50-systems/ModuleStore/Syncers/CornerstoneSyncer';
@@ -24,6 +24,6 @@ export interface IModuleStoreModalComponentProps {
     routeAndBusinessSyncer: RouteAndBusinessSyncer;
     attributeSupportSyncer: AttributeSupportSyncer;
     artSupportSyncer: ArtSupportSyncer;
-    search: IModuleStoreConnectorSearchQuery;
-    onSearchChange: IHandler<IModuleStoreConnectorSearchQuery>;
+    search: IModuleSearchCriteria;
+    onSearchChange: IHandler<IModuleSearchCriteria>;
 }

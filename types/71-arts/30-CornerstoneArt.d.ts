@@ -35,7 +35,7 @@ export declare class CornerstoneArt
     get bottomRightCorner(): import('xyzt').IVectorObject;
     isNear(point2: IVector): boolean;
     get acceptedAttributes(): never[];
-    render(selected: boolean): JSX.Element;
+    render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
     /**
      * List of user-activated modules on a board
      */
