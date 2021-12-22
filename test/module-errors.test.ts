@@ -2,7 +2,7 @@ import { join } from 'path';
 import { execCommand } from './test-utils/execCommand';
 import { getFlags } from './test-utils/getFlags';
 
-// jest.setTimeout(1000 * 5);
+ jest.setTimeout(1000 * 15);
 
 function createModuleDevelopTest(errorType: string, shouldNotCrash: boolean): any {
     console.log(errorType);

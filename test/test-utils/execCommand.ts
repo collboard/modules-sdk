@@ -24,12 +24,12 @@ export async function execCommand(
         command = options;
         cwd = process.cwd();
         crashOnError = true;
-        timeout = 1000;
+        timeout = 5000;
     } else {
         command = options.command;
         cwd = options.cwd ?? process.cwd();
         crashOnError = options.crashOnError ?? true;
-        timeout = options.timeout ?? 1000;
+        timeout = options.timeout ?? 5000;
     }
 
     console.info(chalk.yellow(cwd) + ' ' + chalk.blue(command));
