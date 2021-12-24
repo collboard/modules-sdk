@@ -28,7 +28,6 @@
         "entryPoints": ["./types/index.d.ts"],
         "includeVersion": true,
         "hideGenerator": true,
-        "theme": "minimal",
         "out": "./docs",
         "media": "./media",
         "gaID": "UA-161448779-1",
