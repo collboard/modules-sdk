@@ -26,7 +26,7 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
         return program
             .command('publish [path]')
             .alias('deploy')
-            .description(`Deploy collboard module.`)
+            .description(`Deploy collboard module`)
             .option('-m, --module-store-url <url>', `Url of module store`, 'https://module-store.collboard.com')
             .option('-t, --token <token>', `Publishing token`)
             .action(this.run.bind(this));

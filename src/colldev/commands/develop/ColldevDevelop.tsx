@@ -24,7 +24,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                 .command('develop [path]', { isDefault: true })
                 // TODO: browser
                 .alias('start')
-                .description(`Start developing collboard module. Runs compiler+dev server.`)
+                .description(`Start developing collboard module. Runs compiler+dev server`)
                 // TODO: What is better collboard-url or collboard?
                 .option('-c, --collboard-url <url>', `Url of development Collboard`, 'https://dev.collboard.com')
                 .option(

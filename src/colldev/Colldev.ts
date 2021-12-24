@@ -6,6 +6,7 @@ import { ColldevBuild } from './commands/build/ColldevBuild';
 import { ColldevDevelop } from './commands/develop/ColldevDevelop';
 import { ICommand } from './commands/ICommand';
 import { ColldevPublish } from './commands/publish/ColldevPublish';
+import { ColldevTest } from './commands/test/ColldevTest';
 import { IColldevOptions } from './IColldevOptions';
 import { getColldevPackageJsonContent } from './utils/getColldevPackageJsonContent';
 import { jsonReplacer } from './utils/jsonReplacer';
@@ -14,6 +15,7 @@ export class Colldev extends Destroyable implements IDestroyable {
     private program: commander.Command;
     private commands: Array<ICommand<IColldevOptions, any>> = [
         new ColldevDevelop(),
+        new ColldevTest(),
         new ColldevBuild(),
         new ColldevPublish(),
     ];

@@ -19,7 +19,7 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
         return program
             .command('build [path]')
             .alias('deploy')
-            .description(`Deploy collboard module.`)
+            .description(`Deploy collboard module`)
             .option('-o, --out-dir <directory>', `Directory to save production build files.`, './build')
             .action(this.run.bind(this));
     }
