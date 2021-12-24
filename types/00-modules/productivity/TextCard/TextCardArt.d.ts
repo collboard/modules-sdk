@@ -21,6 +21,7 @@ export declare class TextCardArt extends Abstract2dArt {
     underline: boolean;
     listStyle: IListStyle;
     point1: IVector;
+    static serializeName: string;
     constructor(
         content: string,
         color: string,

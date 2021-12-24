@@ -12,6 +12,7 @@ export declare class LineArt extends Abstract2dArt {
     color: string;
     weight: number;
     point2: IVector;
+    static serializeName: string;
     constructor(color: string, weight: number, point1: IVector, point2: IVector);
     get topLeftCorner(): Vector;
     get bottomRightCorner(): Vector;

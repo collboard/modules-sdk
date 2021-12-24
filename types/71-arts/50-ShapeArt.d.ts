@@ -21,6 +21,7 @@ export declare class ShapeArt extends Abstract2dArt implements IFramable {
     color: string;
     weight: number;
     private privateSize;
+    static serializeName: string;
     constructor(shape: ShapeName, color: string, weight: number, shift: IVector, privateSize: IVector);
     get topLeftCorner(): import('xyzt').IVectorObject;
     get bottomRightCorner(): Vector;

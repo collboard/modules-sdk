@@ -15,6 +15,7 @@ import { AbstractSystem } from '../AbstractSystem';
  */
 export declare class StorageSystem extends AbstractSystem {
     protected init(): Promise<void>;
+    private runMigrations;
     private persistentStorage;
     private sessionStorage;
     getStorage<T extends any>(storageName: string, persistent?: boolean): IStorage<T>;

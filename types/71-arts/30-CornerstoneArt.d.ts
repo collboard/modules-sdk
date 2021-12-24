@@ -27,6 +27,7 @@ export declare class CornerstoneArt
     extends Abstract2dArt /* TODO: maybe only AbstractPlacedArt */
     implements IModulePersister
 {
+    static serializeName: string;
     /**
      * String containing user-editable board name
      */

@@ -10,6 +10,7 @@ import { IVector, Vector } from 'xyzt';
 import { Abstract2dArt } from '../../71-arts/26-Abstract2dArt';
 export declare class DiceArt extends Abstract2dArt {
     sides: number;
+    static serializeName: string;
     value: number;
     rotation: number;
     private privateSize;

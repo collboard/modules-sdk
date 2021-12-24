@@ -11,6 +11,7 @@ import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
 export declare class FunctionBuilderConnectionArt extends Abstract2dArt {
     start: IVector;
     private color;
+    static serializeName: string;
     end: IVector;
     constructor(start: IVector, color: string);
     acceptedAttributes: never[];

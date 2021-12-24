@@ -16,6 +16,7 @@ import '../style.css';
 export declare class FunctionBuilderArt extends Abstract2dArt {
     shift: IVector;
     private funct;
+    static serializeName: string;
     __pointerOverOutput: boolean;
     __pointerOverInput: {
         [key: string]: boolean;

@@ -16,6 +16,6 @@ export interface IGetMyBoardsResponse extends IResponse {
 }
 export interface IBoardInfo {
     uriId: string_uri_part;
-    name: string;
-    lastOpen: Date;
+    boardName: string;
+    lastEdit: Date;
 }

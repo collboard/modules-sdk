@@ -6,7 +6,6 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { IInstantiable } from 'everstorage';
-import { AbstractArt } from '../../../71-arts/20-AbstractArt';
 import { IModuleDefinition } from '../interfaces/IModule';
 /**
  * makeArtModule will make UI module
@@ -14,8 +13,17 @@ import { IModuleDefinition } from '../interfaces/IModule';
  * Note: Module still needs to be declared
  * @collboard-modules-sdk
  */
-export declare function makeArtModule(artClass: IInstantiable<AbstractArt>): IModuleDefinition;
+export declare function makeArtModule(
+    artClass: IInstantiable & {
+        /**
+         * Name which is unique for each art
+         * 💡 Tip: Best practise is to name it same as the class name without "Art" suffix
+         */
+        serializeName: string;
+    },
+): IModuleDefinition;
 /** TODO:
  *  - And also support extended mode with :artSerializeRule: ISerializeRule<AbstractArt>
+ *  - Add @scope/module@version prefix to rule
  *
  */

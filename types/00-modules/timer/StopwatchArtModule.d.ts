@@ -9,6 +9,7 @@
 import { Vector } from 'xyzt';
 import { Abstract2dArt } from '../../71-arts/26-Abstract2dArt';
 export declare class StopwatchArt extends Abstract2dArt {
+    static serializeName: string;
     running: boolean;
     elapsed: number;
     timestamp: number;

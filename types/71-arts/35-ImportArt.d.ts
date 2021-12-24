@@ -22,6 +22,7 @@ export declare enum ImportStrategy {
 export declare class ImportArt extends Abstract2dArt {
     source: string_url;
     strategy: ImportStrategy;
+    static serializeName: string;
     /**
      *
      * @param source  should be pointed to URL compatible with ExportArt='NATIVE'

@@ -16,6 +16,7 @@ import { Abstract2dBoxArt } from './27-Abstract2dBoxArt';
 export declare class ImageArt extends Abstract2dBoxArt {
     src: string_url_image;
     alt: string;
+    static serializeName: string;
     /**
      * @param src Image source
      * @param alt Image alt text

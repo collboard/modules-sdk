@@ -9,6 +9,7 @@
 import { IVector, Vector } from 'xyzt';
 import { Abstract2dArt } from '../../71-arts/26-Abstract2dArt';
 export declare class CurtainArt extends Abstract2dArt {
+    static serializeName: string;
     visible: boolean;
     color: string;
     defaultZIndex: number;
