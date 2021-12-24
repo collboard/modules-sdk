@@ -1,7 +1,7 @@
-import { IBrowserSpawnerStatus } from './BrowserSpawner/IBrowserSpawnerStatus';
-import { ICompilerStatus } from './Compiler/ICompilerStatus';
-import { Serializable } from './Compiler/utils/Serializable';
-import { IServerStatus } from './Server/IServerStatus';
+import { IBrowserSpawnerStatus } from '../../services/BrowserSpawner/IBrowserSpawnerStatus';
+import { ICompilerStatus } from '../../services/Compiler/ICompilerStatus';
+import { Serializable } from '../../services/Compiler/utils/Serializable';
+import { IServerStatus } from '../../services/Server/IServerStatus';
 
 export interface IColldevDevelopStatus {
     compiler?: Serializable<ICompilerStatus>;
