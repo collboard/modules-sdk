@@ -34,9 +34,9 @@ module.exports = (async () => {
         ),
     };
 
+    // tslint:disable-next-line: no-unused-expression
     window;
 
-    // tslint:disable-next-line: no-unused-expression
     (() => {
         // Note: Here is the bundle content
         // TODO: Some better form of isolation and sandboxing here
