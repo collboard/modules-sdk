@@ -1,9 +1,23 @@
 # Collboard modules SDK
 
 Modules SDK toolkit for [Collboard.com](https://collboard.com/).
-Here is the [sample of very simple module](https://github.com/collboard/module-sample-basic). And here you can read [full manual](https://collboard.github.io/modules-sdk/).
+
+[![Test](https://github.com/collboard/modules-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/test.yml)
+[![Lint](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml)
+
+<!-- TODO: More badges -->
 
 ![Collboard banner](./media/collboard.png 'Collboard banner')
+
+## Important links
+
+-   [Collboard for development](https://dev.collboard.com/)
+-   [Collboard on GitHub](https://github.com/collboard/)
+-   [Modules SDK on GitHub](https://github.com/collboard/modules-sdk)
+-   [Modules SDK on NPM](https://www.npmjs.com/package/@collboard/modules-sdk)
+-   [Hello world module](https://github.com/collboard/hello-world)
+-   [Module with custom tool, art and attribute](https://github.com/collboard/module-sample-objects)
+-   [Full manual of SDK](https://collboard.github.io/modules-sdk/)
 
 ## How to develop your first module in 4 steps
 
