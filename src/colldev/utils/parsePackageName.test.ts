@@ -12,15 +12,22 @@ describe('how parsing package name works', () => {
     });
 
     it('fails on incorrect name', () => {
-        expect(() => parsePackageName({ packageName: '' })).toThrowError();
-        expect(() => parsePackageName({ packageName: '  ' })).toThrowError();
-        expect(() => parsePackageName({ packageName: '_foo' })).toThrowError();
-        expect(() => parsePackageName({ packageName: 'aaa/bbb' })).toThrowError();
-        expect(() => parsePackageName({ packageName: '@/bbb' })).toThrowError();
-        expect(() => parsePackageName({ packageName: '@collboard' })).toThrowError();
-        expect(() => parsePackageName({ packageName: '@_collboard/foo' })).toThrowError();
-        expect(() => parsePackageName({ packageName: '@collboard/_foo' })).toThrowError();
-        expect(() => parsePackageName({ packageName: '@collboard/some-module@1.5.0' })).toThrowError();
-        expect(() => parsePackageName({ packageName: 'foo', requireScope: true })).toThrowError();
+        expect(() => parsePackageName({ packageName: '' })).toThrowError(`Invalid package name`);
+        expect(() => parsePackageName({ packageName: '  ' })).toThrowError(`Invalid package name`);
+        expect(() => parsePackageName({ packageName: '_foo' })).toThrowError(`Invalid package name`);
+        expect(() => parsePackageName({ packageName: 'aaa/bbb' })).toThrowError(`Invalid package name`);
+        expect(() => parsePackageName({ packageName: '@/bbb' })).toThrowError(`Invalid package name`);
+        expect(() => parsePackageName({ packageName: '@collboard' })).toThrowError(`Invalid package name`);
+        expect(() => parsePackageName({ packageName: '@_collboard/foo' })).toThrowError(`Invalid package name`);
+        expect(() => parsePackageName({ packageName: '@collboard/_foo' })).toThrowError(`Invalid package name`);
+        expect(() => parsePackageName({ packageName: '@collboard/some-module@1.5.0' })).toThrowError(
+            `Invalid package name`,
+        );
+        expect(() => parsePackageName({ packageName: '@foo' })).toThrowError(`Invalid package name`);
+    });
+
+    it('fails when missing required scope', () => {
+        expect(() => parsePackageName({ packageName: 'foo', requireScope: true })).toThrowError(`Scope is required`);
+        expect(() => parsePackageName({ packageName: 'bar', requireScope: true })).toThrowError(`Scope is required`);
     });
 });
