@@ -19,7 +19,7 @@
         "esModuleInterop": true,
         "skipLibCheck": true,
         "types": ["node", "jest"],
-        "lib": ["DOM"]
+        "lib": ["DOM", "ES2020.String"]
     },
     "include": ["src", "types"],
     "exclude": ["test-samples"],
