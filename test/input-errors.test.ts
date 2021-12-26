@@ -4,13 +4,6 @@ import { execCommand } from './test-utils/execCommand/execCommand';
 // jest.setTimeout(1000 * 15);
 
 describe('wrong usage of Colldev CLI command', () => {
-    it(`should crash on unknown command`, () =>
-        expect(
-            execCommand({
-                command: `unknown-command`,
-            }),
-        ).rejects.toThrowError());
-
     it(`should crash on wrong script`, () =>
         expect(
             execCommand({

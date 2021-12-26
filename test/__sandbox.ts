@@ -1,8 +1,46 @@
 #!/usr/bin/env ts-node
-//> ./test/sandbox.ts
+//> ./test/__sandbox.ts
 // Note: This file is just a junk sandbox code for manual testing the CLI.
 //       It is not part of the actual Colldev CLI and it has nothing with some sandboxing security
 
+import { spawn } from 'child_process';
+
+try {
+    const process = spawn('unknown-command', []);
+
+    process.stdout.on('data', (stdout) => {
+        console.log({ stdout });
+    });
+
+    process.stderr.on('data', (stderr) => {
+        console.log({ stderr });
+    });
+
+    process.on('disconnect', (_: any) => {
+        console.log('disconnect', _);
+    });
+
+    process.on('spawn', (_: any) => {
+        console.log('spawn', _);
+    });
+
+    process.on('exit', (_: any) => {
+        console.log('exit', _);
+    });
+
+    process.on('exit', (_: any) => {
+        console.log('exit', _);
+    });
+
+    process.on('error', (_: any) => {
+        console.log('error', _);
+    });
+} catch (error) {
+    console.log({ error });
+}
+//======================================================================================================================
+
+/*
 import { join } from 'path';
 import { execCommand } from './test-utils/execCommand/execCommand';
 
