@@ -8,7 +8,7 @@ describe('wrong usage of Colldev CLI command', () => {
         expect(
             execCommand({
                 command: `npx ts-node ./wrong-script.ts`,
-                timeout: 1500,
+                timeout: 8000,
             }),
         ).rejects.toThrowError(`Cannot find module`));
 

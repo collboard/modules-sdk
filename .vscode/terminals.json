@@ -13,51 +13,63 @@
         },
         {
             "name": "🧪👨🏽‍💻✔️ Develop 'hello-world'",
-            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4000 --open multiple"
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4000 --open multiple",
+            "focus": true
         },
         {
             "name": "🧪👨🏽‍💻🖥️ Develop on local Collboard",
-            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4001 --collboard-url http://localhost:9977/ --open multiple"
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4001 --collboard-url http://localhost:9977/ --open multiple",
+            "focus": true
         },
         {
             "name": "🧪👨🏽‍💻❌ Develop 'syntax-error'",
-            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/errors/syntax-error --port 4002 --open multiple"
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/errors/syntax-error --port 4002 --open multiple",
+            "focus": true
         },
         {
             "name": "🧪👨🏽‍💻🧻 Develop with json output",
-            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4003 --open multiple --exit --disconnect --output json"
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4003 --open multiple --exit --disconnect --output json",
+            "focus": true
         },
         {
             "name": "🧪👨🏽‍💻🌎 Develop with expose",
-            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4004 --open multiple --expose"
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4004 --open multiple --expose",
+            "focus": true
         },
         {
             "name": "🧪👨🏽‍💻🦊 Develop with Firefox",
-            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4005 --open multiple --browser firefox"
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4005 --open multiple --browser firefox",
+            "focus": true
         },
         {
             "name": "🧪👨🏽‍💻🐢 Develop with Edge",
-            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4006 --open multiple --browser edge"
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4006 --open multiple --browser edge",
+            "focus": true
         },
         {
             "name": "🧪🧪 Test 'hello-world'",
-            "command": "npx ts-node-dev ./src/colldev/main.ts test ./test-samples/hello-world"
+            "command": "npx ts-node-dev ./src/colldev/main.ts test ./test-samples/hello-world",
+            "focus": true
         },
         {
             "name": "🧪🏭 Build 'hello-world'",
-            "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/hello-world"
+            "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/hello-world",
+            "focus": true
         },
         {
             "name": "🧪🏭❌ Build 'empty-project'",
-            "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/errors/empty-project"
+            "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/errors/empty-project",
+            "focus": true
         },
         {
             "name": "🧪🔼 Publish 'hello-world'",
-            "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/hello-world --module-store-url http://localhost:9988/ --token test"
+            "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/hello-world --module-store-url http://localhost:9988/ --token test",
+            "focus": true
         },
         {
             "name": "🧪🔼 Publish 'multimodule'",
-            "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/multimodule --module-store-url http://localhost:9988/ --token test"
+            "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/multimodule --module-store-url http://localhost:9988/ --token test",
+            "focus": true
         }
     ]
 }
