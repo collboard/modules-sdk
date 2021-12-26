@@ -8,16 +8,19 @@ export function execCommand(options: IExecCommandOptions): Promise<void> {
     return new Promise((resolve, reject) => {
         let { command, humanReadableCommand, args, cwd, crashOnError, timeout } = execCommandNormalizeOptions(options);
 
-        forTime(timeout).then(() => {
-            if (crashOnError) {
-                reject(new Error(`Command "${humanReadableCommand}" exceeded time limit of ${timeout}ms`));
-            } else {
-                console.warn(
-                    `Command "${humanReadableCommand}" exceeded time limit of ${timeout}ms but continues running`,
-                );
-                resolve();
-            }
-        });
+        if (timeout !== Infinity) {
+            // TODO: In waitasecond forTime(Infinity) should be equivalent to forEver()
+            forTime(timeout).then(() => {
+                if (crashOnError) {
+                    reject(new Error(`Command "${humanReadableCommand}" exceeded time limit of ${timeout}ms`));
+                } else {
+                    console.warn(
+                        `Command "${humanReadableCommand}" exceeded time limit of ${timeout}ms but continues running`,
+                    );
+                    resolve();
+                }
+            });
+        }
 
         if (/^win/.test(process.platform) && ['npm', 'npx'].includes(command)) {
             command = `${command}.cmd`;

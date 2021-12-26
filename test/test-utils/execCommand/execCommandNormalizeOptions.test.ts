@@ -7,6 +7,8 @@ describe('how normalizing exec options works', () => {
             args: [],
             cwd: process.cwd(),
             crashOnError: true,
+            humanReadableCommand: 'ls',
+            timeout: Infinity,
         });
     });
 
@@ -16,6 +18,8 @@ describe('how normalizing exec options works', () => {
             args: [],
             cwd: process.cwd(),
             crashOnError: true,
+            humanReadableCommand: 'ls',
+            timeout: Infinity,
         });
     });
     it('can normalize single command and cwd', () => {
@@ -24,6 +28,8 @@ describe('how normalizing exec options works', () => {
             args: [],
             cwd: './',
             crashOnError: true,
+            humanReadableCommand: 'ls',
+            timeout: Infinity,
         });
     });
     it('can normalize single command and crashOnError', () => {
@@ -32,6 +38,8 @@ describe('how normalizing exec options works', () => {
             args: [],
             cwd: process.cwd(),
             crashOnError: false,
+            humanReadableCommand: 'ls',
+            timeout: Infinity,
         });
     });
 
@@ -41,6 +49,8 @@ describe('how normalizing exec options works', () => {
             args: ['run', 'test'],
             cwd: process.cwd(),
             crashOnError: true,
+            humanReadableCommand: 'run',
+            timeout: Infinity,
         });
     });
 
@@ -50,6 +60,8 @@ describe('how normalizing exec options works', () => {
             args: ['run', 'test'],
             cwd: process.cwd(),
             crashOnError: true,
+            humanReadableCommand: 'run',
+            timeout: Infinity,
         });
     });
 
@@ -59,6 +71,8 @@ describe('how normalizing exec options works', () => {
             args: ['run', 'test'],
             cwd: process.cwd(),
             crashOnError: true,
+            humanReadableCommand: 'run',
+            timeout: Infinity,
         });
     });
 
@@ -68,6 +82,8 @@ describe('how normalizing exec options works', () => {
             args: ['commit', '-m', '"Hello world"'],
             cwd: process.cwd(),
             crashOnError: true,
+            humanReadableCommand: 'git',
+            timeout: Infinity,
         });
     });
 
