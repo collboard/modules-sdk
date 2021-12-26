@@ -4,6 +4,6 @@ main();
 
 async function main() {
     await forTime(100);
-    console.error(`Error`);
+    console.error(`Sample error`);
     process.exit(1);
 }

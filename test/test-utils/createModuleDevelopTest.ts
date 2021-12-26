@@ -10,6 +10,7 @@ export function createModuleDevelopTest(modulePath: string, shouldNotCrash: bool
                     execCommand({
                         command: `npx ts-node ./src/colldev/main.ts develop ./test-samples/${modulePath} ${flags}`,
                         cwd: join(__dirname, '..'),
+                        timeout: 60 * 1000,
                     }),
                 ),
             ).resolves.not.toThrowError();
@@ -20,8 +21,9 @@ export function createModuleDevelopTest(modulePath: string, shouldNotCrash: bool
                     execCommand({
                         command: `npx ts-node ./src/colldev/main.ts develop ./test-samples/${modulePath} ${flags}`,
                         cwd: join(__dirname, '..'),
+                        timeout: 60 * 1000,
                     }),
                 ),
-            ).rejects.toThrowError();
+            ).rejects.toThrowError(`!!!!!!!!!`);
     }
 }

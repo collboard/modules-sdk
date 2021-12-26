@@ -1,6 +1,6 @@
 import { createModuleDevelopTest } from './test-utils/createModuleDevelopTest';
 
-jest.setTimeout(1000 * 15);
+jest.setTimeout(60 * 1000);
 
 describe('the errored modules', () => {
     it(`should work when there is no error in the module`, createModuleDevelopTest('errors/no-error', true));

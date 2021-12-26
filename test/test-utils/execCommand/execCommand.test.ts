@@ -13,5 +13,5 @@ describe('basic usage of execCommand', () => {
             execCommand({
                 command: `unknown-command`,
             }),
-        ).rejects.toThrowError());
+        ).rejects.toThrowError(`Command "unknown-command" failed`));
 });

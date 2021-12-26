@@ -56,7 +56,7 @@ describe(`how are manifests extracted from the bundle`, () => {
                 `,
                 packageJson: {},
             }),
-        ).rejects.toThrowError());
+        ).rejects.toThrowError(`All modules must have different names`));
 
     it(`works with module returned by lambda`, async () =>
         expect(

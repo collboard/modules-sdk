@@ -17,6 +17,6 @@ describe('test of the exit codes', () => {
                 command: 'npx ts-node ./test/test-utils/exitCodes/error.ts',
                 cwd: join(__dirname, '..'),
             }),
-        ).rejects.toThrowError();
+        ).rejects.toThrowError(`!!!!!!!!!`);
     });
 });

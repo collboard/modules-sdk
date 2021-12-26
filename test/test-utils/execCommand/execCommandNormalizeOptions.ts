@@ -1,17 +1,23 @@
 import { IExecCommandOptions, IExecCommandOptionsAdvanced } from './IExecCommandOptions';
 
-export function execCommandNormalizeOptions(
-    options: IExecCommandOptions,
-): Pick<IExecCommandOptionsAdvanced, 'command' | 'args' | 'cwd' | 'crashOnError'> {
+export function execCommandNormalizeOptions(options: IExecCommandOptions): Pick<
+    IExecCommandOptionsAdvanced,
+    'command' | 'args' | 'cwd' | 'crashOnError' | 'timeout'
+> & {
+    humanReadableCommand: string;
+} {
     let command: string;
     let cwd: string;
     let crashOnError: boolean;
     let args: string[] = [];
+    let timeout: number;
 
     if (typeof options === 'string') {
+        // TODO: [1] DRY default values
         command = options;
         cwd = process.cwd();
         crashOnError = true;
+        timeout = Infinity;
     } else {
         /*
         TODO:
@@ -22,9 +28,11 @@ export function execCommandNormalizeOptions(
         }
         */
 
+        // TODO: [1] DRY default values
         command = options.command;
         cwd = options.cwd ?? process.cwd();
         crashOnError = options.crashOnError ?? true;
+        timeout = options.timeout ?? Infinity;
     }
 
     // TODO: /(-[a-zA-Z0-9-]+\s+[^\s]*)|[^\s]*/g
@@ -43,7 +51,12 @@ export function execCommandNormalizeOptions(
     for (const arg of args) {
     }
 
-    return { command, args, cwd, crashOnError };
+    let humanReadableCommand = !['npx', 'npm'].includes(command) ? command : args[0];
+    if (['ts-node'].includes(humanReadableCommand)) {
+        humanReadableCommand += ` ${args[1]}`;
+    }
+
+    return { command, humanReadableCommand, args, cwd, crashOnError, timeout };
 }
 
 // TODO: This should show type error> execCommandNormalizeOptions({ command: '', commands: [''] });
