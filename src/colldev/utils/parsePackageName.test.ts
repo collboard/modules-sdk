@@ -21,7 +21,7 @@ describe('how parsing package name works', () => {
         expect(() => parsePackageName({ packageName: '@_collboard/foo' })).toThrowError(`Invalid package name`);
         expect(() => parsePackageName({ packageName: '@collboard/_foo' })).toThrowError(`Invalid package name`);
         expect(() => parsePackageName({ packageName: '@collboard/some-module@1.5.0' })).toThrowError(
-            `Invalid package name`,
+            `Invalid module name`,
         );
         expect(() => parsePackageName({ packageName: '@foo' })).toThrowError(`Invalid package name`);
     });
