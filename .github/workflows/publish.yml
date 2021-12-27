@@ -16,7 +16,7 @@ jobs:
                   node-version: 14
             - run: npm ci
             - run: npm run lint
-            # TODO: - run: npm run test
+            - run: npm run test
 
     publish-npm:
         name: Publish on NPM package registry
@@ -29,7 +29,6 @@ jobs:
                   node-version: 14
                   registry-url: https://registry.npmjs.org/
             - run: npm ci
-            - run: npm run build
             - run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
