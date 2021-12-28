@@ -2,9 +2,10 @@
 
 Modules SDK toolkit for collaborative whiteboard platform [Collboard.com](https://collboard.com/).
 
-[![npm version](https://badge.fury.io/js/@collboard%2Fmodules-sdk.svg)](https://badge.fury.io/js/@collboard%2Fmodules-sdk)
+[![NPM Version](https://badge.fury.io/js/@collboard%2Fmodules-sdk.svg)](https://www.npmjs.com/package/@collboard/modules-sdk)
 [![Test](https://github.com/collboard/modules-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/test.yml)
 [![Lint](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml)
+[![Known Vulnerabilities](https://snyk.io/test/github/collboard/modules-sdk/badge.svg)](https://snyk.io/test/github/collboard/modules-sdk)
 
 <!-- TODO: More badges -->
 
