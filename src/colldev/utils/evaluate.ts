@@ -12,3 +12,7 @@ export async function evaluate<T>(javascriptCode: string): Promise<T> {
         return evaluateByRequire(javascriptCode);
     }
 }
+
+/**
+ * !!! Remove safe eval (from code and node_modules) + all evaluates
+ */

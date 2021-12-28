@@ -1,12 +1,19 @@
-import { readFile } from 'fs';
-import { join } from 'path';
 import spaceTrim from 'spacetrim';
 import { PackageJson } from 'type-fest';
-import { promisify } from 'util';
-import { IModuleManifest } from '../../../../../types';
-import { evaluate } from '../../../utils/evaluate';
+import { NodeVM } from 'vm2';
+import { IFactorable, IModuleManifest } from '../../../../../types';
+import { IModule, IModuleDefinition } from '../../../../../types/CollboardSdk';
 import { checkManifests } from './checkManifests';
 import { combineManifestAndPackage } from './combineManifestAndPackage';
+
+// !!! file
+export function factor<T>(factorable: IFactorable<T>): T {
+    if (typeof factorable === 'function') {
+        return (factorable as any)();
+    } else {
+        return factorable as T;
+    }
+}
 
 interface ICreateManifestsOptions {
     bundleContent: string;
@@ -17,16 +24,43 @@ export async function createManifests({
     bundleContent,
     packageJson,
 }: ICreateManifestsOptions): Promise<IModuleManifest[]> {
-    const extractManifestsRuntime = await promisify(readFile)(
-        join(__dirname, '../../../../runtime/extractManifestsRuntime.js'),
-        'utf8',
-    );
-    const extractManifestsRuntimeWithBundleContent = extractManifestsRuntime.replace(
-        /^.*bundle content.*$/m,
-        '\n' + bundleContent,
-    );
+    const manifests: IModuleManifest[] = [];
+    const fake: any = new Proxy({}, { get: () => fake });
 
-    const manifests = await evaluate<IModuleManifest[]>(extractManifestsRuntimeWithBundleContent);
+    const vm = new NodeVM({
+        require: {
+            external: true,
+        },
+    });
+
+    const virtualWindow = {
+        window: {},
+        declareModule: (module: IModule) => {
+            console.log(`declareModule called from safeEval`);
+            manifests.push(factor(module).manifest! /* TODO: !!! No ! */);
+        },
+        CollboardSdk: new Proxy(
+            {
+                // Note: Faking CollboardSdk
+            },
+            {
+                get: (target, property, receiver) => {
+                    if (/^make/.test(property as string)) {
+                        // TODO: !! Makers should be in external library
+                        return (protoModule: IModuleDefinition) => {
+                            return protoModule;
+                        };
+                    } else {
+                        return fake;
+                    }
+                },
+            },
+        ),
+    };
+    virtualWindow.window = virtualWindow;
+
+    vm.setGlobals(virtualWindow);
+    vm.run(bundleContent);
 
     if (manifests.length === 0) {
         throw new Error(
