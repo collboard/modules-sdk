@@ -1,4 +1,5 @@
 import { readFile } from 'fs';
+import { join } from 'path';
 import spaceTrim from 'spacetrim';
 import { PackageJson } from 'type-fest';
 import { promisify } from 'util';
@@ -16,7 +17,10 @@ export async function createManifests({
     bundleContent,
     packageJson,
 }: ICreateManifestsOptions): Promise<IModuleManifest[]> {
-    const extractManifestsRuntime = await promisify(readFile)('./src/runtime/extractManifestsRuntime.js', 'utf8');
+    const extractManifestsRuntime = await promisify(readFile)(
+        join(__dirname, '../../../../runtime/extractManifestsRuntime.js'),
+        'utf8',
+    );
     const extractManifestsRuntimeWithBundleContent = extractManifestsRuntime.replace(
         /^.*bundle content.*$/m,
         '\n' + bundleContent,
