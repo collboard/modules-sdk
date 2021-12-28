@@ -1,7 +1,8 @@
 # Collboard modules SDK
 
-Modules SDK toolkit for [Collboard.com](https://collboard.com/).
+Modules SDK toolkit for collaborative whiteboard platform [Collboard.com](https://collboard.com/).
 
+[![npm version](https://badge.fury.io/js/@collboard%2Fmodules-sdk.svg)](https://badge.fury.io/js/@collboard%2Fmodules-sdk)
 [![Test](https://github.com/collboard/modules-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/test.yml)
 [![Lint](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml)
 
