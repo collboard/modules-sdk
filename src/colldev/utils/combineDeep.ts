@@ -1,3 +1,4 @@
+import spaceTrim from 'spacetrim';
 import { flatternArray } from './flatternArray';
 
 export function combineDeep<T>(...values: T[]): T {
@@ -10,8 +11,14 @@ export function combineDeep<T>(...values: T[]): T {
         )
     ) {
         throw new Error(
-            `All values must be of the same type.
-             Mixing ${valuesDefined.map((value) => typeof value).join(', ')}`,
+            spaceTrim(`
+            All values must be of the same type.
+            Mixing ${valuesDefined.map((value) => typeof value).join(', ')}
+
+            ${valuesDefined.map((value) => JSON.stringify(value)).join(' can not be mixed with ')}
+
+
+        `),
         );
     } else if (typeof valuesDefined[0] === 'object') {
         if (Array.isArray(valuesDefined[0])) {

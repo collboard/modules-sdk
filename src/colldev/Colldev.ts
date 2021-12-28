@@ -71,7 +71,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 console.info(
                                     chalk.bgRed(chalk.white(error.name + ': ')) + ' ' + chalk.red(error.message),
                                 );
-                                console.info(chalk.redBright(error.stack));
+                                console.info(chalk.redBright((error.stack || '').replace(error.message, '')));
                                 process.exit(1);
                             });
                     } else if (output === 'json') {
