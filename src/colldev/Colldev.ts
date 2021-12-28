@@ -68,7 +68,9 @@ export class Colldev extends Destroyable implements IDestroyable {
                             })
                             .catch((error: Error) => {
                                 this.renderingInstance?.unmount();
-                                console.info(chalk.bgRed(chalk.white(error.name + ': ')) + chalk.red(error.message));
+                                console.info(
+                                    chalk.bgRed(chalk.white(error.name + ': ')) + ' ' + chalk.red(error.message),
+                                );
                                 console.info(chalk.redBright(error.stack));
                                 process.exit(1);
                             });
