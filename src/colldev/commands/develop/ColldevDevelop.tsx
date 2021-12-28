@@ -1,6 +1,7 @@
 import commander from 'commander';
 import { Destroyable } from 'destroyable';
 import * as React from 'react';
+import spaceTrim from 'spacetrim';
 import { forEver, forImmediate } from 'waitasecond';
 import { BrowserSpawner } from '../../services/BrowserSpawner/BrowserSpawner';
 import { DevelopmentCompiler } from '../../services/Compiler/DevelopmentCompiler';
@@ -29,50 +30,61 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                 .option('-c, --collboard-url <url>', `Url of development Collboard`, 'https://dev.collboard.com')
                 .option(
                     '-o, --open <openMode>',
-                    `` /* TODO: Use here spacetrim */ +
-                        `"none" for just running colldev without opening the browser;\n` +
-                        `"single" for wait some time if the Collboard connects to Colldev, if yes do nothing if no open new browser window with collboard;\n` +
-                        `"multiple" new browser window for each Colldev running`,
-
+                    spaceTrim(`
+                        Strategy for automatically opening the browser:
+                            - "none" for just running colldev without opening the browser;
+                            - "single" for wait some time if the Collboard connects to Colldev, if yes do nothing if no open new browser window with collboard;
+                            - "multiple" new browser window for each Colldev running
+                    `),
                     'single',
                 )
                 .option(
                     '-b, --browser <browser>',
-                    `` /* TODO: Use here spacetrim */ +
-                        `Which browser use\n` +
-                        `It can be "chrome", "firefox", "safari", "ie", "msie", "edge" or "msedge"` +
-                        `Or executable path to the browser`,
+                    spaceTrim(`
+                        Which browser to open:
+                            1) It can be "chrome", "firefox", "safari", "ie", "msie", "edge" or "msedge"
+                            2) Or executable path to the browser
+                            
+                            Note: For more options see https://github.com/hejny/locate-app
+                    `),
                     'default',
                 )
                 .option(
                     '-h, --headless',
-                    `` /* TODO: Use here spacetrim */ +
-                        `Opens the browser in headless mode\n` +
-                        `Note: This flag is especially usefull when testing` +
-                        `Note: This flag has no effect with flag "--open none"`,
+                    spaceTrim(`
+                        Opens the browser in headless mode
+                        
+                            Note: This flag is especially usefull when testing
+                            Note: This flag has no effect with flag "--open none"
+                    `),
                     false,
                 )
                 // TODO: Browser -  chrome
                 .option(
                     '-w, --wait <miliseconds>',
-                    `` /* TODO: Use here spacetrim */ +
-                        `How many miliseconds to wait to connection until opening new browser window with Collboard\n` +
-                        `Note: It can be used only with flag "--open single"`,
+                    spaceTrim(`
+                        How many miliseconds to wait to connection until opening new browser window with Collboard
 
+                            Note: It can be used only with flag "--open single"
+                    `),
                     '2500',
                 )
                 .option(
                     '-e, --exit',
-                    `` /* TODO: Use here spacetrim */ +
-                        `Exit the CLI after succesfully started with propper exit code\n` +
-                        `Note: This flag is especially usefull when testing`,
+                    spaceTrim(`
+                        Exit the CLI after succesfully started with propper exit code
+
+                            Note: This flag is especially usefull when testing
+                    `),
                     false,
                 )
                 .option(
                     '-d, --disconnect',
-                    `` /* TODO: Use here spacetrim */ +
-                        `Exit the CLI when Collboard disconnects from Colldev.\n` +
-                        `Note: It allows closing CLI by closing a browser`,
+                    spaceTrim(`
+                        Exit the CLI when Collboard disconnects from Colldev.
+
+                            Note: It allows closing CLI by closing a browser
+                    `),
                     false,
                 )
                 .option(
@@ -83,10 +95,13 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                 )
                 .option(
                     '-e, --expose',
-                    `` /* TODO: Use here spacetrim */ +
-                        // TODO: Create own localtunnel server on collboard server and allow to configure it
-                        `Exposes colldev server through internet so you can test modules across devices\n` +
-                        `Note: this option uses internally localtunnel utility`,
+                    // TODO: Create own localtunnel server on collboard server and allow to configure it
+                    spaceTrim(`
+                        
+                        Exposes colldev server through internet so you can test modules across devices
+                        
+                            Note: this option uses internally localtunnel utility
+                    `),
                     false,
                 )
         );

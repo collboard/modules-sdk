@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import commander from 'commander';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { Instance, render } from 'ink';
+import spaceTrim from 'spacetrim';
 import { ColldevBuild } from './commands/build/ColldevBuild';
 import { ColldevDevelop } from './commands/develop/ColldevDevelop';
 import { ICommand } from './commands/ICommand';
@@ -37,13 +38,14 @@ export class Colldev extends Destroyable implements IDestroyable {
                 .init(this.program)
                 .option(
                     '-o, --output <outputType>',
-                    `` /* TODO: Use here spacetrim */ +
-                        `Output from the compiler\n` +
-                        `"human" for human readable ASCII like, colorfull output;\n` +
-                        `"minimal" for just saying "OK" or report error;\n` +
-                        `"minimal-strict" for just saying "OK" or report FIRST LINE of error;\n` +
-                        `"json" for pretty JSON;\n` +
-                        `"json-raw" for raw minified JSON;\n`,
+                    spaceTrim(`
+                        Output from the compiler:
+                            - "human" human readable ASCII like, colorfull output
+                            - "minimal" say short success sentence or report error
+                            - "minimal-strict" just saying "OK" or report FIRST LINE of error
+                            - "json" pretty JSON
+                            - "json-raw" raw minified JSON
+                    `),
                     'human',
                 )
                 .action(async (path: string, options: IColldevOptions) => {
@@ -66,7 +68,8 @@ export class Colldev extends Destroyable implements IDestroyable {
                             })
                             .catch((error: Error) => {
                                 this.renderingInstance?.unmount();
-                                console.info(chalk.red(error.message));
+                                console.info(chalk.bgRed(chalk.white(error.name + ': ')) + chalk.red(error.message));
+                                console.info(chalk.redBright(error.stack));
                                 process.exit(1);
                             });
                     } else if (output === 'json') {
@@ -84,8 +87,8 @@ export class Colldev extends Destroyable implements IDestroyable {
                     } else if (output === 'minimal') {
                         // TODO: DRY
                         runningCommand
-                            .then(() => {
-                                console.info(chalk.green(chalk.bold(`OK`)));
+                            .then((finalSuccessMessage) => {
+                                console.info(chalk.green(finalSuccessMessage));
                                 process.exit(0);
                             })
                             .catch((error: Error) => {
