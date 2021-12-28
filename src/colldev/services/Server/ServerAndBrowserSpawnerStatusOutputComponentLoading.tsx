@@ -21,7 +21,7 @@ export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
                             return (
                                 <Text color="grey">
                                     <Text color="magenta" bold>
-                                        {`Please open ${openCollboardUrl}`}
+                                        {`Please open $({openCollboardUrl})`}
                                     </Text>
                                     {'\n'}
                                     <Bullet>Waiting for connection from Collboard</Bullet>
@@ -30,20 +30,29 @@ export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
                         case 'single':
                             return (
                                 <AsyncContentComponent
-                                    loader={<Bullet>Waiting {wait} miliseconds for connection from Collboard</Bullet>}
+                                    loader={
+                                        <Bullet>
+                                            Waiting {wait} miliseconds for connection from Collboard{' '}
+                                            <Text color="gray">({openCollboardUrl})</Text>
+                                        </Bullet>
+                                    }
                                     content={async () => {
                                         await forTime(parseInt(wait, 10));
                                         return (
                                             <>
                                                 <Bullet isSkipped>
                                                     Waiting {wait} miliseconds for connection from Collboard
+                                                    <Text color="gray">({openCollboardUrl})</Text>
                                                 </Bullet>
                                                 {'\n'}
                                                 <Bullet isDone={spawned} isError={errors.length !== 0}>
                                                     Spawning {browserName}
                                                 </Bullet>
                                                 {'\n'}
-                                                <Bullet>Connection from Collboard</Bullet>
+                                                <Bullet>
+                                                    Connection from Collboard
+                                                    <Text color="gray">({openCollboardUrl})</Text>
+                                                </Bullet>
                                             </>
                                         );
                                     }}
@@ -55,7 +64,9 @@ export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
                                 <>
                                     <Bullet isDone={spawned}>Spawning {browserName}</Bullet>
                                     {'\n'}
-                                    <Bullet isDone={false}>Connection from Collboard</Bullet>
+                                    <Bullet isDone={false}>
+                                        Connection from Collboard <Text color="gray">({openCollboardUrl})</Text>
+                                    </Bullet>
                                 </>
                             );
                     }
