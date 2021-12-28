@@ -44,7 +44,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                         Which browser to open:
                             1) It can be "chrome", "firefox", "safari", "ie", "msie", "edge" or "msedge"
                             2) Or executable path to the browser
-                            
+
                             Note: For more options see https://github.com/hejny/locate-app
                     `),
                     'default',
@@ -53,7 +53,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                     '-h, --headless',
                     spaceTrim(`
                         Opens the browser in headless mode
-                        
+
                             Note: This flag is especially usefull when testing
                             Note: This flag has no effect with flag "--open none"
                     `),
@@ -97,9 +97,8 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                     '-e, --expose',
                     // TODO: Create own localtunnel server on collboard server and allow to configure it
                     spaceTrim(`
-                        
                         Exposes colldev server through internet so you can test modules across devices
-                        
+
                             Note: this option uses internally localtunnel utility
                     `),
                     false,
