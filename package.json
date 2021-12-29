@@ -60,7 +60,8 @@
         "vm2": "^3.9.5",
         "waitasecond": "^1.7.0",
         "webpack": "^5.35.1",
-        "xyzt": "=4.4.2"
+        "xyzt": "=4.4.2",
+        "setimmediate": "^1.0.5"
     },
     "devDependencies": {
         "@types/jest": "^26.0.24",

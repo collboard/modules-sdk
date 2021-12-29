@@ -1,19 +1,13 @@
+// Note: vm2 library is using setimmediate and we need to run jest in jsdom in which setImmediate is not available. So we are using setimmediate polyfill.
+import 'setimmediate';
 import spaceTrim from 'spacetrim';
 import { PackageJson } from 'type-fest';
 import { NodeVM } from 'vm2';
-import { IFactorable, IModuleManifest } from '../../../../../types';
+import { IModuleManifest } from '../../../../../types';
 import { IModule, IModuleDefinition } from '../../../../../types/CollboardSdk';
+import { factor } from '../../../utils/factor';
 import { checkManifests } from './checkManifests';
 import { combineManifestAndPackage } from './combineManifestAndPackage';
-
-// !!! file
-export function factor<T>(factorable: IFactorable<T>): T {
-    if (typeof factorable === 'function') {
-        return (factorable as any)();
-    } else {
-        return factorable as T;
-    }
-}
 
 interface ICreateManifestsOptions {
     bundleContent: string;
