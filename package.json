@@ -22,7 +22,9 @@
         "test": "npx jest --runInBand",
         "lint": "tslint -p tsconfig.json",
         "prepare": "tsc",
-        "documentation": "typedoc"
+        "documentation": "typedoc",
+        "preversion": "npm run lint && npm test",
+        "postversion": "git push && git push --tags"
     },
     "dependencies": {
         "@types/express": "^4.17.11",
