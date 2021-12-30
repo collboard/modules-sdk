@@ -11,7 +11,7 @@ declareModule(
             },
             keywords: [],
             categories: ['Productivity', 'Buttons', 'Template'],
-            icon: '/assets/icons/copy-material.svg',
+            icon: '/assets/logo.svg',
         },
         place: ExtraJsxPlace.EdgeRight,
         createExtraJsx() {
@@ -22,9 +22,14 @@ declareModule(
                     }}
                     className="button button-primary button-vertical"
                 >
+                    <img src="/assets/logo" />
                     <span>🥑 Hello World!</span>
                 </button>
             );
         },
     }),
 );
+
+/**
+ * !!! Assets
+ */
