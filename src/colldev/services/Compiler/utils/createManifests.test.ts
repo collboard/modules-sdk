@@ -123,3 +123,7 @@ describe(`how are manifests extracted from the bundle`, () => {
 
     // TODO: Combining multiple modules and packageJson
 });
+
+/**
+ * TODO: !!! Move to makers library
+ */

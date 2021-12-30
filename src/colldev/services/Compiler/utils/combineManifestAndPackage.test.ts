@@ -230,3 +230,8 @@ describe(`how module manifest with package.json is combined`, () => {
         }));
     */
 });
+
+
+/**
+ * TODO: !!! Move to makers library
+ */

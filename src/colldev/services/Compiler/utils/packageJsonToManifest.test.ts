@@ -89,3 +89,8 @@ describe(`conversion of package.json to module manifest`, () => {
         });
     });
 });
+
+
+/**
+ * TODO: !!! Move to makers library
+ */

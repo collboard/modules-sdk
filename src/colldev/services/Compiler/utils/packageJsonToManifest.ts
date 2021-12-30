@@ -1,5 +1,4 @@
 import { PackageJson } from 'type-fest';
-import { IModuleManifest } from '../../../../../types';
 import { cleanUndefineds } from '../../../utils/cleanUndefineds';
 
 export function packageJsonToManifest(packageJson: PackageJson): Partial<IModuleManifest> {
@@ -43,4 +42,8 @@ export function packageJsonToManifest(packageJson: PackageJson): Partial<IModule
 /**
  * TODO:
  * - How to deal with scopes "@scope/module-name"
+ */
+
+/**
+ * TODO: !!! Move to makers library
  */

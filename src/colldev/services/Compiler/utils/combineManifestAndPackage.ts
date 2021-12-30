@@ -28,3 +28,8 @@ export function combineManifestAndPackage({
         }
     }
 }
+
+
+/**
+ * TODO: !!! Move to makers library
+ */

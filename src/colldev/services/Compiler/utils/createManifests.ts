@@ -3,8 +3,6 @@ import 'setimmediate';
 import spaceTrim from 'spacetrim';
 import { PackageJson } from 'type-fest';
 import { NodeVM } from 'vm2';
-import { IModuleManifest } from '../../../../../types';
-import { IModule, IModuleDefinition } from '../../../../../types/CollboardSdk';
 import { factor } from '../../../utils/factor';
 import { checkManifests } from './checkManifests';
 import { combineManifestAndPackage } from './combineManifestAndPackage';
@@ -84,4 +82,8 @@ export async function createManifests({
  *
  * TODO: Split this into multiple functions
  * TODO: Maybe some service called "Verifier" that will test advanced things like performance profile, memory leaks, etc.
+ */
+
+/**
+ * TODO: !!! Move to makers library
  */
