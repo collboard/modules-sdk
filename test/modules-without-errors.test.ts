@@ -11,7 +11,7 @@ describe('the errored modules', () => {
     /*
     it(
         `should crash when there is a type-error IN DECLARE in the module`,
-        createModuleDevelopTest('errors/type-error', '!!!!!!!!!!!2'),
+        createModuleDevelopTest('errors/type-error', 'TODO'),
     );
     */
     it(
@@ -21,13 +21,13 @@ describe('the errored modules', () => {
     /*
     it(
         `should crash when there is a runtime-error-in-setup in the module`,
-        createModuleDevelopTest('errors/runtime-error-in-setup', '!!!!!!!!!!!3'),
+        createModuleDevelopTest('errors/runtime-error-in-setup', 'TODO'),
     );
     */
     /*
     it(
         `should crash when there is a runtime-error-in-unsetup in the module`,
-        createModuleDevelopTest('errors/runtime-error-in-unsetup', '!!!!!!!!!!!4'),
+        createModuleDevelopTest('errors/runtime-error-in-unsetup', 'TODO'),
     );
     */
     it(
@@ -41,14 +41,14 @@ describe('the errored modules', () => {
     /*
     it(
         `should crash when there is a version-mismatch-error in the module`,
-        createModuleDevelopTest('errors/version-mismatch-error', '...'),
+        createModuleDevelopTest('errors/version-mismatch-error', 'TODO'),
     );
     */
 
     /*
     it(
         `should crash when there is a empty-project in the module`,
-        createModuleDevelopTest('errors/empty-project', '!!!!!!!!!!!5'),
+        createModuleDevelopTest('errors/empty-project', 'TODO'),
     );
     */
     /*
