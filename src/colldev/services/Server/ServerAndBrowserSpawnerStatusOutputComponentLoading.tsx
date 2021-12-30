@@ -21,7 +21,7 @@ export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
                             return (
                                 <Text color="grey">
                                     <Text color="magenta" bold>
-                                        {`Please open $({openCollboardUrl})`}
+                                        Please open {openCollboardUrl}
                                     </Text>
                                     {'\n'}
                                     <Bullet>Waiting for connection from Collboard</Bullet>
