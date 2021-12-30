@@ -15,6 +15,8 @@ import { IColldevDevelopStatus } from './IColldevDevelopStatus';
 import { OutputComponent } from './OutputComponent';
 
 export class ColldevDevelop extends Destroyable implements ICommand<IColldevDevelopOptions, IColldevDevelopStatus> {
+
+    public readonly name = 'develop';
     private compiler: DevelopmentCompiler;
     private server: Server;
     private browserSpawner: BrowserSpawner;

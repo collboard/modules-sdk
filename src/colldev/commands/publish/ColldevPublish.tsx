@@ -20,6 +20,8 @@ import { IColldevPublishOptions } from './IColldevPublishOptions';
 import { IColldevPublishStatus } from './IColldevPublishStatus';
 
 export class ColldevPublish extends Destroyable implements ICommand<IColldevPublishOptions, IColldevPublishStatus> {
+
+    public readonly name = 'publish';
     private compiler: ProductionCompiler;
 
     public init(program: commander.Command) {

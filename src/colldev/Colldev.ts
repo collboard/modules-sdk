@@ -9,6 +9,7 @@ import { ICommand } from './commands/ICommand';
 import { ColldevPublish } from './commands/publish/ColldevPublish';
 import { ColldevTest } from './commands/test/ColldevTest';
 import { IColldevOptions } from './IColldevOptions';
+import { getColldevConfig } from './services/Compiler/utils/getColldevConfig';
 import { getColldevPackageJsonContent } from './utils/getColldevPackageJsonContent';
 import { jsonReplacer } from './utils/jsonReplacer';
 
@@ -48,9 +49,11 @@ export class Colldev extends Destroyable implements IDestroyable {
                     `),
                     'human',
                 )
-                .action(async (path: string, options: IColldevOptions) => {
+                .action(async (path: string, flags: IColldevOptions) => {
                     //console.info(`${command.constructor.name}:`, { path, options });
                     //process.exit();
+
+                    const options = await getColldevConfig({ workingDir: path, commandName: command.name, flags });
 
                     const { output } = options;
 

@@ -13,6 +13,8 @@ import { IColldevBuildOptions } from './IColldevBuildOptions';
 import { IColldevBuildStatus } from './IColldevBuildStatus';
 
 export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildOptions, IColldevBuildStatus> {
+
+    public readonly name = 'build';
     private compiler: ProductionCompiler;
 
     public init(program: commander.Command) {

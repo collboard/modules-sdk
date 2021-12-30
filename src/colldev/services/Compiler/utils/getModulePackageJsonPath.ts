@@ -5,3 +5,7 @@ export function getModulePackageJsonPath(workingDir: string): string {
     const packageJsonPath = join(process.cwd(), workingDir, 'package.json');
     return packageJsonPath;
 }
+
+/**
+ * !!! Remove
+ */

@@ -21,3 +21,7 @@ export async function getModuleEntryPath(workingDir: string): Promise<string> {
     // TODO: Warn if project is not versioned by GIT
     // TODO: !! Test version compatibility
 }
+
+/**
+ * !!! Remove
+ */
