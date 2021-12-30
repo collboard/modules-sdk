@@ -30,12 +30,20 @@ export async function createManifests({
     const virtualWindow = {
         window: {},
         declareModule: (module: IModule) => {
-            console.log(`declareModule called from safeEval`);
-            manifests.push(factor(module).manifest! /* TODO: !!! No ! */);
+            const moduleDefinition = factor(module);
+
+            if (!moduleDefinition.manifest) {
+                // Note: This should be trurly ModuleDeclarationMissingManifestError
+                throw new Error(
+                    `Cannot declare module without defined manifest. Modules without manifest (anonymous modules) are typically used as submodules for example as activated tool.`,
+                );
+            }
+
+            manifests.push(moduleDefinition.manifest);
         },
         CollboardSdk: new Proxy(
             {
-                // Note: Faking CollboardSdk
+                // Note: Here we are faking CollboardSdk
             },
             {
                 get: (target, property, receiver) => {
@@ -74,5 +82,6 @@ export async function createManifests({
 
 /**
  *
+ * TODO: Split this into multiple functions
  * TODO: Maybe some service called "Verifier" that will test advanced things like performance profile, memory leaks, etc.
  */

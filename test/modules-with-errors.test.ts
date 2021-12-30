@@ -63,6 +63,16 @@ describe('the errored modules', () => {
         createModuleDevelopTest('errors/name-collision', 'All modules must have different names'),
     );
     */
+
+    it(
+        `should crash when you try to declare anonymous module`,
+        createModuleDevelopTest(
+            'errors/declare-anonymous-module',
+            'Cannot declare module without defined manifest. Modules without manifest',
+        ),
+
+        // TODO: Test this scenario also for publishing
+    );
 });
 
 /**
