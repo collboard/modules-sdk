@@ -1,6 +1,6 @@
-import { IAwaitable } from 'destroyable';
 import * as React from 'react';
 import { Observable } from 'rxjs';
+import { Promisable } from 'type-fest';
 
 /**
  * ⚠️Warning: THIS IS A COPY. Do not edit it here but:
@@ -18,7 +18,7 @@ interface IObservableContentComponentProps {
     /**
      * You can put here any RxJS observable. For example BehaviorSubject.
      */
-    content: Observable<IAwaitable<JSX.Element>>;
+    content: Observable<Promisable<JSX.Element>>;
 }
 
 interface IObservableContentComponentState {
