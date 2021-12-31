@@ -47,6 +47,7 @@ import './development/DevelopmentAboutModule';
 import './development/DevelopmentColldevModalModule';
 import './development/DevelopmentColldevModule';
 import './development/DevelopmentWarningModule';
+import './development/SandboxModule';
 import './dice/DiceArtModule';
 import './dice/DiceControlsAttributeModule';
 import './dice/DiceSidesAttributeModule';

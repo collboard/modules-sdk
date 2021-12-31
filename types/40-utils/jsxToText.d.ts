@@ -6,4 +6,4 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 /// <reference types="react" />
-export declare function jsxToString(element?: string | JSX.Element): string;
+export declare function jsxToText(element?: string | JSX.Element): string;
