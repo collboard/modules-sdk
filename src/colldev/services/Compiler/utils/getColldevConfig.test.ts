@@ -19,4 +19,5 @@ describe('getting colldev config', () => {
     // TODO: config-in-colldev-js
     // TODO: config-in-colldev-json
     // TODO: config-in-package
+    // TODO: config-in-tsconfig
 });

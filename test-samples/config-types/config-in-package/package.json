@@ -1,5 +1,8 @@
 {
     "name": "@collboard/sample-colldev-module",
     "version": "1.0.0",
-    "main": "./src/sampleModule.tsx"
+    "colldev": {
+        "entryPath": "./module.tsx"
+    }
+    
 }
