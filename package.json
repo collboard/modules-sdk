@@ -57,7 +57,7 @@
         "touchcontroller": "^4.0.0",
         "ts-loader": "^8.2.0",
         "type-fest": "^2.7.0",
-        "typescript": "^4.0.3",
+        "typescript": "^4.5.4",
         "uuid": "^8.3.2",
         "vm2": "^3.9.5",
         "waitasecond": "^1.7.0",
