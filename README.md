@@ -6,6 +6,7 @@ Modules SDK toolkit for collaborative whiteboard platform [Collboard.com](https:
 [![Test](https://github.com/collboard/modules-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/test.yml)
 [![Lint](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/collboard/modules-sdk/badge.svg)](https://snyk.io/test/github/collboard/modules-sdk)
+
 <!-- TODO: Package quality badge @see https://github.com/alexfernandez/package-quality/issues/65 -->
 <!-- TODO: More badges -->
 
