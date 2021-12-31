@@ -32,6 +32,10 @@ export async function checkManifests(...manifests: IModuleManifest[]): Promise<v
     if (!isEveryItemDifferent(...names)) {
         throw new Error('All modules must have different names');
     }
+
+    if (!manifests.every(({ version }) => version)) {
+        throw new Error('All modules must have defined version');
+    }
 }
 
 /**

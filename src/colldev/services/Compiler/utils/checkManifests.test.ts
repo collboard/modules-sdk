@@ -4,20 +4,37 @@ describe('how are manifests checked', () => {
     it(`should crash on no manifests`, () =>
         expect(checkManifests()).rejects.toThrowError(`Expecting at least one module`));
     it(`should crash on missing scope`, () =>
-        expect(checkManifests({ name: 'bar' })).rejects.toThrowError(`Scope is required`));
+        expect(checkManifests({ name: 'bar', version: '1.0.0' })).rejects.toThrowError(`Scope is required`));
     it(`should NOT crash on simple correct manifest`, () =>
-        expect(checkManifests({ name: '@collboard/bar' })).resolves.not.toThrowError());
+        expect(checkManifests({ name: '@collboard/bar', version: '1.0.0' })).resolves.not.toThrowError());
 
     it(`should NOT crash on multiple correct manifests`, () =>
-        expect(checkManifests({ name: '@collboard/bar' }, { name: '@collboard/foo' })).resolves.not.toThrowError());
+        expect(
+            checkManifests({ name: '@collboard/bar', version: '1.0.0' }, { name: '@collboard/foo', version: '1.0.0' }),
+        ).resolves.not.toThrowError());
 
     it(`should crash on multiple scopes`, () =>
-        expect(checkManifests({ name: '@collboard/foo' }, { name: '@collboardx/bar' })).rejects.toThrowError(
-            `All modules must have the same scope`,
-        ));
+        expect(
+            checkManifests({ name: '@collboard/foo', version: '1.0.0' }, { name: '@collboardx/bar', version: '1.0.0' }),
+        ).rejects.toThrowError(`All modules must have the same scope`));
 
     it(`should crash on name collision`, () =>
+        expect(
+            checkManifests({ name: '@collboard/bar', version: '1.0.0' }, { name: '@collboard/bar', version: '1.0.0' }),
+        ).rejects.toThrowError(`All modules must have different names`));
+
+    it(`should crash on undefined version`, () =>
         expect(checkManifests({ name: '@collboard/bar' }, { name: '@collboard/bar' })).rejects.toThrowError(
-            `All modules must have different names`,
+            `All modules must have defined version`,
         ));
+
+    it(`should crash on different versions`, () =>
+        expect(
+            checkManifests({ name: '@collboard/bar', version: '1.0.0' }, { name: '@collboard/bar', version: '1.2.0' }),
+        ).rejects.toThrowError(`All modules must have same version`));
+
+    it(`should crash on corrupted version`, () =>
+        expect(
+            checkManifests({ name: '@collboard/bar', version: 'foo' }, { name: '@collboard/bar', version: 'foo' }),
+        ).rejects.toThrowError(`Version must be a valid semantic version string`));
 });
