@@ -25,7 +25,7 @@ describe('how are manifests checked', () => {
 
     it(`should crash on undefined version`, () =>
         expect(checkManifests({ name: '@collboard/bar' }, { name: '@collboard/bar' })).rejects.toThrowError(
-            `All modules must have defined version`,
+            `Modules must have defined version`,
         ));
 
     it(`should crash on different versions`, () =>
