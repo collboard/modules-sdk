@@ -7,7 +7,6 @@ import { isFileExisting } from '../../../utils/isFileExisting';
 import { readConfigFile } from './readConfigFile';
 
 export async function getColldevConfig(workingDir: string): Promise<IColldevConfig> {
-    let content: IColldevConfig;
     for (const configFileBasename of COLLDEV_CONFIG_BASENAMES) {
         const configFilePath = join(process.cwd(), workingDir, configFileBasename);
 

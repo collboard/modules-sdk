@@ -23,11 +23,11 @@ export async function checkManifests(...manifests: IModuleManifest[]): Promise<v
         parsePackageName({ packageName: manifest.name, requireScope: true }),
     );
 
-    if (!isEveryItemSame(...namesAndScopes.map(({ name }) => name))) {
+    if (!isEveryItemSame(...namesAndScopes.map(({ scope }) => scope))) {
         throw new Error('All modules must have the same scope');
     }
 
-    if (!isEveryItemDifferent(...namesAndScopes.map(({ scope }) => scope))) {
+    if (!isEveryItemDifferent(...namesAndScopes.map(({ name }) => name))) {
         throw new Error('All modules must have different names');
     }
 

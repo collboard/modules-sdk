@@ -25,16 +25,16 @@ describe('how are manifests checked', () => {
 
     it(`should crash on undefined version`, () =>
         expect(checkManifests({ name: '@collboard/bar' }, { name: '@collboard/bar' })).rejects.toThrowError(
-            `Modules must have defined version`,
+            `Module must have defined version`,
         ));
 
     it(`should crash on different versions`, () =>
         expect(
-            checkManifests({ name: '@collboard/bar', version: '1.0.0' }, { name: '@collboard/bar', version: '1.2.0' }),
+            checkManifests({ name: '@collboard/bar', version: '1.0.0' }, { name: '@collboard/foo', version: '1.2.0' }),
         ).rejects.toThrowError(`All modules must have same version`));
 
     it(`should crash on corrupted version`, () =>
         expect(
-            checkManifests({ name: '@collboard/bar', version: 'foo' }, { name: '@collboard/bar', version: 'foo' }),
+            checkManifests({ name: '@collboard/bar', version: 'foo' }, { name: '@collboard/foo', version: 'foo' }),
         ).rejects.toThrowError(`Version must be a valid semantic version string`));
 });

@@ -10,7 +10,7 @@ describe('getting colldev config', () => {
 
     /*
     TODO:
-    it('should get config of sample config-in-colldev-ts', () => 
+    it('should get config of sample config-in-colldev-ts', () =>
         expect(
             getColldevConfig('./test-samples/config-types/config-in-colldev-ts'),
         ).resolves.toEqual({
