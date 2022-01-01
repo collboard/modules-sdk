@@ -75,7 +75,3 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
  * TODO: Split this into multiple functions
  * TODO: Maybe some service called "Verifier" that will test advanced things like performance profile, memory leaks, etc.
  */
-
-/**
- * TODO: !!! Move to makers library
- */
