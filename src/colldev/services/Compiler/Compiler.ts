@@ -3,19 +3,19 @@ import { join } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import { Promisable } from 'type-fest';
 import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
+import { string_file_path, string_folder_path } from '../../../../types';
 import { IService } from '../IService';
 import { ICompilerStats, ICompilerStatus } from './ICompilerStatus';
-import { getModuleEntryPath } from './utils/getModuleEntryPath';
 
 export interface ICompilerOptions {
-    workingDir: string;
+    workingDir: string_folder_path;
+    entryPath: string_file_path;
 }
 
 export abstract class Compiler<TOptions extends ICompilerOptions>
     extends Destroyable
     implements IService, IDestroyable
 {
-    protected moduleEntryPath: string;
     protected webpackConfig: webpack.Configuration;
 
     public constructor(protected readonly options: TOptions) {
@@ -33,11 +33,11 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
     });
 
     private get compilerStats(): ICompilerStats {
-        const { workingDir } = this.options;
-        const { moduleEntryPath, webpackConfig } = this;
+        const { workingDir, entryPath } = this.options;
+        const { webpackConfig } = this;
         return {
             workingDir,
-            moduleEntryPath,
+            entryPath,
             webpackConfig,
         };
     }
@@ -52,11 +52,9 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
 
     private async init() {
         try {
-            this.moduleEntryPath = await getModuleEntryPath(this.options.workingDir);
-
             this.webpackConfig = {
                 ...(await this.createWebpackConfig()),
-                entry: this.moduleEntryPath,
+                entry: join(process.cwd(), this.options.workingDir, this.options.entryPath),
                 devtool: 'source-map',
                 module: {
                     rules: [

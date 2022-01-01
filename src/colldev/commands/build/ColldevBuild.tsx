@@ -13,7 +13,6 @@ import { IColldevBuildOptions } from './IColldevBuildOptions';
 import { IColldevBuildStatus } from './IColldevBuildStatus';
 
 export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildOptions, IColldevBuildStatus> {
-
     public readonly name = 'build';
     private compiler: ProductionCompiler;
 
@@ -27,9 +26,9 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
     }
 
     public async run(path: string, options: IColldevBuildOptions) {
-        const { outDir } = options;
+        const { outDir, entryPath } = options;
 
-        this.compiler = new ProductionCompiler({ workingDir: path || './', outDir });
+        this.compiler = new ProductionCompiler({ workingDir: path || './', entryPath, outDir });
         await forServicesReady(this.compiler);
 
         return `Module was build to "${outDir}".`;

@@ -53,7 +53,8 @@ export class Colldev extends Destroyable implements IDestroyable {
                     //console.info(`${command.constructor.name}:`, { path, options });
                     //process.exit();
 
-                    const options = await getColldevConfig({ workingDir: path, commandName: command.name, flags });
+                    const config = await getColldevConfig(path);
+                    const options: IColldevOptions = { ...config, ...config[command.name], ...flags };
 
                     const { output } = options;
 

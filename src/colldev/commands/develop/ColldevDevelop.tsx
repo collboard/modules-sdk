@@ -15,7 +15,6 @@ import { IColldevDevelopStatus } from './IColldevDevelopStatus';
 import { OutputComponent } from './OutputComponent';
 
 export class ColldevDevelop extends Destroyable implements ICommand<IColldevDevelopOptions, IColldevDevelopStatus> {
-
     public readonly name = 'develop';
     private compiler: DevelopmentCompiler;
     private server: Server;
@@ -109,7 +108,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
     }
 
     public async run(path: string, options: IColldevDevelopOptions) {
-        const { exit, output, disconnect } = options;
+        const { entryPath, exit, output, disconnect } = options;
 
         if (!exit && output !== 'human') {
             throw new Error(
@@ -119,7 +118,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
             );
         }
 
-        this.compiler = new DevelopmentCompiler({ workingDir: path || './' });
+        this.compiler = new DevelopmentCompiler({ workingDir: path || './', entryPath });
         this.server = new Server(this.compiler, { path, ...options });
         this.browserSpawner = new BrowserSpawner(this.server, options);
 

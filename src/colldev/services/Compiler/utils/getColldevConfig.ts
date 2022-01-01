@@ -1,36 +1,36 @@
-import { readFile } from 'fs';
 import { join } from 'path';
 // Note: vm2 library is using setimmediate and we need to run jest in jsdom in which setImmediate is not available. So we are using setimmediate polyfill.
 import 'setimmediate';
-import { promisify } from 'util';
-import { NodeVM } from 'vm2';
 import { IColldevConfig } from '../../../commands/IColldevConfig';
-import { IColldevOptions } from '../../../IColldevOptions';
+import { COLLDEV_CONFIG_BASENAMES, COLLDEV_CONFIG_DEFAULT } from '../../../config';
+import { isFileExisting } from '../../../utils/isFileExisting';
+import { readConfigFile } from './readConfigFile';
 
-export async function getColldevConfig({
-    workingDir,
-    commandName,
-    flags,
-}: {
-    workingDir: string;
-    commandName: string;
-    flags: any;
-}): Promise<IColldevOptions> {
-    const colldevFile = await promisify(readFile)(join(process.cwd(), workingDir, 'colldev.js'), 'utf8');
+export async function getColldevConfig(workingDir: string): Promise<IColldevConfig> {
+    let content: IColldevConfig;
+    for (const configFileBasename of COLLDEV_CONFIG_BASENAMES) {
+        const configFilePath = join(process.cwd(), workingDir, configFileBasename);
 
-    const vm = new NodeVM({
-        require: {
-            external: true,
-        },
-    });
+        if (await isFileExisting(configFilePath)) {
+            return await readConfigFile<IColldevConfig>(configFilePath);
+        }
+    }
 
-    const colldevConfig = vm.run(colldevFile) as IColldevConfig;
+    for (const fileBasename of ['package.json', 'tsconfig.json']) {
+        const filePath = join(process.cwd(), workingDir, fileBasename);
 
-    return { ...colldevConfig, ...colldevConfig[commandName], ...flags };
+        if (await isFileExisting(filePath)) {
+            const content = await readConfigFile<any>(filePath);
+            if (content.colldev) {
+                return content.colldev;
+            }
+        }
+    }
+
+    return COLLDEV_CONFIG_DEFAULT;
 }
 
-/**
- * TODO: Maybe split into multiple files
+/**';
  * TODO: Warn if project is not versioned by GIT
  * TODO: Test version compatibility
  */

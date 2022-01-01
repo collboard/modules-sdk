@@ -6,15 +6,19 @@ import { NodeVM } from 'vm2';
 import { string_file_path } from '../../../../../types';
 
 export async function readConfigFile<T>(configFilePath: string_file_path): Promise<T> {
-    const configFileContent = await promisify(readFile)(configFilePath, 'utf8');
+    if (configFilePath.endsWith('.json')) {
+        return JSON.parse(await promisify(readFile)(configFilePath, 'utf8')) as T;
+    } else if (configFilePath.endsWith('.js')) {
+        const configFileContent = await promisify(readFile)(configFilePath, 'utf8');
 
-    const vm = new NodeVM({
-        require: {
-            external: true,
-        },
-    });
+        const vm = new NodeVM({
+            require: {
+                external: true,
+            },
+        });
 
-    const config = vm.run(configFileContent) as T;
-
-    return config;
+        return vm.run(configFileContent) as T;
+    } else {
+        throw new Error(`Unsupported config file type: ${configFilePath}`);
+    }
 }
