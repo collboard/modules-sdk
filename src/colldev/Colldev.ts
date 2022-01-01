@@ -49,6 +49,12 @@ export class Colldev extends Destroyable implements IDestroyable {
                     `),
                     'human',
                 )
+                .option(
+                    '-e, --entry-path <file>',
+                    spaceTrim(`
+                        Entry path for the compiler.
+                    `),
+                )
                 .action(async (path: string, flags: IColldevOptions) => {
                     //console.info(`${command.constructor.name}:`, { path, options });
                     //process.exit();

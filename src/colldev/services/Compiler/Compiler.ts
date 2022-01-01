@@ -1,9 +1,11 @@
 import { Destroyable, IDestroyable } from 'destroyable';
 import { join } from 'path';
 import { BehaviorSubject } from 'rxjs';
+import spaceTrim from 'spacetrim';
 import { Promisable } from 'type-fest';
 import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
 import { string_file_path, string_folder_path } from '../../../../types';
+import { isFileExisting } from '../../utils/isFileExisting';
 import { IService } from '../IService';
 import { ICompilerStats, ICompilerStatus } from './ICompilerStatus';
 
@@ -52,9 +54,20 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
 
     private async init() {
         try {
+            const entry = join(process.cwd(), this.options.workingDir, this.options.entryPath);
+
+            if (!(await isFileExisting(entry))) {
+                throw new Error(
+                    spaceTrim(`
+                        Cannot acces entryPath
+                        File ${entry} not found
+                    `),
+                );
+            }
+
             this.webpackConfig = {
                 ...(await this.createWebpackConfig()),
-                entry: join(process.cwd(), this.options.workingDir, this.options.entryPath),
+                entry,
                 devtool: 'source-map',
                 module: {
                     rules: [
