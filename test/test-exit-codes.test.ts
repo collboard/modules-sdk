@@ -1,6 +1,8 @@
 import { join } from 'path';
 import { execCommand } from './test-utils/execCommand/execCommand';
 
+jest.setTimeout(60 * 1000);
+
 describe('test of the exit codes', () => {
     it('should PASS when testing exit codes', () =>
         expect(
