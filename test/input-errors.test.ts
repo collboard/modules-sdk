@@ -39,7 +39,7 @@ describe('wrong usage of Colldev CLI command', () => {
             }),
         ).rejects.toThrowError(`Unknown browser "foooo"`));
 
-    for (const outputMode of ['minimal', 'minimal-strict', 'json', 'json-raw']) {
+    for (const outputMode of ['compact', 'minimal', 'json', 'json-raw']) {
         it(`makes no sense to use ${outputMode} output without exit flag`, () =>
             expect(
                 execCommand({

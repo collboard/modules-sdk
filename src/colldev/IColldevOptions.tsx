@@ -2,7 +2,7 @@ import { string_file_path } from '../../types';
 
 export interface IColldevOptions {
     entryPath: string_file_path;
-    output: 'human' | 'minimal' | 'minimal-strict' | 'json' | 'json-raw';
+    output: 'human' | 'compact' | 'minimal' | 'json' | 'json-raw';
 }
 
 /**
