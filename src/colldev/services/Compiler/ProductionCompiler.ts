@@ -1,9 +1,9 @@
 import { mkdir, readFile, writeFile } from 'fs';
 import { gzip } from 'node-gzip';
-//import { unlink } from 'fs/promises';
 import { basename, dirname, join } from 'path';
 import { pack } from 'tar-stream';
 import { promisify } from 'util';
+import { string_file_path } from '../../../../types';
 import { parsePackageName } from '../../utils/parsePackageName';
 import { streamTobuffer } from '../../utils/streamToBuffer';
 import { Compiler, ICompilerOptions } from './Compiler';
@@ -31,7 +31,7 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
     }
     private _tarFilePath: string;
 
-    protected async runPostprocessing(mainBundlePath: string) {
+    protected async runPostprocessing(mainBundlePath: string_file_path) {
         const manifests = await createManifestsFromBundleContent(await promisify(readFile)(mainBundlePath, 'utf8'));
         await checkManifests(...manifests);
 
@@ -62,4 +62,5 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
 /**
  * TODO: Flag keep-license-information OR completely remove license information
  *       > await unlink(mainBundlePath + '.LICENSE.txt').catch(() => false);
+ * TODO: Maybe do not rename but set generator filename propperly into webpack config
  */

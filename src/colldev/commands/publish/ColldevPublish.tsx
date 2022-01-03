@@ -8,6 +8,7 @@ import * as React from 'react';
 import { map } from 'rxjs/operators';
 import { promisify } from 'util';
 import * as uuid from 'uuid';
+import { string_folder_path } from '../../../../types';
 import { PUBLISH_BUILD_PATH } from '../../config';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { PublishingError } from '../../services/Compiler/errors/PublishingError';
@@ -33,13 +34,13 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
             .action(this.run.bind(this));
     }
 
-    public async run(path: string, options: IColldevPublishOptions) {
+    public async run(workingDir: string_folder_path, options: IColldevPublishOptions) {
         const { entryPath, moduleStoreUrl, token } = options;
 
-        // TODO: Cleanup of .colldev folder
+        // TODO: Cleanup of .colldev folder - make some univeral function from cleanupTemporaryAssets
 
         this.compiler = new ProductionCompiler({
-            workingDir: path || './',
+            workingDir,
             entryPath,
             outDir: join(PUBLISH_BUILD_PATH, uuid.v4()),
         });
@@ -102,3 +103,7 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
         };
     }
 }
+
+/**
+ * !!! Make Assets working
+ */

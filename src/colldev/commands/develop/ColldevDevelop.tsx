@@ -3,6 +3,7 @@ import { Destroyable } from 'destroyable';
 import * as React from 'react';
 import spaceTrim from 'spacetrim';
 import { forEver, forImmediate } from 'waitasecond';
+import { string_folder_path } from '../../../../types';
 import { BrowserSpawner } from '../../services/BrowserSpawner/BrowserSpawner';
 import { DevelopmentCompiler } from '../../services/Compiler/DevelopmentCompiler';
 import { compilerStatusToJson } from '../../services/Compiler/utils/compilerStatusToJson';
@@ -107,7 +108,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
         );
     }
 
-    public async run(path: string, options: IColldevDevelopOptions) {
+    public async run(workingDir: string_folder_path, options: IColldevDevelopOptions) {
         const { entryPath, exit, output, disconnect } = options;
 
         if (!exit && output !== 'human') {
@@ -118,8 +119,8 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
             );
         }
 
-        this.compiler = new DevelopmentCompiler({ workingDir: path || './', entryPath });
-        this.server = new Server(this.compiler, { path, ...options });
+        this.compiler = new DevelopmentCompiler({ workingDir, entryPath });
+        this.server = new Server(this.compiler, { workingDir, ...options });
         this.browserSpawner = new BrowserSpawner(this.server, options);
 
         const endScenarios: Array<Promise<void>> = [forEver()];

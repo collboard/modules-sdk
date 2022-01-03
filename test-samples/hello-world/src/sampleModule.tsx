@@ -1,5 +1,10 @@
 import * as React from 'react';
 import { declareModule, ExtraJsxPlace, makeExtrajsxModule } from '../../../src/runtime/runtime';
+import logo4 from '../asset-on-root.svg';
+import logo5 from '../assets/a/b/c/deeply-nested-asset.svg';
+import logo from '../assets/logo.svg';
+import ylogo from './default.png';
+import xlogo from './xlogo.svg';
 
 declareModule(
     makeExtrajsxModule({
@@ -15,6 +20,7 @@ declareModule(
         },
         place: ExtraJsxPlace.EdgeRight,
         createExtraJsx() {
+            const style = { display: 'inline-block', width: 20, height: 20 };
             return (
                 <button
                     onClick={async () => {
@@ -22,7 +28,13 @@ declareModule(
                     }}
                     className="button button-primary button-vertical"
                 >
-                    <img src="/assets/logo" />
+                    <img src={logo} {...{ style }} />
+                    <img src={xlogo} {...{ style }} />
+                    <img src={ylogo} {...{ style }} />
+                    <img src={logo4} {...{ style }} />
+                    <img src={logo5} {...{ style }} />
+                    <img src="/assets/logo.svg" {...{ style }} />
+                    <img src="/assets/logo.svg" {...{ style }} />
                     <span>🥑 Hello World!</span>
                 </button>
             );
@@ -31,5 +43,7 @@ declareModule(
 );
 
 /**
- * !!! Assets
+ * !!! Make Assets working
+ * TODO: !!! Cleanup sample assets and pick some representative
+ * TODO: !!! Make some separate sample just for testing assers (and its various locations and types)
  */

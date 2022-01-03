@@ -8,9 +8,10 @@ import { BehaviorSubject } from 'rxjs';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
 import { forValueDefined } from 'waitasecond';
+import { string_folder_path } from '../../../../types';
 import { IColldevDevelopOptions } from '../../commands/develop/IColldevDevelopOptions';
-import { ASSETS_PATH } from '../../config';
-import { Compiler } from '../Compiler/Compiler';
+import { DEVELOP_TEMPORARY_PATH } from '../../config';
+import { DevelopmentCompiler } from '../Compiler/DevelopmentCompiler';
 import { compilerStatusToJson } from '../Compiler/utils/compilerStatusToJson';
 import { IService } from '../IService';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
@@ -20,7 +21,7 @@ import { IServerStatus } from './IServerStatus';
  * Internally using only collboardUrl, port and expose but it is usefull to present all the args in /status route
  */
 interface IServerOptions extends IColldevDevelopOptions {
-    path: string;
+    workingDir: string_folder_path;
 }
 export class Server extends Destroyable implements IService, IDestroyable {
     private expressApp: Express;
@@ -28,7 +29,7 @@ export class Server extends Destroyable implements IService, IDestroyable {
     private socket: SocketIoServer;
     private tunnel: localtunnel.Tunnel | null = null;
 
-    constructor(private compiler: Compiler<any>, private readonly options: IServerOptions) {
+    constructor(private compiler: DevelopmentCompiler, private readonly options: IServerOptions) {
         super();
         this.init();
     }
@@ -135,11 +136,19 @@ export class Server extends Destroyable implements IService, IDestroyable {
         app.use('/assets', serveStatic(ASSETS_PATH, { index: false }));
         */
 
-        this.expressApp.use('/assets/*', async (request, response) => {
+        this.expressApp.use('/develop/*', async (request, response) => {
             const fileUri = request.params[0];
-            const filePath = join(ASSETS_PATH, fileUri);
+            const filePath = join(DEVELOP_TEMPORARY_PATH, fileUri);
 
-            if (/\.js$/.test(fileUri)) {
+            if (/\/assets\//.test(fileUri)) {
+                const filePathAsAsset = join(
+                    process.cwd(),
+                    this.options.workingDir,
+                    fileUri.split(this.compiler.uniqueFoldername).join(''),
+                );
+                console.log({ fileUri, filePathAsAsset, uniqueFoldername: this.compiler.uniqueFoldername });
+                return response.sendFile(filePathAsAsset);
+            } else if (/\.js$/.test(fileUri)) {
                 let content = await promisify(readFile)(filePath, 'utf8');
                 const { declareModuleCallback } = request.query;
                 if (!declareModuleCallback) {
@@ -188,7 +197,9 @@ export class Server extends Destroyable implements IService, IDestroyable {
                         if (mainBundlePath) {
                             // console.log(`Emmiting bundle for ${instanceId}`);
                             socketConnection.emit('bundle', {
-                                bundleUrl: `${await this.colldevUrl()}/assets/` + relative(ASSETS_PATH, mainBundlePath),
+                                bundleUrl:
+                                    `${await this.colldevUrl()}/develop/` +
+                                    relative(DEVELOP_TEMPORARY_PATH, mainBundlePath),
                             } as IColldevSyncerSocket.bundle);
                         }
                     },

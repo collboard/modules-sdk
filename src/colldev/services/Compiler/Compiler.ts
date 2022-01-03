@@ -50,10 +50,17 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
         Partial<webpack.Configuration> & Pick<webpack.Configuration, 'mode' | 'output'>
     >;
 
-    protected abstract runPostprocessing(mainBundlePath: string): Promisable<void>;
+    protected abstract runPostprocessing(mainBundlePath: string_file_path): Promisable<void>;
 
     private async init() {
         try {
+            if (!this.options.workingDir) {
+                this.options.workingDir = './';
+                // TODO: Is this nessesary? WorkingDir is used only with context of join(process.cwd(), this.options.workingDir;
+                // TODO: Maybe split workingDir vs. workingRelativeDir
+                // TODO: Maybe workingPath not workingDir
+            }
+
             const entry = join(process.cwd(), this.options.workingDir, this.options.entryPath);
 
             if (!(await isFileExisting(entry))) {
@@ -75,6 +82,16 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                             test: /\.tsx?$/,
                             use: 'ts-loader',
                             exclude: /node_modules/,
+                        },
+                        // !!!
+                        {
+                            // TODO: !!! More types sync with rules
+                            test: /\.(png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/i,
+                            type: 'asset/resource',
+                            generator: {
+                                filename: 'assets/[name][ext]',
+                                emit: false,
+                            },
                         },
                     ],
                 },
