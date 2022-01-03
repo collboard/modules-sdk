@@ -20,6 +20,7 @@ import { IColldevPublishOptions } from './IColldevPublishOptions';
 import { IColldevPublishStatus } from './IColldevPublishStatus';
 
 export class ColldevPublish extends Destroyable implements ICommand<IColldevPublishOptions, IColldevPublishStatus> {
+    public readonly name = 'publish';
     private compiler: ProductionCompiler;
 
     public init(program: commander.Command) {
@@ -33,12 +34,13 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
     }
 
     public async run(path: string, options: IColldevPublishOptions) {
-        const { moduleStoreUrl, token } = options;
+        const { entryPath, moduleStoreUrl, token } = options;
 
         // TODO: Cleanup of .colldev folder
 
         this.compiler = new ProductionCompiler({
             workingDir: path || './',
+            entryPath,
             outDir: join(PUBLISH_BUILD_PATH, uuid.v4()),
         });
         await forServicesReady(this.compiler);

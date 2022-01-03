@@ -1,3 +1,4 @@
+import spaceTrim from 'spacetrim';
 import { IModuleManifest } from '../../../../../types';
 import { parsePackageName } from '../../../utils/parsePackageName';
 import { checkManifest } from './checkManifest';
@@ -22,15 +23,21 @@ export async function checkManifests(...manifests: IModuleManifest[]): Promise<v
         parsePackageName({ packageName: manifest.name, requireScope: true }),
     );
 
-    const names = namesAndScopes.map(({ name }) => name);
-    const scopes = namesAndScopes.map(({ scope }) => scope);
-
-    if (!isEveryItemSame(...scopes)) {
+    if (!isEveryItemSame(...namesAndScopes.map(({ scope }) => scope))) {
         throw new Error('All modules must have the same scope');
     }
 
-    if (!isEveryItemDifferent(...names)) {
+    if (!isEveryItemDifferent(...namesAndScopes.map(({ name }) => name))) {
         throw new Error('All modules must have different names');
+    }
+
+    if (!isEveryItemSame(...manifests.map(({ version }) => version))) {
+        throw new Error(
+            spaceTrim(`
+                All modules must have same version
+                Note: If you want to publish two modules with indipendent versioning, use two different packages
+            `),
+        );
     }
 }
 

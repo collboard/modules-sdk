@@ -6,7 +6,6 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { string_module_name } from '../../../40-utils/typeAliases';
-import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { ModuleInstallation } from '../ModuleInstallation';
 import { IDependency } from './IDependencies';
 import { IModuleStatusReporter } from './IModuleStatusReporter';
@@ -17,7 +16,7 @@ import { IModuleStatusReporter } from './IModuleStatusReporter';
  */
 export interface IInstaller extends IModuleStatusReporter {
     readonly installations: ModuleInstallation[];
-    install(dependency: IDependency, systems: ISystemsExtended, syncerName?: string): Promise<void>;
+    install(dependency: IDependency, syncerName?: string): Promise<void>;
     uninstall(moduleName: string_module_name): Promise<void>;
     uninstallAll(): Promise<void>;
 }

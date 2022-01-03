@@ -31,7 +31,7 @@ export declare abstract class StorageSyncer
     implements ISyncer, IModulePersister, IModulesStorageStrong, IDestroyable
 {
     private readonly options;
-    private readonly modulesStorage;
+    protected readonly modulesStorage: IModulesStorageStrong;
     constructor(systems: ISystemsExtended, options?: IStorageSyncerOptions);
     /**
      * @proxy

@@ -15,6 +15,7 @@ import { IColldevDevelopStatus } from './IColldevDevelopStatus';
 import { OutputComponent } from './OutputComponent';
 
 export class ColldevDevelop extends Destroyable implements ICommand<IColldevDevelopOptions, IColldevDevelopStatus> {
+    public readonly name = 'develop';
     private compiler: DevelopmentCompiler;
     private server: Server;
     private browserSpawner: BrowserSpawner;
@@ -107,17 +108,17 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
     }
 
     public async run(path: string, options: IColldevDevelopOptions) {
-        const { exit, output, disconnect } = options;
+        const { entryPath, exit, output, disconnect } = options;
 
         if (!exit && output !== 'human') {
             throw new Error(
-                `It makes no sense to use "--output ${output}" without --exit flag. Please change one or another.\n You have used ${JSON.stringify(
+                `It makes no sense to use output "${output}" without --exit flag. Please change one or another.\n You have used ${JSON.stringify(
                     options,
                 )}`,
             );
         }
 
-        this.compiler = new DevelopmentCompiler({ workingDir: path || './' });
+        this.compiler = new DevelopmentCompiler({ workingDir: path || './', entryPath });
         this.server = new Server(this.compiler, { path, ...options });
         this.browserSpawner = new BrowserSpawner(this.server, options);
 

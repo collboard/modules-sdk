@@ -31,12 +31,8 @@ describe('the errored modules', () => {
     );
     */
     it(
-        `should crash when there is a missing-package-error in the module`,
-        createModuleDevelopTest('errors/missing-package-error', 'Colldev did not found valid package.json'),
-    );
-    it(
         `should crash when there is a missing-entry-error in the module`,
-        createModuleDevelopTest('errors/missing-entry-error', 'Colldev cannot acces main entry'),
+        createModuleDevelopTest('errors/missing-entry-error', 'Cannot acces entryPath'),
     );
     /*
     it(

@@ -7,6 +7,8 @@ import { IColldevTestOptions } from './IColldevTestOptions';
 import { IColldevTestStatus } from './IColldevTestStatus';
 
 export class ColldevTest extends Destroyable implements ICommand<IColldevTestOptions, IColldevTestStatus> {
+    public readonly name = 'test';
+
     public init(program: commander.Command) {
         return program.command('test [path]').description(`Test collboard module`).action(this.run.bind(this));
     }
