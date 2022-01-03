@@ -8,10 +8,10 @@
 /// <reference types="react" />
 import { Promisable } from 'type-fest';
 import { IFactorable } from '../../40-utils/IFactory';
-interface IAsyncContentComponentProps {
+import { ILoaderProps } from './Loader/Loader';
+interface IAsyncContentComponentProps extends ILoaderProps {
     /**
      * Component to be rendered before the content is loaded
-     *
      * If not set, default <Loader/> is used
      */
     loader?: JSX.Element;
@@ -25,5 +25,5 @@ interface IAsyncContentComponentProps {
  *
  * @collboard-modules-sdk
  */
-export declare function AsyncContentComponent({ loader, content }: IAsyncContentComponentProps): JSX.Element;
+export declare function AsyncContentComponent({ loader, content, alt }: IAsyncContentComponentProps): JSX.Element;
 export {};

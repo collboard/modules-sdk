@@ -16,18 +16,26 @@ import { ModuleInstallation } from './ModuleInstallation';
 import { ModuleStatus } from './ModuleStatus';
 /**
  * Collboard app has one installer which manages all the module installations, takes care of number of running instances, manages reasons of module activation, syncing, etc.
- *
- * TODO: Refactor installer and when uninstall automatically remove item from installations
- * TODO: Convert to fully destroyable pattetn
+ * Installer is used internally in syncers
  */
 export declare class ModuleInstaller extends Destroyable implements IInstaller, IDestroyable {
-    private modulesStorage;
+    private readonly modulesStorage;
+    private readonly systems;
     readonly installations: ModuleInstallation[];
-    constructor(modulesStorage: IModulesStorageWeak);
-    install(dependency: IDependency, systems: ISystemsExtended, syncerName?: string): Promise<void>;
+    constructor(modulesStorage: IModulesStorageWeak, systems: ISystemsExtended);
+    /**
+     *
+     * @param dependency to install
+     * @param syncerName just for logging
+     */
+    install(dependency: IDependency, syncerName?: string): Promise<void>;
     private statuses;
     statusOf(moduleName: string_module_name): BehaviorSubject<ModuleStatus>;
     uninstall(moduleName: string_module_name): Promise<void>;
     uninstallAll(): Promise<void>;
     destroy(): Promise<void>;
 }
+/**
+ * TODO: Refactor installer and when uninstall automatically remove item from installations
+ * TODO: Convert to fully destroyable pattetn
+ */

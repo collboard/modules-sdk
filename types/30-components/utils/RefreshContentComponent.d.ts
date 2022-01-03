@@ -6,7 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import * as React from 'react';
-interface IRefreshContentComponentProps {
+import { ILoaderProps } from './Loader/Loader';
+interface IRefreshContentComponentProps extends ILoaderProps {
     /**
      * Refresh interval in milisecondes
      */
@@ -35,3 +36,6 @@ export declare class RefreshContentComponent extends React.Component<
     render(): JSX.Element | JSX.Element[] | null;
 }
 export {};
+/**
+ * TODO: Make this a functional component with hooks
+ */

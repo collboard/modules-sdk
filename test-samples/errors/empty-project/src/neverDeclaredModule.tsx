@@ -4,6 +4,7 @@ import { declareModule, ExtraJsxPlace, makeExtrajsxModule } from '../../../../sr
 const makedModule = makeExtrajsxModule({
     manifest: {
         name: '@collboard/never-declared-module',
+        version: '1.0.0',
         title: { en: 'Hello world' },
         description: {
             en: 'Simple sample hello world button for Collboard.com',

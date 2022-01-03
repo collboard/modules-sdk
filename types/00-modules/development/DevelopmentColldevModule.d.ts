@@ -6,7 +6,4 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 
 import { ColldevSyncer } from './ColldevSyncer';
-/**
- * TODO: Remove colldevSyncer singleton
- */
-export declare let colldevSyncer: ColldevSyncer | null;
+export declare let colldevSyncerPromise: Promise<ColldevSyncer>;

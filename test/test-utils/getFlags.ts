@@ -7,5 +7,5 @@ export async function getFlags() {
     // TODO: Combination testing
     // TODO: Testing on multiple platforms - Linux, Windows, Mac, Docker, (maybe Android)
     // TODO: Colldev should accept --timeout flag
-    return ` --output minimal-strict --open multiple --exit --disconnect ${await getBrowserFlag()} ${await getFreshPortflag()} ${await getCollboardUrlFlag()}`;
+    return ` --output compact --open multiple --exit --disconnect ${await getBrowserFlag()} ${await getFreshPortflag()} ${await getCollboardUrlFlag()}`;
 }

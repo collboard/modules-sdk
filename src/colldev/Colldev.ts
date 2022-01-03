@@ -9,6 +9,7 @@ import { ICommand } from './commands/ICommand';
 import { ColldevPublish } from './commands/publish/ColldevPublish';
 import { ColldevTest } from './commands/test/ColldevTest';
 import { IColldevOptions } from './IColldevOptions';
+import { getColldevConfig } from './services/Compiler/utils/getColldevConfig';
 import { getColldevPackageJsonContent } from './utils/getColldevPackageJsonContent';
 import { jsonReplacer } from './utils/jsonReplacer';
 
@@ -41,16 +42,25 @@ export class Colldev extends Destroyable implements IDestroyable {
                     spaceTrim(`
                         Output from the compiler:
                             - "human" human readable ASCII like, colorfull output
-                            - "minimal" say short success sentence or report error
-                            - "minimal-strict" just saying "OK" or report FIRST LINE of error
+                            - "compact" say short success sentence or report error
+                            - "minimal" just saying "OK" or report FIRST LINE of error
                             - "json" pretty JSON
                             - "json-raw" raw minified JSON
                     `),
                     'human',
                 )
-                .action(async (path: string, options: IColldevOptions) => {
+                .option(
+                    '-e, --entry-path <file>',
+                    spaceTrim(`
+                        Entry path for the compiler.
+                    `),
+                )
+                .action(async (path: string, flags: IColldevOptions) => {
                     //console.info(`${command.constructor.name}:`, { path, options });
                     //process.exit();
+
+                    const config = await getColldevConfig(path);
+                    const options: IColldevOptions = { ...config, ...config[command.name], ...flags };
 
                     const { output } = options;
 
@@ -86,7 +96,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 // TODO: Probbably show the error
                                 process.exit(1);
                             });
-                    } else if (output === 'minimal') {
+                    } else if (output === 'compact') {
                         // TODO: DRY
                         runningCommand
                             .then((finalSuccessMessage) => {
@@ -94,18 +104,21 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 process.exit(0);
                             })
                             .catch((error: Error) => {
-                                console.info(chalk.red(error));
+                                console.info(
+                                    chalk.bgRed(chalk.white(error.name + ': ')) + ' ' + chalk.red(error.message),
+                                );
+                                console.info(chalk.redBright((error.stack || '').replace(error.message, '')));
                                 process.exit(1);
                             });
-                    } else if (output === 'minimal-strict') {
+                    } else if (output === 'minimal') {
                         // TODO: DRY
                         runningCommand
                             .then(() => {
-                                console.info(chalk.green(chalk.bold(`OK`)));
+                                console.info(chalk.green(chalk.bold(`Success`)));
                                 process.exit(0);
                             })
                             .catch((error: Error) => {
-                                console.info(chalk.red(error.message.split('\n')[0]));
+                                console.error(chalk.bgRed(chalk.white(error.name)));
                                 process.exit(1);
                             });
                     } else if (output === 'json-raw') {

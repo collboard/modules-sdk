@@ -82,7 +82,6 @@ interface IExtraJsxItem {
 /**
  * ExtraJsxSystem can register and manage additional JSX
  * Note: ExtraJSXSystem is for JSX (HTML) vs. StyleSystem is for CSS styles
- * TODO: Globally better name then extraJsx
  *
  * @collboard-system
  */

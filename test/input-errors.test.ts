@@ -39,7 +39,7 @@ describe('wrong usage of Colldev CLI command', () => {
             }),
         ).rejects.toThrowError(`Unknown browser "foooo"`));
 
-    for (const outputMode of ['minimal', 'minimal-strict', 'json', 'json-raw']) {
+    for (const outputMode of ['compact', 'minimal', 'json', 'json-raw']) {
         it(`makes no sense to use ${outputMode} output without exit flag`, () =>
             expect(
                 execCommand({
@@ -47,7 +47,10 @@ describe('wrong usage of Colldev CLI command', () => {
                     cwd: join(__dirname, '..'),
                     timeout: 15 * 1000,
                 }),
-            ).rejects.toThrowError(`It makes no sense to use` /*...--output ${outputMode}" without --exit flag.`*/));
+            ).rejects.toThrowError(/*
+                Note: Can not specify error message because it will vary depending on the output mode
+                > `It makes no sense to use output "${outputMode}"`
+            */));
     }
 
     // TODO: More

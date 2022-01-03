@@ -7,7 +7,8 @@
 
 import * as React from 'react';
 import { string_href } from '../../40-utils/typeAliases';
-declare type IAsyncButtonComponentProps = React.PropsWithChildren<{
+import { ILoaderProps } from './Loader/Loader';
+interface IAsyncButtonComponentProps extends React.PropsWithChildren<ILoaderProps> {
     /**
      * Component to be rendered after button is clicked and before onClick fullfils
      *
@@ -18,7 +19,7 @@ declare type IAsyncButtonComponentProps = React.PropsWithChildren<{
     href?: string_href;
     className?: string;
     style?: any;
-}>;
+}
 /**
  * Utility for button with pending state after click
  *
@@ -31,5 +32,6 @@ export declare function AsyncButtonComponent({
     className,
     style,
     children,
+    alt,
 }: IAsyncButtonComponentProps): JSX.Element;
 export {};
