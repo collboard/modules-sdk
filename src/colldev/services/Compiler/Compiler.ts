@@ -76,25 +76,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 ...(await this.createWebpackConfig()),
                 entry,
                 devtool: 'source-map',
-                module: {
-                    rules: [
-                        {
-                            test: /\.tsx?$/,
-                            use: 'ts-loader',
-                            exclude: /node_modules/,
-                        },
-                        // !!!
-                        {
-                            // TODO: !!! More types sync with rules
-                            test: /\.(png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/i,
-                            type: 'asset/resource',
-                            generator: {
-                                filename: 'assets/[name][ext]',
-                                emit: false,
-                            },
-                        },
-                    ],
-                },
+              
                 resolve: {
                     extensions: ['.tsx', '.ts', '.js'],
                 },

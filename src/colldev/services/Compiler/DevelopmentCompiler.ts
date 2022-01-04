@@ -28,7 +28,31 @@ export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
             output: {
                 filename: `${this.uniqueFoldername}/main.min.js`,
                 path: DEVELOP_TEMPORARY_PATH,
-                publicPath: `http://localhost:4000/develop/${this.uniqueFoldername}/`,
+                publicPath: `http://localhost:4000/develop/`,
+            },
+
+            // !!! To compiler
+
+            module: {
+                rules: [
+                    {
+                        test: /\.tsx?$/,
+                        use: 'ts-loader',
+                        exclude: /node_modules/,
+                    },
+                    // !!!
+                    {
+                        // TODO: !!! More types sync with rules
+                        test: /\.(png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/i,
+                        type: 'asset/resource',
+                        generator: {
+                            // Note: !!! About Emit // Note: [!!!!]
+                            // Note !!! Abot [path] -> [folder]  .colldev\develop\tmp\2022-0-4--11-31-44--f0f20d53-d30f-4db7-af20-2cea847d6b20test-samples\hello-world\assets\logo.svg @see https://github.com/webpack-contrib/css-loader/issues/226#issuecomment-334467260
+                            filename: `${this.uniqueFoldername}/[path][name][ext]`,
+                            emit: false,
+                        },
+                    },
+                ],
             },
         };
     }

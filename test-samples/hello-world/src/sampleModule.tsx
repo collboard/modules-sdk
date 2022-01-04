@@ -33,8 +33,10 @@ declareModule(
                     <img src={ylogo} {...{ style }} />
                     <img src={logo4} {...{ style }} />
                     <img src={logo5} {...{ style }} />
-                    <img src="/assets/logo.svg" {...{ style }} />
-                    <img src="/assets/logo.svg" {...{ style }} />
+                    <img
+                        src="https://collboard.fra1.cdn.digitaloceanspaces.com/assets/18.3.1/logo-small.png"
+                        {...{ style }}
+                    />
                     <span>🥑 Hello World!</span>
                 </button>
             );
