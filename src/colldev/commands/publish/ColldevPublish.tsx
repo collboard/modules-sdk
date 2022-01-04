@@ -31,18 +31,19 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
             .description(`Deploy collboard module`)
             .option('-m, --module-store-url <url>', `Url of module store`, 'https://module-store.collboard.com')
             .option('-t, --token <token>', `Publishing token`)
+            .option('-c, --cleanup', `Cleanup build directory before building`, false)
             .action(this.run.bind(this));
     }
 
     public async run(workingDir: string_folder_path, options: IColldevPublishOptions) {
-        const { entryPath, moduleStoreUrl, token } = options;
+        const { entryPath, moduleStoreUrl, token, cleanup } = options;
 
         // TODO: Cleanup of .colldev folder - make some univeral function from cleanupTemporaryAssets
 
         this.compiler = new ProductionCompiler({
             workingDir,
             entryPath,
-            outDir: join(PUBLISH_BUILD_PATH, uuid.v4()),
+            outDir: join(PUBLISH_BUILD_PATH, uuid.v4()),cleanup
         });
         await forServicesReady(this.compiler);
 

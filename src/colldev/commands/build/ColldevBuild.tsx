@@ -23,13 +23,14 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
             .alias('deploy')
             .description(`Deploy collboard module`)
             .option('-o, --out-dir <directory>', `Directory to save production build files.`, './build')
+            .option('-c, --cleanup', `Cleanup build directory before building`, false)
             .action(this.run.bind(this));
     }
 
     public async run(workingDir: string_folder_path, options: IColldevBuildOptions) {
-        const { outDir, entryPath } = options;
+        const { outDir, entryPath, cleanup } = options;
 
-        this.compiler = new ProductionCompiler({ workingDir, entryPath, outDir });
+        this.compiler = new ProductionCompiler({ workingDir, entryPath, outDir, cleanup });
         await forServicesReady(this.compiler);
 
         return `Module was build to "${outDir}".`;
@@ -65,7 +66,6 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
         };
     }
 }
-
 
 /**
  * !!! Make Assets working

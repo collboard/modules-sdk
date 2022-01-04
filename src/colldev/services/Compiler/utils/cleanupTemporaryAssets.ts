@@ -4,7 +4,7 @@ import { promisify } from 'util';
 import { DEVELOP_TEMPORARY_PATH } from '../../../config';
 
 export async function cleanupTemporaryAssets() {
-    // TODO: !!! Get this work
+    // TODO: !!! Get this work via removeFileOrFolderRecursively
     try {
         for (const filePath of await promisify(readdir)(DEVELOP_TEMPORARY_PATH)) {
             await promisify(unlink)(join(DEVELOP_TEMPORARY_PATH, filePath));

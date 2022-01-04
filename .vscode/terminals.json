@@ -53,12 +53,12 @@
         },
         {
             "name": "🧪🏭 Build 'hello-world'",
-            "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/hello-world",
+            "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/hello-world --cleanup --output compact",
             "focus": true
         },
         {
             "name": "🧪🏭❌ Build 'empty-project'",
-            "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/errors/empty-project",
+            "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/errors/empty-project --cleanup --output compact",
             "focus": true
         },
         {

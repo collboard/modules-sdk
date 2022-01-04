@@ -1,10 +1,12 @@
 import { mkdir, readFile, writeFile } from 'fs';
+import glob from 'glob-promise';
 import { gzip } from 'node-gzip';
 import { basename, dirname, join } from 'path';
 import { pack } from 'tar-stream';
 import { promisify } from 'util';
 import { string_file_path } from '../../../../types';
 import { parsePackageName } from '../../utils/parsePackageName';
+import { removeFileOrFolderRecursively } from '../../utils/removeFileOrFolderRecursively';
 import { streamTobuffer } from '../../utils/streamToBuffer';
 import { Compiler, ICompilerOptions } from './Compiler';
 import { checkManifests } from './utils/checkManifests';
@@ -12,10 +14,16 @@ import { createManifestsFromBundleContent } from './utils/createManifestsFromBun
 
 interface IDevelopmentCompilerOptions extends ICompilerOptions {
     outDir: string;
-    // TODO: !!! Cleanup flag
+    cleanup: boolean;
 }
 
 export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
+    protected async runPreparation() {
+        if (this.options.cleanup) {
+            await removeFileOrFolderRecursively(join(process.cwd(), this.options.outDir));
+        }
+    }
+
     protected async createWebpackConfig() {
         await promisify(mkdir)(this.options.outDir, { recursive: true });
         return {
@@ -66,12 +74,10 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
             bundleBasename = `bundle`;
         }
 
-        const files = [mainBundlePath, mainBundlePath + '.map', mainBundlePath + '.LICENSE.txt'];
-
         const tar = pack();
-
         tar.entry({ name: 'manifests.json', type: 'file' }, JSON.stringify(manifests, null, 4));
-        for (const file of files) {
+
+        for (const file of await glob(join(dirname(mainBundlePath), '/**/*'), { nodir: true })) {
             tar.entry({ name: basename(file), type: 'file' }, await promisify(readFile)(file));
         }
         tar.finalize();

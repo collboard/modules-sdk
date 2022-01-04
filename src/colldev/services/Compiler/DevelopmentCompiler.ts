@@ -17,6 +17,8 @@ export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
         return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}--${d.getHours()}-${d.getMinutes()}-${d.getSeconds()}--${uuid.v4()}`;
     }
 
+    protected async runPreparation() {}
+
     protected async createWebpackConfig() {
         // TODO: Consistent strategy how to garbage collect files that wasnt deleted propperly
         await makeColldevFolder();

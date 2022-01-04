@@ -50,6 +50,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
         Partial<webpack.Configuration> & Pick<webpack.Configuration, 'mode' | 'output'>
     >;
 
+    protected abstract runPreparation(): Promisable<void>;
     protected abstract runPostprocessing(mainBundlePath: string_file_path): Promisable<void>;
 
     private async init() {
@@ -60,6 +61,8 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 // TODO: Maybe split workingDir vs. workingRelativeDir
                 // TODO: Maybe workingPath not workingDir
             }
+
+            await this.runPreparation();
 
             const entry = join(process.cwd(), this.options.workingDir, this.options.entryPath);
 
