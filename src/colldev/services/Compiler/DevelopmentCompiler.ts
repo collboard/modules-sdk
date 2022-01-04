@@ -32,7 +32,6 @@ export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
             },
 
             // !!! To compiler
-
             module: {
                 rules: [
                     {

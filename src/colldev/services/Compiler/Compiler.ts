@@ -76,7 +76,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 ...(await this.createWebpackConfig()),
                 entry,
                 devtool: 'source-map',
-              
+
                 resolve: {
                     extensions: ['.tsx', '.ts', '.js'],
                 },
@@ -99,8 +99,12 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 // TODO: Maybe use webpack watch instead of onchange
                 // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
                 this.webpackConfig,
-                async (uselessError /* Note: This error is probbably useless */, webpackStats) => {
+                async (validationError, webpackStats) => {
                     const errors: Error[] = [];
+                    if (validationError) {
+                        errors.push(validationError);
+                    }
+
                     if (webpackStats?.hasErrors()) {
                         errors.push(
                             new WebpackError(

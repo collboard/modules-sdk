@@ -22,7 +22,15 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
     });
 
     const virtualWindow = {
-        window: {},
+        window: {
+            /* Note: will be assigned to virtualWindow statement bellow */
+        },
+        document: {
+            // Note:  !!!
+            currentScript: {
+                src: 'http://localhost/main.js',
+            },
+        },
         declareModule: (module: IModule) => {
             const moduleDefinition = factor(module);
 

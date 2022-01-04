@@ -12,6 +12,7 @@ import { createManifestsFromBundleContent } from './utils/createManifestsFromBun
 
 interface IDevelopmentCompilerOptions extends ICompilerOptions {
     outDir: string;
+    // TODO: !!! Cleanup flag
 }
 
 export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
@@ -21,7 +22,28 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
             mode: 'production' as 'production',
             output: {
                 filename: `bundle.min.js`,
-                path: this.options.outDir,
+                path: join(process.cwd(), this.options.outDir),
+            },
+            // !!! To compiler
+            module: {
+                rules: [
+                    {
+                        test: /\.tsx?$/,
+                        use: 'ts-loader',
+                        exclude: /node_modules/,
+                    },
+                    // !!!
+                    {
+                        // TODO: !!! More types sync with rules
+                        test: /\.(png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/i,
+                        type: 'asset/resource',
+                        generator: {
+                            // Note !!! Abot [path] -> [folder]  .colldev\develop\tmp\2022-0-4--11-31-44--f0f20d53-d30f-4db7-af20-2cea847d6b20test-samples\hello-world\assets\logo.svg @see https://github.com/webpack-contrib/css-loader/issues/226#issuecomment-334467260
+                            filename: `[path][name][ext]`,
+                            emit: true,
+                        },
+                    },
+                ],
             },
         };
     }

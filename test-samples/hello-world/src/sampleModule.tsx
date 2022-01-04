@@ -10,6 +10,7 @@ declareModule(
     makeExtrajsxModule({
         manifest: {
             name: '@collboard/sample-colldev-module',
+            version: '1.0.0',
             title: { en: 'Hello world' },
             description: {
                 en: 'Simple sample hello world button for Collboard.com',
