@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from 'fs';
 import glob from 'glob-promise';
 import { gzip } from 'node-gzip';
-import { basename, dirname, join } from 'path';
+import { dirname, join, relative } from 'path';
 import { pack } from 'tar-stream';
 import { promisify } from 'util';
 import { string_file_path } from '../../../../types';
@@ -31,6 +31,7 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
             output: {
                 filename: `bundle.min.js`,
                 path: join(process.cwd(), this.options.outDir),
+                publicPath: `http://localhost:997755/`,
             },
             // !!! To compiler
             module: {
@@ -78,7 +79,9 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
         tar.entry({ name: 'manifests.json', type: 'file' }, JSON.stringify(manifests, null, 4));
 
         for (const file of await glob(join(dirname(mainBundlePath), '/**/*'), { nodir: true })) {
-            tar.entry({ name: basename(file), type: 'file' }, await promisify(readFile)(file));
+            // !!! Remove  console.logs
+            console.log(relative(dirname(mainBundlePath), file));
+            tar.entry({ name: relative(dirname(mainBundlePath), file), type: 'file' }, await promisify(readFile)(file));
         }
         tar.finalize();
 

@@ -1,8 +1,6 @@
-//import { readFile, writeFile } from 'fs';
-//import { promisify } from 'util';
-import * as uuid from 'uuid';
 import { string_file_path, string_folder_path } from '../../../../types';
 import { DEVELOP_TEMPORARY_PATH } from '../../config';
+import { getUniqueFoldername } from '../../utils/getUniqueFoldername';
 import { Compiler, ICompilerOptions } from './Compiler';
 import { cleanupTemporaryAssets } from './utils/cleanupTemporaryAssets';
 import { makeColldevFolder } from './utils/makeColldevFolder';
@@ -10,12 +8,7 @@ import { makeColldevFolder } from './utils/makeColldevFolder';
 // interface IDevelopmentCompilerOptions extends ICompilerOptions {}
 
 export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
-    public readonly uniqueFoldername: string_folder_path = DevelopmentCompiler.getUniqueFoldername();
-
-    private static getUniqueFoldername() {
-        const d = new Date();
-        return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}--${d.getHours()}-${d.getMinutes()}-${d.getSeconds()}--${uuid.v4()}`;
-    }
+    public readonly uniqueFoldername: string_folder_path = getUniqueFoldername();
 
     protected async runPreparation() {}
 

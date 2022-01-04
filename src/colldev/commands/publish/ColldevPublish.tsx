@@ -7,7 +7,6 @@ import { join } from 'path';
 import * as React from 'react';
 import { map } from 'rxjs/operators';
 import { promisify } from 'util';
-import * as uuid from 'uuid';
 import { string_folder_path } from '../../../../types';
 import { PUBLISH_BUILD_PATH } from '../../config';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
@@ -15,6 +14,7 @@ import { PublishingError } from '../../services/Compiler/errors/PublishingError'
 import { ProductionCompiler } from '../../services/Compiler/ProductionCompiler';
 import { compilerStatusToJson } from '../../services/Compiler/utils/compilerStatusToJson';
 import { forServicesReady } from '../../utils/forServicesReady';
+import { getUniqueFoldername } from '../../utils/getUniqueFoldername';
 import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
 import { ICommand } from '../ICommand';
 import { IColldevPublishOptions } from './IColldevPublishOptions';
@@ -36,14 +36,15 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
     }
 
     public async run(workingDir: string_folder_path, options: IColldevPublishOptions) {
-        const { entryPath, moduleStoreUrl, token, cleanup } = options;
+        const { entryPath, moduleStoreUrl, token } = options;
 
         // TODO: Cleanup of .colldev folder - make some univeral function from cleanupTemporaryAssets
 
         this.compiler = new ProductionCompiler({
             workingDir,
             entryPath,
-            outDir: join(PUBLISH_BUILD_PATH, uuid.v4()),cleanup
+            outDir: join(PUBLISH_BUILD_PATH, getUniqueFoldername()),
+            cleanup: false,
         });
         await forServicesReady(this.compiler);
 

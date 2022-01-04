@@ -17,7 +17,7 @@ declareModule(
             },
             keywords: [],
             categories: ['Productivity', 'Buttons', 'Template'],
-            icon: '/assets/logo.svg',
+            icon: logo,
         },
         place: ExtraJsxPlace.EdgeRight,
         createExtraJsx() {
