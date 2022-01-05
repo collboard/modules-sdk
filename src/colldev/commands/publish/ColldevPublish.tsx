@@ -8,7 +8,7 @@ import * as React from 'react';
 import { map } from 'rxjs/operators';
 import { promisify } from 'util';
 import { string_folder_path } from '../../../../types';
-import { PUBLISH_BUILD_PATH } from '../../config';
+import { PUBLISH_BUILD_RELATIVE_PATH } from '../../config';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { PublishingError } from '../../services/Compiler/errors/PublishingError';
 import { ProductionCompiler } from '../../services/Compiler/ProductionCompiler';
@@ -43,7 +43,7 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
         this.compiler = new ProductionCompiler({
             workingDir,
             entryPath,
-            outDir: join(PUBLISH_BUILD_PATH, getUniqueFoldername()),
+            outDir: join(PUBLISH_BUILD_RELATIVE_PATH, getUniqueFoldername()),
             cleanup: false,
         });
         await forServicesReady(this.compiler);
@@ -104,7 +104,3 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
         };
     }
 }
-
-/**
- * !!! Make Assets working
- */

@@ -66,7 +66,3 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
         };
     }
 }
-
-/**
- * !!! Make Assets working
- */

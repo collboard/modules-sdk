@@ -3,7 +3,7 @@ import { join } from 'path';
 import 'setimmediate';
 import spaceTrim from 'spacetrim';
 import { IColldevConfig } from '../../../commands/IColldevConfig';
-import { COLLDEV_CONFIG_BASENAMES, COLLDEV_CONFIG_POSSIBLE_DEFAULT_ENTRY_PATH } from '../../../config';
+import { COLLDEV_CONFIG_BASENAMES, COLLDEV_CONFIG_POSSIBLE_DEFAULT_ENTRY_RELATIVE_PATHS } from '../../../config';
 import { isFileExisting } from '../../../utils/isFileExisting';
 import { readConfigFile } from './readConfigFile';
 
@@ -27,7 +27,7 @@ export async function getColldevConfig(workingDir: string): Promise<IColldevConf
         }
     }
 
-    for (const entryPath of COLLDEV_CONFIG_POSSIBLE_DEFAULT_ENTRY_PATH) {
+    for (const entryPath of COLLDEV_CONFIG_POSSIBLE_DEFAULT_ENTRY_RELATIVE_PATHS) {
         const fullPath = join(process.cwd(), workingDir, entryPath);
 
         if (await isFileExisting(fullPath)) {

@@ -1,6 +1,7 @@
 import { string_file_path, string_folder_path } from '../../../../types';
 import { DEVELOP_TEMPORARY_PATH } from '../../config';
 import { getUniqueFoldername } from '../../utils/getUniqueFoldername';
+import { removeFileOrFolderRecursively } from '../../utils/removeFileOrFolderRecursively';
 import { Compiler, ICompilerOptions } from './Compiler';
 import { cleanupTemporaryAssets } from './utils/cleanupTemporaryAssets';
 import { makeColldevFolder } from './utils/makeColldevFolder';
@@ -15,7 +16,7 @@ export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
     protected async createWebpackConfig() {
         // TODO: Consistent strategy how to garbage collect files that wasnt deleted propperly
         await makeColldevFolder();
-        await cleanupTemporaryAssets();
+        await removeFileOrFolderRecursively(DEVELOP_TEMPORARY_PATH);
 
         return {
             mode: 'development' as 'development',

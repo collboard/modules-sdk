@@ -46,7 +46,6 @@ declareModule(
 );
 
 /**
- * !!! Make Assets working
  * TODO: !!! Cleanup sample assets and pick some representative
  * TODO: !!! Make some separate sample just for testing assers (and its various locations and types)
  */
