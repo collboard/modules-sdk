@@ -4,9 +4,5 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IBehavoirProps } from '../IBehavoirProps';
-/**
- *
- * @collboard-modules-sdk
- */
-export declare function selectionToolSelectionBoxBehavior(behaviorProps: IBehavoirProps): Promise<boolean>;
+/// <reference types="node" />
+export declare function replaceInBuffer({ subject, from, to }: { subject: Buffer; from: string; to: string }): Buffer;

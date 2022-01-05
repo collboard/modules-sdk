@@ -4,7 +4,6 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-
 import { AbstractSystem } from '../AbstractSystem';
 /**
  * VoiceSystem can recognize the voice and play speech from text.

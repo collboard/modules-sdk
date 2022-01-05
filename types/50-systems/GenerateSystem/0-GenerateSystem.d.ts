@@ -4,7 +4,6 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-
 import { AbstractSystem } from '../AbstractSystem';
 /**
  * GenerateSystem is a kind of import system which allows us to import/create whole boards from other sources.
