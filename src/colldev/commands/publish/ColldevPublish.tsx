@@ -62,6 +62,7 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
             throw new PublishingError(`Publishing of module failed.\n${content.error}`);
         }
 
+        // TODO: !!! Take from external modules store
         // TODO: Add module name, its version and other info like link to the status
         return `Module was built and published successfully.`;
     }

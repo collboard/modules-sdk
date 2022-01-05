@@ -31,7 +31,7 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
             output: {
                 filename: `bundle.min.js`,
                 path: join(process.cwd(), this.options.outDir),
-                publicPath: `http://localhost:997755/`,
+                publicPath: `{ROOT_URL}/`,
             },
             // !!! To compiler
             module: {
@@ -79,8 +79,6 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
         tar.entry({ name: 'manifests.json', type: 'file' }, JSON.stringify(manifests, null, 4));
 
         for (const file of await glob(join(dirname(mainBundlePath), '/**/*'), { nodir: true })) {
-            // !!! Remove  console.logs
-            console.log(relative(dirname(mainBundlePath), file));
             tar.entry({ name: relative(dirname(mainBundlePath), file), type: 'file' }, await promisify(readFile)(file));
         }
         tar.finalize();
