@@ -20,7 +20,7 @@ declareModule(
             flags: {
                 isHidden: true,
                 isExperimental: true,
-                isDevelopment: true,
+                 : true,
             },
             icon: logo,
         },

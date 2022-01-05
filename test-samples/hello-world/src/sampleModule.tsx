@@ -12,6 +12,11 @@ declareModule(
             },
             keywords: [],
             categories: ['Productivity', 'Buttons', 'Template'],
+            flags: {
+                isHidden: true,
+                isExperimental: true,
+                isDevelopment: true,
+            },
         },
         place: ExtraJsxPlace.EdgeRight,
         createExtraJsx() {

@@ -13,6 +13,11 @@ for (const [key, moduleVariant] of Object.entries({ a: 'üçé Red apple', b: 'üç
                 keywords: [],
                 categories: ['Productivity', 'Buttons', 'Template'],
                 icon: '/assets/icons/copy-material.svg',
+                flags: {
+                    isHidden: true,
+                    isExperimental: true,
+                    isDevelopment: true,
+                },
             },
             place: ExtraJsxPlace.EdgeRight,
             createExtraJsx() {
