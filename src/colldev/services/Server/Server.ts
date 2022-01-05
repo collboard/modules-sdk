@@ -141,17 +141,6 @@ export class Server extends Destroyable implements IService, IDestroyable {
             const fileUri = request.params[0];
             const filePath = join(DEVELOP_TEMPORARY_PATH, fileUri);
 
-            /* !!! Use or delete
-            if (/\/assets\//.test(fileUri)) {
-                const filePathAsAsset = join(
-                    process.cwd(),
-                    //this.options.workingDir,
-                    fileUri.split(this.compiler.uniqueFoldername).join(''),
-                );
-                console.log({ fileUri, filePathAsAsset, uniqueFoldername: this.compiler.uniqueFoldername });
-                return response.sendFile(filePathAsAsset);
-            } else
-            */
             if (/\.js$/.test(fileUri)) {
                 let content = await promisify(readFile)(filePath, 'utf8');
                 const { declareModuleCallback } = request.query;
@@ -167,10 +156,8 @@ export class Server extends Destroyable implements IService, IDestroyable {
                     return response.sendFile(filePath);
                 }
 
-                // Note: [!!!!]
+                // Note: [🥝] When running in dev mode, we are not emiting assets by webpack but just serving original files from source
                 const fileUnemitedPath = join(process.cwd(), fileUri.split(this.compiler.uniqueFoldername).join(''));
-
-                console.log({ fileUnemitedPath });
 
                 return response.sendFile(fileUnemitedPath);
             }

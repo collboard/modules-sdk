@@ -3,7 +3,6 @@ import { DEVELOP_TEMPORARY_PATH } from '../../config';
 import { getUniqueFoldername } from '../../utils/getUniqueFoldername';
 import { removeFileOrFolderRecursively } from '../../utils/removeFileOrFolderRecursively';
 import { Compiler, ICompilerOptions } from './Compiler';
-import { cleanupTemporaryAssets } from './utils/cleanupTemporaryAssets';
 import { makeColldevFolder } from './utils/makeColldevFolder';
 
 // interface IDevelopmentCompilerOptions extends ICompilerOptions {}
@@ -41,9 +40,12 @@ export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
                         test: /\.(png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/i,
                         type: 'asset/resource',
                         generator: {
-                            // Note: !!! About Emit // Note: [!!!!]
-                            // Note !!! Abot [path] -> [folder]  .colldev\develop\tmp\2022-0-4--11-31-44--f0f20d53-d30f-4db7-af20-2cea847d6b20test-samples\hello-world\assets\logo.svg @see https://github.com/webpack-contrib/css-loader/issues/226#issuecomment-334467260
+                            // TODO: [🧩] filename ideally not contain workingDir
+                            //       Instead of: .colldev/develop/tmp/2022-0-4--11-31-44--f0f20d53-d30f-4db7-af20-2cea847d6b20/test-samples/hello-world/assets/logo.svg
+                            //       Should be:  .colldev/develop/tmp/2022-0-4--11-31-44--f0f20d53-d30f-4db7-af20-2cea847d6b20/assets/logo.svg
+                            //       Probbably use some other variabile [path] -> [folder] @see https://github.com/webpack-contrib/css-loader/issues/226#issuecomment-334467260
                             filename: `${this.uniqueFoldername}/[path][name][ext]`,
+                            // Note: [🥝] When running in dev mode, we are not emiting assets by webpack but just serving original files from source
                             emit: false,
                         },
                     },

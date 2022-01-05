@@ -11,4 +11,3 @@ declare module '*.svg' {
 }
 
 // TODO: !!! More types sync with rules
-// TODO !!! Auto put to runtime.ts as reference
