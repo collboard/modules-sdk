@@ -17,6 +17,11 @@
             "focus": true
         },
         {
+            "name": "🧪👨🏽‍💻🖼️ Develop 'test-assets'",
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/test-assets --port 4000 --open multiple",
+            "focus": true
+        },
+        {
             "name": "🧪👨🏽‍💻🖥️ Develop on local Collboard",
             "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4001 --collboard-url http://localhost:9977/ --open multiple",
             "focus": true
@@ -67,7 +72,12 @@
             "focus": true
         },
         {
-            "name": "🧪🔼 Publish 'multimodule' locally",
+            "name": "🧪🔼🖼️ Publish 'test-assets' locally",
+            "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/test-assets --module-store-url http://localhost:9988/ --token test --output compact",
+            "focus": true
+        },
+        {
+            "name": "🧪🔼🎶 Publish 'multimodule' locally",
             "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/multimodule --module-store-url http://localhost:9988/ --token test --output compact",
             "focus": true
         }
