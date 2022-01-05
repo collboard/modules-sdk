@@ -61,7 +61,7 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
         if (!content.isPublished) {
             throw new PublishingError(`Publishing of module failed.\n${content.error}`);
         }
-        
+
         return this.moduleStoreResponse.publishingReport;
     }
 
