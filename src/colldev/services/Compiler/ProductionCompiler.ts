@@ -33,15 +33,9 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
                 path: join(process.cwd(), this.options.outDir),
                 publicPath: `{ROOT_URL}/`,
             },
-            // !!! To compiler
+
             module: {
                 rules: [
-                    {
-                        test: /\.tsx?$/,
-                        use: 'ts-loader',
-                        exclude: /node_modules/,
-                    },
-                    // !!!
                     {
                         // Note: If you want to change allowed format types, change it at all places marked with [🍁]
                         test: /\.(png|svg|jpg|jpeg|gif|bmp|tga|webp|heif|heic|ico|mp4|mov|wmv|avi|avchd|flv|f4v|swf|mkv|webm|mp3|m4a|flac|wav|wma|aac|woff|woff2|eot|ttf|otf|glb|gltf|babylon|stl|obj|3mf)$/i,

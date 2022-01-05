@@ -47,5 +47,5 @@ declareModule(
 
 /**
  * TODO: !!! Cleanup sample assets and pick some representative
- * TODO: !!! Make some separate sample just for testing assers (and its various locations and types)
+ * TODO: !!! Make some separate sample just for testing assets (and its various locations and types)
  */

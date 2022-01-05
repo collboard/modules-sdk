@@ -26,17 +26,9 @@ export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
                 publicPath: `http://localhost:4000/develop/`,
             },
 
-            // !!! To compiler
             module: {
                 rules: [
                     {
-                        test: /\.tsx?$/,
-                        use: 'ts-loader',
-                        exclude: /node_modules/,
-                    },
-                    // !!!
-                    {
-                        // TODO: !!! More types sync with rules
                         // Note: If you want to change allowed format types, change it at all places marked with [🍁]
                         test: /\.(png|svg|jpg|jpeg|gif|bmp|tga|webp|heif|heic|ico|mp4|mov|wmv|avi|avchd|flv|f4v|swf|mkv|webm|mp3|m4a|flac|wav|wma|aac|woff|woff2|eot|ttf|otf|glb|gltf|babylon|stl|obj|3mf)$/i,
                         type: 'asset/resource',
@@ -55,18 +47,7 @@ export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
         };
     }
 
-    protected async runPostprocessing(mainBundlePath: string_file_path) {
-        /*
-        let mainBundleContent = await promisify(readFile)(mainBundlePath, 'utf8');
-
-        // TODO: Util replace assets
-        // TODO: !!! Unhardocode http://localhost:3000/
-        mainBundleContent = mainBundleContent.split('/assets/').join('http://localhost:3000/assets/$1');
-
-        await promisify(writeFile)(mainBundleContent, 'utf8');
-
-        */
-    }
+    protected async runPostprocessing(mainBundlePath: string_file_path) {}
 }
 
 /**

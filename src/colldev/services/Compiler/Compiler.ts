@@ -3,8 +3,9 @@ import { join } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import spaceTrim from 'spacetrim';
 import { Promisable } from 'type-fest';
-import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
+import webpack from 'webpack';
 import { string_file_path, string_folder_path } from '../../../../types';
+import { combineDeep } from '../../utils/combineDeep';
 import { isFileExisting } from '../../utils/isFileExisting';
 import { IService } from '../IService';
 import { ICompilerStats, ICompilerStatus } from './ICompilerStatus';
@@ -44,7 +45,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
         };
     }
 
-    private compiler: WebpackCompiler;
+    private compiler: webpack.Compiler;
 
     protected abstract createWebpackConfig(): Promisable<
         Partial<webpack.Configuration> & Pick<webpack.Configuration, 'mode' | 'output'>
@@ -75,15 +76,26 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 );
             }
 
-            this.webpackConfig = {
-                ...(await this.createWebpackConfig()),
-                entry,
-                devtool: 'source-map',
+            this.webpackConfig = combineDeep(
+                {
+                    entry,
+                    devtool: 'source-map',
+                    module: {
+                        rules: [
+                            {
+                                test: /\.tsx?$/,
+                                use: 'ts-loader',
+                                exclude: /node_modules/,
+                            },
+                        ],
+                    },
 
-                resolve: {
-                    extensions: ['.tsx', '.ts', '.js'],
+                    resolve: {
+                        extensions: ['.tsx', '.ts', '.js'],
+                    },
                 },
-            };
+                await this.createWebpackConfig(),
+            );
 
             //console.log(this.webpackConfig);
             //process.exit(0);
@@ -110,7 +122,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
 
                     if (webpackStats?.hasErrors()) {
                         errors.push(
-                            new WebpackError(
+                            new webpack.WebpackError(
                                 webpackStats?.toString({
                                     chunks: false, // Makes the build much quieter
                                     colors: true, // Shows colors in the console
