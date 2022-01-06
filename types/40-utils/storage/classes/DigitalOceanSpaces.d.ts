@@ -12,6 +12,7 @@ interface IDigitalOceanSpacesConfig {
     accessKeyId: string;
     secretAccessKey: string;
     cdn: URL;
+    gzip: boolean;
 }
 export declare class DigitalOceanSpaces implements IIFilesStorageWithCdn {
     private readonly config;
@@ -37,4 +38,6 @@ export {};
 /**
  * TODO: Extend this from AWS S3 (compatible) storage
  * TODO: Maybe not extend from storage
+ * TODO: Read-only mode
+ * TODO: Immutable mode
  */
