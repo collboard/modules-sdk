@@ -11,6 +11,7 @@ import {
     string_url,
     string_version_dependency,
 } from '../../../40-utils/typeAliases';
+import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
 import { IModuleStoreConnector } from '../interfaces/IModuleStoreConnector';
@@ -20,8 +21,9 @@ import { IModuleStoreConnectorSearchResult } from '../interfaces/IModuleStoreCon
  *
  */
 export declare class ExternalModuleStoreConnector extends Destroyable implements IModuleStoreConnector {
+    private systems;
     private readonly moduleStoreUrl;
-    constructor(moduleStoreUrl: string_url);
+    constructor(systems: ISystemsExtended, moduleStoreUrl: string_url);
     private readonly externalModules;
     getModule(packageName: string_module_name, version?: string_version_dependency): IModuleDefinition;
     search(searchCriteria: IModuleSearchCriteria): Promise<IModuleStoreConnectorSearchResult>;

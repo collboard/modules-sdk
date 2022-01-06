@@ -40,4 +40,5 @@ export {};
  * TODO: Maybe not extend from storage
  * TODO: Read-only mode
  * TODO: Immutable mode
+ * TODO: Non-Immutable mode should purge cache
  */

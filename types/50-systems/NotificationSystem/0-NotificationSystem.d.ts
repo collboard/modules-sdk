@@ -22,3 +22,7 @@ export declare class NotificationSystem extends AbstractSystem {
      */
     constrict(notificationOrTag: INotification | string): void;
 }
+/**
+ * TODO: Some simple shortcut to just "alert" message
+ * TODO: Helper for notification (with templates like "ok" button)
+ */
