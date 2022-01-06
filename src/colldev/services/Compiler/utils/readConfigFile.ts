@@ -11,6 +11,7 @@ export async function readConfigFile<T>(configFilePath: string_file_absolute_pat
     } else if (configFilePath.endsWith('.js')) {
         const configFileContent = await promisify(readFile)(configFilePath, 'utf8');
 
+        // TODO: NodeVM makes trouble in compiled version by emmiting strange windows alert modal
         const vm = new NodeVM({
             require: {
                 external: true,
