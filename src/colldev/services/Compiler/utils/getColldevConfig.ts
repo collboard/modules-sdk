@@ -38,7 +38,7 @@ export async function getColldevConfig(workingDir: string_folder_relative_path):
 
     throw new Error(
         spaceTrim(`
-            No possible entry found.
+            No possible entry found
             You need to provide one of the following:
             1. ${COLLDEV_CONFIG_BASENAMES.join(' or ')} config file in the root of your project with entryPath
             2. package.json or tsconfig.json with colldev config with entryPath
