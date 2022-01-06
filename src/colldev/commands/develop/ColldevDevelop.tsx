@@ -196,3 +196,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
         await this.browserSpawner.destroy();
     }
 }
+
+/**
+ * TODO: When watching source files withy webpack also watch config (provide by getColldevConfig) in config.js/ts/json/package.json/...
+ */
