@@ -64,6 +64,7 @@ export interface IModuleFlags {
     isDeprecated: boolean;
     isDevelopment: boolean;
     isExperimental: boolean;
+    isTemplate: boolean;
 }
 /**
  * Describes author or contributor of a module. It is in same format as in package.json.
