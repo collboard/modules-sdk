@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
 import { forValueDefined } from 'waitasecond';
-import { string_folder_relative_path } from '../../../../types';
+import { string_folder_relative_path, string_url } from '../../../../types';
 import { IColldevDevelopOptions } from '../../commands/develop/IColldevDevelopOptions';
 import { DEVELOP_TEMPORARY_PATH } from '../../config';
 import { isFileExisting } from '../../utils/isFileExisting';
@@ -35,7 +35,7 @@ export class Server extends Destroyable implements IService, IDestroyable {
         this.init();
     }
 
-    public async openCollboardUrl() {
+    public async openCollboardUrl(): Promise<string_url> {
         const { collboardUrl } = this.options;
 
         let uriParams = '';
@@ -47,7 +47,7 @@ export class Server extends Destroyable implements IService, IDestroyable {
         return redirectUrl;
     }
 
-    public async colldevUrl() {
+    public async colldevUrl(): Promise<string_url> {
         const { port, expose } = this.options;
         if (!expose) {
             return `http://localhost:${port}`;
@@ -82,6 +82,8 @@ export class Server extends Destroyable implements IService, IDestroyable {
     }
 
     private async init() {
+        this.compiler.colldevUrl = /* not await*/ this.colldevUrl();
+
         this.expressApp = express();
         const { port: portAsString, expose } = this.options;
         const port = parseInt(portAsString, 10);

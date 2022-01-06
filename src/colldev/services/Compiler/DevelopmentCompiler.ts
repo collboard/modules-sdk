@@ -1,4 +1,4 @@
-import { string_file_absolute_path, string_folder_relative_path } from '../../../../types';
+import { string_file_absolute_path, string_folder_relative_path, string_url } from '../../../../types';
 import { DEVELOP_TEMPORARY_PATH } from '../../config';
 import { getUniqueFoldername } from '../../utils/getUniqueFoldername';
 import { removeFileOrFolderRecursively } from '../../utils/removeFileOrFolderRecursively';
@@ -8,6 +8,7 @@ import { makeColldevFolder } from './utils/makeColldevFolder';
 // interface IDevelopmentCompilerOptions extends ICompilerOptions {}
 
 export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
+    public colldevUrl: Promise<string_url>;
     public readonly uniqueFoldername: string_folder_relative_path = getUniqueFoldername();
 
     protected async runPreparation() {}
@@ -23,7 +24,7 @@ export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
             output: {
                 filename: `${this.uniqueFoldername}/main.min.js`,
                 path: DEVELOP_TEMPORARY_PATH,
-                publicPath: `http://localhost:4000/develop/`,
+                publicPath: `${await this.colldevUrl}/develop/`,
             },
 
             module: {
