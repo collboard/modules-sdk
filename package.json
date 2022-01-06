@@ -51,7 +51,9 @@
         "uuid": "^8.3.2",
         "vm2": "^3.9.5",
         "waitasecond": "^1.7.0",
-        "webpack": "^5.35.1"
+        "webpack": "^5.35.1",
+        "ts-loader": "^8.2.0",
+        "typescript": "^4.5.4"
     },
     "devDependencies": {
         "@types/webpack": "^5.28.0",
@@ -63,9 +65,7 @@
         "@types/uuid": "^8.3.0",
         "everstorage": "^1.2.0",
         "touchcontroller": "^4.0.0",
-        "ts-loader": "^8.2.0",
         "type-fest": "^2.7.0",
-        "typescript": "^4.5.4",
         "xyzt": "=4.4.2",
         "@types/jest": "^26.0.24",
         "@types/node-fetch": "^2.5.11",
