@@ -96,36 +96,36 @@ export declare class SystemsContainer implements ISystemsExtended {
     private touchControllerSubject;
     private artSerializerSubject;
     /**
-     * Generator: Systems
-     * Omit: Serializer
-     * Add: TouchController,ArtSerializer
-     * Pattern:
+* Generator: Systems
+* Omit: Serializer
+* Add: TouchController,ArtSerializer
+* Pattern:
 
-    public get <system>(): Promise<<System>> {
-        return this.<system>Subject.value
-            ? Promise.resolve(this.<system>Subject.value)
-            : new Promise((resolve) => {
-                  const subscription = this.<system>Subject.subscribe((<system>) => {
-                      if (<system>) {
-                          subscription.unsubscribe();
-                          resolve(<system>);
-                      }
-                  });
-              });
-    }
+public get <system>(): Promise<<System>> {
+return this.<system>Subject.value
+? Promise.resolve(this.<system>Subject.value)
+: new Promise((resolve) => {
+const subscription = this.<system>Subject.subscribe((<system>) => {
+if (<system>) {
+subscription.unsubscribe();
+resolve(<system>);
+}
+});
+});
+}
 
-    public async set<System>(<system>: <System>| null) {
-        if(this.<system>Subject.value){
-          if(<system>){
-            console.warn(`<System> is going to be set twice to SystemsContainer.`);
-          }
-          await this.<system>Subject.value.destroy();
-        }
-        this.<system>Subject.next(<system>);
-    }
+public async set<System>(<system>: <System>| null) {
+if(this.<system>Subject.value){
+if(<system>){
+console.warn(`<System> is going to be set twice to SystemsContainer.`);
+}
+await this.<system>Subject.value.destroy();
+}
+this.<system>Subject.next(<system>);
+}
 
-    // ----
-    */
+// ----
+*/
     get apiClient(): Promise<ApiClient>;
     setApiClient(apiClient: ApiClient | null): Promise<void>;
     get boardApiClient(): Promise<BoardApiClient>;

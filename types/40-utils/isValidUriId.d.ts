@@ -15,11 +15,11 @@ export declare function isValidUriId(uriId: string_uri_part): boolean;
 TODO: Write tests when merging functional modules
 
 describe(`Validation of uriIds`, () => {
-    it(`is valid`, () => {
-        expect(isUriIdValid(``)).toBeTruthy();
-    });
+it(`is valid`, () => {
+expect(isUriIdValid(``)).toBeTruthy();
+});
 });
 
 
 
- */
+*/

@@ -1,9 +1,9 @@
-/*
-.--------------------------------------------------.
-| Theese string_whatever are just semantic helpers |
-'--------------------------------------------------'
-*/
-
+// GENERATED WITH generate-modules-sdk
+// Warning: Do not edit by hand, all changes will be lost on next execution!
+// TODO: This file should be excluded from (not only VSCode) auto-importing.
+//       @see https://github.com/Microsoft/vscode/issues/40248
+//       @see https://github.com/microsoft/TypeScript/issues/35395
+//       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
  * Semantic helper
  *
@@ -11,7 +11,6 @@
  * @collboard-modules-sdk
  */
 export declare type string_mime_type = string;
-
 /**
  * Semantic helper
  *
@@ -21,7 +20,6 @@ export declare type string_mime_type = string;
  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#unique_file_type_specifiers
  */
 export declare type string_mime_type_with_wildcard = string;
-
 /**
  * Semantic helper
  *
@@ -29,7 +27,6 @@ export declare type string_mime_type_with_wildcard = string;
  * @collboard-modules-sdk
  */
 export declare type string_char = string;
-
 /**
  * Semantic helper
  *
@@ -37,7 +34,6 @@ export declare type string_char = string;
  * @collboard-modules-sdk
  */
 export declare type string_char_emoji = string;
-
 /**
  * Semantic helper
  *
@@ -45,7 +41,6 @@ export declare type string_char_emoji = string;
  * @collboard-modules-sdk
  */
 export declare type string_html = string;
-
 /**
  * Semantic helper
  *
@@ -53,7 +48,6 @@ export declare type string_html = string;
  * @collboard-modules-sdk
  */
 export declare type string_url = string;
-
 /**
  * Semantic helper
  *
@@ -61,7 +55,6 @@ export declare type string_url = string;
  * @collboard-modules-sdk
  */
 export declare type string_href = string;
-
 /**
  * Semantic helper
  *
@@ -69,7 +62,6 @@ export declare type string_href = string;
  * @collboard-modules-sdk
  */
 export declare type string_url_image = string;
-
 /**
  * Semantic helper
  *
@@ -77,7 +69,6 @@ export declare type string_url_image = string;
  * @collboard-modules-sdk
  */
 export declare type string_uri = string;
-
 /**
  * Semantic helper
  *
@@ -85,7 +76,6 @@ export declare type string_uri = string;
  * @collboard-modules-sdk
  */
 export declare type string_uri_part = string;
-
 /**
  * Semantic helper, ID of the board used in URL and API
  *
@@ -93,14 +83,12 @@ export declare type string_uri_part = string;
  * @collboard-modules-sdk
  */
 export declare type string_uriid = string_uri_part;
-
 /**
  * Semantic helper
  *
  * @collboard-modules-sdk
  */
 export declare type string_protocol = 'http:' | 'https:';
-
 /**
  * Semantic helper
  *
@@ -108,7 +96,6 @@ export declare type string_protocol = 'http:' | 'https:';
  * @collboard-modules-sdk
  */
 export declare type string_hostname = string;
-
 /**
  * Semantic helper
  *
@@ -116,7 +103,6 @@ export declare type string_hostname = string;
  * @collboard-modules-sdk
  */
 export declare type string_host = string;
-
 /**
  * Semantic helper
  *
@@ -124,7 +110,6 @@ export declare type string_host = string;
  * @collboard-modules-sdk
  */
 export declare type string_email = string;
-
 /**
  * Semantic helper
  *
@@ -132,7 +117,6 @@ export declare type string_email = string;
  * @collboard-modules-sdk
  */
 export declare type string_uuid = string;
-
 /**
  * Semantic helper
  *
@@ -140,7 +124,6 @@ export declare type string_uuid = string;
  * @collboard-modules-sdk
  */
 export declare type string_sha256 = string;
-
 /**
  * Semantic helper
  *
@@ -148,7 +131,6 @@ export declare type string_sha256 = string;
  * @collboard-modules-sdk
  */
 export declare type string_version = string;
-
 /**
  * Semantic helper
  *
@@ -156,7 +138,6 @@ export declare type string_version = string;
  * @collboard-modules-sdk
  */
 export declare type string_version_dependency = string;
-
 /**
  * Semantic helper
  *
@@ -164,7 +145,6 @@ export declare type string_version_dependency = string;
  * @collboard-modules-sdk
  */
 export declare type string_file_extension = string;
-
 /**
  * Semantic helper
  *
@@ -172,7 +152,6 @@ export declare type string_file_extension = string;
  * @collboard-modules-sdk
  */
 export declare type string_file_absolute_path = string;
-
 /**
  * Semantic helper
  *
@@ -180,14 +159,12 @@ export declare type string_file_absolute_path = string;
  * @collboard-modules-sdk
  */
 export declare type string_file_relative_path = string;
-
 /**
  * Semantic helper
  *
  * @collboard-modules-sdk
  */
 export declare type string_file_path = string_file_absolute_path | string_file_relative_path;
-
 /**
  * Semantic helper
  *
@@ -195,7 +172,6 @@ export declare type string_file_path = string_file_absolute_path | string_file_r
  * @collboard-modules-sdk
  */
 export declare type string_folder_absolute_path = string;
-
 /**
  * Semantic helper
  *
@@ -203,14 +179,12 @@ export declare type string_folder_absolute_path = string;
  * @collboard-modules-sdk
  */
 export declare type string_folder_relative_path = string;
-
 /**
  * Semantic helper
  *
  * @collboard-modules-sdk
  */
 export declare type string_folder_path = string_file_absolute_path | string_file_relative_path;
-
 /**
  * Semantic helper
  *
@@ -220,7 +194,6 @@ export declare type string_folder_path = string_file_absolute_path | string_file
  * @collboard-modules-sdk
  */
 export declare type string_module_name = string;
-
 /**
  * Semantic helper
  *
@@ -232,10 +205,6 @@ export declare type string_module_name = string;
  * @collboard-modules-sdk
  */
 export declare type string_module_category = string;
-// TODO: In future enum or | strings like export declare type string_module_category = 'Basic' | 'Math' | 'Basic' | 'Art' | '3D' | 'Experimental';
-// TODO: Add all school subjects
-// TODO: Add easter egg
-
 /**
  * Semantic helper
  *
@@ -243,7 +212,6 @@ export declare type string_module_category = string;
  * @collboard-modules-sdk
  */
 export declare type string_person_fullname = string;
-
 /**
  * Semantic helper
  * Full profile of the person with his email and web (like in package.json)
@@ -252,7 +220,6 @@ export declare type string_person_fullname = string;
  * @collboard-modules-sdk
  */
 export declare type string_person_profile = string;
-
 /**
  * Full profile of the person with his email and web (like in package.json)
  *
@@ -260,14 +227,12 @@ export declare type string_person_profile = string;
  */
 export interface IPersonProfile {
     name?: string_person_fullname;
-
     /**
      * Note: Photos are taken from Gravatar by email
      */
     email?: string_email;
     url?: string_url;
 }
-
 /**
  * Semantic helper
  *
@@ -275,7 +240,6 @@ export interface IPersonProfile {
  * @collboard-modules-sdk
  */
 export declare type string_license = string;
-
 /**
  * License with its type and url like in package.json
  *
@@ -285,7 +249,6 @@ export interface ILicense {
     type?: string_license;
     url?: string;
 }
-
 /**
  * Repository with its type and url like in package.json
  *
@@ -295,7 +258,6 @@ export interface IRepository {
     type?: string | 'git';
     url?: string;
 }
-
 /**
  * Semantic helper
  *
@@ -306,7 +268,6 @@ export interface IRepository {
  * @collboard-modules-sdk
  */
 export declare type string_keyword = string;
-
 /**
  * Semantic helper
  * Array of keywords @see string_keyword
@@ -314,7 +275,6 @@ export declare type string_keyword = string;
  * @collboard-modules-sdk
  */
 export declare type IKeywords = string_keyword[];
-
 /**
  * CSS cursor type
  * @collboard-modules-sdk
@@ -355,7 +315,6 @@ export declare type string_css_cursor =
     | 'wait'
     | 'zoom-in'
     | 'zoom-out';
-
 /**
  * Semantic helper for attributes
  *
@@ -364,8 +323,7 @@ export declare type string_css_cursor =
  * For example `"color"`
  * @collboard-modules-sdk
  */
-export declare type string_attribute = string; // TODO: Maybe move where is AttributesManager
-
+export declare type string_attribute = string;
 /**
  * Semantic helper for attributes context
  *
@@ -374,8 +332,7 @@ export declare type string_attribute = string; // TODO: Maybe move where is Attr
  * For example `"tools"`
  * @collboard-modules-sdk
  */
-export declare type string_context = string; // TODO: Maybe move where is AttributesManager
-
+export declare type string_context = string;
 /**
  * Semantic helper for css/html colors
  *
@@ -383,9 +340,6 @@ export declare type string_context = string; // TODO: Maybe move where is Attrib
  * @collboard-modules-sdk
  */
 export declare type string_color = string;
-// TODO: Use number helpers across the project
-// TODO: Anotate number helpers
-
 export declare type number_miliseconds = number;
 export declare type number_seconds = number;
 export declare type number_minutes = number;
@@ -394,23 +348,19 @@ export declare type number_days = number;
 export declare type number_weeks = number;
 export declare type number_months = number;
 export declare type number_years = number;
-
 export declare type number_bytes = number;
 export declare type number_kilobytes = number;
 export declare type number_megabytes = number;
 export declare type number_gigabytes = number;
 export declare type number_terabytes = number;
-
 /**
  * Semantic helper; For example "SHARE_ICON/EDIT_LINK"
  */
 export declare type string_translate_name = string;
-
 /**
  * Semantic helper; For example "ShareIcon/ edit link"
  */
 export declare type string_translate_name_not_normalized = string;
-
 /**
  * Semantic helper; For example "cs" or "en"
  *
@@ -418,13 +368,11 @@ export declare type string_translate_name_not_normalized = string;
  * TODO: Rename - remove string_ prefix like ITranslateLanguageCode
  */
 export declare type string_translate_language = 'en' | 'cs' | 'sk';
-
 /**
  * Semantic helper; For example "callbackName" or "renderMe"
  *
  */
 export declare type string_javascript_name = string;
-
 export declare type string_token = string;
 export declare type string_password = string;
 export declare type string_ssh_key = string;
