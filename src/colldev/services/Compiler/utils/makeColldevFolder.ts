@@ -1,11 +1,11 @@
 import { mkdir } from 'fs';
 import { promisify } from 'util';
-import { ASSETS_PATH } from '../../../config';
+import { DEVELOP_TEMPORARY_PATH } from '../../../config';
 
 export async function makeColldevFolder() {
-    await promisify(mkdir)(ASSETS_PATH, { recursive: true });
+    await promisify(mkdir)(DEVELOP_TEMPORARY_PATH, { recursive: true });
 }
 
 /**
- * TODO: Cleanup of .colldev folder
+ * TODO: Cleanup of .colldev folder - make some univeral function from cleanupTemporaryAssets
  */

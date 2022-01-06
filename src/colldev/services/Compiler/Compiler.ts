@@ -3,8 +3,9 @@ import { join } from 'path';
 import { BehaviorSubject } from 'rxjs';
 import spaceTrim from 'spacetrim';
 import { Promisable } from 'type-fest';
-import webpack, { Compiler as WebpackCompiler, WebpackError } from 'webpack';
+import webpack from 'webpack';
 import { string_file_path, string_folder_path } from '../../../../types';
+import { combineDeep } from '../../utils/combineDeep';
 import { isFileExisting } from '../../utils/isFileExisting';
 import { IService } from '../IService';
 import { ICompilerStats, ICompilerStatus } from './ICompilerStatus';
@@ -44,16 +45,26 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
         };
     }
 
-    private compiler: WebpackCompiler;
+    private compiler: webpack.Compiler;
 
     protected abstract createWebpackConfig(): Promisable<
         Partial<webpack.Configuration> & Pick<webpack.Configuration, 'mode' | 'output'>
     >;
 
-    protected abstract runPostprocessing(mainBundlePath: string): Promisable<void>;
+    protected abstract runPreparation(): Promisable<void>;
+    protected abstract runPostprocessing(mainBundlePath: string_file_path): Promisable<void>;
 
     private async init() {
         try {
+            if (!this.options.workingDir) {
+                this.options.workingDir = './';
+                // TODO: Is this nessesary? WorkingDir is used only with context of join(process.cwd(), this.options.workingDir;
+                // TODO: Maybe split workingDir vs. workingRelativeDir
+                // TODO: Maybe workingPath not workingDir
+            }
+
+            await this.runPreparation();
+
             const entry = join(process.cwd(), this.options.workingDir, this.options.entryPath);
 
             if (!(await isFileExisting(entry))) {
@@ -65,23 +76,26 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 );
             }
 
-            this.webpackConfig = {
-                ...(await this.createWebpackConfig()),
-                entry,
-                devtool: 'source-map',
-                module: {
-                    rules: [
-                        {
-                            test: /\.tsx?$/,
-                            use: 'ts-loader',
-                            exclude: /node_modules/,
-                        },
-                    ],
+            this.webpackConfig = combineDeep(
+                {
+                    entry,
+                    devtool: 'source-map',
+                    module: {
+                        rules: [
+                            {
+                                test: /\.tsx?$/,
+                                use: 'ts-loader',
+                                exclude: /node_modules/,
+                            },
+                        ],
+                    },
+
+                    resolve: {
+                        extensions: ['.tsx', '.ts', '.js'],
+                    },
                 },
-                resolve: {
-                    extensions: ['.tsx', '.ts', '.js'],
-                },
-            };
+                await this.createWebpackConfig(),
+            );
 
             //console.log(this.webpackConfig);
             //process.exit(0);
@@ -100,11 +114,15 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 // TODO: Maybe use webpack watch instead of onchange
                 // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
                 this.webpackConfig,
-                async (uselessError /* Note: This error is probbably useless */, webpackStats) => {
+                async (validationError, webpackStats) => {
                     const errors: Error[] = [];
+                    if (validationError) {
+                        errors.push(validationError);
+                    }
+
                     if (webpackStats?.hasErrors()) {
                         errors.push(
-                            new WebpackError(
+                            new webpack.WebpackError(
                                 webpackStats?.toString({
                                     chunks: false, // Makes the build much quieter
                                     colors: true, // Shows colors in the console

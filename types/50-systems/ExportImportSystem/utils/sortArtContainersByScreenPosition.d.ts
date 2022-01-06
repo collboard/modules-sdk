@@ -4,7 +4,6 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-
 import { IArtContainer } from '../interfaces/IArtContainer';
 /**
  * Utility for file export supporter which sort art containers by screen position

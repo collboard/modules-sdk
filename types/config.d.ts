@@ -4,7 +4,6 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-
 import { string_version } from './40-utils/typeAliases';
 export declare const clientVersion: string_version;
 export declare const PUBLIC_URL: string;

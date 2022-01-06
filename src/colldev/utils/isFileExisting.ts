@@ -1,5 +1,4 @@
 import { access, constants,stat } from 'fs';
-import 'setimmediate';
 import { promisify } from 'util';
 import { string_file_path } from '../../../types';
 

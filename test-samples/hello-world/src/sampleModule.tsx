@@ -5,16 +5,22 @@ declareModule(
     makeExtrajsxModule({
         manifest: {
             name: '@collboard/sample-colldev-module',
+            version: '1.0.0',
             title: { en: 'Hello world' },
             description: {
                 en: 'Simple sample hello world button for Collboard.com',
             },
             keywords: [],
             categories: ['Productivity', 'Buttons', 'Template'],
-            icon: '/assets/icons/copy-material.svg',
+            flags: {
+                isHidden: true,
+                isExperimental: true,
+                isDevelopment: true,
+            },
         },
         place: ExtraJsxPlace.EdgeRight,
         createExtraJsx() {
+            const style = { display: 'inline-block', width: 20, height: 20 };
             return (
                 <button
                     onClick={async () => {

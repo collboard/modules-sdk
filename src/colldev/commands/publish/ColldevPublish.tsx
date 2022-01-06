@@ -7,13 +7,14 @@ import { join } from 'path';
 import * as React from 'react';
 import { map } from 'rxjs/operators';
 import { promisify } from 'util';
-import * as uuid from 'uuid';
-import { PUBLISH_BUILD_PATH } from '../../config';
+import { string_folder_path } from '../../../../types';
+import { PUBLISH_BUILD_RELATIVE_PATH } from '../../config';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { PublishingError } from '../../services/Compiler/errors/PublishingError';
 import { ProductionCompiler } from '../../services/Compiler/ProductionCompiler';
 import { compilerStatusToJson } from '../../services/Compiler/utils/compilerStatusToJson';
 import { forServicesReady } from '../../utils/forServicesReady';
+import { getUniqueFoldername } from '../../utils/getUniqueFoldername';
 import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
 import { ICommand } from '../ICommand';
 import { IColldevPublishOptions } from './IColldevPublishOptions';
@@ -30,18 +31,20 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
             .description(`Deploy collboard module`)
             .option('-m, --module-store-url <url>', `Url of module store`, 'https://module-store.collboard.com')
             .option('-t, --token <token>', `Publishing token`)
+            .option('-c, --cleanup', `Cleanup build directory before building`, false)
             .action(this.run.bind(this));
     }
 
-    public async run(path: string, options: IColldevPublishOptions) {
+    public async run(workingDir: string_folder_path, options: IColldevPublishOptions) {
         const { entryPath, moduleStoreUrl, token } = options;
 
-        // TODO: Cleanup of .colldev folder
+        // TODO: Cleanup of .colldev folder - make some univeral function from cleanupTemporaryAssets
 
         this.compiler = new ProductionCompiler({
-            workingDir: path || './',
+            workingDir,
             entryPath,
-            outDir: join(PUBLISH_BUILD_PATH, uuid.v4()),
+            outDir: join(PUBLISH_BUILD_RELATIVE_PATH, getUniqueFoldername()),
+            cleanup: false,
         });
         await forServicesReady(this.compiler);
 
@@ -59,8 +62,7 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
             throw new PublishingError(`Publishing of module failed.\n${content.error}`);
         }
 
-        // TODO: Add module name, its version and other info like link to the status
-        return `Module was built and published successfully.`;
+        return this.moduleStoreResponse.publishingReport;
     }
 
     public render() {

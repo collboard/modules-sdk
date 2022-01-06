@@ -22,7 +22,15 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
     });
 
     const virtualWindow = {
-        window: {},
+        window: {
+            /* Note: will be assigned to virtualWindow statement bellow */
+        },
+        document: {
+            // Note: This fake currentScript is required to avoid error in VM2 when the bundle is created by webpack with option output.publicPath
+            currentScript: {
+                src: 'http://localhost/main.js',
+            },
+        },
         declareModule: (module: IModule) => {
             const moduleDefinition = factor(module);
 

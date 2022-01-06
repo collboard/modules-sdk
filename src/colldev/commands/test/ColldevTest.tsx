@@ -2,6 +2,7 @@ import commander from 'commander';
 import { Destroyable } from 'destroyable';
 import { Box, Text } from 'ink';
 import * as React from 'react';
+import { string_folder_path } from '../../../../types';
 import { ICommand } from '../ICommand';
 import { IColldevTestOptions } from './IColldevTestOptions';
 import { IColldevTestStatus } from './IColldevTestStatus';
@@ -13,7 +14,7 @@ export class ColldevTest extends Destroyable implements ICommand<IColldevTestOpt
         return program.command('test [path]').description(`Test collboard module`).action(this.run.bind(this));
     }
 
-    public async run(path: string, options: IColldevTestOptions) {
+    public async run(workingDir: string_folder_path, options: IColldevTestOptions) {
         // const {} = options;
 
         return `Testing is not implemented yet.`;
