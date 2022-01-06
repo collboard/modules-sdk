@@ -2,13 +2,20 @@
 
 Modules SDK toolkit for collaborative whiteboard platform [Collboard.com](https://collboard.com/).
 
+[![License](https://img.shields.io/github/license/collboard/modules-sdk.svg?style=flat)](https://raw.githubusercontent.com/collboard/modules-sdk/master/LICENSE)
 [![NPM Version](https://badge.fury.io/js/@collboard%2Fmodules-sdk.svg)](https://www.npmjs.com/package/@collboard/modules-sdk)
 [![Test](https://github.com/collboard/modules-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/test.yml)
 [![Lint](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/collboard/modules-sdk/badge.svg)](https://snyk.io/test/github/collboard/modules-sdk)
+[![Issues](https://img.shields.io/github/issues/collboard/modules-sdk.svg?style=flat)](https://github.com/collboard/modules-sdk/issues)
 
+<!-- Probbably not quite flattering metric for this project:
+
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/collboard/modules-sdk.svg)](https://github.com/collboard/modules-sdk)
+
+-->
 <!-- TODO: Package quality badge @see https://github.com/alexfernandez/package-quality/issues/65 -->
-<!-- TODO: More badges -->
+<!-- TODO: More badges @see https://shields.io/ -->
 
 ![Collboard banner](./media/collboard.png 'Collboard banner')
 
