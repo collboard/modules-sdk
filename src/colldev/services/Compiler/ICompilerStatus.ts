@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import { string_file_path, string_folder_path } from '../../../../types';
+import { string_file_relative_path, string_folder_relative_path } from '../../../../types';
 
 export interface ICompilerStatus {
     isReady: boolean;
@@ -10,7 +10,7 @@ export interface ICompilerStatus {
     mainBundlePath?: string;
 }
 export interface ICompilerStats {
-    workingDir: string_folder_path;
-    entryPath: string_file_path;
+    workingDir: string_folder_relative_path;
+    entryPath: string_file_relative_path;
     webpackConfig: webpack.Configuration;
 }

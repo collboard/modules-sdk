@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
 import { forValueDefined } from 'waitasecond';
-import { string_folder_path } from '../../../../types';
+import { string_folder_relative_path } from '../../../../types';
 import { IColldevDevelopOptions } from '../../commands/develop/IColldevDevelopOptions';
 import { DEVELOP_TEMPORARY_PATH } from '../../config';
 import { isFileExisting } from '../../utils/isFileExisting';
@@ -22,7 +22,7 @@ import { IServerStatus } from './IServerStatus';
  * Internally using only collboardUrl, port and expose but it is usefull to present all the args in /status route
  */
 interface IServerOptions extends IColldevDevelopOptions {
-    workingDir: string_folder_path;
+    workingDir: string_folder_relative_path;
 }
 export class Server extends Destroyable implements IService, IDestroyable {
     private expressApp: Express;

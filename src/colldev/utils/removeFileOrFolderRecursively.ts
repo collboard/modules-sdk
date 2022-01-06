@@ -1,9 +1,9 @@
 import { access, constants, readdir, stat, unlink } from 'fs';
 import { join } from 'path';
 import { promisify } from 'util';
-import { string_file_path, string_folder_path } from '../../../types';
+import { string_file_absolute_path, string_folder_absolute_path } from '../../../types';
 
-export async function removeFileOrFolderRecursively(path: string_folder_path | string_file_path) {
+export async function removeFileOrFolderRecursively(path: string_folder_absolute_path | string_file_absolute_path) {
     try {
         try {
             await promisify(access)(path, constants.R_OK);

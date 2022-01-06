@@ -4,15 +4,15 @@ import { BehaviorSubject } from 'rxjs';
 import spaceTrim from 'spacetrim';
 import { Promisable } from 'type-fest';
 import webpack from 'webpack';
-import { string_file_path, string_folder_path } from '../../../../types';
+import { string_file_absolute_path, string_file_relative_path, string_folder_relative_path } from '../../../../types';
 import { combineDeep } from '../../utils/combineDeep';
 import { isFileExisting } from '../../utils/isFileExisting';
 import { IService } from '../IService';
 import { ICompilerStats, ICompilerStatus } from './ICompilerStatus';
 
 export interface ICompilerOptions {
-    workingDir: string_folder_path;
-    entryPath: string_file_path;
+    workingDir: string_folder_relative_path;
+    entryPath: string_file_relative_path;
 }
 
 export abstract class Compiler<TOptions extends ICompilerOptions>
@@ -52,17 +52,10 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
     >;
 
     protected abstract runPreparation(): Promisable<void>;
-    protected abstract runPostprocessing(mainBundlePath: string_file_path): Promisable<void>;
+    protected abstract runPostprocessing(mainBundlePath: string_file_absolute_path): Promisable<void>;
 
     private async init() {
         try {
-            if (!this.options.workingDir) {
-                this.options.workingDir = './';
-                // TODO: Is this nessesary? WorkingDir is used only with context of join(process.cwd(), this.options.workingDir;
-                // TODO: Maybe split workingDir vs. workingRelativeDir
-                // TODO: Maybe workingPath not workingDir
-            }
-
             await this.runPreparation();
 
             const entry = join(process.cwd(), this.options.workingDir, this.options.entryPath);
@@ -100,7 +93,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
             //console.log(this.webpackConfig);
             //process.exit(0);
 
-            const mainBundlePath = join(
+            const mainBundlePath: string_file_absolute_path = join(
                 this.webpackConfig!.output!.path!,
                 this.webpackConfig!.output!.filename! as string,
             );

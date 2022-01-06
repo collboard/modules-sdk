@@ -1,4 +1,4 @@
-import { string_file_path, string_folder_path } from '../../../../types';
+import { string_file_absolute_path, string_folder_relative_path } from '../../../../types';
 import { DEVELOP_TEMPORARY_PATH } from '../../config';
 import { getUniqueFoldername } from '../../utils/getUniqueFoldername';
 import { removeFileOrFolderRecursively } from '../../utils/removeFileOrFolderRecursively';
@@ -8,7 +8,7 @@ import { makeColldevFolder } from './utils/makeColldevFolder';
 // interface IDevelopmentCompilerOptions extends ICompilerOptions {}
 
 export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
-    public readonly uniqueFoldername: string_folder_path = getUniqueFoldername();
+    public readonly uniqueFoldername: string_folder_relative_path = getUniqueFoldername();
 
     protected async runPreparation() {}
 
@@ -47,7 +47,7 @@ export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
         };
     }
 
-    protected async runPostprocessing(mainBundlePath: string_file_path) {}
+    protected async runPostprocessing(mainBundlePath: string_file_absolute_path) {}
 }
 
 /**

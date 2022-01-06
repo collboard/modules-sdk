@@ -7,7 +7,6 @@ import { join } from 'path';
 import * as React from 'react';
 import { map } from 'rxjs/operators';
 import { promisify } from 'util';
-import { string_folder_path } from '../../../../types';
 import { PUBLISH_BUILD_RELATIVE_PATH } from '../../config';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { PublishingError } from '../../services/Compiler/errors/PublishingError';
@@ -35,8 +34,8 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
             .action(this.run.bind(this));
     }
 
-    public async run(workingDir: string_folder_path, options: IColldevPublishOptions) {
-        const { entryPath, moduleStoreUrl, token } = options;
+    public async run(options: IColldevPublishOptions) {
+        const { workingDir, entryPath, moduleStoreUrl, token } = options;
 
         // TODO: Cleanup of .colldev folder - make some univeral function from cleanupTemporaryAssets
 

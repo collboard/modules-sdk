@@ -3,7 +3,6 @@ import { Destroyable } from 'destroyable';
 import { Box } from 'ink';
 import * as React from 'react';
 import { map } from 'rxjs/operators';
-import { string_folder_path } from '../../../../types';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { ProductionCompiler } from '../../services/Compiler/ProductionCompiler';
 import { compilerStatusToJson } from '../../services/Compiler/utils/compilerStatusToJson';
@@ -27,8 +26,8 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
             .action(this.run.bind(this));
     }
 
-    public async run(workingDir: string_folder_path, options: IColldevBuildOptions) {
-        const { outDir, entryPath, cleanup } = options;
+    public async run(options: IColldevBuildOptions) {
+        const { workingDir, outDir, entryPath, cleanup } = options;
 
         this.compiler = new ProductionCompiler({ workingDir, entryPath, outDir, cleanup });
         await forServicesReady(this.compiler);

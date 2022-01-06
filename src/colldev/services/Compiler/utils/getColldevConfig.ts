@@ -2,12 +2,13 @@ import { join } from 'path';
 // Note: vm2 library is using setimmediate and we need to run jest in jsdom in which setImmediate is not available. So we are using setimmediate polyfill.
 import 'setimmediate';
 import spaceTrim from 'spacetrim';
+import { string_folder_relative_path } from '../../../../../types';
 import { IColldevConfig } from '../../../commands/IColldevConfig';
 import { COLLDEV_CONFIG_BASENAMES, COLLDEV_CONFIG_POSSIBLE_DEFAULT_ENTRY_RELATIVE_PATHS } from '../../../config';
 import { isFileExisting } from '../../../utils/isFileExisting';
 import { readConfigFile } from './readConfigFile';
 
-export async function getColldevConfig(workingDir: string): Promise<IColldevConfig> {
+export async function getColldevConfig(workingDir: string_folder_relative_path): Promise<IColldevConfig> {
     for (const configFileBasename of COLLDEV_CONFIG_BASENAMES) {
         const configFilePath = join(process.cwd(), workingDir, configFileBasename);
 

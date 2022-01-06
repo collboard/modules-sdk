@@ -3,9 +3,9 @@ import { readFile } from 'fs';
 import 'setimmediate';
 import { promisify } from 'util';
 import { NodeVM } from 'vm2';
-import { string_file_path } from '../../../../../types';
+import { string_file_absolute_path } from '../../../../../types';
 
-export async function readConfigFile<T>(configFilePath: string_file_path): Promise<T> {
+export async function readConfigFile<T>(configFilePath: string_file_absolute_path): Promise<T> {
     if (configFilePath.endsWith('.json')) {
         return JSON.parse(await promisify(readFile)(configFilePath, 'utf8')) as T;
     } else if (configFilePath.endsWith('.js')) {

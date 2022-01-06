@@ -12,6 +12,7 @@ declareModule(
             },
             keywords: [],
             categories: ['Productivity', 'Buttons', 'Template'],
+            icon: '🥑',
             flags: {
                 isHidden: true,
                 isExperimental: true,

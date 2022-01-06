@@ -3,6 +3,7 @@ import commander from 'commander';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { Instance, render } from 'ink';
 import spaceTrim from 'spacetrim';
+import { string_folder_relative_path } from '../../types';
 import { ColldevBuild } from './commands/build/ColldevBuild';
 import { ColldevDevelop } from './commands/develop/ColldevDevelop';
 import { ICommand } from './commands/ICommand';
@@ -55,16 +56,19 @@ export class Colldev extends Destroyable implements IDestroyable {
                         Entry path for the compiler.
                     `),
                 )
-                .action(async (path: string, flags: IColldevOptions) => {
+                .action(async (workingDir?: string_folder_relative_path, flags?: IColldevOptions) => {
                     //console.info(`${command.constructor.name}:`, { path, options });
                     //process.exit();
 
-                    const config = await getColldevConfig(path);
-                    const options: IColldevOptions = { ...config, ...config[command.name], ...flags };
+                    workingDir = workingDir || '.';
+                    const config = await getColldevConfig(workingDir);
+                    const options: IColldevOptions = { workingDir, ...config, ...config[command.name], ...flags };
 
                     const { output } = options;
 
-                    const runningCommand = command.run(path, options);
+                    console.log(options);
+
+                    const runningCommand = command.run(options);
 
                     if (output === 'human') {
                         this.renderingInstance = render(command.render(options));

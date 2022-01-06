@@ -4,7 +4,7 @@ import { gzip } from 'node-gzip';
 import { dirname, join, relative } from 'path';
 import { pack } from 'tar-stream';
 import { promisify } from 'util';
-import { string_file_path } from '../../../../types';
+import { string_file_absolute_path } from '../../../../types';
 import { parsePackageName } from '../../utils/parsePackageName';
 import { removeFileOrFolderRecursively } from '../../utils/removeFileOrFolderRecursively';
 import { streamTobuffer } from '../../utils/streamToBuffer';
@@ -59,7 +59,7 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
     }
     private _tarFilePath: string;
 
-    protected async runPostprocessing(mainBundlePath: string_file_path) {
+    protected async runPostprocessing(mainBundlePath: string_file_absolute_path) {
         const manifests = await createManifestsFromBundleContent(await promisify(readFile)(mainBundlePath, 'utf8'));
         await checkManifests(...manifests);
 
