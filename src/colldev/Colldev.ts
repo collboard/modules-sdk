@@ -66,8 +66,6 @@ export class Colldev extends Destroyable implements IDestroyable {
 
                     const { output } = options;
 
-                    console.log(options);
-
                     const runningCommand = command.run(options);
 
                     if (output === 'human') {
