@@ -24,7 +24,7 @@ export async function removeFileOrFolderRecursively(path: string_folder_path | s
             throw new Error(`Unsupported file type: ${path}`);
         }
     } catch (error) {
-        console.warn(error);
+        // console.warn(error);
     }
 }
 
