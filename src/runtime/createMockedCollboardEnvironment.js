@@ -50,7 +50,7 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
             {
                 // Note: Here we are faking CollboardSdk
                 makeArtModule: (artClass) => {
-                    return { manifest: { name: artClass.serializeName } };
+                    return { manifest: { name: artClass.serializeName, version: artClass.version } };
                 },
             },
             {
