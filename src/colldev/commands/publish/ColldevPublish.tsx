@@ -6,6 +6,7 @@ import fetch from 'node-fetch';
 import { join } from 'path';
 import * as React from 'react';
 import { map } from 'rxjs/operators';
+import spaceTrim from 'spacetrim';
 import { promisify } from 'util';
 import { PUBLISH_BUILD_RELATIVE_PATH } from '../../config';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
@@ -61,7 +62,12 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
             throw new PublishingError(`Publishing of module failed.\n${content.error}`);
         }
 
-        return this.moduleStoreResponse.publishingReport;
+        return spaceTrim(
+            (block) => `
+            🏬 ${moduleStoreUrl}
+            ${block(this.moduleStoreResponse.publishingReport)}
+        `,
+        );
     }
 
     public render() {
