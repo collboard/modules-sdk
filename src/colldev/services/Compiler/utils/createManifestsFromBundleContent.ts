@@ -1,9 +1,14 @@
 // Note: vm2 library is using setimmediate and we need to run jest in jsdom in which setImmediate is not available. So we are using setimmediate polyfill.
+import { mkdir, readFile, writeFile } from 'fs';
+import { dirname, join } from 'path';
 import 'setimmediate';
 import spaceTrim from 'spacetrim';
+import { promisify } from 'util';
 import { NodeVM } from 'vm2';
-import { IModule, IModuleDefinition, IModuleManifest } from '../../../../../types';
-import { factor } from '../../../utils/factor';
+import { IModuleDefinition, IModuleManifest } from '../../../../../types';
+import createMockedCollboardEnvironment from '../../../../runtime/createMockedCollboardEnvironment';
+import { VM_ERRORS_TEMPORARY_PATH } from '../../../config';
+import { getUniqueFoldername } from '../../../utils/getUniqueFoldername';
 
 /**
  * Analyzes javascript bundle content and search for all declared modules
@@ -21,50 +26,55 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
         },
     });
 
-    const virtualWindow = {
-        window: {
-            /* Note: will be assigned to virtualWindow statement bellow */
-        },
-        document: {
-            // Note: This fake currentScript is required to avoid error in VM2 when the bundle is created by webpack with option output.publicPath
-            currentScript: {
-                src: 'http://localhost/main.js',
-            },
-        },
-        declareModule: (module: IModule) => {
-            const moduleDefinition = factor(module);
-
-            if (!moduleDefinition.manifest) {
-                // Note: This should be trurly ModuleDeclarationMissingManifestError
-                throw new Error(
-                    `Cannot declare module without defined manifest. Modules without manifest (anonymous modules) are typically used as submodules for example as activated tool.`,
-                );
-            }
-
-            manifests.push(moduleDefinition.manifest);
-        },
-        CollboardSdk: new Proxy(
-            {
-                // Note: Here we are faking CollboardSdk
-            },
-            {
-                get: (target, property, receiver) => {
-                    if (/^make/.test(property as string)) {
-                        // TODO: !! Makers should be in external library
-                        return (protoModule: IModuleDefinition) => {
-                            return protoModule;
-                        };
-                    } else {
-                        return fake;
-                    }
-                },
-            },
-        ),
-    };
-    virtualWindow.window = virtualWindow;
-
+    const virtualWindow = createMockedCollboardEnvironment((moduleDefinition: IModuleDefinition) => {
+        manifests.push(moduleDefinition.manifest);
+    });
     vm.setGlobals(virtualWindow);
-    vm.run(bundleContent);
+
+    try {
+        vm.run(bundleContent);
+    } catch (error) {
+        const vmFilePath = join(VM_ERRORS_TEMPORARY_PATH, getUniqueFoldername(), 'vm.js');
+        await promisify(mkdir)(dirname(vmFilePath), { recursive: true });
+        const createMockedCollboardEnvironmentContent = await promisify(readFile)(
+            join(__dirname, '../../../../runtime/createMockedCollboardEnvironment.js'),
+            'utf8',
+        );
+        await promisify(writeFile)(
+            vmFilePath,
+            spaceTrim(
+                (block) => `
+                    /**
+                     * Note: This is a temporary file created by colldev.
+                     *       It reproduces the errors that occured during manifest extraction from the bundle. 
+                     * /
+
+                    ${block(createMockedCollboardEnvironmentContent)}
+
+                    Object.assign(global, module.exports((moduleDefinition)=>{
+                        console.log(moduleDefinition.manifest);
+                    }));
+
+                    ${block(bundleContent)}
+                `,
+            ),
+        );
+        throw new Error(
+            spaceTrim(
+                (block) => `
+                Error while running bundle content to extract manifests of modules
+                See the bundle file ${vmFilePath}
+                Or you can try to run the following command:
+
+                node ${vmFilePath.split('\\').join('/')}
+
+                ${block(error.message)}
+                ${block(error.stack)}
+                ---
+            `,
+            ),
+        );
+    }
 
     if (manifests.length === 0) {
         throw new Error(
