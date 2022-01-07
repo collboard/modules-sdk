@@ -80,6 +80,15 @@
             "name": "🧪🔼🎶 Publish 'multimodule' locally",
             "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/multimodule --module-store-url http://localhost:9988/ --token test --output compact",
             "focus": true
+        },
+        {
+            "name": "👨🏽‍💻🔗 Link this module-sdk to sample",
+            "commands": [
+                "npm link",
+                "echo 'To finish run on module(s) \"npm link @collboard/modules-sdk\"; To unlink, run here \"npm unlink\" and on module(s) \"npm unlink @collboard/modules-sdk\"'",
+                "tsc --watch"
+            ],
+            "focus": true
         }
     ]
 }
