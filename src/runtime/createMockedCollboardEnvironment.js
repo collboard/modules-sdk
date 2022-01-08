@@ -49,8 +49,32 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
         CollboardSdk: new Proxy(
             {
                 // Note: Here we are faking CollboardSdk
-                makeArtModule: (artClass) => {
-                    return { manifest: { name: artClass.serializeName, version: artClass.version } };
+                // TODO: When there will be fully separated makers in separate library, faking makers would be useless
+
+                makeArtModule(artClass) {
+                    return {
+                        manifest: {
+                            name: artClass.serializeName,
+                            version: artClass.version,
+                            supports: {
+                                art: artClass.serializeName,
+                            },
+                        },
+                    };
+                },
+
+                makeAttributeModule(protoModule) {
+                    const module = {
+                        ...protoModule,
+                    };
+
+                    if (protoModule.standard) {
+                        module.manifest.supports = {
+                            attribute: protoModule.attribute.name,
+                        };
+                    }
+
+                    return module;
                 },
             },
             {
