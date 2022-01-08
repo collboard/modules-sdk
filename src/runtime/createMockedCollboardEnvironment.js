@@ -52,6 +52,7 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
                 // TODO: When there will be fully separated makers in separate library, faking makers would be useless
 
                 makeArtModule(artClass) {
+                    // TODO: Supports should be inferred from the setup behavior
                     return {
                         manifest: {
                             name: artClass.serializeName,
@@ -64,6 +65,7 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
                 },
 
                 makeAttributeModule(protoModule) {
+                    // TODO: Supports should be inferred from the setup behavior
                     const module = {
                         ...protoModule,
                     };
