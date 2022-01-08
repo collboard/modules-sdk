@@ -27,7 +27,7 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
     });
 
     const virtualWindow = createMockedCollboardEnvironment((moduleDefinition: IModuleDefinition) => {
-        manifests.push(moduleDefinition.manifest);
+        manifests.push(moduleDefinition.manifest!);
     });
     vm.setGlobals(virtualWindow);
 
