@@ -10,7 +10,6 @@ export async function readConfigFile<T>(configFilePath: string_file_absolute_pat
         return JSON.parse(await promisify(readFile)(configFilePath, 'utf8')) as T;
     } else if (configFilePath.endsWith('.js')) {
         const configFileContent = await promisify(readFile)(configFilePath, 'utf8');
-        
         const vm = new NodeVM({
             require: {
                 external: true,

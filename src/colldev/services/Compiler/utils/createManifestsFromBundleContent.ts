@@ -46,7 +46,7 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
                 (block) => `
                     /**
                      * Note: This is a temporary file created by colldev.
-                     *       It reproduces the errors that occured during manifest extraction from the bundle. 
+                     *       It reproduces the errors that occured during manifest extraction from the bundle.
                      * /
 
                     ${block(createMockedCollboardEnvironmentContent)}
