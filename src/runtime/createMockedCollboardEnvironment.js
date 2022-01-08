@@ -52,10 +52,12 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
                 // TODO: When there will be fully separated makers in separate library, faking makers would be useless
 
                 makeArtModule(artClass) {
+                    // TODO: Some clear rules how to name serializeName and module names (+ adding scopes and versions there)
+                    // TODO: How to handle versioning in arts?
                     // TODO: Supports should be inferred from the setup behavior
                     return {
                         manifest: {
-                            name: artClass.serializeName,
+                            name: `${artSerializeRule.name}Art`,
                             version: artClass.version,
                             supports: {
                                 art: artClass.serializeName,
