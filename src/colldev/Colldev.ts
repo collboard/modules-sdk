@@ -11,6 +11,8 @@ import { ColldevPublish } from './commands/publish/ColldevPublish';
 import { ColldevTest } from './commands/test/ColldevTest';
 import { IColldevOptions } from './IColldevOptions';
 import { getColldevConfig } from './services/Compiler/utils/getColldevConfig';
+import { compactErrorReport } from './utils/cliLogging/compactErrorReport';
+import { compactSuccessReport } from './utils/cliLogging/compactSuccessReport';
 import { getColldevPackageJsonContent } from './utils/getColldevPackageJsonContent';
 import { jsonReplacer } from './utils/jsonReplacer';
 
@@ -62,7 +64,7 @@ export class Colldev extends Destroyable implements IDestroyable {
 
                     workingDir = workingDir || '.';
                     const config = await getColldevConfig(workingDir).catch((error) => {
-                        console.info(chalk.redBright((error.stack || '').replace(error.message, '')));
+                        compactErrorReport(error);
                         process.exit(1);
                     });
                     const options: IColldevOptions = { workingDir, ...config, ...config[command.name], ...flags };
@@ -89,30 +91,15 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 console.info(chalk.redBright((error.stack || '').replace(error.message, '')));
                                 process.exit(1);
                             });
-                    } else if (output === 'json') {
-                        // TODO: DRY
-                        runningCommand
-                            .then(() => {
-                                console.info(JSON.stringify(command.status(), jsonReplacer, 4));
-                                process.exit(0);
-                            })
-                            .catch((error: Error) => {
-                                console.info(JSON.stringify({ ...command.status(), error }, jsonReplacer, 4));
-                                // TODO: Probbably show the error
-                                process.exit(1);
-                            });
                     } else if (output === 'compact') {
                         // TODO: DRY
                         runningCommand
                             .then((finalSuccessMessage) => {
-                                console.info(chalk.green(finalSuccessMessage));
+                                compactSuccessReport(finalSuccessMessage);
                                 process.exit(0);
                             })
                             .catch((error: Error) => {
-                                console.info(
-                                    chalk.bgRed(chalk.white(error.name + ': ')) + ' ' + chalk.red(error.message),
-                                );
-                                console.info(chalk.redBright((error.stack || '').replace(error.message, '')));
+                                compactErrorReport(error);
                                 process.exit(1);
                             });
                     } else if (output === 'minimal') {
@@ -126,15 +113,15 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 console.error(chalk.bgRed(chalk.white(error.name)));
                                 process.exit(1);
                             });
-                    } else if (output === 'json-raw') {
-                        // TODO: DRY
+                    } else if (output === 'json' || output === 'json-raw') {
+                        const jsonSpace = output === 'json' ? 4 : undefined;
                         runningCommand
                             .then(() => {
-                                console.info(JSON.stringify(command.status(), jsonReplacer));
+                                console.info(JSON.stringify(command.status(), jsonReplacer, jsonSpace));
                                 process.exit(0);
                             })
                             .catch((error: Error) => {
-                                console.info(JSON.stringify({ ...command.status(), error }, jsonReplacer));
+                                console.info(JSON.stringify({ ...command.status(), error }, jsonReplacer, jsonSpace));
                                 // TODO: Probbably show the error
                                 process.exit(1);
                             });

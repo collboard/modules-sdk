@@ -7,6 +7,5 @@ export interface IColldevOptions {
 }
 
 /**
- * TODO: Allow to set config file instead of default colldev.js
  * TODO: Allow multiple entryPath
  */

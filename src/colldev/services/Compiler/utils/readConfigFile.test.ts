@@ -3,7 +3,9 @@ import { readConfigFile } from './readConfigFile';
 
 describe('reading of config files', () => {
     it('works with json', () =>
-        expect(readConfigFile('./test-samples/config-types/config-in-colldev-json/colldev.json')).resolves.toEqual({
+        expect(
+            readConfigFile('./test-samples/config-types/config-in-colldev-json/colldev.config.json'),
+        ).resolves.toEqual({
             entryPath: './module.tsx',
         }));
 
@@ -16,7 +18,9 @@ describe('reading of config files', () => {
 
     it('works with javascript', () =>
         expect(
-            readConfigFile(join(__dirname, '../../../../../test-samples/config-types/config-in-colldev-js/colldev.js')),
+            readConfigFile(
+                join(__dirname, '../../../../../test-samples/config-types/config-in-colldev-js/colldev.config.js'),
+            ),
         ).resolves.toEqual({
             entryPath: './module.tsx',
         }));
