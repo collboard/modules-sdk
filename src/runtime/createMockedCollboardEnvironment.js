@@ -55,13 +55,16 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
                     // TODO: Some clear rules how to name serializeName and module names (+ adding scopes and versions there)
                     // TODO: How to handle versioning in arts?
                     // TODO: Supports should be inferred from the setup behavior
+
                     return {
                         manifest: {
-                            name: `${artSerializeRule.name}Art`,
-                            version: artClass.version,
+                            ...artClass.manifest,
                             supports: {
                                 art: artClass.serializeName,
                             },
+                        },
+                        setup() {
+                            return () => {};
                         },
                     };
                 },
