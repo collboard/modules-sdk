@@ -1,6 +1,7 @@
 import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { getAppName, locateBrowser } from 'locate-app';
+import openBrowser from 'open';
 import puppeteer, { Browser, Page } from 'puppeteer-core';
 import { BehaviorSubject } from 'rxjs';
 import { forTime } from 'waitasecond';
@@ -33,6 +34,17 @@ export class BrowserSpawner extends Destroyable implements IService, IDestroyabl
         const { open, wait, browser, headless } = this.options;
 
         if (open === 'none') {
+            this.status.next({ ...this.status.value, isReady: true });
+            return;
+        }
+
+        if (open === 'system') {
+            if (browser === 'default') {
+                openBrowser(await this.server.openCollboardUrl());
+            } else {
+                openBrowser(await this.server.openCollboardUrl(), { app: { name: browser } });
+            }
+
             this.status.next({ ...this.status.value, isReady: true });
             return;
         }

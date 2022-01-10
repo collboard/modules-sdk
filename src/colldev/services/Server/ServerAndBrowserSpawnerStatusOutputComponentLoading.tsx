@@ -27,6 +27,7 @@ export function ServerAndBrowserSpawnerStatusOutputComponentLoading({
                                     <Bullet>Waiting for connection from Collboard</Bullet>
                                 </Text>
                             );
+                        case 'system':
                         case 'single':
                             return (
                                 <AsyncContentComponent

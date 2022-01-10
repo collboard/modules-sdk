@@ -33,11 +33,12 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                     '-o, --open <openMode>',
                     spaceTrim(`
                         Strategy for automatically opening the browser:
+                            - "system" open default system browser, this browser is not controlled by Colldev;
                             - "none" for just running colldev without opening the browser;
                             - "single" for wait some time if the Collboard connects to Colldev, if yes do nothing if no open new browser window with collboard;
                             - "multiple" new browser window for each Colldev running
                     `),
-                    'single',
+                    'system',
                 )
                 .option(
                     '-b, --browser <browser>',

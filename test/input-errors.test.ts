@@ -53,5 +53,7 @@ describe('wrong usage of Colldev CLI command', () => {
             */));
     }
 
+    // TODO: makes no sense to use headless flag with system browser OR implement via the flags
+
     // TODO: More
 });

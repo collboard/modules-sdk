@@ -2,7 +2,7 @@ import { IColldevOptions } from '../../IColldevOptions';
 
 export interface IColldevDevelopOptions extends IColldevOptions {
     collboardUrl: string;
-    open: 'none' | 'single' | 'multiple';
+    open: 'system' | 'none' | 'single' | 'multiple';
     browser: string;
     headless: boolean;
     wait: string /* Note: commander does not support number */;
