@@ -101,10 +101,16 @@ export class BrowserSpawner extends Destroyable implements IService, IDestroyabl
                 });
 
                 await page.goto(openCollboardUrl, {});
-                await page.evaluate(() => {
-                    localStorage.setItem('Collboard_DevelopmentWarning_accepted', 'true');
-                    localStorage.setItem('Collboard_EuCookiesWarning_accepted', 'true');
+
+                /*
+                Note: This part started to make problems* because it is not crucial for colldev, I am commenting it out 
+                      [*] Evaluation failed: DOMException: Failed to read the 'localStorage' property from 'Window': Access is denied for this document.
+
+                await page.evaluate((pageFunction) => {
+                    //localStorage.setItem('Collboard_DevelopmentWarning_accepted', 'true');
+                    //localStorage.setItem('Collboard_EuCookiesWarning_accepted', 'true');
                 });
+                */
             } else {
                 this.process = spawn(executablePath, [openCollboardUrl]);
                 // TODO: Save child process to destroy it
