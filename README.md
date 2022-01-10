@@ -134,19 +134,13 @@ Notice that boards+its contents created under development mode will be automatic
 
 ## Publishing the module
 
-Run colldev commant with **publish** modifier. This will send module to Collboard server as a release candidate to authorize. Please provide contact to author in package.json if there is some problem with the module to contact you and solve it.
-
-When you are updating, please provide new version in package json.
+To compile, pack and send the module to Collboard module store server run:
 
 ```bash
-# Linux, WSL
-colldev publish
-
-# Windows, PowerShell
-npx colldev publish
+colldev publish --token YOUR_TOKEN
 ```
 
-_Tip: You can also setup postversion command to publish automatically._
+_Tip: You can create [automated GitHub workflow](https://github.com/collboard/module-sample-objects/blob/main/.github/workflows/publish.yml) to publish after new version automatically._
 
 ## Systems
 
