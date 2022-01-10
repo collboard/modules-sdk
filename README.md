@@ -29,29 +29,24 @@ Modules SDK toolkit for collaborative whiteboard platform [Collboard.com](https:
 -   [Module with custom tool, art and attribute](https://github.com/collboard/module-sample-objects)
 -   [Full manual of SDK](https://collboard.github.io/modules-sdk/)
 
-## How to develop your first module in 4 steps
+## How to develop your first module?
+
+You can start from scratch in **4 simple steps** or clone some of our **[templates](https://github.com/topics/collboard-module)**.
 
 ### 1) To start install the [@collboard/modules-sdk](https://www.npmjs.com/package/@collboard/modules-sdk) first:
 
 ```bash
-npm install @collboard/modules-sdk
+npm install --save-dev @collboard/modules-sdk
 ```
 
-<!--TODO: Also create option to install from GH repositories -->
+_Note: you can install `@collboard/modules-sdk` as a dev dependency beacasue it is a toolkit for modules not required in the runtime._
 
-### 2) Then create **package.json** file with link to main file:
+### 2) Then create **colldev.config.js** with entryPath:
 
-```json
-{
-    "version": "1.0.0",
-    "main": "./src/sampleButtonModule.tsx",
-    "scripts": {
-        "start": "colldev"
-    },
-    "dependencies": {
-        "@collboard/modules-sdk": "^11.2.2-1"
-    }
-}
+```javascript
+module.exports = {
+    entryPath: './src/index.ts',
+};
 ```
 
 <!--TODO: Auto-update versions in READMEs -->
