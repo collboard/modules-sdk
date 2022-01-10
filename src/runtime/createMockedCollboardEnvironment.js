@@ -64,7 +64,11 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
                             },
                         },
                         setup() {
-                            return () => {};
+                            return () => {
+                                throw new Error(
+                                    `This code should not be called because it is only mock for extracting manifests`,
+                                );
+                            };
                         },
                     };
                 },
