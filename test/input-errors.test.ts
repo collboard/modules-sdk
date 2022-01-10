@@ -33,7 +33,7 @@ describe('wrong usage of Colldev CLI command', () => {
     it(`should crash when you specify unknown browser`, () =>
         expect(
             execCommand({
-                command: `npx ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --exit --browser foooo`,
+                command: `npx ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --exit --open single --browser foooo`,
                 cwd: join(__dirname, '..'),
                 timeout: 15 * 1000,
             }),
