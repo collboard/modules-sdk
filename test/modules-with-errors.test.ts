@@ -5,7 +5,7 @@ jest.setTimeout(60 * 1000);
 describe('the errored modules', () => {
     it(
         `should crash when there is a syntax-error in the module`,
-        createModuleDevelopTest('errors/syntax-error', 'asset' /*'Invalid character'*/),
+        createModuleDevelopTest('errors/syntax-error', 'Error:  asset' /*... 'TS1127: Invalid character.'*/),
     );
 
     /*
