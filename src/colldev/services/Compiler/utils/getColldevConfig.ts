@@ -13,15 +13,17 @@ export async function getColldevConfig(workingDir: string_folder_relative_path):
         const configFilePath = join(process.cwd(), workingDir, configFileBasename);
 
         if (await isFileExisting(configFilePath)) {
+            // TODO: !!! Expect entryPath existence
             return await readConfigFile<IColldevConfig>(configFilePath);
         }
     }
 
-    for (const fileBasename of ['package.json', 'tsconfig.json']) {
-        const filePath = join(process.cwd(), workingDir, fileBasename);
+    for (const projectFileBasename of ['package.json', 'tsconfig.json']) {
+        const projectFilePath = join(process.cwd(), workingDir, projectFileBasename);
 
-        if (await isFileExisting(filePath)) {
-            const content = await readConfigFile<any>(filePath);
+        if (await isFileExisting(projectFilePath)) {
+            // TODO: !!! Expect entryPath existence
+            const content = await readConfigFile<any>(projectFilePath);
             if (content.colldev) {
                 return content.colldev;
             }
@@ -51,4 +53,5 @@ export async function getColldevConfig(workingDir: string_folder_relative_path):
 /**';
  * TODO: Warn if project is not versioned by GIT
  * TODO: Test version compatibility
+ * TODO: !!! safePathJoin
  */
