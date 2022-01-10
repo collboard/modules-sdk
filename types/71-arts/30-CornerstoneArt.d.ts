@@ -27,6 +27,9 @@ export declare class CornerstoneArt
     implements IModulePersister
 {
     static serializeName: string;
+    static manifest: {
+        name: string;
+    };
     /**
      * String containing user-editable board name
      */

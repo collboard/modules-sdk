@@ -18,6 +18,9 @@ export declare class TextArt extends Abstract2dArt {
     listStyle: IListStyle;
     point1: IVector;
     static serializeName: string;
+    static manifest: {
+        name: string;
+    };
     private textInput;
     private tempText;
     constructor(

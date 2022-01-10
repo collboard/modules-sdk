@@ -179,6 +179,10 @@ export const measureImageSize = (window as any).CollboardSdk.measureImageSize;
 export const nameToUriPart = (window as any).CollboardSdk.nameToUriPart;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/normalizing/normalize-to-kebab-case.d.ts
+export const normalizeToKebabCase = (window as any).CollboardSdk.normalizeToKebabCase;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/normalizing/normalizeToCamelCase.d.ts
 export const normalizeToCamelCase = (window as any).CollboardSdk.normalizeToCamelCase;
 

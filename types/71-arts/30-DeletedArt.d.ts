@@ -17,6 +17,9 @@ import { AbstractArt } from './20-AbstractArt';
  */
 export declare class DeletedArt extends AbstractArt {
     static serializeName: string;
+    static manifest: {
+        name: string;
+    };
 }
 /**
  * Note: number is just a file prefix to feep it on the top of file list.

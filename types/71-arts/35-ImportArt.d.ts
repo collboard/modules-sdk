@@ -22,6 +22,9 @@ export declare class ImportArt extends Abstract2dArt {
     source: string_url;
     strategy: ImportStrategy;
     static serializeName: string;
+    static manifest: {
+        name: string;
+    };
     /**
      *
      * @param source  should be pointed to URL compatible with ExportArt='NATIVE'

@@ -17,6 +17,9 @@ export declare enum ExportFormat {
 export declare class ExportArt extends Abstract2dArt {
     format: ExportFormat;
     static serializeName: string;
+    static manifest: {
+        name: string;
+    };
     constructor(format: ExportFormat);
     get topLeftCorner(): import('xyzt').IVectorObject;
     get bottomRightCorner(): import('xyzt').IVectorObject;

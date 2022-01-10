@@ -13,6 +13,9 @@ export declare enum RealPlanetType {
 export declare class RealPlanetArt extends AbstractPlanetArt {
     private realPlanetType;
     static serializeName: string;
+    static manifest: {
+        name: string;
+    };
     /**
      * Note: This static creator method makes sence because it creates planet in a real scale but it keep option to user to rescale it as a normal object
      */

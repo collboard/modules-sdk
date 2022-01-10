@@ -13,6 +13,9 @@ export declare class SolidArt extends Abstract3dBoxArt {
     solidName: SolidName;
     color: string;
     static serializeName: string;
+    static manifest: {
+        name: string;
+    };
     constructor(solidName: SolidName, color: string, shift: IVector, _size: IVector);
     get acceptedAttributes(): string[];
     renderBox(scene: Scene): AbstractMesh;

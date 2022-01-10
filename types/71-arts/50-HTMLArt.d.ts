@@ -17,6 +17,9 @@ import { Abstract2dBoxArt } from './27-Abstract2dBoxArt';
 export declare class HTMLArt extends Abstract2dBoxArt {
     content: string;
     static serializeName: string;
+    static manifest: {
+        name: string;
+    };
     /**
      * @param content HTML content as string
      */

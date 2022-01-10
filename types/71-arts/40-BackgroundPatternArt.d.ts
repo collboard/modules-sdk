@@ -18,6 +18,9 @@ export declare class BackgroundPatternArt extends AbstractBackgroundArt {
     size: IVector;
     opacity: number;
     static serializeName: string;
+    static manifest: {
+        name: string;
+    };
     /**
      * @param src Source of the background pattern tile
      * @param size Size of the background pattern tile

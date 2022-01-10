@@ -52,6 +52,7 @@ export * from './40-utils/isNumeric';
 export * from './40-utils/isValidUriId';
 export * from './40-utils/measureImageSize';
 export * from './40-utils/normalizing/nameToUriPart';
+export * from './40-utils/normalizing/normalize-to-kebab-case';
 export * from './40-utils/normalizing/normalizeToCamelCase';
 export * from './40-utils/normalizing/normalizeToSCREAMING_CASE';
 export * from './40-utils/normalizing/parseKeywords';

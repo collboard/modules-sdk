@@ -15,6 +15,9 @@ import { AbstractBackgroundArt } from './26-AbstractBackgroundArt';
 export declare class BackgroundWallpaperArt extends AbstractBackgroundArt {
     src: string_url_image;
     static serializeName: string;
+    static manifest: {
+        name: string;
+    };
     /**
      * @param src Source of the background pattern tile
      * @param z see `AbstractBackgroundArt`

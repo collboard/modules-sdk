@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IInstantiable } from 'everstorage';
 import { IModuleDefinition } from '../interfaces/IModule';
+import { IModuleManifest } from '../interfaces/IModuleManifest';
 /**
  * makeArtModule will make UI module
  *
@@ -19,6 +20,7 @@ export declare function makeArtModule(
          * 💡 Tip: Best practise is to name it same as the class name without "Art" suffix
          */
         serializeName: string;
+        manifest: IModuleManifest;
     },
 ): IModuleDefinition;
 /** TODO:
