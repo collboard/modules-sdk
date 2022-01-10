@@ -84,8 +84,8 @@
         {
             "name": "👨🏽‍💻🔗 Link this module-sdk to sample",
             "commands": [
-                "npm link",
                 "echo 'To finish run on module(s) \"npm link @collboard/modules-sdk\"; To unlink, run here \"npm unlink\" and on module(s) \"npm unlink @collboard/modules-sdk\"'",
+                "npm link",
                 "tsc --watch"
             ],
             "focus": true
