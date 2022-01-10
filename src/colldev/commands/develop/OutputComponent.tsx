@@ -1,4 +1,4 @@
-import { Box } from 'ink';
+import { Box, Text } from 'ink';
 import * as React from 'react';
 import { combineLatest, from } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -56,6 +56,8 @@ export function OutputComponent({ compiler, server, browserSpawner, options }: I
                                 <ServerAndBrowserSpawnerStatusOutputComponent
                                     {...{ openCollboardUrl, browserSpawnerStatus, serverStatus, options }}
                                 />
+
+                                <Text color="gray">To open additional window {openCollboardUrl}</Text>
                             </Box>
                         );
                     }
