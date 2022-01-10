@@ -35,6 +35,7 @@ export class Colldev extends Destroyable implements IDestroyable {
         //const { program } = await this.createProgram();
 
         this.program = new commander.Command();
+        this.program.name('colldev');
         this.program.version((await getColldevPackageJsonContent()).version);
 
         for (const command of this.commands) {
