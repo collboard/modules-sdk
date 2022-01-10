@@ -31,7 +31,7 @@ Modules SDK toolkit for collaborative whiteboard platform [Collboard.com](https:
 
 ## How to develop your first module?
 
-You can start from scratch in **4 simple steps** or clone some of our **[templates](https://github.com/topics/collboard-module)**.
+You can start from scratch in **4 simple steps**, clone some of our **[templates](https://github.com/topics/collboard-module-template)** or look at **[miscellaneous Collboard modules on GitHub](https://github.com/topics/collboard-module)**.
 
 ### 1) To start install the [@collboard/modules-sdk](https://www.npmjs.com/package/@collboard/modules-sdk) first:
 
