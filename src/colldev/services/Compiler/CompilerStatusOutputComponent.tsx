@@ -1,6 +1,7 @@
 import { Box, Text } from 'ink';
 import * as React from 'react';
 import { Bullet } from '../../utils/Bullet';
+import { ErrorComponent } from '../../utils/ErrorComponent';
 import { ICompilerStatus } from './ICompilerStatus';
 import { capitalizeFirstLetter } from './utils/capitalizeFirstLetter';
 
@@ -20,20 +21,7 @@ export function CompilerStatusOutputComponent({
     }
 
     if (errors.length) {
-        return (
-            <Box borderStyle="single" borderColor="red">
-                {errors.map((error, i) => (
-                    <Text color="red" key={i}>
-                        <Text color="white" backgroundColor="red">
-                            {error.name}
-                            {`: `}
-                        </Text>
-                        {` `}
-                        {error.message}
-                    </Text>
-                ))}
-            </Box>
-        );
+        return <ErrorComponent isBoxShown {...{ errors }} />;
     }
 
     // TODO: Report nicer - words compiled, runned (and test, type check...) shoud be dynamic from status and on separate lines with nice ✔ / ❌

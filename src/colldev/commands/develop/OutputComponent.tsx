@@ -7,6 +7,7 @@ import { Compiler } from '../../services/Compiler/Compiler';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
 import { Server } from '../../services/Server/Server';
 import { ServerAndBrowserSpawnerStatusOutputComponent } from '../../services/Server/ServerAndBrowserSpawnerStatusOutputComponent';
+import { ErrorComponent } from '../../utils/ErrorComponent';
 import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
 import { IColldevDevelopOptions } from './IColldevDevelopOptions';
 
@@ -28,27 +29,37 @@ export function OutputComponent({ compiler, server, browserSpawner, options }: I
                 server.status,
                 browserSpawner.status,
             ]).pipe(
-                map(([openCollboardUrl, compilerStatus, serverStatus, browserSpawnerStatus]) => (
-                    <Box
-                        borderStyle="round"
-                        display="flex"
-                        flexDirection="column"
-                        borderColor={
-                            compilerStatus.errors.length ||
-                            serverStatus.errors.length ||
-                            browserSpawnerStatus.errors.length
-                                ? 'red'
-                                : !(compilerStatus.isReady && serverStatus.isReady && browserSpawnerStatus.isReady)
-                                ? 'yellow'
-                                : 'white'
-                        }
-                    >
-                        <CompilerStatusOutputComponent {...{ compilerStatus }} />
-                        <ServerAndBrowserSpawnerStatusOutputComponent
-                            {...{ openCollboardUrl, browserSpawnerStatus, serverStatus, options }}
-                        />
-                    </Box>
-                )),
+                map(([openCollboardUrl, compilerStatus, serverStatus, browserSpawnerStatus]) => {
+                    if (compilerStatus.errors.length) {
+                        return <ErrorComponent errors={compilerStatus.errors} />;
+                    } else {
+                        return (
+                            <Box
+                                borderStyle="round"
+                                display="flex"
+                                flexDirection="column"
+                                borderColor={
+                                    compilerStatus.errors.length ||
+                                    serverStatus.errors.length ||
+                                    browserSpawnerStatus.errors.length
+                                        ? 'red'
+                                        : !(
+                                              compilerStatus.isReady &&
+                                              serverStatus.isReady &&
+                                              browserSpawnerStatus.isReady
+                                          )
+                                        ? 'yellow'
+                                        : 'white'
+                                }
+                            >
+                                <CompilerStatusOutputComponent {...{ compilerStatus }} />
+                                <ServerAndBrowserSpawnerStatusOutputComponent
+                                    {...{ openCollboardUrl, browserSpawnerStatus, serverStatus, options }}
+                                />
+                            </Box>
+                        );
+                    }
+                }),
             )}
         />
     );
