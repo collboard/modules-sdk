@@ -22,14 +22,14 @@ export class ColldevTest extends Destroyable implements ICommand<IColldevTestOpt
     public render() {
         return (
             <Box borderStyle="round" display="flex" flexDirection="column" borderColor="yellow">
-                <Text color="yellow">Testing is not implemented yet.</Text>
+                <Text color="yellow">Testing with Colldev is not implemented yet.</Text>
             </Box>
         );
     }
 
     public status() {
         return {
-            warning: `Testing is not implemented yet.`,
+            warning: `Testing with Colldev is not implemented yet.`,
         };
     }
 }
