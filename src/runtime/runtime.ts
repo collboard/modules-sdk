@@ -461,10 +461,6 @@ export const makeArtModule = (window as any).CollboardSdk.makeArtModule;
 export const makeAttributeModule = (window as any).CollboardSdk.makeAttributeModule;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeEmojisToolModule.d.ts
-export const makeEmojisToolModule = (window as any).CollboardSdk.makeEmojisToolModule;
-
-
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeExtrajsxModule.d.ts
 export const makeExtrajsxModule = (window as any).CollboardSdk.makeExtrajsxModule;
 
@@ -599,6 +595,10 @@ export const AbstractBackgroundArt = (window as any).CollboardSdk.AbstractBackgr
 export const Abstract2dBoxArt = (window as any).CollboardSdk.Abstract2dBoxArt;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/28-AbstractTrayArt.d.ts
+export const AbstractTrayArt = (window as any).CollboardSdk.AbstractTrayArt;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/30-CornerstoneArt.d.ts
 export const CornerstoneArt = (window as any).CollboardSdk.CornerstoneArt;
 export const virtualCornerstoneArt = (window as any).CollboardSdk.virtualCornerstoneArt;
@@ -606,6 +606,14 @@ export const virtualCornerstoneArt = (window as any).CollboardSdk.virtualCorners
 
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/30-DeletedArt.d.ts
 export const DeletedArt = (window as any).CollboardSdk.DeletedArt;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/35-ExportArt.d.ts
+export const ExportArt = (window as any).CollboardSdk.ExportArt;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/35-ImportArt.d.ts
+export const ImportArt = (window as any).CollboardSdk.ImportArt;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/40-BackgroundPatternArt.d.ts
@@ -616,12 +624,29 @@ export const BackgroundPatternArt = (window as any).CollboardSdk.BackgroundPatte
 export const BackgroundWallpaperArt = (window as any).CollboardSdk.BackgroundWallpaperArt;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-FreehandArt.d.ts
+export const FreehandArt = (window as any).CollboardSdk.FreehandArt;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-HTMLArt.d.ts
 export const HTMLArt = (window as any).CollboardSdk.HTMLArt;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-ImageArt.d.ts
 export const ImageArt = (window as any).CollboardSdk.ImageArt;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-LineArt.d.ts
+export const LineArt = (window as any).CollboardSdk.LineArt;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-ShapeArt.d.ts
+export const ShapeName = (window as any).CollboardSdk.ShapeName;
+export const ShapeArt = (window as any).CollboardSdk.ShapeArt;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-TextArt.d.ts
+export const TextArt = (window as any).CollboardSdk.TextArt;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/72-tools/behaviors/IBehavoirProps.d.ts

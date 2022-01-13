@@ -13,6 +13,8 @@ export declare enum ExportFormat {
 }
 /**
  * ExportArt is art for exporting content from the board.
+ *
+ * @collboard-modules-sdk
  */
 export declare class ExportArt extends Abstract2dArt {
     format: ExportFormat;

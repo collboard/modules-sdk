@@ -17,6 +17,8 @@ export declare enum ImportStrategy {
 /**
  * ImportArt is art for importing external content into the board.
  * @see ExportArt implementation and comments before looking at this
+ *
+ * @collboard-modules-sdk
  */
 export declare class ImportArt extends Abstract2dArt {
     source: string_url;

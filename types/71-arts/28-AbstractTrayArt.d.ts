@@ -8,6 +8,9 @@
 import { Vector } from 'xyzt';
 import { ITrayDefinition } from '../40-utils/trayModules/TrayItemTypes';
 import { Abstract2dBoxArt } from './27-Abstract2dBoxArt';
+/**
+ * @collboard-modules-sdk
+ */
 export declare abstract class AbstractTrayArt extends Abstract2dBoxArt {
     itemId: string;
     shift: Vector;

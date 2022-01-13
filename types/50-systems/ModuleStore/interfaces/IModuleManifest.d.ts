@@ -30,6 +30,7 @@ import {
  */
 export interface IModuleManifest {
     name: string_module_name;
+    deprecatedNames?: IArrayable<string_module_name>;
     title?: IModuleManifestTranslation;
     description?: IModuleManifestTranslation;
     keywords?: string[];

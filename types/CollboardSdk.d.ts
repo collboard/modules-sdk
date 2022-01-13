@@ -44,6 +44,7 @@ export * from './40-utils/isNumeric';
 export * from './40-utils/isValidUriId';
 export * from './40-utils/measureImageSize';
 export * from './40-utils/normalizing/nameToUriPart';
+export * from './40-utils/normalizing/normalize-to-kebab-case';
 export * from './40-utils/normalizing/normalizeToCamelCase';
 export * from './40-utils/normalizing/normalizeToSCREAMING_CASE';
 export * from './40-utils/normalizing/parseKeywords';
@@ -100,7 +101,6 @@ export * from './50-systems/ModuleStore/interfaces/IModuleStoreConnectorSearchRe
 export * from './50-systems/ModuleStore/makers/makeArticlesSetModule';
 export * from './50-systems/ModuleStore/makers/makeArtModule';
 export * from './50-systems/ModuleStore/makers/makeAttributeModule';
-export * from './50-systems/ModuleStore/makers/makeEmojisToolModule';
 export * from './50-systems/ModuleStore/makers/makeExtrajsxModule';
 export * from './50-systems/ModuleStore/makers/makeIconModule';
 export * from './50-systems/ModuleStore/makers/makeIconModuleOnModule';
