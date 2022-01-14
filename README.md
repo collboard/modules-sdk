@@ -142,6 +142,12 @@ colldev publish --token YOUR_TOKEN
 
 _Tip: You can create [automated GitHub workflow](https://github.com/collboard/module-sample-objects/blob/main/.github/workflows/publish.yml) to publish after new version automatically._
 
+<!-- TODO:
+## Versioning of modules SDK
+
+We are using semantic versioning
+-->
+
 ## Systems
 
 <!--TODO: Should be theese sections in primary README or use other markdown files? -->
