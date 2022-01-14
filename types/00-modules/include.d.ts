@@ -61,8 +61,6 @@ import './files/text/TextImportModule';
 import './planets/RealPlanetArt';
 import './productivity/SpeechTextModule';
 import './productivity/TextCard/TextCardArt';
-import './robothon/modules/FunctionBuilderArtModule';
-import './robothon/modules/FunctionBuilderTool';
 import './sample/PlayingWithToolbarSystem';
 import './sample/PlayingWithVirtualArts';
 import './sample/SampleNotificationsModule';
