@@ -562,6 +562,10 @@ export const ToolbarSystem = (window as any).CollboardSdk.ToolbarSystem;
 export const TranslationsSystem = (window as any).CollboardSdk.TranslationsSystem;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/TranslationsSystem/components/Translate.d.ts
+export const Translate = (window as any).CollboardSdk.Translate;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/VoiceSystem/0-VoiceSystem.d.ts
 export const VoiceSystem = (window as any).CollboardSdk.VoiceSystem;
 
@@ -667,3 +671,7 @@ export const selectionToolScalingBehavior = (window as any).CollboardSdk.selecti
 
 // C:/Users/me/work/collboard/modules-sdk/types/72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior.d.ts
 export const selectionToolSelectionBoxBehavior = (window as any).CollboardSdk.selectionToolSelectionBoxBehavior;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/reexports.d.ts
+export const React = (window as any).CollboardSdk.React;

@@ -17,5 +17,6 @@ export declare function isModulePassingSearchCriteria({
     businessSystem?: BusinessSystem;
 }): boolean;
 /**
- *  TODO:  Unit test
+ * TODO: Unit test
+ * TODO: Throw or warn when providing unknown search criteria
  */

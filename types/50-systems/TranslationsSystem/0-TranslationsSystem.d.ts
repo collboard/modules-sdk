@@ -75,3 +75,6 @@ export declare class TranslationsSystem extends AbstractSystem implements ITrans
     private get secondaryLanguage();
     showDateAndTime(date: Date | string): string;
 }
+/**
+ * TODO: Translations in (external) modules
+ */
