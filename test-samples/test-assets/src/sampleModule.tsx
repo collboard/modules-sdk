@@ -4,6 +4,7 @@ import logo4 from '../asset-on-root.svg';
 import logo5 from '../assets/a/b/c/deeply-nested-asset.svg';
 import logo from '../assets/logo.svg';
 import ylogo from './default.png';
+import './style.css';
 import xlogo from './xlogo.svg';
 
 declareModule(

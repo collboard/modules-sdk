@@ -29,6 +29,7 @@
     "dependencies": {
         "chalk": "^4.1.2",
         "commander": "^7.2.0",
+        "css-loader": "^6.5.1",
         "destroyable": "^0.9.0",
         "express": "^4.17.1",
         "glob-promise": "^4.2.2",
@@ -45,8 +46,9 @@
         "rxjs": "^6.6.7",
         "serve-static": "^1.14.1",
         "setimmediate": "^1.0.5",
-        "socket.io": "^4.0.1",
+        "socket.io": "^4.4.1",
         "spacetrim": "^0.7.0",
+        "style-loader": "^3.3.1",
         "tar-stream": "^2.2.0",
         "touchcontroller": "^4.0.0",
         "ts-loader": "^8.2.0",
