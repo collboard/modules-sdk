@@ -10,4 +10,7 @@ export interface ITextLoaderProps {
     chars: string_char[];
     speed: number_miliseconds;
 }
+/**
+ * @collboard-modules-sdk
+ */
 export declare function TextLoader({ chars, speed }: ITextLoaderProps): JSX.Element;

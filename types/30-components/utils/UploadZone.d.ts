@@ -11,6 +11,9 @@ export declare type IUploadZoneProps = React.PropsWithChildren<{
     importSystem: ImportSystem;
     collSpace: CollSpace;
 }>;
+/**
+ * @collboard-modules-sdk
+ */
 export declare class UploadZone extends React.Component<IUploadZoneProps> {
     render(): JSX.Element;
 }

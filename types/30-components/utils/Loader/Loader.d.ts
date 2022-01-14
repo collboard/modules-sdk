@@ -17,4 +17,7 @@ export interface ILoaderProps {
      */
     alt: string;
 }
+/**
+ * @collboard-modules-sdk
+ */
 export declare function Loader({ alt }: ILoaderProps): JSX.Element;

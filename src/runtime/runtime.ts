@@ -14,6 +14,10 @@ export const declareModule = (window as any).declareModule;
 
 // Note: here is all stuff marked with "@collboard SDK"
 
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/ArtScaler.d.ts
+export const ArtScaler = (window as any).CollboardSdk.ArtScaler;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/menu/Icon.d.ts
 export const Icon = (window as any).CollboardSdk.Icon;
 export const IconColor = (window as any).CollboardSdk.IconColor;
@@ -61,12 +65,52 @@ export const AsyncButtonComponent = (window as any).CollboardSdk.AsyncButtonComp
 export const AsyncContentComponent = (window as any).CollboardSdk.AsyncContentComponent;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/Clickable.d.ts
+export const Clickable = (window as any).CollboardSdk.Clickable;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/CopyComponent.d.ts
+export const CopyComponent = (window as any).CollboardSdk.CopyComponent;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/ErrorBoundary.d.ts
+export const ErrorBoundary = (window as any).CollboardSdk.ErrorBoundary;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/Loader/Loader.d.ts
+export const Loader = (window as any).CollboardSdk.Loader;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/Loader/LoaderInline.d.ts
+export const LoaderInline = (window as any).CollboardSdk.LoaderInline;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/Loader/TextLoader.d.ts
+export const TextLoader = (window as any).CollboardSdk.TextLoader;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/Obfuscate.d.ts
+export const Obfuscate = (window as any).CollboardSdk.Obfuscate;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/ObservableContentComponent.d.ts
 export const ObservableContentComponent = (window as any).CollboardSdk.ObservableContentComponent;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/QRCode.d.ts
+export const QRCode = (window as any).CollboardSdk.QRCode;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/RefreshContentComponent.d.ts
 export const RefreshContentComponent = (window as any).CollboardSdk.RefreshContentComponent;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/TestingSquare.d.ts
+export const TestingSquare = (window as any).CollboardSdk.TestingSquare;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/UploadZone.d.ts
+export const UploadZone = (window as any).CollboardSdk.UploadZone;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/Additional.d.ts
@@ -673,5 +717,6 @@ export const selectionToolScalingBehavior = (window as any).CollboardSdk.selecti
 export const selectionToolSelectionBoxBehavior = (window as any).CollboardSdk.selectionToolSelectionBoxBehavior;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/reexports.d.ts
-export const React = (window as any).CollboardSdk.React;
+// C:/Users/me/work/collboard/modules-sdk/types/libraries.d.ts
+export const libraries = (window as any).CollboardSdk.libraries;
+export const libs = (window as any).CollboardSdk.libs;

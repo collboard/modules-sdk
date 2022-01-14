@@ -9,6 +9,9 @@ declare type IErrorBoundaryProps = React.PropsWithChildren<{}>;
 interface IErrorBoundaryState {
     hasError: boolean;
 }
+/**
+ * @collboard-modules-sdk
+ */
 export declare class ErrorBoundary extends React.Component<IErrorBoundaryProps, IErrorBoundaryState> {
     constructor(props: IErrorBoundaryProps);
     static getDerivedStateFromError(error: Error): {

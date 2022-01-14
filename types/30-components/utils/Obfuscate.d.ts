@@ -9,6 +9,9 @@ declare type IObfuscateProps = React.PropsWithChildren<{
     content: string | JSX.Element;
     buttonContent: string | JSX.Element;
 }>;
+/**
+ * @collboard-modules-sdk
+ */
 export declare function Obfuscate({
     children,
     content: description,

@@ -9,5 +9,8 @@ interface ICopyComponentProps {
     value: string;
     className?: string;
 }
+/**
+ * @collboard-modules-sdk
+ */
 export declare function CopyComponent({ className, value }: ICopyComponentProps): JSX.Element;
 export {};

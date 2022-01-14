@@ -10,4 +10,7 @@ export declare type ILoaderInlineProps = React.PropsWithChildren<{
     icon?: string;
     animation?: IArrayable<string>;
 }>;
+/**
+ * @collboard-modules-sdk
+ */
 export declare function LoaderInline({ children, icon, animation }: ILoaderInlineProps): JSX.Element;

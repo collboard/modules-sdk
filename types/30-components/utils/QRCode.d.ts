@@ -9,5 +9,8 @@ import { QRCodeRenderersOptions } from 'qrcode';
 interface IQRCodeProps extends QRCodeRenderersOptions {
     text: string;
 }
+/**
+ * @collboard-modules-sdk
+ */
 export declare function QRCode(props: IQRCodeProps): JSX.Element;
 export {};

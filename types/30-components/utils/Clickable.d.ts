@@ -12,6 +12,9 @@ declare type IClickableProps = React.PropsWithChildren<{
     hrefByJavascript?: boolean;
     className?: string;
 }>;
+/**
+ * @collboard-modules-sdk
+ */
 export declare function Clickable({
     onClick,
     href,

@@ -6,4 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 export declare const SCALER_OUTLINE_OFFSET = 5;
+/**
+ * @collboard-modules-sdk
+ */
 export declare function ArtScaler(): JSX.Element;
