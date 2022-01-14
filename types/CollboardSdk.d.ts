@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+export * from './30-components/ArtScaler';
 export * from './30-components/menu/Icon';
 export * from './30-components/menu/icons';
 export * from './30-components/menu/IIconAnonymous';
@@ -15,8 +16,18 @@ export * from './30-components/modal/ModalFooter';
 export * from './30-components/modal/PageOverlay';
 export * from './30-components/utils/AsyncButtonComponent';
 export * from './30-components/utils/AsyncContentComponent';
+export * from './30-components/utils/Clickable';
+export * from './30-components/utils/CopyComponent';
+export * from './30-components/utils/ErrorBoundary';
+export * from './30-components/utils/Loader/Loader';
+export * from './30-components/utils/Loader/LoaderInline';
+export * from './30-components/utils/Loader/TextLoader';
+export * from './30-components/utils/Obfuscate';
 export * from './30-components/utils/ObservableContentComponent';
+export * from './30-components/utils/QRCode';
 export * from './30-components/utils/RefreshContentComponent';
+export * from './30-components/utils/TestingSquare';
+export * from './30-components/utils/UploadZone';
 export * from './40-utils/Additional';
 export * from './40-utils/blobToDataURI';
 export * from './40-utils/capitalizeFirstLetter';
