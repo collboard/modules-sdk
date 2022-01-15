@@ -6,10 +6,10 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Destroyable, IDestroyable } from 'destroyable';
 import { BehaviorSubject } from 'rxjs';
-import { string_module_name } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { IDependency } from './interfaces/IDependencies';
 import { IInstaller } from './interfaces/IInstaller';
+import { IModuleManifest } from './interfaces/IModuleManifest';
 import { IModulesStorageWeak } from './interfaces/IModulesStorage';
 import { ModuleInstallation } from './ModuleInstallation';
 import { ModuleStatus } from './ModuleStatus';
@@ -20,7 +20,7 @@ import { ModuleStatus } from './ModuleStatus';
 export declare class ModuleInstaller extends Destroyable implements IInstaller, IDestroyable {
     private readonly modulesStorage;
     private readonly systems;
-    readonly installations: ModuleInstallation[];
+    installations: ModuleInstallation[];
     constructor(modulesStorage: IModulesStorageWeak, systems: ISystemsExtended);
     /**
      *
@@ -29,8 +29,8 @@ export declare class ModuleInstaller extends Destroyable implements IInstaller, 
      */
     install(dependency: IDependency, syncerName?: string): Promise<void>;
     private statuses;
-    statusOf(moduleName: string_module_name): BehaviorSubject<ModuleStatus>;
-    uninstall(moduleName: string_module_name): Promise<void>;
+    statusOf(moduleManifest: IModuleManifest): BehaviorSubject<ModuleStatus>;
+    uninstall(dependency: IDependency): Promise<void>;
     uninstallAll(): Promise<void>;
     destroy(): Promise<void>;
 }

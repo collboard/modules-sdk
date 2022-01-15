@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { string_module_name } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { IModule, IModuleDefinition } from '../interfaces/IModule';
+import { IModuleManifest } from '../interfaces/IModuleManifest';
 import { IModulePersister } from '../interfaces/IModulePersister';
 import { IModulesStorageStrong } from '../interfaces/IModulesStorage';
 import { ISyncer } from '../interfaces/ISyncer';
@@ -45,7 +46,7 @@ export declare abstract class StorageSyncer
      */
     observeAllModules(): Observable<IModuleDefinition[]>;
     declareModule(module: IModule): Promise<void>;
-    moduleActivate(moduleName: string_module_name): Promise<void>;
-    moduleDeactivate(moduleName: string_module_name): Promise<void>;
+    moduleActivate(moduleManifest: IModuleManifest): Promise<void>;
+    moduleDeactivate(moduleManifest: IModuleManifest): Promise<void>;
     destroy(): Promise<void>;
 }

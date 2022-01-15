@@ -4,7 +4,6 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_module_name } from '../../../40-utils/typeAliases';
 import { ModuleInstallation } from '../ModuleInstallation';
 import { IDependency } from './IDependencies';
 import { IModuleStatusReporter } from './IModuleStatusReporter';
@@ -16,6 +15,9 @@ import { IModuleStatusReporter } from './IModuleStatusReporter';
 export interface IInstaller extends IModuleStatusReporter {
     readonly installations: ModuleInstallation[];
     install(dependency: IDependency, syncerName?: string): Promise<void>;
-    uninstall(moduleName: string_module_name): Promise<void>;
+    uninstall(dependency: IDependency): Promise<void>;
     uninstallAll(): Promise<void>;
 }
+/**
+ * TODO: Maybe subinstaller (hyerarcical tree)
+ */

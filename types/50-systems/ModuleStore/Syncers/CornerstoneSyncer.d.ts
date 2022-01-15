@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IDestroyable } from 'destroyable';
-import { string_module_name } from '../../../40-utils/typeAliases';
+import { IModuleManifest } from '../interfaces/IModuleManifest';
 import { IModulePersister } from '../interfaces/IModulePersister';
 import { ISyncer } from '../interfaces/ISyncer';
 import { AbstractSyncer } from './AbstractSyncer';
@@ -18,7 +18,7 @@ import { AbstractSyncer } from './AbstractSyncer';
 export declare class CornerstoneSyncer extends AbstractSyncer implements ISyncer, IModulePersister, IDestroyable {
     private subscription;
     protected initSyncer(): Promise<void>;
-    moduleActivate(moduleName: string_module_name): Promise<void>;
-    moduleDeactivate(moduleName: string_module_name): Promise<void>;
+    moduleActivate(moduleManifest: IModuleManifest): Promise<void>;
+    moduleDeactivate(moduleManifest: IModuleManifest): Promise<void>;
     destroy(): Promise<void>;
 }

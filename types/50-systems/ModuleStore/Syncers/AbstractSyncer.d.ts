@@ -5,7 +5,6 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Promisable } from 'type-fest';
-import { string_module_name } from '../../../40-utils/typeAliases';
 import { AbstractSystem } from '../../AbstractSystem';
 import { IDependenciesRecord, IDependency } from '../interfaces/IDependencies';
 import { IModulesStorageWeak } from '../interfaces/IModulesStorage';
@@ -19,10 +18,12 @@ export declare abstract class AbstractSyncer extends AbstractSystem implements I
     protected modulesStorage: Promisable<IModulesStorageWeak>;
     private moduleInstaller;
     private throttleQueue;
-    get statusOf(): (moduleName: string) => import('rxjs').BehaviorSubject<import('../ModuleStatus').ModuleStatus>;
+    get statusOf(): (
+        moduleManifest: import('../interfaces/IModuleManifest').IModuleManifest,
+    ) => import('rxjs').BehaviorSubject<import('../ModuleStatus').ModuleStatus>;
     get installations(): import('../ModuleInstallation').ModuleInstallation[];
     install(dependency: IDependency, syncerName?: string): Promise<void>;
-    uninstall(moduleName: string_module_name): Promise<void>;
+    uninstall(dependency: IDependency): Promise<void>;
     uninstallAll(): Promise<void>;
     protected init(): Promise<void>;
     protected initSyncer(): void | Promise<void>;

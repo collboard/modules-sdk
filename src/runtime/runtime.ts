@@ -129,6 +129,18 @@ export const capitalizeFirstLetter = (window as any).CollboardSdk.capitalizeFirs
 export const classNames = (window as any).CollboardSdk.classNames;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/color/Color.d.ts
+export const Color = (window as any).CollboardSdk.Color;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/color/hslToRgb.d.ts
+export const hslToRgb = (window as any).CollboardSdk.hslToRgb;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/color/rgbToHsl.d.ts
+export const rgbToHsl = (window as any).CollboardSdk.rgbToHsl;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/create3dRotation.d.ts
 export const create3dRotation = (window as any).CollboardSdk.create3dRotation;
 
@@ -444,13 +456,6 @@ export const IdentitySystem = (window as any).CollboardSdk.IdentitySystem;
 export const ModuleStore = (window as any).CollboardSdk.ModuleStore;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IDependencies.d.ts
-export const IDependenciesRecord = (window as any).CollboardSdk.IDependenciesRecord;
-export const IDependenciesSet = (window as any).CollboardSdk.IDependenciesSet;
-export const IDependency = (window as any).CollboardSdk.IDependency;
-export const IDependencyDetail = (window as any).CollboardSdk.IDependencyDetail;
-
-
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IInstaller.d.ts
 export const IInstaller = (window as any).CollboardSdk.IInstaller;
 
@@ -662,6 +667,10 @@ export const ExportArt = (window as any).CollboardSdk.ExportArt;
 
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/35-ImportArt.d.ts
 export const ImportArt = (window as any).CollboardSdk.ImportArt;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/40-BackgroundColorArt.d.ts
+export const BackgroundColorArt = (window as any).CollboardSdk.BackgroundColorArt;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/40-BackgroundPatternArt.d.ts

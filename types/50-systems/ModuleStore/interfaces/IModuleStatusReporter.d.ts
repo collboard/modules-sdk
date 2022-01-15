@@ -6,8 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IDestroyable } from 'destroyable';
 import { BehaviorSubject } from 'rxjs';
-import { string_module_name } from '../../../40-utils/typeAliases';
 import { ModuleStatus } from '../ModuleStatus';
+import { IModuleManifest } from './IModuleManifest';
 /**
  * IModuleStatusReporter can tell if the module is installed or not
  *
@@ -15,5 +15,5 @@ import { ModuleStatus } from '../ModuleStatus';
  *
  */
 export interface IModuleStatusReporter extends IDestroyable {
-    statusOf(moduleName: string_module_name): BehaviorSubject<ModuleStatus>;
+    statusOf(moduleManifest: IModuleManifest): BehaviorSubject<ModuleStatus>;
 }

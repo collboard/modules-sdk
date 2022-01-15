@@ -4,12 +4,4 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IDependenciesRecord } from '../interfaces/IDependencies';
-import { IInstallPlan } from '../interfaces/IInstallPlan';
-export declare function createInstallPlan(
-    currentDependencies: IDependenciesRecord,
-    targetDependencies: IDependenciesRecord,
-): IInstallPlan;
-/**
- * TODO: !! In uninstall should not be contained install
- */
+export {};

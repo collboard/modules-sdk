@@ -7,6 +7,7 @@
 /// <reference types="react" />
 import { IVector } from 'xyzt';
 import { string_module_name } from '../40-utils/typeAliases';
+import { IModuleManifest } from '../50-systems/ModuleStore/interfaces/IModuleManifest';
 import { IModulePersister } from '../50-systems/ModuleStore/interfaces/IModulePersister';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
@@ -54,11 +55,11 @@ export declare class CornerstoneArt
     /**
      * Add a module among user-activated modules on board
      */
-    moduleActivate(moduleName: string_module_name): void;
+    moduleActivate(moduleManifest: IModuleManifest): void;
     /**
      * Add a module among user-deactivated modules on board
      */
-    moduleDeactivate(moduleName: string_module_name): void;
+    moduleDeactivate(moduleManifest: IModuleManifest): void;
 }
 /**
  * virtualCornerstoneArt is "fake" corner stone for yet non existing boards

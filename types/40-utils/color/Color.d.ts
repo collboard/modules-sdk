@@ -5,6 +5,9 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_color } from '../typeAliases';
+/**
+ * @collboard-modules-sdk
+ */
 export declare class Color {
     readonly red: number;
     readonly green: number;
@@ -15,6 +18,9 @@ export declare class Color {
     private constructor();
     withAlpha(alpha: number): Color;
     addLightness(delta: number): Color;
+    /**
+     * TODO: This should be a static method - same as vector.half()
+     */
     get negative(): Color;
     withMutation(
         modifier: (red: number, green: number, blue: number, opacity: number) => [number, number, number, number],
@@ -173,3 +179,6 @@ export declare class Color {
     static yellow: Color;
     static yellowgreen: Color;
 }
+/**
+ * TODO: Random color
+ */

@@ -4,44 +4,38 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IRepository, string_module_name, string_url, string_version_dependency } from '../../../40-utils/typeAliases';
+import { string_module_name } from '../../../40-utils/typeAliases';
+import { IModuleManifest } from './IModuleManifest';
 /**
  * Record of modules which are dependencies. It contains dependency name + details
  * Note: IDependenciesRecord and IDependenciesSet carries same information but in different form
  *
- * @collboard-modules-sdk
+ * @not-collboard-modules-sdk
  */
 export declare type IDependenciesRecord = Record<string_module_name, IDependencyDetail>;
 /**
  * Set of modules which are dependencies.
- * Note: !! IDependenciesRecord and IDependenciesSet carries same information but in different form
+ * Note: IDependenciesRecord and IDependenciesSet carries same information but in different form
  *
- * @collboard-modules-sdk
+ * @not-collboard-modules-sdk
  */
 export declare type IDependenciesSet = Set<IDependency>;
 /**
  * Details about module dependency
  *
- * @collboard-modules-sdk
+ * @not-collboard-modules-sdk
  */
-export interface IDependency extends IDependencyDetail {
-    name: string_module_name;
+export interface IDependency extends IModuleManifest {
+    instances?: number;
 }
 /**
  * Details about module dependency
  *
- * @collboard-modules-sdk
+ * @not-collboard-modules-sdk
  *
  * TODO: Make value true as shortcut for { priority: 0 }
  */
-export interface IDependencyDetail {
-    repository?: string_url | IRepository;
-    version?: string_version_dependency;
-    instances?:
-        | number
-        | {
-              min?: number;
-              max?: number;
-          };
-    priority?: number;
-}
+export declare type IDependencyDetail = Omit<IDependency, 'name'>;
+/**
+ * TODO: Maybe join IDependenciesRecord and IDependenciesSet
+ */
