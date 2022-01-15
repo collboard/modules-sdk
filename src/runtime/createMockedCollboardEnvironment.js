@@ -4,7 +4,7 @@
  * Note: It is done in JavaScript (not TypeScript) because ...
  */
 
-const deepFake = new Proxy({}, { get: () => deepFake });
+const deepFake = new Proxy(() => deepFake, { get: () => deepFake });
 
 function factor(factorable) {
     if (typeof factorable === 'function') {
@@ -33,6 +33,9 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
             currentScript: {
                 src: 'http://localhost/main.js',
             },
+            // Note: When importing css file, it is transformed to createElement('style') call
+            createElement: () => deepFake,
+            querySelector: () => deepFake,
         },
         declareModule: (module) => {
             const moduleDefinition = factor(module);

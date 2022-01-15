@@ -66,7 +66,7 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
                 See the bundle file ${vmFilePath}
                 Or you can try to run the following command:
 
-                node ${vmFilePath.split('\\').join('/')}
+                $ node ${vmFilePath.split('\\').join('/')}
 
                 ${block(error.message)}
                 ${block(error.stack)}

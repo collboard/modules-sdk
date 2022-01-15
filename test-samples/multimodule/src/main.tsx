@@ -5,7 +5,9 @@ for (const [key, moduleVariant] of Object.entries({ a: 'üçé Red apple', b: 'üç
     declareModule(
         makeExtrajsxModule({
             manifest: {
+                // Note: Just for fulltext search: @collboard/module-a @collboard/module-b
                 name: `@collboard/module-${key}`,
+                version: '1.0.0',
                 title: { en: moduleVariant },
                 description: {
                     en: 'Sample of multiple modules in one package',
