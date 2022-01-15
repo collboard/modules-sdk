@@ -718,5 +718,11 @@ export const selectionToolSelectionBoxBehavior = (window as any).CollboardSdk.se
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/libraries.d.ts
+export const configchecker = (window as any).CollboardSdk.configchecker;
+export const destroyable = (window as any).CollboardSdk.destroyable;
+export const React = (window as any).CollboardSdk.React;
+export const styledComponents = (window as any).CollboardSdk.styledComponents;
+export const styled = (window as any).CollboardSdk.styled;
+export const touchcontroller = (window as any).CollboardSdk.touchcontroller;
 export const libraries = (window as any).CollboardSdk.libraries;
 export const libs = (window as any).CollboardSdk.libs;

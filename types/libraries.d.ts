@@ -4,11 +4,11 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import * as configchecker from 'configchecker';
-import * as destroyable from 'destroyable';
-import * as React from 'react';
-import * as styledComponents from 'styled-components';
-import * as touchcontroller from 'touchcontroller';
+import * as _configchecker from 'configchecker';
+import * as _destroyable from 'destroyable';
+import * as _React from 'react';
+import * as _styledComponents from 'styled-components';
+import * as _touchcontroller from 'touchcontroller';
 /**
  * Note: Multiple libraries are reexported for the modules via modules SDK. It has two reason:
  *       1. Some libraries (like React) are not compatible in the same application running two separate instances.
@@ -20,22 +20,50 @@ import * as touchcontroller from 'touchcontroller';
 /**
  * @collboard-modules-sdk
  */
-export declare const libraries: {
-    configchecker: typeof configchecker;
-    destroyable: typeof destroyable;
-    React: typeof React;
-    styledComponents: typeof styledComponents;
-    touchcontroller: typeof touchcontroller;
-};
+export declare const configchecker: typeof _configchecker;
 /**
  * @collboard-modules-sdk
  */
+export declare const destroyable: typeof _destroyable;
+/**
+ * @collboard-modules-sdk
+ */
+export declare const React: typeof _React;
+/**
+ * @collboard-modules-sdk
+ */
+export declare const styledComponents: typeof _styledComponents;
+/**
+ * @collboard-modules-sdk
+ * @alias for styledComponents
+ */
+export declare const styled: typeof _styledComponents;
+/**
+ * @collboard-modules-sdk
+ */
+export declare const touchcontroller: typeof _touchcontroller;
+/**
+ * @collboard-modules-sdk
+ */
+export declare const libraries: {
+    configchecker: typeof _configchecker;
+    destroyable: typeof _destroyable;
+    React: typeof _React;
+    styledComponents: typeof _styledComponents;
+    styled: typeof _styledComponents;
+    touchcontroller: typeof _touchcontroller;
+};
+/**
+ * @collboard-modules-sdk
+ * @alias for libraries
+ */
 export declare const libs: {
-    configchecker: typeof configchecker;
-    destroyable: typeof destroyable;
-    React: typeof React;
-    styledComponents: typeof styledComponents;
-    touchcontroller: typeof touchcontroller;
+    configchecker: typeof _configchecker;
+    destroyable: typeof _destroyable;
+    React: typeof _React;
+    styledComponents: typeof _styledComponents;
+    styled: typeof _styledComponents;
+    touchcontroller: typeof _touchcontroller;
 };
 /**
  * TODO: Maybe alse add:
