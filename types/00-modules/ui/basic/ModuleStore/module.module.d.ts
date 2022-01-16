@@ -6,6 +6,5 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export {};
 /**
- * TODO: /about /principles /contact without /-/ part
- * TODO: Include testing of businesses
+ * TODO: Way how to change title in the modal to module name
  */
