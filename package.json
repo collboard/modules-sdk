@@ -56,7 +56,10 @@
         "uuid": "^8.3.2",
         "vm2": "^3.9.5",
         "waitasecond": "^1.7.0",
-        "webpack": "^5.35.1"
+        "webpack": "^5.35.1",
+        "everstorage": "^1.2.0",
+        "xyzt": "=4.4.2",
+        "type-fest": "^2.7.0"
     },
     "devDependencies": {
         "@types/webpack": "^5.28.0",
@@ -66,10 +69,6 @@
         "@types/react": "^16.9.49",
         "@types/tar-stream": "^2.2.2",
         "@types/uuid": "^8.3.0",
-        "everstorage": "^1.2.0",
-        "touchcontroller": "^4.0.0",
-        "type-fest": "^2.7.0",
-        "xyzt": "=4.4.2",
         "@types/jest": "^26.0.24",
         "@types/node-fetch": "^2.5.11",
         "jest": "^27.0.6",
