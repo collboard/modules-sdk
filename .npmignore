@@ -4,6 +4,7 @@
 /coverage
 /bash.exe.stackdump
 /build
+/docs
 
 # Note: /build is not build of colldev, but testing build of sample modules
 # Note: "types" folder is not ignored
