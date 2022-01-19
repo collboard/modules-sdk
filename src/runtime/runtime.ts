@@ -161,6 +161,11 @@ export const fileDialogue = (window as any).CollboardSdk.fileDialogue;
 export const promptDialogue = (window as any).CollboardSdk.promptDialogue;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/emojis.d.ts
+export const EMOJIS_IN_CATHEGORIES = (window as any).CollboardSdk.EMOJIS_IN_CATHEGORIES;
+export const EMOJIS = (window as any).CollboardSdk.EMOJIS;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/enumToArray.d.ts
 export const enumToArray = (window as any).CollboardSdk.enumToArray;
 

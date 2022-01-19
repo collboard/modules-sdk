@@ -23,6 +23,7 @@ export declare class ColldevSyncer extends StorageSyncer {
     clientStatus: IColldevSyncerSocket.clientStatus;
     constructor(systems: ISystemsExtended, options?: IStorageSyncerOptions);
     protected initSyncer(): Promise<void>;
+    private bundleRecievedQueue;
     private reestablishConnection;
     private sendClientStatus;
     destroy(): Promise<void>;

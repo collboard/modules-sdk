@@ -48,6 +48,7 @@ export * from './40-utils/dialogues/alertDialogue';
 export * from './40-utils/dialogues/confirmDialogue';
 export * from './40-utils/dialogues/fileDialogue';
 export * from './40-utils/dialogues/promptDialogue';
+export * from './40-utils/emojis';
 export * from './40-utils/enumToArray';
 export * from './40-utils/errors/BoardAlreadyExistsError';
 export * from './40-utils/errors/BoardNotFoundError';

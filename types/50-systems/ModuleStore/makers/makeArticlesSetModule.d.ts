@@ -20,5 +20,6 @@ import { IModuleManifest } from '../interfaces/IModuleManifest';
  */
 export declare function makeArticlesSetModule(protoModule: {
     manifest: IModuleManifest;
+    defaultArticle?: string_uri_part;
     articles: Record<string_uri_part, Partial<Record<string_translate_language, string_url>>>;
 }): IModuleDefinition;
