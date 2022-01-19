@@ -27,8 +27,13 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
                 // TODO: browser
                 .alias('start')
                 .description(`Start developing collboard module. Runs compiler+dev server`)
-                // TODO: What is better collboard-url or collboard?
-                .option('-c, --collboard-url <url>', `Url of development Collboard`, 'https://dev.collboard.com')
+
+                .option(
+                    // TODO: What is better collboard-url or collboard?
+                    '-c, --collboard-url <url>',
+                    `Url of development Collboard`,
+                    'https://dev.collboard.com',
+                )
                 .option(
                     '-o, --open <openMode>',
                     spaceTrim(`
@@ -169,7 +174,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
         return `Module is working successfully.`;
     }
 
-    public render(/* Maybe also path*/ options: IColldevDevelopOptions) {
+    public render( options: IColldevDevelopOptions) {
         return (
             <OutputComponent
                 {...{

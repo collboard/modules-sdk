@@ -1,6 +1,7 @@
-import { ICompilerStatus } from '../../services/Compiler/ICompilerStatus';
-import { Serializable } from '../../services/Compiler/utils/Serializable';
+import { IColldevDevelopStatus } from "../develop/IColldevDevelopStatus";
 
-export interface IColldevTestStatus {
-    warning?: string;
+
+// tslint:disable-next-line:no-empty-interface
+export interface IColldevTestStatus extends IColldevDevelopStatus {
+
 }
