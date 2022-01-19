@@ -1,4 +1,5 @@
 import { Box, Text } from 'ink';
+import useStdoutDimensions from 'ink-use-stdout-dimensions';
 import * as React from 'react';
 import { combineLatest, from } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -21,6 +22,14 @@ interface IOutputProps {
 // TODO:  Make simmilar UI for CollboardDevelopmentModule + Colldev Express
 
 export function OutputComponent({ compiler, server, browserSpawner, options }: IOutputProps) {
+    const [columns, rows] = useStdoutDimensions();
+
+    return (
+        <Text>
+            {columns}×{rows}
+        </Text>
+    );
+
     return (
         <ObservableContentComponent
             content={combineLatest([
