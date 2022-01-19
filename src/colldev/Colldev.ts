@@ -78,7 +78,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                     if (output === 'human') {
                         console.log(process.stdout.columns + 'x' + process.stdout.rows);
 
-                        process.stdout.on('size', () => {
+                        process.stdout.on('resize', () => {
                             console.log(process.stdout.columns + 'x' + process.stdout.rows);
                         });
 
