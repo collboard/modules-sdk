@@ -3,7 +3,6 @@ import commander from 'commander';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { Instance, render } from 'ink';
 import spaceTrim from 'spacetrim';
-import { forEver } from 'waitasecond';
 import { string_folder_relative_path } from '../../types';
 import { ColldevBuild } from './commands/build/ColldevBuild';
 import { ColldevDevelop } from './commands/develop/ColldevDevelop';
@@ -76,13 +75,6 @@ export class Colldev extends Destroyable implements IDestroyable {
                     const runningCommand = command.run(options);
 
                     if (output === 'human') {
-                        console.log(process.stdout.columns + 'x' + process.stdout.rows);
-
-                        process.stdout.on('resize', () => {
-                            console.log(process.stdout.columns + 'x' + process.stdout.rows);
-                        });
-
-                        await forEver();
                         this.renderingInstance = render(command.render(options));
 
                         // TODO: DRY
