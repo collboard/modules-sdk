@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { IVector, Vector } from 'xyzt';
+import { IVectorData, Vector } from 'xyzt';
 import { IFramable } from '../50-systems/ExportImportSystem/0-ExportSystem';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
@@ -30,12 +30,12 @@ export declare class ShapeArt extends Abstract2dArt implements IFramable {
     static manifest: {
         name: string;
     };
-    constructor(shape: ShapeName, color: string, weight: number, shift: IVector, privateSize: IVector);
-    get topLeftCorner(): import('xyzt').IVectorObject;
+    constructor(shape: ShapeName, color: string, weight: number, shift: IVectorData, privateSize: IVectorData);
+    get topLeftCorner(): import('xyzt').IVectorDataObject;
     get bottomRightCorner(): Vector;
-    get size(): IVector;
-    set size(newSize: IVector);
-    isNear(point2: IVector): boolean;
+    get size(): IVectorData;
+    set size(newSize: IVectorData);
+    isNear(point2: IVectorData): boolean;
     get acceptedAttributes(): string[];
     render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
 }

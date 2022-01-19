@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { AbstractMesh } from '@babylonjs/core/Meshes/abstractMesh';
 import { Scene } from '@babylonjs/core/scene';
-import { IVector, Vector } from 'xyzt';
+import { IVectorData, Vector } from 'xyzt';
 import { string_attribute } from '../../40-utils/typeAliases';
 import { Abstract3dArt, IRenderCache } from './Abstract3dArt';
 /**
@@ -14,10 +14,10 @@ import { Abstract3dArt, IRenderCache } from './Abstract3dArt';
  * Note: This is not in the internal module because some of the Arts are so tightly connected with the core that they need to be there, not in optionally deactivateable module.
  */
 export declare abstract class Abstract3dBoxArt extends Abstract3dArt<IRenderCache> {
-    size: IVector;
-    rotation: IVector;
-    setSize(size: IVector): this;
-    get topLeftCorner(): import('xyzt').IVectorObject;
+    size: IVectorData;
+    rotation: IVectorData;
+    setSize(size: IVectorData): this;
+    get topLeftCorner(): import('xyzt').IVectorDataObject;
     get bottomRightCorner(): Vector;
     get acceptedAttributes(): string_attribute[];
     render(/* TODO: ✨ Add is prefix */ selected: boolean, scene: Scene, renderCache?: IRenderCache): IRenderCache;

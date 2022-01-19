@@ -23,7 +23,7 @@ export declare class StopwatchArt extends Abstract2dArt {
     set stopwatchControls(operation: number);
     get stopwatchControls(): number;
     get acceptedAttributes(): string[];
-    get topLeftCorner(): import('xyzt').IVectorObject;
+    get topLeftCorner(): import('xyzt').IVectorDataObject;
     get bottomRightCorner(): Vector;
     render(): JSX.Element;
 }

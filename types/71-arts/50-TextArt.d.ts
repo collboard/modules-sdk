@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import * as React from 'react';
-import { IVector, Vector } from 'xyzt';
+import { IVectorData, Vector } from 'xyzt';
 import { Abstract2dArt } from './26-Abstract2dArt';
 export declare type IListStyle = 'unordered' | 'ordered' | 'none';
 /**
@@ -19,7 +19,7 @@ export declare class TextArt extends Abstract2dArt {
     italic: boolean;
     underline: boolean;
     listStyle: IListStyle;
-    point1: IVector;
+    point1: IVectorData;
     static serializeName: string;
     static manifest: {
         name: string;
@@ -34,12 +34,12 @@ export declare class TextArt extends Abstract2dArt {
         italic: boolean,
         underline: boolean,
         listStyle: IListStyle,
-        point1: IVector,
+        point1: IVectorData,
     );
     get size(): Vector;
     get topLeftCorner(): Vector;
     get bottomRightCorner(): Vector;
-    isNear(point2: IVector): boolean;
+    isNear(point2: IVectorData): boolean;
     get acceptedAttributes(): string[];
     setTempText(): void;
     renderTextField(onKeyPress: (event: React.KeyboardEvent<HTMLDivElement>) => void): JSX.Element;

@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IVector } from 'xyzt';
+import { IVectorData } from 'xyzt';
 import { AbstractPlacedArt } from '../../../71-arts/25-AbstractPlacedArt';
 /**
  * Note: This will mutate passed arts
@@ -15,5 +15,5 @@ export declare function centerArts({
     boardPosition,
 }: {
     arts: AbstractPlacedArt[];
-    boardPosition: IVector;
+    boardPosition: IVectorData;
 }): void;

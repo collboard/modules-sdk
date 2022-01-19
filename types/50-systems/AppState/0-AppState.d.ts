@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IVector, Transform, Vector } from 'xyzt';
+import { IVectorData, Transform, Vector } from 'xyzt';
 import { string_attribute } from '../../40-utils/typeAliases';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 import { AbstractSystem } from '../AbstractSystem';
@@ -33,8 +33,8 @@ export declare class AppState extends AbstractSystem {
      * TODO: Use xyzt boundingBox
      */
     selection: null | {
-        point1: IVector;
-        point2: IVector;
+        point1: IVectorData;
+        point2: IVectorData;
     };
     _TODO_REMOVE_versionOfArtsForRendring: number;
     debug: {
@@ -46,8 +46,8 @@ export declare class AppState extends AbstractSystem {
     }: {
         selected?: AbstractPlacedArt[];
         selection?: null | {
-            point1: IVector;
-            point2: IVector;
+            point1: IVectorData;
+            point2: IVectorData;
         };
     }): void;
     cancelSelection(): void;

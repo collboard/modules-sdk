@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { AbstractMesh } from '@babylonjs/core/Meshes/abstractMesh';
 import { Scene } from '@babylonjs/core/scene';
-import { IVector } from 'xyzt';
+import { IVectorData } from 'xyzt';
 import { Abstract3dBoxArt } from '../../../50-systems/CollSpace/27-Abstract3dBoxArt';
 import { SolidName } from './SolidName';
 export declare class SolidArt extends Abstract3dBoxArt {
@@ -16,7 +16,7 @@ export declare class SolidArt extends Abstract3dBoxArt {
     static manifest: {
         name: string;
     };
-    constructor(solidName: SolidName, color: string, shift: IVector, _size: IVector);
+    constructor(solidName: SolidName, color: string, shift: IVectorData, _size: IVectorData);
     get acceptedAttributes(): string[];
     renderBox(scene: Scene): AbstractMesh;
 }

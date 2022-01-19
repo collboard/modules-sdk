@@ -5,11 +5,11 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { IVector } from 'xyzt';
+import { IVectorData } from 'xyzt';
 interface IFloatingMenuProps {
     children: JSX.Element[] | JSX.Element;
     className?: string;
-    pointOnScreen: IVector;
+    pointOnScreen: IVectorData;
 }
 export declare function FloatingMenu(props: IFloatingMenuProps): JSX.Element | null;
 export {};

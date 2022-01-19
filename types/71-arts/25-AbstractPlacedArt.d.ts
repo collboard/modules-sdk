@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IVector } from 'xyzt';
+import { IVectorData } from 'xyzt';
 import { string_attribute } from '../40-utils/typeAliases';
 import { IBoundingBox } from '../50-systems/ExportImportSystem/interfaces/IBoundingBox';
 import { AbstractArt } from './20-AbstractArt';
@@ -26,7 +26,7 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
     /**
      * Translation vector of art
      */
-    shift: IVector;
+    shift: IVectorData;
     /**
      * Marks, whether art is locked
      *
@@ -67,7 +67,7 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      *
      * @abstract
      */
-    abstract get topLeftCorner(): IVector;
+    abstract get topLeftCorner(): IVectorData;
     /**
      * Position of bottom right corner of art (absolute including `shift`)
      *
@@ -75,31 +75,31 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      *
      * @abstract
      */
-    abstract get bottomRightCorner(): IVector;
+    abstract get bottomRightCorner(): IVectorData;
     /**
      * Position of top right corner of art (absolute including `shift`)
      *
      * Value is used mostly when making selection
      */
-    get topRightCorner(): IVector;
+    get topRightCorner(): IVectorData;
     /**
      * Position of bottom left corner of art (absolute including `shift`)
      *
      * Value is used mostly when making selection
      */
-    get bottomLeftCorner(): IVector;
+    get bottomLeftCorner(): IVectorData;
     /**
      * Function determining, whether a point is near the art
      *
      * Default implementation uses square bounding box
      */
-    isNear(point2: IVector): boolean;
+    isNear(point2: IVectorData): boolean;
     /**
      * Move art to certain vector (= absolute)
      */
-    setShift(shift: IVector): this;
+    setShift(shift: IVectorData): this;
     /**
      * Move art to by vector (= relative)
      */
-    move(shift: IVector): this;
+    move(shift: IVectorData): this;
 }

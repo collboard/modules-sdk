@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { IVector, Vector } from 'xyzt';
+import { IVectorData, Vector } from 'xyzt';
 import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
 import { IListStyle } from '../../../71-arts/50-TextArt';
 /**
@@ -19,7 +19,7 @@ export declare class TextCardArt extends Abstract2dArt {
     italic: boolean;
     underline: boolean;
     listStyle: IListStyle;
-    point1: IVector;
+    point1: IVectorData;
     static serializeName: string;
     static manifest: {
         name: string;
@@ -32,12 +32,12 @@ export declare class TextCardArt extends Abstract2dArt {
         italic: boolean,
         underline: boolean,
         listStyle: IListStyle,
-        point1: IVector,
+        point1: IVectorData,
     );
     get size(): Vector;
     get topLeftCorner(): Vector;
     get bottomRightCorner(): Vector;
-    isNear(point2: IVector): boolean;
+    isNear(point2: IVectorData): boolean;
     get acceptedAttributes(): string[];
     render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
 }

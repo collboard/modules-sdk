@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { IVector, Vector } from 'xyzt';
+import { IVectorData, Vector } from 'xyzt';
 import { Abstract2dArt } from '../../71-arts/26-Abstract2dArt';
 export declare class DiceArt extends Abstract2dArt {
     sides: number;
@@ -16,7 +16,7 @@ export declare class DiceArt extends Abstract2dArt {
     value: number;
     rotation: number;
     private privateSize;
-    constructor(shift: IVector, sides: number);
+    constructor(shift: IVectorData, sides: number);
     random(): number;
     roll(): void;
     set diceControls(operation: number);
@@ -24,7 +24,7 @@ export declare class DiceArt extends Abstract2dArt {
     set diceSides(sides: number);
     get diceSides(): number;
     get acceptedAttributes(): string[];
-    get topLeftCorner(): import('xyzt').IVectorObject;
+    get topLeftCorner(): import('xyzt').IVectorDataObject;
     get bottomRightCorner(): Vector;
     private renderDots;
     render(): JSX.Element;

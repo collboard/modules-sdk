@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { IVector } from 'xyzt';
+import { IVectorData } from 'xyzt';
 import { string_module_name } from '../40-utils/typeAliases';
 import { IModuleManifest } from '../50-systems/ModuleStore/interfaces/IModuleManifest';
 import { IModulePersister } from '../50-systems/ModuleStore/interfaces/IModulePersister';
@@ -35,9 +35,9 @@ export declare class CornerstoneArt
      * String containing user-editable board name
      */
     boardName: string;
-    get topLeftCorner(): import('xyzt').IVectorObject;
-    get bottomRightCorner(): import('xyzt').IVectorObject;
-    isNear(point2: IVector): boolean;
+    get topLeftCorner(): import('xyzt').IVectorDataObject;
+    get bottomRightCorner(): import('xyzt').IVectorDataObject;
+    isNear(point2: IVectorData): boolean;
     get acceptedAttributes(): never[];
     render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
     /**

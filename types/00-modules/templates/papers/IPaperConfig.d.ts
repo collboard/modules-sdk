@@ -4,8 +4,8 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IVector } from 'xyzt';
+import { IVectorData } from 'xyzt';
 export interface IPaperConfig {
     name: string;
-    size: IVector;
+    size: IVectorData;
 }

@@ -5,13 +5,13 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Registration } from 'destroyable';
-import { IVector } from 'xyzt';
+import { IVectorData } from 'xyzt';
 import { AbstractSystem } from '../AbstractSystem';
 import { IExportFileOptions } from './interfaces/IExportFileOptions';
 import { IFileExportSupporter } from './interfaces/IFileExportSupporter';
 export interface IFramable {
-    topLeftCorner: IVector;
-    bottomRightCorner: IVector;
+    topLeftCorner: IVectorData;
+    bottomRightCorner: IVectorData;
 }
 /**
  * ExportSystem creates other files from the board or the part of it.

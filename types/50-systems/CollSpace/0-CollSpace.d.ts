@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IVector, Vector } from 'xyzt';
+import { IVectorData, Vector } from 'xyzt';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 import { AbstractSystem } from '../AbstractSystem';
 /**
@@ -22,11 +22,11 @@ export declare class CollSpace extends AbstractSystem {
     private get sceneSync();
     private shadowGenerator;
     private createScene;
-    pickPoint(point: IVector): {
+    pickPoint(point: IVectorData): {
         point: Vector;
         normal: Vector;
     };
-    pickArt(point: IVector): AbstractPlacedArt | null;
+    pickArt(point: IVectorData): AbstractPlacedArt | null;
 }
 /**
  * TODO: General 3D TODOs

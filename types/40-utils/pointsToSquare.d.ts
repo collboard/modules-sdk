@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IVector, Vector } from 'xyzt';
+import { IVectorData, Vector } from 'xyzt';
 /**
  * @deprecated this should be using xyzt BoundingBox
  */
@@ -15,4 +15,4 @@ export declare type square = {
 /**
  * @deprecated this should be using xyzt BoundingBox
  */
-export declare function pointsToSquare(point1: IVector, point2: IVector): square;
+export declare function pointsToSquare(point1: IVectorData, point2: IVectorData): square;

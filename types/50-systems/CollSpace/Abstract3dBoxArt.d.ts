@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { AbstractMesh } from '@babylonjs/core/Meshes/abstractMesh';
 import { Scene } from '@babylonjs/core/scene';
-import { IVector, Vector } from 'xyzt';
+import { IVectorData, Vector } from 'xyzt';
 import { string_attribute } from '../../40-utils/typeAliases';
 import { Abstract3dArt, IRenderCache } from '../../50-systems/CollSpace/Abstract3dArt';
 /**
@@ -16,10 +16,10 @@ import { Abstract3dArt, IRenderCache } from '../../50-systems/CollSpace/Abstract
  */
 export declare abstract class Abstract3dBoxArt extends Abstract3dArt<IRenderCache> {
     private _size;
-    constructor(_size?: IVector);
-    get size(): IVector;
-    set size(size: IVector);
-    get topLeftCorner(): import('xyzt').IVectorObject;
+    constructor(_size?: IVectorData);
+    get size(): IVectorData;
+    set size(size: IVectorData);
+    get topLeftCorner(): import('xyzt').IVectorDataObject;
     get bottomRightCorner(): Vector;
     get acceptedAttributes(): string_attribute[];
     render(/* TODO: ✨ Add is prefix */ selected: boolean, scene: Scene, renderCache?: IRenderCache): IRenderCache;

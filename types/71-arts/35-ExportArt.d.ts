@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { IVector } from 'xyzt';
+import { IVectorData } from 'xyzt';
 import { Abstract2dArt } from './26-Abstract2dArt';
 export declare enum ExportFormat {
     Native = 'NATIVE',
@@ -23,9 +23,9 @@ export declare class ExportArt extends Abstract2dArt {
         name: string;
     };
     constructor(format: ExportFormat);
-    get topLeftCorner(): import('xyzt').IVectorObject;
-    get bottomRightCorner(): import('xyzt').IVectorObject;
-    isNear(point2: IVector): boolean;
+    get topLeftCorner(): import('xyzt').IVectorDataObject;
+    get bottomRightCorner(): import('xyzt').IVectorDataObject;
+    isNear(point2: IVectorData): boolean;
     get acceptedAttributes(): never[];
     render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
 }

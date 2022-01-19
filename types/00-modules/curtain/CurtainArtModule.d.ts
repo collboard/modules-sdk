@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { IVector, Vector } from 'xyzt';
+import { IVectorData, Vector } from 'xyzt';
 import { Abstract2dArt } from '../../71-arts/26-Abstract2dArt';
 export declare class CurtainArt extends Abstract2dArt {
     static serializeName: string;
@@ -16,13 +16,13 @@ export declare class CurtainArt extends Abstract2dArt {
     color: string;
     defaultZIndex: number;
     private privateSize;
-    constructor(shift: IVector);
-    get size(): IVector;
-    set size(size: IVector);
+    constructor(shift: IVectorData);
+    get size(): IVectorData;
+    set size(size: IVectorData);
     get curtainVisible(): number;
     set curtainVisible(toggle: number);
     get acceptedAttributes(): string[];
-    get topLeftCorner(): import('xyzt').IVectorObject;
+    get topLeftCorner(): import('xyzt').IVectorDataObject;
     get bottomRightCorner(): Vector;
     render(): JSX.Element;
 }

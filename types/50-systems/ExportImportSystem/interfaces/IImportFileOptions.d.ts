@@ -4,12 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IVector } from 'xyzt';
+import { IVectorData } from 'xyzt';
 export interface IImportFileOptions {
     /**
      * TODO: Use here xyzt coords to allow consumer to use different coord system and reference for example screenCenteredPosition
      */
-    boardPosition?: IVector | null;
+    boardPosition?: IVectorData | null;
     /**
      * When you provide multiple files it will import ONLY one
      * Firstly it will look at the first file and try to import it

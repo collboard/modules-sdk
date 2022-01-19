@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { Promisable } from 'type-fest';
-import { IVector } from 'xyzt';
+import { IVectorData } from 'xyzt';
 import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
 import { AbstractPlacedArt } from './25-AbstractPlacedArt';
 /**
@@ -22,7 +22,7 @@ export declare abstract class Abstract2dArt extends AbstractPlacedArt {
      *
      * *Note: This will be removed in the future*
      */
-    get size(): IVector;
+    get size(): IVectorData;
     /**
      * Getter for changing element size.
      *
@@ -30,7 +30,7 @@ export declare abstract class Abstract2dArt extends AbstractPlacedArt {
      *
      * *Note: This will be removed in the future*
      */
-    set size(size: IVector);
+    set size(size: IVectorData);
     /**
      * Object rotation
      *

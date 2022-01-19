@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { IVector, Vector } from 'xyzt';
+import { IVectorData, Vector } from 'xyzt';
 import { string_attribute } from '../40-utils/typeAliases';
 import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
 import { Abstract2dArt } from './26-Abstract2dArt';
@@ -20,14 +20,14 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
     /**
      * @param size null means it will be automatically measured and set
      */
-    constructor(privateSize?: IVector | null);
+    constructor(privateSize?: IVectorData | null);
     /**
      * Readonly property containing information about object's original size
      */
     originalSize: Vector;
-    get size(): IVector;
-    set size(size: IVector);
-    get topLeftCorner(): import('xyzt').IVectorObject;
+    get size(): IVectorData;
+    set size(size: IVectorData);
+    get topLeftCorner(): import('xyzt').IVectorDataObject;
     get bottomRightCorner(): Vector;
     /**
      * Was the art already measured?
