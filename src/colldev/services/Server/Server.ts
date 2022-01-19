@@ -4,7 +4,8 @@ import { readFile } from 'fs';
 import http from 'http';
 import localtunnel from 'localtunnel';
 import { join, relative } from 'path';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, interval } from 'rxjs';
+import { debounce } from 'rxjs/operators';
 import { Server as SocketIoServer } from 'socket.io';
 import { promisify } from 'util';
 import { forValueDefined } from 'waitasecond';
@@ -194,7 +195,7 @@ export class Server extends Destroyable implements IService, IDestroyable {
                     };
                 });
 
-                const subscription = this.compiler.status.subscribe({
+                const subscription = this.compiler.status.pipe(debounce(() => interval(100))).subscribe({
                     next: async ({ mainBundlePath }) => {
                         if (mainBundlePath) {
                             // console.log(`Emmiting bundle for ${instanceId}`);
