@@ -25,7 +25,7 @@ Modules SDK toolkit for collaborative whiteboard platform [Collboard.com](https:
 -   [Collboard on GitHub](https://github.com/collboard/)
 -   [Modules SDK on GitHub](https://github.com/collboard/modules-sdk)
 -   [Modules SDK on NPM](https://www.npmjs.com/package/@collboard/modules-sdk)
--   [Hello world module](https://github.com/collboard/hello-world)
+-   [Hello world module](https://github.com/collboard/hello-world-module)
 -   [Module with custom tool, art and attribute](https://github.com/collboard/art-tool-attribute-module)
 -   [Full manual of SDK](https://collboard.github.io/modules-sdk/)
 
