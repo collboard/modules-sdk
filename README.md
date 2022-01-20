@@ -148,6 +148,55 @@ _Tip: You can create [automated GitHub workflow](https://github.com/collboard/mo
 We are using semantic versioning
 -->
 
+## Using libraries in modules
+
+### Integrated libraries
+
+Some libraries are exported from `@collboard/modules-sdk`. We want to run one version of them in all modules and Collboard core. It saves resources (memory, network), makes it easier to maintain and avoids compatibility issues.
+
+```typescript
+import { React, styled } from '@collboard/modules-sdk';
+
+const MyDiv = styled.div`
+    color: red;
+`;
+
+function SomeComponent() {
+    return (
+        <MyDiv>
+            <h1>Hello World!</h1>
+        </MyDiv>
+    );
+}
+```
+
+It is required for **React** and **Styled Components**. And recommended for [these libraries](https://github.com/collboard/modules-sdk/blob/main/types/libraries.d.ts#L48).
+
+### Isolation of the libraries
+
+For all other libraries, please use isolation from global window scope. Be aware that other developers can also import same library.
+
+### Example for MobX
+
+```typescript
+import { configure } from 'mobx';
+
+configure({ safeDescriptors: false });
+```
+
+### Example for jQuery
+
+```javascript
+$.noConflict();
+jQuery(document).ready(function ($) {
+    // ...
+});
+```
+
+## Assets and Styles
+
+<!--TODO:-->
+
 ## Systems
 
 <!--TODO: Should be theese sections in primary README or use other markdown files? -->
@@ -160,7 +209,8 @@ Typically you are registering something under theese sytems. This will returns y
     This section is GENERATED WITH generate-modules-sdk
     Warning: Do not edit by hand, all changes will be lost on next execution!
 -->
-<!--SYSTEMS-BEGIN-->
+
+<!--Systems-->
 
 ### [ApiClient](https://collboard.github.io/modules-sdk/classes/apiclient.html)
 
@@ -380,7 +430,7 @@ Note: SoundSystem can play a sound vs. VoiceSystem can detect voice or speech.
 
 
 -->
-<!--SYSTEMS-END-->
+<!--/Systems-->
 
 ## Makers
 
