@@ -140,6 +140,8 @@ export * from './50-systems/NotificationSystem/0-NotificationSystem';
 export * from './50-systems/PointerSystem/0-PointerSystem';
 export * from './50-systems/RoutingSystem/0-RoutingSystem';
 export * from './50-systems/ShortcutsSystem/0-ShortcutsSystem';
+export * from './50-systems/ShortcutsSystem/interfaces/IKey';
+export * from './50-systems/ShortcutsSystem/interfaces/IShortcut';
 export * from './50-systems/SnapSystem/0-SnapSystem';
 export * from './50-systems/SoundSystem/0-SoundSystem';
 export * from './50-systems/StorageSystem/StorageSystem';

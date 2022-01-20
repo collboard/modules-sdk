@@ -583,6 +583,14 @@ export const RoutingSystem = (window as any).CollboardSdk.RoutingSystem;
 export const ShortcutsSystem = (window as any).CollboardSdk.ShortcutsSystem;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ShortcutsSystem/interfaces/IKey.d.ts
+export const IKey = (window as any).CollboardSdk.IKey;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ShortcutsSystem/interfaces/IShortcut.d.ts
+export const IShortcut = (window as any).CollboardSdk.IShortcut;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/SnapSystem/0-SnapSystem.d.ts
 export const SnapSystem = (window as any).CollboardSdk.SnapSystem;
 

@@ -5,4 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IKey } from './IKey';
+/**
+ * @collboard-modules-sdk
+ */
 export declare type IShortcut = IKey[];
