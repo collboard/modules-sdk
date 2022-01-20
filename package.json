@@ -19,7 +19,7 @@
         "colldev": "dist/colldev/main.js"
     },
     "scripts": {
-        "test": "npx jest --runInBand",
+        "test": "npx jest",
         "lint": "tslint -p tsconfig.json",
         "prepare": "tsc",
         "documentation": "typedoc",
