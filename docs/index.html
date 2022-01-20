@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Modules SDK toolkit for Collboard.com - v18.12.1</title><meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v18.12.1"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">Modules SDK toolkit for Collboard.com - v18.12.1</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>Modules SDK toolkit for Collboard.com - v18.12.1</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Modules SDK toolkit for Collboard.com - v18.12.100</title><meta name="description" content="Documentation for Modules SDK toolkit for Collboard.com - v18.12.100"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">Modules SDK toolkit for Collboard.com - v18.12.100</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>Modules SDK toolkit for Collboard.com - v18.12.100</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
 <a href="#collboard-modules-sdk" id="collboard-modules-sdk" style="color: inherit; text-decoration: none;">
   <h1>Collboard modules SDK</h1>
 </a>
@@ -27,8 +27,8 @@
 <li><a href="https://github.com/collboard/">Collboard on GitHub</a></li>
 <li><a href="https://github.com/collboard/modules-sdk">Modules SDK on GitHub</a></li>
 <li><a href="https://www.npmjs.com/package/@collboard/modules-sdk">Modules SDK on NPM</a></li>
-<li><a href="https://github.com/collboard/hello-world">Hello world module</a></li>
-<li><a href="https://github.com/collboard/module-sample-objects">Module with custom tool, art and attribute</a></li>
+<li><a href="https://github.com/collboard/hello-world-module">Hello world module</a></li>
+<li><a href="https://github.com/collboard/art-tool-attribute-module">Module with custom tool, art and attribute</a></li>
 <li><a href="https://collboard.github.io/modules-sdk/">Full manual of SDK</a></li>
 </ul>
 
@@ -98,6 +98,41 @@ We are using semantic versioning
 -->
 
 
+<a href="#using-libraries-in-modules" id="using-libraries-in-modules" style="color: inherit; text-decoration: none;">
+  <h2>Using libraries in modules</h2>
+</a>
+
+<a href="#integrated-libraries" id="integrated-libraries" style="color: inherit; text-decoration: none;">
+  <h3>Integrated libraries</h3>
+</a>
+<p>Some libraries are exported from <code>@collboard/modules-sdk</code>. We want to run one version of them in all modules and Collboard core. It saves resources (memory, network), makes it easier to maintain and avoids compatibility issues.</p>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-0"> { </span><span class="hl-2">React</span><span class="hl-0">, </span><span class="hl-2">styled</span><span class="hl-0"> } </span><span class="hl-4">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@collboard/modules-sdk&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-8">MyDiv</span><span class="hl-0"> = </span><span class="hl-2">styled</span><span class="hl-3">.</span><span class="hl-6">div</span><span class="hl-3">`</span><br/><span class="hl-3">    color: red;</span><br/><span class="hl-3">`</span><span class="hl-0">;</span><br/><br/><span class="hl-5">function</span><span class="hl-0"> </span><span class="hl-6">SomeComponent</span><span class="hl-0">() {</span><br/><span class="hl-0">    </span><span class="hl-4">return</span><span class="hl-0"> (</span><br/><span class="hl-0">        &lt;</span><span class="hl-1">MyDiv</span><span class="hl-0">&gt;</span><br/><span class="hl-0">            &lt;</span><span class="hl-1">h1</span><span class="hl-0">&gt;</span><span class="hl-2">Hello</span><span class="hl-0"> </span><span class="hl-2">World</span><span class="hl-0">!&lt;/</span><span class="hl-2">h1</span><span class="hl-0">&gt;</span><br/><span class="hl-0">        &lt;/</span><span class="hl-2">MyDiv</span><span class="hl-0">&gt;</span><br/><span class="hl-0">    );</span><br/><span class="hl-0">}</span>
+</code></pre>
+<p>It is required for <strong>React</strong> and <strong>Styled Components</strong>. And recommended for <a href="https://github.com/collboard/modules-sdk/blob/main/types/libraries.d.ts#L48">these libraries</a>.</p>
+
+<a href="#isolation-of-the-libraries" id="isolation-of-the-libraries" style="color: inherit; text-decoration: none;">
+  <h3>Isolation of the libraries</h3>
+</a>
+<p>For all other libraries, please use isolation from global window scope. Be aware that other developers can also import same library.</p>
+
+<a href="#example-for-mobx" id="example-for-mobx" style="color: inherit; text-decoration: none;">
+  <h3>Example for MobX</h3>
+</a>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-0"> { </span><span class="hl-2">configure</span><span class="hl-0"> } </span><span class="hl-4">from</span><span class="hl-0"> </span><span class="hl-3">&#39;mobx&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">configure</span><span class="hl-0">({ </span><span class="hl-2">safeDescriptors:</span><span class="hl-0"> </span><span class="hl-5">false</span><span class="hl-0"> });</span>
+</code></pre>
+
+<a href="#example-for-jquery" id="example-for-jquery" style="color: inherit; text-decoration: none;">
+  <h3>Example for jQuery</h3>
+</a>
+<pre><code class="language-javascript"><span class="hl-2">$</span><span class="hl-0">.</span><span class="hl-6">noConflict</span><span class="hl-0">();</span><br/><span class="hl-6">jQuery</span><span class="hl-0">(</span><span class="hl-2">document</span><span class="hl-0">).</span><span class="hl-6">ready</span><span class="hl-0">(</span><span class="hl-5">function</span><span class="hl-0"> (</span><span class="hl-2">$</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-7">// ...</span><br/><span class="hl-0">});</span>
+</code></pre>
+
+<a href="#assets-and-styles" id="assets-and-styles" style="color: inherit; text-decoration: none;">
+  <h2>Assets and Styles</h2>
+</a>
+<!--TODO:-->
+
+
 <a href="#systems" id="systems" style="color: inherit; text-decoration: none;">
   <h2>Systems</h2>
 </a>
@@ -109,7 +144,8 @@ We are using semantic versioning
     This section is GENERATED WITH generate-modules-sdk
     Warning: Do not edit by hand, all changes will be lost on next execution!
 -->
-<!--SYSTEMS-BEGIN-->
+
+<!--Systems-->
 
 
 <a href="#apiclient" id="apiclient" style="color: inherit; text-decoration: none;">
@@ -354,7 +390,7 @@ Note: SoundSystem can play a sound vs. VoiceSystem can detect voice or speech.
 
 
 -->
-<!--SYSTEMS-END-->
+<!--/Systems-->
 
 
 <a href="#makers" id="makers" style="color: inherit; text-decoration: none;">

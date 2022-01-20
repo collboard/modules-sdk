@@ -30,14 +30,18 @@ export declare const destroyable: typeof _destroyable;
  */
 export declare const React: typeof _React;
 /**
+ * Styled components all export
+ * > import * as styledComponents from 'styled-components';
  * @collboard-modules-sdk
  */
 export declare const styledComponents: typeof _styledComponents;
 /**
+ * Styled components default export
+ * > import styled from 'styled-components';
  * @collboard-modules-sdk
- * @alias for styledComponents
+ * @alias of styledComponents
  */
-export declare const styled: typeof _styledComponents;
+export declare const styled: _styledComponents.StyledInterface;
 /**
  * @collboard-modules-sdk
  */
@@ -55,7 +59,7 @@ export declare const libraries: {
 };
 /**
  * @collboard-modules-sdk
- * @alias for libraries
+ * @alias of libraries
  */
 export declare const libs: {
     configchecker: typeof _configchecker;
