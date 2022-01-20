@@ -624,6 +624,10 @@ export const Translate = (window as any).CollboardSdk.Translate;
 export const VoiceSystem = (window as any).CollboardSdk.VoiceSystem;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/70-attributes/FontStyleAttributeModule.d.ts
+export const IFontStyleAttributeValue = (window as any).CollboardSdk.IFontStyleAttributeValue;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/20-AbstractArt.d.ts
 export const AbstractArt = (window as any).CollboardSdk.AbstractArt;
 
