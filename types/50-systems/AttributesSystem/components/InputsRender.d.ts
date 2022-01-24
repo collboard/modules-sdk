@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import * as React from 'react';
+import React from 'react';
 import { string_attribute, string_context } from '../../../40-utils/typeAliases';
 import { AttributesSystem } from '../0-AttributesSystem';
 import { attribute_value } from '../IAttribute';

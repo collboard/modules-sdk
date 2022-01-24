@@ -4,13 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-/**
- * TODO: Maybe in universal utils not just ShortcutsSystems utils
- */
-export declare function isElementEditable(
-    element: Element,
-    detect: {
-        input: boolean;
-        contentEditable: boolean;
-    },
-): boolean;
+import { IControl } from '../interfaces/IControl';
+import { IControls } from '../interfaces/IControls';
+export declare type IRegisterControlOptions<TValue> = IControl | IControls<TValue>;
+export declare function controlToControls<TValue>(options: IRegisterControlOptions<TValue>): IControls<TValue>;

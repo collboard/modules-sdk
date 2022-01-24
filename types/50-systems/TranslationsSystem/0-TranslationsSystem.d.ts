@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import 'moment/locale/cs';
 import 'moment/locale/sk';
-import * as React from 'react';
+import React from 'react';
 import { Observable } from 'rxjs';
 import { IReplacer } from '../../40-utils/applyParamsOnTemplate';
 import { string_translate_language, string_translate_name_not_normalized } from '../../40-utils/typeAliases';

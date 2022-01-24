@@ -5,13 +5,13 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Destroyable, IDestroyable, Registration } from 'destroyable';
+import { ControlSystem } from '../ControlSystem/ControlSystem';
 import { FocusSystem } from '../FocusSystem/0-FocusSystem';
-import { ShortcutsSystem } from '../ShortcutsSystem/0-ShortcutsSystem';
 import { ToolbarName } from './0-ToolbarSystem';
 import { IToolbarIcon } from './IToolbarIcon';
 export declare class IconsToolbar extends Destroyable implements IDestroyable {
     readonly toolbarName: ToolbarName;
-    private shortcutsSystem;
+    private controlSystem;
     private focusSystem;
     activeIcons: IToolbarIcon[];
     icons: IToolbarIcon[];
@@ -19,7 +19,7 @@ export declare class IconsToolbar extends Destroyable implements IDestroyable {
      *
      * @param toolbarName does not effect IconsToolbar behaviour, it solves only for identification purposes.
      */
-    constructor(toolbarName: ToolbarName, shortcutsSystem: ShortcutsSystem, focusSystem: FocusSystem);
+    constructor(toolbarName: ToolbarName, controlSystem: ControlSystem, focusSystem: FocusSystem);
     private selectThrottleQueue;
     private iconOrNameToIcon;
     /**

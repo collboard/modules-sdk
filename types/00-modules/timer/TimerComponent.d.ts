@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="node" />
-import * as React from 'react';
+import React from 'react';
 /**
  *
  * Note: In future this file will we in independent repository as external module.

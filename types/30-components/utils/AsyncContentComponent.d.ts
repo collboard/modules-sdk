@@ -17,7 +17,7 @@ interface IAsyncContentComponentProps extends ILoaderProps {
     /**
      * The async content to be rendered
      */
-    content: IFactorable<Promisable<JSX.Element>>;
+    content: IFactorable<Promisable<JSX.Element | JSX.Element[]>>;
 }
 /**
  * Utility for mounting RxJS observable content

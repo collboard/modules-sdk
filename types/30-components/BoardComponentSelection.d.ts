@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import * as React from 'react';
+import React from 'react';
 import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
 import { AppState } from '../50-systems/AppState/0-AppState';
 import { ToolbarSystem } from '../50-systems/ToolbarSystem/0-ToolbarSystem';

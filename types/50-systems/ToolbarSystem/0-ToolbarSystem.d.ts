@@ -27,7 +27,7 @@ export declare enum ToolbarName {
 export declare class ToolbarSystem extends AbstractSystem {
     private toolbars;
     private focusSystem;
-    private shortcutsSystem;
+    private controlSystem;
     protected init(): Promise<void>;
     getToolbar(toolbarName: ToolbarName): IconsToolbar;
     getAllToolbars(): Record<ToolbarName, IconsToolbar>;

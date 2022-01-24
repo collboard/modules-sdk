@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import * as React from 'react';
+import React from 'react';
 import { MaterialArtVersioningSystem } from '../../../../50-systems/ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { RoutingSystem } from '../../../../50-systems/RoutingSystem/0-RoutingSystem';
 interface IImportModalComponentProps {

@@ -15,6 +15,7 @@ import { AttributesSystem } from './../AttributesSystem/0-AttributesSystem';
 import { BusinessSystem } from './../BusinessSystem/0-BusinessSystem';
 import { ClosePreventionSystem } from './../ClosePreventionSystem/0-ClosePreventionSystem';
 import { CollSpace } from './../CollSpace/0-CollSpace';
+import { ControlSystem } from './../ControlSystem/ControlSystem';
 import { CreateSystem } from './../CreateSystem/0-CreateSystem';
 import { ExportSystem } from './../ExportImportSystem/0-ExportSystem';
 import { ImportSystem } from './../ExportImportSystem/0-ImportSystem';
@@ -34,7 +35,6 @@ import { RouteAndBusinessSyncer } from './../ModuleStore/Syncers/RouteAndBusines
 import { NotificationSystem } from './../NotificationSystem/0-NotificationSystem';
 import { PointerSystem } from './../PointerSystem/0-PointerSystem';
 import { RoutingSystem } from './../RoutingSystem/0-RoutingSystem';
-import { ShortcutsSystem } from './../ShortcutsSystem/0-ShortcutsSystem';
 import { SnapSystem } from './../SnapSystem/0-SnapSystem';
 import { SoundSystem } from './../SoundSystem/0-SoundSystem';
 import { StorageSystem } from './../StorageSystem/StorageSystem';
@@ -77,7 +77,7 @@ export interface ISystemsResolved {
     readonly notificationSystem: NotificationSystem;
     readonly pointerSystem: PointerSystem;
     readonly routingSystem: RoutingSystem;
-    readonly shortcutsSystem: ShortcutsSystem;
+    readonly controlSystem: ControlSystem;
     readonly snapSystem: SnapSystem;
     readonly soundSystem: SoundSystem;
     readonly storageSystem: StorageSystem;

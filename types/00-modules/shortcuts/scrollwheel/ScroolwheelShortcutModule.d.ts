@@ -5,3 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export {};
+/**
+ * TODO: Scroll inertia - by transform inertia
+ * TODO: Use .inverse()
+ * TODO: Zoom in/out to the cursor not to the center of the screen
+ */

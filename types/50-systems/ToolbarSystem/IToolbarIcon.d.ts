@@ -10,8 +10,8 @@ import { Promisable } from 'type-fest';
 import { IIconAnonymous } from '../../30-components/menu/IIconAnonymous';
 import { IFactorable, IFactory } from '../../40-utils/IFactory';
 import { string_css_cursor } from '../../40-utils/typeAliases';
+import { IShortcut } from '../ControlSystem/interfaces/IShortcut';
 import { FocusScopeName } from '../FocusSystem/0-FocusSystem';
-import { IShortcut } from '../ShortcutsSystem/interfaces/IShortcut';
 /**
  * Icon placed on the toolbar with listeners (vs. IIconAnonymous without context)
  */

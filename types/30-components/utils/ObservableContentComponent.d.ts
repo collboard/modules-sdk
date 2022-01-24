@@ -20,7 +20,7 @@ interface IObservableContentComponentProps extends ILoaderProps {
     /**
      * You can put here any RxJS observable. For example BehaviorSubject.
      */
-    content: Observable<Promisable<JSX.Element>>;
+    content: Observable<Promisable<JSX.Element | JSX.Element[]>>;
     /**
      * Will be debugged in the console
      */

@@ -4,8 +4,17 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { Promisable } from 'type-fest';
+import { IShortcut } from './IShortcut';
+export interface IControls<TValue> {
+    /**
+     * @default 0
+     */
+    priority?: number;
+    isContinuing?: boolean;
+    defaultShortcuts: Map<IShortcut, TValue>;
+    executor(options: { value: TValue }): Promisable<void>;
+}
 /**
- * To ignore event (like keypress) because its target is not on board (but for example on input element).
- * TODO: Maybe in universal utils not just ShortcutsSystems utils
+ * [🎮] Write descriptions
  */
-export declare function isEventOnBoard(event: Event): boolean;

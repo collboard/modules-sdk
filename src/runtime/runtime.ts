@@ -411,6 +411,18 @@ export const ClosePreventionSystem = (window as any).CollboardSdk.ClosePreventio
 export const CollSpace = (window as any).CollboardSdk.CollSpace;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ControlSystem/ControlSystem.d.ts
+export const ControlSystem = (window as any).CollboardSdk.ControlSystem;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ControlSystem/interfaces/IKey.d.ts
+export const IKey = (window as any).CollboardSdk.IKey;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ControlSystem/interfaces/IShortcut.d.ts
+export const IShortcut = (window as any).CollboardSdk.IShortcut;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/CreateSystem/0-CreateSystem.d.ts
 export const CreateSystem = (window as any).CollboardSdk.CreateSystem;
 
@@ -577,18 +589,6 @@ export const PointerSystem = (window as any).CollboardSdk.PointerSystem;
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/RoutingSystem/0-RoutingSystem.d.ts
 export const RoutingSystem = (window as any).CollboardSdk.RoutingSystem;
-
-
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ShortcutsSystem/0-ShortcutsSystem.d.ts
-export const ShortcutsSystem = (window as any).CollboardSdk.ShortcutsSystem;
-
-
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ShortcutsSystem/interfaces/IKey.d.ts
-export const IKey = (window as any).CollboardSdk.IKey;
-
-
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ShortcutsSystem/interfaces/IShortcut.d.ts
-export const IShortcut = (window as any).CollboardSdk.IShortcut;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/SnapSystem/0-SnapSystem.d.ts
