@@ -2,9 +2,15 @@
  * This file contain global object (window) in state which will provide Collboard app for the modules
  * But this is lightweight faked version for just extracting manifest from the modules
  * Note: It is done in JavaScript (not TypeScript) because ...
+ * Note: Using here full function notation (not arrow notation) to allow using deepFake to be contructable (new deepFake() is working)
  */
 
-const deepFake = new Proxy(() => deepFake, { get: () => deepFake });
+const deepFake = new Proxy(
+    function () {
+        return deepFake;
+    },
+    { get: () => deepFake },
+);
 
 function factor(factorable) {
     if (typeof factorable === 'function') {
@@ -117,6 +123,9 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
     // Note: This is making trouble in node runtime> virtualWindow.global = virtualWindow;
     virtualWindow.self = virtualWindow;
     virtualWindow.this = virtualWindow;
+
+    // TODO: Maybe whole virtualWindow should be deepFaked
+    virtualWindow.URL = deepFake;
 
     return virtualWindow;
 };

@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { declareModule, ExtraJsxPlace, makeExtrajsxModule } from '../../../src/runtime/runtime';
 
+// Note: Testing that URL object working during the build process.
+console.log(new URL(`https://github.com/collboard/collboard`));
+
 for (const [key, moduleVariant] of Object.entries({ a: '🍎 Red apple', b: '🍏 Green apple' })) {
     declareModule(
         makeExtrajsxModule({
