@@ -24,6 +24,8 @@ export declare class IconsToolbar extends Destroyable implements IDestroyable {
     private iconOrNameToIcon;
     /**
      * @param iconOrName You can use here either full IToolbarIcon (same reference that is registered) or name (especially usefull when triggering externally)
+     *
+     * TODO: Rename to trigerIcon
      */
     handleIconClick(iconOrName: IToolbarIcon | string): Promise<void>;
     /**
