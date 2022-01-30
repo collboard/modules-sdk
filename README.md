@@ -246,6 +246,10 @@ BusinessSystem tell things about currently used business
 
 CollSpace manages 3D objects rendered by WebGL (BABYLON JS) and provides all the tooling around the 3D scene, positioning, textures, materials, etc.
 
+### [ControlSystem](https://collboard.github.io/modules-sdk/classes/controlsystem.html)
+
+ControlSystem can register and manage keyboard shortcuts like Ctrl + C by modules (or maybe other systems).
+
 ### [CreateSystem](https://collboard.github.io/modules-sdk/classes/createsystem.html)
 
 CreateSystem allows importing which allows to import/create arts from other sources.
@@ -377,10 +381,6 @@ RoutingSystem provides for core, other systems and modules registration of route
 ### [Serializer](https://collboard.github.io/modules-sdk/classes/serializer.html)
 
 Serializer can serialize/deserialize objects. Primarily it is serialized arts.
-
-### [ShortcutsSystem](https://collboard.github.io/modules-sdk/classes/shortcutssystem.html)
-
-ShortcutsSystem can register and manage keyboard shortcuts like Ctrl + C by modules (or maybe other systems).
 
 <!--Private system:
 ### [SnapSystem](https://collboard.github.io/modules-sdk/classes/snapsystem.html)
