@@ -6,9 +6,8 @@ Modules SDK toolkit for collaborative whiteboard platform [Collboard.com](https:
 
  [![License](https://img.shields.io/github/license/collboard/modules-sdk.svg?style=flat)](https://raw.githubusercontent.com/collboard/modules-sdk/master/LICENSE)
  [![NPM Version](https://badge.fury.io/js/@collboard%2Fmodules-sdk.svg)](https://www.npmjs.com/package/@collboard/modules-sdk)
- [![undefined](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml.yml)
- [![undefined](https://github.com/collboard/modules-sdk/actions/workflows/publish.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/publish.yml.yml)
- [![undefined](https://github.com/collboard/modules-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/test.yml.yml)
+ [![undefined](https://github.com/collboard/modules-sdk/actions/workflows/lint/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml)
+ [![undefined](https://github.com/collboard/modules-sdk/actions/workflows/test/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/test.yml)
  [![Known Vulnerabilities](https://snyk.io/test/github/collboard/modules-sdk/badge.svg)](https://snyk.io/test/github/collboard/modules-sdk)
  [![Issues](https://img.shields.io/github/issues/collboard/modules-sdk.svg?style=flat)](https://github.com/collboard/modules-sdk/issues)
 
