@@ -1,4 +1,4 @@
-# Collboard modules SDK
+# 📦 Collboard modules SDK
 
 Modules SDK toolkit for collaborative whiteboard platform [Collboard.com](https://collboard.com/).
 
