@@ -48,7 +48,7 @@ _Note: you can install `@collboard/modules-sdk` as a dev dependency beacasue it 
 
 ```javascript
 module.exports = {
-    entryPath: './src/index.ts',
+entryPath: './src/index.ts',
 };
 ```
 
@@ -65,29 +65,29 @@ import { declareModule, ExtraJsxPlace, makeExtrajsxModule } from '@collboard/mod
 import * as React from 'react';
 
 declareModule(
-    makeExtrajsxModule({
-        manifest: {
-            name: '@my-username/first-module',
-        },
-        place: ExtraJsxPlace.EdgeRight,
-        createExtraJsx({
-            routingSystem,
-            translationsSystem,
-            apiClient,
-            materialArtVersioningSystem: { cornerstoneArts },
-        }) {
-            return (
-                <button
-                    onClick={async () => {
-                        alert(`Hello from Collboard modules!`);
-                    }}
-                    className="button button-primary button-vertical"
-                >
-                    <span>Hello World!</span>
-                </button>
-            );
-        },
-    }),
+makeExtrajsxModule({
+manifest: {
+name: '@my-username/first-module',
+},
+place: ExtraJsxPlace.EdgeRight,
+createExtraJsx({
+routingSystem,
+translationsSystem,
+apiClient,
+materialArtVersioningSystem: { cornerstoneArts },
+}) {
+return (
+<button
+onClick={async () => {
+alert(`Hello from Collboard modules!`);
+}}
+className="button button-primary button-vertical"
+>
+<span>Hello World!</span>
+</button>
+);
+},
+}),
 );
 ```
 
@@ -161,15 +161,15 @@ Some libraries are exported from `@collboard/modules-sdk`. We want to run one ve
 import { React, styled } from '@collboard/modules-sdk';
 
 const MyDiv = styled.div`
-    color: red;
+color: red;
 `;
 
 function SomeComponent() {
-    return (
-        <MyDiv>
-            <h1>Hello World!</h1>
-        </MyDiv>
-    );
+return (
+<MyDiv>
+<h1>Hello World!</h1>
+</MyDiv>
+);
 }
 ```
 
@@ -192,7 +192,7 @@ configure({ safeDescriptors: false });
 ```javascript
 $.noConflict();
 jQuery(document).ready(function ($) {
-    // ...
+// ...
 });
 ```
 
@@ -209,8 +209,8 @@ In setup function you are interacting with Collboard systems. Theese are somethi
 Typically you are registering something under theese sytems. This will returns you [destroyable](https://github.com/hejny/destroyable) which you can directly return from your setup function.
 
 <!--
-    This section is GENERATED WITH generate-modules-sdk
-    Warning: Do not edit by hand, all changes will be lost on next execution!
+This section is GENERATED WITH generate-modules-sdk
+Warning: Do not edit by hand, all changes will be lost on next execution!
 -->
 
 <!--Systems-->
@@ -458,3 +458,13 @@ Makers are helpers which helps to create an module. Maker is a pure function tha
 <!--
 TODO: !! ## Multimodules
 -->
+
+
+
+<!--Contributing-->
+
+## 🖋️ Contributing
+
+I am open to pull requests, feedback, and suggestions. Or if you like this utility, you can [☕ buy me a coffee](https://www.buymeacoffee.com/hejny) or [donate via cryptocurrencies](https://github.com/hejny/hejny/blob/main/documents/crypto.md).
+
+<!--/Contributing-->
