@@ -1,7 +1,7 @@
 {
   "name": "@collboard/modules-sdk",
   "version": "18.13.100",
-  "description": "Modules SDK toolkit for Collboard.com",
+  "description": "Modules SDK toolkit for collaborative whiteboard platform Collboard.com.",
   "license": "SEE LICENSE IN LICENSE",
   "contributors": [
     "Pavol Hejný <pavol.hejny@collboard.com> (https://collboard.com/-/about/team)",
