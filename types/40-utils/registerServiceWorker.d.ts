@@ -33,7 +33,7 @@ checkIfServiceWorkerIsValid(serviceWorkerUrl, config);
 // Add some additional logging to localhost, pointing developers to the
 // service worker/PWA documentation.
 navigator.serviceWorker.ready.then(() => {
-console.log(
+consolex.log(
 'This web app is being served cache-first by a service ' +
 'worker. To learn more, visit https://bit.ly/CRA-PWA',
 );

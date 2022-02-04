@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { ILogger } from './ILogger';
+import { ILogger, ISubLogger } from './ILogger';
 interface IFilterLoggerOptions {
     predicate: (options: { type: keyof ILogger; message: any; index: number }) => boolean;
     logger: ILogger;
@@ -13,8 +13,14 @@ export declare class FilterLogger implements ILogger {
     private readonly options;
     private index;
     constructor(options: IFilterLoggerOptions);
-    info(message?: any, ...optionalParams: any[]): void;
-    warn(warning?: any, ...optionalParams: any[]): void;
-    error(error?: Error | any, ...optionalParams: any[]): void;
+    info(message?: any, ...optionalParams: any[]): this;
+    warn(warning?: any, ...optionalParams: any[]): this;
+    error(error?: Error | any, ...optionalParams: any[]): this;
+    trace(...data: any[]): this;
+    group(groupName?: string, ...optionalParams: any[]): ISubLogger;
+    groupCollapsed(groupName?: string, ...optionalParams: any[]): ISubLogger;
 }
 export {};
+/**
+ * TODO: ALso filter on group and groupCollapsed
+ */

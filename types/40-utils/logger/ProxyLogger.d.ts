@@ -4,11 +4,15 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { ILogger } from './ILogger';
-export declare class ProxyLogger implements ILogger {
+import { ILogger, ISubLogger } from './ILogger';
+export declare class ProxyLogger implements ILogger, ISubLogger {
     private readonly loggers;
-    constructor(...loggers: ILogger[]);
-    info(message?: any, ...optionalParams: any[]): void;
-    warn(warning?: any, ...optionalParams: any[]): void;
-    error(error?: Error | any, ...optionalParams: any[]): void;
+    constructor(...loggers: Array<ILogger | ISubLogger>);
+    info(message?: any, ...optionalParams: any[]): this;
+    warn(warning?: any, ...optionalParams: any[]): this;
+    error(error?: Error | any, ...optionalParams: any[]): this;
+    trace(...data: any[]): this;
+    end(): void;
+    group(groupName?: string, ...optionalParams: any[]): ISubLogger;
+    groupCollapsed(groupName?: string, ...optionalParams: any[]): ISubLogger;
 }

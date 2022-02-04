@@ -117,7 +117,7 @@ resolve(<system>);
 public async set<System>(<system>: <System>| null) {
 if(this.<system>Subject.value){
 if(<system>){
-console.warn(`<System> is going to be set twice to SystemsContainer.`);
+consolex.warn(`<System> is going to be set twice to SystemsContainer.`);
 }
 await this.<system>Subject.value.destroy();
 }
