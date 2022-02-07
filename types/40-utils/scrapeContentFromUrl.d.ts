@@ -9,4 +9,9 @@ import { string_html, string_url } from './typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare function scrapeContentFromUrl(articleUrl: string_url): Promise<string_html>;
+export declare const scrapeContentFromUrl: (input: string) => Promise<string>;
+/**
+ *
+ * @collboard-modules-sdk
+ */
+export declare function scrapeContentFromUrlUncached(articleUrl: string_url): Promise<string_html>;

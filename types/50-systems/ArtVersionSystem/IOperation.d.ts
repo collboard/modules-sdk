@@ -10,6 +10,7 @@ interface GenericFreshOperation<TOngoingOperation extends IOngoingOperation> {
     takeArts(...previousArts: AbstractArt[]): IOngoingOperation;
     takeCommits(...previousCommits: ICommitData[]): IOngoingOperation;
     newArts(...arts: AbstractArt[]): IOngoingOperation;
+    arts: AbstractArt[];
 }
 export declare type IFreshOperation = GenericFreshOperation<IOngoingOperation>;
 export declare type IFreshMaterialOperation = GenericFreshOperation<IOngoingMaterialOperation>;

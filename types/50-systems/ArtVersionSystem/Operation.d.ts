@@ -7,8 +7,8 @@
 import { Destroyable, IDestroyable } from 'destroyable';
 import { ICommitData } from '../../10-database/interfaces/ICommitData';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
-import { ClosePreventionSystem } from '../ClosePreventionSystem/0-ClosePreventionSystem';
 import { IClosePreventable } from '../ClosePreventionSystem/IClosePreventable';
+import { IClosePreventionSystem } from '../ClosePreventionSystem/IClosePreventionSystem';
 import { IArtVersioningSystem } from './IArtVersionSystem';
 import { IFreshMaterialOperation, IOngoingMaterialOperation } from './IOperation';
 /**
@@ -25,7 +25,7 @@ export declare class Operation
     static ORIGIN: symbol;
     constructor(
         artVersioningSystem: IArtVersioningSystem,
-        closePreventionSystem: ClosePreventionSystem,
+        closePreventionSystem: IClosePreventionSystem,
         operationName: string,
     );
     private previousCommitsOrNullsOrOrigins;
@@ -40,6 +40,7 @@ export declare class Operation
      * This reverts worthless() method.
      */
     valuable(): this;
+    get arts(): AbstractArt[];
     takeArts(...previousArts: AbstractArt[]): this;
     takeCommits(...previousCommits: ICommitData[]): this;
     private takeArtsOrCommitsOrNullsOrOrigins;

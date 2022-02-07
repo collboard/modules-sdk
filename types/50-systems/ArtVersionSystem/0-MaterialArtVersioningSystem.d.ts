@@ -14,6 +14,7 @@ import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 import { CornerstoneArt } from '../../71-arts/30-CornerstoneArt';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
+import { IClosePreventionSystem } from '../ClosePreventionSystem/IClosePreventionSystem';
 import { IArtVersioningSystem } from './IArtVersionSystem';
 import { IModuleSignature } from './IModuleSignature';
 import { IPermissions } from './IPermissions';
@@ -33,8 +34,8 @@ export declare class MaterialArtVersioningSystem extends AbstractSystem implemen
     private currentCommitsPool;
     private commitsObserver?;
     constructor(systems: ISystemsExtended, moduleSignature: IModuleSignature);
+    protected closePreventionSystem: IClosePreventionSystem;
     private identitySystem;
-    private closePreventionSystem;
     private artSerializer;
     protected init(): Promise<void>;
     get clientId(): string;

@@ -206,6 +206,10 @@ export const NotFoundError = (window as any).CollboardSdk.NotFoundError;
 export const flatternArray = (window as any).CollboardSdk.flatternArray;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/FunctionCache.d.ts
+export const FunctionCache = (window as any).CollboardSdk.FunctionCache;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/getWindowSize.d.ts
 export const getWindowSize = (window as any).CollboardSdk.getWindowSize;
 
@@ -282,6 +286,7 @@ export const randomUriId = (window as any).CollboardSdk.randomUriId;
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/scrapeContentFromUrl.d.ts
 export const scrapeContentFromUrl = (window as any).CollboardSdk.scrapeContentFromUrl;
+export const scrapeContentFromUrlUncached = (window as any).CollboardSdk.scrapeContentFromUrlUncached;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/sets/difference.d.ts
@@ -405,6 +410,10 @@ export const BusinessName = (window as any).CollboardSdk.BusinessName;
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ClosePreventionSystem/0-ClosePreventionSystem.d.ts
 export const ClosePreventionSystem = (window as any).CollboardSdk.ClosePreventionSystem;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ClosePreventionSystem/FakeClosePreventionSystem.d.ts
+export const FakeClosePreventionSystem = (window as any).CollboardSdk.FakeClosePreventionSystem;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/CollSpace/0-CollSpace.d.ts

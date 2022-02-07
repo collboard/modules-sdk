@@ -4,20 +4,14 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IDestroyable } from 'destroyable';
-import { AbstractSystem } from '../AbstractSystem';
+import { Destroyable, Registration } from 'destroyable';
 import { IClosePreventable } from './IClosePreventable';
 import { IClosePreventionSystem } from './IClosePreventionSystem';
 /**
- * @collboard-system
+ * FakeClosePreventionSystem is a implementation of IClosePreventionSystem which satisfy the interface but does nothing.
+ * @collboard-modules-sdk
  */
-export declare class ClosePreventionSystem
-    extends AbstractSystem
-    implements IClosePreventionSystem, IClosePreventable, IDestroyable
-{
-    protected init(): Promise<void>;
-    private reasons;
-    registerClosePrevention(...reasons: IClosePreventable[]): import('destroyable').Registration;
+export declare class FakeClosePreventionSystem extends Destroyable implements IClosePreventionSystem {
+    registerClosePrevention(...reasons: IClosePreventable[]): Registration;
     get canBeClosed(): boolean;
-    private beforeunloadHandler;
 }
