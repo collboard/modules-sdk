@@ -36,6 +36,7 @@ export function ObservableContentComponent({ loading, content }: IObservableCont
     React.useEffect(() => {
         const subscription = content.subscribe(async (newContentAwaitable) => {
             const newContent = await newContentAwaitable;
+             // Note+TODO: On this line the component can be unmounted but setState is still called one time again. React will indicates a memory leak (it happen only once), it is not a bit deal but maybe solve it.
             setState({ content: newContent });
         });
 
