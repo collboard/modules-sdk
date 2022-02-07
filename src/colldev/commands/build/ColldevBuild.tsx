@@ -32,7 +32,7 @@ export class ColldevBuild extends Destroyable implements ICommand<IColldevBuildO
         this.compiler = new ProductionCompiler({ workingDir, entryPath, outDir, cleanup });
         await forServicesReady(this.compiler);
 
-        return `Module was build to "${outDir}".`;
+        return `Modules were build to "${outDir}".`;
     }
 
     public render() {

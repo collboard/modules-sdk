@@ -171,7 +171,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
 
         await Promise.race(endScenarios);
 
-        return `Module is working successfully.`;
+        return `Modules are working successfully.`;
     }
 
     public render( options: IColldevDevelopOptions) {
