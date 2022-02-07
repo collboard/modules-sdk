@@ -86,6 +86,8 @@ export class Colldev extends Destroyable implements IDestroyable {
                             })
                             .catch((error: Error) => {
                                 this.renderingInstance?.unmount();
+
+                                // TODO: Probbably use compactErrorReport
                                 console.info(
                                     chalk.bgRed(chalk.white(error.name + ': ')) + ' ' + chalk.red(error.message),
                                 );
@@ -111,6 +113,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                                 process.exit(0);
                             })
                             .catch((error: Error) => {
+                                // TODO: Probbably use compactErrorReport with some isMinimal flag
                                 console.error(chalk.bgRed(chalk.white(error.name)));
                                 process.exit(1);
                             });
