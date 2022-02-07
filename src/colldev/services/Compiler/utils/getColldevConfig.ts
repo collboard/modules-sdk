@@ -13,7 +13,7 @@ export async function getColldevConfig(workingDir: string_folder_relative_path):
         const configFilePath = join(process.cwd(), workingDir, configFileBasename);
 
         if (await isFileExisting(configFilePath)) {
-            // TODO: !!! Expect entryPath existence
+            // TODO: Expect entryPath existence
             return await readConfigFile<IColldevConfig>(configFilePath);
         }
     }
@@ -53,5 +53,5 @@ export async function getColldevConfig(workingDir: string_folder_relative_path):
 /**';
  * TODO: Warn if project is not versioned by GIT
  * TODO: Test version compatibility
- * TODO: !!! safePathJoin
+ * TODO: safePathJoin to avoid errors when some part is undefined
  */
