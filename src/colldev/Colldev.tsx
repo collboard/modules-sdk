@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import commander from 'commander';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { Instance, render } from 'ink';
+import * as React from 'react';
 import spaceTrim from 'spacetrim';
 import { string_folder_relative_path } from '../../types';
 import { ColldevBuild } from './commands/build/ColldevBuild';
@@ -13,6 +14,7 @@ import { IColldevOptions } from './IColldevOptions';
 import { getColldevConfig } from './services/Compiler/utils/getColldevConfig';
 import { compactErrorReport } from './utils/cliLogging/compactErrorReport';
 import { compactSuccessReport } from './utils/cliLogging/compactSuccessReport';
+import { ErrorBoundary } from './utils/ErrorBoundary';
 import { getColldevPackageJsonContent } from './utils/getColldevPackageJsonContent';
 import { jsonReplacer } from './utils/jsonReplacer';
 
@@ -75,7 +77,7 @@ export class Colldev extends Destroyable implements IDestroyable {
                     const runningCommand = command.run(options);
 
                     if (output === 'human') {
-                        this.renderingInstance = render(command.render(options));
+                        this.renderingInstance = render(<ErrorBoundary>{command.render(options)}</ErrorBoundary>);
 
                         // TODO: DRY
                         runningCommand
