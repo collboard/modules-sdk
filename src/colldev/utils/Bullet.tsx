@@ -1,5 +1,4 @@
 import { Text } from 'ink';
-import Spinner from 'ink-spinner';
 import * as React from 'react';
 
 type IBulletProps = React.PropsWithChildren<{ isDone?: boolean; isError?: boolean; isSkipped?: boolean }>;
@@ -26,7 +25,8 @@ export function Bullet({ children, isDone, isError, isSkipped }: IBulletProps) {
     } else {
         return (
             <Text color="yellow" bold>
-                [<Spinner type="arrow" />] {children}
+                {/* Note: Originally here was used [<Spinner type="arrow" />] but frequent updating is making problems for some CLI consoles*/}
+                [⧖] {children}
             </Text>
         );
     }

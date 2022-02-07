@@ -36,7 +36,6 @@
         "express": "4.17.1",
         "glob-promise": "4.2.0",
         "ink": "3.2.0",
-        "ink-spinner": "4.0.3",
         "ink-table": "3.0.0",
         "ink-use-stdout-dimensions": "1.0.5",
         "localtunnel": "2.0.2",
