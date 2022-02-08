@@ -1,7 +1,7 @@
-import { IColldevDevelopStatus } from "../develop/IColldevDevelopStatus";
+import { ICompilerStatus } from '../../services/Compiler/ICompilerStatus';
+import { IColldevDevelopStatus } from '../develop/IColldevDevelopStatus';
 
-
-// tslint:disable-next-line:no-empty-interface
-export interface IColldevTestStatus extends IColldevDevelopStatus {
-
+export interface IColldevTestStatus {
+    develop: IColldevDevelopStatus;
+    compile?: ICompilerStatus;
 }

@@ -25,14 +25,18 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
     private compiler: ProductionCompiler;
 
     public init(program: commander.Command) {
-        return program
-            .command('publish [path]')
-            .alias('deploy')
-            .description(`Deploy collboard module`)
-            .option('-m, --module-store-url <url>', `Url of module store`, 'https://module-store.collboard.com')
-            .option('-t, --token <token>', `Publishing token`)
-            .option('-c, --cleanup', `Cleanup build directory before building`, false)
-            .action(this.run.bind(this));
+        return (
+            program
+                .command('publish [path]')
+                .alias('deploy')
+                .description(`Deploy collboard module`)
+                .option('-m, --module-store-url <url>', `Url of module store`, 'https://module-store.collboard.com')
+                .option('-t, --token <token>', `Publishing token`)
+                .option('-c, --cleanup', `Cleanup build directory before building`, false)
+                // TODO: On dry run also connect to the server and test ability to publish but do not publish
+                // TODO: .option('--dry-run', `Run ...`, false)
+                .action(this.run.bind(this))
+        );
     }
 
     public async run(options: IColldevPublishOptions) {

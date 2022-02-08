@@ -1,6 +1,16 @@
 import commander from 'commander';
 import { Destroyable } from 'destroyable';
+import { Box } from 'ink';
+import { join } from 'path';
+import * as React from 'react';
+import { map } from 'rxjs/operators';
 import spaceTrim from 'spacetrim';
+import { TEST_TEMPORARY_RELATIVE_PATH } from '../../config';
+import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
+import { ProductionCompiler } from '../../services/Compiler/ProductionCompiler';
+import { forServicesReady } from '../../utils/forServicesReady';
+import { getUniqueFoldername } from '../../utils/getUniqueFoldername';
+import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
 import { ColldevDevelop } from '../develop/ColldevDevelop';
 import { ICommand } from '../ICommand';
 import { IColldevTestOptions } from './IColldevTestOptions';
@@ -93,25 +103,49 @@ export class ColldevTest extends Destroyable implements ICommand<IColldevTestOpt
     }
 
     private developCommand = new ColldevDevelop();
+    private compiler?: ProductionCompiler;
 
     public async run(options: IColldevTestOptions) {
-        const runningDevelopCommand = /*not await*/ this.developCommand.run({
+        const { workingDir, entryPath } = options;
+
+        // Note: Testing that modules can be developed
+        await this.developCommand.run({
             ...options,
             exit: true,
         });
 
-        return await runningDevelopCommand;
+        // Note: Testing that modules can be compiled
+        this.compiler = new ProductionCompiler({
+            workingDir,
+            entryPath,
+            outDir: join(TEST_TEMPORARY_RELATIVE_PATH, getUniqueFoldername()),
+            cleanup: true,
+        });
+        await forServicesReady(this.compiler);
+
+        return `Modules are tested successfully.`;
     }
 
     public render(options: IColldevTestOptions) {
-        // TODO: Maybe some more optimized output for testing
-        return this.developCommand.render({
-            ...options,
-            exit: true,
-        });
+        return (
+            <Box borderStyle="round" display="flex" flexDirection="column" borderColor={'yellow'}>
+                {!this.compiler ? (
+                    this.developCommand.render({
+                        ...options,
+                        exit: true,
+                    })
+                ) : (
+                    <ObservableContentComponent
+                        content={this.compiler.status.pipe(
+                            map((compilerStatus) => <CompilerStatusOutputComponent {...{ compilerStatus }} />),
+                        )}
+                    />
+                )}
+            </Box>
+        );
     }
 
     public status() {
-        return this.developCommand.status();
+        return { develop: this.developCommand.status(), compile: this.compiler?.status.value };
     }
 }
