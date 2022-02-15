@@ -5,6 +5,3 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export {};
-/**
- * TODO: Allow to flip the shape - maybe some attibute / switcher for it?
- */

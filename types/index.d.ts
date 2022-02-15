@@ -34,6 +34,7 @@ export * from './30-components/utils/Obfuscate';
 export * from './30-components/utils/ObservableContentComponent';
 export * from './30-components/utils/QRCode';
 export * from './30-components/utils/RefreshContentComponent';
+export * from './30-components/utils/SelfUpdateContentComponent';
 export * from './30-components/utils/TestingSquare';
 export * from './30-components/utils/UploadZone';
 export * from './40-utils/Additional';

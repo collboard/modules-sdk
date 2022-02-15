@@ -17,10 +17,12 @@ import { Abstract2dArt } from './26-Abstract2dArt';
  */
 export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
     private privateSize;
+    private __scale;
     /**
      * @param size null means it will be automatically measured and set
+     * @param scale rescale after measuring; it will be used only if size is null
      */
-    constructor(privateSize?: IVectorData | null);
+    constructor(privateSize?: IVectorData | null, __scale?: number);
     /**
      * Readonly property containing information about object's original size
      */
@@ -38,7 +40,7 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
     /**
      * Measure the object and set `privateSize` and `originalSize`
      */
-    measure(element: HTMLElement | null): Promise<void>;
+    protected measure(element: HTMLElement | null, update?: () => void): Promise<void>;
     /**
      * Function called when object needs to be rendered on screen
      * This is an abstract wrapper over Abstract2dArt's `render`
@@ -49,7 +51,7 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
      * *Note: This can be called many times a second when user is scrolling
      * or not at all when art is out of screen*
      */
-    abstract renderBox(systems: ISystemsExtended): JSX.Element;
+    protected abstract renderBox(systems: ISystemsExtended): JSX.Element;
 }
 /**
  * Note: number is just a file prefix to feep it on the top of file list.

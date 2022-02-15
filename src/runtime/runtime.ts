@@ -105,6 +105,10 @@ export const QRCode = (window as any).CollboardSdk.QRCode;
 export const RefreshContentComponent = (window as any).CollboardSdk.RefreshContentComponent;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/SelfUpdateContentComponent.d.ts
+export const SelfUpdateContentComponent = (window as any).CollboardSdk.SelfUpdateContentComponent;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/TestingSquare.d.ts
 export const TestingSquare = (window as any).CollboardSdk.TestingSquare;
 

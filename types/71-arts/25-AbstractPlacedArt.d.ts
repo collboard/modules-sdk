@@ -14,6 +14,7 @@ import { AbstractArt } from './20-AbstractArt';
  * @see AbstractPlacedArt.isNear
  *
  * @collboard-modules-sdk
+ * @deprecated Absolute value is not a good idea, use a relative value of weight instead
  */
 export declare const IS_NEAR_DISTANCE = 20;
 /**
@@ -39,7 +40,7 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      * Value is used to display a floating menu above selection
      *
      * @example
-     * get acceptedAttributes() {
+     * public get acceptedAttributes() {
      *     return ["color", "size"];
      * }
      */

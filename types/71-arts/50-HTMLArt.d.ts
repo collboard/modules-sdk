@@ -22,8 +22,9 @@ export declare class HTMLArt extends Abstract2dBoxArt {
     };
     /**
      * @param content HTML content as string
+     * @param scale rescale after measuring
      */
-    constructor(content: string);
+    constructor(content: string, scale?: number);
     defaultZIndex: number;
     renderBox(): JSX.Element;
 }

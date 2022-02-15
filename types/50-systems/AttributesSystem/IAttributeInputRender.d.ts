@@ -5,4 +5,5 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-export declare type IAttributeInputRender<T> = (value: T, onChange: (value: T) => void) => JSX.Element;
+import { Promisable } from 'type-fest';
+export declare type IAttributeInputRender<T> = (value: T, onChange: (value: T) => void) => Promisable<JSX.Element>;

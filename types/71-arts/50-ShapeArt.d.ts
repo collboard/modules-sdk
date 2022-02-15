@@ -31,13 +31,14 @@ export declare class ShapeArt extends Abstract2dArt implements IFramable {
         name: string;
     };
     constructor(shape: ShapeName, color: string, weight: number, shift: IVectorData, privateSize: IVectorData);
-    get topLeftCorner(): import('xyzt').IVectorDataObject;
+    get topLeftCorner(): Vector;
     get bottomRightCorner(): Vector;
     get size(): IVectorData;
     set size(newSize: IVectorData);
     isNear(point2: IVectorData): boolean;
     get acceptedAttributes(): string[];
     render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
+    private renderShape;
 }
 /**
  * Note: number is just a file prefix to feep it on the top of file list.
