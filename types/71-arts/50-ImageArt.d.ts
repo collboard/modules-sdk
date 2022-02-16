@@ -24,6 +24,12 @@ export declare class ImageArt extends Abstract2dBoxArt {
      * @param alt Image alt text
      */
     constructor(src: string_url_image, alt: string);
+    private __element;
+    /**
+     * Rendered element on board or null in case the image is not used in any operation yet
+     */
+    get element(): HTMLImageElement | null;
+    private ref;
     renderBox(): JSX.Element;
 }
 /**
