@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { AbstractSystem } from '../AbstractSystem';
 import { IFileImportSupporter } from './interfaces/IFileImportSupporter';
-import { IImportFileOptions } from './interfaces/IImportFileOptions';
+import { IImportFileOptions, IImportFilesOptions } from './interfaces/IImportFileOptions';
 /**
  * Import system makes support for files which are dragged onto board, imporded or pasted
  * It auto-installs / uninstalls file support modules.
@@ -18,5 +18,9 @@ export declare class ImportSystem extends AbstractSystem {
     private fileSupporters;
     registerFileSupport(fileSupporter: IFileImportSupporter): import('destroyable').Registration;
     get supportedMimeTypes(): Set<string>;
-    importFile({ boardPosition, file: fileInput }: IImportFileOptions): Promise<void>;
+    importFiles({ boardPosition, files }: IImportFilesOptions): Promise<void>;
+    importFile({ boardPosition, file }: IImportFileOptions): Promise<void>;
 }
+/**
+ * TODO: Importing URLs like YouTube
+ */
