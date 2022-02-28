@@ -33,8 +33,8 @@ export declare class ImportArt extends Abstract2dArt {
      * @param strategy should be import live-linked or just isDestroyed and converted to copyied objects?
      */
     constructor(source: string_url, strategy: ImportStrategy);
-    get topLeftCorner(): import('xyzt').IVectorDataObject;
-    get bottomRightCorner(): import('xyzt').IVectorDataObject;
+    get topLeftCorner(): IVectorData;
+    get bottomRightCorner(): IVectorData;
     isNear(point2: IVectorData): boolean;
     get acceptedAttributes(): never[];
     render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;

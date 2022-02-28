@@ -35,8 +35,8 @@ export declare class CornerstoneArt
      * String containing user-editable board name
      */
     boardName: string;
-    get topLeftCorner(): import('xyzt').IVectorDataObject;
-    get bottomRightCorner(): import('xyzt').IVectorDataObject;
+    get topLeftCorner(): IVectorData;
+    get bottomRightCorner(): IVectorData;
     isNear(point2: IVectorData): boolean;
     get acceptedAttributes(): never[];
     render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;

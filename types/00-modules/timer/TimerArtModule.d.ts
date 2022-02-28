@@ -26,7 +26,7 @@ export declare class TimerArt extends Abstract2dArt {
     set timerTime(millis: number);
     get timerTime(): number;
     get acceptedAttributes(): string[];
-    get topLeftCorner(): import('xyzt').IVectorDataObject;
+    get topLeftCorner(): IVectorData;
     get bottomRightCorner(): Vector;
     get warningThreshold(): number;
     render(): JSX.Element;

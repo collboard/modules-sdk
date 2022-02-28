@@ -19,7 +19,7 @@ export declare abstract class Abstract3dBoxArt extends Abstract3dArt<IRenderCach
     constructor(_size?: IVectorData);
     get size(): IVectorData;
     set size(size: IVectorData);
-    get topLeftCorner(): import('xyzt').IVectorDataObject;
+    get topLeftCorner(): IVectorData;
     get bottomRightCorner(): Vector;
     get acceptedAttributes(): string_attribute[];
     render(selected: boolean, scene: Scene, renderCache?: IRenderCache): IRenderCache;

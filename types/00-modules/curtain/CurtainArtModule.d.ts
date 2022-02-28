@@ -22,7 +22,7 @@ export declare class CurtainArt extends Abstract2dArt {
     get curtainVisible(): number;
     set curtainVisible(toggle: number);
     get acceptedAttributes(): string[];
-    get topLeftCorner(): import('xyzt').IVectorDataObject;
+    get topLeftCorner(): IVectorData;
     get bottomRightCorner(): Vector;
     render(): JSX.Element;
 }

@@ -24,7 +24,7 @@ export declare class DiceArt extends Abstract2dArt {
     set diceSides(sides: number);
     get diceSides(): number;
     get acceptedAttributes(): string[];
-    get topLeftCorner(): import('xyzt').IVectorDataObject;
+    get topLeftCorner(): IVectorData;
     get bottomRightCorner(): Vector;
     private renderDots;
     render(): JSX.Element;
