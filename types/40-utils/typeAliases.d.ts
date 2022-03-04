@@ -363,11 +363,12 @@ export declare type string_translate_name = string;
 export declare type string_translate_name_not_normalized = string;
 /**
  * Semantic helper; For example "cs" or "en"
+ * Implementing ISO 639-1
  *
  * TODO: Maybe use enum
  * TODO: Rename - remove string_ prefix like ITranslateLanguageCode
  */
-export declare type string_translate_language = 'en' | 'cs' | 'sk';
+export declare type string_translate_language = 'en' | 'cs' | 'sk' | 'uk';
 /**
  * Semantic helper; For example "callbackName" or "renderMe"
  *

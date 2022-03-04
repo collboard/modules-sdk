@@ -9,4 +9,4 @@
  *
  * @collboard-modules-sdk
  */
-export declare function blobToDataURI(blob: Blob): Promise<string>;
+export declare function blobToDataUrl(blob: Blob): Promise<string>;

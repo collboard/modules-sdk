@@ -4,9 +4,6 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { Vector } from 'xyzt';
-/**
- *
- * @collboard-modules-sdk
- */
-export declare function measureImageSize(imageFileOrDataUrl: Blob | string): Promise<Vector>;
+/// <reference types="react" />
+import { IUkraineOptions } from 'save-ukraine';
+export declare function SaveUkraine(props: Partial<Omit<IUkraineOptions, 'element'>>): JSX.Element;

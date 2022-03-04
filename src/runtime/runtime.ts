@@ -121,8 +121,8 @@ export const UploadZone = (window as any).CollboardSdk.UploadZone;
 export const Additional = (window as any).CollboardSdk.Additional;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/blobToDataURI.d.ts
-export const blobToDataURI = (window as any).CollboardSdk.blobToDataURI;
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/blobToDataUrl.d.ts
+export const blobToDataUrl = (window as any).CollboardSdk.blobToDataUrl;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/capitalizeFirstLetter.d.ts

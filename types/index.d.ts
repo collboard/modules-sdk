@@ -38,7 +38,7 @@ export * from './30-components/utils/SelfUpdateContentComponent';
 export * from './30-components/utils/TestingSquare';
 export * from './30-components/utils/UploadZone';
 export * from './40-utils/Additional';
-export * from './40-utils/blobToDataURI';
+export * from './40-utils/blobToDataUrl';
 export * from './40-utils/capitalizeFirstLetter';
 export * from './40-utils/classNames';
 export * from './40-utils/color/Color';
