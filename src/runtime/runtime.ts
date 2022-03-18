@@ -436,6 +436,10 @@ export const IKey = (window as any).CollboardSdk.IKey;
 export const IShortcut = (window as any).CollboardSdk.IShortcut;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ControlSystem/utils/isEventOnBoard.d.ts
+export const isEventOnBoard = (window as any).CollboardSdk.isEventOnBoard;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/CreateSystem/0-CreateSystem.d.ts
 export const CreateSystem = (window as any).CollboardSdk.CreateSystem;
 
