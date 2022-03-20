@@ -14,5 +14,6 @@ export interface ITranslateMessage {
     nameNN: string_translate_name_not_normalized;
     language: string_translate_language;
     message: string;
+    isAutomaticTranslation: boolean;
     note?: string;
 }

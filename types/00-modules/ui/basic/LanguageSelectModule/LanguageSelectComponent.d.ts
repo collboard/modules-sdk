@@ -4,7 +4,6 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-export {};
-/**
- * TODO: Probbably also use ReactContext for providing language so language can be switched during livetime of app without reloading
- */
+/// <reference types="react" />
+import { StyleSystem } from '../../../../50-systems/StyleSystem/0-StyleSystem';
+export declare function LanguageSelectComponent({ styleSystem }: { styleSystem: StyleSystem }): JSX.Element;

@@ -97,6 +97,7 @@ export * from './50-systems/CollSpace/0-CollSpace';
 export * from './50-systems/ControlSystem/ControlSystem';
 export * from './50-systems/ControlSystem/interfaces/IKey';
 export * from './50-systems/ControlSystem/interfaces/IShortcut';
+export * from './50-systems/ControlSystem/utils/isEventOnBoard';
 export * from './50-systems/CreateSystem/0-CreateSystem';
 export * from './50-systems/ExportImportSystem/0-ExportSystem';
 export * from './50-systems/ExportImportSystem/0-ImportSystem';
