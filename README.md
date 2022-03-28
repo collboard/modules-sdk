@@ -466,6 +466,7 @@ TODO: !! ## Multimodules
 
 ## ✨ Partners
 
+
 <a href="https://www.h-edu.org/">
 <img src="https://www.h-edu.org/media/favicon.png" alt="H-edu logo" width="50"  />
 </a>
@@ -473,6 +474,7 @@ TODO: !! ## Multimodules
 <a href="https://collboard.com/">
 <img src="https://collboard.fra1.cdn.digitaloceanspaces.com/assets/18.12.1/logo-small.png" alt="Collboard logo" width="50"  />
 </a>
+
 
 [Become a partner](https://www.pavolhejny.com/contact/)
 
