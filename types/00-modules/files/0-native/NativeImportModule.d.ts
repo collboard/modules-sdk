@@ -10,4 +10,6 @@ export {};
  *       - [1] Preserve size
  *       - [2] Scale size to current zoom level
  *       + Same question for GeoJSON inports/exports
+ *
+ * [⚗️]
  */

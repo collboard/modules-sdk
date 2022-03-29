@@ -27,10 +27,12 @@ import { GamificationSystem } from './../GamificationSystem/0-GamificationSystem
 import { GenerateSystem } from './../GenerateSystem/0-GenerateSystem';
 import { HintSystem } from './../HintSystem/0-HintSystem';
 import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
+import { LicenseSystem } from './../LicenseSystem/0-LicenseSystem';
 import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
 import { AttributeSupportSyncer } from './../ModuleStore/Syncers/AttributeSupportSyncer';
 import { CornerstoneSyncer } from './../ModuleStore/Syncers/CornerstoneSyncer';
+import { FileSupportSyncer } from './../ModuleStore/Syncers/FileSupportSyncer';
 import { RouteAndBusinessSyncer } from './../ModuleStore/Syncers/RouteAndBusinessSyncer';
 import { NotificationSystem } from './../NotificationSystem/0-NotificationSystem';
 import { PointerSystem } from './../PointerSystem/0-PointerSystem';
@@ -72,6 +74,7 @@ export interface ISystemsExtended {
     readonly businessSystem: Promise<BusinessSystem>;
     readonly closePreventionSystem: Promise<ClosePreventionSystem>;
     readonly collSpace: Promise<CollSpace>;
+    readonly controlSystem: Promise<ControlSystem>;
     readonly createSystem: Promise<CreateSystem>;
     readonly exportSystem: Promise<ExportSystem>;
     readonly importSystem: Promise<ImportSystem>;
@@ -83,15 +86,16 @@ export interface ISystemsExtended {
     readonly generateSystem: Promise<GenerateSystem>;
     readonly hintSystem: Promise<HintSystem>;
     readonly identitySystem: Promise<IdentitySystem>;
+    readonly licenseSystem: Promise<LicenseSystem>;
     readonly moduleStore: Promise<ModuleStore>;
     readonly artSupportSyncer: Promise<ArtSupportSyncer>;
     readonly attributeSupportSyncer: Promise<AttributeSupportSyncer>;
     readonly cornerstoneSyncer: Promise<CornerstoneSyncer>;
+    readonly fileSupportSyncer: Promise<FileSupportSyncer>;
     readonly routeAndBusinessSyncer: Promise<RouteAndBusinessSyncer>;
     readonly notificationSystem: Promise<NotificationSystem>;
     readonly pointerSystem: Promise<PointerSystem>;
     readonly routingSystem: Promise<RoutingSystem>;
-    readonly controlSystem: Promise<ControlSystem>;
     readonly snapSystem: Promise<SnapSystem>;
     readonly soundSystem: Promise<SoundSystem>;
     readonly storageSystem: Promise<StorageSystem>;

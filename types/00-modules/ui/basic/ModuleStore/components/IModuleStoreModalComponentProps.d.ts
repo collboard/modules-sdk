@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IHandler } from '../../../../../40-utils/IHandler';
 import { BusinessSystem } from '../../../../../50-systems/BusinessSystem/0-BusinessSystem';
+import { LicenseSystem } from '../../../../../50-systems/LicenseSystem/0-LicenseSystem';
 import { ModuleStore } from '../../../../../50-systems/ModuleStore/connectors/0-ModuleStore';
 import { IModuleSearchCriteria } from '../../../../../50-systems/ModuleStore/interfaces/IModuleSearchCriteria';
 import { ArtSupportSyncer } from '../../../../../50-systems/ModuleStore/Syncers/ArtSupportSyncer';
@@ -18,6 +19,7 @@ export interface IModuleStoreModalComponentProps {
     translationsSystem: TranslationsSystem;
     businessSystem: BusinessSystem;
     routingSystem: RoutingSystem;
+    licenseSystem: LicenseSystem;
     moduleStore: ModuleStore;
     cornerstoneSyncer: CornerstoneSyncer;
     routeAndBusinessSyncer: RouteAndBusinessSyncer;

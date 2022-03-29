@@ -10,7 +10,7 @@ interface IFileDialogueOptions {
     /**
      * One or more unique file type specifiers describing file types to allow
      */
-    accept: IArrayable<string_mime_type_with_wildcard>;
+    accept?: IArrayable<string_mime_type_with_wildcard>;
     /**
      * TODO:
      * The capture attribute specifies that, optionally, a new file should be captured, and which device should be used to capture that new media of a type defined by the accept attribute. Values include user and environment. The capture attribute is supported on the file input type.

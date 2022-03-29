@@ -113,10 +113,6 @@ export const SelfUpdateContentComponent = (window as any).CollboardSdk.SelfUpdat
 export const TestingSquare = (window as any).CollboardSdk.TestingSquare;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/UploadZone.d.ts
-export const UploadZone = (window as any).CollboardSdk.UploadZone;
-
-
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/Additional.d.ts
 export const Additional = (window as any).CollboardSdk.Additional;
 
@@ -206,6 +202,10 @@ export const NotBoardError = (window as any).CollboardSdk.NotBoardError;
 export const NotFoundError = (window as any).CollboardSdk.NotFoundError;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/escapeRegExp.d.ts
+export const escapeRegExp = (window as any).CollboardSdk.escapeRegExp;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/flatternArray.d.ts
 export const flatternArray = (window as any).CollboardSdk.flatternArray;
 
@@ -270,6 +270,10 @@ export const removeDiacritics = (window as any).CollboardSdk.removeDiacritics;
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/normalizing/searchKeywords.d.ts
 export const searchKeywords = (window as any).CollboardSdk.searchKeywords;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/patternToRegExp.d.ts
+export const patternToRegExp = (window as any).CollboardSdk.patternToRegExp;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/randomEmoji.d.ts
@@ -452,6 +456,18 @@ export const ExportSystem = (window as any).CollboardSdk.ExportSystem;
 export const ImportSystem = (window as any).CollboardSdk.ImportSystem;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/utils/amendPropperFileType.d.ts
+export const amendPropperFileType = (window as any).CollboardSdk.amendPropperFileType;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/utils/centerArts.d.ts
+export const centerArts = (window as any).CollboardSdk.centerArts;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/utils/sortArtContainersByScreenPosition.d.ts
+export const sortArtContainersByScreenPosition = (window as any).CollboardSdk.sortArtContainersByScreenPosition;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts
 export const ExtraJsxPlace = (window as any).CollboardSdk.ExtraJsxPlace;
 export const ExtraJsxSystem = (window as any).CollboardSdk.ExtraJsxSystem;
@@ -486,6 +502,10 @@ export const HintSystem = (window as any).CollboardSdk.HintSystem;
 export const IdentitySystem = (window as any).CollboardSdk.IdentitySystem;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/LicenseSystem/0-LicenseSystem.d.ts
+export const LicenseSystem = (window as any).CollboardSdk.LicenseSystem;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/connectors/0-ModuleStore.d.ts
 export const ModuleStore = (window as any).CollboardSdk.ModuleStore;
 
@@ -508,7 +528,9 @@ export const IModuleSetup = (window as any).CollboardSdk.IModuleSetup;
 export const IModuleManifest = (window as any).CollboardSdk.IModuleManifest;
 export const IModuleFlags = (window as any).CollboardSdk.IModuleFlags;
 export const IModuleManifestAuthor = (window as any).CollboardSdk.IModuleManifestAuthor;
-export const IModuleManifestLicense = (window as any).CollboardSdk.IModuleManifestLicense;
+export const IModuleManifestSoftwareLicense = (window as any).CollboardSdk.IModuleManifestSoftwareLicense;
+export const IModuleManifestUsageLicense = (window as any).CollboardSdk.IModuleManifestUsageLicense;
+export const IModuleManifestUsageLicensePayed = (window as any).CollboardSdk.IModuleManifestUsageLicensePayed;
 export const IModuleManifestTranslation = (window as any).CollboardSdk.IModuleManifestTranslation;
 
 

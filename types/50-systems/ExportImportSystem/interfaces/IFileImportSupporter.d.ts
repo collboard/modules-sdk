@@ -4,11 +4,14 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { IDestroyable } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { Vector } from 'xyzt';
-import { string_mime_type_with_wildcard } from '../../../40-utils/typeAliases';
+import { ISubLogger } from '../../../40-utils/logger/ILogger';
+import { IOngoingOperation } from '../../ArtVersionSystem/IOperation';
 /**
- * This represents support for one file type for example some mime type or text file with some structure
- * ImportSystem will call file supporter it will either import file into the board OR call next to pass responsibility to another supporter
+ * This represents support for importing files
+ * ImportSystem will call file supporter it will either import file into the board OR call next to pass responsibility to another supporter via calling next
  */
 export interface IFileImportSupporter {
     /**
@@ -16,12 +19,19 @@ export interface IFileImportSupporter {
      */
     priority: number;
     /**
-     * importFile will be only called when mime type is matching
-     * This is also indicator for auto-instllation mechanism
+     *  processFile it will do one of the following:
+     *    1) Import file into the board and:
+     *      - Return the operation that was created
+     *      - Return something which can be destroyed to cancel the importment
+     *    2) Pass responsibility to another supporter via returning result of next calling
+     *
+     * Typically you will check mime type and choose what option to do.
      */
-    mimeType?: string_mime_type_with_wildcard;
-    /**
-     *  processFile it will either import file into the board OR call next to pass responsibility to another supporter
-     */
-    processFile: (options: { boardPosition: Vector; file: Blob; next: () => void }) => Promise<void>;
+    processFile: (options: {
+        logger: ISubLogger;
+        boardPosition: Vector;
+        file: File;
+        next(): typeof FILE_IMPORT_SUPPORTER_NEXT;
+    }) => Promisable<IDestroyable | IOngoingOperation | typeof FILE_IMPORT_SUPPORTER_NEXT>;
 }
+export declare const FILE_IMPORT_SUPPORTER_NEXT: unique symbol;

@@ -12,4 +12,5 @@ export declare function ModuleBoxComponent({
     persister,
     translationsSystem,
     businessSystem,
+    licenseSystem,
 }: IModuleBoxComponentProps): JSX.Element;

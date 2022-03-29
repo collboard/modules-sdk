@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import './../50-systems/ControlSystem/modules/shortcuts-override.module';
 import './../50-systems/ControlSystem/modules/shortcuts.module';
+import './../50-systems/LicenseSystem/modules/test-simple-token-license.module';
 import './../50-systems/ModuleStore/connectors/ModulesStorage';
 import './../50-systems/ModuleStore/interfaces/IModulesStorage';
 import './../50-systems/ModuleStore/Syncers/StorageSyncer';
@@ -59,6 +60,7 @@ import './files/0-native/NativeImportModule';
 import './files/html/HtmlExportModule';
 import './files/html/HtmlImportModule';
 import './files/images/ImagesImportModule';
+import './files/images/svg/ImageSvgArt';
 import './files/text/TextExportModule';
 import './files/text/TextImportModule';
 import './planets/RealPlanetArt';

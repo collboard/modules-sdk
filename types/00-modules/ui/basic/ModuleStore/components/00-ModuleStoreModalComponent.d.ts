@@ -9,6 +9,7 @@ import { IModuleStoreModalComponentProps } from './IModuleStoreModalComponentPro
 export declare function ModuleStoreModalComponent({
     translationsSystem,
     routingSystem,
+    licenseSystem,
     moduleStore,
     cornerstoneSyncer,
     routeAndBusinessSyncer,

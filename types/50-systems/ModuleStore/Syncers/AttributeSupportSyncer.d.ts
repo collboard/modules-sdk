@@ -17,6 +17,6 @@ import { AbstractSyncer } from './AbstractSyncer';
 export declare class AttributeSupportSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
     private attributeDependencies;
     private throttleQueues;
-    activateModuleSupportForAttribute(attributeName: string_attribute): Promise<unknown>;
+    installSupportForAttribute(attributeName: string_attribute): Promise<unknown>;
     destroy(): Promise<void>;
 }

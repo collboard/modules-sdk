@@ -10,4 +10,5 @@ export declare function ModuleStatusComponent({
     shownModule,
     moduleStatusReporter,
     persister,
+    usageLicenseInfo,
 }: IModuleStatusComponentProps): JSX.Element;

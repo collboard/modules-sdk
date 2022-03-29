@@ -5,7 +5,12 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IJson } from 'everstorage';
-import { string_attribute, string_module_category, string_module_name } from '../../../40-utils/typeAliases';
+import {
+    string_attribute,
+    string_mime_type,
+    string_module_category,
+    string_module_name,
+} from '../../../40-utils/typeAliases';
 /**
  * Represents a query to modules repository
  *
@@ -18,6 +23,7 @@ export interface IModuleSearchCriteria extends IJson {
     supports?: {
         art?: string;
         attribute?: string_attribute;
+        fileImport?: string_mime_type;
     };
     limit?: number;
 }

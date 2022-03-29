@@ -27,10 +27,12 @@ import { GamificationSystem } from './../GamificationSystem/0-GamificationSystem
 import { GenerateSystem } from './../GenerateSystem/0-GenerateSystem';
 import { HintSystem } from './../HintSystem/0-HintSystem';
 import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
+import { LicenseSystem } from './../LicenseSystem/0-LicenseSystem';
 import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
 import { AttributeSupportSyncer } from './../ModuleStore/Syncers/AttributeSupportSyncer';
 import { CornerstoneSyncer } from './../ModuleStore/Syncers/CornerstoneSyncer';
+import { FileSupportSyncer } from './../ModuleStore/Syncers/FileSupportSyncer';
 import { RouteAndBusinessSyncer } from './../ModuleStore/Syncers/RouteAndBusinessSyncer';
 import { NotificationSystem } from './../NotificationSystem/0-NotificationSystem';
 import { PointerSystem } from './../PointerSystem/0-PointerSystem';
@@ -58,6 +60,7 @@ export interface ISystemsResolved {
     readonly businessSystem: BusinessSystem;
     readonly closePreventionSystem: ClosePreventionSystem;
     readonly collSpace: CollSpace;
+    readonly controlSystem: ControlSystem;
     readonly createSystem: CreateSystem;
     readonly exportSystem: ExportSystem;
     readonly importSystem: ImportSystem;
@@ -69,15 +72,16 @@ export interface ISystemsResolved {
     readonly generateSystem: GenerateSystem;
     readonly hintSystem: HintSystem;
     readonly identitySystem: IdentitySystem;
+    readonly licenseSystem: LicenseSystem;
     readonly moduleStore: ModuleStore;
     readonly artSupportSyncer: ArtSupportSyncer;
     readonly attributeSupportSyncer: AttributeSupportSyncer;
     readonly cornerstoneSyncer: CornerstoneSyncer;
+    readonly fileSupportSyncer: FileSupportSyncer;
     readonly routeAndBusinessSyncer: RouteAndBusinessSyncer;
     readonly notificationSystem: NotificationSystem;
     readonly pointerSystem: PointerSystem;
     readonly routingSystem: RoutingSystem;
-    readonly controlSystem: ControlSystem;
     readonly snapSystem: SnapSystem;
     readonly soundSystem: SoundSystem;
     readonly storageSystem: StorageSystem;

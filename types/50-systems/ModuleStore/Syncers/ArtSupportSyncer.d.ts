@@ -17,6 +17,6 @@ import { AbstractSyncer } from './AbstractSyncer';
 export declare class ArtSupportSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
     private artDependencies;
     private throttleQueues;
-    activateModuleSupportForArt(classNameOrInstance: string | AbstractArt): Promise<unknown>;
+    installSupportForArt(classNameOrInstance: string | AbstractArt): Promise<unknown>;
     destroy(): Promise<void>;
 }

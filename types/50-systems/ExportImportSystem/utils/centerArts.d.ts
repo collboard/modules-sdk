@@ -9,6 +9,8 @@ import { AbstractPlacedArt } from '../../../71-arts/25-AbstractPlacedArt';
 /**
  * Note: This will mutate passed arts
  * TODO: Use rotation and scale we should probbably bahave isotropically and isometrically (pass here transform instead of center)
+ *
+ * @collboard-modules-sdk
  */
 export declare function centerArts({
     arts,
