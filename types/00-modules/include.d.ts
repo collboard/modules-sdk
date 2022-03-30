@@ -60,7 +60,6 @@ import './files/0-native/NativeImportModule';
 import './files/html/HtmlExportModule';
 import './files/html/HtmlImportModule';
 import './files/images/ImagesImportModule';
-import './files/images/svg/ImageSvgArt';
 import './files/text/TextExportModule';
 import './files/text/TextImportModule';
 import './planets/RealPlanetArt';
