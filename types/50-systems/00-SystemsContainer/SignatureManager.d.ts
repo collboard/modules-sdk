@@ -10,7 +10,7 @@ import { AbstractSystem } from '../AbstractSystem';
 import { ISystems } from './ISystems';
 declare type ISignableEntity = ISystems | AbstractSystem | TouchController;
 declare type ISignature = IModuleManifest | null;
-export declare class SignatureManager {
+declare class SignatureManager {
     private readonly signatureKey;
     /**
      * Signs given entity with given module signature.
@@ -35,4 +35,10 @@ export declare const signatureManager: SignatureManager;
 export {};
 /**
  * TODO: Maybe more universally - DO not hardcode SystemsContainer, AbstractSystem or IModuleManifest
+ * TODO: Is this the best way to do this?
+ * TODO: Is this method preventing from removing the sign from external modules reliably:
+ *       Can be hack some modification of:
+ *       - delete (systems as any)[(signatureManager as any).signatureKey];
+ *       - Wrapping system in another proxy with signatureKey of null/undefined
+ *       - Modifying original signatureManager from external code
  */

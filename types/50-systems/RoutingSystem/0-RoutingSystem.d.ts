@@ -9,7 +9,7 @@ import { string_uri_part } from '../../40-utils/typeAliases';
 import { AbstractSystem } from '../AbstractSystem';
 import { IUrlVariables } from './routePath/IUrlVariables';
 /**
- * TODO: Make some pattern how to manage theese singletons
+ * @singleton
  */
 export declare let routingSystem: RoutingSystem;
 /**

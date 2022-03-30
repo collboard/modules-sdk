@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IModulesStorageStrong } from './interfaces/IModulesStorage';
 /**
- * Note: Probbably the only place where singleton makes sence
+ * Internal modules storage
+ * @singleton
  */
 export declare const internalModules: IModulesStorageStrong;

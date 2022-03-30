@@ -6,6 +6,9 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { SwitchLogger } from './40-utils/logger/SwitchLogger';
 export declare const consolex: SwitchLogger;
+/**
+ * @singleton
+ */
 export declare function disableLogging(): void;
 /**
  * TODO: LoggingSystem
