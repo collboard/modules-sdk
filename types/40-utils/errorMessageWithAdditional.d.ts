@@ -9,5 +9,7 @@
  *
  * @param errorMessage
  * @returns {string} - error message with reference to additional info in console appended to the end
+ *
+ * @collboard-modules-sdk
  */
 export declare function errorMessageWithAdditional(errorMessage: string, additional: Record<string, any>): string;

@@ -9,5 +9,9 @@ interface IFilterWithLimitOptions<T> {
     limit: number;
     predicate: (value: T, index?: number, array?: T[]) => boolean;
 }
+/**
+ * Filter array with limit and predicate
+ * @collboard-modules-sdk
+ */
 export declare function filterWithLimit<T>({ array, limit, predicate }: IFilterWithLimitOptions<T>): T[];
 export {};

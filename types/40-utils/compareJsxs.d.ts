@@ -5,4 +5,12 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
+/**
+ * Compares two JSX elements for sorting purposes
+ * @param a first JSX Element
+ * @param b second JSX Element
+ * @returns -1 if a < b, 0 if a == b, 1 if a > b
+ *
+ * @collboard-modules-sdk
+ */
 export declare function compareJsxs(a: JSX.Element, b: JSX.Element): 1 | -1 | 0;

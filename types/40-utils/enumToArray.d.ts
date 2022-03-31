@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
- *
+ * Converts typescript enum to array without number values
  * @collboard-modules-sdk
  */
 export declare function enumToArray(enumerable: any): string[];

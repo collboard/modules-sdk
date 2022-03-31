@@ -7,7 +7,8 @@
 import { string_char_emoji } from './typeAliases';
 /**
  *
- * @return random emoji char like "🍆", "🍡", "🍤"...
+ * Pick random emoji char like "🍆", "🍡", "🍤"...
+ *
  * @collboard-modules-sdk
  */
 export declare function randomEmoji(): string_char_emoji;

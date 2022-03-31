@@ -13,6 +13,8 @@ interface IFlipNegativeSizeValue<T extends IVectorData> {
  * Flip negative size values to positive and change according to it translate
  * Or preserves both size and translate when size is positive
  * If there is only one axis negative, it will be flipped and positive axis will be preserved
+ *
+ * @collboard-modules-sdk
  */
 export declare function flipNegativeSize({
     translate,

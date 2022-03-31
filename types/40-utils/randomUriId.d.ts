@@ -7,6 +7,8 @@
 import { string_uri_part } from './typeAliases';
 /**
  *
+ * Generates a random uriId name like "ggpsehhglbdoejrhpmal", "h2m24iceax4qtxnk7pzj", "krc73zrdryyuaebj74du"...
+ *
  * @collboard-modules-sdk
  */
 export declare function randomUriId(): string_uri_part;

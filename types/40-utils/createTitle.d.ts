@@ -9,5 +9,12 @@ interface ICreateTitleArguments {
     boardName?: string;
     translator: TranslationsSystem;
 }
+/**
+ * Crete page title
+ * @not-collboard-modules-sdk
+ */
 export declare function createTitle({ boardName, translator }: ICreateTitleArguments): string;
 export {};
+/**
+ * TODO: Some better system for this
+ */

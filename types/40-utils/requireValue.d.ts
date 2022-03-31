@@ -6,8 +6,10 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
  * Checks that value is defined
- * If YES return the value
- * If NO then throw error
+ * - If YES return the value
+ * - If NO then throw error
+ *
+ * @collboard-modules-sdk
  */
 export declare function requireValue<T>(value: T | undefined, errorMessage?: string): T;
 /**

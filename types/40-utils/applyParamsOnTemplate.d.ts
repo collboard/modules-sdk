@@ -13,6 +13,7 @@ interface ITemplateArguments {
 /**
  *
  * Note: Originally it was named useTemplate but it has conflict with name of one react hook
+ *
  */
 export declare function applyParamsOnTemplate({ template, params, replace }: ITemplateArguments): string;
 export {};

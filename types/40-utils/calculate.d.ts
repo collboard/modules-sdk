@@ -4,7 +4,11 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+/**
+ * Converts human readable time to seconds
+ * @collboard-modules-sdk
+ */
 export declare function calculate(formula: string): number;
 /**
- * TODO: Make this more universal OR rename to convert / convertUnits
+ * TODO: Make this more universal OR rename to convert / convertUnits (OR Use VM2 instead of this)
  */

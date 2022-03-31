@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Vector } from 'xyzt';
 /**
- *
+ * Get image size after its rendered on its native size
  * @collboard-modules-sdk
  */
 export declare function measureImageSize(imageFileOrDataUrl: Blob | string): Promise<Vector>;

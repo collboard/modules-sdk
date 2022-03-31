@@ -14,6 +14,8 @@ interface IFitInsideOptions {
  * Fits object with objectSize inside of container with containerSize.
  * It preserves objectSize ratio
  *
+ * @collboard-modules-sdk
+ *
  */
 export declare function fitInside({ objectSize, containerSize, isUpscaling }: IFitInsideOptions): Vector;
 export {};

@@ -6,6 +6,13 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { string_html } from './typeAliases';
+/**
+ * Converts jsx to simple provisional html without using react-dom
+ * @param element JSX element
+ * @returns html string
+ *
+ * @collboard-modules-sdk
+ */
 export declare function jsxToHtml(element?: string | JSX.Element): string_html;
 /**
  * TODO: Maybe just use ReactDOMServer.renderToStaticMarkup

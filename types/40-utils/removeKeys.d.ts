@@ -11,6 +11,8 @@
  * @param options
  * @param keys
  * @returns stripped object
+ *
+ * @collboard-modules-sdk
  */
 export declare function removeKeys<TObject, TRemove extends keyof TObject>(
     options: TObject,

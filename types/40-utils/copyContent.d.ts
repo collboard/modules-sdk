@@ -5,7 +5,9 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
- *
+ * Copy content to clipboard
  * @deprecated
+ *
+ * @not-collboard-modules-sdk
  */
 export declare function copyContent(target: HTMLInputElement): void;

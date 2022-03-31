@@ -4,4 +4,8 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+/**
+ * Deep clone an object
+ * @collboard-modules-sdk
+ */
 export declare function deepClone<T>(entity: T): T;

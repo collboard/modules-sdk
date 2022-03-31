@@ -117,12 +117,28 @@ export const TestingSquare = (window as any).CollboardSdk.TestingSquare;
 export const Additional = (window as any).CollboardSdk.Additional;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/aggregate.d.ts
+export const aggregate = (window as any).CollboardSdk.aggregate;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/amIEmbededInIFrame.d.ts
+export const amIEmbededInIFrame = (window as any).CollboardSdk.amIEmbededInIFrame;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/blobToDataUrl.d.ts
 export const blobToDataUrl = (window as any).CollboardSdk.blobToDataUrl;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/calculate.d.ts
+export const calculate = (window as any).CollboardSdk.calculate;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/capitalizeFirstLetter.d.ts
 export const capitalizeFirstLetter = (window as any).CollboardSdk.capitalizeFirstLetter;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/checkOptionsCompatibility.d.ts
+export const checkOptionsCompatibility = (window as any).CollboardSdk.checkOptionsCompatibility;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/classNames.d.ts
@@ -141,8 +157,20 @@ export const hslToRgb = (window as any).CollboardSdk.hslToRgb;
 export const rgbToHsl = (window as any).CollboardSdk.rgbToHsl;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/compareJsxs.d.ts
+export const compareJsxs = (window as any).CollboardSdk.compareJsxs;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/compareStrings.d.ts
+export const compareStrings = (window as any).CollboardSdk.compareStrings;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/create3dRotation.d.ts
 export const create3dRotation = (window as any).CollboardSdk.create3dRotation;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/deepClone.d.ts
+export const deepClone = (window as any).CollboardSdk.deepClone;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/dialogues/alertDialogue.d.ts
@@ -168,6 +196,10 @@ export const EMOJIS = (window as any).CollboardSdk.EMOJIS;
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/enumToArray.d.ts
 export const enumToArray = (window as any).CollboardSdk.enumToArray;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/errorMessageWithAdditional.d.ts
+export const errorMessageWithAdditional = (window as any).CollboardSdk.errorMessageWithAdditional;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/BoardAlreadyExistsError.d.ts
@@ -206,8 +238,24 @@ export const NotFoundError = (window as any).CollboardSdk.NotFoundError;
 export const escapeRegExp = (window as any).CollboardSdk.escapeRegExp;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/fileExists.d.ts
+export const fileExists = (window as any).CollboardSdk.fileExists;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/filterWithLimit.d.ts
+export const filterWithLimit = (window as any).CollboardSdk.filterWithLimit;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/fitInside.d.ts
+export const fitInside = (window as any).CollboardSdk.fitInside;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/flatternArray.d.ts
 export const flatternArray = (window as any).CollboardSdk.flatternArray;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/flipNegativeSize.d.ts
+export const flipNegativeSize = (window as any).CollboardSdk.flipNegativeSize;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/FunctionCache.d.ts
@@ -228,6 +276,10 @@ export const factor = (window as any).CollboardSdk.factor;
 export const IHandler = (window as any).CollboardSdk.IHandler;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/isEmoji.d.ts
+export const isEmoji = (window as any).CollboardSdk.isEmoji;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/isEqualArray.d.ts
 export const isEqualArray = (window as any).CollboardSdk.isEqualArray;
 
@@ -236,8 +288,28 @@ export const isEqualArray = (window as any).CollboardSdk.isEqualArray;
 export const isNumeric = (window as any).CollboardSdk.isNumeric;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/isRunningOnLocalhost.d.ts
+export const isRunningOnLocalhost = (window as any).CollboardSdk.isRunningOnLocalhost;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/isValidUriId.d.ts
 export const isValidUriId = (window as any).CollboardSdk.isValidUriId;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/joinWithJsx.d.ts
+export const joinWithAny = (window as any).CollboardSdk.joinWithAny;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/jsxToHtml.d.ts
+export const jsxToHtml = (window as any).CollboardSdk.jsxToHtml;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/jsxToText.d.ts
+export const jsxToText = (window as any).CollboardSdk.jsxToText;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/loadAndRunExternalScript.d.ts
+export const loadAndRunExternalScript = (window as any).CollboardSdk.loadAndRunExternalScript;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/measureImageSize.d.ts
@@ -276,6 +348,10 @@ export const searchKeywords = (window as any).CollboardSdk.searchKeywords;
 export const patternToRegExp = (window as any).CollboardSdk.patternToRegExp;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/pickKeys.d.ts
+export const pickKeys = (window as any).CollboardSdk.pickKeys;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/randomEmoji.d.ts
 export const randomEmoji = (window as any).CollboardSdk.randomEmoji;
 
@@ -284,12 +360,24 @@ export const randomEmoji = (window as any).CollboardSdk.randomEmoji;
 export const randomItem = (window as any).CollboardSdk.randomItem;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/randomJavascriptName.d.ts
+export const randomJavascriptName = (window as any).CollboardSdk.randomJavascriptName;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/randomString.d.ts
 export const randomString = (window as any).CollboardSdk.randomString;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/randomUriId.d.ts
 export const randomUriId = (window as any).CollboardSdk.randomUriId;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/removeKeys.d.ts
+export const removeKeys = (window as any).CollboardSdk.removeKeys;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/requireValue.d.ts
+export const requireValue = (window as any).CollboardSdk.requireValue;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/scrapeContentFromUrl.d.ts
@@ -303,6 +391,10 @@ export const difference = (window as any).CollboardSdk.difference;
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/Speech.d.ts
 export const Speech = (window as any).CollboardSdk.Speech;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/splitArray.d.ts
+export const splitArray = (window as any).CollboardSdk.splitArray;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/svgUtils.d.ts
@@ -330,6 +422,10 @@ export const toArray = (window as any).CollboardSdk.toArray;
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/toBabylon.d.ts
 export const positionToBabylon = (window as any).CollboardSdk.positionToBabylon;
 export const rotationToBabylon = (window as any).CollboardSdk.rotationToBabylon;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/toString.d.ts
+export const toString = (window as any).CollboardSdk.toString;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/typeAliases.d.ts

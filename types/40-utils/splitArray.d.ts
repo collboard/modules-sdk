@@ -9,5 +9,7 @@
  * @param array An array that will be splitted in chunks
  * @param splitter An item that can split a array.
  * @param limit A value used to limit the number of elements returned in the array.
+ *
+ * @collboard-modules-sdk
  */
 export declare function splitArray<T>(array: T[], splitter: T, limit?: number): T[][];

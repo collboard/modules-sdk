@@ -4,6 +4,13 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+/**
+ *
+ * @param value some char
+ * @returns true if value is emoji
+ *
+ * @collboard-modules-sdk
+ */
 export declare function isEmoji(value: string): boolean;
 /**
  * TODO: Some smarter way how to detect new emojis without listing them in EMOJIS

@@ -10,6 +10,8 @@
  * @param options all options
  * @param compatibleKeys list of compatible keys
  * @returns
+ *
+ * @collboard-modules-sdk
  */
 export declare function checkOptionsCompatibility<T, TCompatibleKeys extends keyof T>(
     options: T,

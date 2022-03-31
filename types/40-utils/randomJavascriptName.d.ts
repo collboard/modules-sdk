@@ -5,6 +5,12 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_javascript_name } from './typeAliases';
+/**
+ *
+ * Generates a random javascript name like "randomJavascriptName", "randomJavascriptNameAdasjd", "randomJavascriptNameAasfsdff"...
+ *
+ * @collboard-modules-sdk
+ */
 export declare function randomJavascriptName({
     length,
     prefix,
