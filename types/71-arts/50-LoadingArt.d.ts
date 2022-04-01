@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { ISystems } from '../CollboardSdk';
+import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
 * Art which renders loading of something

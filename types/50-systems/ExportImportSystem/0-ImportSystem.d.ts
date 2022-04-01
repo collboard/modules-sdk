@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IDestroyable } from 'destroyable';
+import { IDestroyable, Registration } from 'destroyable';
 import { IVectorData } from 'xyzt';
 import { AbstractSystem } from '../AbstractSystem';
 import { IOngoingOperation } from '../ArtVersionSystem/IOperation';
@@ -18,7 +18,7 @@ import { IFileImportSupporter } from './interfaces/IFileImportSupporter';
 export declare class ImportSystem extends AbstractSystem {
     protected init(): Promise<void>;
     private fileSupporters;
-    registerFileSupport(fileSupporter: IFileImportSupporter): import('destroyable').Registration;
+    registerFileSupport(fileSupporter: IFileImportSupporter): Registration;
     /**
      * Imports one file into the board.
      *

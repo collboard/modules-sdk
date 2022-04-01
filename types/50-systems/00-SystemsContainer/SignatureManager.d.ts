@@ -5,8 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { TouchController } from 'touchcontroller';
-import { IModuleManifest } from '../../CollboardSdk';
 import { AbstractSystem } from '../AbstractSystem';
+import { IModuleManifest } from '../ModuleStore/interfaces/IModuleManifest';
 import { ISystems } from './ISystems';
 declare type ISignableEntity = ISystems | AbstractSystem | TouchController;
 declare type ISignature = IModuleManifest | null;
