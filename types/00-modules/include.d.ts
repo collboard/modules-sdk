@@ -23,6 +23,7 @@ import './../71-arts/50-FreehandArt';
 import './../71-arts/50-HTMLArt';
 import './../71-arts/50-ImageArt';
 import './../71-arts/50-LineArt';
+import './../71-arts/50-LoadingArt';
 import './../71-arts/50-ShapeArt';
 import './../71-arts/50-TextArt';
 import './../72-tools/EraseTool';

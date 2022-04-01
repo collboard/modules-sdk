@@ -205,6 +205,7 @@ export * from './71-arts/50-FreehandArt';
 export * from './71-arts/50-HTMLArt';
 export * from './71-arts/50-ImageArt';
 export * from './71-arts/50-LineArt';
+export * from './71-arts/50-LoadingArt';
 export * from './71-arts/50-ShapeArt';
 export * from './71-arts/50-TextArt';
 export * from './72-tools/behaviors/IBehavoirProps';

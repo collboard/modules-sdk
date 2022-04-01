@@ -36,7 +36,7 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
      */
     get measured(): boolean;
     get acceptedAttributes(): string_attribute[];
-    render(/* TODO: ✨ Add is prefix */ selected: boolean, systems: ISystemsExtended): JSX.Element;
+    render(isSelected: boolean, systems: ISystemsExtended): JSX.Element;
     /**
      * Measure the object and set `privateSize` and `originalSize`
      */

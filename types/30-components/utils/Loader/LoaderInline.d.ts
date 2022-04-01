@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
 import { IArrayable } from '../../../40-utils/toArray';
+import { ILoaderProps } from './Loader';
 export declare type ILoaderInlineProps = React.PropsWithChildren<{
     icon?: string;
     animation?: IArrayable<string>;
@@ -13,4 +14,10 @@ export declare type ILoaderInlineProps = React.PropsWithChildren<{
 /**
  * @collboard-modules-sdk
  */
-export declare function LoaderInline({ children, icon, animation }: ILoaderInlineProps): JSX.Element;
+export declare function LoaderInline({
+    children,
+    icon,
+    animation,
+    alt,
+    canLoadForever,
+}: ILoaderInlineProps & ILoaderProps): JSX.Element;

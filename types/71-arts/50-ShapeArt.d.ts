@@ -37,7 +37,7 @@ export declare class ShapeArt extends Abstract2dArt implements IFramable {
     set size(newSize: IVectorData);
     isNear(point2: IVectorData): boolean;
     get acceptedAttributes(): string[];
-    render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
+    render(isSelected: boolean): JSX.Element;
     private renderShape;
 }
 /**

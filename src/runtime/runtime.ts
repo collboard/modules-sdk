@@ -849,6 +849,10 @@ export const ImageArt = (window as any).CollboardSdk.ImageArt;
 export const LineArt = (window as any).CollboardSdk.LineArt;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-LoadingArt.d.ts
+export const LoadingArt = (window as any).CollboardSdk.LoadingArt;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-ShapeArt.d.ts
 export const ShapeName = (window as any).CollboardSdk.ShapeName;
 export const ShapeArt = (window as any).CollboardSdk.ShapeArt;

@@ -16,8 +16,14 @@ export interface ILoaderProps {
      * It is sorta like a alt for the image as a text for immediate synchronous use
      */
     alt: string;
+    /**
+     * Should be content loaded quickly or it is ok to show loader for long period of time
+     * - If FALSE warning will be shown after some time
+     * - If TRUE nothing will happen
+     */
+    canLoadForever?: boolean;
 }
 /**
  * @collboard-modules-sdk
  */
-export declare function Loader({ alt }: ILoaderProps): JSX.Element;
+export declare function Loader({ alt, canLoadForever }: ILoaderProps): JSX.Element;

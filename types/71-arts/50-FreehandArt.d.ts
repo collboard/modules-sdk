@@ -32,7 +32,7 @@ export declare class FreehandArt extends Abstract2dArt {
     isNear(point2: IVectorData): boolean;
     get acceptedAttributes(): string[];
     private calculateBoundingBox;
-    render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
+    render(isSelected: boolean): JSX.Element;
 }
 /**
  * TODO: Instead of x/y pairs use Vector

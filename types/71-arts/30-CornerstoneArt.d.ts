@@ -39,7 +39,7 @@ export declare class CornerstoneArt
     get bottomRightCorner(): IVectorData;
     isNear(point2: IVectorData): boolean;
     get acceptedAttributes(): never[];
-    render(/* TODO: ✨ Add is prefix */ selected: boolean): JSX.Element;
+    render(isSelected: boolean): JSX.Element;
     /**
      * List of user-activated modules on a board
      */
