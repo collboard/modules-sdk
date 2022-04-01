@@ -43,6 +43,10 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
             createElement: () => deepFake,
             querySelector: () => deepFake,
         },
+        navigator: deepFake,
+        Blob: deepFake,
+        Worker: deepFake,
+        // TODO: Deepfake this on upper level
         declareModule: (module) => {
             const moduleDefinition = factor(module);
 
