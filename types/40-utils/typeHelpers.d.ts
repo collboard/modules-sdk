@@ -19,6 +19,11 @@ export declare type RequireOnlyOne<T, Keys extends keyof T = keyof T> = Pick<T, 
         [K in Keys]-?: Required<Pick<T, K>> & Partial<Record<Exclude<Keys, K>, undefined>>;
     }[Keys];
 /**
+ * Make partial only some keys
+ * @collboard-modules-sdk
+ */
+export declare type PickPartial<Type, Keys extends keyof Type> = Partial<Pick<Type, Keys>> & Omit<Type, Keys>;
+/**
  * Array with at least one item
  */
 export declare type ArrayFull<T> = {

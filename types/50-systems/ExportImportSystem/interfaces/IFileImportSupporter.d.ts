@@ -31,6 +31,12 @@ export interface IFileImportSupporter {
         logger: ISubLogger;
         boardPosition: Vector;
         file: File;
+        /**
+         * This operation represents just preview of the file.
+         * It can be updated by better preview of imported file.
+         * Note: You do not need to destroy, persist or abort it, it will be done automatically
+         */
+        previewOperation: IOngoingOperation;
         next(): typeof FILE_IMPORT_SUPPORTER_NEXT;
     }) => Promisable<IDestroyable | IOngoingOperation | typeof FILE_IMPORT_SUPPORTER_NEXT>;
 }

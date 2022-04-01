@@ -7,4 +7,9 @@
 import { Registration } from 'destroyable';
 export declare class NotificationRegistration extends Registration {
     destroy(): Promise<void>;
+    /**
+     *
+     * @alias for destroy
+     */
+    constrict(): Promise<void>;
 }

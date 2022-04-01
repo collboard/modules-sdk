@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { PickPartial } from '../../40-utils/typeHelpers';
 import { AbstractSystem } from '../AbstractSystem';
 import { INotification } from './INotification';
 import { NotificationRegistration } from './NotificationRegistration';
@@ -14,7 +15,7 @@ import { NotificationRegistration } from './NotificationRegistration';
 export declare class NotificationSystem extends AbstractSystem {
     notifications: INotification[];
     protected init(): Promise<void>;
-    publish(notification: INotification): NotificationRegistration;
+    publish(notification: PickPartial<INotification, 'tag'>): NotificationRegistration;
     /**
      * Constricts (unpublish) published notification
      *

@@ -474,6 +474,7 @@ export const string_color = (window as any).CollboardSdk.string_color;
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/typeHelpers.d.ts
 export const RequireAtLeastOne = (window as any).CollboardSdk.RequireAtLeastOne;
 export const RequireOnlyOne = (window as any).CollboardSdk.RequireOnlyOne;
+export const PickPartial = (window as any).CollboardSdk.PickPartial;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/00-SystemsContainer/ISystems.d.ts
