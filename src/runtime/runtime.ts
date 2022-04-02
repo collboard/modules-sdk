@@ -165,6 +165,14 @@ export const compareStrings = (window as any).CollboardSdk.compareStrings;
 export const create3dRotation = (window as any).CollboardSdk.create3dRotation;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/data/blobToDataUrl.d.ts
+export const blobToDataUrl = (window as any).CollboardSdk.blobToDataUrl;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/data/dataUrlToBlob.d.ts
+export const dataUrlToBlob = (window as any).CollboardSdk.dataUrlToBlob;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/deepClone.d.ts
 export const deepClone = (window as any).CollboardSdk.deepClone;
 
