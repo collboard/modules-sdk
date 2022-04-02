@@ -5,8 +5,9 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
- * TODO: Naming blobToDataURI vs. blobToDataUri
+ * Convert blob to string data url
  *
  * @collboard-modules-sdk
  */
-export declare function blobToDataUrl(blob: Blob): Promise<string>;
+import { string_data_url } from '../typeAliases';
+export declare function blobToDataUrl(blob: Blob): Promise<string_data_url>;

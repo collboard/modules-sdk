@@ -51,6 +51,13 @@ export declare type string_url = string;
 /**
  * Semantic helper
  *
+ * For example `"data:text/plain;base64,SGVsbG8sIFdvcmxkIQ=="`
+ * @collboard-modules-sdk
+ */
+export declare type string_data_url = string;
+/**
+ * Semantic helper
+ *
  * For example `"https://collboard.com/9SeSQTupmQHwuSrLi"` OR `/9SeSQTupmQHwuSrLi`
  * @collboard-modules-sdk
  */

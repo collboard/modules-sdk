@@ -125,10 +125,6 @@ export const aggregate = (window as any).CollboardSdk.aggregate;
 export const amIEmbededInIFrame = (window as any).CollboardSdk.amIEmbededInIFrame;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/blobToDataUrl.d.ts
-export const blobToDataUrl = (window as any).CollboardSdk.blobToDataUrl;
-
-
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/calculate.d.ts
 export const calculate = (window as any).CollboardSdk.calculate;
 
@@ -435,6 +431,7 @@ export const string_char = (window as any).CollboardSdk.string_char;
 export const string_char_emoji = (window as any).CollboardSdk.string_char_emoji;
 export const string_html = (window as any).CollboardSdk.string_html;
 export const string_url = (window as any).CollboardSdk.string_url;
+export const string_data_url = (window as any).CollboardSdk.string_data_url;
 export const string_href = (window as any).CollboardSdk.string_href;
 export const string_url_image = (window as any).CollboardSdk.string_url_image;
 export const string_uri = (window as any).CollboardSdk.string_uri;

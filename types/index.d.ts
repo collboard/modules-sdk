@@ -39,7 +39,6 @@ export * from './30-components/utils/TestingSquare';
 export * from './40-utils/Additional';
 export * from './40-utils/aggregate';
 export * from './40-utils/amIEmbededInIFrame';
-export * from './40-utils/blobToDataUrl';
 export * from './40-utils/calculate';
 export * from './40-utils/capitalizeFirstLetter';
 export * from './40-utils/checkOptionsCompatibility';

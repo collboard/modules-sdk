@@ -13,3 +13,7 @@ import { string_url } from './typeAliases';
  * @collboard-modules-sdk
  */
 export declare function loadAndRunExternalScript(src: string_url): Promise<void>;
+/**
+ * TODO: Checksums
+ * TODO: loadAndRunExternalScriptOnce
+ */
