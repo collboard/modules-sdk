@@ -41,6 +41,8 @@ export * from './40-utils/color/rgbToHsl';
 export * from './40-utils/compareJsxs';
 export * from './40-utils/compareStrings';
 export * from './40-utils/create3dRotation';
+export * from './40-utils/data/blobToDataUrl';
+export * from './40-utils/data/dataUrlToBlob';
 export * from './40-utils/deepClone';
 export * from './40-utils/dialogues/alertDialogue';
 export * from './40-utils/dialogues/confirmDialogue';

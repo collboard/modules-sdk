@@ -37,6 +37,15 @@ export interface IFileImportSupporter {
          * Note: You do not need to destroy, persist or abort it, it will be done automatically
          */
         previewOperation: IOngoingOperation;
+        /**
+         * Signalizes that some new art(s) will be created.
+         * This will do the following to enhance UX:
+         * - Show virtual placeholder for new art(s)
+         * - Show "Importing" message
+         * - Change tool to select tool
+         * - After importing will select new art(s)
+         */
+        willCommitArts(): void;
         next(): typeof FILE_IMPORT_SUPPORTER_NEXT;
     }) => Promisable<IDestroyable | IOngoingOperation | typeof FILE_IMPORT_SUPPORTER_NEXT>;
 }
