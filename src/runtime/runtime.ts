@@ -432,6 +432,15 @@ export const rotationToBabylon = (window as any).CollboardSdk.rotationToBabylon;
 export const toString = (window as any).CollboardSdk.toString;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/trayModules/TrayItemTypes.d.ts
+export const ITrayItem = (window as any).CollboardSdk.ITrayItem;
+export const ITrayItemList = (window as any).CollboardSdk.ITrayItemList;
+export const ITrayToolbarGroup = (window as any).CollboardSdk.ITrayToolbarGroup;
+export const ITrayToolbarItems = (window as any).CollboardSdk.ITrayToolbarItems;
+export const ITrayItemFilter = (window as any).CollboardSdk.ITrayItemFilter;
+export const ITrayDefinition = (window as any).CollboardSdk.ITrayDefinition;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/typeAliases.d.ts
 export const string_mime_type = (window as any).CollboardSdk.string_mime_type;
 export const string_mime_type_with_wildcard = (window as any).CollboardSdk.string_mime_type_with_wildcard;

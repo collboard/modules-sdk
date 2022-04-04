@@ -114,6 +114,7 @@ export * from './40-utils/tasks/ThrottleQueues';
 export * from './40-utils/toArray';
 export * from './40-utils/toBabylon';
 export * from './40-utils/toString';
+export * from './40-utils/trayModules/TrayItemTypes';
 export * from './40-utils/typeAliases';
 export * from './40-utils/typeHelpers';
 export * from './50-systems/00-SystemsContainer/ISystems';
