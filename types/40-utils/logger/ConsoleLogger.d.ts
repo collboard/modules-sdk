@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { ILogger, ISubLogger } from './ILogger';
 export declare class ConsoleLogger implements ILogger {
-    private readonly console;
+    protected readonly console: Console;
     static readonly console: ConsoleLogger;
     constructor(console: Console);
     info(message?: any, ...optionalParams: any[]): this;
@@ -15,4 +15,9 @@ export declare class ConsoleLogger implements ILogger {
     trace(...data: any[]): this;
     group(groupName?: string, ...optionalParams: any[]): ISubLogger;
     groupCollapsed(groupName?: string, ...optionalParams: any[]): ISubLogger;
+    groupPrefixed(groupName?: string, ...optionalParams: any[]): ISubLogger;
 }
+/**
+ * TODO: Maybe split into multiple files
+ * TODO: Nicer begin / end messages
+ */
