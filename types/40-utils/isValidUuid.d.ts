@@ -9,4 +9,4 @@ import { string_uri_part } from './typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare function isValidUriId(uriId: string_uri_part): boolean;
+export declare function isValidUuid(uriId: string_uri_part): boolean;

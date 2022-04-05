@@ -126,6 +126,14 @@ export declare type string_email = string;
 export declare type string_uuid = string;
 /**
  * Semantic helper
+ * UUID with only the first part of the UUID
+ *
+ * For example `"5a0a153d"`
+ * @collboard-modules-sdk
+ */
+export declare type string_uuid_cut = string;
+/**
+ * Semantic helper
  *
  * For example `"b126926439c5fcb83609888a11283723c1ef137c0ad599a77a1be81812bd221d"`
  * @collboard-modules-sdk

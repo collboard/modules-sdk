@@ -300,6 +300,10 @@ export const isRunningOnLocalhost = (window as any).CollboardSdk.isRunningOnLoca
 export const isValidUriId = (window as any).CollboardSdk.isValidUriId;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/isValidUuid.d.ts
+export const isValidUuid = (window as any).CollboardSdk.isValidUuid;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/joinWithJsx.d.ts
 export const joinWithAny = (window as any).CollboardSdk.joinWithAny;
 
@@ -459,6 +463,7 @@ export const string_hostname = (window as any).CollboardSdk.string_hostname;
 export const string_host = (window as any).CollboardSdk.string_host;
 export const string_email = (window as any).CollboardSdk.string_email;
 export const string_uuid = (window as any).CollboardSdk.string_uuid;
+export const string_uuid_cut = (window as any).CollboardSdk.string_uuid_cut;
 export const string_sha256 = (window as any).CollboardSdk.string_sha256;
 export const string_version = (window as any).CollboardSdk.string_version;
 export const string_version_dependency = (window as any).CollboardSdk.string_version_dependency;
