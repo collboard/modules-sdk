@@ -5,12 +5,13 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
+import { string_color, string_url, string_url_image } from '../typeAliases';
 /**
  * @collboard-modules-sdk
  */
 export declare type ITrayItem = {
     content: JSX.Element;
-    defaultColor: string;
+    defaultColor: string_color;
     filters?: ITrayItemFilter[];
 };
 /**
@@ -33,7 +34,12 @@ export declare type ITrayToolbarGroup = Array<{
 export declare type ITrayToolbarItems = Array<{
     name: JSX.Element;
     scale: number;
-    icon: string;
+    /**
+     * It can be:
+     *    - relative part of the URL (to which will be prepended with ITrayDefinition.imageFolder + '/categories/' )
+     *    - absolute URL
+     */
+    icon: string_url_image;
     items: ITrayToolbarGroup;
 }>;
 /**
@@ -46,6 +52,6 @@ export declare type ITrayItemFilter = (source: JSX.Element) => JSX.Element;
 export interface ITrayDefinition {
     getItems(): ITrayItemList;
     getToolbarItems(): ITrayToolbarItems;
-    imageFolder: string;
+    imageFolder?: string_url;
     className: string;
 }

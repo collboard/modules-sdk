@@ -16,7 +16,11 @@ export interface IFile {
  * Represents storage that will store each keypair in a separate file.
  */
 export interface IFilesStorage extends Omit<IStorage<IFile>, 'length' | 'clear' | 'key'> {
-    subscribe(options: { match?: RegExp; replay?: boolean; observer(key: string, value: IFile): void }): IDestroyable;
+    subscribe(options: {
+        match?: RegExp;
+        isInitiallyReplayed?: boolean;
+        observer(key: string, value: IFile): void;
+    }): IDestroyable;
 }
 /**
  * Represents storage that can give public deterministic  URL for each file

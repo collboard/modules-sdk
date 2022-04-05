@@ -24,11 +24,11 @@ export declare class DigitalOceanSpaces implements IIFilesStorageWithCdn {
     setItem(key: string, file: IFile): Promise<void>;
     subscribe({
         match,
-        replay,
+        isInitiallyReplayed,
         observer,
     }: {
         match?: RegExp;
-        replay?: boolean;
+        isInitiallyReplayed?: boolean;
         observer(key: string, value: IFile): void;
     }): IDestroyable;
     private observers;
