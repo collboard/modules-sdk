@@ -4,7 +4,9 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { Promisable } from 'type-fest';
 import { Vector } from 'xyzt';
+import { IArrayable } from '../../../40-utils/toArray';
 import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
@@ -12,6 +14,6 @@ export declare function makeTrayToolModule<TArt extends Abstract2dArt>(protoModu
     manifest?: IModuleManifest;
     getSelectedItemId: () => string | null;
     isMouseOverToolbar: () => boolean;
-    newArtMaker: (id: string, position: Vector) => TArt;
+    newArtMaker: (id: string, position: Vector) => Promisable<IArrayable<TArt>>;
     getToolbarBodyRef: () => HTMLDivElement | null;
 }): IModuleDefinition;
