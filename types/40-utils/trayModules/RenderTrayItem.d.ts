@@ -8,7 +8,7 @@
 import { ITrayItemList } from './TrayItemTypes';
 export declare function RenderTrayItem(
     items: ITrayItemList,
-    className: string,
+    className: string | undefined,
     itemId: string,
     scale: number,
     color?: string,

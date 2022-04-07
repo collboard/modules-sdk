@@ -274,6 +274,7 @@ export const getWindowSize = (window as any).CollboardSdk.getWindowSize;
 export const IFactory = (window as any).CollboardSdk.IFactory;
 export const IFactorable = (window as any).CollboardSdk.IFactorable;
 export const factor = (window as any).CollboardSdk.factor;
+export const NOT_CONSTRUCTABLE = (window as any).CollboardSdk.NOT_CONSTRUCTABLE;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/IHandler.d.ts

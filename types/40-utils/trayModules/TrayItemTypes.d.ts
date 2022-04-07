@@ -5,6 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
+import { IFactorable } from '../IFactory';
+import { IMessage } from '../IMessage';
 import { string_color, string_url, string_url_image } from '../typeAliases';
 /**
  * @collboard-modules-sdk
@@ -24,7 +26,7 @@ export declare type ITrayItemList = {
  * @collboard-modules-sdk
  */
 export declare type ITrayToolbarGroup = Array<{
-    title: JSX.Element;
+    title: IMessage;
     itemIds: string[];
     scale?: number;
 }>;
@@ -32,7 +34,7 @@ export declare type ITrayToolbarGroup = Array<{
  * @collboard-modules-sdk
  */
 export declare type ITrayToolbarItems = Array<{
-    name: JSX.Element;
+    name: IMessage;
     scale: number;
     /**
      * It can be:
@@ -50,8 +52,8 @@ export declare type ITrayItemFilter = (source: JSX.Element) => JSX.Element;
  * @collboard-modules-sdk
  */
 export interface ITrayDefinition {
-    getItems(): ITrayItemList;
-    getToolbarItems(): ITrayToolbarItems;
+    getItems: IFactorable<ITrayItemList>;
+    getToolbarItems: IFactorable<ITrayToolbarItems>;
     imageFolder?: string_url;
-    className: string;
+    className?: string;
 }

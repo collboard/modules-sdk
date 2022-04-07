@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
 import { TouchController } from 'touchcontroller';
+import { TranslationsSystem } from '../../50-systems/TranslationsSystem/0-TranslationsSystem';
 import { ITrayDefinition } from './TrayItemTypes';
 export interface ITrayToolbarProps {
     onMouseOver?: () => void;
@@ -15,6 +16,7 @@ export interface ITrayToolbarProps {
     touchController: TouchController;
     setSelectedItemId: (newId: string | null) => void;
     trayDefinition: ITrayDefinition;
+    translationsSystem: TranslationsSystem;
 }
 interface ITrayToolbarState {
     tab: number;

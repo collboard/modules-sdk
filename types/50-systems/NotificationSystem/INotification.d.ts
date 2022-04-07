@@ -5,7 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { string_module_name, string_translate_language, string_url } from '../../40-utils/typeAliases';
+import { string_module_name, string_url } from '../../40-utils/typeAliases';
+import { IMessage } from '../../40-utils/IMessage';
 /**
  * Similar interface to Notification Web API
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Notification
@@ -19,9 +20,9 @@ export interface INotification {
     readonly tag: string;
     readonly module?: string_module_name;
     readonly actions?: INotificationAction[];
-    readonly title?: INotificationMessage;
-    readonly subtitle?: INotificationMessage;
-    readonly body?: INotificationMessage;
+    readonly title?: IMessage;
+    readonly subtitle?: IMessage;
+    readonly body?: IMessage;
     readonly type?: 'info' | 'warning' | 'error' | 'success';
     readonly priority?: number;
     readonly places?: NotificationPlace[];
@@ -29,10 +30,6 @@ export interface INotification {
     readonly onClick?: INotificationOnClickHandler;
     readonly href?: string_url;
 }
-export declare type INotificationMessage =
-    | INotificationBaseMessage
-    | Partial<Record<string_translate_language, INotificationBaseMessage>>;
-export declare type INotificationBaseMessage = string | JSX.Element;
 /**
  * @collboard sdk
  */
@@ -51,7 +48,7 @@ export interface INotificationAction {
     /**
      *The string describing the action that is displayed to the user.
      */
-    readonly title: INotificationMessage;
+    readonly title: IMessage;
     /**
      * The URL of the image used to represent the notification when there is not enough space to display the notification itself.
      */

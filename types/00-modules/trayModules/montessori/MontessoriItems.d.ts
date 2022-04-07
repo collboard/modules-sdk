@@ -4,8 +4,11 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { NOT_CONSTRUCTABLE } from '../../../40-utils/IFactory';
 import { ITrayItemList, ITrayToolbarItems } from '../../../40-utils/trayModules/TrayItemTypes';
 export declare class MontessoriItemsGenerator {
+    static readonly [NOT_CONSTRUCTABLE] = true;
+    private constructor();
     static privateItems: ITrayItemList;
     static privateToolbar: ITrayToolbarItems;
     static items(): ITrayItemList;

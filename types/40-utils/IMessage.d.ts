@@ -4,21 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+/// <reference types="react" />
+import { string_translate_language } from './typeAliases';
 /**
- * @collboard-modules-sdk
+ * This represents a message whic can be a simple string, or a complex object with multiple translations and rich elements.
  */
-export declare type IFactory<T> = () => T;
-/**
- * @collboard-modules-sdk
- */
-export declare type IFactorable<T> = T | IFactory<T>;
-/**
- *
- * @collboard-modules-sdk
- */
-export declare function factor<T>(valueOrFunction: IFactorable<T>): T;
-/**
- *
- * @collboard-modules-sdk
- */
-export declare const NOT_CONSTRUCTABLE: unique symbol;
+export declare type IMessage = IBaseMessage | Partial<Record<string_translate_language, IBaseMessage>>;
+export declare type IBaseMessage = string | JSX.Element;
