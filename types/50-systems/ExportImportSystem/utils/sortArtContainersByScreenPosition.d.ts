@@ -12,3 +12,6 @@ import { IArtContainer } from '../interfaces/IArtContainer';
  * @collboard-modules-sdk
  */
 export declare function sortArtContainersByScreenPosition(artContainers: IArtContainer[]): IArtContainer[];
+/**
+ * TODO: [🐽] Where is the best location for this function
+ */

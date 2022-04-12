@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { ITrayItemList } from '../../../../40-utils/trayModules/TrayItemTypes';
+import { ITrayDynamicItemList } from '../../../../40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
 export declare function arrow(x1: number, y1: number, x2: number, y2: number, key?: number | string): JSX.Element;
 export declare function mapArray(
     object: {
@@ -14,5 +14,5 @@ export declare function mapArray(
     color: string,
     prefix?: string,
     contentWrapper?: (value: JSX.Element) => JSX.Element,
-): ITrayItemList;
+): ITrayDynamicItemList;
 export declare function hideBorderContentWrapper(value: JSX.Element): JSX.Element;

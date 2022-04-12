@@ -8,12 +8,26 @@ import { Promisable } from 'type-fest';
 import { Vector } from 'xyzt';
 import { IArrayable } from '../../../40-utils/toArray';
 import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
+import { ISystems } from '../../00-SystemsContainer/ISystems';
+import { IOngoingMaterialOperation } from '../../ArtVersionSystem/IOperation';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
+/**
+ * Internal module maker used by makeTrayModule (which gets exported and should be used)
+ *
+ * @not-collboard-modules-sdk
+ */
 export declare function makeTrayToolModule<TArt extends Abstract2dArt>(protoModule: {
     manifest?: IModuleManifest;
-    getSelectedItemId: () => string | null;
-    isMouseOverToolbar: () => boolean;
-    newArtMaker: (id: string, position: Vector) => Promisable<IArrayable<TArt>>;
-    getToolbarBodyRef: () => HTMLDivElement | null;
+    getSelectedItemId(): string | null;
+    isMouseOverToolbar(): boolean;
+    newArtMaker(options: {
+        itemId: string;
+        boardPosition: Vector;
+        systems: ISystems;
+    }): Promisable<IArrayable<TArt> | IOngoingMaterialOperation>;
+    getToolbarBodyRef(): HTMLDivElement | null;
 }): IModuleDefinition;
+/**
+ * TODO: Add with click on tray
+ */

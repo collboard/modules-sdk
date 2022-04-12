@@ -19,7 +19,7 @@ import { IGetMyBoardsResponse } from './interfaces/IGetMyBoards';
  */
 export declare class ApiClient extends AbstractSystem {
     private apiUrl;
-    constructor(systems: ISystemsExtended, apiUrl: string);
+    constructor(systems: ISystemsExtended, apiUrl: string_url);
     private apiClientCache;
     protected init(): Promise<void>;
     getAbout(): Promise<{

@@ -15,6 +15,7 @@ interface ICollboardAppOptions {
     language: string_translate_language;
     apiUrl: string_url;
     moduleStoreUrl: string_url;
+    proxyUrl: string_url;
 }
 export declare type ISerializableTypes = Commit | ICommitData | AbstractArt | Vector;
 export declare type ArtSerializer = Serializer<ISerializableTypes>;

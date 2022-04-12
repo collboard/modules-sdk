@@ -7,7 +7,7 @@
 import React from 'react';
 import { TouchController } from 'touchcontroller';
 import { TranslationsSystem } from '../../50-systems/TranslationsSystem/0-TranslationsSystem';
-import { ITrayDefinition } from './TrayItemTypes';
+import { ITrayDynamicDefinition } from './interfaces/ITrayDynamicItemTypes';
 export interface ITrayToolbarProps {
     onMouseOver?: () => void;
     onMouseOut?: () => void;
@@ -15,7 +15,7 @@ export interface ITrayToolbarProps {
     setToolbarBodyRef?: (object: HTMLDivElement) => void;
     touchController: TouchController;
     setSelectedItemId: (newId: string | null) => void;
-    trayDefinition: ITrayDefinition;
+    trayDefinition: ITrayDynamicDefinition;
     translationsSystem: TranslationsSystem;
 }
 interface ITrayToolbarState {

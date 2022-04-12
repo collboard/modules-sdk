@@ -6,20 +6,25 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Promisable } from 'type-fest';
 import { Vector } from 'xyzt';
-import { IFactory } from '../../../40-utils/IFactory';
 import { IArrayable } from '../../../40-utils/toArray';
-import { ITrayDefinition } from '../../../40-utils/trayModules/TrayItemTypes';
+import { ITrayDynamicDefinition } from '../../../40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
 import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
+import { IOngoingMaterialOperation } from '../../ArtVersionSystem/IOperation';
 import { IToolbarIcon } from '../../ToolbarSystem/IToolbarIcon';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 /**
  * Maker for creating tray-like modules (like H-edu or Montessori)
+ * This is the advanced version of the maker which is usefull for creating modules with can have dynamic number, order or other specific properties
+ *
+ * Note: There are two makers for tray modules:
+ *       - **makeTraySimpleModule** will take pre-defined list of items
+ *       - **makeTrayDynamicModule** will allow to define items dynamically
  *
  * @collboard-modules-sdk
  */
-export declare function makeTrayModule<TArt extends Abstract2dArt>(protoModule: {
+export declare function makeDynamicTrayModule<TArt extends Abstract2dArt>(protoModule: {
     manifest?: IModuleManifest;
     /**
      * Toolbar icon
@@ -28,9 +33,13 @@ export declare function makeTrayModule<TArt extends Abstract2dArt>(protoModule: 
     /**
      * Definition of tray items
      */
-    trayDefinition: ITrayDefinition;
+    trayDefinition: ITrayDynamicDefinition;
     /**
      * Function returning new Art from id and position
      */
-    newArtMaker: (id: string, position: Vector) => Promisable<IArrayable<TArt>>;
-}): IFactory<IModuleDefinition>;
+    newArtMaker(options: {
+        itemId: string;
+        boardPosition: Vector;
+        systems: ISystems;
+    }): Promisable<IArrayable<TArt> | IOngoingMaterialOperation>;
+}): IModuleDefinition;

@@ -9,7 +9,12 @@ export declare class NotificationRegistration extends Registration {
     destroy(): Promise<void>;
     /**
      *
-     * @alias for destroy
+     * @alias destroy
      */
     constrict(): Promise<void>;
+    static void(): NotificationRegistration;
 }
+/**
+ * TODO: Is there some way how to inherit public static void() from Registration without overloading?
+ *       @see https://www.facebook.com/groups/typescript.developers/permalink/3365848130303546/
+ */

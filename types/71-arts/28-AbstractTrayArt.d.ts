@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { Vector } from 'xyzt';
-import { ITrayDefinition } from '../40-utils/trayModules/TrayItemTypes';
+import { ITrayDynamicDefinition } from '../40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
 import { Abstract2dBoxArt } from './27-Abstract2dBoxArt';
 /**
  * @collboard-modules-sdk
@@ -16,7 +16,7 @@ export declare abstract class AbstractTrayArt extends Abstract2dBoxArt {
     shift: Vector;
     color: string;
     defaultZIndex: number;
-    abstract getDefinition(): ITrayDefinition;
+    abstract getDefinition(): ITrayDynamicDefinition;
     constructor(itemId: string, shift: Vector);
     private init;
     private get isValid();

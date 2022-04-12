@@ -8,6 +8,7 @@ import { Promisable } from 'type-fest';
 declare global {
     interface Array<T> {
         /**
+         * Async version of Array.prototype.filter
          * Returns the elements of an array that meet the condition specified in a callback function.
          * @param predicate A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.
          * @param thisArg An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.
@@ -16,6 +17,13 @@ declare global {
             predicate: (value: T, index: number, array: T[]) => Promisable<unknown>,
             thisArg?: any,
         ): Promise<T[]>;
+        /**
+         * Async version of Array.prototype.map
+         * Calls a defined callback function on each element of an array, and returns an array that contains the results.
+         * @param callbackfn A function that accepts up to three arguments. The map method calls the callbackfn function one time for each element in the array.
+         * @param thisArg An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
+         */
+        mapAsync<U>(predicate: (value: T, index: number, array: T[]) => Promisable<U>, thisArg?: any): Promise<U[]>;
     }
 }
 /**

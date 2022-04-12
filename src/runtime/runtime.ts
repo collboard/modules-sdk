@@ -242,8 +242,16 @@ export const NotFoundError = (window as any).CollboardSdk.NotFoundError;
 export const escapeRegExp = (window as any).CollboardSdk.escapeRegExp;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/fileExists.d.ts
-export const fileExists = (window as any).CollboardSdk.fileExists;
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/files/amendPropperFileTypeAndName.d.ts
+export const amendPropperFileTypeAndName = (window as any).CollboardSdk.amendPropperFileTypeAndName;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/files/fetchAsFile.d.ts
+export const fetchAsFile = (window as any).CollboardSdk.fetchAsFile;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/files/findPropperFileType.d.ts
+export const findPropperFileType = (window as any).CollboardSdk.findPropperFileType;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/filterWithLimit.d.ts
@@ -287,6 +295,10 @@ export const isEmoji = (window as any).CollboardSdk.isEmoji;
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/isEqualArray.d.ts
 export const isEqualArray = (window as any).CollboardSdk.isEqualArray;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/isFetchable.d.ts
+export const isFetchable = (window as any).CollboardSdk.isFetchable;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/isNumeric.d.ts
@@ -437,13 +449,17 @@ export const rotationToBabylon = (window as any).CollboardSdk.rotationToBabylon;
 export const toString = (window as any).CollboardSdk.toString;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/trayModules/TrayItemTypes.d.ts
-export const ITrayItem = (window as any).CollboardSdk.ITrayItem;
-export const ITrayItemList = (window as any).CollboardSdk.ITrayItemList;
-export const ITrayToolbarGroup = (window as any).CollboardSdk.ITrayToolbarGroup;
-export const ITrayToolbarItems = (window as any).CollboardSdk.ITrayToolbarItems;
-export const ITrayItemFilter = (window as any).CollboardSdk.ITrayItemFilter;
-export const ITrayDefinition = (window as any).CollboardSdk.ITrayDefinition;
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/trayModules/interfaces/ITrayDynamicItemTypes.d.ts
+export const ITrayDynamicItem = (window as any).CollboardSdk.ITrayDynamicItem;
+export const ITrayDynamicItemList = (window as any).CollboardSdk.ITrayDynamicItemList;
+export const ITrayDynamicToolbarGroup = (window as any).CollboardSdk.ITrayDynamicToolbarGroup;
+export const ITrayDynamicToolbarItems = (window as any).CollboardSdk.ITrayDynamicToolbarItems;
+export const ITrayDynamicItemFilter = (window as any).CollboardSdk.ITrayDynamicItemFilter;
+export const ITrayDynamicDefinition = (window as any).CollboardSdk.ITrayDynamicDefinition;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/trayModules/interfaces/ITraySimpleItemTypes.d.ts
+export const ITraySimpleDefinition = (window as any).CollboardSdk.ITraySimpleDefinition;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/typeAliases.d.ts
@@ -571,10 +587,6 @@ export const ExportSystem = (window as any).CollboardSdk.ExportSystem;
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/0-ImportSystem.d.ts
 export const ImportSystem = (window as any).CollboardSdk.ImportSystem;
-
-
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/utils/amendPropperFileType.d.ts
-export const amendPropperFileType = (window as any).CollboardSdk.amendPropperFileType;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/utils/centerArts.d.ts
@@ -707,8 +719,12 @@ export const makeModalModule = (window as any).CollboardSdk.makeModalModule;
 export const makeMultiModule = (window as any).CollboardSdk.makeMultiModule;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeTrayModule.d.ts
-export const makeTrayModule = (window as any).CollboardSdk.makeTrayModule;
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeTrayDynamicModule.d.ts
+export const makeDynamicTrayModule = (window as any).CollboardSdk.makeDynamicTrayModule;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeTraySimpleModule.d.ts
+export const makeTraySimpleModule = (window as any).CollboardSdk.makeTraySimpleModule;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/Syncers/ArtSupportSyncer.d.ts

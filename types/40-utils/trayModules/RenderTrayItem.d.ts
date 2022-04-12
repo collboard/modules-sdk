@@ -5,9 +5,9 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { ITrayItemList } from './TrayItemTypes';
+import { ITrayDynamicItemList } from './interfaces/ITrayDynamicItemTypes';
 export declare function RenderTrayItem(
-    items: ITrayItemList,
+    items: ITrayDynamicItemList,
     className: string | undefined,
     itemId: string,
     scale: number,

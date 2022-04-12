@@ -4,6 +4,9 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { ITrayItemList, ITrayToolbarGroup } from '../../../../40-utils/trayModules/TrayItemTypes';
-export declare function itemsDice(): ITrayItemList;
-export declare function toolbarDice(): ITrayToolbarGroup;
+import {
+    ITrayDynamicItemList,
+    ITrayDynamicToolbarGroup,
+} from '../../../../40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
+export declare function itemsDice(): ITrayDynamicItemList;
+export declare function toolbarDice(): ITrayDynamicToolbarGroup;

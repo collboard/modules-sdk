@@ -8,6 +8,8 @@ import { IDestroyable } from 'destroyable';
 import { Promisable } from 'type-fest';
 import { Vector } from 'xyzt';
 import { ISubLogger } from '../../../40-utils/logger/ILogger';
+import { IArrayable } from '../../../40-utils/toArray';
+import { AbstractArt } from '../../../71-arts/20-AbstractArt';
 import { IOngoingOperation } from '../../ArtVersionSystem/IOperation';
 /**
  * This represents support for importing files
@@ -21,16 +23,27 @@ export interface IFileImportSupporter {
     /**
      *  processFile it will do one of the following:
      *    1) Import file into the board and:
-     *      - Return the operation that was created
-     *      - Return something which can be destroyed to cancel the importment
+     *      A) Return the arts to be created (and persisted)
+     *      B) Return something which can be destroyed to cancel the importment
      *    2) Pass responsibility to another supporter via returning result of next calling
      *
      * Typically you will check mime type and choose what option to do.
      */
-    processFile: (options: {
-        logger: ISubLogger;
-        boardPosition: Vector;
+    processFile(options: {
+        /**
+         * File that should be imported
+         * This file will always contain mimetype without the charset + filename
+         */
         file: File;
+        /**
+         * Use this to log everything connected with this import
+         */
+        logger: ISubLogger;
+        /**
+         * Position to import the file
+         * Tip: You can use utility centerArts to center arts on board on boardPosition
+         */
+        boardPosition: Vector;
         /**
          * This operation represents just preview of the file.
          * It can be updated by better preview of imported file.
@@ -43,10 +56,13 @@ export interface IFileImportSupporter {
          * - Show virtual placeholder for new art(s)
          * - Show "Importing" message
          * - Change tool to select tool
-         * - After importing will select new art(s)
+         *
          */
         willCommitArts(): void;
+        /**
+         * Call and return next() to pass responsibility to another supporter
+         */
         next(): typeof FILE_IMPORT_SUPPORTER_NEXT;
-    }) => Promisable<IDestroyable | IOngoingOperation | typeof FILE_IMPORT_SUPPORTER_NEXT>;
+    }): Promisable<IArrayable<AbstractArt> | IDestroyable | typeof FILE_IMPORT_SUPPORTER_NEXT>;
 }
 export declare const FILE_IMPORT_SUPPORTER_NEXT: unique symbol;

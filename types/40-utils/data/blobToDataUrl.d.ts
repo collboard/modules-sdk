@@ -10,4 +10,4 @@ import { string_data_url } from '../typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare function blobToDataUrl(blob: Blob): Promise<string_data_url>;
+export declare function blobToDataUrl(blob: Blob | File): Promise<string_data_url>;
