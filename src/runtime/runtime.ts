@@ -250,6 +250,10 @@ export const amendPropperFileTypeAndName = (window as any).CollboardSdk.amendPro
 export const fetchAsFile = (window as any).CollboardSdk.fetchAsFile;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/files/fetchProxied.d.ts
+export const fetchProxied = (window as any).CollboardSdk.fetchProxied;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/files/findPropperFileType.d.ts
 export const findPropperFileType = (window as any).CollboardSdk.findPropperFileType;
 

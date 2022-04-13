@@ -70,6 +70,7 @@ export * from './40-utils/errors/NotFoundError';
 export * from './40-utils/escapeRegExp';
 export * from './40-utils/files/amendPropperFileTypeAndName';
 export * from './40-utils/files/fetchAsFile';
+export * from './40-utils/files/fetchProxied';
 export * from './40-utils/files/findPropperFileType';
 export * from './40-utils/filterWithLimit';
 export * from './40-utils/fitInside';
