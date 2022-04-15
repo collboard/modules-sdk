@@ -78,6 +78,7 @@ export * from './40-utils/isFetchable';
 export * from './40-utils/isNumeric';
 export * from './40-utils/isRunningOnLocalhost';
 export * from './40-utils/isValidUriId';
+export * from './40-utils/isValidUrl';
 export * from './40-utils/isValidUuid';
 export * from './40-utils/joinWithJsx';
 export * from './40-utils/jsxToHtml';
