@@ -4,7 +4,6 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import './00-test/test-tray-simple-module';
 import './../50-systems/ControlSystem/modules/shortcuts-override.module';
 import './../50-systems/ControlSystem/modules/shortcuts.module';
 import './../50-systems/LicenseSystem/modules/test-simple-token-license.module';
@@ -37,6 +36,7 @@ import './../72-tools/TextTool';
 import './../72-tools/ZoomTool';
 import './../74-routes+persisting/ToolbarsPersisting';
 import './../74-routes+persisting/TransformationPersisting';
+import './00-test/test-tray-simple-module';
 import './3d/Solid/SolidArt';
 import './background/gridModules/declaration';
 import './background/SpaceBackgroundModule';
@@ -108,7 +108,8 @@ import './ui/basic/ModuleStore/share-icon.module';
 import './ui/basic/ModuleStore/share.module';
 import './ui/basic/RemoteAnnouncementsModule/RemoteAnnouncementsModule';
 import './ui/basic/ThemeSelectModule/ThemeSelectModule';
-import './ui/basic/Upload/Upload';
+import './ui/basic/Upload/add-icon.module';
+import './ui/basic/Upload/add.module';
 import './ui/basic/welcome/WelcomeModules';
 import './ui/clone/CloneBoardButton';
 import './weightPickers/Weight2AttributeModule';

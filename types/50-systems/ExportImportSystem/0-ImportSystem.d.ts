@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IDestroyable, Registration } from 'destroyable';
+import { IDestroyable } from 'destroyable';
 import { IVectorData } from 'xyzt';
 import { string_url } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
@@ -40,11 +40,11 @@ export declare class ImportSystem extends AbstractSystem {
     constructor(systems: ISystemsExtended, proxyUrl: string_url);
     protected init(): Promise<void>;
     private fileSupporters;
-    registerFileSupport(fileSupporter: IFileImportSupporter): Registration;
+    registerFileSupport(fileSupporter: IFileImportSupporter): import('destroyable').Registration;
     /**
      * Imports content from URL
      *
-     * @returns objects which can be used to undo the importment (typically ongoing operation)
+     * @returns objects which can be used to undo the importment (typically ongoing operation) OR null if import fails
      *
      *  Note: If you want to fetch and import content of URL and materialize it, use the importFile with the util fetchAsFile
      */
@@ -52,17 +52,17 @@ export declare class ImportSystem extends AbstractSystem {
         options: IImportOptions & {
             src: URL | string_url;
         },
-    ): Promise<IOngoingMaterialOperation | IDestroyable>;
+    ): Promise<IOngoingMaterialOperation | IDestroyable | null>;
     /**
      * Imports one file into the board.
      *
-     * @returns objects which can be used to undo the importment (typically ongoing operation)
+     * @returns objects which can be used to undo the importment (typically ongoing operation) OR null if import fails
      */
     importFile(
         options: IImportOptions & {
             file: Blob | File;
         },
-    ): Promise<IOngoingMaterialOperation | IDestroyable>;
+    ): Promise<IOngoingMaterialOperation | IDestroyable | null>;
     /**
      * Imports ONE of given files into the board. It will be picked according to priority of file support modules.
      *    1) At first it will pick file supporter module with highest priority and gives it all provided files.
@@ -70,7 +70,7 @@ export declare class ImportSystem extends AbstractSystem {
      *     3) And so on.
      * Typically this is usefull when you have the same content in multiple formats like pasting from the clipboard.
      *
-     * @returns objects which can be used to undo the importment (typically ongoing operation)
+     * @returns objects which can be used to undo the importment (typically ongoing operation) OR null if import fails
      */
     importOneOfFiles({
         isNotified,
@@ -80,7 +80,7 @@ export declare class ImportSystem extends AbstractSystem {
         boardPosition,
     }: IImportOptions & {
         files: Array<Blob | File>;
-    }): Promise<IOngoingMaterialOperation | IDestroyable>;
+    }): Promise<IOngoingMaterialOperation | IDestroyable | null>;
 }
 export {};
 /**

@@ -317,6 +317,10 @@ export const isRunningOnLocalhost = (window as any).CollboardSdk.isRunningOnLoca
 export const isValidUriId = (window as any).CollboardSdk.isValidUriId;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/isValidUrl.d.ts
+export const isValidUrl = (window as any).CollboardSdk.isValidUrl;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/isValidUuid.d.ts
 export const isValidUuid = (window as any).CollboardSdk.isValidUuid;
 

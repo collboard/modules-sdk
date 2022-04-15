@@ -4,12 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-/// <reference types="react" />
-import { IVectorData } from 'xyzt';
-interface IFloatingMenuProps {
-    children: JSX.Element[] | JSX.Element;
+import React from 'react';
+export declare function Center({
+    children,
+    isFlexed,
+    className,
+}: React.PropsWithChildren<{
+    isFlexed?: boolean;
     className?: string;
-    screenPosition: IVectorData;
-}
-export declare function FloatingMenu(props: IFloatingMenuProps): JSX.Element | null;
-export {};
+}>): JSX.Element;

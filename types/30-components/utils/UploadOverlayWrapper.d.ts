@@ -7,14 +7,14 @@
 import React from 'react';
 import { CollSpace } from '../../50-systems/CollSpace/0-CollSpace';
 import { ImportSystem } from '../../50-systems/ExportImportSystem/0-ImportSystem';
-declare type IUploadZoneProps = React.PropsWithChildren<{
+declare type IUploadOverlayProps = React.PropsWithChildren<{
     importSystem: ImportSystem;
     collSpace: CollSpace;
 }>;
 /**
  * @not-collboard-modules-sdk
  */
-export declare class UploadOverlayWrapper extends React.Component<IUploadZoneProps> {
+export declare class UploadOverlayWrapper extends React.Component<IUploadOverlayProps> {
     render(): JSX.Element;
 }
 export {};
