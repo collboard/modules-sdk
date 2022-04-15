@@ -153,7 +153,7 @@ export class Server extends Destroyable implements IService, IDestroyable {
 
                 content = content.replace('window.declareModule', `window.${declareModuleCallback}`);
 
-                return response.type('application/javascript').send(content);
+                return response.type('application/javascript').header('Access-Control-Allow-Origin','*').send(content);
             } else {
                 if (await isFileExisting(filePath)) {
                     return response.sendFile(filePath);
@@ -162,7 +162,7 @@ export class Server extends Destroyable implements IService, IDestroyable {
                 // Note: [🥝] When running in dev mode, we are not emiting assets by webpack but just serving original files from source
                 const fileUnemitedPath = join(process.cwd(), fileUri.split(this.compiler.uniqueFoldername).join(''));
 
-                return response.sendFile(fileUnemitedPath);
+                return response.header('Access-Control-Allow-Origin','*').sendFile(fileUnemitedPath);
             }
         });
 
