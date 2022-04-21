@@ -16,5 +16,5 @@ export declare class UsercontentSystem extends AbstractSystem {
     private usercontentUrl;
     constructor(systems: ISystemsExtended, usercontentUrl: URL);
     protected init(): Promise<void>;
-    upload(file: File): Promise<string_url>;
+    upload(file: File | Blob): Promise<string_url>;
 }
