@@ -43,6 +43,7 @@ import { StorageSystem } from './../StorageSystem/StorageSystem';
 import { StyleSystem } from './../StyleSystem/0-StyleSystem';
 import { ToolbarSystem } from './../ToolbarSystem/0-ToolbarSystem';
 import { TranslationsSystem } from './../TranslationsSystem/0-TranslationsSystem';
+import { UsercontentSystem } from './../UsercontentSystem/0-UsercontentSystem';
 import { VoiceSystem } from './../VoiceSystem/0-VoiceSystem';
 import { ISystemsResolved } from './ISystemsResolved';
 /**
@@ -102,6 +103,7 @@ export interface ISystemsExtended {
     readonly styleSystem: Promise<StyleSystem>;
     readonly toolbarSystem: Promise<ToolbarSystem>;
     readonly translationsSystem: Promise<TranslationsSystem>;
+    readonly usercontentSystem: Promise<UsercontentSystem>;
     readonly voiceSystem: Promise<VoiceSystem>;
     readonly touchController: Promise<TouchController>;
     readonly artSerializer: Promise<ArtSerializer>;

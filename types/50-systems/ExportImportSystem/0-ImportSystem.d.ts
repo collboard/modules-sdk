@@ -37,7 +37,7 @@ interface IImportOptions {
  */
 export declare class ImportSystem extends AbstractSystem {
     private proxyUrl;
-    constructor(systems: ISystemsExtended, proxyUrl: string_url);
+    constructor(systems: ISystemsExtended, proxyUrl: URL);
     protected init(): Promise<void>;
     private fileSupporters;
     registerFileSupport(fileSupporter: IFileImportSupporter): import('destroyable').Registration;

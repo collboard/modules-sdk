@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IDestroyable } from 'destroyable';
-import { string_uri_part, string_url } from '../../40-utils/typeAliases';
+import { string_uri_part } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { MaterialArtVersioningSystem } from '../ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { IArtVersioningSystem } from '../ArtVersionSystem/IArtVersionSystem';
@@ -20,7 +20,7 @@ export declare class BoardApiClient
     private apiUrl;
     private uriId;
     private socketClient;
-    constructor(systems: ISystemsExtended, apiUrl: string_url, uriId: string_uri_part);
+    constructor(systems: ISystemsExtended, apiUrl: URL, uriId: string_uri_part);
     destroy(): Promise<void>;
     protected init(): Promise<void>;
     private atLeastOnceConnectedResolve;

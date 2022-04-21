@@ -43,6 +43,7 @@ import { StorageSystem } from './../StorageSystem/StorageSystem';
 import { StyleSystem } from './../StyleSystem/0-StyleSystem';
 import { ToolbarSystem } from './../ToolbarSystem/0-ToolbarSystem';
 import { TranslationsSystem } from './../TranslationsSystem/0-TranslationsSystem';
+import { UsercontentSystem } from './../UsercontentSystem/0-UsercontentSystem';
 import { VoiceSystem } from './../VoiceSystem/0-VoiceSystem';
 export interface ISystemsResolved {
     /**
@@ -88,6 +89,7 @@ export interface ISystemsResolved {
     readonly styleSystem: StyleSystem;
     readonly toolbarSystem: ToolbarSystem;
     readonly translationsSystem: TranslationsSystem;
+    readonly usercontentSystem: UsercontentSystem;
     readonly voiceSystem: VoiceSystem;
     readonly touchController: TouchController;
     readonly artSerializer: ArtSerializer;

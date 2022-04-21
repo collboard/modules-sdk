@@ -10,7 +10,7 @@ import { string_url } from '../typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare function fetchAsFile(url: URL | string_url, proxyUrl?: string_url): Promise<File>;
+export declare function fetchAsFile(url: URL | string_url, proxyUrl?: URL | string_url): Promise<File>;
 /**
  * TODO: Probably some other way to pass proxyUrl - maybe with high order function?
  */

@@ -16,20 +16,13 @@ interface ICollboardAppOptions {
     apiUrl: string_url;
     moduleStoreUrl: string_url;
     proxyUrl: string_url;
+    usercontentUrl: string_url;
 }
 export declare type ISerializableTypes = Commit | ICommitData | AbstractArt | Vector;
 export declare type ArtSerializer = Serializer<ISerializableTypes>;
 export declare class CollboardApp {
     private readonly options;
     private systems;
-    /**
-     *
-     * @param rootElement
-     * @param apiUrl
-     * @param language
-     *
-     * TODO: Probbably make ICollboardAppOptions
-     */
     constructor(options: ICollboardAppOptions);
     private loadTranslator;
     private logVersions;

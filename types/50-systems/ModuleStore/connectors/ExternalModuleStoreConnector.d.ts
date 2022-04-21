@@ -5,12 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Destroyable } from 'destroyable';
-import {
-    string_module_category,
-    string_module_name,
-    string_url,
-    string_version_dependency,
-} from '../../../40-utils/typeAliases';
+import { string_module_category, string_module_name, string_version_dependency } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
@@ -23,7 +18,7 @@ import { IModuleStoreConnectorSearchResult } from '../interfaces/IModuleStoreCon
 export declare class ExternalModuleStoreConnector extends Destroyable implements IModuleStoreConnector {
     private systems;
     private readonly moduleStoreUrl;
-    constructor(systems: ISystemsExtended, moduleStoreUrl: string_url);
+    constructor(systems: ISystemsExtended, moduleStoreUrl: URL);
     private readonly externalModules;
     getModule(packageName: string_module_name, version?: string_version_dependency): IModuleDefinition;
     private getModuleScript;

@@ -79,7 +79,6 @@ export declare const libs: {
  *  - "papaparse"
  *  - "react-dom"
  *  - "showdown"
- *  - "sjcl"
  *  - "socket.io-client"
  *  - "spacetrim"
  *  - "uuid"

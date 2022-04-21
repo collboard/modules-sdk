@@ -808,6 +808,10 @@ export const TranslationsSystem = (window as any).CollboardSdk.TranslationsSyste
 export const Translate = (window as any).CollboardSdk.Translate;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/UsercontentSystem/0-UsercontentSystem.d.ts
+export const UsercontentSystem = (window as any).CollboardSdk.UsercontentSystem;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/VoiceSystem/0-VoiceSystem.d.ts
 export const VoiceSystem = (window as any).CollboardSdk.VoiceSystem;
 

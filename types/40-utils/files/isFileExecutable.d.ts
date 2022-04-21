@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { string_mime_type } from '../typeAliases';
 /**
  * Checks if the given file is executable.
  *
@@ -12,7 +13,7 @@
  * - CSS Styleshees are considered as executable
  * - ⚠️ It is not bulletproof - Other languages can be marked as non-executables
  *
- * @param file checked file
+ * @param file checked file or its mime type
  * @returns true if file is executable
  */
-export declare function isFileExecutable(file: File | Blob): Promise<boolean>;
+export declare function isFileExecutable(fileOrType: File | Blob | string_mime_type): Promise<boolean>;

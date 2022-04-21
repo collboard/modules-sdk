@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Observable } from 'rxjs';
-import { string_translate_language, string_uri_part, string_url, string_version } from '../../40-utils/typeAliases';
+import { string_translate_language, string_uri_part, string_version } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
 import { MaterialArtVersioningSystem } from '../ArtVersionSystem/0-MaterialArtVersioningSystem';
@@ -19,7 +19,7 @@ import { IGetMyBoardsResponse } from './interfaces/IGetMyBoards';
  */
 export declare class ApiClient extends AbstractSystem {
     private apiUrl;
-    constructor(systems: ISystemsExtended, apiUrl: string_url);
+    constructor(systems: ISystemsExtended, apiUrl: URL);
     private apiClientCache;
     protected init(): Promise<void>;
     getAbout(): Promise<{
@@ -29,7 +29,6 @@ export declare class ApiClient extends AbstractSystem {
     connectToBoard(uriId: string_uri_part): Promise<MaterialArtVersioningSystem>;
     createNewBoard(options: Omit<ICreateBoardOptions, 'redirect'>): Promise<string_uri_part>;
     getMyBoards(): Observable<IGetMyBoardsResponse>;
-    fileUpload(file: Blob): Promise<string_url>;
     translateMessages(language: string_translate_language): Promise<ITranslateMessage[]>;
     missingTranslateMessage(missingTranslateMessage: ITranslateMessage): Promise<any>;
     private get;
