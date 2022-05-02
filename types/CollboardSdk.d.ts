@@ -50,7 +50,7 @@ export * from './40-utils/dialogues/fileDialogue';
 export * from './40-utils/dialogues/promptDialogue';
 export * from './40-utils/emojis';
 export * from './40-utils/enumToArray';
-export * from './40-utils/errorMessageWithAdditional';
+export * from './40-utils/errors/errorMessageWithAdditional';
 export * from './40-utils/errors/BoardAlreadyExistsError';
 export * from './40-utils/errors/BoardNotFoundError';
 export * from './40-utils/errors/CollisionError';

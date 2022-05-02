@@ -202,10 +202,6 @@ export const EMOJIS = (window as any).CollboardSdk.EMOJIS;
 export const enumToArray = (window as any).CollboardSdk.enumToArray;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/errorMessageWithAdditional.d.ts
-export const errorMessageWithAdditional = (window as any).CollboardSdk.errorMessageWithAdditional;
-
-
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/BoardAlreadyExistsError.d.ts
 export const BoardAlreadyExistsError = (window as any).CollboardSdk.BoardAlreadyExistsError;
 
@@ -220,6 +216,10 @@ export const CollisionError = (window as any).CollboardSdk.CollisionError;
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/errorBoundary.d.ts
 export const errorBoundary = (window as any).CollboardSdk.errorBoundary;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/errorMessageWithAdditional.d.ts
+export const errorMessageWithAdditional = (window as any).CollboardSdk.errorMessageWithAdditional;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/HighOrderError.d.ts
