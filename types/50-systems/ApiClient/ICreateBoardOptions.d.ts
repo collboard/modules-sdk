@@ -13,6 +13,9 @@ export interface ICreateBoardOptions {
     boardName?: string;
     redirect?: boolean;
     importAsMaterialize?: string_url;
+    /**
+     * @deprecated [🈚] Make this better via Art
+     */
     importAsLink?: string_url;
     modulesOn?: string | string[];
     modulesOff?: string | string[];
