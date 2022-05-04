@@ -36,7 +36,6 @@ import './../72-tools/TextTool';
 import './../72-tools/ZoomTool';
 import './../74-routes+persisting/ToolbarsPersisting';
 import './../74-routes+persisting/TransformationPersisting';
-import './00-test/test-tray-simple-module';
 import './3d/Solid/SolidArt';
 import './background/gridModules/declaration';
 import './background/SpaceBackgroundModule';

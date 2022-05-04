@@ -11,7 +11,6 @@ import {
     IPersonProfile,
     IRepository,
     string_attribute,
-    string_char_emoji,
     string_license,
     string_mime_type_with_wildcard,
     string_module_category,
@@ -23,6 +22,7 @@ import {
     string_url_image,
     string_version,
 } from '../../../40-utils/typeAliases';
+import { string_char_emoji } from '../../../40-utils/typeAliasEmoji';
 import { ArrayFull } from '../../../40-utils/typeHelpers';
 /**
  * Manifest describes the module.

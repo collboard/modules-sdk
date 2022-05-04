@@ -30,13 +30,6 @@ export declare type string_char = string;
 /**
  * Semantic helper
  *
- * For example `"❤️"`
- * @collboard-modules-sdk
- */
-export declare type string_char_emoji = string;
-/**
- * Semantic helper
- *
  * For example `"<div>Hello World!</div>"`
  * @collboard-modules-sdk
  */

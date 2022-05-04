@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Promisable } from 'type-fest';
-import { string_char, string_char_emoji } from '../../40-utils/typeAliases';
+import { string_char_emoji } from '../../40-utils/typeAliasEmoji';
 import { string_icon } from './icons';
 /**
  * Icon (visual) which can appear on toolbars, buttons,...
@@ -31,19 +31,15 @@ export interface IIconAnonymous {
      */
     inactive?: boolean;
     /**
-     * Char which should be rendered instead of `icon`
+     * Icon graphic
+     * It can be one of the following:
+     * - string with the name of the icon like "pyramid"
+     * - string with emoji like "🔥"
+     * - URL object
      *
      * **`icon` xor `char` must be set**
      */
-    char?: string_char | string_char_emoji;
-    /**
-     * Internal icon name which should appear on Icon
-     *
-     * @see string_icon
-     *
-     * **`icon` xor `char` must be set**
-     */
-    icon?: string_icon;
+    icon: string_char_emoji | string_icon | URL;
     /**
      * Optional class name which should be set on the icon
      */
