@@ -114,6 +114,7 @@ export * from './40-utils/toBabylon';
 export * from './40-utils/toString';
 export * from './40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
 export * from './40-utils/trayModules/interfaces/ITraySimpleItemTypes';
+export * from './40-utils/typeAliasEmoji';
 export * from './40-utils/typeAliases';
 export * from './40-utils/typeHelpers';
 export * from './50-systems/00-SystemsContainer/ISystems';
