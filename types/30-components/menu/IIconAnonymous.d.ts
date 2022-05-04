@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Promisable } from 'type-fest';
 import { string_char_emoji } from '../../40-utils/typeAliasEmoji';
+import { string_url_image } from '../../40-utils/typeAliases';
 import { string_icon } from './icons';
 /**
  * Icon (visual) which can appear on toolbars, buttons,...
@@ -39,7 +40,7 @@ export interface IIconAnonymous {
      *
      * **`icon` xor `char` must be set**
      */
-    icon: string_char_emoji | string_icon | URL;
+    icon: string_char_emoji | string_icon | URL | string_url_image;
     /**
      * Optional class name which should be set on the icon
      */
