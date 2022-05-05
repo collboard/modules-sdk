@@ -155,6 +155,7 @@ export * from './50-systems/GenerateSystem/0-GenerateSystem';
 export * from './50-systems/HintSystem/0-HintSystem';
 export * from './50-systems/IdentitySystem/0-IdentitySystem';
 export * from './50-systems/LicenseSystem/0-LicenseSystem';
+export * from './50-systems/ModuleStore/Authors';
 export * from './50-systems/ModuleStore/connectors/0-ModuleStore';
 export * from './50-systems/ModuleStore/interfaces/IInstaller';
 export * from './50-systems/ModuleStore/interfaces/IInstallPlan';

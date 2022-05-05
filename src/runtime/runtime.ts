@@ -646,6 +646,10 @@ export const IdentitySystem = (window as any).CollboardSdk.IdentitySystem;
 export const LicenseSystem = (window as any).CollboardSdk.LicenseSystem;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/Authors.d.ts
+export const Authors = (window as any).CollboardSdk.Authors;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/connectors/0-ModuleStore.d.ts
 export const ModuleStore = (window as any).CollboardSdk.ModuleStore;
 
