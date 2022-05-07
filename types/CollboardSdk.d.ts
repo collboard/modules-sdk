@@ -71,6 +71,7 @@ export * from './40-utils/flipNegativeSize';
 export * from './40-utils/FunctionCache';
 export * from './40-utils/getWindowSize';
 export * from './40-utils/IFactory';
+export * from './40-utils/IFactoryWithSystems';
 export * from './40-utils/IHandler';
 export * from './40-utils/isEmoji';
 export * from './40-utils/isEqualArray';
