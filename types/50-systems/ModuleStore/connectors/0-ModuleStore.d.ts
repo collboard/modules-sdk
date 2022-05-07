@@ -21,7 +21,7 @@ import { IModuleStoreConnectorSearchResult } from '../interfaces/IModuleStoreCon
  * @collboard-system
  */
 export declare class ModuleStore extends AbstractSystem implements IModuleStoreConnector {
-    private connectors;
+    readonly connectors: IModuleStoreConnector[];
     /**
      * @proxy
      */

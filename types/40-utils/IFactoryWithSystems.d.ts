@@ -4,24 +4,17 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
 /**
  * @collboard-modules-sdk
  */
-export declare type IFactory<T> = () => T;
-/**
- * @collboard-modules-sdk
- */
-export declare type IFactorable<T> = T | IFactory<T>;
+export declare type IFactorableWithSystems<T> = T | ((systems: ISystems) => T);
 /**
  *
  * @collboard-modules-sdk
  */
-export declare function factor<T>(valueOrFunction: IFactorable<T>): T;
+export declare function factorWithSystems<T>(valueOrFunction: IFactorableWithSystems<T>, systems: ISystems): T;
 /**
- *
- * @collboard-modules-sdk
- */
-export declare const NOT_CONSTRUCTABLE: unique symbol;
-/**
+ * TODO: Use IFactorableWithSystems + factorWithSystems across the code
  * TODO: Maybe better name as Create/Creatable/factor
  */

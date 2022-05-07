@@ -289,6 +289,11 @@ export const factor = (window as any).CollboardSdk.factor;
 export const NOT_CONSTRUCTABLE = (window as any).CollboardSdk.NOT_CONSTRUCTABLE;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/IFactoryWithSystems.d.ts
+export const IFactorableWithSystems = (window as any).CollboardSdk.IFactorableWithSystems;
+export const factorWithSystems = (window as any).CollboardSdk.factorWithSystems;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/IHandler.d.ts
 export const IHandler = (window as any).CollboardSdk.IHandler;
 

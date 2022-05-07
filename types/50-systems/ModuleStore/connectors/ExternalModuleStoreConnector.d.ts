@@ -17,7 +17,7 @@ import { IModuleStoreConnectorSearchResult } from '../interfaces/IModuleStoreCon
  */
 export declare class ExternalModuleStoreConnector extends Destroyable implements IModuleStoreConnector {
     private systems;
-    private readonly moduleStoreUrl;
+    readonly moduleStoreUrl: URL;
     constructor(systems: ISystemsExtended, moduleStoreUrl: URL);
     private readonly externalModules;
     getModule(packageName: string_module_name, version?: string_version_dependency): IModuleDefinition;
