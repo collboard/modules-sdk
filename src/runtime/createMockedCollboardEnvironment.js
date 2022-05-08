@@ -100,6 +100,8 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
 
                     return module;
                 },
+
+                NOT_CONSTRUCTABLE: Symbol(`This object is not constructable`),
             },
             {
                 get: (target, property, receiver) => {
