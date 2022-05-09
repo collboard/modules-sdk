@@ -7,6 +7,7 @@
 import React from 'react';
 declare type IErrorBoundaryProps = React.PropsWithChildren<{}>;
 interface IErrorBoundaryState {
+    tag?: string;
     hasError: boolean;
 }
 /**
@@ -16,6 +17,7 @@ export declare class ErrorBoundary extends React.Component<IErrorBoundaryProps, 
     constructor(props: IErrorBoundaryProps);
     static getDerivedStateFromError(error: Error): {
         hasError: boolean;
+        tag: string;
     };
     componentDidCatch(error: Error): void;
     render(): React.ReactNode;

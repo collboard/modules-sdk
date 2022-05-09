@@ -11,4 +11,4 @@ import { IKeywords } from '../typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare function parseKeywords(input: any): IKeywords;
+export declare function parseKeywords(input: any, recurcion?: number): IKeywords;
