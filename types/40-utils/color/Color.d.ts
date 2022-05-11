@@ -28,6 +28,7 @@ export declare class Color {
     clone(): Color;
     toString(): string_color;
     get opaque(): Color;
+    get transparent(): Color;
     get rgb(): string_color;
     get hsl(): string_color;
     static aliceblue: Color;
