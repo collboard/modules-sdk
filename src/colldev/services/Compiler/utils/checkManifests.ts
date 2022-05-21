@@ -28,6 +28,7 @@ export async function checkManifests(...manifests: IModuleManifest[]): Promise<v
     }
 
     if (!isEveryItemDifferent(...namesAndScopes.map(({ name }) => name))) {
+        // TODO: Add name collision into error message
         throw new Error('All modules must have different names');
     }
 
