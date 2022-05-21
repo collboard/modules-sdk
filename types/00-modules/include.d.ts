@@ -18,7 +18,7 @@ import './../70-attributes/WeightAttributeModule';
 import './../71-arts/40-BackgroundColorArt';
 import './../71-arts/40-BackgroundPatternArt';
 import './../71-arts/40-BackgroundWallpaperArt';
-import './../71-arts/50-FrameArt';
+import '../71-arts/50-IframeArt';
 import './../71-arts/50-FreehandArt';
 import './../71-arts/50-HTMLArt';
 import './../71-arts/50-ImageArt';
