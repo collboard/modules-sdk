@@ -1,129 +1,129 @@
 {
-  "autokill": true,
-  "terminals": [
-    {
-      "name": "🧪 Test",
-      "command": "npm run test",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪 Lint",
-      "command": "npm run lint",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪👨🏽‍💻✔️ Develop 'hello-world'",
-      "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4000 --open multiple",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪👨🏽‍💻🖼️ Develop 'test-assets'",
-      "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/test-assets --port 4000 --open multiple",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪👨🏽‍💻🖥️ Develop on local Collboard",
-      "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4001 --collboard-url http://localhost:9977/ --open multiple",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪👨🏽‍💻❌ Develop 'syntax-error'",
-      "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/errors/syntax-error --port 4002 --open multiple",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪👨🏽‍💻🧻 Develop with json output",
-      "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4003 --open multiple --exit --disconnect --output json",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪👨🏽‍💻🌎 Develop with expose",
-      "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4004 --open multiple --expose",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪👨🏽‍💻🦊 Develop with Firefox",
-      "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4005 --open multiple --browser firefox",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪👨🏽‍💻🐢 Develop with Edge",
-      "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4006 --open multiple --browser edge",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪🧪 Test 'hello-world'",
-      "command": "npx ts-node-dev ./src/colldev/main.ts test ./test-samples/hello-world",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪🏭 Build 'hello-world'",
-      "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/hello-world --cleanup --output compact",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪🏭❌ Build 'empty-project'",
-      "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/errors/empty-project --cleanup --output compact",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪🔼 Publish 'hello-world' locally",
-      "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/hello-world --module-store-url http://localhost:9988/ --token test --output compact",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪🔼🖼️ Publish 'test-assets' locally",
-      "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/test-assets --module-store-url http://localhost:9988/ --token test --output compact",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🧪🔼🎶 Publish 'multimodule' locally",
-      "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/multimodule --module-store-url http://localhost:9988/ --token test --output compact",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "👨🏽‍💻🔗 Link this module-sdk to sample",
-      "commands": [
-        "echo 'To finish run on module(s) \"npm link @collboard/modules-sdk\"; To unlink, run here \"npm unlink\" and on module(s) \"npm unlink @collboard/modules-sdk\"'",
-        "npm link",
-        "tsc --watch"
-      ],
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🔼👑 Release major version",
-      "command": "npm version major",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🔼🚀 Release minor version",
-      "command": "npm version minor",
-      "onlySingle": true,
-      "focus": true
-    },
-    {
-      "name": "🔼🩹 Release patch version",
-      "command": "npm version patch",
-      "onlySingle": true,
-      "focus": true
-    }
-  ]
+    "autokill": true,
+    "terminals": [
+        {
+            "name": "🧪 Test",
+            "command": "npm run test",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪 Lint",
+            "command": "npm run lint",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪👨🏽‍💻✔️ Develop 'hello-world'",
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4000 --open multiple",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪👨🏽‍💻🖼️ Develop 'test-assets'",
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/test-assets --port 4000 --open multiple",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪👨🏽‍💻🖥️ Develop on local Collboard",
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4001 --collboard-url http://localhost:9977/ --open multiple",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪👨🏽‍💻❌ Develop 'syntax-error'",
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/errors/syntax-error --port 4002 --open multiple",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪👨🏽‍💻🧻 Develop with json output",
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4003 --open multiple --exit --disconnect --output json",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪👨🏽‍💻🌎 Develop with expose",
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4004 --open multiple --expose",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪👨🏽‍💻🦊 Develop with Firefox",
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4005 --open multiple --browser firefox",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪👨🏽‍💻🐢 Develop with Edge",
+            "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4006 --open multiple --browser edge",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪🧪 Test 'hello-world'",
+            "command": "npx ts-node-dev ./src/colldev/main.ts test ./test-samples/hello-world",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪🏭 Build 'hello-world'",
+            "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/hello-world --cleanup --output compact",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪🏭❌ Build 'empty-project'",
+            "command": "npx ts-node-dev ./src/colldev/main.ts build ./test-samples/errors/empty-project --cleanup --output compact",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪🔼 Publish 'hello-world' locally",
+            "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/hello-world --module-store-url http://localhost:9988/ --token test --output compact",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪🔼🖼️ Publish 'test-assets' locally",
+            "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/test-assets --module-store-url http://localhost:9988/ --token test --output compact",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪🔼🎶 Publish 'multimodule' locally",
+            "command": "npx ts-node-dev ./src/colldev/main.ts publish ./test-samples/multimodule --module-store-url http://localhost:9988/ --token test --output compact",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "👨🏽‍💻🔗 Link this module-sdk to sample",
+            "commands": [
+                "echo 'To finish run on module(s) \"npm link @collboard/modules-sdk\"; To unlink, run here \"npm unlink\" and on module(s) \"npm unlink @collboard/modules-sdk\"'",
+                "npm link",
+                "tsc --watch"
+            ],
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🔼👑 Release major version",
+            "command": "npm version major",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🔼🚀 Release minor version",
+            "command": "npm version minor",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🔼🩹 Release patch version",
+            "command": "npm version patch",
+            "onlySingle": true,
+            "focus": true
+        }
+    ]
 }
