@@ -50,7 +50,7 @@ _Note: you can install `@collboard/modules-sdk` as a dev dependency beacasue it 
 
 ```javascript
 module.exports = {
-    entryPath: './src/index.ts',
+entryPath: './src/index.ts',
 };
 ```
 
@@ -67,29 +67,29 @@ import { declareModule, ExtraJsxPlace, makeExtrajsxModule } from '@collboard/mod
 import * as React from 'react';
 
 declareModule(
-    makeExtrajsxModule({
-        manifest: {
-            name: '@my-username/first-module',
-        },
-        place: ExtraJsxPlace.EdgeRight,
-        createExtraJsx({
-            routingSystem,
-            translationsSystem,
-            apiClient,
-            materialArtVersioningSystem: { cornerstoneArts },
-        }) {
-            return (
-                <button
-                    onClick={async () => {
-                        alert(`Hello from Collboard modules!`);
-                    }}
-                    className="button button-primary button-vertical"
-                >
-                    <span>Hello World!</span>
-                </button>
-            );
-        },
-    }),
+makeExtrajsxModule({
+manifest: {
+name: '@my-username/first-module',
+},
+place: ExtraJsxPlace.EdgeRight,
+createExtraJsx({
+routingSystem,
+translationsSystem,
+apiClient,
+materialArtVersioningSystem: { cornerstoneArts },
+}) {
+return (
+<button
+onClick={async () => {
+alert(`Hello from Collboard modules!`);
+}}
+className="button button-primary button-vertical"
+>
+<span>Hello World!</span>
+</button>
+);
+},
+}),
 );
 ```
 
@@ -163,15 +163,15 @@ Some libraries are exported from `@collboard/modules-sdk`. We want to run one ve
 import { React, styled } from '@collboard/modules-sdk';
 
 const MyDiv = styled.div`
-    color: red;
+color: red;
 `;
 
 function SomeComponent() {
-    return (
-        <MyDiv>
-            <h1>Hello World!</h1>
-        </MyDiv>
-    );
+return (
+<MyDiv>
+<h1>Hello World!</h1>
+</MyDiv>
+);
 }
 ```
 
@@ -194,7 +194,7 @@ configure({ safeDescriptors: false });
 ```javascript
 $.noConflict();
 jQuery(document).ready(function ($) {
-    // ...
+// ...
 });
 ```
 
