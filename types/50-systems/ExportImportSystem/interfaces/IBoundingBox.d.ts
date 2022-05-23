@@ -6,7 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IVectorData } from 'xyzt';
 /**
- * TODO: Move to xyzt and name topRightCorner,bottomLeftCorner better
+ * @deprecated use IBoundingBox from xyzt
+ *
  */
 export interface IBoundingBox {
     topRightCorner: IVectorData;

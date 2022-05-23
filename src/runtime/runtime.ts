@@ -298,6 +298,10 @@ export const factorWithSystems = (window as any).CollboardSdk.factorWithSystems;
 export const IHandler = (window as any).CollboardSdk.IHandler;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/image/measureImageSize.d.ts
+export const measureImageSize = (window as any).CollboardSdk.measureImageSize;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/isEmoji.d.ts
 export const isEmoji = (window as any).CollboardSdk.isEmoji;
 
@@ -316,6 +320,10 @@ export const isNumeric = (window as any).CollboardSdk.isNumeric;
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/isRunningOnLocalhost.d.ts
 export const isRunningOnLocalhost = (window as any).CollboardSdk.isRunningOnLocalhost;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/isValidDataUrl.d.ts
+export const isValidDataUrl = (window as any).CollboardSdk.isValidDataUrl;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/isValidUriId.d.ts
@@ -344,10 +352,6 @@ export const jsxToText = (window as any).CollboardSdk.jsxToText;
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/loadAndRunExternalScript.d.ts
 export const loadAndRunExternalScript = (window as any).CollboardSdk.loadAndRunExternalScript;
-
-
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/measureImageSize.d.ts
-export const measureImageSize = (window as any).CollboardSdk.measureImageSize;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/normalizing/nameToUriPart.d.ts
@@ -577,6 +581,22 @@ export const FakeClosePreventionSystem = (window as any).CollboardSdk.FakeCloseP
 export const CollSpace = (window as any).CollboardSdk.CollSpace;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/CollSpace/utils/ArtShell.d.ts
+export const ArtShell = (window as any).CollboardSdk.ArtShell;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/CollSpace/utils/findArtElement.d.ts
+export const findArtElement = (window as any).CollboardSdk.findArtElement;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/CollSpace/utils/findArtShellElement.d.ts
+export const findArtShellElement = (window as any).CollboardSdk.findArtShellElement;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/CollSpace/utils/getBoundingClientRectWithoutTransform.d.ts
+export const getBoundingClientRectWithoutTransform = (window as any).CollboardSdk.getBoundingClientRectWithoutTransform;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ControlSystem/ControlSystem.d.ts
 export const ControlSystem = (window as any).CollboardSdk.ControlSystem;
 
@@ -603,6 +623,18 @@ export const ExportSystem = (window as any).CollboardSdk.ExportSystem;
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/0-ImportSystem.d.ts
 export const ImportSystem = (window as any).CollboardSdk.ImportSystem;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/interfaces/IExportFileOptions.d.ts
+export const ExportScope = (window as any).CollboardSdk.ExportScope;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/interfaces/IFileExportOptions.d.ts
+export const IFileExportOptions = (window as any).CollboardSdk.IFileExportOptions;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/interfaces/ImportStrategy.d.ts
+export const ImportStrategy = (window as any).CollboardSdk.ImportStrategy;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/utils/centerArts.d.ts

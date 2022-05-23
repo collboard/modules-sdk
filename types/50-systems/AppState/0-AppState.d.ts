@@ -17,6 +17,10 @@ import { AbstractSystem } from '../AbstractSystem';
 export declare class AppState extends AbstractSystem {
     protected init(): Promise<void>;
     /**
+     * Just mirroring the Cornerstone commit with boardName
+     */
+    boardName: string;
+    /**
      * This represents observer view on the current board, Every user can have different. For example every user can have different position on the board.
      * TODO: transform, probbably windowSize should be managed by CollSpace
      */

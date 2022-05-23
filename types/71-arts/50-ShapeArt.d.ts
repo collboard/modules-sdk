@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { IVectorData, Vector } from 'xyzt';
-import { IFramable } from '../50-systems/ExportImportSystem/0-ExportSystem';
+import { IFramable } from '../50-systems/ExportImportSystem/interfaces/IFramable';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
  * @collboard-modules-sdk

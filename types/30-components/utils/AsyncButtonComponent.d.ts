@@ -18,6 +18,7 @@ interface IAsyncButtonComponentProps extends React.PropsWithChildren<ILoaderProp
     href?: string_href;
     className?: string;
     style?: any;
+    disabled?: boolean;
 }
 /**
  * Utility for button with pending state after click
@@ -32,5 +33,6 @@ export declare function AsyncButtonComponent({
     style,
     children,
     alt,
+    disabled,
 }: IAsyncButtonComponentProps): JSX.Element;
 export {};

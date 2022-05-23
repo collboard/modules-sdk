@@ -4,10 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { Vector } from 'xyzt';
-import { string_data_url } from './typeAliases';
 /**
- * Get image size after its rendered on its native size
- * @collboard-modules-sdk
+ * Adds a white background to an canvas image and returns it as the new canvas
  */
-export declare function measureImageSize(imageFileOrDataUrl: Blob | string_data_url): Promise<Vector>;
+export declare function addWhiteBackground(canvas: HTMLCanvasElement): HTMLCanvasElement;
+/**
+ * TODO: Allow to pick a background (color)
+ */

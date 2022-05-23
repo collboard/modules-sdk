@@ -18,3 +18,6 @@ export declare class ModuleInstallation extends Destroyable implements IDestroya
     private constructor();
     destroy(): Promise<void>;
 }
+/**
+ * TODO: [🏄‍♂️] Wait till all modules are installed
+ */

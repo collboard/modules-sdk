@@ -85,7 +85,7 @@ export * from './40-utils/joinWithJsx';
 export * from './40-utils/jsxToHtml';
 export * from './40-utils/jsxToText';
 export * from './40-utils/loadAndRunExternalScript';
-export * from './40-utils/measureImageSize';
+export * from './40-utils/image/measureImageSize';
 export * from './40-utils/normalizing/nameToUriPart';
 export * from './40-utils/normalizing/normalize-to-kebab-case';
 export * from './40-utils/normalizing/normalizeToCamelCase';
