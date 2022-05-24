@@ -7,13 +7,8 @@
 /// <reference types="react" />
 import { IVectorData } from 'xyzt';
 import { string_url } from '../40-utils/typeAliases';
+import { ImportStrategy } from '../50-systems/ExportImportSystem/interfaces/ImportStrategy';
 import { Abstract2dArt } from './26-Abstract2dArt';
-/**
- * TODO: !! Import should be only LINK type so remove this and MATERIALIZE strategy move to frontend MimeSupportSystem
- */
-export declare enum ImportStrategy {
-    Materialize = 'MATERIALIZE',
-}
 /**
  * ImportArt is art for importing external content into the board.
  * @see ExportArt implementation and comments before looking at this
