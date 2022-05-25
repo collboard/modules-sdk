@@ -8,6 +8,8 @@
  * HighOrderError is high order error to wrap lower order error (like parsing).
  * @see https://www.pavolhejny.com/rozsirene-informace-o-chybach/
  *
+ * @deprecated use errorMessageWithAdditional instead
+ *
  * @collboard-modules-sdk
  */
 export declare class HighOrderError extends Error {
