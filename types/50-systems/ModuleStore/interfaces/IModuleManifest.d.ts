@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IPrice } from '../../../40-utils/price/IPrice';
-import { IArrayable } from '../../../40-utils/toArray';
+import { string_char_emoji } from '../../../40-utils/typeAliasEmoji';
 import {
     ILicense,
     IPersonProfile,
@@ -17,13 +17,12 @@ import {
     string_module_name,
     string_person_profile,
     string_token,
-    string_translate_language,
     string_url,
     string_url_image,
     string_version,
 } from '../../../40-utils/typeAliases';
-import { string_char_emoji } from '../../../40-utils/typeAliasEmoji';
-import { ArrayFull } from '../../../40-utils/typeHelpers';
+import { ArrayFull, IArrayable } from '../../../40-utils/typeHelpers';
+import { IStringMessage } from '../../TranslationsSystem/interfaces/IMessage';
 /**
  * Manifest describes the module.
  *
@@ -35,8 +34,8 @@ import { ArrayFull } from '../../../40-utils/typeHelpers';
 export interface IModuleManifest {
     name: string_module_name;
     deprecatedNames?: IArrayable<string_module_name>;
-    title?: IModuleManifestTranslation;
-    description?: IModuleManifestTranslation;
+    title?: IStringMessage;
+    description?: IStringMessage;
     keywords?: string[];
     flags?: Partial<IModuleFlags>;
     categories?: string_module_category[];
@@ -179,12 +178,6 @@ export declare type IModuleManifestUsageLicensePayed = {
      */
     buyLink: string_url;
 };
-/**
- * Message for module manifest which can be as string or object for multiple languages
- *
- * @collboard-modules-sdk
- */
-export declare type IModuleManifestTranslation = string | Partial<Record<string_translate_language, string>>;
 /**
  * TODO: PickOneOf in manifest:
  *        - license or licenses

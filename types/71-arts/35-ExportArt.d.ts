@@ -14,6 +14,7 @@ export declare enum ExportFormat {
 /**
  * ExportArt is art for exporting content from the board.
  *
+ * @deprecated do this functionality better in the future via FrameArt
  * @collboard-modules-sdk
  */
 export declare class ExportArt extends Abstract2dArt {

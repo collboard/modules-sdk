@@ -13,6 +13,7 @@ import { Abstract2dArt } from './26-Abstract2dArt';
  * ImportArt is art for importing external content into the board.
  * @see ExportArt implementation and comments before looking at this
  *
+ * @deprecated This functionality is unused
  * @collboard-modules-sdk
  */
 export declare class ImportArt extends Abstract2dArt {

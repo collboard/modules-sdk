@@ -6,10 +6,10 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IVectorData } from 'xyzt';
 import { string_url } from '../../../40-utils/typeAliases';
-import { IModuleManifestTranslation } from '../../../50-systems/ModuleStore/interfaces/IModuleManifest';
+import { IStringMessage } from '../../../50-systems/TranslationsSystem/interfaces/IMessage';
 export interface IGridConfig {
     name: string;
-    title: IModuleManifestTranslation;
+    title: IStringMessage;
     src: string_url;
     size: IVectorData;
     opacity: number;

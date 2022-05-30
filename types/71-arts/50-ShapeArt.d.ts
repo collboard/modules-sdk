@@ -6,7 +6,6 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { IVectorData, Vector } from 'xyzt';
-import { IFramable } from '../50-systems/ExportImportSystem/interfaces/IFramable';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
  * @collboard-modules-sdk
@@ -21,7 +20,7 @@ export declare enum ShapeName {
 /**
  * @collboard-modules-sdk
  */
-export declare class ShapeArt extends Abstract2dArt implements IFramable {
+export declare class ShapeArt extends Abstract2dArt {
     shape: ShapeName;
     color: string;
     weight: number;

@@ -9,7 +9,7 @@ import { string_translate_language, string_uri_part, string_version } from '../.
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
 import { MaterialArtVersioningSystem } from '../ArtVersionSystem/0-MaterialArtVersioningSystem';
-import { ITranslateMessage } from '../TranslationsSystem/ITranslateMessage';
+import { ITranslateMessage } from '../TranslationsSystem/interfaces/ITranslateMessage';
 import { ICreateBoardOptions } from './ICreateBoardOptions';
 import { IGetMyBoardsResponse } from './interfaces/IGetMyBoards';
 /**

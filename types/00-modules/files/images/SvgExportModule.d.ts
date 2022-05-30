@@ -7,5 +7,6 @@
 export {};
 /**
  * TODO: [🎇] Full vs linked export
+ * TODO: !! Work also when scaled
  * TODO: Is export to SVG more like export to HTML or Bitmap image?
  */

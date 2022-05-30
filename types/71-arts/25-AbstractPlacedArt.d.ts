@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IVectorData } from 'xyzt';
 import { string_attribute } from '../40-utils/typeAliases';
-import { IBoundingBox } from '../50-systems/ExportImportSystem/interfaces/IBoundingBox';
+import { IBoundingBoxData } from '../50-systems/ExportImportSystem/interfaces/IBoundingBoxData';
 import { AbstractArt } from './20-AbstractArt';
 /**
  * Constant, which should be used to determine, whether a point is near the art
@@ -23,7 +23,7 @@ export declare const IS_NEAR_DISTANCE = 20;
  *
  * @collboard-modules-sdk
  */
-export declare abstract class AbstractPlacedArt extends AbstractArt implements IBoundingBox {
+export declare abstract class AbstractPlacedArt extends AbstractArt implements IBoundingBoxData {
     /**
      * Translation vector of art
      */
@@ -82,13 +82,13 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      *
      * Value is used mostly when making selection
      */
-    get topRightCorner(): IVectorData;
+    get topRight(): IVectorData;
     /**
      * Position of bottom left corner of art (absolute including `shift`)
      *
      * Value is used mostly when making selection
      */
-    get bottomLeftCorner(): IVectorData;
+    get bottomLeft(): IVectorData;
     /**
      * Function determining, whether a point is near the art
      *

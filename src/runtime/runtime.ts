@@ -77,6 +77,10 @@ export const CopyComponent = (window as any).CollboardSdk.CopyComponent;
 export const ErrorBoundary = (window as any).CollboardSdk.ErrorBoundary;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/FileComponent.d.ts
+export const FileComponent = (window as any).CollboardSdk.FileComponent;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/Loader/Loader.d.ts
 export const Loader = (window as any).CollboardSdk.Loader;
 
@@ -103,6 +107,10 @@ export const QRCode = (window as any).CollboardSdk.QRCode;
 
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/RefreshContentComponent.d.ts
 export const RefreshContentComponent = (window as any).CollboardSdk.RefreshContentComponent;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/select/AsyncSelectComponent.d.ts
+export const AsyncSelectComponent = (window as any).CollboardSdk.AsyncSelectComponent;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/SelfUpdateContentComponent.d.ts
@@ -435,6 +443,10 @@ export const Speech = (window as any).CollboardSdk.Speech;
 export const splitArray = (window as any).CollboardSdk.splitArray;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/splitArrayIntoChunks.d.ts
+export const splitArrayIntoChunks = (window as any).CollboardSdk.splitArrayIntoChunks;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/svgUtils.d.ts
 export const pointsToPolygon = (window as any).CollboardSdk.pointsToPolygon;
 
@@ -453,7 +465,6 @@ export const ThrottleQueues = (window as any).CollboardSdk.ThrottleQueues;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/toArray.d.ts
-export const IArrayable = (window as any).CollboardSdk.IArrayable;
 export const toArray = (window as any).CollboardSdk.toArray;
 
 
@@ -531,6 +542,10 @@ export const string_color = (window as any).CollboardSdk.string_color;
 export const RequireAtLeastOne = (window as any).CollboardSdk.RequireAtLeastOne;
 export const RequireOnlyOne = (window as any).CollboardSdk.RequireOnlyOne;
 export const PickPartial = (window as any).CollboardSdk.PickPartial;
+export const ArrayFull = (window as any).CollboardSdk.ArrayFull;
+export const IArrayable = (window as any).CollboardSdk.IArrayable;
+export const IArrayableFull = (window as any).CollboardSdk.IArrayableFull;
+export const PromisableArray = (window as any).CollboardSdk.PromisableArray;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/00-SystemsContainer/ISystems.d.ts
@@ -625,12 +640,17 @@ export const ExportSystem = (window as any).CollboardSdk.ExportSystem;
 export const ImportSystem = (window as any).CollboardSdk.ImportSystem;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/interfaces/IExportFileOptions.d.ts
-export const ExportScope = (window as any).CollboardSdk.ExportScope;
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/interfaces/IExportScope.d.ts
+export const IExportScope = (window as any).CollboardSdk.IExportScope;
+export const ExportScopeSimple = (window as any).CollboardSdk.ExportScopeSimple;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/interfaces/IFileExportOptions.d.ts
-export const IFileExportOptions = (window as any).CollboardSdk.IFileExportOptions;
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/interfaces/IFileExportSupporterOptions.d.ts
+export const IFileExportSupporterOptions = (window as any).CollboardSdk.IFileExportSupporterOptions;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/interfaces/IFramable.d.ts
+export const IFramable = (window as any).CollboardSdk.IFramable;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportImportSystem/interfaces/ImportStrategy.d.ts
@@ -712,7 +732,6 @@ export const IModuleManifestAuthor = (window as any).CollboardSdk.IModuleManifes
 export const IModuleManifestSoftwareLicense = (window as any).CollboardSdk.IModuleManifestSoftwareLicense;
 export const IModuleManifestUsageLicense = (window as any).CollboardSdk.IModuleManifestUsageLicense;
 export const IModuleManifestUsageLicensePayed = (window as any).CollboardSdk.IModuleManifestUsageLicensePayed;
-export const IModuleManifestTranslation = (window as any).CollboardSdk.IModuleManifestTranslation;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/interfaces/IModulePersister.d.ts
@@ -852,6 +871,12 @@ export const TranslationsSystem = (window as any).CollboardSdk.TranslationsSyste
 export const Translate = (window as any).CollboardSdk.Translate;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/TranslationsSystem/interfaces/IMessage.d.ts
+export const IStringMessage = (window as any).CollboardSdk.IStringMessage;
+export const IMessage = (window as any).CollboardSdk.IMessage;
+export const IBaseMessage = (window as any).CollboardSdk.IBaseMessage;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/UsercontentSystem/0-UsercontentSystem.d.ts
 export const UsercontentSystem = (window as any).CollboardSdk.UsercontentSystem;
 
@@ -924,6 +949,10 @@ export const BackgroundPatternArt = (window as any).CollboardSdk.BackgroundPatte
 
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/40-BackgroundWallpaperArt.d.ts
 export const BackgroundWallpaperArt = (window as any).CollboardSdk.BackgroundWallpaperArt;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-FrameArt.d.ts
+export const FrameArt = (window as any).CollboardSdk.FrameArt;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-FreehandArt.d.ts

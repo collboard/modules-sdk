@@ -5,8 +5,9 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
+import { IBaseMessage } from '../../50-systems/TranslationsSystem/interfaces/IMessage';
 declare type IModalGroupProps = React.PropsWithChildren<{
-    title?: string | JSX.Element;
+    title?: IBaseMessage;
 }>;
 export declare function ModalGroup({ children, title }: IModalGroupProps): JSX.Element;
 export {};

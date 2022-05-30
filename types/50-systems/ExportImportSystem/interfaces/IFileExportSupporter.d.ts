@@ -8,7 +8,7 @@
 import { Promisable } from 'type-fest';
 import { IFactorable } from '../../../40-utils/IFactory';
 import { string_mime_type } from '../../../40-utils/typeAliases';
-import { IFileExportOptions } from './IFileExportOptions';
+import { IFileExportSupporterOptions } from './IFileExportSupporterOptions';
 export declare type IFileExportSupporter = IFileExportSupporterHeavy | IFileExportSupporterLight;
 /**
  * This represents support for one file type export
@@ -18,14 +18,14 @@ export declare type IFileExportSupporter = IFileExportSupporterHeavy | IFileExpo
  */
 interface IFileExportSupporterHeavy extends IFileExportSupporterCore {
     isHeavy: true;
-    export(options: IFileExportOptions): Promisable<(() => Promisable<IExported>) | null>;
+    export(supporterOptions: IFileExportSupporterOptions): Promisable<(() => Promisable<IExported>) | null>;
 }
 /**
  * This represents support for light (=it is instant and cheap to compute) file type export
  */
 interface IFileExportSupporterLight extends IFileExportSupporterCore {
     isHeavy: false;
-    export(options: IFileExportOptions): Promisable<IExported | null>;
+    export(supporterOptions: IFileExportSupporterOptions): Promisable<IExported | null>;
 }
 /**
  * This represents support for one file type export
@@ -55,7 +55,7 @@ interface IFileExportSupporterCore {
      * 2) Return function that will be called to actually perform hard work of exporting and this will return exported data
      * 3) Return null - if it is not able to export
      */
-    export(options: IFileExportOptions): Promisable<IFactorable<Promisable<IExported>> | null>;
+    export(supporterOptions: IFileExportSupporterOptions): Promisable<IFactorable<Promisable<IExported>> | null>;
 }
 /**
  * Exported data
@@ -65,4 +65,5 @@ export {};
 /**
  * TODO: Use isHeavy in auto install mechanism
  * TODO: [🌿] Use priority in auto install mechanism
+ * TODO: [🍸] Some way how the supporter can tell additional options
  */

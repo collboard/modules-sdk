@@ -8,7 +8,7 @@ import { IDestroyable } from 'destroyable';
 import { Promisable } from 'type-fest';
 import { Vector } from 'xyzt';
 import { ISubLogger } from '../../../40-utils/logger/ILogger';
-import { IArrayable } from '../../../40-utils/toArray';
+import { IArrayable } from '../../../40-utils/typeHelpers';
 import { AbstractArt } from '../../../71-arts/20-AbstractArt';
 import { IOngoingOperation } from '../../ArtVersionSystem/IOperation';
 /**

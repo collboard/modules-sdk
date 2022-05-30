@@ -12,8 +12,9 @@ import { IReplacer } from '../../40-utils/applyParamsOnTemplate';
 import { string_translate_language, string_translate_name_not_normalized } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
-import { ITranslateMessage } from './ITranslateMessage';
-import { ITranslateMessagePicker } from './ITranslateMessagePicker';
+import { IMessage } from './interfaces/IMessage';
+import { ITranslateMessage } from './interfaces/ITranslateMessage';
+import { ITranslateMessagePicker } from './interfaces/ITranslateMessagePicker';
 export interface ITranslationMessages {
     [key: string]: string;
 }
@@ -67,10 +68,8 @@ export declare class TranslationsSystem extends AbstractSystem implements ITrans
     private _Translate;
     private _WithTranslateContext;
     useTemplate(html: string): string;
-    pickMessage(messageTranslation: string | Partial<Record<string_translate_language, string>>): string;
-    pickMessageJsx(
-        messageTranslation: string | JSX.Element | Partial<Record<string_translate_language, string | JSX.Element>>,
-    ): JSX.Element;
+    pickStringMessage(message: IMessage): string;
+    pickMessage(message: IMessage): JSX.Element;
     private get preferedLanguages();
     private get secondaryLanguage();
     showDateAndTime(date: Date | string): string;

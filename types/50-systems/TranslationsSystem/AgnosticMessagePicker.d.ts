@@ -5,14 +5,12 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { string_translate_language } from '../../40-utils/typeAliases';
-import { ITranslateMessagePicker } from './ITranslateMessagePicker';
+import { IMessage } from './interfaces/IMessage';
+import { ITranslateMessagePicker } from './interfaces/ITranslateMessagePicker';
 /**
  * AgnosticMessagePicker just takes input and merges it to output.
  */
 export declare class AgnosticMessagePicker implements ITranslateMessagePicker {
-    pickMessage(messageTranslation: string | Partial<Record<string_translate_language, string>>): string;
-    pickMessageJsx(
-        messageTranslation: string | JSX.Element | Partial<Record<string_translate_language, string | JSX.Element>>,
-    ): JSX.Element;
+    pickStringMessage(message: IMessage): string;
+    pickMessage(message: IMessage): JSX.Element;
 }

@@ -4,16 +4,16 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-/// <reference types="react" />
+import { IBaseMessage } from '../../50-systems/TranslationsSystem/interfaces/IMessage';
 interface IConfirmDialogueOptions {
     /**
      * TODO: Accept JSX when maked betted
      */
-    message?: string | JSX.Element;
+    message?: IBaseMessage;
 }
 /**
  *
  * @collboard-modules-sdk
  */
-export declare function confirmDialogue(options: IConfirmDialogueOptions | string | JSX.Element): Promise<boolean>;
+export declare function confirmDialogue(options: IConfirmDialogueOptions | IBaseMessage): Promise<boolean>;
 export {};

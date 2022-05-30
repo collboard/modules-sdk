@@ -4,8 +4,19 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-export {};
+import { IFramable } from './IFramable';
 /**
- * TODO: Install here all external supporters with some priority
- * TODO: Toggle for download only a selection
+ * Export scope specifies which arts should be exported
+ *
+ * @collboard-modules-sdk
  */
+export declare type IExportScope = ExportScopeSimple | IFramable;
+/**
+ * Simple export scopes
+ *
+ * @collboard-modules-sdk
+ */
+export declare enum ExportScopeSimple {
+    Selection = 'SELECTION',
+    Board = 'BOARD',
+}

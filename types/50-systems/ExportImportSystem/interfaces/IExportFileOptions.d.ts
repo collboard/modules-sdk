@@ -5,21 +5,38 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_mime_type_with_wildcard } from '../../../40-utils/typeAliases';
+import { IArrayableFull } from '../../../40-utils/typeHelpers';
+import { IExportScope } from './IExportScope';
+import { ImportStrategy } from './ImportStrategy';
 /**
+ * Options for file export
  *
- * @collboard-modules-sdk
+ * @not-collboard-modules-sdk
  */
-export declare enum ExportScope {
-    Selection = 'SELECTION',
-    Board = 'BOARD',
-}
 export interface IExportFileOptions {
-    scope: ExportScope;
-    mimeType: string_mime_type_with_wildcard;
+    /**
+     * Which arts should be exported
+     */
+    scope: IExportScope;
+    /**
+     * What mime types you are interested in
+     *
+     * For example:
+     * - Specify exact types ['image/png', 'image/jpeg','application/pdf']
+     * - Specify wildcard types ['image/*']
+     * - Specify all types ['*']
+     */
+    mimeType: IArrayableFull<string_mime_type_with_wildcard>;
+    /**
+     * Requirements for external sources
+     */
+    importStrategy: ImportStrategy;
+    /**
+     * Should be heavy (=takes lot of resources) exports included?
+     */
     isHeavyIncluded?: boolean;
+    /**
+     * Export should contain texting UI elements / testing metadata
+     */
+    isTesting?: boolean;
 }
-/**
- * TODO: !! proppably schope should be passed manually as arts
- * TODO: [🏫] Some way how to scope IFramable
- * TODO: [🌿] Maybe add priority into IExportFileOptions with auto install mechanism from external module store
- */

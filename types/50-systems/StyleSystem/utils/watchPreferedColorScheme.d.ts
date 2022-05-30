@@ -15,3 +15,6 @@ export declare enum ColorScheme {
  */
 export declare function watchPreferedColorScheme(userPickedColorScheme?: ColorScheme): BehaviorSubject<ColorScheme>;
 export declare function systemColorScheme(): ColorScheme;
+/**
+ * TODO: 😎 When dark mode activated change word "whiteboard" to "blackboard"
+ */

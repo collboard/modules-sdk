@@ -5,14 +5,15 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
+import { IBaseMessage } from '../../50-systems/TranslationsSystem/interfaces/IMessage';
 import { string_icon } from './icons';
 interface IConfirmIconProps {
     icon: string_icon;
     onConfirm: () => void;
     className?: string;
     inactive?: boolean;
-    title: string | JSX.Element;
-    subtitle?: string | JSX.Element;
+    title: IBaseMessage;
+    subtitle?: IBaseMessage;
 }
 interface IConfirmIconState {
     modalOpen: boolean;

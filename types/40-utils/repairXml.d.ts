@@ -4,12 +4,9 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IVectorData } from 'xyzt';
 /**
- * @deprecated use IBoundingBox from xyzt
+ * Converts potentially malformed XML to well-formed XML.
  *
+ * @param xml xml which will be repaired
  */
-export interface IBoundingBox {
-    topRightCorner: IVectorData;
-    bottomLeftCorner: IVectorData;
-}
+export declare function repairXml(xml: string): string;

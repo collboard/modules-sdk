@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { string_module_name, string_url } from '../../40-utils/typeAliases';
-import { IMessage } from '../../40-utils/IMessage';
+import { IMessage } from '../TranslationsSystem/interfaces/IMessage';
 /**
  * Similar interface to Notification Web API
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Notification

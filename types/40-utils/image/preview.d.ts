@@ -4,5 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IPaperConfig } from './IPaperConfig';
-export declare const PAPERS: IPaperConfig[];
+/**
+ * Creates simple testing preview overlay for any element on top of the document
+ */
+export declare function preview(element: HTMLElement): void;
+/**
+ * TODO: Allow files, blobs, urls, etc.
+ * TODO: Prevent using this in production (probbably via linting)
+ * TODO: Maybe return destroyable
+ */
