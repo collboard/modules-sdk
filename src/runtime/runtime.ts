@@ -633,6 +633,18 @@ export const CreateSystem = (window as any).CollboardSdk.CreateSystem;
 export const ExportSystem = (window as any).CollboardSdk.ExportSystem;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/components/DownloadComponent.d.ts
+export const DownloadComponent = (window as any).CollboardSdk.DownloadComponent;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/components/DownloadPreviewComponent.d.ts
+export const DownloadPreviewComponent = (window as any).CollboardSdk.DownloadPreviewComponent;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/components/ExportPrepareComponent.d.ts
+export const ExportPrepareComponent = (window as any).CollboardSdk.ExportPrepareComponent;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/interfaces/IExportScope.d.ts
 export const IExportScope = (window as any).CollboardSdk.IExportScope;
 export const ExportScopeSimple = (window as any).CollboardSdk.ExportScopeSimple;

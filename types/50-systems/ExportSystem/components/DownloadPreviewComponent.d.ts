@@ -13,6 +13,9 @@ interface IDownloadPreviewComponentProps {
     exportSystem: ExportSystem;
     translationsSystem: TranslationsSystem;
 }
+/**
+ * @collboard-modules-sdk
+ */
 export declare function DownloadPreviewComponent({
     exportSystem,
     translationsSystem,

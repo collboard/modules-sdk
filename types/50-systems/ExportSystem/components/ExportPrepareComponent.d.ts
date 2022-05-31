@@ -16,6 +16,9 @@ interface IExportPrepareComponentProps {
     isAutoDownloaded?: boolean;
     onChange(fileExporting: IPreparedFileExporting | null): void;
 }
+/**
+ * @collboard-modules-sdk
+ */
 export declare function ExportPrepareComponent({
     exportSystem,
     translationsSystem,
