@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { Promisable } from 'type-fest';
-import { IFactorable } from '../../40-utils/IFactory';
+import { Factorable } from '../../40-utils/IFactory';
 import { ILoaderProps } from './Loader/Loader';
 interface IAsyncContentComponentProps extends ILoaderProps {
     /**
@@ -17,7 +17,7 @@ interface IAsyncContentComponentProps extends ILoaderProps {
     /**
      * The async content to be rendered
      */
-    content: IFactorable<Promisable<JSX.Element | JSX.Element[]>>;
+    content: Factorable<Promisable<JSX.Element | JSX.Element[]>>;
 }
 /**
  * Utility for mounting RxJS observable content

@@ -282,7 +282,7 @@ export declare type string_keyword = string;
  *
  * @collboard-modules-sdk
  */
-export declare type IKeywords = string_keyword[];
+export declare type Keywords = string_keyword[];
 /**
  * CSS cursor type
  * @collboard-modules-sdk

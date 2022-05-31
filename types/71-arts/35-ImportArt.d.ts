@@ -7,8 +7,22 @@
 /// <reference types="react" />
 import { IVectorData } from 'xyzt';
 import { string_url } from '../40-utils/typeAliases';
-import { ImportStrategy } from '../50-systems/ExportImportSystem/interfaces/ImportStrategy';
 import { Abstract2dArt } from './26-Abstract2dArt';
+/**
+ * Strategy for importing external data
+ *
+ * @deprecated use isMaterialized instead
+ */
+export declare enum ImportStrategy {
+    /**
+     * Importing data will be linked
+     */
+    Link = 'LINK',
+    /**
+     * Importing data will be inlined
+     */
+    Materialize = 'MATERIALIZE',
+}
 /**
  * ImportArt is art for importing external content into the board.
  * @see ExportArt implementation and comments before looking at this

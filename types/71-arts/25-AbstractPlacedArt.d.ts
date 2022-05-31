@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IVectorData } from 'xyzt';
 import { string_attribute } from '../40-utils/typeAliases';
-import { IBoundingBoxData } from '../50-systems/ExportImportSystem/interfaces/IBoundingBoxData';
+import { IBoundingBoxData } from '../50-systems/ExportSystem/interfaces/IBoundingBoxData';
 import { AbstractArt } from './20-AbstractArt';
 /**
  * Constant, which should be used to determine, whether a point is near the art

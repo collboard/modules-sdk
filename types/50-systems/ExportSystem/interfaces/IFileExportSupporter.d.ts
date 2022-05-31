@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { Promisable } from 'type-fest';
-import { IFactorable } from '../../../40-utils/IFactory';
+import { Factorable } from '../../../40-utils/IFactory';
 import { string_mime_type } from '../../../40-utils/typeAliases';
 import { IFileExportSupporterOptions } from './IFileExportSupporterOptions';
 export declare type IFileExportSupporter = IFileExportSupporterHeavy | IFileExportSupporterLight;
@@ -55,7 +55,7 @@ interface IFileExportSupporterCore {
      * 2) Return function that will be called to actually perform hard work of exporting and this will return exported data
      * 3) Return null - if it is not able to export
      */
-    export(supporterOptions: IFileExportSupporterOptions): Promisable<IFactorable<Promisable<IExported>> | null>;
+    export(supporterOptions: IFileExportSupporterOptions): Promisable<Factorable<Promisable<IExported>> | null>;
 }
 /**
  * Exported data

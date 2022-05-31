@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IFactorable, IFactory } from '../../../40-utils/IFactory';
+import { Factorable, Factory } from '../../../40-utils/IFactory';
 import { IModule, IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 /**
@@ -19,7 +19,7 @@ export declare function makeMultiModule(
     modulesOrProtomodule:
         | {
               manifest?: IModuleManifest;
-              modules: IFactorable<IModule[]>;
+              modules: Factorable<IModule[]>;
           }
-        | IFactorable<IModule[]>,
-): IFactory<IModuleDefinition>;
+        | Factorable<IModule[]>,
+): Factory<IModuleDefinition>;

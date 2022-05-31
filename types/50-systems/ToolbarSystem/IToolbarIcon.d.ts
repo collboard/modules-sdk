@@ -8,7 +8,7 @@
 import { IDestroyable } from 'destroyable';
 import { Promisable } from 'type-fest';
 import { IIconAnonymous } from '../../30-components/menu/IIconAnonymous';
-import { IFactorable, IFactory } from '../../40-utils/IFactory';
+import { Factorable, Factory } from '../../40-utils/IFactory';
 import { string_css_cursor } from '../../40-utils/typeAliases';
 import { IShortcut } from '../ControlSystem/interfaces/IShortcut';
 import { FocusScopeName } from '../FocusSystem/0-FocusSystem';
@@ -25,7 +25,7 @@ export interface IToolbarIcon extends IIconAnonymous {
      * When this is defined, icon on toolbar is selectable.
      * Note: Prefer to use onActivate instead of onClick
      */
-    onSelect?: IFactory<Promisable<IDestroyable>>;
+    onSelect?: Factory<Promisable<IDestroyable>>;
     /**
      * Select immediatelly when is ihis icon added into toolbar
      * Note: working only with onSelect (not onClick)
@@ -74,5 +74,5 @@ export interface IToolbarIcon extends IIconAnonymous {
      * Extra menu which will be
      *
      */
-    menu?: IFactorable<Promisable<JSX.Element>>;
+    menu?: Factorable<Promisable<JSX.Element>>;
 }

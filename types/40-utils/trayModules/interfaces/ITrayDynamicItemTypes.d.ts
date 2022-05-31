@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { IMessage } from '../../../50-systems/TranslationsSystem/interfaces/IMessage';
-import { IFactorable } from '../../IFactory';
+import { Factorable } from '../../IFactory';
 import { string_color, string_url, string_url_image } from '../../typeAliases';
 /**
  * @collboard-modules-sdk
@@ -52,8 +52,8 @@ export declare type ITrayDynamicItemFilter = (source: JSX.Element) => JSX.Elemen
  * @collboard-modules-sdk
  */
 export interface ITrayDynamicDefinition {
-    getItems: IFactorable<ITrayDynamicItemList>;
-    getToolbarItems: IFactorable<ITrayDynamicToolbarItems>;
+    getItems: Factorable<ITrayDynamicItemList>;
+    getToolbarItems: Factorable<ITrayDynamicToolbarItems>;
     imageFolder?: string_url;
     className?: string;
 }

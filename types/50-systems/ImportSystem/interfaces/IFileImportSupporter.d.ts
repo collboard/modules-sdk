@@ -8,7 +8,7 @@ import { IDestroyable } from 'destroyable';
 import { Promisable } from 'type-fest';
 import { Vector } from 'xyzt';
 import { ISubLogger } from '../../../40-utils/logger/ILogger';
-import { IArrayable } from '../../../40-utils/typeHelpers';
+import { Arrayable } from '../../../40-utils/typeHelpers';
 import { AbstractArt } from '../../../71-arts/20-AbstractArt';
 import { IOngoingOperation } from '../../ArtVersionSystem/IOperation';
 /**
@@ -63,6 +63,6 @@ export interface IFileImportSupporter {
          * Call and return next() to pass responsibility to another supporter
          */
         next(): typeof FILE_IMPORT_SUPPORTER_NEXT;
-    }): Promisable<IArrayable<AbstractArt> | IDestroyable | typeof FILE_IMPORT_SUPPORTER_NEXT>;
+    }): Promisable<Arrayable<AbstractArt> | IDestroyable | typeof FILE_IMPORT_SUPPORTER_NEXT>;
 }
 export declare const FILE_IMPORT_SUPPORTER_NEXT: unique symbol;

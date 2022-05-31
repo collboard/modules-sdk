@@ -7,13 +7,13 @@
 import React from 'react';
 import { Promisable } from 'type-fest';
 import { IModalProps } from '../../../30-components/modal/Modal';
-import { IFactorable } from '../../../40-utils/IFactory';
+import { Factorable } from '../../../40-utils/IFactory';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { TranslationsSystem } from '../../TranslationsSystem/0-TranslationsSystem';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 interface ICreateModalReturn extends Partial<Omit<IModalProps, 'children'>> {
-    content: IFactorable<JSX.Element>;
+    content: Factorable<JSX.Element>;
     wrapModalManually?: boolean;
 }
 /**

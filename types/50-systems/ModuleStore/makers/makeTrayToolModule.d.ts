@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Promisable } from 'type-fest';
 import { Vector } from 'xyzt';
-import { IArrayable } from '../../../40-utils/typeHelpers';
+import { Arrayable } from '../../../40-utils/typeHelpers';
 import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IOngoingMaterialOperation } from '../../ArtVersionSystem/IOperation';
@@ -25,7 +25,7 @@ export declare function makeTrayToolModule<TArt extends Abstract2dArt>(protoModu
         itemId: string;
         boardPosition: Vector;
         systems: ISystems;
-    }): Promisable<IArrayable<TArt> | IOngoingMaterialOperation>;
+    }): Promisable<Arrayable<TArt> | IOngoingMaterialOperation>;
     getToolbarBodyRef(): HTMLDivElement | null;
 }): IModuleDefinition;
 /**

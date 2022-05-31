@@ -21,7 +21,7 @@ import {
     string_url_image,
     string_version,
 } from '../../../40-utils/typeAliases';
-import { ArrayFull, IArrayable } from '../../../40-utils/typeHelpers';
+import { Arrayable, ArrayFull } from '../../../40-utils/typeHelpers';
 import { IStringMessage } from '../../TranslationsSystem/interfaces/IMessage';
 /**
  * Manifest describes the module.
@@ -33,7 +33,7 @@ import { IStringMessage } from '../../TranslationsSystem/interfaces/IMessage';
  */
 export interface IModuleManifest {
     name: string_module_name;
-    deprecatedNames?: IArrayable<string_module_name>;
+    deprecatedNames?: Arrayable<string_module_name>;
     title?: IStringMessage;
     description?: IStringMessage;
     keywords?: string[];
@@ -111,11 +111,11 @@ export interface IModuleManifest {
         /**
          * Module can deserialize given art(s)
          */
-        art?: IArrayable<string>;
+        art?: Arrayable<string>;
         /**
          * Module can work with given attribute(s)
          */
-        attribute?: IArrayable<string_attribute>;
+        attribute?: Arrayable<string_attribute>;
         /**
          * Module can import given file(s) with given mime type(s)
          * Note: You are allowed to use wildcard in mime type; for example 'image/*'
@@ -123,7 +123,7 @@ export interface IModuleManifest {
          *       Importing - I have some file with known mimetype and I want to find best fitting module to process it.
          *       Exporting - I have an art and I want to export it to all wanted formats. There are some well-known formats like text, html or image wich will be installed by default and other format exports can be installed manually or by business.
          */
-        fileImport?: IArrayable<string_mime_type_with_wildcard>;
+        fileImport?: Arrayable<string_mime_type_with_wildcard>;
     };
 }
 /**

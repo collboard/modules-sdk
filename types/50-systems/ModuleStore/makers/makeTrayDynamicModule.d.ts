@@ -7,7 +7,7 @@
 import { Promisable } from 'type-fest';
 import { Vector } from 'xyzt';
 import { ITrayDynamicDefinition } from '../../../40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
-import { IArrayable } from '../../../40-utils/typeHelpers';
+import { Arrayable } from '../../../40-utils/typeHelpers';
 import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IOngoingMaterialOperation } from '../../ArtVersionSystem/IOperation';
@@ -41,5 +41,5 @@ export declare function makeDynamicTrayModule<TArt extends Abstract2dArt>(protoM
         itemId: string;
         boardPosition: Vector;
         systems: ISystems;
-    }): Promisable<IArrayable<TArt> | IOngoingMaterialOperation>;
+    }): Promisable<Arrayable<TArt> | IOngoingMaterialOperation>;
 }): IModuleDefinition;

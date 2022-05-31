@@ -14,7 +14,7 @@ import { IExportScope } from './IExportScope';
  *
  * @collboard-modules-sdk
  */
-export interface IFileExportSupporterOptions extends IExportFileOptions {
+export interface IFileExportSupporterOptions extends Required<IExportFileOptions> {
     /**
      * Arts to export
      */

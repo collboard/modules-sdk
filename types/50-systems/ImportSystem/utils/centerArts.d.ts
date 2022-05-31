@@ -19,6 +19,3 @@ export declare function centerArts({
     arts: AbstractPlacedArt[];
     boardPosition: IVectorData;
 }): void;
-/**
- * TODO: [🐽] Where is the best location for this function
- */

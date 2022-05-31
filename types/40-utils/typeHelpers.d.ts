@@ -5,25 +5,15 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Promisable } from 'type-fest';
-/**
- * @collboard-modules-sdk
- */
-export declare type RequireAtLeastOne<T, Keys extends keyof T = keyof T> = Pick<T, Exclude<keyof T, Keys>> &
-    {
-        [K in Keys]-?: Required<Pick<T, K>> & Partial<Pick<T, Exclude<Keys, K>>>;
-    }[Keys];
-/**
- * @collboard-modules-sdk
- */
-export declare type RequireOnlyOne<T, Keys extends keyof T = keyof T> = Pick<T, Exclude<keyof T, Keys>> &
-    {
-        [K in Keys]-?: Required<Pick<T, K>> & Partial<Record<Exclude<Keys, K>, undefined>>;
-    }[Keys];
-/**
- * Make partial only some keys
- * @collboard-modules-sdk
- */
-export declare type PickPartial<Type, Keys extends keyof Type> = Partial<Pick<Type, Keys>> & Omit<Type, Keys>;
+declare type OptionalKeys<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? K : never;
+}[keyof T];
+export declare type FlipOptional<T> = Required<Pick<T, OptionalKeys<T>>> &
+    Partial<Omit<T, OptionalKeys<T>>> extends infer O
+    ? {
+          [K in keyof O]: O[K];
+      }
+    : never;
 /**
  * Array with at least one item
  *
@@ -37,16 +27,17 @@ export declare type ArrayFull<T> = {
  *
  * @collboard-modules-sdk
  */
-export declare type IArrayable<T> = T | T[] | Set<T>;
+export declare type Arrayable<T> = T | T[] | Set<T>;
 /**
  * Just an item or array of items with at least one item
  *
  * @collboard-modules-sdk
  */
-export declare type IArrayableFull<T> = T | ArrayFull<T>;
+export declare type ArrayableFull<T> = T | ArrayFull<T>;
 /**
  * Array which can be wrapped in a Promise and all items can be also wrapped in a Promise
  *
  * @collboard-modules-sdk
  */
 export declare type PromisableArray<T> = Promisable<Array<Promisable<T>>>;
+export {};

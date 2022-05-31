@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IDestroyable } from 'destroyable';
 import { Promisable } from 'type-fest';
-import { IFactorable } from '../../../40-utils/IFactory';
+import { Factorable } from '../../../40-utils/IFactory';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IModuleManifest } from './IModuleManifest';
 /**
@@ -22,7 +22,7 @@ import { IModuleManifest } from './IModuleManifest';
  *
  * @collboard-modules-sdk
  */
-export declare type IModule = IFactorable<IModuleDefinition>;
+export declare type IModule = Factorable<IModuleDefinition>;
 /**
  * Collboard module is basic unit of functionality. From the technical point of view it is just an object with manifest and setup function that can make some work and returns a logic how to destroy itself.
  *

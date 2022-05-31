@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
 import { CollSpace } from '../../50-systems/CollSpace/0-CollSpace';
-import { ImportSystem } from '../../50-systems/ExportImportSystem/0-ImportSystem';
+import { ImportSystem } from '../../50-systems/ImportSystem/0-ImportSystem';
 declare type IUploadOverlayProps = React.PropsWithChildren<{
     importSystem: ImportSystem;
     collSpace: CollSpace;

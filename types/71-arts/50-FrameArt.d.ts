@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { BoundingBox, IVectorData } from 'xyzt';
-import { IFramable } from '../50-systems/ExportImportSystem/interfaces/IFramable';
+import { IFramable } from '../50-systems/ExportSystem/interfaces/IFramable';
 import { Abstract2dBoxArt } from './27-Abstract2dBoxArt';
 /**
  * Frame for export

@@ -4,10 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { ArrayFull, IArrayable, IArrayableFull } from './typeHelpers';
+import { Arrayable, ArrayableFull, ArrayFull } from './typeHelpers';
 /**
  *
  * @collboard-modules-sdk
  */
-export declare function toArray<T>(input?: IArrayableFull<T> | string, delimiter?: string): ArrayFull<T>;
-export declare function toArray<T>(input?: IArrayable<T> | string, delimiter?: string): Array<T>;
+export declare function toArray<T>(input?: ArrayableFull<T> | string, delimiter?: string): ArrayFull<T>;
+export declare function toArray<T>(input?: Arrayable<T> | string, delimiter?: string): Array<T>;
