@@ -8,20 +8,25 @@
 import { AppState } from '../../AppState/0-AppState';
 import { TranslationsSystem } from '../../TranslationsSystem/0-TranslationsSystem';
 import { ExportSystem } from '../0-ExportSystem';
-import { IPreparedFileExporting } from '../interfaces/IPreparedFileExport';
-interface IExportPrepareComponentProps {
+import { IExportScope } from '../interfaces/IExportScope';
+interface IExportScopePickerComponentProps {
     appState: AppState;
     exportSystem: ExportSystem;
     translationsSystem: TranslationsSystem;
-    onChange(fileExporting: IPreparedFileExporting | null): void;
+    value: IExportScope | null;
+    onChange(exportScope: IExportScope): void;
 }
 /**
  * @collboard-modules-sdk
  */
-export declare function ExportPrepareComponent({
+export declare function ExportScopePickerComponent({
     exportSystem,
     translationsSystem,
     appState,
+    value,
     onChange,
-}: IExportPrepareComponentProps): JSX.Element;
+}: IExportScopePickerComponentProps): JSX.Element;
 export {};
+/**
+ * TODO: Listen for new frames
+ */

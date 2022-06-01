@@ -6,6 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
  * Adds a white background to an canvas image and returns it as the new canvas
+ *
+ * @collboard-modules-sdk
  */
 export declare function addWhiteBackground(canvas: HTMLCanvasElement): HTMLCanvasElement;
 /**

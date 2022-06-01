@@ -266,6 +266,10 @@ export const fetchProxied = (window as any).CollboardSdk.fetchProxied;
 export const findPropperFileType = (window as any).CollboardSdk.findPropperFileType;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/files/isFileExecutable.d.ts
+export const isFileExecutable = (window as any).CollboardSdk.isFileExecutable;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/filterWithLimit.d.ts
 export const filterWithLimit = (window as any).CollboardSdk.filterWithLimit;
 
@@ -306,8 +310,20 @@ export const factorWithSystems = (window as any).CollboardSdk.factorWithSystems;
 export const IHandler = (window as any).CollboardSdk.IHandler;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/image/addWhiteBackground.d.ts
+export const addWhiteBackground = (window as any).CollboardSdk.addWhiteBackground;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/image/imageToCanvas.d.ts
+export const imageToCanvas = (window as any).CollboardSdk.imageToCanvas;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/image/measureImageSize.d.ts
 export const measureImageSize = (window as any).CollboardSdk.measureImageSize;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/image/preview.d.ts
+export const preview = (window as any).CollboardSdk.preview;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/isEmoji.d.ts
@@ -631,6 +647,14 @@ export const CreateSystem = (window as any).CollboardSdk.CreateSystem;
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/0-ExportSystem.d.ts
 export const ExportSystem = (window as any).CollboardSdk.ExportSystem;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/components/0-ExporterPickerComponent.d.ts
+export const ExporterPickerComponent = (window as any).CollboardSdk.ExporterPickerComponent;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/components/0-ExportScopePickerComponent.d.ts
+export const ExportScopePickerComponent = (window as any).CollboardSdk.ExportScopePickerComponent;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/components/DownloadComponent.d.ts

@@ -6,6 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
  * Creates simple testing preview overlay for any element on top of the document
+ *
+ * @collboard-modules-sdk
  */
 export declare function preview(element: HTMLElement): void;
 /**

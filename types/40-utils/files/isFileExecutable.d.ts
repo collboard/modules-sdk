@@ -15,5 +15,7 @@ import { string_mime_type } from '../typeAliases';
  *
  * @param file checked file or its mime type
  * @returns true if file is executable
+ *
+ * @collboard-modules-sdk
  */
 export declare function isFileExecutable(fileOrType: File | Blob | string_mime_type): Promise<boolean>;

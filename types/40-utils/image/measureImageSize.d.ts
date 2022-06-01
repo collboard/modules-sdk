@@ -8,6 +8,7 @@ import { Vector } from 'xyzt';
 import { string_data_url } from '../typeAliases';
 /**
  * Get image size after its rendered on its native size
+ *
  * @collboard-modules-sdk
  */
 export declare function measureImageSize(imageFileOrDataUrl: Blob | string_data_url): Promise<Vector>;

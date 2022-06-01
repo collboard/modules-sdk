@@ -5,4 +5,10 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_url_image } from '../typeAliases';
+/**
+ * Converts image to canvas
+ * Tip: It can be usefull for converting SVG images into bitmap images
+ *
+ * @collboard-modules-sdk
+ */
 export declare function imageToCanvas(src: string_url_image): Promise<HTMLCanvasElement>;
