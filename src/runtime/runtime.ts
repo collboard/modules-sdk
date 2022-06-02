@@ -314,6 +314,10 @@ export const IHandler = (window as any).CollboardSdk.IHandler;
 export const addWhiteBackground = (window as any).CollboardSdk.addWhiteBackground;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/image/createPreviewElement.d.ts
+export const createPreviewElement = (window as any).CollboardSdk.createPreviewElement;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/image/imageToCanvas.d.ts
 export const imageToCanvas = (window as any).CollboardSdk.imageToCanvas;
 

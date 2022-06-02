@@ -5,14 +5,9 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-interface IFileComponentProps {
-    file: File | Blob;
-    isLoading?: boolean;
-}
 /**
- * Preview component of any file
+ * Creates an element from file, JSX, string, any object OR return given element
  *
  * @collboard-modules-sdk
  */
-export declare function FileComponent({ file, isLoading }: IFileComponentProps): JSX.Element;
-export {};
+export declare function createPreviewElement(subject: HTMLElement | File | Blob | JSX.Element | string): HTMLElement;
