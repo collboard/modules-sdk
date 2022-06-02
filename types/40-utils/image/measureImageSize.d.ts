@@ -5,10 +5,10 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Vector } from 'xyzt';
-import { string_data_url } from '../typeAliases';
+import { string_url_image } from '../typeAliases';
 /**
  * Get image size after its rendered on its native size
  *
  * @collboard-modules-sdk
  */
-export declare function measureImageSize(imageFileOrDataUrl: Blob | string_data_url): Promise<Vector>;
+export declare function measureImageSize(source: File | Blob | string_url_image): Promise<Vector>;

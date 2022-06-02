@@ -7,6 +7,12 @@
 import { string_version } from './40-utils/typeAliases';
 export declare const clientVersion: string_version;
 export declare const PUBLIC_URL: string;
+/**
+ * Conversion table from misc units to board pixels
+ *
+ * @collboard-modules-sdk
+ * @deprecated Make ScaleSystem instead
+ */
 export declare const SCALE_PIXELS: {
     field: number;
     centimeter: number;
@@ -14,6 +20,9 @@ export declare const SCALE_PIXELS: {
     earths: number;
     AU: number;
 };
+/**
+ * @deprecated integrate into StyleSystem
+ */
 export declare const DRAWING_COLORS: {
     [key: string]: string;
 };

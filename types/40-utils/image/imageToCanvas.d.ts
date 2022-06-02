@@ -11,4 +11,7 @@ import { string_url_image } from '../typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare function imageToCanvas(src: string_url_image): Promise<HTMLCanvasElement>;
+export declare function imageToCanvas(source: File | Blob | string_url_image): Promise<HTMLCanvasElement>;
+/**
+ * Note: [♍] Not using ObjectUrl because it causes image tainting
+ */

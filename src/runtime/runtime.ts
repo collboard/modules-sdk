@@ -181,6 +181,14 @@ export const blobToDataUrl = (window as any).CollboardSdk.blobToDataUrl;
 export const dataUrlToBlob = (window as any).CollboardSdk.dataUrlToBlob;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/data/downloadFile.d.ts
+export const downloadFile = (window as any).CollboardSdk.downloadFile;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/data/ObjectUrl.d.ts
+export const ObjectUrl = (window as any).CollboardSdk.ObjectUrl;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/deepClone.d.ts
 export const deepClone = (window as any).CollboardSdk.deepClone;
 
@@ -1035,6 +1043,10 @@ export const selectionToolScalingBehavior = (window as any).CollboardSdk.selecti
 
 // C:/Users/me/work/collboard/modules-sdk/types/72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior.d.ts
 export const selectionToolSelectionBoxBehavior = (window as any).CollboardSdk.selectionToolSelectionBoxBehavior;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/config.d.ts
+export const SCALE_PIXELS = (window as any).CollboardSdk.SCALE_PIXELS;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/libraries.d.ts

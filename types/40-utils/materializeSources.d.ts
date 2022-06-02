@@ -15,6 +15,8 @@ import { string_url } from './typeAliases';
  */
 export declare function materializeSources(html: string, proxyUrl?: URL | string_url): Promise<string>;
 /**
+ * Note: [♍] Not using ObjectUrl because it causes image tainting
+ *       NOT-TODO: [LEAK] Destroy created ObjectUrls
  * TODO: Exclude already inlined images
  * TODO: What if there are more images with same src
  */
