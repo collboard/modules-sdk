@@ -77,6 +77,7 @@ export * from './40-utils/IFactory';
 export * from './40-utils/IFactoryWithSystems';
 export * from './40-utils/IHandler';
 export * from './40-utils/image/addWhiteBackground';
+export * from './40-utils/image/createPreviewElement';
 export * from './40-utils/image/imageToCanvas';
 export * from './40-utils/image/measureImageSize';
 export * from './40-utils/image/preview';
