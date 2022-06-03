@@ -45,6 +45,8 @@ export * from './40-utils/compareStrings';
 export * from './40-utils/create3dRotation';
 export * from './40-utils/data/blobToDataUrl';
 export * from './40-utils/data/dataUrlToBlob';
+export * from './40-utils/data/downloadFile';
+export * from './40-utils/data/ObjectUrl';
 export * from './40-utils/deepClone';
 export * from './40-utils/dialogues/alertDialogue';
 export * from './40-utils/dialogues/confirmDialogue';
@@ -241,4 +243,5 @@ export * from './72-tools/behaviors/selectionTool/selectionToolDraggingBehavior'
 export * from './72-tools/behaviors/selectionTool/selectionToolScalingBehavior';
 export * from './72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior';
 export * from './72-tools/behaviors/selectionTool/_selectionToolBehavior';
+export * from './config';
 export * from './libraries';
