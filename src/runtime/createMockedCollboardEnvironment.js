@@ -132,6 +132,8 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
 
     // TODO: Maybe whole virtualWindow should be deepFaked
     virtualWindow.URL = deepFake;
+    virtualWindow.atob = deepFake;
+    virtualWindow.btoa = deepFake;
 
     return virtualWindow;
 };
