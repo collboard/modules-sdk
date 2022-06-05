@@ -10,7 +10,6 @@ import './../50-systems/ExportSystem/modules/download-icon.module';
 import './../50-systems/ExportSystem/modules/download-preview-icon.module';
 import './../50-systems/ExportSystem/modules/download-preview.module';
 import './../50-systems/ExportSystem/modules/download.module';
-import './../50-systems/ExportSystem/modules/print-icon.module';
 import './../50-systems/ImportSystem/modules/add-icon.module';
 import './../50-systems/ImportSystem/modules/add.module';
 import './../50-systems/ImportSystem/modules/import-module';
