@@ -38,7 +38,7 @@ export interface IExportFileOptions {
      * It should be between 0 and 1 (=100%)
      *
      * Note: There are two distinct options influencing quality of export - `quality` and `scale`
-     * @default 0.85
+     * @default 0.92
      */
     quality?: number;
     /**
@@ -75,6 +75,7 @@ export interface IExportFileOptions {
 }
 export declare const EXPORT_FILE_DEFAULT_OPTIONS: FlipOptional<IExportFileOptions>;
 /**
+ * TODO: isAnimated
  * TODO: [🍸] Some way how the supporter can tell additional options + some of listed options above are not relevant for all exporters
  * TODO: Probbably allow more scopes> scope: IArrayableFull<IExportScope>
  * TODO: Find the best quality value
