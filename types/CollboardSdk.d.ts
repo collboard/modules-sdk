@@ -122,7 +122,6 @@ export * from './40-utils/tasks/Queue';
 export * from './40-utils/tasks/ThrottleQueue';
 export * from './40-utils/tasks/ThrottleQueues';
 export * from './40-utils/toArray';
-export * from './40-utils/toBabylon';
 export * from './40-utils/toString';
 export * from './40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
 export * from './40-utils/trayModules/interfaces/ITraySimpleItemTypes';

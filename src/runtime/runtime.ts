@@ -496,11 +496,6 @@ export const ThrottleQueues = (window as any).CollboardSdk.ThrottleQueues;
 export const toArray = (window as any).CollboardSdk.toArray;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/toBabylon.d.ts
-export const positionToBabylon = (window as any).CollboardSdk.positionToBabylon;
-export const rotationToBabylon = (window as any).CollboardSdk.rotationToBabylon;
-
-
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/toString.d.ts
 export const toString = (window as any).CollboardSdk.toString;
 

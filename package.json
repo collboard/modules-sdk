@@ -1,6 +1,6 @@
 {
     "name": "@collboard/modules-sdk",
-    "version": "21.11.0",
+    "version": "22.0.0",
     "description": "Modules SDK toolkit for collaborative whiteboard platform Collboard.com.",
     "license": "SEE LICENSE IN LICENSE",
     "contributors": [
@@ -39,7 +39,7 @@
         "ink-table": "3.0.0",
         "ink-use-stdout-dimensions": "1.0.5",
         "localtunnel": "2.0.2",
-        "locate-app": "1.2.0",
+        "locate-app": "2.0.0",
         "node-gzip": "1.1.2",
         "open": "8.4.0",
         "puppeteer-core": "13.1.2",

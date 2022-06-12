@@ -14,7 +14,7 @@ import { Abstract2dArt } from './26-Abstract2dArt';
 *  > virtualArtVersioningSystem
 >    .createPrimaryOperation()
 >    .newArts(
->      new LoadingArt('aaa').setShift(collSpace.pickPoint(touch.firstFrame.position).point),
+>      new LoadingArt('aaa').setShift((await collSpace.pickPoint(touch.firstFrame.position)).point),
 >    )
 >    .persist();
 *

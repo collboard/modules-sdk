@@ -13,26 +13,10 @@ import { AbstractSystem } from '../AbstractSystem';
  * @collboard-system
  */
 export declare class CollSpace extends AbstractSystem {
-    private renderCache;
-    private appState;
     protected init(): Promise<void>;
-    private _scene;
-    private get scene();
-    private _sceneSync;
-    private get sceneSync();
-    private shadowGenerator;
-    private createScene;
-    pickPoint(point: IVectorData): {
+    pickPoint(point: IVectorData): Promise<{
         point: Vector;
         normal: Vector;
-    };
+    }>;
     pickArt(point: IVectorData): AbstractPlacedArt | null;
 }
-/**
- * TODO: General 3D TODOs
- *
- *  TODO: Texture and material system and connection to assets
- *  TODO:
- *  TODO:
- *
- */
