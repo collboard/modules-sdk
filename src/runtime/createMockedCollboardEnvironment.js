@@ -16,7 +16,7 @@
  *
  * @returns this fake object+function
  */
-export function createDeepFake() {
+function createDeepFake() {
     return new Proxy(createDeepFake, { get: createDeepFake });
 }
 
@@ -78,6 +78,7 @@ function factor(factorable) {
 }
 
 module.exports = function createMockedCollboardEnvironment(declaredModuleDefinitionCallback) {
+    const deepFake = createDeepFake();
     const virtualWindow = unundefine({
         document: {
             // Note: This fake currentScript is required to avoid error in VM2 when the bundle is created by webpack with option output.publicPath
@@ -174,8 +175,6 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
     // Note: This is making trouble in node runtime> virtualWindow.global = virtualWindow;
     virtualWindow.self = virtualWindow;
     virtualWindow.this = virtualWindow;
-
-    const deepFake = createDeepFake();
 
     const BROWSER_WINDOW_KEYS = [
         [
