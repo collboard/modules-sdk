@@ -1385,7 +1385,7 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
         'global',
         'process',
         'Buffer',
-        'URL',
+        // 'URL',
         'URLSearchParams',
         'TextEncoder',
         'TextDecoder',
