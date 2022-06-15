@@ -1320,8 +1320,9 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
             'toLocaleString',
         ],
     ];
+
+    /*
     const NODE_KEYS = [
-        /*
         'Object',
         'Function',
         'Array',
@@ -1386,7 +1387,7 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
         'global',
         'process',
         'Buffer',
-        // 'URL',
+        'URL',
         'URLSearchParams',
         'TextEncoder',
         'TextDecoder',
@@ -1409,14 +1410,30 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
         'valueOf',
         '__proto__',
         'toLocaleString',
-        */
     ];
 
-    for (const key of BROWSER_WINDOW_KEYS) {
-        if (NODE_KEYS.includes(key)) {
-            continue;
+    */
+
+    function getFromGlobalScope(key) {
+        try {
+            const value = eval(key);
+            if (value !== undefined) {
+                return value;
+            } else {
+                return null;
+            }
+        } catch (error) {
+            return null;
         }
-        virtualWindow[key] = deepFake;
+    }
+
+    for (const key of BROWSER_WINDOW_KEYS) {
+        const value = getFromGlobalScope(key);
+        if (/*NODE_KEYS.includes(key)*/ value !== null) {
+            virtualWindow[key] = unundefine(value);
+        } else {
+            virtualWindow[key] = deepFake;
+        }
     }
 
     return virtualWindow;
