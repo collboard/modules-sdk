@@ -1416,6 +1416,7 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
 
     function getFromGlobalScope(key) {
         try {
+            // tslint:disable-next-line no-eval
             const value = eval(key);
             if (value !== undefined) {
                 return value;
