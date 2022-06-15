@@ -1321,6 +1321,7 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
         ],
     ];
     const NODE_KEYS = [
+        /*
         'Object',
         'Function',
         'Array',
@@ -1408,6 +1409,7 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
         'valueOf',
         '__proto__',
         'toLocaleString',
+        */
     ];
 
     for (const key of BROWSER_WINDOW_KEYS) {
