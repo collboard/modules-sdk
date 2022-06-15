@@ -264,13 +264,7 @@ Note: CreateSystem+GenerateSystem and ExportSystem are in some kind opposites.
 ### [ExportSystem](https://collboard.github.io/modules-sdk/classes/exportsystem.html)
 
 ExportSystem creates other files from the board or the part of it.
-Note: CreateSystem+GenerateSystem and ExportSystem are in some kind opposites.
 Note: This system is not just for exporting but also saves to native format.
-
-### [ImportSystem](https://collboard.github.io/modules-sdk/classes/importsystem.html)
-
-Import system makes support for files which are dragged onto board, imporded or pasted
-It auto-installs / uninstalls file support modules.
 
 ### [ExtraJsxSystem](https://collboard.github.io/modules-sdk/classes/extrajsxsystem.html)
 
@@ -328,6 +322,11 @@ HintSystem creates support for hinting the User's next steps, for alerts, warnin
 ### [IdentitySystem](https://collboard.github.io/modules-sdk/classes/identitysystem.html)
 
 IdentitySystem identifies the User by a pseudonym.
+
+### [ImportSystem](https://collboard.github.io/modules-sdk/classes/importsystem.html)
+
+Import system makes support for files which are dragged onto board, imporded or pasted
+It auto-installs / uninstalls file support modules.
 
 ### [LicenseSystem](https://collboard.github.io/modules-sdk/classes/licensesystem.html)
 
