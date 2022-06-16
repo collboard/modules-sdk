@@ -29,12 +29,15 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
     const virtualWindow = createMockedCollboardEnvironment((moduleDefinition: IModuleDefinition) => {
         manifests.push(moduleDefinition.manifest!);
     });
+
     vm.setGlobals(virtualWindow);
 
-    try {
-        vm.run(bundleContent);
-    } catch (error) {
-        const vmFilePath = join(VM_ERRORS_TEMPORARY_PATH, getUniqueFoldername(), 'vm.js');
+    async function createExtractedDebugScript() {
+        const vmFilePath = join(
+            VM_ERRORS_TEMPORARY_PATH,
+            getUniqueFoldername(),
+            'colldev-extract-manifests.js' /* <- TODO: Probbably name with project name like pdf-support-manifests.js */,
+        );
         await promisify(mkdir)(dirname(vmFilePath), { recursive: true });
         const createMockedCollboardEnvironmentContent = await promisify(readFile)(
             join(__dirname, '../../../../runtime/createMockedCollboardEnvironment.js'),
@@ -44,29 +47,37 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
             vmFilePath,
             spaceTrim(
                 (block) => `
-                    /**
-                     * Note: This is a temporary file created by colldev.
-                     *       It reproduces the errors that occured during manifest extraction from the bundle.
-                     * /
+                /**
+                 * Note: This is a temporary file created by colldev.
+                 *       It reproduces the errors that occured during manifest extraction from the bundle.
+                 * /
 
-                    ${block(createMockedCollboardEnvironmentContent)}
+                ${block(createMockedCollboardEnvironmentContent)}
 
-                    Object.assign(global, module.exports((moduleDefinition)=>{
-                        console.log(moduleDefinition.manifest);
-                    }));
+                Object.assign(global, module.exports((moduleDefinition)=>{
+                    console.log(moduleDefinition.manifest);
+                }));
 
-                    ${block(bundleContent)}
-                `,
+                ${block(bundleContent)}
+            `,
             ),
         );
+
+        return vmFilePath.split('\\').join('/');
+    }
+
+    try {
+        vm.run(bundleContent);
+    } catch (error) {
+        const path = await createExtractedDebugScript();
         throw new Error(
             spaceTrim(
                 (block) => `
                 Error while running bundle content to extract manifests of modules
-                See the bundle file ${vmFilePath}
+                See the bundle file ${path}
                 Or you can try to run the following command:
 
-                $ node ${vmFilePath.split('\\').join('/')}
+                $ node ${path}
 
                 ${block(error.message)}
                 ${block(error.stack)}
@@ -77,10 +88,16 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
     }
 
     if (manifests.length === 0) {
+        const path = await createExtractedDebugScript();
         throw new Error(
             spaceTrim(`
                 No module found
                 Please call declareModule() in your code to add a module
+
+                See the bundle file ${path}
+                Or you can try to run the following command:
+
+                $ node ${path}
             `),
         );
     }

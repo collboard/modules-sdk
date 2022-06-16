@@ -22,7 +22,7 @@ export async function getColldevConfig(workingDir: string_folder_relative_path):
         const projectFilePath = join(process.cwd(), workingDir, projectFileBasename);
 
         if (await isFileExisting(projectFilePath)) {
-            // TODO: !!! Expect entryPath existence
+            // TODO: !! Expect entryPath existence
             const content = await readConfigFile<any>(projectFilePath);
             if (content.colldev) {
                 return content.colldev;
