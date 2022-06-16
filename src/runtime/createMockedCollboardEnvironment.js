@@ -1429,7 +1429,14 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
     for (const key of BROWSER_WINDOW_KEYS) {
         const value = getFromGlobalScope(key);
         if (/*NODE_KEYS.includes(key)*/ value !== null) {
-            virtualWindow[key] = unundefine(value);
+            virtualWindow[key] = value;
+            /*
+            if (typeof value === 'object') {
+                virtualWindow[key] = unundefine(value);
+            } else {
+                virtualWindow[key] = value;
+            }
+            */
         } else {
             virtualWindow[key] = deepFake;
         }
