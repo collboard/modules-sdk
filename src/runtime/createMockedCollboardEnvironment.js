@@ -195,7 +195,7 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
     }
 
     for (const key of BROWSER_WINDOW_KEYS) {
-        if (virtualWindow[key] !== null) {
+        if (virtualWindow[key] !== undefined) {
             // Note: We do not want to override already assigned values
             continue;
         }
@@ -280,7 +280,7 @@ const BROWSER_WINDOW_KEYS = [
     'eval',
     'isFinite',
     'isNaN',
-    'console',
+    // 'console',
     'Option',
     'Image',
     'Audio',
@@ -1360,5 +1360,6 @@ const BROWSER_WINDOW_KEYS = [
     '__proto__',
     'toLocaleString',
     // TODO: Probbably update by script and remove all browser-extension related stuff
+    //     ! When updating preserve commented stuff !
 ];
 /**/
