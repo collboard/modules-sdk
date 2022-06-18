@@ -194,21 +194,26 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
         }
     }
 
-    for (const key of BROWSER_WINDOW_KEYS) {
-        if (virtualWindow[key] !== null) {
+    for (const key of BROWSER_WINDOW_KEYS /* <- BROWSER_WINDOW_KEYS, TEST_BROWSER_WINDOW_KEYS */) {
+        if (virtualWindow[key] !== undefined) {
             // Note: We do not want to override already assigned values
+            console.info(`${key}: Keeping version from prepared in virtualWindow above`);
             continue;
         }
 
         const value = getFromGlobalScope(key);
+
         if (value !== null) {
-            if (typeof value === 'object' && key === 'URL' /* <- Note: URL in node does not have createObjectURL */) {
+            if (KEYS_TO_DEEPFAKE.includes(key)) {
+                console.info(`${key}: Taking version from global scope and unundefine it`);
                 virtualWindow[key] = unundefine(value);
             } else {
+                console.info(`${key}: Keeping version from global scope`);
                 // Note: Just keeping in global space
                 //     > virtualWindow[key] = value;
             }
         } else {
+            console.info(`${key}: Deepfaking it`);
             virtualWindow[key] = deepFake;
         }
     }
@@ -216,12 +221,14 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
     return virtualWindow;
 };
 
-//const BROWSER_WINDOW_KEYS = ['URL'];
+/**/
+const KEYS_TO_DEEPFAKE = ['URL' /* <- Note: URL in node does not have createObjectURL */];
+/**/
+/**/
+const TEST_BROWSER_WINDOW_KEYS = ['URL'];
+/**/
 /**/
 const BROWSER_WINDOW_KEYS = [
-    '0',
-    '1',
-    '2',
     'Object',
     'Function',
     'Array',
@@ -280,7 +287,7 @@ const BROWSER_WINDOW_KEYS = [
     'eval',
     'isFinite',
     'isNaN',
-    'console',
+    // 'console',
     'Option',
     'Image',
     'Audio',
@@ -1262,23 +1269,9 @@ const BROWSER_WINDOW_KEYS = [
     'openDatabase',
     'webkitRequestFileSystem',
     'webkitResolveLocalFileSystemURL',
-    '__REACT_DEVTOOLS_GLOBAL_HOOK__',
     'script1655225899000',
-    '$',
-    'jQuery',
-    'StackExchange',
-    'StackOverflow',
-    '__tr',
     'Stacks',
-    'jQuery1124009060401451383804',
     'clc',
-    'googletag',
-    'GoogleAnalyticsObject',
-    'ga',
-    'goog_pvsid',
-    'ggeac',
-    'google_tag_data',
-    'google_js_reporting_queue',
     'clc_request',
     'gaplugins',
     'webpackChunkstackoverflow',
@@ -1295,24 +1288,12 @@ const BROWSER_WINDOW_KEYS = [
     'gaGlobal',
     'gaData',
     'siteIncludesLoaded',
-    'google_measure_js_timing',
-    '_pbjsGlobals',
-    'googleToken',
-    'googleIMState',
-    'processGoogleToken',
-    'google_unique_id',
     'goog_sdr_l',
     'hljs',
     'Commonmark',
     'Markdown',
     'apiCallbacks',
     'enableTables',
-    '__REACT_DEVTOOLS_APPEND_COMPONENT_STACK__',
-    '__REACT_DEVTOOLS_BREAK_ON_CONSOLE_ERRORS__',
-    '__REACT_DEVTOOLS_COMPONENT_FILTERS__',
-    '__REACT_DEVTOOLS_SHOW_INLINE_WARNINGS_AND_ERRORS__',
-    '__REACT_DEVTOOLS_HIDE_CONSOLE_LOGS_IN_STRICT_MODE__',
-    '__REACT_DEVTOOLS_BROWSER_THEME__',
     'getAllProperties',
     'dir',
     'dirxml',
@@ -1329,36 +1310,39 @@ const BROWSER_WINDOW_KEYS = [
     'inspect',
     'copy',
     'queryObjects',
-    '$_',
-    '$0',
-    '$1',
-    '$2',
-    '$3',
-    '$4',
     'getEventListeners',
     'getAccessibleName',
     'getAccessibleRole',
     'monitorEvents',
     'unmonitorEvents',
-    '$$',
-    '$x',
     'TEMPORARY',
     'PERSISTENT',
     'constructor',
     'addEventListener',
     'dispatchEvent',
     'removeEventListener',
-    '__defineGetter__',
-    '__defineSetter__',
     'hasOwnProperty',
-    '__lookupGetter__',
-    '__lookupSetter__',
     'isPrototypeOf',
     'propertyIsEnumerable',
     'toString',
     'valueOf',
-    '__proto__',
     'toLocaleString',
     // TODO: Probbably update by script and remove all browser-extension related stuff
+    //     ! When updating preserve commented stuff !
 ];
+/**/
+
+/*/
+// Note: This is happening after this scipt - use this to debug
+
+//----- Added by Colldev
+const virtualWindow = module.exports((moduleDefinition) => {
+    console.log(moduleDefinition.manifest);
+});
+Object.assign(global, virtualWindow);
+//----- Added by module
+
+console.log(URL, URL.createObjectURL);
+URL.createObjectURL(new Blob());
+declareModule({ manifest: { name: '@ddd' }, setup() {} });
 /**/
