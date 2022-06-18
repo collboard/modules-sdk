@@ -54,9 +54,10 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
 
                 ${block(createMockedCollboardEnvironmentContent)}
 
-                Object.assign(global, module.exports((moduleDefinition)=>{
-                    console.log(moduleDefinition.manifest);
-                }));
+                const virtualWindow = module.exports((moduleDefinition)=>{
+                  console.log(moduleDefinition.manifest);
+                })
+                Object.assign(global, virtualWindow);
 
                 ${block(bundleContent)}
             `,
