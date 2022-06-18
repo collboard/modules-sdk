@@ -197,6 +197,7 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
     for (const key of BROWSER_WINDOW_KEYS /* <- BROWSER_WINDOW_KEYS, TEST_BROWSER_WINDOW_KEYS */) {
         if (virtualWindow[key] !== undefined) {
             // Note: We do not want to override already assigned values
+            // tslint:disable-next-line no-console
             console.info(`${key}: Keeping version from prepared in virtualWindow above`);
             continue;
         }
@@ -205,14 +206,17 @@ module.exports = function createMockedCollboardEnvironment(declaredModuleDefinit
 
         if (value !== null) {
             if (KEYS_TO_DEEPFAKE.includes(key)) {
+                // tslint:disable-next-line no-console
                 console.info(`${key}: Taking version from global scope and unundefine it`);
                 virtualWindow[key] = unundefine(value);
             } else {
+                // tslint:disable-next-line no-console
                 console.info(`${key}: Keeping version from global scope`);
                 // Note: Just keeping in global space
                 //     > virtualWindow[key] = value;
             }
         } else {
+            // tslint:disable-next-line no-console
             console.info(`${key}: Deepfaking it`);
             virtualWindow[key] = deepFake;
         }
