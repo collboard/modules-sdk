@@ -1,6 +1,16 @@
 import { join } from 'path';
 import { string_file_relative_path } from '../../types';
 
+/**
+ * How may milliseconds to wait to declareModule in the bundle is called
+ *
+ * TODO: [🌟] Make this only DEFAULT_WAIT_FOR_MODULES_MS and allow to change in cli params
+ */
+export const WAIT_FOR_MODULES_MS = 1000;
+
+/**
+ * @deprecated
+ */
 export const VM_ERRORS_TEMPORARY_PATH = join(process.cwd(), '.colldev/vm/tmp');
 export const DEVELOP_TEMPORARY_PATH = join(process.cwd(), '.colldev/develop/tmp');
 export const TEST_TEMPORARY_RELATIVE_PATH = '.colldev/test/tmp';

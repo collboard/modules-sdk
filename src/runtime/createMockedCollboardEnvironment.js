@@ -1350,3 +1350,7 @@ console.log(URL, URL.createObjectURL);
 URL.createObjectURL(new Blob());
 declareModule({ manifest: { name: '@ddd' }, setup() {} });
 /**/
+
+/**
+ * TODO: Delete a file and keep reference to last commit at extractManifestFromBundleContent description
+ */

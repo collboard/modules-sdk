@@ -10,7 +10,7 @@ import { removeFileOrFolderRecursively } from '../../utils/removeFileOrFolderRec
 import { streamTobuffer } from '../../utils/streamToBuffer';
 import { Compiler, ICompilerOptions } from './Compiler';
 import { checkManifests } from './utils/checkManifests';
-import { createManifestsFromBundleContent } from './utils/createManifestsFromBundleContent';
+import { extractManifestsFromBundleContent } from './utils/extractManifestsFromBundleContent';
 
 interface IDevelopmentCompilerOptions extends ICompilerOptions {
     outDir: string;
@@ -60,7 +60,7 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
     private _tarFilePath: string;
 
     protected async runPostprocessing(mainBundlePath: string_file_absolute_path) {
-        const manifests = await createManifestsFromBundleContent(await promisify(readFile)(mainBundlePath, 'utf8'));
+        const manifests = await extractManifestsFromBundleContent(await promisify(readFile)(mainBundlePath, 'utf8'));
         await checkManifests(...manifests);
 
         // TODO: Maybe some function for getting the name

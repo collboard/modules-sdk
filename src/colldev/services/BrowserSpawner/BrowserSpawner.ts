@@ -72,7 +72,7 @@ export class BrowserSpawner extends Destroyable implements IService, IDestroyabl
                     this.puppeteerBrowser = await puppeteer.launch({
                         headless,
                         executablePath,
-                        defaultViewport: null,
+                        defaultViewport: null /* <- Note: To allow of content size responsivity to window size */,
 
                         // TODO: maybe VPN args: ['--proxy-server=socks5://127.0.0.1:9050']
                         // TODO: maybe --disable-web-security

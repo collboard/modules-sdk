@@ -116,6 +116,7 @@ export class ColldevTest extends Destroyable implements ICommand<IColldevTestOpt
 
         // Note: Testing that modules can be compiled
         this.compiler = new ProductionCompiler({
+            // TODO: [🏌️] Pass here
             workingDir,
             entryPath,
             outDir: join(TEST_TEMPORARY_RELATIVE_PATH, getUniqueFoldername()),
@@ -123,7 +124,7 @@ export class ColldevTest extends Destroyable implements ICommand<IColldevTestOpt
         });
         await forServicesReady(this.compiler);
 
-        return `Modules are tested successfully.`;
+        return `Modules are tested successfully.` /* <- TODO: More rich report like `Module @collboard/foo is tested successfully.` OR `Modules @collboard/foo and @collboard/bar are tested successfully.`*/;
     }
 
     public render(options: IColldevTestOptions) {

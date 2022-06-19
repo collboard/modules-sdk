@@ -1,9 +1,9 @@
-import { createManifestsFromBundleContent } from './createManifestsFromBundleContent';
+import { extractManifestsFromBundleContent } from './extractManifestsFromBundleContent';
 
 describe(`how are manifests extracted from the bundle`, () => {
     it(`works with simple module`, async () =>
         expect(
-            await createManifestsFromBundleContent(`
+            await extractManifestsFromBundleContent(`
             window.declareModule({
                 manifest: {
                     name: '@foo/bar',
@@ -14,7 +14,7 @@ describe(`how are manifests extracted from the bundle`, () => {
 
     it(`works with multiple modules`, async () =>
         expect(
-            await createManifestsFromBundleContent(`
+            await extractManifestsFromBundleContent(`
             window.declareModule({
                 manifest: {
                     name: '@foo/bar',
@@ -35,7 +35,7 @@ describe(`how are manifests extracted from the bundle`, () => {
 
     it(`works with module returned by lambda`, async () =>
         expect(
-            await createManifestsFromBundleContent(`
+            await extractManifestsFromBundleContent(`
             window.declareModule(() => {
                 const name = '@foo/lambda-module';
                 return {
@@ -47,9 +47,9 @@ describe(`how are manifests extracted from the bundle`, () => {
         `),
         ).toEqual([{ name: '@foo/lambda-module' }]));
 
-    it(`works with module created by simple maker`, async () =>
+    it(`works with module extractd by simple maker`, async () =>
         expect(
-            await createManifestsFromBundleContent(`
+            await extractManifestsFromBundleContent(`
             window.declareModule(
                 window.CollboardSdk.makeFooBarModule({
                     manifest: {
@@ -60,9 +60,9 @@ describe(`how are manifests extracted from the bundle`, () => {
         `),
         ).toEqual([{ name: '@foo/module-maked-by-maker' }]));
 
-    it(`works with module created by maker that manipulates manifest`, async () =>
+    it(`works with module extractd by maker that manipulates manifest`, async () =>
         expect(
-            await createManifestsFromBundleContent(`
+            await extractManifestsFromBundleContent(`
             // TODO: When makers in external library, test this propperly
                 window.declareModule({
                     manifest: {
@@ -72,7 +72,3 @@ describe(`how are manifests extracted from the bundle`, () => {
             `),
         ).toEqual([{ name: '@foo/module-maked-by-maker' }]));
 });
-
-/**
- * TODO: Delete a file
- */

@@ -25,6 +25,7 @@ export class Colldev extends Destroyable implements IDestroyable {
         new ColldevTest(),
         new ColldevBuild(),
         new ColldevPublish(),
+        // TODO: Colldev(Extract)Manifests
     ];
     private renderingInstance: Instance | null = null;
 

@@ -15,6 +15,8 @@ import { getUniqueFoldername } from '../../../utils/getUniqueFoldername';
  *
  * @param bundleContent Javascript bundle content to analyze
  * @returns at least one module manifest if there is none, it will throw an error
+ *
+ * @deprecated in favour of extractManifestsFromBundleContent
  */
 export async function createManifestsFromBundleContent(bundleContent: string): Promise<IModuleManifest[]> {
     const manifests: IModuleManifest[] = [];
@@ -107,7 +109,5 @@ export async function createManifestsFromBundleContent(bundleContent: string): P
 }
 
 /**
- *
- * TODO: Split this into multiple functions
- * TODO: Maybe some service called "Verifier" that will test advanced things like performance profile, memory leaks, etc.
+ * TODO: Delete a file and keep reference to last commit at extractManifestFromBundleContent description
  */
