@@ -13,6 +13,21 @@ import {
     string_uri_part,
 } from '../../../40-utils/typeAliases';
 import { BusinessName } from '../../BusinessSystem/configuration/BusinessName';
+/**
+ * Matches a Collboard uri adress
+ *
+ * For examples of valid/invalid uris:
+ *     @see https://regex101.com/r/irJH7h/1
+ *     @see /src/50-systems/RoutingSystem/routePath/decodeUrl.test.ts
+ *
+ * @collboard-modules-sdk
+ */
+export declare const URI_PATTERN: RegExp;
+/**
+ * Represents URL in parsed from
+ *
+ * @collboard-modules-sdk
+ */
 export interface IUrlVariables {
     protocol: string_protocol;
     host: string_host;
@@ -23,4 +38,9 @@ export interface IUrlVariables {
     modulePath?: string_uri | null;
     [key: string]: string | null | undefined;
 }
+/**
+ * Defaults for IUrlVariables
+ *
+ * @collboard-modules-sdk
+ */
 export declare const DEFAULT_URL_VARIABLES: IUrlVariables;
