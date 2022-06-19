@@ -29,17 +29,5 @@ export function parseModuleName(moduleName: string_module_name): {
 
     const { scope, name } = match.groups;
 
-    /*
-    Note: This situation never happen - MODULE_NAME_REGEX do not allow empty scope.
-    if (!scope) {
-        throw new Error(
-            spaceTrim(`
-                Scope is required for module name "${moduleName}"
-                Module name must be in format "@scope/name" in your case for example "@my-username/${moduleName}"
-            `),
-        );
-    }
-    */
-
-    return { scope /*: scope || null*/, name: name.split('/') };
+    return { scope, name: name.split('/') };
 }
