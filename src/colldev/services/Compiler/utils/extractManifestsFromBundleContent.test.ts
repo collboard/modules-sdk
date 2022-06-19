@@ -1,5 +1,7 @@
 import { extractManifestsFromBundleContent } from './extractManifestsFromBundleContent';
 
+jest.setTimeout(60 * 1000);
+
 describe(`how are manifests extracted from the bundle`, () => {
     it(`works with simple module`, async () =>
         expect(
