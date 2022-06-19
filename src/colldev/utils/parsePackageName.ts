@@ -1,6 +1,6 @@
 import spaceTrim from 'spacetrim';
 
-const MODULE_NAME_REGEX = /^(@(?<scope>[a-z0-9-*~][a-z0-9-*._~]*)\/)?(?<name>[a-z0-9-~][a-z0-9-._~]*)$/;
+const MODULE_NAME_REGEX = /^(@(?<scope>[a-z0-9][a-z0-9-]*))?(?<name>(\/([a-z0-9][a-z0-9-]*))+)$/;
 
 export function parsePackageName(options: { packageName: string; requireScope: true }): { scope: string; name: string };
 export function parsePackageName(options: { packageName: string; requireScope?: boolean }): {
