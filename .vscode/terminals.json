@@ -109,13 +109,13 @@
         },
         {
             "name": "🔼👑 Release major version",
-            "command": "npm version major",
+            "command": "printf '\\033[0;31mThis is not allowed here!\nIncrease major version in main Collboard repository.'",
             "onlySingle": true,
             "focus": true
         },
         {
             "name": "🔼🚀 Release minor version",
-            "command": "npm version minor",
+            "command": "printf '\\033[0;31mThis is not allowed here!\nIncrease minor version in main Collboard repository.'",
             "onlySingle": true,
             "focus": true
         },
