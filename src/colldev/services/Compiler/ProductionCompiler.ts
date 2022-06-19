@@ -5,7 +5,7 @@ import { dirname, join, relative } from 'path';
 import { pack } from 'tar-stream';
 import { promisify } from 'util';
 import { string_file_absolute_path } from '../../../../types';
-import { parsePackageName } from '../../utils/parsePackageName';
+import { parseModuleName } from '../../utils/parseModuleName';
 import { removeFileOrFolderRecursively } from '../../utils/removeFileOrFolderRecursively';
 import { streamTobuffer } from '../../utils/streamToBuffer';
 import { Compiler, ICompilerOptions } from './Compiler';
@@ -66,8 +66,8 @@ export class ProductionCompiler extends Compiler<IDevelopmentCompilerOptions> {
         // TODO: Maybe some function for getting the name
         let bundleBasename: string;
         if (manifests.length === 1) {
-            const { name, scope } = parsePackageName({ packageName: manifests[0].name, requireScope: true });
-            bundleBasename = `${scope}@${name}@${manifests[0].version}`;
+            const { name, scope } = parseModuleName( manifests[0].name);
+            bundleBasename = `${scope}@${name.join('-')}@${manifests[0].version}`;
         } else {
             bundleBasename = `bundle`;
         }

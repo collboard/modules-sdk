@@ -30,5 +30,17 @@ export const COLLDEV_CONFIG_POSSIBLE_DEFAULT_ENTRY_RELATIVE_PATHS: string_file_r
 ];
 
 /**
+ * Matches a Collboard module name
+ *
+ * For examples of valid/invalid names:
+ *     @see https://regex101.com/r/oDVYWA/1
+ *     @see /src/40-utils/parseModuleName.test.ts
+ *
+ * @copy of @see https://github.com/collboard/collboard/blob/main/src/config.ts#L52
+ */
+export const MODULE_NAME_PATTERN =
+    /^(@(?<scope>[a-z0-9][a-z0-9-]*))\/(?<name>([a-z0-9][a-z0-9-]*)(\/([a-z0-9][a-z0-9-]*))*)$/;
+
+/**
  * TODO: Put .gitignore automatically into .colldev - Is it a good idea?
  */

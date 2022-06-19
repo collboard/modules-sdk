@@ -1,6 +1,6 @@
 import spaceTrim from 'spacetrim';
 import { IModuleManifest } from '../../../../../types';
-import { parsePackageName } from '../../../utils/parsePackageName';
+import { parseModuleName } from '../../../utils/parseModuleName';
 import { checkManifest } from './checkManifest';
 import { isEveryItemDifferent } from './isEveryItemDifferent';
 import { isEveryItemSame } from './isEveryItemSame';
@@ -19,15 +19,13 @@ export async function checkManifests(...manifests: IModuleManifest[]): Promise<v
         await checkManifest(manifest);
     }
 
-    const namesAndScopes = manifests.map((manifest) =>
-        parsePackageName({ packageName: manifest.name, requireScope: true }),
-    );
+    const namesAndScopes = manifests.map((manifest) => parseModuleName(manifest.name));
 
     if (!isEveryItemSame(...namesAndScopes.map(({ scope }) => scope))) {
         throw new Error('All modules must have the same scope');
     }
 
-    if (!isEveryItemDifferent(...namesAndScopes.map(({ name }) => name))) {
+    if (!isEveryItemDifferent(...namesAndScopes.map(({ name }) => name.join('-')))) {
         // TODO: Add name collision into error message
         throw new Error('All modules must have different names');
     }
