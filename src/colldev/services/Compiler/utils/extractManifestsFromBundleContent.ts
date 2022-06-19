@@ -51,4 +51,5 @@ export async function extractManifestsFromBundleContent(bundleContent: string): 
  * TODO: Maybe auto-install Chromium if needed
  * TODO: Maybe allow to choose [🏌️] browser + headless + collboardUrl + expose mode as it is on develop
  * TODO: Maybe some service called "Verifier" that will test advanced things like performance profile, memory leaks, etc.
+ * Note: Old version of this functionality (createManifestsFromBundleContent) was deleted on commit 5eda7128e09a9c151209c940c55939648c1905a2
  */
