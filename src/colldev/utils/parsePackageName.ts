@@ -1,6 +1,6 @@
 import spaceTrim from 'spacetrim';
 
-const MODULE_NAME_REGEX = /^(@(?<scope>[a-z0-9][a-z0-9-]*))?(?<name>(\/([a-z0-9][a-z0-9-]*))+)$/;
+const MODULE_NAME_REGEX = /^(@(?<scope>[a-z0-9][a-z0-9-]*))\/(?<name>([a-z0-9][a-z0-9-]*)(\/([a-z0-9][a-z0-9-]*))*)$/;
 
 export function parsePackageName(options: { packageName: string; requireScope: true }): { scope: string; name: string };
 export function parsePackageName(options: { packageName: string; requireScope?: boolean }): {
@@ -36,3 +36,8 @@ export function parsePackageName({ packageName, requireScope }: { packageName: s
 
     return { scope: scope || null, name };
 }
+
+/**
+ * TODO: Unite - take from modules-sdk (HERE) and copy to collboard + make @see reference
+ *       + Add to description https://regex101.com/r/oDVYWA/1
+ */
