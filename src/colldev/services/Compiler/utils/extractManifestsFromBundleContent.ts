@@ -35,7 +35,7 @@ export async function extractManifestsFromBundleContent(bundleContent: string): 
     });
 
     // Injecting module script
-    await page.evaluate((injectedBundleContent) => {
+    await page.evaluate((injectedBundleContent: string) => {
         const script = document.createElement('script');
         script.textContent = injectedBundleContent;
         document.body.appendChild(script);
