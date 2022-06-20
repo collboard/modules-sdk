@@ -1,5 +1,5 @@
 import { locateChrome } from 'locate-app';
-import puppeteer from 'puppeteer' /* <- TODO: Maybe better way how to not install puppeteer and puppeteer-core in one repo */;
+import puppeteer from 'puppeteer' /* <- TODO: Maybe better to install puppeteer-core and chrome separatelly when missing (for example in GitHub actions environment) */;
 import { forTime } from 'waitasecond';
 import { IModule, IModuleDefinition, IModuleManifest } from '../../../../../types';
 import { WAIT_FOR_MODULES_MS } from '../../../config';

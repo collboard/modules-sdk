@@ -2,7 +2,10 @@ import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { getAppName, locateBrowser } from 'locate-app';
 import openBrowser from 'open';
-import puppeteer, { Browser, Page } from 'puppeteer-core';
+import puppeteer, {
+    Browser,
+    Page,
+} from 'puppeteer' /* <- TODO: Maybe better to install puppeteer-core and chrome separatelly when missing (for example in GitHub actions environment) */;
 import { BehaviorSubject } from 'rxjs';
 import { forTime } from 'waitasecond';
 import { IColldevDevelopOptions } from '../../commands/develop/IColldevDevelopOptions';
