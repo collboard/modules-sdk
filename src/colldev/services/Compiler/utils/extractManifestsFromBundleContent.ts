@@ -28,6 +28,7 @@ export async function extractManifestsFromBundleContent(bundleContent: string): 
 
     // Intercepting declareModule callback
     await page.exposeFunction('declareModule', async (module: IModule) => {
+        console.log({ module });
         const moduleDefinition: IModuleDefinition = await factor(module);
         if (moduleDefinition.manifest) {
             manifests.push(moduleDefinition.manifest /* <- TODO: isModuleManifestValid */);
@@ -35,17 +36,14 @@ export async function extractManifestsFromBundleContent(bundleContent: string): 
     });
 
     // Injecting module script
-    await page.evaluate((injectedBundleContent: string) => {
-        const script = document.createElement('script');
-        script.textContent = injectedBundleContent;
-        document.body.appendChild(script);
-    }, bundleContent);
+    await page.addScriptTag({ content: bundleContent });
 
     await forTime(WAIT_FOR_MODULES_MS);
     await browser.close();
 
     return manifests;
 }
+
 
 /**
  * TODO: Maybe auto-install Chromium if needed

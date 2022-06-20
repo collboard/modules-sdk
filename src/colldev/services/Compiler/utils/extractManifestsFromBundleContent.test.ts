@@ -74,3 +74,18 @@ describe(`how are manifests extracted from the bundle`, () => {
             `),
         ).toEqual([{ name: '@foo/module-maked-by-maker' }]));
 });
+
+/*
+Note: For some strange reason, the page.evaluate is not working when runned by jest, it fails on this error:
+    >  Error: Evaluation failed: ReferenceError: cov_2gv0hnuzuo is not defined
+    >      at __puppeteer_evaluation_script__:3:7
+    >      at ExecutionContext._evaluateInternal (C:\Users\me\work\collboard\modules-sdk\node_modules\puppeteer-core\src\common\ExecutionContext.ts:273:13)
+    >      at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    >      at ExecutionContext.evaluate (C:\Users\me\work\collboard\modules-sdk\node_modules\puppeteer-core\src\common\ExecutionContext.ts:140:12)
+
+await page.evaluate((injectedBundleContent: string) => {
+    const script = document.createElement('script');
+    script.textContent = injectedBundleContent;
+    document.body.appendChild(script);
+}, bundleContent);
+*/

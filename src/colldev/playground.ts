@@ -7,13 +7,28 @@ playground();
  */
 async function playground() {
     const manifests = await extractManifestsFromBundleContent(`
-        window.declareModule(
-          window.CollboardSdk.makeModalModule({
-              manifest: {
-                  name: '@foo/module-maked-by-maker',
-              },
-          }),
-      );
+
+
+
+
+
+    window.declareModule(() => {
+      const name = '@foo/lambda-module';
+      return {
+          manifest: {
+              name,
+          },
+      };
+  });
+
+
+
+
+
+
+
+
+
     `);
 
     console.info(manifests);
