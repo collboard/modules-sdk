@@ -1,5 +1,6 @@
 import { locateChrome } from 'locate-app';
 import puppeteer from 'puppeteer' /* <- TODO: Maybe better to install puppeteer-core and chrome separatelly when missing (for example in GitHub actions environment) */;
+import spaceTrim from 'spacetrim';
 import { forTime } from 'waitasecond';
 import { IModule, IModuleDefinition, IModuleManifest } from '../../../../../types';
 import { WAIT_FOR_MODULES_MS } from '../../../config';
@@ -27,7 +28,7 @@ export async function extractManifestsFromBundleContent(bundleContent: string): 
     });
 
     // Intercepting declareModule callback
-    await page.exposeFunction('declareModule', async (module: IModule) => {
+    await page.exposeFunction('Colldev_extractManifestsFromBundleContent_recieveManifest', async (module: IModule) => {!!!
         console.log({ module });
         const moduleDefinition: IModuleDefinition = await factor(module);
         if (moduleDefinition.manifest) {
@@ -37,13 +38,20 @@ export async function extractManifestsFromBundleContent(bundleContent: string): 
 
     // Injecting module script
     await page.addScriptTag({ content: bundleContent });
+    await page.addScriptTag({
+        content: spaceTrim(`
+          window.declareModule = (module) => {
+!!!
+            Colldev_extractManifestsFromBundleContent_recieveManifest
+          }
+    `),
+    });
 
     await forTime(WAIT_FOR_MODULES_MS);
     await browser.close();
 
     return manifests;
 }
-
 
 /**
  * TODO: Maybe auto-install Chromium if needed
