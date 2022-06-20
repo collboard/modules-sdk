@@ -14,6 +14,12 @@
             "focus": true
         },
         {
+            "name": "🤾‍♀️ Run playground",
+            "command": "npx ts-node-dev ./src/colldev/playground.ts",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
             "name": "🧪👨🏽‍💻✔️ Develop 'hello-world'",
             "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4000 --open multiple",
             "onlySingle": true,

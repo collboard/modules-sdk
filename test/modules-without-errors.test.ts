@@ -1,9 +1,9 @@
 import { createModuleDevelopTest } from './test-utils/createModuleDevelopTest';
 
-jest.setTimeout(60 * 1000);
+jest.setTimeout(3* 60 * 1000);
 
 describe('misc working modules', () => {
-    /* Maybe TODO: 
+    /* Maybe TODO:
     it(`should work when running colldev without path only in the current directory`, () =>
         expect(
             getFlags().then((flags) =>

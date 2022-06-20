@@ -49,23 +49,23 @@ describe(`how are manifests extracted from the bundle`, () => {
         `),
         ).toEqual([{ name: '@foo/lambda-module' }]));
 
-    it(`works with module extractd by simple maker`, async () =>
+    it(`works with module extracted by simple maker`, async () =>
         expect(
             await extractManifestsFromBundleContent(`
-            window.declareModule(
-                window.CollboardSdk.makeFooBarModule({
-                    manifest: {
-                        name: '@foo/module-maked-by-maker',
-                    },
-                }),
-            );
-        `),
+                window.declareModule(
+                    window.CollboardSdk.makeModalModule({
+                        manifest: {
+                            name: '@foo/module-maked-by-maker',
+                        },
+                    }),
+                );
+            `),
         ).toEqual([{ name: '@foo/module-maked-by-maker' }]));
 
     it(`works with module extractd by maker that manipulates manifest`, async () =>
         expect(
             await extractManifestsFromBundleContent(`
-            // TODO: When makers in external library, test this propperly
+                // TODO: When makers in external library, test this propperly
                 window.declareModule({
                     manifest: {
                         name: '@foo/module-maked-by-maker',
