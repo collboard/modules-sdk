@@ -28,8 +28,6 @@ export async function extractManifestsFromBundleContent(bundleContent: string): 
 
     // Listen for module declarations
     await page.exposeFunction('declareModuleDefinition', (moduleDefinition: IModuleDefinition) => {
-        console.log({ module });
-
         if (moduleDefinition.manifest) {
             manifests.push(moduleDefinition.manifest /* <- TODO: isModuleManifestValid */);
         }
