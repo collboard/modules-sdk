@@ -14,6 +14,12 @@
             "focus": true
         },
         {
+            "name": "🤾‍♀️ Run playground",
+            "command": "npx ts-node-dev ./src/colldev/playground.ts",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
             "name": "🧪👨🏽‍💻✔️ Develop 'hello-world'",
             "command": "npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4000 --open multiple",
             "onlySingle": true,
@@ -109,6 +115,24 @@
         },
         {
             "name": "🔼👑 Release major version",
+            "command": "printf '\\033[0;31mThis is not allowed here!\nIncrease major version in main Collboard repository.'",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🔼🚀 Release minor version",
+            "command": "printf '\\033[0;31mThis is not allowed here!\nIncrease minor version in main Collboard repository.'",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🔼🩹 Release patch version",
+            "command": "npm version patch",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🔼👑 Release major version",
             "command": "npm version major",
             "onlySingle": true,
             "focus": true
@@ -116,12 +140,6 @@
         {
             "name": "🔼🚀 Release minor version",
             "command": "npm version minor",
-            "onlySingle": true,
-            "focus": true
-        },
-        {
-            "name": "🔼🩹 Release patch version",
-            "command": "npm version patch",
             "onlySingle": true,
             "focus": true
         }

@@ -4,7 +4,7 @@ describe('how are manifests checked', () => {
     it(`should crash on no manifests`, () =>
         expect(checkManifests()).rejects.toThrowError(`Expecting at least one module`));
     it(`should crash on missing scope`, () =>
-        expect(checkManifests({ name: 'bar', version: '1.0.0' })).rejects.toThrowError(`Scope is required`));
+        expect(checkManifests({ name: 'bar', version: '1.0.0' })).rejects.toThrowError(`Invalid module name`));
     it(`should NOT crash on simple correct manifest`, () =>
         expect(checkManifests({ name: '@collboard/bar', version: '1.0.0' })).resolves.not.toThrowError());
 

@@ -418,6 +418,10 @@ export const removeDiacritics = (window as any).CollboardSdk.removeDiacritics;
 export const searchKeywords = (window as any).CollboardSdk.searchKeywords;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/parseModuleName.d.ts
+export const parseModuleName = (window as any).CollboardSdk.parseModuleName;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/patternToRegExp.d.ts
 export const patternToRegExp = (window as any).CollboardSdk.patternToRegExp;
 
@@ -870,6 +874,12 @@ export const PointerSystem = (window as any).CollboardSdk.PointerSystem;
 export const RoutingSystem = (window as any).CollboardSdk.RoutingSystem;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/RoutingSystem/routePath/IUrlVariables.d.ts
+export const URI_PATTERN = (window as any).CollboardSdk.URI_PATTERN;
+export const IUrlVariables = (window as any).CollboardSdk.IUrlVariables;
+export const DEFAULT_URL_VARIABLES = (window as any).CollboardSdk.DEFAULT_URL_VARIABLES;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/SnapSystem/0-SnapSystem.d.ts
 export const SnapSystem = (window as any).CollboardSdk.SnapSystem;
 
@@ -1042,6 +1052,7 @@ export const selectionToolSelectionBoxBehavior = (window as any).CollboardSdk.se
 
 // C:/Users/me/work/collboard/modules-sdk/types/config.d.ts
 export const SCALE_PIXELS = (window as any).CollboardSdk.SCALE_PIXELS;
+export const MODULE_NAME_PATTERN = (window as any).CollboardSdk.MODULE_NAME_PATTERN;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/libraries.d.ts

@@ -11,3 +11,8 @@ export interface IColldevDevelopOptions extends IColldevOptions {
     port: string /* Note: commander does not support number */;
     expose: boolean;
 }
+
+/**
+ * TODO: Rename wait to waitForBrowser
+ * TODO: [🌟] waitForModulesDeclaration
+ */

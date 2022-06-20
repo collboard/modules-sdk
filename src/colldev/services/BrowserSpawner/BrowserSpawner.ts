@@ -2,7 +2,10 @@ import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
 import { Destroyable, IDestroyable } from 'destroyable';
 import { getAppName, locateBrowser } from 'locate-app';
 import openBrowser from 'open';
-import puppeteer, { Browser, Page } from 'puppeteer-core';
+import puppeteer, {
+    Browser,
+    Page,
+} from 'puppeteer' /* <- TODO: Maybe better to install puppeteer-core and chrome separatelly when missing (for example in GitHub actions environment) */;
 import { BehaviorSubject } from 'rxjs';
 import { forTime } from 'waitasecond';
 import { IColldevDevelopOptions } from '../../commands/develop/IColldevDevelopOptions';
@@ -72,7 +75,7 @@ export class BrowserSpawner extends Destroyable implements IService, IDestroyabl
                     this.puppeteerBrowser = await puppeteer.launch({
                         headless,
                         executablePath,
-                        defaultViewport: null,
+                        defaultViewport: null /* <- Note: To allow of content size responsivity to window size */,
 
                         // TODO: maybe VPN args: ['--proxy-server=socks5://127.0.0.1:9050']
                         // TODO: maybe --disable-web-security

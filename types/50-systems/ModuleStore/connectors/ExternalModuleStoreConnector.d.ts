@@ -20,7 +20,7 @@ export declare class ExternalModuleStoreConnector extends Destroyable implements
     readonly moduleStoreUrl: URL;
     constructor(systems: ISystemsExtended, moduleStoreUrl: URL);
     private readonly externalModules;
-    getModule(packageName: string_module_name, version?: string_version_dependency): IModuleDefinition;
+    getModule(moduleName: string_module_name, version?: string_version_dependency): IModuleDefinition;
     private getModuleScript;
     search(searchCriteria: IModuleSearchCriteria): Promise<IModuleStoreConnectorSearchResult>;
     getCategories(): Promise<Set<string_module_category>>;

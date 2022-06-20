@@ -28,3 +28,13 @@ export declare const DRAWING_COLORS: {
 };
 export declare const DEBUG_CSS = false;
 export declare const DEBUG_CSS_RULE: string;
+/**
+ * Matches a Collboard module name
+ *
+ * For examples of valid/invalid names:
+ *     @see https://regex101.com/r/oDVYWA/1
+ *     @see /src/40-utils/parseModuleName.test.ts
+ *
+ * @collboard-modules-sdk
+ */
+export declare const MODULE_NAME_PATTERN: RegExp;

@@ -1,6 +1,6 @@
 import { createModuleDevelopTest } from './test-utils/createModuleDevelopTest';
 
-jest.setTimeout(60 * 1000);
+jest.setTimeout(3*60 * 1000);
 
 describe('the errored modules', () => {
     it(
