@@ -12,6 +12,7 @@
     "url": "https://github.com/collboard/modules-sdk"
   },
   "homepage": "https://collboard.github.io/modules-sdk/",
+  "nonce": 1,
   "private": false,
   "main": "./dist/runtime/runtime.js",
   "types": "./types/index.d.ts",
