@@ -10,7 +10,9 @@ import { string_module_name } from './typeAliases';
  * @see more in MODULE_NAME_REGEX
  *
  * @param moduleName
- * @returns normalized scope and name
+ * @returns normalized scope and name split into chunks
+ *
+ * @example @collboard/foo/bar => { scope: 'collboard', name: ['foo','bar'] }
  *
  * @collboard-modules-sdk
  */
