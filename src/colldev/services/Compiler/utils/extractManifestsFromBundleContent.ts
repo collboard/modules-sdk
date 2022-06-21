@@ -2,9 +2,8 @@ import { locateChrome } from 'locate-app';
 import puppeteer from 'puppeteer' /* <- TODO: Maybe better to install puppeteer-core and chrome separatelly when missing (for example in GitHub actions environment) */;
 import spaceTrim from 'spacetrim';
 import { forTime } from 'waitasecond';
-import { IModule, IModuleDefinition, IModuleManifest } from '../../../../../types';
+import { IModuleDefinition, IModuleManifest } from '../../../../../types';
 import { WAIT_FOR_MODULES_MS } from '../../../config';
-import { factor } from '../../../utils/factor';
 
 /**
  * Analyzes javascript bundle content and search for all declared modules
@@ -27,25 +26,25 @@ export async function extractManifestsFromBundleContent(bundleContent: string): 
         waitUntil: 'networkidle2' /* <- TODO: Is networkidle2 ideal for Collboard app? */,
     });
 
-    // Intercepting declareModule callback
-    await page.exposeFunction('Colldev_extractManifestsFromBundleContent_recieveManifest', async (module: IModule) => {!!!
-        console.log({ module });
-        const moduleDefinition: IModuleDefinition = await factor(module);
+    // Listen for module declarations
+    await page.exposeFunction('declareModuleDefinition', (moduleDefinition: IModuleDefinition) => {
         if (moduleDefinition.manifest) {
             manifests.push(moduleDefinition.manifest /* <- TODO: isModuleManifestValid */);
         }
     });
 
-    // Injecting module script
-    await page.addScriptTag({ content: bundleContent });
+    // Intercepting Collboard`s declareModule and call declareModuleDefinition
     await page.addScriptTag({
         content: spaceTrim(`
-          window.declareModule = (module) => {
-!!!
-            Colldev_extractManifestsFromBundleContent_recieveManifest
-          }
-    `),
+        window.declareModule = async (module) => {
+          const moduleDefinition = await  window.CollboardSdk.factor(module);
+          declareModuleDefinition(moduleDefinition);
+        }
+  `),
     });
+
+    // Injecting module script
+    await page.addScriptTag({ content: bundleContent });
 
     await forTime(WAIT_FOR_MODULES_MS);
     await browser.close();
