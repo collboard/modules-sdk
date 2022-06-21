@@ -4,7 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-export {};
+import { string_html } from '../typeAliases';
 /**
- * TODO: [🎇] Full vs linked export
+ * Adds styles to given html document.
+ *
+ * @param html without <style> but with elements need to be styled
+ * @returns html with <style>
+ * @sideeffect Not pure - reads from window.document all the style elements
  */
+export declare function addStyles(html: string_html): string_html;

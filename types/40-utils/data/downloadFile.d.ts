@@ -4,9 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { string_url } from '../typeAliases';
 /**
- * Download File
+ * Download a File
  *
  * @collboard-modules-sdk
  */
-export declare function downloadFile(file: File): Promise<void>;
+export declare function downloadFile(file: File | Blob | string_url): Promise<void>;

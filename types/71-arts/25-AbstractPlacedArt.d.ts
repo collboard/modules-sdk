@@ -11,12 +11,10 @@ import { AbstractArt } from './20-AbstractArt';
 /**
  * Constant, which should be used to determine, whether a point is near the art
  *
- * @see AbstractPlacedArt.isNear
- *
  * @collboard-modules-sdk
- * @deprecated Absolute value is not a good idea, use a relative value of weight instead
+ * @deprecated This should be exported from some system or util to be user-settable
  */
-export declare const IS_NEAR_DISTANCE = 20;
+export declare const NEAR_DISTANCE = 20;
 /**
  * AbstractPlacedArt is an abstract class which all arts with position and size
  * extend.

@@ -6,13 +6,24 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 interface IFileComponentProps {
+    /**
+     * Shown file
+     */
     file: File | Blob;
+    /**
+     * Is currently loading
+     */
     isLoading?: boolean;
+    /**
+     * Images can be shown in <img> tag but if you set this to true, they will be shown in <iframe> tag.
+     * @default false
+     */
+    isIframeEnforced?: boolean;
 }
 /**
  * Preview component of any file
  *
  * @collboard-modules-sdk
  */
-export declare function FileComponent({ file, isLoading }: IFileComponentProps): JSX.Element;
+export declare function FileComponent({ file, isLoading, isIframeEnforced }: IFileComponentProps): JSX.Element;
 export {};

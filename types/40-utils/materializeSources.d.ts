@@ -15,6 +15,7 @@ import { string_url } from './typeAliases';
  */
 export declare function materializeSources(html: string, proxyUrl?: URL | string_url): Promise<string>;
 /**
+ * TODO: Maybe materialize <link rel="stylesheet" href=" and <script src=" more efficiently into <style> and <script> tags
  * Note: [♍] Not using ObjectUrl because it causes image tainting
  *       NOT-TODO: [LEAK] Destroy created ObjectUrls
  * TODO: Exclude already inlined images

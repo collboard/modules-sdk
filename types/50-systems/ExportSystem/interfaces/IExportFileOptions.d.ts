@@ -57,9 +57,17 @@ export interface IExportFileOptions {
     /**
      * Link to the live board
      *
+     * @deprecated Probbably better and more clear name according to isNative
      * @default false
      */
     isLinked?: boolean;
+    /**
+     * Add native data to the exported file
+     *
+     *
+     * @default true
+     */
+    isNative?: boolean;
     /**
      * Keep board background transparent
      *

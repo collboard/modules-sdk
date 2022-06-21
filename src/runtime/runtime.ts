@@ -109,6 +109,14 @@ export const QRCode = (window as any).CollboardSdk.QRCode;
 export const RefreshContentComponent = (window as any).CollboardSdk.RefreshContentComponent;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/Script.d.ts
+export const Script = (window as any).CollboardSdk.Script;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/ScriptForServerRender.d.ts
+export const ScriptForServerRender = (window as any).CollboardSdk.ScriptForServerRender;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/select/AsyncSelectComponent.d.ts
 export const AsyncSelectComponent = (window as any).CollboardSdk.AsyncSelectComponent;
 
@@ -119,6 +127,10 @@ export const SelfUpdateContentComponent = (window as any).CollboardSdk.SelfUpdat
 
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/TestingSquare.d.ts
 export const TestingSquare = (window as any).CollboardSdk.TestingSquare;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/utils/Unwrap.d.ts
+export const Unwrap = (window as any).CollboardSdk.Unwrap;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/Additional.d.ts
@@ -159,10 +171,6 @@ export const hslToRgb = (window as any).CollboardSdk.hslToRgb;
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/color/rgbToHsl.d.ts
 export const rgbToHsl = (window as any).CollboardSdk.rgbToHsl;
-
-
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/compareJsxs.d.ts
-export const compareJsxs = (window as any).CollboardSdk.compareJsxs;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/compareStrings.d.ts
@@ -378,11 +386,19 @@ export const isValidUuid = (window as any).CollboardSdk.isValidUuid;
 export const joinWithAny = (window as any).CollboardSdk.joinWithAny;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/jsxToHtml.d.ts
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/jsx-html/compareJsxs.d.ts
+export const compareJsxs = (window as any).CollboardSdk.compareJsxs;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/jsx-html/jsxToHtml.d.ts
 export const jsxToHtml = (window as any).CollboardSdk.jsxToHtml;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/jsxToText.d.ts
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/jsx-html/jsxToHtmlSimple.d.ts
+export const jsxToHtmlSimple = (window as any).CollboardSdk.jsxToHtmlSimple;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/jsx-html/jsxToText.d.ts
 export const jsxToText = (window as any).CollboardSdk.jsxToText;
 
 
@@ -448,6 +464,10 @@ export const randomString = (window as any).CollboardSdk.randomString;
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/randomUriId.d.ts
 export const randomUriId = (window as any).CollboardSdk.randomUriId;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-hooks/useAsyncMemo.d.ts
+export const useAsyncMemo = (window as any).CollboardSdk.useAsyncMemo;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/removeKeys.d.ts
@@ -526,6 +546,9 @@ export const string_mime_type = (window as any).CollboardSdk.string_mime_type;
 export const string_mime_type_with_wildcard = (window as any).CollboardSdk.string_mime_type_with_wildcard;
 export const string_char = (window as any).CollboardSdk.string_char;
 export const string_html = (window as any).CollboardSdk.string_html;
+export const string_xml = (window as any).CollboardSdk.string_xml;
+export const string_css = (window as any).CollboardSdk.string_css;
+export const string_css_selector = (window as any).CollboardSdk.string_css_selector;
 export const string_url = (window as any).CollboardSdk.string_url;
 export const string_data_url = (window as any).CollboardSdk.string_data_url;
 export const string_href = (window as any).CollboardSdk.string_href;
@@ -944,7 +967,7 @@ export const AbstractEnvironmentArt = (window as any).CollboardSdk.AbstractEnvir
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/25-AbstractPlacedArt.d.ts
-export const IS_NEAR_DISTANCE = (window as any).CollboardSdk.IS_NEAR_DISTANCE;
+export const NEAR_DISTANCE = (window as any).CollboardSdk.NEAR_DISTANCE;
 export const AbstractPlacedArt = (window as any).CollboardSdk.AbstractPlacedArt;
 
 

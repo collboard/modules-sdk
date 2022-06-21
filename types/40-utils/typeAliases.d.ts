@@ -37,6 +37,29 @@ export declare type string_html = string;
 /**
  * Semantic helper
  *
+ * For example `"<foo>bar</foo>"`
+ * @collboard-modules-sdk
+ *
+ * TODO: [🎞️] Probbably use some object-based method for working with XMLs
+ */
+export declare type string_xml = string;
+/**
+ * Semantic helper
+ *
+ * For example `.foo{border: 1px solid red}`
+ * @collboard-modules-sdk
+ */
+export declare type string_css = string;
+/**
+ * Semantic helper
+ *
+ * For example `.foo`
+ * @collboard-modules-sdk
+ */
+export declare type string_css_selector = string;
+/**
+ * Semantic helper
+ *
  * For example `"https://collboard.com/9SeSQTupmQHwuSrLi"`
  * @collboard-modules-sdk
  */

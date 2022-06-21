@@ -21,7 +21,7 @@ export interface IFileImportSupporter {
      */
     priority: number;
     /**
-     *  processFile it will do one of the following:
+     *  Import it will do one of the following:
      *    1) Import file into the board and:
      *      A) Return the arts to be created (and persisted)
      *      B) Return something which can be destroyed to cancel the importment
@@ -29,12 +29,16 @@ export interface IFileImportSupporter {
      *
      * Typically you will check mime type and choose what option to do.
      */
-    processFile(options: {
+    importFile(options: {
         /**
          * File that should be imported
          * This file will always contain mimetype without the charset + filename
          */
         file: File;
+        /**
+         * Is there directive import-with-module with module name in imported file
+         */
+        isNativeSupporter: boolean;
         /**
          * Use this to log everything connected with this import
          */
