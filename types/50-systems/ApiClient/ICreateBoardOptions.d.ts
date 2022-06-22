@@ -10,7 +10,7 @@ export interface ICreateBoardOptions {
      * If you want to request custom uriId, provide valid debug token.
      */
     uriId?: string;
-    boardName?: string;
+    boardname?: string;
     redirect?: boolean;
     importAsMaterialize?: string_url;
     /**

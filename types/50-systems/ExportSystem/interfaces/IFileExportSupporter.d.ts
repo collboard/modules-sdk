@@ -18,14 +18,14 @@ export declare type IFileExportSupporter = IFileExportSupporterHeavy | IFileExpo
  */
 interface IFileExportSupporterHeavy extends IFileExportSupporterCore {
     isHeavy: true;
-    export(supporterOptions: IFileExportSupporterOptions): Promisable<(() => Promisable<IExported>) | null>;
+    exportFile(supporterOptions: IFileExportSupporterOptions): Promisable<(() => Promisable<IExported>) | null>;
 }
 /**
  * This represents support for light (=it is instant and cheap to compute) file type export
  */
 interface IFileExportSupporterLight extends IFileExportSupporterCore {
     isHeavy: false;
-    export(supporterOptions: IFileExportSupporterOptions): Promisable<IExported | null>;
+    exportFile(supporterOptions: IFileExportSupporterOptions): Promisable<IExported | null>;
 }
 /**
  * This represents support for one file type export
@@ -55,7 +55,7 @@ interface IFileExportSupporterCore {
      * 2) Return function that will be called to actually perform hard work of exporting and this will return exported data
      * 3) Return null - if it is not able to export
      */
-    export(supporterOptions: IFileExportSupporterOptions): Promisable<Factorable<Promisable<IExported>> | null>;
+    exportFile(supporterOptions: IFileExportSupporterOptions): Promisable<Factorable<Promisable<IExported>> | null>;
 }
 /**
  * Exported data

@@ -34,7 +34,7 @@ export declare class CornerstoneArt
     /**
      * String containing user-editable board name
      */
-    boardName: string;
+    boardname: string;
     get topLeftCorner(): IVectorData;
     get bottomRightCorner(): IVectorData;
     isNear(point2: IVectorData): boolean;

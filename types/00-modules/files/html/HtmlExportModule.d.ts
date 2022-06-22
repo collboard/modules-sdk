@@ -6,9 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export {};
 /**
- * TODO: Add some branding here
- * TODO: Add some metadata here
- * TODO: Add/link styles here
+ * TODO: Strategy how to attach/inline sources - images, style, scripts
  * TODO: Use here boundingBox and come centering
  * TODO: [🎇] Full vs linked export
+ * TODO: isViewLinkIncuded isEditLinkIncuded
  */

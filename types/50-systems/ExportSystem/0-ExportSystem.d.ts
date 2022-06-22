@@ -4,9 +4,9 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { AbstractArt } from '../../71-arts/20-AbstractArt';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
+import { Abstract2dArt } from './../../71-arts/26-Abstract2dArt';
 import { IExportFileOptions } from './interfaces/IExportFileOptions';
 import { IFileExportSupporter } from './interfaces/IFileExportSupporter';
 import { IFramable } from './interfaces/IFramable';
@@ -38,7 +38,7 @@ export declare class ExportSystem extends AbstractSystem {
     /**
      * Get all arts (but non frames)
      */
-    getArts(): Promise<AbstractArt[]>;
+    getArts(): Promise<Abstract2dArt[]>;
     private forEssentialFileSupporters;
     /**
      * Prepares export from the Collboard

@@ -7,7 +7,7 @@
 /// <reference types="react" />
 import { Promisable } from 'type-fest';
 import { IVectorData } from 'xyzt';
-import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
+import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
 import { AbstractPlacedArt } from './25-AbstractPlacedArt';
 /**
  * Abstract2dArt is an abstract class which all arts rendered in 2D extend.
@@ -48,7 +48,7 @@ export declare abstract class Abstract2dArt extends AbstractPlacedArt {
      * *Note: This can be called many times a second when user is scrolling
      * or not at all when art is out of screen*
      */
-    abstract render(selected: boolean, systems: ISystemsExtended): Promisable<JSX.Element>;
+    abstract render(selected: boolean, systems: ISystems): Promisable<JSX.Element>;
     /**
      * Default z-index of art
      *

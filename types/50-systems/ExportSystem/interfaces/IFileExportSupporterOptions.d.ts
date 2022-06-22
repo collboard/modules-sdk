@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { BoundingBox } from 'xyzt';
-import { AbstractArt } from '../../../71-arts/20-AbstractArt';
+import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
 import { IExportFileOptions } from './IExportFileOptions';
 import { IExportScope } from './IExportScope';
 /**
@@ -43,7 +43,7 @@ export interface IFileExportSupporterOptions extends Required<IExportFileOptions
  * Information about one art to export
  */
 export interface IArtContainer {
-    art: AbstractArt;
+    art: Abstract2dArt;
     element: HTMLElement | null;
 }
 /**
