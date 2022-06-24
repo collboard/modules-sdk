@@ -1,13 +1,26 @@
 # Collboard API
 
-<!-- TODO: Link this document to main README -->
+This document describe API outside of [modules SDK](../README.md).
 
+## Rest API
 
-
-## /new endpoint
+### /new endpoint
 
 Creating new board wit **/new** endpoint supports multiple GET parameters:
 
+```typescript
+interface ICreateBoardOptions {
+    uriId?: string;
+    boardname?: string;
+    redirect?: boolean;
+    importAsMaterialize?: string_url;
+    importAsLink?: string_url;
+    modulesOn?: string | string[];
+    modulesOff?: string | string[];
+}
+```
+
+<!--
 -   **uri** what URI I prefer.
 -   **name** name of the newly created board
 -   **redirect** should I be redirected to a new board or (in case of ?redirect=false) get information about the creating.
@@ -15,25 +28,21 @@ Creating new board wit **/new** endpoint supports multiple GET parameters:
 -   `IN PROGRESS` **importAsMaterialize** immediately import this with MATERIALIZE strategy.
 -   `IN PROGRESS` **importAsLink** immediately import this with LINK strategy.
 
+-    uriId?: string;
+-    boardname?: string;
+-    redirect?: yes | no;
+-    importAsMaterialize?: string*url;
+-    _(Not working)_ importAsLink?: string_url;
+-    modulesOn?: string | string[];
+-    modulesOff?: string | string[];
 
-    uriId?: string;
-    boardname?: string;
-    redirect?: boolean;
-    importAsMaterialize?: string_url;
+-   https://collboard.com/new?redirect=yes
+-   https://collboard.com/new?redirect=yes&modulesOn=HeduColorAttribute%2CHeduToolV2%2CHeduV2Art%2CDiceTool%2CDiceArt%2CCurtainArt%2CCurtainTool&modulesOff=ColorAttribute
+-->
 
-    /**
-     * @deprecated [🈚] Make this better via Art
-     */
-    importAsLink?: string_url;
-    modulesOn?: string | string[];
-    modulesOff?: string | string[];
+## Message API
 
-
-- https://collboard.com/new?redirect=yes
-- https://collboard.com/new?redirect=yes&modulesOn=HeduColorAttribute%2CHeduToolV2%2CHeduV2Art%2CDiceTool%2CDiceArt%2CCurtainArt%2CCurtainTool&modulesOff=ColorAttribute
-
-
-<!--
+# <!--
 
 TODO:
 
@@ -69,8 +78,6 @@ https://collboard.com/XqYLhRVCCTZu7VmpD/Collboard.pdf
 ### .mp3
 
 `IN PROGRESS`
-
-
 
 ## Modules
 
