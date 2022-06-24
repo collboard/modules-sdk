@@ -25,7 +25,7 @@ interface ICreateBoardOptions {
 -   **name** name of the newly created board
 -   **redirect** should I be redirected to a new board or (in case of ?redirect=false) get information about the creating.
 -   **brand** URI brand prefix
--   `IN PROGRESS` **importAsMaterialize** immediately import this with MATERIALIZE strategy.
+-   `IN PROGRESS` **importAsMaterialize** immdiately import this with MATERIALIZE strategy.
 -   `IN PROGRESS` **importAsLink** immediately import this with LINK strategy.
 
 -    uriId?: string;
@@ -42,7 +42,10 @@ interface ICreateBoardOptions {
 
 ## Message API
 
-# <!--
+# Window postMessage
+
+
+<!--
 
 TODO:
 
