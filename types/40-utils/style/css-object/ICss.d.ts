@@ -4,12 +4,13 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_html } from '../typeAliases';
+import { string_css_property, string_css_selector, string_css_value } from '../../typeAliases';
 /**
- * Adds styles to given html document.
+ * Represents css style in the form of object.
  *
- * @param html without <style> but with elements need to be styled
- * @returns html with <style>
- * @sideeffect Not pure - reads from window.document all the style elements
+ * @collboard-modules-sdk
  */
-export declare function addStyles(html: string_html): string_html;
+export declare type ICss = Record<string_css_selector, Record<string_css_property, string_css_value>>;
+/**
+ * TODO: Maybe use in ISkin
+ */

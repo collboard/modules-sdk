@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
  * Makes first letter of a string uppercase
+ *
  * @collboard-modules-sdk
  */
 export declare function capitalizeFirstLetter(word: string): string;
