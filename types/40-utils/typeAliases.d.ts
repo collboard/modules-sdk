@@ -53,6 +53,20 @@ export declare type string_css = string;
 /**
  * Semantic helper
  *
+ * For example `border`
+ * @collboard-modules-sdk
+ */
+export declare type string_css_property = string;
+/**
+ * Semantic helper
+ *
+ * For example `13px`
+ * @collboard-modules-sdk
+ */
+export declare type string_css_value = string;
+/**
+ * Semantic helper
+ *
  * For example `.foo`
  * @collboard-modules-sdk
  */

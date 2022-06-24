@@ -499,6 +499,30 @@ export const splitArray = (window as any).CollboardSdk.splitArray;
 export const splitArrayIntoChunks = (window as any).CollboardSdk.splitArrayIntoChunks;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/style/css-object/ICss.d.ts
+export const ICss = (window as any).CollboardSdk.ICss;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/style/css-object/parseStyles.d.ts
+export const parseStyles = (window as any).CollboardSdk.parseStyles;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/style/css-object/stringifyStyles.d.ts
+export const stringifyStyles = (window as any).CollboardSdk.stringifyStyles;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/style/global/parseGlobalStyles.d.ts
+export const parseGlobalStyles = (window as any).CollboardSdk.parseGlobalStyles;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/style/misc/extractUsedSelectorsFromHtml.d.ts
+export const extractUsedSelectorsFromHtml = (window as any).CollboardSdk.extractUsedSelectorsFromHtml;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/style/misc/insertStyleIntoHtml.d.ts
+export const insertStyleIntoHtml = (window as any).CollboardSdk.insertStyleIntoHtml;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/svgUtils.d.ts
 export const pointsToPolygon = (window as any).CollboardSdk.pointsToPolygon;
 
@@ -548,6 +572,8 @@ export const string_char = (window as any).CollboardSdk.string_char;
 export const string_html = (window as any).CollboardSdk.string_html;
 export const string_xml = (window as any).CollboardSdk.string_xml;
 export const string_css = (window as any).CollboardSdk.string_css;
+export const string_css_property = (window as any).CollboardSdk.string_css_property;
+export const string_css_value = (window as any).CollboardSdk.string_css_value;
 export const string_css_selector = (window as any).CollboardSdk.string_css_selector;
 export const string_url = (window as any).CollboardSdk.string_url;
 export const string_data_url = (window as any).CollboardSdk.string_data_url;
