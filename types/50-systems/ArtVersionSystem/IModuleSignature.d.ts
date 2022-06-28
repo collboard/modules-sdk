@@ -7,6 +7,6 @@
 import { string_module_name, string_version } from '../../40-utils/typeAliases';
 export interface IModuleSignature {
     name: string_module_name;
-    version: string_version;
+    version?: string_version;
 }
 export declare const CORE_MODULE_SIGNATURE: IModuleSignature;

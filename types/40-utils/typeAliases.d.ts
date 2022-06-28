@@ -235,7 +235,8 @@ export declare type string_folder_path = string_file_absolute_path | string_file
  *
  * - basically module identifier
  *
- * For example `"FreehandTool"`
+ * For example `"@collboard/download"`
+ * @pattern /^(@(?<scope>[a-z0-9][a-z0-9-]*))\/(?<name>([a-z0-9][a-z0-9-]*)(\/([a-z0-9][a-z0-9-]*))*)$/
  * @collboard-modules-sdk
  */
 export declare type string_module_name = string;

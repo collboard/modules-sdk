@@ -34,6 +34,7 @@ export declare class CollboardApp {
      */
     private changeVersioningSystems;
     private initConsoleAccess;
+    private initMessageListener;
 }
 export {};
 /**
