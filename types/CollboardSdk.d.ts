@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+export * from './20-api/MessageApi';
 export * from './30-components/ArtScaler';
 export * from './30-components/menu/Icon';
 export * from './30-components/menu/icons';
