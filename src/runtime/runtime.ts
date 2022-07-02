@@ -14,6 +14,10 @@ export const declareModule = (window as any).declareModule;
 
 // Note: here is all stuff marked with "@collboard SDK"
 
+// C:/Users/me/work/collboard/modules-sdk/types/20-api/MessageApi.d.ts
+export const MessageApi = (window as any).CollboardSdk.MessageApi;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/ArtScaler.d.ts
 export const ArtScaler = (window as any).CollboardSdk.ArtScaler;
 

@@ -5,7 +5,13 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Observable } from 'rxjs';
-import { string_translate_language, string_uri_part, string_version } from '../../40-utils/typeAliases';
+import {
+    string_translate_language,
+    string_uriid,
+    string_uri_part,
+    string_url,
+    string_version,
+} from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../AbstractSystem';
 import { MaterialArtVersioningSystem } from '../ArtVersionSystem/0-MaterialArtVersioningSystem';
@@ -27,7 +33,13 @@ export declare class ApiClient extends AbstractSystem {
         remoteInstanceId: string_version;
     }>;
     connectToBoard(uriId: string_uri_part): Promise<MaterialArtVersioningSystem>;
-    createNewBoard(options: Omit<ICreateBoardOptions, 'redirect'>): Promise<string_uri_part>;
+    createNewBoard(options: Omit<ICreateBoardOptions, 'redirect'>): Promise<{
+        uriId: string_uriid;
+        links: {
+            edit: string_url;
+            view: string_url;
+        };
+    }>;
     getMyBoards(): Observable<IGetMyBoardsResponse>;
     translateMessages(language: string_translate_language): Promise<ITranslateMessage[]>;
     missingTranslateMessage(missingTranslateMessage: ITranslateMessage): Promise<any>;
