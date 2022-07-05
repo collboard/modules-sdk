@@ -24,6 +24,9 @@ export const ArtScaler = (window as any).CollboardSdk.ArtScaler;
 
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/menu/Icon.d.ts
 export const Icon = (window as any).CollboardSdk.Icon;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/menu/IconColor.d.ts
 export const IconColor = (window as any).CollboardSdk.IconColor;
 
 
