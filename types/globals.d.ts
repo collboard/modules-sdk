@@ -29,6 +29,14 @@ declare global {
          * @param thisArg An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
          */
         mapAsync<U>(predicate: (value: T, index: number, array: T[]) => Promisable<U>, thisArg?: any): Promise<U[]>;
+        /**
+         * Async version of Array.prototype.forEach
+         */
+        forEachAsyncSerial(callbackfn: (value: T, index: number, array: T[]) => Promisable<void>): Promise<void>;
+        /**
+         * Async version of Array.prototype.forEach
+         */
+        forEachAsyncParallel(callbackfn: (value: T, index: number, array: T[]) => Promisable<void>): Promise<void>;
     }
 }
 /**

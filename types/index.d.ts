@@ -15,6 +15,7 @@ export declare function declareModule(module: IModule): void;
 export * from './20-api/MessageApi';
 export * from './30-components/ArtScaler';
 export * from './30-components/menu/Icon';
+export * from './30-components/menu/IconColor';
 export * from './30-components/menu/icons';
 export * from './30-components/menu/IIconAnonymous';
 export * from './30-components/menu/Menu';
