@@ -9,5 +9,8 @@ import { ColldevSyncer } from './ColldevSyncer';
 interface IColldevSyncerComponentProps {
     colldevSyncer: ColldevSyncer;
 }
-export declare const ColldevSyncerComponent: ({ colldevSyncer }: IColldevSyncerComponentProps) => JSX.Element;
+export declare function ColldevSyncerComponent({ colldevSyncer }: IColldevSyncerComponentProps): JSX.Element;
 export {};
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

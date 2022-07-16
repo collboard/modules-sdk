@@ -5,20 +5,12 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { AppState } from './../../AppState/0-AppState';
-import { TranslationsSystem } from './../../TranslationsSystem/0-TranslationsSystem';
-import { ExportSystem } from './../0-ExportSystem';
-interface IDownloadPreviewComponentProps {
-    appState: AppState;
-    exportSystem: ExportSystem;
-    translationsSystem: TranslationsSystem;
-}
 /**
- * @collboard-modules-sdk
+ * Note: Need to be used inside of a module
+ *
+ * @not-collboard-modules-sdk too specific that is used only in @collboard/download-preview
  */
-export declare function DownloadPreviewComponent({
-    exportSystem,
-    translationsSystem,
-    appState,
-}: IDownloadPreviewComponentProps): JSX.Element;
-export {};
+export declare function DownloadPreviewComponent(): JSX.Element;
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

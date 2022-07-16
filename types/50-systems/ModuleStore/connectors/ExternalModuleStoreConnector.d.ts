@@ -27,5 +27,5 @@ export declare class ExternalModuleStoreConnector extends Destroyable implements
 }
 /**
  * TODO: [🥝] Maybe use this shortcut how to get assets url in the future
- * TODO: Maybe something like getModuleScript via safe-eval
+ * TODO: Probably something like getModuleScript via safe-eval
  */

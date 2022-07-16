@@ -41,7 +41,7 @@ export declare class ApiClient extends AbstractSystem {
         };
     }>;
     getMyBoards(): Observable<IGetMyBoardsResponse>;
-    translateMessages(language: string_translate_language): Promise<ITranslateMessage[]>;
+    translateMessages(language: string_translate_language): Promise<Array<ITranslateMessage>>;
     missingTranslateMessage(missingTranslateMessage: ITranslateMessage): Promise<any>;
     private get;
     private post;
@@ -49,4 +49,5 @@ export declare class ApiClient extends AbstractSystem {
 }
 /**
  * TODO: !! Listen on RoutingSystem and save it into myBoards
+ * TODO: [🕎] Create/use some LIB for generic REST-api calls with serializer
  */

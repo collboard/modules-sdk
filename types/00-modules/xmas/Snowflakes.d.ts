@@ -15,3 +15,6 @@ export declare class Snowflakes extends React.Component<ISnowflakesProps, {}> {
     componentWillUnmount(): void;
     render(): JSX.Element;
 }
+/**
+ * TODO: [🏛️] Convert Class components to Functional (with hooks).
+ */

@@ -25,3 +25,7 @@ export declare class IdentitySystem extends AbstractSystem {
     createConnectionIdentity(boardApiIdentity: IBoardApiIdentity): IConnectionIdentity;
     private track;
 }
+/**
+ * TODO: Migrate clientId to probbably browserId
+ * TODO: In LIB everstorage make some nicer syntax for legacy + migrations
+ */

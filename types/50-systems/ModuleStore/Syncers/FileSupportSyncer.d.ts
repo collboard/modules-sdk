@@ -10,7 +10,7 @@ import { ISyncer } from '../interfaces/ISyncer';
 import { AbstractSyncer } from './AbstractSyncer';
 /**
  * FileSupportSyncer installs / uninstalls support for files for its importing(TODO: /exporting)
- * TODO: Maybe name to FileImportSupportSyncer
+ * TODO: Probably name to FileImportSupportSyncer
  */
 export declare class FileSupportSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
     private fileSupportDependencies;

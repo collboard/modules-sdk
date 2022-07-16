@@ -5,6 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Destroyable, IDestroyable, Registration } from 'destroyable';
+import { BehaviorSubject } from 'rxjs';
 import { ControlSystem } from '../ControlSystem/ControlSystem';
 import { FocusSystem } from '../FocusSystem/0-FocusSystem';
 import { ToolbarName } from './0-ToolbarSystem';
@@ -13,8 +14,11 @@ export declare class IconsToolbar extends Destroyable implements IDestroyable {
     readonly toolbarName: ToolbarName;
     private controlSystem;
     private focusSystem;
-    activeIcons: IToolbarIcon[];
-    icons: IToolbarIcon[];
+    readonly icons: BehaviorSubject<
+        (IToolbarIcon & {
+            isActive: boolean;
+        })[]
+    >;
     /**
      *
      * @param toolbarName does not effect IconsToolbar behaviour, it solves only for identification purposes.
@@ -23,11 +27,12 @@ export declare class IconsToolbar extends Destroyable implements IDestroyable {
     private selectThrottleQueue;
     private iconOrNameToIcon;
     /**
+     * Trigger clicking on icon.
+     *
      * @param iconOrName You can use here either full IToolbarIcon (same reference that is registered) or name (especially usefull when triggering externally)
      *
-     * TODO: Rename to trigerIcon
      */
-    handleIconClick(iconOrName: IToolbarIcon | string): Promise<void>;
+    clickOnIcon(iconOrName: IToolbarIcon | string): Promise<void>;
     /**
      * @param iconOrName You can use here either full IToolbarIcon (same reference that is registered) or name (especially usefull when triggering externally)
      */

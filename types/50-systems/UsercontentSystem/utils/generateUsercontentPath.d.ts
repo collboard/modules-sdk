@@ -26,6 +26,6 @@ export declare function generateUsercontentPath({
 export {};
 /**
  * TODO: Efficient way how to garbage collect old files
- * TODO: Maybe saparate util countBufferHash
+ * TODO: Probably saparate util countBufferHash
  * TODO: [🍁] Get rid of sjcl in whole project
  */

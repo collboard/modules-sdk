@@ -37,7 +37,7 @@ export declare class DigitalOceanSpaces implements IIFilesStorageWithCdn {
 export {};
 /**
  * TODO: Extend this from AWS S3 (compatible) storage
- * TODO: Maybe not extend from storage
+ * TODO: Probably not extend from storage
  * TODO: Read-only mode
  * TODO: Immutable mode
  * TODO: Non-Immutable mode should purge cache

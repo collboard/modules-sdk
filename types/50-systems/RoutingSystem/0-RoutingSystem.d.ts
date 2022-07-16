@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { BrowserHistoryUrlStorage, IBrowserHistoryStorageOptions, IJson, IObservableStorage } from 'everstorage';
-import { string_uri_part } from '../../40-utils/typeAliases';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { AbstractSystem } from '../AbstractSystem';
 import { IUrlVariables } from './routePath/IUrlVariables';
 /**
@@ -25,8 +25,8 @@ export declare class RoutingSystem extends AbstractSystem {
      * Note: Collboard normalizes URL and this method is a way how to get the original query params and other things in the URL
      */
     readonly originalUrl: URL;
-    viewUriId: string_uri_part | null;
-    get viewUrl(): URL;
+    readonly viewUriId: BehaviorSubject<string | null>;
+    readonly viewUrl: Observable<URL>;
     private storageSystem;
     get selfUrl(): URL;
     protected init(): Promise<void>;
@@ -46,3 +46,6 @@ export declare class RoutingSystem extends AbstractSystem {
         options?: Partial<IBrowserHistoryStorageOptions>,
     ): IObservableStorage<TValue>;
 }
+/**
+ * TODO: For URLs (view, edit...) should be probbably some better system
+ */

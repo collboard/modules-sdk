@@ -29,11 +29,11 @@ export interface IIFilesStorageWithCdn extends IFilesStorage {
     cdn: URL;
 }
 /**
- * TODO: Maybe not deterministic and async getItemUrl
- * TODO: Maybe just createUrlMaker
- * TODO: list method
- * TODO: glob method
- * TODO: subfolder (simmilar to PrefixStorage) method
- * TODO: subscribe, list, sub(folder) should be par5t of everstorage library
- * TODO: Maybe implement observe through RxJS
+ * TODO: Probably not deterministic and async getItemUrl
+ * TODO: Probably just createUrlMaker
+ * TODO: List method
+ * TODO: Glob method
+ * TODO: Subfolder (simmilar to PrefixStorage) method
+ * TODO: Subscribe, list, sub(folder) should be part of LIB everstorage
+ * TODO: Probably implement observe through RxJS
  */

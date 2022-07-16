@@ -4,16 +4,14 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-/// <reference types="react" />
-import { AbstractSystem } from '../AbstractSystem';
 /**
- * ExtraJsxPlace enum lists possible places for an ExtraJSX object to be placed.
+ * UserInterfaceElementPlace enum lists possible places for an element to be placed.
  *
  * @collboard-modules-sdk
  */
-export declare enum ExtraJsxPlace {
+export declare enum UserInterfaceElementPlace {
     /**
-     * Root component `<div id="root">` is a parent of everything
+     * Root component `<div id="collboard-app">` is a parent of everything
      * within Collboard app
      *
      * @collboard-modules-sdk
@@ -73,26 +71,3 @@ export declare enum ExtraJsxPlace {
      */
     WelcomeModalAdjacent = 'WELCOME_MODAL_ADJACENT',
 }
-interface IExtraJsxItem {
-    place: ExtraJsxPlace;
-    jsx: JSX.Element;
-    order?: number;
-}
-/**
- * ExtraJsxSystem can register and manage additional JSX
- * Note: ExtraJSXSystem is for JSX (HTML) vs. StyleSystem is for CSS styles
- *
- * @collboard-system
- */
-export declare class ExtraJsxSystem extends AbstractSystem {
-    private extraJsx;
-    protected init(): Promise<void>;
-    /**
-     * TODO: Options
-     * TODO: !! Rename to registerExtraJsx but before find better name to ExtraJsx
-     */
-    register({ place, order, jsx }: IExtraJsxItem): import('destroyable').Registration;
-    render(place: ExtraJsxPlace): JSX.Element;
-    private getPlaceStorage;
-}
-export {};

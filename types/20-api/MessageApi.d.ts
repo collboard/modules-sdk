@@ -84,7 +84,7 @@ export declare namespace MessageApi {
 }
 /**
  * TODO: Should CREATE_BOARD also go to the created board
- * TODO: Maybe do via JSON schema OR Dynamically convert to JSON schema?
+ * TODO: Probably do via JSON schema OR Dynamically convert to JSON schema?
  * TODO: Better name for modules on/off
  * TODO: Passing of clientId?
  * TODO: Use this for sockets and REST API

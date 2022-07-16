@@ -4,9 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { BehaviorSubject } from 'rxjs';
 import { Vector } from 'xyzt';
 /**
- * Get window size
+ * Window size as observable object
+ *
+ * @singleton
  * @collboard-modules-sdk
  */
-export declare function getWindowSize(): Vector;
+export declare const windowSize: BehaviorSubject<Vector>;

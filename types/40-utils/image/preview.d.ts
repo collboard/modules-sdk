@@ -13,5 +13,5 @@
 export declare function preview(subject: HTMLElement | File | Blob | JSX.Element | string): void;
 /**
  * TODO: Prevent using this in production (probbably via linting)
- * TODO: Maybe return destroyable
+ * TODO: Probably return destroyable
  */

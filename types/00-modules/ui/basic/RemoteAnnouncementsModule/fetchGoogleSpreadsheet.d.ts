@@ -5,4 +5,4 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_url } from '../../../../40-utils/typeAliases';
-export declare function fetchGoogleSpreadsheet(csvExportUrl: string_url): Promise<any[]>;
+export declare function fetchGoogleSpreadsheet(csvExportUrl: string_url): Promise<Array<any>>;

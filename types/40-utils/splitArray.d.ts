@@ -13,4 +13,4 @@
  *
  * @collboard-modules-sdk
  */
-export declare function splitArray<TItem>(array: TItem[], splitter: TItem, limit?: number): TItem[][];
+export declare function splitArray<TItem>(array: Array<TItem>, splitter: TItem, limit?: number): Array<Array<TItem>>;

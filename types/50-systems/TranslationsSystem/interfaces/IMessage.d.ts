@@ -29,5 +29,5 @@ export declare type IMessage = IBaseMessage | Partial<Record<string_translate_la
  */
 export declare type IBaseMessage = string | JSX.Element;
 /**
- * TODO: Try to support IMessage instead of IBaseMessage across the project
+ * TODO: Try to support IMessage instead of IBaseMessage across the repositiory
  */

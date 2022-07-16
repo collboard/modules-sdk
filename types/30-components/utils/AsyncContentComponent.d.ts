@@ -17,12 +17,23 @@ interface IAsyncContentComponentProps extends ILoaderProps {
     /**
      * The async content to be rendered
      */
-    content: Factorable<Promisable<JSX.Element | JSX.Element[]>>;
+    content: Factorable<Promisable<JSX.Element | Array<JSX.Element>>>;
 }
 /**
  * Utility for mounting RxJS observable content
  *
+ * @deprecated [📠] Use usePromise/useLoadable hook instead
  * @collboard-modules-sdk
  */
 export declare function AsyncContentComponent({ loader, content, alt }: IAsyncContentComponentProps): JSX.Element;
 export {};
+/**
+* TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+* TODO: [🧵] Move to external LIB for react loadables
+
+TODO: [1] Better mechanism for slowing down components
+let slowAsyncContentComponentMiliseconds = 0;
+(window as any).slowAsyncContentComponent = (miliseonds: number) => {
+slowAsyncContentComponentMiliseconds = miliseonds;
+};
+*/

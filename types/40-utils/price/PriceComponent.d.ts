@@ -9,4 +9,5 @@ import { IPrice } from './IPrice';
 export declare function PriceComponent({ price }: { price: IPrice }): JSX.Element;
 /**
  * TODO: Should we use Intl polyfill @see https://formatjs.io/docs/polyfills/intl-numberformat
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */

@@ -34,7 +34,7 @@ declare class SignatureManager {
 export declare const signatureManager: SignatureManager;
 export {};
 /**
- * TODO: Maybe more universally - DO not hardcode SystemsContainer, AbstractSystem or IModuleManifest
+ * TODO: Probably more universally - DO not hardcode SystemsContainer, AbstractSystem or IModuleManifest
  * TODO: Is this the best way to do this?
  * TODO: Is this method preventing from removing the sign from external modules reliably:
  *       Can be hack some modification of:

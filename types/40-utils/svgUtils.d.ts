@@ -9,4 +9,4 @@ import { IVectorData } from 'xyzt';
  *
  * @collboard-modules-sdk
  */
-export declare function pointsToPolygon(points: IVectorData[]): string;
+export declare function pointsToPolygon(points: Array<IVectorData>): string;

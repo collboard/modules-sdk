@@ -5,4 +5,4 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IModuleStatusReporter } from '../interfaces/IModuleStatusReporter';
-export declare function joinModuleStatusReporters(...reporters: IModuleStatusReporter[]): IModuleStatusReporter;
+export declare function joinModuleStatusReporters(...reporters: Array<IModuleStatusReporter>): IModuleStatusReporter;

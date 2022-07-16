@@ -7,7 +7,7 @@
 import { ISkin } from '../../50-systems/StyleSystem/ISkin';
 /**
  * Note: I am here using styled components not global CSS
- * TODO: @roseckyj Do it with styled components across the project
+ * TODO: @roseckyj Do it with styled components across the repositiory
  */
 export declare const ModalGroupStyledDiv: import('styled-components').StyledComponent<
     'div',

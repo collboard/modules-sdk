@@ -28,3 +28,6 @@ export declare function selectionToolBehavior(
         selectionBox?: boolean;
     },
 ): Promise<boolean>;
+/**
+ * TODO: [🎂] Probably remove systems from IBehavoirProps and use useSystems (or similar mechanism) instead
+ */

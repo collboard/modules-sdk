@@ -9,4 +9,4 @@
  *
  * @collboard-modules-sdk
  */
-export declare function randomItem<T>(...items: T[]): T;
+export declare function randomItem<T>(...items: Array<T>): T;

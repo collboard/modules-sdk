@@ -10,5 +10,5 @@ interface IParseMessageEventResult {
     moduleSignature: IModuleSignature;
     message: MessageApi.Request;
 }
-export declare function parseMessageEvent(event: MessageEvent): IParseMessageEventResult;
+export declare function parseMessageEvent(event: MessageEvent): IParseMessageEventResult | null;
 export {};

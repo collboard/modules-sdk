@@ -7,15 +7,15 @@
 import { ICommitData } from '../../10-database/interfaces/ICommitData';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
 interface GenericFreshOperation<TOngoingOperation extends IOngoingOperation> {
-    takeArts(...previousArts: AbstractArt[]): IOngoingOperation;
-    takeCommits(...previousCommits: ICommitData[]): IOngoingOperation;
-    newArts(...arts: AbstractArt[]): IOngoingOperation;
-    arts: AbstractArt[];
+    takeArts(...previousArts: Array<AbstractArt>): IOngoingOperation;
+    takeCommits(...previousCommits: Array<ICommitData>): IOngoingOperation;
+    newArts(...arts: Array<AbstractArt>): IOngoingOperation;
+    arts: Array<AbstractArt>;
 }
 export declare type IFreshOperation = GenericFreshOperation<IOngoingOperation>;
 export declare type IFreshMaterialOperation = GenericFreshOperation<IOngoingMaterialOperation>;
 export interface IOngoingOperation {
-    update(...arts: AbstractArt[]): this;
+    update(...arts: Array<AbstractArt>): this;
     updateWithCallback(artCallback: (art: AbstractArt) => AbstractArt): this;
     updateWithMutatingCallback(artMutatingCallback: (art: AbstractArt) => void): this;
     delete(): void;

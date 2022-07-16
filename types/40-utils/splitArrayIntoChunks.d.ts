@@ -12,4 +12,4 @@
  *
  * @collboard-modules-sdk
  */
-export declare function splitArrayIntoChunks<TItem>(array: TItem[], length: number): TItem[][];
+export declare function splitArrayIntoChunks<TItem>(array: Array<TItem>, length: number): Array<Array<TItem>>;

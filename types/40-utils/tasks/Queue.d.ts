@@ -19,8 +19,8 @@ import { ITaskRunner } from './ITaskRunner';
  * ___🥝_🍓_🍋______🍏_🍍_🍇__🍉_____🍌_🍒___🥑_🍎_🍈
  *
  *
- * TODO: error handling
- * TODO: maybe debouncing
+ * TODO: Error handling
+ * TODO: Probably debouncing
  * TODO: timeouts
  *
  * @collboard-modules-sdk

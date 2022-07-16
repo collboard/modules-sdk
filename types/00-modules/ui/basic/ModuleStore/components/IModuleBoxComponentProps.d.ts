@@ -18,3 +18,6 @@ export interface IModuleBoxComponentProps {
     businessSystem: BusinessSystem;
     licenseSystem: LicenseSystem;
 }
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

@@ -18,7 +18,7 @@ export interface IFileExportSupporterOptions extends Required<IExportFileOptions
     /**
      * Arts to export
      */
-    artContainers: IArtContainer[];
+    artContainers: Array<IArtContainer>;
     /**
      * Scope of the export
      */

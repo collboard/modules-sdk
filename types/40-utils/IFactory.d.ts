@@ -23,5 +23,5 @@ export declare function factor<T>(valueOrFunction: Factorable<T>): T;
  */
 export declare const NOT_CONSTRUCTABLE: unique symbol;
 /**
- * TODO: Maybe better name as Create/Creatable/factor
+ * TODO: Probably better name as Create/Creatable/factor
  */

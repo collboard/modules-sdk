@@ -8,7 +8,22 @@ import { Destroyable, IDestroyable } from 'destroyable';
 import { ISystemsExtended } from './00-SystemsContainer/ISystems';
 export declare abstract class AbstractSystem extends Destroyable implements IDestroyable {
     protected readonly systems: ISystemsExtended;
-    ready: Promise<void>;
     constructor(systems: ISystemsExtended);
+    private _isReady;
+    /**
+     * Promise which is resolved when the system is initialized and ready to use.
+     */
+    readonly ready: Promise<void>;
+    /**
+     * Checks if the system is initialized and ready to use.
+     * @returns {boolean}
+     */
+    get isReady(): boolean;
     protected abstract init(): Promise<void>;
+    /**
+     * Checks if the system is initialized and ready to use.
+     * If not, throws an error.
+     * If it is, do nothing.
+     */
+    protected checkIsReady(): void;
 }

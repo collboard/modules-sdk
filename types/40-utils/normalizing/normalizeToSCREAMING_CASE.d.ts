@@ -10,3 +10,6 @@
  * @collboard-modules-sdk
  */
 export declare function normalizeToSCREAMING_CASE(name: string): string;
+/**
+ * TODO: [👚] Put this into LIB n12
+ */

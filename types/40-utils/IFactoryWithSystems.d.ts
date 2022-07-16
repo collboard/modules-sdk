@@ -16,5 +16,5 @@ export declare type IFactorableWithSystems<T> = T | ((systems: ISystems) => T);
 export declare function factorWithSystems<T>(valueOrFunction: IFactorableWithSystems<T>, systems: ISystems): T;
 /**
  * TODO: Use IFactorableWithSystems + factorWithSystems across the code
- * TODO: Maybe better name as Create/Creatable/factor
+ * TODO: Probably better name as Create/Creatable/factor
  */

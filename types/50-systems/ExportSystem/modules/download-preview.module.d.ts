@@ -7,4 +7,6 @@
 export {};
 /**
  * TODO: Allow to search for new modules
+ * TODO: [🍩] Maybe think about requesting systems non-magically
+ * TODO: [🍩] Omitting systems.request should fail bacause of unrequested systems.
  */

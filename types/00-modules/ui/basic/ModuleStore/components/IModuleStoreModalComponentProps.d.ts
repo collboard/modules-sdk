@@ -28,3 +28,6 @@ export interface IModuleStoreModalComponentProps {
     search: IModuleSearchCriteria;
     onSearchChange: IHandler<IModuleSearchCriteria>;
 }
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

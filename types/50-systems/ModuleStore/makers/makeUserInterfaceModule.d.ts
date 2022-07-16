@@ -7,16 +7,19 @@
 /// <reference types="react" />
 import { Promisable } from 'type-fest';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
-import { ExtraJsxPlace } from '../../ExtraJsxSystem/0-ExtraJsxSystem';
+import { UserInterfaceElementPlace } from '../../UserInterfaceSystem/UserInterfaceElementPlace';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 /**
+ * Makes a module that will add any JSX element on requested place.
+ *
+ * Note: Making this type of module is not recommended because it is using very low-level API. Consider using higher-level API like makeModalModule, makeTrayToolModule, etc.
  *
  * @collboard-modules-sdk
  */
-export declare function makeExtrajsxModule(protoModule: {
+export declare function makeUserInterfaceModule(protoModule: {
     manifest?: IModuleManifest;
-    place: ExtraJsxPlace;
+    place: UserInterfaceElementPlace;
     order?: number;
-    createExtraJsx(systems: ISystems): Promisable<JSX.Element>;
+    createElement(systems: ISystems): Promisable<JSX.Element>;
 }): IModuleDefinition;

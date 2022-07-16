@@ -23,3 +23,6 @@ export declare function AnnouncementComponent({
     closeHandler,
 }: IAnnouncementComponentProps): JSX.Element;
 export {};
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

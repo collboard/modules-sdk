@@ -35,7 +35,7 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
      * Was the art already measured?
      */
     get measured(): boolean;
-    get acceptedAttributes(): string_attribute[];
+    get acceptedAttributes(): Array<string_attribute>;
     render(isSelected: boolean, systems: ISystemsExtended): JSX.Element;
     /**
      * Measure the object and set `privateSize` and `originalSize`
@@ -54,5 +54,5 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
     protected abstract renderBox(systems: ISystemsExtended): JSX.Element;
 }
 /**
- * Note: number is just a file prefix to feep it on the top of file list.
+ * Note: Number is just a file prefix to feep it on the top of file list.
  */

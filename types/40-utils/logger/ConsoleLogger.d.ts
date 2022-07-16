@@ -10,16 +10,16 @@ export declare class ConsoleLogger implements ILogger {
     private readonly console;
     static readonly console: ConsoleLogger;
     constructor(console: Console);
-    info(message?: any, ...optionalParams: any[]): this;
-    warn(warning?: any, ...optionalParams: any[]): this;
-    error(error?: Error | any, ...optionalParams: any[]): this;
-    trace(...data: any[]): this;
-    group(groupName?: string, ...optionalParams: any[]): ISubLogger;
-    groupCollapsed(groupName?: string, ...optionalParams: any[]): ISubLogger;
-    groupPrefixed(groupName?: string, ...optionalParams: any[]): ConsolePrefixLogger;
+    info(message?: any, ...optionalParams: Array<any>): this;
+    warn(warning?: any, ...optionalParams: Array<any>): this;
+    error(error?: Error | any, ...optionalParams: Array<any>): this;
+    trace(...data: Array<any>): this;
+    group(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
+    groupCollapsed(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
+    groupPrefixed(groupName?: string, ...optionalParams: Array<any>): ConsolePrefixLogger;
 }
 /**
- * TODO: Maybe split into multiple files
+ * TODO: Probably split into multiple files
  * TODO: Nicer begin / end messages
  * TODO: Better Graphics of the tree:
  *       > console.log('%c Oh my heavens! ', 'border-left: 30px solid red');console.log('%c Oh my heavens! ', 'border-left: 30px solid red');

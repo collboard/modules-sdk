@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
  * To ignore event (like keypress) because its target is not on board (but for example on input element).
- * TODO: Maybe in universal utils not just ControlSystems utils
+ * TODO: Probably in universal utils not just ControlSystems utils
  *
  * @collboard-modules-sdk
  */

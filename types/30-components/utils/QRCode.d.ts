@@ -14,3 +14,6 @@ interface IQRCodeProps extends QRCodeRenderersOptions {
  */
 export declare function QRCode(props: IQRCodeProps): JSX.Element;
 export {};
+/**
+ * TODO: Move to external LIB
+ */

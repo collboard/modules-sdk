@@ -320,7 +320,7 @@ export declare type string_keyword = string;
  *
  * @collboard-modules-sdk
  */
-export declare type Keywords = string_keyword[];
+export declare type Keywords = Array<string_keyword>;
 /**
  * CSS cursor type
  * @collboard-modules-sdk
@@ -372,13 +372,14 @@ export declare type string_css_cursor =
 export declare type string_attribute = string;
 /**
  * Semantic helper for attributes context
+ * Each attribute value scope with a attribute name has its own current value
  *
  * - case insensitive
  *
  * For example `"tools"`
  * @collboard-modules-sdk
  */
-export declare type string_context = string;
+export declare type string_attribute_value_scope = string;
 /**
  * Semantic helper for css/html colors
  *
@@ -411,7 +412,7 @@ export declare type string_translate_name_not_normalized = string;
  * Semantic helper; For example "cs" or "en"
  * Implementing ISO 639-1
  *
- * TODO: Maybe use enum
+ * TODO: Probably use enum
  * TODO: Rename - remove string_ prefix like ITranslateLanguageCode
  */
 export declare type string_translate_language = 'en' | 'cs' | 'sk' | 'uk';

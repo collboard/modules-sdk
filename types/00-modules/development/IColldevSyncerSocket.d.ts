@@ -20,7 +20,7 @@ export declare namespace IColldevSyncerSocket {
         version: number;
         isConnected: boolean;
         isReady: boolean;
-        errors: IError[];
+        errors: Array<IError>;
         boardId: string | null;
         url: string;
         modules: Record<
@@ -28,7 +28,7 @@ export declare namespace IColldevSyncerSocket {
             {
                 isDeclared: boolean;
                 isInstalled: boolean;
-                errors: IError[];
+                errors: Array<IError>;
             }
         >;
     }

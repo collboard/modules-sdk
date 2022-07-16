@@ -11,13 +11,13 @@ export declare class SentryLogger implements ILogger, ISubLogger {
     private readonly sentry;
     private readonly loggers;
     constructor(sentry: typeof SentryBrowser | typeof SentryNode);
-    info(message?: any, ...optionalParams: any[]): this;
-    warn(warning?: any, ...optionalParams: any[]): this;
-    error(error?: Error | any, ...optionalParams: any[]): this;
-    trace(...data: any[]): this;
+    info(message?: any, ...optionalParams: Array<any>): this;
+    warn(warning?: any, ...optionalParams: Array<any>): this;
+    error(error?: Error | any, ...optionalParams: Array<any>): this;
+    trace(...data: Array<any>): this;
     end(): void;
-    group(groupName?: string, ...optionalParams: any[]): ISubLogger;
-    groupCollapsed(groupName?: string, ...optionalParams: any[]): ISubLogger;
+    group(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
+    groupCollapsed(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
 }
 /**
  * TODO: !! Log environment / business

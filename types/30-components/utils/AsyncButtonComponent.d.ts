@@ -23,6 +23,7 @@ interface IAsyncButtonComponentProps extends React.PropsWithChildren<ILoaderProp
 /**
  * Utility for button with pending state after click
  *
+ * @deprecated [📠] Make this better (via hooks)
  * @collboard-modules-sdk
  */
 export declare function AsyncButtonComponent({
@@ -36,3 +37,6 @@ export declare function AsyncButtonComponent({
     disabled,
 }: IAsyncButtonComponentProps): JSX.Element;
 export {};
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

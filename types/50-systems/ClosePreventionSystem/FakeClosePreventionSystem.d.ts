@@ -12,6 +12,6 @@ import { IClosePreventionSystem } from './IClosePreventionSystem';
  * @collboard-modules-sdk
  */
 export declare class FakeClosePreventionSystem extends Destroyable implements IClosePreventionSystem {
-    registerClosePrevention(...reasons: IClosePreventable[]): Registration;
+    registerClosePrevention(...reasons: Array<IClosePreventable>): Registration;
     get canBeClosed(): boolean;
 }

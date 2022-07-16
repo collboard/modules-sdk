@@ -13,7 +13,7 @@ import { string_char_emoji } from './typeAliasEmoji';
  *
  * @collboard-modules-sdk
  */
-export declare const EMOJIS_IN_CATHEGORIES: Record<string, string_char_emoji[]>;
+export declare const EMOJIS_IN_CATHEGORIES: Record<string, Array<string_char_emoji>>;
 /**
  *
  * All possible emoji chars like "🍆", "🍡", "🍤"...

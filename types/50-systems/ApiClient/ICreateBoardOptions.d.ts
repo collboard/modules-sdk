@@ -20,6 +20,6 @@ export interface ICreateBoardOptions {
      * @deprecated [🈚] Make this better via Art
      */
     importAsLink?: string_url;
-    modulesOn?: string | string[];
-    modulesOff?: string | string[];
+    modulesOn?: string | Array<string>;
+    modulesOff?: string | Array<string>;
 }

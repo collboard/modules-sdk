@@ -11,7 +11,7 @@ import { string_url, string_url_image } from '../../typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare type ITraySimpleDefinition = ITraySimpleTab[];
+export declare type ITraySimpleDefinition = Array<ITraySimpleTab>;
 /**
  * Definition of one tab in the tray
  */
@@ -23,14 +23,14 @@ interface ITraySimpleTab {
      * @default 0.6
      */
     scale?: number;
-    groups: ITraySimpleTabGroup[];
+    groups: Array<ITraySimpleTabGroup>;
 }
 /**
  * Definition of one group of items in the tray tab
  */
 interface ITraySimpleTabGroup {
     title: IMessage;
-    items: ITraySimpleTabGroupItem[];
+    items: Array<ITraySimpleTabGroupItem>;
 }
 /**
  * Definition of one item in the tray

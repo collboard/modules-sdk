@@ -14,3 +14,6 @@ export declare function ModuleBoxComponent({
     businessSystem,
     licenseSystem,
 }: IModuleBoxComponentProps): JSX.Element;
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

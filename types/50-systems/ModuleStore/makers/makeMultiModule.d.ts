@@ -19,7 +19,7 @@ export declare function makeMultiModule(
     modulesOrProtomodule:
         | {
               manifest?: IModuleManifest;
-              modules: Factorable<IModule[]>;
+              modules: Factorable<Array<IModule>>;
           }
-        | Factorable<IModule[]>,
+        | Factorable<Array<IModule>>,
 ): Factory<IModuleDefinition>;

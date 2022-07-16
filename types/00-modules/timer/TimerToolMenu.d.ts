@@ -5,11 +5,13 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
-import { ICollboardUnloadedProps } from './CollboardUnloaded';
-declare type ICollboardUnloadedWithExtraJsxProps = ICollboardUnloadedProps & {
-    renderExtraJsx?: boolean;
-    systems: ISystemsExtended;
-};
-export declare function CollboardUnloadedWithExtraJsx(props: ICollboardUnloadedWithExtraJsxProps): JSX.Element;
+import { /* TODO: type BehaviorSubject */ BehaviorSubject } from 'rxjs';
+import { ToolTimerType } from './ToolTimerType';
+interface ITimerToolMenuProps {
+    toolTimerType: BehaviorSubject<ToolTimerType>;
+}
+export declare function TimerToolMenu(props: ITimerToolMenuProps): JSX.Element;
 export {};
+/**
+ * Note: In future this file will we in independent repository as external module.
+ */

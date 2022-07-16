@@ -9,3 +9,6 @@ import { string_uri_part } from '../typeAliases';
  * @collboard-modules-sdk
  */
 export declare function nameToUriPart(name: string): string_uri_part;
+/**
+ * TODO: [👚] Put this into LIB n12
+ */

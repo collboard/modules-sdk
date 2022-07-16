@@ -7,6 +7,7 @@
 /// <reference types="react" />
 import { IVectorData, Vector } from 'xyzt';
 import { Abstract2dArt } from '../../71-arts/26-Abstract2dArt';
+import { ITimerAndStopwatchControls } from './TimerControlsAttributeModule';
 export declare class TimerArt extends Abstract2dArt {
     millis: number;
     static serializeName: string;
@@ -21,8 +22,8 @@ export declare class TimerArt extends Abstract2dArt {
     start(): void;
     stop(): void;
     reset(): void;
-    set timerControls(operation: number);
-    get timerControls(): number;
+    set timerControls(value: ITimerAndStopwatchControls);
+    get timerControls(): ITimerAndStopwatchControls;
     set timerTime(millis: number);
     get timerTime(): number;
     get acceptedAttributes(): string[];
@@ -32,5 +33,5 @@ export declare class TimerArt extends Abstract2dArt {
     render(): JSX.Element;
 }
 /**
- * Note: number is just a file prefix to feep it on the top of file list.
+ * Note: Number is just a file prefix to feep it on the top of file list.
  */

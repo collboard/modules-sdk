@@ -12,5 +12,5 @@ import { string_css_property, string_css_selector, string_css_value } from '../.
  */
 export declare type ICss = Record<string_css_selector, Record<string_css_property, string_css_value>>;
 /**
- * TODO: Maybe use in ISkin
+ * TODO: Probably use in ISkin
  */

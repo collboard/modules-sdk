@@ -13,3 +13,8 @@
  * @collboard-modules-sdk
  */
 export declare function Unwrap({ children }: { children: JSX.Element }): JSX.Element;
+/**
+ * TODO: Make ErrorDiv skinned
+ * TODO: Use ErrorDiv / ErrorComponent across the repositiory
+ * TODO: [🧵] Move to external LIB for react loadables
+ */

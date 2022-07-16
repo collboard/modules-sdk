@@ -40,14 +40,14 @@ export declare class Operation
      * This reverts worthless() method.
      */
     valuable(): this;
-    get arts(): AbstractArt[];
-    takeArts(...previousArts: AbstractArt[]): this;
-    takeCommits(...previousCommits: ICommitData[]): this;
+    get arts(): Array<AbstractArt>;
+    takeArts(...previousArts: Array<AbstractArt>): this;
+    takeCommits(...previousCommits: Array<ICommitData>): this;
     private takeArtsOrCommitsOrNullsOrOrigins;
-    newArts(...arts: AbstractArt[]): this;
+    newArts(...arts: Array<AbstractArt>): this;
     private unpushedCommits;
     private updatedCountInCurrentPersisting;
-    update(...arts: AbstractArt[]): this;
+    update(...arts: Array<AbstractArt>): this;
     private updateOne;
     /**
      *

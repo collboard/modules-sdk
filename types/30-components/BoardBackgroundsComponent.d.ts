@@ -5,11 +5,16 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Transform } from 'xyzt';
 import { AbstractBackgroundArt } from '../71-arts/26-AbstractBackgroundArt';
 interface IBoardBackgroundsProps {
-    backgroundArts: AbstractBackgroundArt[];
-    transform: Transform;
+    backgroundArts: Observable<Array<AbstractBackgroundArt>>;
+    transform: BehaviorSubject<Transform>;
 }
 export declare function BoardBackgroundsComponent({ backgroundArts, transform }: IBoardBackgroundsProps): JSX.Element;
 export {};
+/**
+ * TODO: [🏊‍♀️] Better naming for BoardBackgroundsComponent
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

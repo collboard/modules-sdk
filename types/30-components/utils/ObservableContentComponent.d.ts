@@ -8,9 +8,6 @@
 import { Observable } from 'rxjs';
 import { Promisable } from 'type-fest';
 import { ILoaderProps } from './Loader/Loader';
-/**
- * TODO: Make from this some microlibrary
- */
 interface IObservableContentComponentProps extends ILoaderProps {
     /**
      * Component to be rendered before the content is loaded
@@ -20,7 +17,7 @@ interface IObservableContentComponentProps extends ILoaderProps {
     /**
      * You can put here any RxJS observable. For example BehaviorSubject.
      */
-    content: Observable<Promisable<JSX.Element | JSX.Element[]>>;
+    content: Observable<Promisable<JSX.Element | Array<JSX.Element>>>;
     /**
      * Will be debugged in the console
      */
@@ -29,6 +26,7 @@ interface IObservableContentComponentProps extends ILoaderProps {
 /**
  * Utility for mounting RxJS observable content
  *
+ * @deprecated [📠] Use useObservable/useLoadable hook instead
  * @collboard-modules-sdk
  */
 export declare function ObservableContentComponent({
@@ -38,3 +36,7 @@ export declare function ObservableContentComponent({
     isDebugging,
 }: IObservableContentComponentProps): JSX.Element;
 export {};
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ * TODO: [🧵] Move to external LIB for react loadables
+ */

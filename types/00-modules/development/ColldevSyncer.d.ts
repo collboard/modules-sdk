@@ -4,8 +4,8 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { ISystemsExtended } from '../../50-systems/00-SystemsContainer/ISystems';
-import { IStorageSyncerOptions, StorageSyncer } from '../../50-systems/ModuleStore/Syncers/StorageSyncer';
+import { BehaviorSubject } from 'rxjs';
+import { StorageSyncer } from '../../50-systems/ModuleStore/Syncers/StorageSyncer';
 import { IColldevSyncerSocket } from './IColldevSyncerSocket';
 /**
  * ColldevSyncer installs / uninstalls modules according colldev CLI command server
@@ -20,8 +20,7 @@ export declare class ColldevSyncer extends StorageSyncer {
     private _colldevUrl;
     get colldevUrl(): string;
     set colldevUrl(colldevUrl: string);
-    clientStatus: IColldevSyncerSocket.clientStatus;
-    constructor(systems: ISystemsExtended, options?: IStorageSyncerOptions);
+    readonly clientStatus: BehaviorSubject<IColldevSyncerSocket.clientStatus>;
     protected initSyncer(): Promise<void>;
     private bundleRecievedQueue;
     private reestablishConnection;

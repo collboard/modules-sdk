@@ -16,7 +16,7 @@ export declare class LicenseSystem extends AbstractSystem {
     private storage;
     private licenses;
     protected init(): Promise<void>;
-    getModuleLicences(moduleManifest: IModuleManifest): Promise<IModuleManifestUsageLicense[]>;
+    getModuleLicences(moduleManifest: IModuleManifest): Promise<Array<IModuleManifestUsageLicense>>;
     getModuleLicenceInfo(moduleManifest: IModuleManifest): Promise<IUsageLicenseInfo>;
     hasModuleLicence(moduleManifest: IModuleManifest): Promise<boolean>;
 }

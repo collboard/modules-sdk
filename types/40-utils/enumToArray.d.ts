@@ -8,4 +8,4 @@
  * Converts typescript enum to array without number values
  * @collboard-modules-sdk
  */
-export declare function enumToArray(enumerable: any): string[];
+export declare function enumToArray(enumerable: any): Array<string>;

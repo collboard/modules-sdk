@@ -13,11 +13,11 @@ import { IModuleStatusReporter } from './IModuleStatusReporter';
  * @collboard-modules-sdk
  */
 export interface IInstaller extends IModuleStatusReporter {
-    readonly installations: ModuleInstallation[];
+    readonly installations: Array<ModuleInstallation>;
     install(dependency: IDependency, syncerName?: string): Promise<void>;
     uninstall(dependency: IDependency): Promise<void>;
     uninstallAll(): Promise<void>;
 }
 /**
- * TODO: Maybe subinstaller (hyerarcical tree)
+ * TODO: Probably subinstaller (hyerarcical tree)
  */

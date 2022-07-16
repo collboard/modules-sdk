@@ -40,6 +40,4 @@ export declare type IModalProps = React.PropsWithChildren<{
  *
  * @collboard-modules-sdk
  */
-export declare class Modal extends React.Component<IModalProps> {
-    render(): JSX.Element;
-}
+export declare function Modal(props: IModalProps): JSX.Element;

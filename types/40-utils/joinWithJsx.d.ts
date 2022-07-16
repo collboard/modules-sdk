@@ -8,4 +8,4 @@
  *
  * @collboard-modules-sdk
  */
-export declare function joinWithAny(values: any[], separator: (key: number) => any): any[];
+export declare function joinWithAny(values: Array<any>, separator: (key: number) => any): Array<any>;

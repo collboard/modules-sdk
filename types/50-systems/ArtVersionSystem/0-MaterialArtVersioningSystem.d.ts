@@ -30,7 +30,7 @@ export declare class MaterialArtVersioningSystem extends AbstractSystem implemen
     readonly commitsObservable: Observable<Commit>;
     readonly artsObservable: Observable<AbstractArt>;
     permissions: IPermissions;
-    commitsPool: ICommitData[];
+    commitsPool: Array<ICommitData>;
     private currentCommitsPool;
     private commitsObserver?;
     constructor(systems: ISystemsExtended, moduleSignature: IModuleSignature);
@@ -42,17 +42,17 @@ export declare class MaterialArtVersioningSystem extends AbstractSystem implemen
     signAs(moduleSignature: IModuleSignature): MaterialArtVersioningSystem;
     createOperation(operationName: string): Operation;
     createPrimaryOperation(): Operation;
-    _USE_ONLY_INSIDE_CORE_pushCommit(...commits: ICommitData[]): Promise<void>;
+    _USE_ONLY_INSIDE_CORE_pushCommit(...commits: Array<ICommitData>): Promise<void>;
     get lastCommitId(): number;
     setCommitWasPersisted(commitId: string_uuid, id: number): void;
-    get commits(): ICommitData[];
-    get arts(): AbstractArt[];
-    cornerstoneArts: BehaviorSubject<CornerstoneArt>;
-    get commitsPlaced(): ICommitData[];
-    get artsPlaced(): AbstractPlacedArt[];
+    get commits(): Array<ICommitData>;
+    get arts(): Array<AbstractArt>;
+    readonly cornerstoneArts: BehaviorSubject<CornerstoneArt>;
+    get commitsPlaced(): Array<ICommitData>;
+    get artsPlaced(): Array<AbstractPlacedArt>;
     get lastCommit(): ICommitData | null;
     findPreviousCommit(commit: ICommitData): ICommitData | null;
-    findNextCommits(commit: ICommitData): ICommitData[];
+    findNextCommits(commit: ICommitData): Array<ICommitData>;
     findNextCommit(commit: ICommitData): ICommitData | null;
     hasNextCommits(commit: ICommitData): boolean;
     findOriginCommit(commit: ICommitData): ICommitData;
@@ -66,6 +66,9 @@ export declare class MaterialArtVersioningSystem extends AbstractSystem implemen
     /**
      * Note: This is just a debug class
      */
-    get sortCommitsByOperationId(): ICommitData[][];
-    findCommitsByOperationId(operationId: string_uuid): ICommitData[];
+    get sortCommitsByOperationId(): Array<Array<ICommitData>>;
+    findCommitsByOperationId(operationId: string_uuid): Array<ICommitData>;
 }
+/**
+ * TODO: [🏔️]  All art getters should be cold obserservables
+ */

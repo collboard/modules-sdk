@@ -11,7 +11,7 @@ export interface IAttributeRule<T> {
     moduleName: string_module_name;
     attribute: IAttribute;
     /**
-     * TODO: Maybe get rid of standard/bonus and bring up priority
+     * TODO: Probably get rid of standard/bonus and bring up priority
      */
     standard: boolean;
     inputRender: IAttributeInputRender<T>;

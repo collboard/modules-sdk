@@ -18,3 +18,7 @@ export declare class UploadOverlayWrapper extends React.Component<IUploadOverlay
     render(): JSX.Element;
 }
 export {};
+/**
+ * TODO: [🏛️] Convert Class components to Functional (with hooks).
+ * TODO: Maybe put reason after all @not-collboard-modules-sdk tags
+ */

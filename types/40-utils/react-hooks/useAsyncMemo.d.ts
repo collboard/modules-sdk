@@ -21,6 +21,8 @@ export declare function useAsyncMemo<T>(
     initial: T,
 ): T;
 /**
+ * TODO: Handle errors here
  * Note: Hook for modules must use same React as the main Collboard app
  *       So this is a copy of @see https://github.com/awmleer/use-async-memo/blob/master/src/index.ts
+ * TODO: [🧵] Move to external LIB for react loadables
  */

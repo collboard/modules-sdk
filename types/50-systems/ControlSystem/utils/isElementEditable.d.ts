@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
- * TODO: Maybe in universal utils not just ControlSystems utils
+ * TODO: Probably in universal utils not just ControlSystems utils
  */
 export declare function isElementEditable(
     element: Element,

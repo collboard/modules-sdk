@@ -24,9 +24,9 @@ export declare class FunctionCache<TInput, TOutput> extends Destroyable implemen
 }
 /**
  *
- * TODO: Maybe work with multiple arguments
- * TODO: Maybe do this as decorator
+ * TODO: Probably work with multiple arguments
+ * TODO: Probably do this as decorator
  * TODO: In futute to constructor should be passed storage (which can be time limited)
- *       TODO: This storage from everstorage should be IDestroyable (and here you cound setup if this storage should be isDestroyed with FunctionCache)
+ *       TODO: This storage from LIB everstorage should be IDestroyable (and here you cound setup if this storage should be isDestroyed with FunctionCache)
  *
  */

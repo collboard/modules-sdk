@@ -15,8 +15,8 @@ declare type IIconProps = React.PropsWithChildren<IIconAnonymous>;
  *
  * @collboard-modules-sdk
  */
-export declare class Icon extends React.Component<IIconProps> {
-    private clickHandler;
-    render(): JSX.Element;
-}
+export declare function Icon(props: IIconProps): JSX.Element;
 export {};
+/**
+ * TODO: [🏛️] Convert Class components to Functional (with hooks).
+ */

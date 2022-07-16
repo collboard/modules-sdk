@@ -19,4 +19,5 @@ export {};
 /**
  * TODO: @hejny ->  @roseckyj Design this component - profile page of the module
  * TODO: Probbably allow to install/uninstall/change setting from here
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */

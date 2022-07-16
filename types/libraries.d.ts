@@ -70,7 +70,7 @@ export declare const libs: {
     touchcontroller: typeof _touchcontroller;
 };
 /**
- * TODO: Maybe alse add:
+ * TODO: Probably alse add:
  *  - "everstorage"
  *  - "json5"
  *  - "lodash"

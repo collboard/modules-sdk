@@ -8,7 +8,7 @@ import React from 'react';
 export declare type IUploadZoneProps = React.PropsWithChildren<{
     isClickable?: boolean;
     onFilesOver?: (isFileOver: boolean) => void;
-    onFiles: (droppedFiles: File[]) => void;
+    onFiles: (droppedFiles: Array<File>) => void;
 }>;
 export declare function UploadZone({ children, isClickable, onFilesOver, onFiles }: IUploadZoneProps): JSX.Element;
 /**

@@ -11,4 +11,7 @@ import { Keywords } from '../typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare function parseKeywords(input: any, recurcion?: number): Keywords;
+export declare function parseKeywords(input: any, _maxRecursionLevel?: number): Keywords;
+/**
+ * TODO: [👚] Put this into LIB n12
+ */

@@ -14,3 +14,6 @@ interface ICopyComponentProps {
  */
 export declare function CopyComponent({ className, value }: ICopyComponentProps): JSX.Element;
 export {};
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

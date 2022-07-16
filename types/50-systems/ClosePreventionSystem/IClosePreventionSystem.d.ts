@@ -7,5 +7,5 @@
 import { IDestroyable } from 'destroyable';
 import { IClosePreventable } from './IClosePreventable';
 export interface IClosePreventionSystem extends IClosePreventable, IDestroyable {
-    registerClosePrevention(...reasons: IClosePreventable[]): IDestroyable;
+    registerClosePrevention(...reasons: Array<IClosePreventable>): IDestroyable;
 }

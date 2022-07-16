@@ -245,16 +245,16 @@ export const BoardNotFoundError = (window as any).CollboardSdk.BoardNotFoundErro
 export const CollisionError = (window as any).CollboardSdk.CollisionError;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/errorBoundary.d.ts
-export const errorBoundary = (window as any).CollboardSdk.errorBoundary;
-
-
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/errorMessageWithAdditional.d.ts
 export const errorMessageWithAdditional = (window as any).CollboardSdk.errorMessageWithAdditional;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/HighOrderError.d.ts
 export const HighOrderError = (window as any).CollboardSdk.HighOrderError;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/meaningfullError.d.ts
+export const meaningfullError = (window as any).CollboardSdk.meaningfullError;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/errors/ModuleNotFoundError.d.ts
@@ -314,7 +314,7 @@ export const FunctionCache = (window as any).CollboardSdk.FunctionCache;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/getWindowSize.d.ts
-export const getWindowSize = (window as any).CollboardSdk.getWindowSize;
+export const windowSize = (window as any).CollboardSdk.windowSize;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/IFactory.d.ts
@@ -477,6 +477,24 @@ export const randomUriId = (window as any).CollboardSdk.randomUriId;
 export const useAsyncMemo = (window as any).CollboardSdk.useAsyncMemo;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-hooks/useLoadable.d.ts
+export const IUseLoadableResultStatus = (window as any).CollboardSdk.IUseLoadableResultStatus;
+export const useLoadable = (window as any).CollboardSdk.useLoadable;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-hooks/useObservable.d.ts
+export const useObservable = (window as any).CollboardSdk.useObservable;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-hooks/usePromise.d.ts
+export const usePromise = (window as any).CollboardSdk.usePromise;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-hooks/useSystems.d.ts
+export const SystemsContainerContext = (window as any).CollboardSdk.SystemsContainerContext;
+export const useSystems = (window as any).CollboardSdk.useSystems;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/removeKeys.d.ts
 export const removeKeys = (window as any).CollboardSdk.removeKeys;
 
@@ -617,7 +635,7 @@ export const string_keyword = (window as any).CollboardSdk.string_keyword;
 export const Keywords = (window as any).CollboardSdk.Keywords;
 export const string_css_cursor = (window as any).CollboardSdk.string_css_cursor;
 export const string_attribute = (window as any).CollboardSdk.string_attribute;
-export const string_context = (window as any).CollboardSdk.string_context;
+export const string_attribute_value_scope = (window as any).CollboardSdk.string_attribute_value_scope;
 export const string_color = (window as any).CollboardSdk.string_color;
 
 
@@ -724,14 +742,6 @@ export const ExporterPickerComponent = (window as any).CollboardSdk.ExporterPick
 export const ExportScopePickerComponent = (window as any).CollboardSdk.ExportScopePickerComponent;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/components/DownloadComponent.d.ts
-export const DownloadComponent = (window as any).CollboardSdk.DownloadComponent;
-
-
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/components/DownloadPreviewComponent.d.ts
-export const DownloadPreviewComponent = (window as any).CollboardSdk.DownloadPreviewComponent;
-
-
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/components/ExportPrepareComponent.d.ts
 export const ExportPrepareComponent = (window as any).CollboardSdk.ExportPrepareComponent;
 
@@ -751,11 +761,6 @@ export const IFramable = (window as any).CollboardSdk.IFramable;
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExportSystem/utils/sortArtContainersByScreenPosition.d.ts
 export const sortArtContainersByScreenPosition = (window as any).CollboardSdk.sortArtContainersByScreenPosition;
-
-
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ExtraJsxSystem/0-ExtraJsxSystem.d.ts
-export const ExtraJsxPlace = (window as any).CollboardSdk.ExtraJsxPlace;
-export const ExtraJsxSystem = (window as any).CollboardSdk.ExtraJsxSystem;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/FilepickSystem/0-FilepickSystem.d.ts
@@ -862,10 +867,6 @@ export const makeArtModule = (window as any).CollboardSdk.makeArtModule;
 export const makeAttributeModule = (window as any).CollboardSdk.makeAttributeModule;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeExtrajsxModule.d.ts
-export const makeExtrajsxModule = (window as any).CollboardSdk.makeExtrajsxModule;
-
-
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeIconModule.d.ts
 export const makeIconModule = (window as any).CollboardSdk.makeIconModule;
 
@@ -892,6 +893,10 @@ export const makeDynamicTrayModule = (window as any).CollboardSdk.makeDynamicTra
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeTraySimpleModule.d.ts
 export const makeTraySimpleModule = (window as any).CollboardSdk.makeTraySimpleModule;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/makers/makeUserInterfaceModule.d.ts
+export const makeUserInterfaceModule = (window as any).CollboardSdk.makeUserInterfaceModule;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/ModuleStore/Syncers/ArtSupportSyncer.d.ts
@@ -983,6 +988,14 @@ export const IBaseMessage = (window as any).CollboardSdk.IBaseMessage;
 export const UsercontentSystem = (window as any).CollboardSdk.UsercontentSystem;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/UserInterfaceSystem/0-UserInterfaceSystem.d.ts
+export const UserInterfaceSystem = (window as any).CollboardSdk.UserInterfaceSystem;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/50-systems/UserInterfaceSystem/UserInterfaceElementPlace.d.ts
+export const UserInterfaceElementPlace = (window as any).CollboardSdk.UserInterfaceElementPlace;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/50-systems/VoiceSystem/0-VoiceSystem.d.ts
 export const VoiceSystem = (window as any).CollboardSdk.VoiceSystem;
 
@@ -1005,7 +1018,7 @@ export const AbstractPlacedArt = (window as any).CollboardSdk.AbstractPlacedArt;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/25-AbstractUIArt.d.ts
-export const AbstractUIArt = (window as any).CollboardSdk.AbstractUIArt;
+export const AbstractUserInterfaceArt = (window as any).CollboardSdk.AbstractUserInterfaceArt;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/71-arts/26-Abstract2dArt.d.ts

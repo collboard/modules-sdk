@@ -9,7 +9,7 @@ import { IMessage } from '../../TranslationsSystem/interfaces/IMessage';
 export declare type IWelcomeTemplates = Array<{
     title: string_translate_name_not_normalized | IMessage;
     image: string_url_image;
-    modulesOn?: string | string[];
-    modulesOff?: string | string[];
+    modulesOn?: string | Array<string>;
+    modulesOff?: string | Array<string>;
     importAsMaterialize?: string_url;
 }>;

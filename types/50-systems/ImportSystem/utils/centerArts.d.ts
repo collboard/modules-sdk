@@ -16,6 +16,6 @@ export declare function centerArts({
     arts,
     boardPosition,
 }: {
-    arts: AbstractPlacedArt[];
+    arts: Array<AbstractPlacedArt>;
     boardPosition: IVectorData;
 }): void;

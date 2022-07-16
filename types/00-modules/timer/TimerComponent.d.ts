@@ -6,11 +6,6 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="node" />
 import React from 'react';
-/**
- *
- * Note: In future this file will we in independent repository as external module.
- *
- */
 export interface ITimerComponentProps {
     millis: number;
     until?: number;
@@ -29,3 +24,8 @@ export declare class TimerComponent extends React.Component<ITimerComponentProps
     render(): JSX.Element;
 }
 export {};
+/**
+ * Note: In future this file will we in independent repository as external module.
+ * TODO: [🏛️] Convert Class components to Functional (with hooks).
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

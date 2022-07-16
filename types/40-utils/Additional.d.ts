@@ -9,6 +9,6 @@
  */
 export declare class Additional<TKey, TValue> {
     private lib;
-    constructor(keys: TKey[], valueCallback: (key: TKey) => TValue);
+    constructor(keys: Array<TKey>, valueCallback: (key: TKey) => TValue);
     get(key: TKey): TValue;
 }

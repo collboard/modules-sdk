@@ -14,10 +14,12 @@ interface ISelfUpdateContentComponentProps {
 /**
  * Utility for mounting self-updating content
  *
+ * @deprecated [📠] Use hook instead
  * @collboard-modules-sdk
  */
 export declare function SelfUpdateContentComponent({ content }: ISelfUpdateContentComponentProps): JSX.Element;
 export {};
 /**
  * Note: Maybe this behavior can be achieved more elegantly some React API/hook - if yes please do it!
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */

@@ -21,7 +21,7 @@ export interface IStorageSyncerOptions {
  * StorageSyncer will install every module what is declared into the storage
  * When the module is redeclared, module is installed and uninstalled
  *
- * TODO: Maybe only installer because here we do not use any advantages of the syncer
+ * TODO: Probably only installer because here we do not use any advantages of the syncer
  *
  * @private
  * @collboard-system
@@ -40,11 +40,11 @@ export declare abstract class StorageSyncer
     /**
      * @proxy
      */
-    getAllModules(): IModuleDefinition[];
+    getAllModules(): Array<IModuleDefinition>;
     /**
      * @proxy
      */
-    observeAllModules(): Observable<IModuleDefinition[]>;
+    observeAllModules(): Observable<Array<IModuleDefinition>>;
     declareModule(module: IModule): Promise<void>;
     moduleActivate(moduleManifest: IModuleManifest): Promise<void>;
     moduleDeactivate(moduleManifest: IModuleManifest): Promise<void>;

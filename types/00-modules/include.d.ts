@@ -45,7 +45,6 @@ import './../72-tools/ShapeTool';
 import './../72-tools/TextTool';
 import './../72-tools/ZoomTool';
 import './../74-routes+persisting/ToolbarsPersisting';
-import './../74-routes+persisting/TransformationPersisting';
 import './background/gridModules/declaration';
 import './background/SpaceBackgroundModule';
 import './colors/Color2AttributeModule';

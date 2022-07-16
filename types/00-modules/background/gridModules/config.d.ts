@@ -7,7 +7,7 @@
 import { IGridConfig } from './IGridConfig';
 export declare const GRID_SIZE = 30;
 export declare const OPACITY = 0.07;
-export declare const GRIDS: IGridConfig[];
+export declare const GRIDS: Array<IGridConfig>;
 /**
  * TODO: Make one bacgrounf tile same as SCALE_PIXELS.field
  * TODO: Also make fractal-like patterns and maybe use dot one as new default
