@@ -37,5 +37,5 @@ export declare class LoadingArt extends Abstract2dArt {
 }
 /**
  * TODO: @roseckyj maybe look at this and fix design flaws
- * Note: number is just a file prefix to feep it on the top of file list.
+ * Note: Number is just a file prefix to feep it on the top of file list.
  */

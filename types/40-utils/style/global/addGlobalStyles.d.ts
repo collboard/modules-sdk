@@ -16,6 +16,6 @@ import { string_html } from '../../typeAliases';
  */
 export declare function addGlobalStyles(html: string_html): Promise<string_html>;
 /**
- * TODO: Maybe use FunctionCache:
+ * TODO: Probably use FunctionCache:
  *     > const parseGlobalStylesCached = new FunctionCache<undefined, ICss>(parseGlobalStyles);
  */

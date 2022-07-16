@@ -29,5 +29,5 @@ export declare class HTMLArt extends Abstract2dBoxArt {
     renderBox(): JSX.Element;
 }
 /**
- * Note: number is just a file prefix to feep it on the top of file list.
+ * Note: Number is just a file prefix to feep it on the top of file list.
  */

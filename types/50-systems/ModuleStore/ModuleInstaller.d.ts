@@ -20,7 +20,7 @@ import { ModuleStatus } from './ModuleStatus';
 export declare class ModuleInstaller extends Destroyable implements IInstaller, IDestroyable {
     private readonly modulesStorage;
     private readonly systems;
-    installations: ModuleInstallation[];
+    installations: Array<ModuleInstallation>;
     constructor(modulesStorage: IModulesStorageWeak, systems: ISystemsExtended);
     /**
      *

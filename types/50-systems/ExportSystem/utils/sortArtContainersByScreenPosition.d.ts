@@ -11,7 +11,7 @@ import { IArtContainer } from '../interfaces/IFileExportSupporterOptions';
  *
  * @collboard-modules-sdk
  */
-export declare function sortArtContainersByScreenPosition(artContainers: IArtContainer[]): IArtContainer[];
+export declare function sortArtContainersByScreenPosition(artContainers: Array<IArtContainer>): Array<IArtContainer>;
 /**
  * [🐽] TODO: Sorting of IArtContainers
  */

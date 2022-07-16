@@ -11,8 +11,8 @@ import { ISkin } from './ISkin';
 import { ColorScheme } from './utils/watchPreferedColorScheme';
 /**
  * StyleSystem can register and manage additional CSS styles for modules. It can scope CSS so it will do not affect others.
- * TODO: Maybe use it for core and systems.
- * Note: ExtraJSXSystem is for JSX (HTML) vs. StyleSystem is for CSS styles
+ *
+ * Note: UserInterfaceSystem is for JSX (HTML) vs. StyleSystem is for CSS styles
  *
  * @collboard-system
  */
@@ -20,7 +20,7 @@ export declare class StyleSystem extends AbstractSystem {
     protected init(): Promise<void>;
     private styleForEmbedRegistration;
     private initEmbedStyle;
-    private globalStyles;
+    private readonly globalStyles;
     /**
      *
      * TODO: Enable object-like styles + styled components in future
@@ -47,3 +47,7 @@ export declare class StyleSystem extends AbstractSystem {
     registerSkin({ skin }: { skin: ISkin; priority?: number }): import('destroyable').Registration;
     destroy(): Promise<void>;
 }
+/**
+ * TODO: Probably allow to hotreload skin
+ * TODO: Probably use it for core and systems.
+ */

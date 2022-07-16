@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
 import { ILoaderProps } from './utils/Loader/Loader';
-export declare type ICollboardUnloadedProps = React.PropsWithChildren<
+export declare type IRootComponentUnloadedProps = React.PropsWithChildren<
     | {
           isLoading: false;
       }
@@ -14,4 +14,7 @@ export declare type ICollboardUnloadedProps = React.PropsWithChildren<
           isLoading: true;
       } & ILoaderProps)
 >;
-export declare function CollboardUnloaded(props: ICollboardUnloadedProps): JSX.Element;
+export declare function RootComponentUnloaded(props: IRootComponentUnloadedProps): JSX.Element;
+/**
+ * TODO: [🏊‍♂️] Better naming and distinction of Collboard-specific components vs utils components
+ */

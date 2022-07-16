@@ -13,3 +13,6 @@ interface IAddModalComponentProps {
 }
 export declare function AddModalComponent({ importSystem, routingSystem }: IAddModalComponentProps): JSX.Element;
 export {};
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

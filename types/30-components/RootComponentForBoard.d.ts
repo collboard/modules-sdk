@@ -5,13 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { AppState } from '../../50-systems/AppState/0-AppState';
-import { IArtVersioningSystem } from '../../50-systems/ArtVersionSystem/IArtVersionSystem';
-import { ArtSerializer } from '../../CollboardApp';
-interface IArtsListProps {
-    appState: AppState;
-    materialArtVersioningSystem: IArtVersioningSystem;
-    artSerializer: ArtSerializer;
-}
-export declare function ArtsList(props: IArtsListProps): JSX.Element;
-export {};
+export declare function RootComponentForBoard(): JSX.Element;
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ * TODO: [🏊‍♂️] Better naming and distinction of Collboard-specific components vs utils components
+ */

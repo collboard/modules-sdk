@@ -11,7 +11,7 @@ export interface IGetMyBoardsRequest extends IRequest {
 }
 export interface IGetMyBoardsResponse extends IResponse {
     date: Date;
-    data: IBoardInfo[];
+    data: Array<IBoardInfo>;
 }
 export interface IBoardInfo {
     uriId: string_uri_part;

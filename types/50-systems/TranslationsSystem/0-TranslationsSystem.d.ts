@@ -33,10 +33,10 @@ export declare class TranslationsSystem extends AbstractSystem implements ITrans
     private readyResolve;
     constructor(systems: ISystemsExtended);
     protected init(): Promise<void>;
-    get translateMessages(): ITranslateMessage[];
+    get translateMessages(): Array<ITranslateMessage>;
     get language(): string_translate_language;
     set language(language: string_translate_language);
-    pushMessages(...translateMessages: ITranslateMessage[]): void;
+    pushMessages(...translateMessages: Array<ITranslateMessage>): void;
     private missingTranslation;
     /**
      * Translate message
@@ -60,9 +60,6 @@ export declare class TranslationsSystem extends AbstractSystem implements ITrans
     ) => JSX.Element;
     /**
      * Creates context for providing translator
-     *
-     * You want to probbably use <Translate...
-     * Use always and only for wrpaiing content in ReactDOM.render(<translationsSystem.WithTranslateContext>...</translationsSystem.WithTranslateContext>)
      */
     readonly WithTranslateContext: ({ children }: React.PropsWithChildren<{}>) => JSX.Element;
     private _Translate;

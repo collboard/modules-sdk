@@ -42,7 +42,7 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      *     return ["color", "size"];
      * }
      */
-    abstract get acceptedAttributes(): string_attribute[];
+    abstract get acceptedAttributes(): Array<string_attribute>;
     /**
      * Opacity of an art
      *

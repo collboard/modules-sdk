@@ -26,8 +26,8 @@ export interface IModulesStorageWeak {
  *       Modules store   - has full logic of mudules domain
  */
 export interface IModulesStorageStrong extends IModulesStorageWeak, IDestroyable {
-    getAllModules(): IModuleDefinition[];
-    observeAllModules(): Observable<IModuleDefinition[]>;
+    getAllModules(): Array<IModuleDefinition>;
+    observeAllModules(): Observable<Array<IModuleDefinition>>;
     declareModule(module: IModule): Promise<void>;
 }
 /**

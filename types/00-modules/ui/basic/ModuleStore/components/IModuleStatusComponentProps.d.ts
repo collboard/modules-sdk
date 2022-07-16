@@ -16,3 +16,6 @@ export interface IModuleStatusComponentProps {
     businessSystem: BusinessSystem;
     usageLicenseInfo: IUsageLicenseInfo;
 }
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

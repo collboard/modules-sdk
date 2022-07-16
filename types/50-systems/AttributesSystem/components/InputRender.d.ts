@@ -4,21 +4,14 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import React from 'react';
-import { RequireExactlyOne } from 'type-fest';
-import { IWrappedValue } from '../0-AttributesSystem';
+/// <reference types="react" />
+import { BehaviorSubject } from 'rxjs';
 import { attribute_value } from '../IAttribute';
 import { IAttributeInputRender } from '../IAttributeInputRender';
-declare type IInputRenderProps = RequireExactlyOne<
-    {
-        inputRender: IAttributeInputRender<attribute_value>;
-        defaultValue?: attribute_value;
-        wrappedValue?: IWrappedValue;
-        onChange: (value: attribute_value) => void;
-    },
-    'defaultValue' | 'wrappedValue'
->;
-export declare class InputRender extends React.Component<IInputRenderProps> {
-    render(): JSX.Element;
+interface IInputRenderProps {
+    inputRender: IAttributeInputRender<attribute_value>;
+    value: BehaviorSubject<attribute_value>;
+    onChange: (value: attribute_value) => void;
 }
+export declare function InputRender(props: IInputRenderProps): JSX.Element;
 export {};

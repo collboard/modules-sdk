@@ -7,6 +7,7 @@
 /// <reference types="react" />
 import { IVectorData, Vector } from 'xyzt';
 import { Abstract2dArt } from '../../71-arts/26-Abstract2dArt';
+import { ITimerAndStopwatchControls } from './TimerControlsAttributeModule';
 export declare class StopwatchArt extends Abstract2dArt {
     static serializeName: string;
     static manifest: {
@@ -20,13 +21,13 @@ export declare class StopwatchArt extends Abstract2dArt {
     start(): void;
     stop(): void;
     reset(): void;
-    set stopwatchControls(operation: number);
-    get stopwatchControls(): number;
+    set stopwatchControls(value: ITimerAndStopwatchControls);
+    get stopwatchControls(): ITimerAndStopwatchControls;
     get acceptedAttributes(): string[];
     get topLeftCorner(): IVectorData;
     get bottomRightCorner(): Vector;
     render(): JSX.Element;
 }
 /**
- * Note: number is just a file prefix to feep it on the top of file list.
+ * Note: In future this file will we in independent repository as external module.
  */

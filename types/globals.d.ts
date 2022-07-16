@@ -14,9 +14,9 @@ declare global {
          * @param thisArg An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.
          */
         filterAsync(
-            predicate: (value: T, index: number, array: T[]) => Promisable<unknown>,
+            predicate: (value: T, index: number, array: Array<T>) => Promisable<unknown>,
             thisArg?: any,
-        ): Promise<T[]>;
+        ): Promise<Array<T>>;
         /**
          * Variant of Array.prototype.filter with simple predicate that just tests for item not being null
          * Returns the elements of an array that is not null
@@ -28,15 +28,18 @@ declare global {
          * @param callbackfn A function that accepts up to three arguments. The map method calls the callbackfn function one time for each element in the array.
          * @param thisArg An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
          */
-        mapAsync<U>(predicate: (value: T, index: number, array: T[]) => Promisable<U>, thisArg?: any): Promise<U[]>;
+        mapAsync<U>(
+            predicate: (value: T, index: number, array: Array<T>) => Promisable<U>,
+            thisArg?: any,
+        ): Promise<Array<U>>;
         /**
          * Async version of Array.prototype.forEach
          */
-        forEachAsyncSerial(callbackfn: (value: T, index: number, array: T[]) => Promisable<void>): Promise<void>;
+        forEachAsyncSerial(callbackfn: (value: T, index: number, array: Array<T>) => Promisable<void>): Promise<void>;
         /**
          * Async version of Array.prototype.forEach
          */
-        forEachAsyncParallel(callbackfn: (value: T, index: number, array: T[]) => Promisable<void>): Promise<void>;
+        forEachAsyncParallel(callbackfn: (value: T, index: number, array: Array<T>) => Promisable<void>): Promise<void>;
     }
 }
 /**

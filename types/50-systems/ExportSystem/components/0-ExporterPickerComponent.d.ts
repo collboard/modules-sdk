@@ -5,25 +5,22 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { ExportSystem } from '../0-ExportSystem';
 import { IExportScope } from '../interfaces/IExportScope';
 import { IPreparedFileExporting } from '../interfaces/IPreparedFileExport';
 interface IExporterPickerComponentProps {
-    exportSystem: ExportSystem;
     scope: IExportScope;
     value: IPreparedFileExporting | null;
     onChange(preparedFileExporting: IPreparedFileExporting): void;
 }
 /**
+ * Picker for exporter (=module =mime type) to use for exporting
+ * Note: Need to be used inside of a module
+ *
  * @collboard-modules-sdk
  */
-export declare function ExporterPickerComponent({
-    exportSystem,
-    scope,
-    value,
-    onChange,
-}: IExporterPickerComponentProps): JSX.Element;
+export declare function ExporterPickerComponent({ scope, value, onChange }: IExporterPickerComponentProps): JSX.Element;
 export {};
 /**
  * TODO: [1] Listen for new exporters
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */

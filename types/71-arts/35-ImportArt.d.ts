@@ -50,5 +50,5 @@ export declare class ImportArt extends Abstract2dArt {
     render(isSelected: boolean): JSX.Element;
 }
 /**
- * Note: number is just a file prefix to feep it on the top of file list.
+ * Note: Number is just a file prefix to feep it on the top of file list.
  */

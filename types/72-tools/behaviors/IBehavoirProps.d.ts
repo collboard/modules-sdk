@@ -40,3 +40,6 @@ export interface IBehavoirProps {
     registerAdditionalSubscription: (subscription: ISubscription) => void;
     touch: Touch;
 }
+/**
+ * TODO: [🎂] Probably remove systems from IBehavoirProps and use useSystems (or similar mechanism) instead
+ */

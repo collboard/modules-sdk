@@ -6,13 +6,13 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IVectorData, Vector } from 'xyzt';
 /**
- * @deprecated this should be using xyzt BoundingBox
+ * @deprecated this should be using LIB xyzt boundingBox
  */
 export declare type square = {
     topLeftCorner: Vector;
     bottomRightCorner: Vector;
 };
 /**
- * @deprecated this should be using xyzt BoundingBox
+ * @deprecated this should be using LIB xyzt boundingBox
  */
 export declare function pointsToSquare(point1: IVectorData, point2: IVectorData): square;

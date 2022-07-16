@@ -8,22 +8,22 @@ import { ILogger, ISubLogger } from './ILogger';
 interface IRecordLoggerLog {
     type: 'INFO' | 'WARN' | 'ERROR' | 'TRACE';
     message: any;
-    optionalParams: any[];
+    optionalParams: Array<any>;
 }
 export declare class RecordLogger implements ILogger, ISubLogger {
     private _logs;
-    get logsStructured(): IRecordLoggerLog[];
+    get logsStructured(): Array<IRecordLoggerLog>;
     get logs(): string;
-    info(message?: any, ...optionalParams: any[]): this;
-    warn(message?: any, ...optionalParams: any[]): this;
-    error(message?: any, ...optionalParams: any[]): this;
-    trace(...data: any[]): this;
+    info(message?: any, ...optionalParams: Array<any>): this;
+    warn(message?: any, ...optionalParams: Array<any>): this;
+    error(message?: any, ...optionalParams: Array<any>): this;
+    trace(...data: Array<any>): this;
     end(): void;
-    group(groupName?: string, ...optionalParams: any[]): ISubLogger;
-    groupCollapsed(groupName?: string, ...optionalParams: any[]): ISubLogger;
+    group(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
+    groupCollapsed(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
 }
 export {};
 /**
- * TODO: Maybe rename logs to logsText and logsStructured to logs
+ * TODO: Probably rename logs to logsText and logsStructured to logs
  * TODO: Better support for the groups
  */

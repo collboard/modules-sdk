@@ -6,8 +6,6 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { TouchController } from 'touchcontroller';
 import { ArtSerializer } from '../../CollboardApp';
-import { ExportSystem } from '../ExportSystem/0-ExportSystem';
-import { ImportSystem } from '../ImportSystem/0-ImportSystem';
 import { ApiClient } from './../ApiClient/0-ApiClient';
 import { BoardApiClient } from './../ApiClient/BoardApiClient';
 import { AppState } from './../AppState/0-AppState';
@@ -19,7 +17,7 @@ import { ClosePreventionSystem } from './../ClosePreventionSystem/0-ClosePrevent
 import { CollSpace } from './../CollSpace/0-CollSpace';
 import { ControlSystem } from './../ControlSystem/ControlSystem';
 import { CreateSystem } from './../CreateSystem/0-CreateSystem';
-import { ExtraJsxSystem } from './../ExtraJsxSystem/0-ExtraJsxSystem';
+import { ExportSystem } from './../ExportSystem/0-ExportSystem';
 import { FilepickSystem } from './../FilepickSystem/0-FilepickSystem';
 import { FocusSystem } from './../FocusSystem/0-FocusSystem';
 import { FractalSystem } from './../FractalSystem/0-FractalSystem';
@@ -27,6 +25,7 @@ import { GamificationSystem } from './../GamificationSystem/0-GamificationSystem
 import { GenerateSystem } from './../GenerateSystem/0-GenerateSystem';
 import { HintSystem } from './../HintSystem/0-HintSystem';
 import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
+import { ImportSystem } from './../ImportSystem/0-ImportSystem';
 import { LicenseSystem } from './../LicenseSystem/0-LicenseSystem';
 import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
@@ -44,22 +43,44 @@ import { StyleSystem } from './../StyleSystem/0-StyleSystem';
 import { ToolbarSystem } from './../ToolbarSystem/0-ToolbarSystem';
 import { TranslationsSystem } from './../TranslationsSystem/0-TranslationsSystem';
 import { UsercontentSystem } from './../UsercontentSystem/0-UsercontentSystem';
+import { UserInterfaceSystem } from './../UserInterfaceSystem/0-UserInterfaceSystem';
 import { VoiceSystem } from './../VoiceSystem/0-VoiceSystem';
 import { ISystemsResolved } from './ISystemsResolved';
+/**
+ * Keys of the ISystems that are methods not actual systems
+ */
+export declare type ISystemsMethods = 'request' | 'use';
 /**
  * Systems do everything in Collboard.
  * They can comunicate between or modules can do things through a systems
  *
  * @collboard-modules-sdk
  */
-export declare type ISystems = Pick<ISystemsExtended, 'request'>;
+export declare type ISystems = Pick<ISystemsExtended, ISystemsMethods>;
 /**
  * TODO: Remove this temporary solution when we merge feature/requesting-systems-pure
  */
 export interface ISystemsExtended {
-    request<T extends keyof Omit<ISystemsExtended, 'request'>>(
-        ...requestedSystemsNames: T[]
+    /**
+     * Request to use systems in the module
+     *
+     * @param requestedSystemsNames Names of requested systems
+     * @returns Promise of all record object which contains all requested systems which will be resolved after permissions are granted
+     */
+    request<T extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+        ...requestedSystemsNames: Array<T>
     ): Promise<Pick<ISystemsResolved, T>>;
+    /**
+     * Use previously requested systems
+     *
+     * Note: You need first to request the systems you want to use
+     *
+     * @param requestedSystemsNames Names of requested systems
+     * @returns record object which contains all requested systems
+     */
+    use<T extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+        ...requestedSystemsNames: Array<T>
+    ): Pick<ISystemsResolved, T>;
     /**
      * Generator: Systems
      * Omit: Serializer
@@ -78,8 +99,6 @@ export interface ISystemsExtended {
     readonly controlSystem: Promise<ControlSystem>;
     readonly createSystem: Promise<CreateSystem>;
     readonly exportSystem: Promise<ExportSystem>;
-    readonly importSystem: Promise<ImportSystem>;
-    readonly extraJsxSystem: Promise<ExtraJsxSystem>;
     readonly filepickSystem: Promise<FilepickSystem>;
     readonly focusSystem: Promise<FocusSystem>;
     readonly fractalSystem: Promise<FractalSystem>;
@@ -87,6 +106,7 @@ export interface ISystemsExtended {
     readonly generateSystem: Promise<GenerateSystem>;
     readonly hintSystem: Promise<HintSystem>;
     readonly identitySystem: Promise<IdentitySystem>;
+    readonly importSystem: Promise<ImportSystem>;
     readonly licenseSystem: Promise<LicenseSystem>;
     readonly moduleStore: Promise<ModuleStore>;
     readonly artSupportSyncer: Promise<ArtSupportSyncer>;
@@ -104,7 +124,11 @@ export interface ISystemsExtended {
     readonly toolbarSystem: Promise<ToolbarSystem>;
     readonly translationsSystem: Promise<TranslationsSystem>;
     readonly usercontentSystem: Promise<UsercontentSystem>;
+    readonly userInterfaceSystem: Promise<UserInterfaceSystem>;
     readonly voiceSystem: Promise<VoiceSystem>;
     readonly touchController: Promise<TouchController>;
     readonly artSerializer: Promise<ArtSerializer>;
 }
+/**
+ * TODO: Allow partial load of systems - some systems are resolved, some are not (and waiting for example for the users permission or initializing)
+ */

@@ -10,3 +10,6 @@ export declare const SCALER_OUTLINE_OFFSET = 5;
  * @collboard-modules-sdk
  */
 export declare function ArtScaler(): JSX.Element;
+/**
+ * TODO: [🏊‍♂️] Better naming and distinction of Collboard-specific components vs utils components
+ */

@@ -19,13 +19,13 @@ export interface INotification {
      */
     readonly tag: string;
     readonly module?: string_module_name;
-    readonly actions?: INotificationAction[];
+    readonly actions?: Array<INotificationAction>;
     readonly title?: IMessage;
     readonly subtitle?: IMessage;
     readonly body?: IMessage;
     readonly type?: 'info' | 'warning' | 'error' | 'success';
     readonly priority?: number;
-    readonly places?: NotificationPlace[];
+    readonly places?: Array<NotificationPlace>;
     readonly canBeClosed?: boolean;
     readonly onClick?: INotificationOnClickHandler;
     readonly href?: string_url;

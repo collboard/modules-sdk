@@ -5,23 +5,18 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { AppState } from '../../AppState/0-AppState';
-import { TranslationsSystem } from '../../TranslationsSystem/0-TranslationsSystem';
-import { ExportSystem } from '../0-ExportSystem';
 import { IPreparedFileExporting } from '../interfaces/IPreparedFileExport';
 interface IExportPrepareComponentProps {
-    appState: AppState;
-    exportSystem: ExportSystem;
-    translationsSystem: TranslationsSystem;
     onChange(fileExporting: IPreparedFileExporting | null): void;
 }
 /**
+ * Compine pickers and options for export
+ * Note: Need to be used inside of a module
+ *
  * @collboard-modules-sdk
  */
-export declare function ExportPrepareComponent({
-    exportSystem,
-    translationsSystem,
-    appState,
-    onChange,
-}: IExportPrepareComponentProps): JSX.Element;
+export declare function ExportPrepareComponent({ onChange }: IExportPrepareComponentProps): JSX.Element;
 export {};
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

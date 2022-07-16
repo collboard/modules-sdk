@@ -15,7 +15,7 @@ import { IModuleSignature } from './IModuleSignature';
 import { IFreshMaterialOperation } from './IOperation';
 import { IPermissions } from './IPermissions';
 /**
- * TODO: in interface use only interfaces - make interface (or generic) for Commit, AbstractArt and CornerstoneArt
+ * TODO: In interface use only interfaces - make interface (or generic) for Commit, AbstractArt and CornerstoneArt
  */
 export interface IArtVersioningSystem extends IDestroyable {
     readonly moduleSignature: IModuleSignature;
@@ -25,23 +25,23 @@ export interface IArtVersioningSystem extends IDestroyable {
     readonly clientId: string_uuid;
     readonly lastCommit: ICommitData | null;
     readonly lastCommitId: number;
-    readonly commits: ICommitData[];
-    readonly commitsPlaced: ICommitData[];
-    readonly arts: AbstractArt[];
-    readonly artsPlaced: AbstractArt[];
+    readonly commits: Array<ICommitData>;
+    readonly commitsPlaced: Array<ICommitData>;
+    readonly arts: Array<AbstractArt>;
+    readonly artsPlaced: Array<AbstractArt>;
     readonly cornerstoneArts: BehaviorSubject<CornerstoneArt>;
-    readonly sortCommitsByOperationId: ICommitData[][];
+    readonly sortCommitsByOperationId: Array<Array<ICommitData>>;
     findPreviousCommit(commit: ICommitData): ICommitData | null;
-    findNextCommits(commit: ICommitData): ICommitData[];
+    findNextCommits(commit: ICommitData): Array<ICommitData>;
     findNextCommit(commit: ICommitData): ICommitData | null;
     hasNextCommits(commit: ICommitData): boolean;
     findOriginCommit(commit: ICommitData): ICommitData;
     isLastInItsTree(commit: ICommitData): boolean;
     findLastCommitOfArt(art: AbstractArt): ICommitData | null;
     findCommitById(commitId: string_uuid | null | undefined): ICommitData | null;
-    findCommitsByOperationId(operationId: string_uuid): ICommitData[];
+    findCommitsByOperationId(operationId: string_uuid): Array<ICommitData>;
     signAs(moduleSignature: IModuleSignature): IArtVersioningSystem;
     createOperation(operationName: string): IFreshMaterialOperation;
     setCommitWasPersisted(commitId: string_uuid, id: number): void;
-    _USE_ONLY_INSIDE_CORE_pushCommit(...commits: ICommitData[]): Promise<void>;
+    _USE_ONLY_INSIDE_CORE_pushCommit(...commits: Array<ICommitData>): Promise<void>;
 }

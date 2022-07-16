@@ -7,7 +7,7 @@
 /// <reference types="react" />
 import { IVectorData } from 'xyzt';
 interface IFloatingMenuProps {
-    children: JSX.Element[] | JSX.Element;
+    children: Array<JSX.Element> | JSX.Element;
     className?: string;
     screenPosition: IVectorData;
 }

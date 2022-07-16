@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { CSSProperties } from 'react';
 export declare function transform(
-    transformations: string[],
+    transformations: Array<string>,
     origin?: {
         x: number;
         y: number;

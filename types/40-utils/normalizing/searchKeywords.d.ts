@@ -11,3 +11,6 @@ import { Keywords } from '../typeAliases';
  * @collboard-modules-sdk
  */
 export declare function searchKeywords(haystack: Keywords, needle: Keywords): boolean;
+/**
+ * TODO: [👚] Put this into LIB n12
+ */

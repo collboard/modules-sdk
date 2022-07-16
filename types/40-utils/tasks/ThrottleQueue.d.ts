@@ -25,8 +25,8 @@ export interface IThrottleQueueOptions {
  * _________🍋🍋🍋_________🍇🍇🍇_🍉_🍒🍒_🍈🍈🍈
  *
  *
- * TODO: error handling
- * TODO: maybe debouncing
+ * TODO: Error handling
+ * TODO: Probably debouncing
  * TODO: timeouts
  *
  * @collboard-modules-sdk

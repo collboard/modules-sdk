@@ -8,3 +8,6 @@
  * @collboard-modules-sdk
  */
 export declare function removeDiacritics(input: string): string;
+/**
+ * TODO: [👚] Put this into LIB n12
+ */

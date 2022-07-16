@@ -11,5 +11,5 @@ import { IModuleManifest } from './IModuleManifest';
  * @collboard-modules-sdk
  */
 export interface IModuleStoreConnectorSearchResult {
-    manifests: IModuleManifest[];
+    manifests: Array<IModuleManifest>;
 }

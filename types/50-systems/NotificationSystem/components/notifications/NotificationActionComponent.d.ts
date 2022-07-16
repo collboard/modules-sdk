@@ -16,3 +16,6 @@ export declare function NotificationActionComponent({
     action: { title, type, onClick, href },
 }: INotificationActionComponentProps): JSX.Element;
 export {};
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

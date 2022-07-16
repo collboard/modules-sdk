@@ -40,5 +40,5 @@ export declare class ShapeArt extends Abstract2dArt {
     private renderShape;
 }
 /**
- * Note: number is just a file prefix to feep it on the top of file list.
+ * Note: Number is just a file prefix to feep it on the top of file list.
  */

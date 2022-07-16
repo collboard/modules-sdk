@@ -13,5 +13,5 @@
  */
 export declare function requireValue<T>(value: T | undefined, errorMessage?: string): T;
 /**
- * TODO: Use across the project instead of !
+ * TODO: Use across the repositiory instead of !
  */

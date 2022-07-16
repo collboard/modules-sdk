@@ -7,6 +7,7 @@
 import { IVectorData, Vector } from 'xyzt';
 /**
  *
+ * @deprecated Remove 3D to external modules
  * @collboard-modules-sdk
  */
 export declare function create3dRotation(vector: IVectorData): Vector;

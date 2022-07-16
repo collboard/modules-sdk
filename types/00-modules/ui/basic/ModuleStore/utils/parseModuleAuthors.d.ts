@@ -9,4 +9,4 @@ import { IModuleManifest } from '../../../../../50-systems/ModuleStore/interface
 export declare function parseModuleAuthors({
     author: authorRaw,
     contributors: contributorsRaw,
-}: Pick<IModuleManifest, 'author' | 'contributors'>): IPersonProfile[];
+}: Pick<IModuleManifest, 'author' | 'contributors'>): Array<IPersonProfile>;

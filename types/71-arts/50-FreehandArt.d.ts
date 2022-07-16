@@ -16,14 +16,14 @@ export declare class FreehandArt extends Abstract2dArt {
     static manifest: {
         name: string;
     };
-    frames: TouchFrame[];
+    frames: Array<TouchFrame>;
     color: string;
     weight: number;
     private minX;
     private maxX;
     private minY;
     private maxY;
-    constructor(frames: TouchFrame[], color: string, weight: number);
+    constructor(frames: Array<TouchFrame>, color: string, weight: number);
     private get path();
     get topLeftCorner(): Vector;
     get bottomRightCorner(): Vector;
@@ -36,5 +36,6 @@ export declare class FreehandArt extends Abstract2dArt {
 }
 /**
  * TODO: Instead of x/y pairs use Vector
- * Note: number is just a file prefix to feep it on the top of file list.
+ * TODO: [✏️] Fix> react-dom.development.js:630 Error: <svg> attribute width: Expected length, "NaN".
+ * Note: Number is just a file prefix to feep it on the top of file list.
  */

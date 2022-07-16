@@ -18,5 +18,5 @@ import { string_module_name } from './typeAliases';
  */
 export declare function parseModuleName(moduleName: string_module_name): {
     scope: string;
-    name: string[];
+    name: Array<string>;
 };

@@ -34,22 +34,22 @@ export declare class ExportSystem extends AbstractSystem {
     /**
      * Get all possible exports frames
      */
-    getFrames(): Promise<IFramable[]>;
+    getFrames(): Promise<Array<IFramable>>;
     /**
      * Get all arts (but non frames)
      */
-    getArts(): Promise<Abstract2dArt[]>;
+    getArts(): Promise<Array<Abstract2dArt>>;
     private forEssentialFileSupporters;
     /**
      * Prepares export from the Collboard
      *
      * Note: exportFiles (=do all heavy stuff) vs exportFilesPrepare (=only tells which exports are possible)
      */
-    exportFilesPrepare(options: IExportFileOptions): Promise<IPreparedFileExport[]>;
+    exportFilesPrepare(options: IExportFileOptions): Promise<Array<IPreparedFileExport>>;
     /**
      * Makes export from the Collboard
      *
      * Note: exportFiles (=do all heavy stuff) vs exportFilesPrepare (=only tells which exports are possible)
      */
-    exportFiles(options: IExportFileOptions): Promise<File[]>;
+    exportFiles(options: IExportFileOptions): Promise<Array<File>>;
 }

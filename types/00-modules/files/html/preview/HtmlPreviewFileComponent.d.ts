@@ -5,11 +5,17 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { ExportSystem } from '../../../../50-systems/ExportSystem/0-ExportSystem';
 import { IExportScope } from '../../../../50-systems/ExportSystem/interfaces/IExportScope';
 interface IHtmlPreviewFileComponentProps {
-    exportSystem: ExportSystem;
     scope: IExportScope;
 }
-export declare function HtmlPreviewFileComponent({ exportSystem, scope }: IHtmlPreviewFileComponentProps): JSX.Element;
+/**
+ * Note: Need to be used inside of a module
+ *
+ * @not-collboard-modules-sdk too specific that is used only in @collboard/html
+ */
+export declare function HtmlPreviewFileComponent({ scope }: IHtmlPreviewFileComponentProps): JSX.Element;
 export {};
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

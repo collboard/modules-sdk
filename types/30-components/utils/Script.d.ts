@@ -16,6 +16,6 @@
 export declare function Script({ children }: { children: string }): JSX.Element;
 /**
  * TODO: Use instead of every <script> in project
- * TODO: src
+ * TODO: Src
  * TODO: isAsync, isDeferred,...
  */

@@ -11,4 +11,4 @@
  *
  * @collboard-modules-sdk
  */
-export declare function flatternArray<T>(array: T[][]): T[];
+export declare function flatternArray<T>(array: Array<Array<T>>): Array<T>;

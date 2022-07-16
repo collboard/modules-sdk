@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { BehaviorSubject } from 'rxjs';
 import { SetOptional } from 'type-fest';
 import { AbstractSystem } from '../AbstractSystem';
 import { INotification } from './INotification';
@@ -13,7 +14,7 @@ import { NotificationRegistration } from './NotificationRegistration';
  * @collboard-system
  */
 export declare class NotificationSystem extends AbstractSystem {
-    notifications: INotification[];
+    readonly notifications: BehaviorSubject<INotification[]>;
     protected init(): Promise<void>;
     publish(notification: SetOptional<INotification, 'tag'>): NotificationRegistration;
     /**

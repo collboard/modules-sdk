@@ -5,21 +5,13 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { AppState } from '../../../../50-systems/AppState/0-AppState';
-import { ExportSystem } from '../../../../50-systems/ExportSystem/0-ExportSystem';
-import { TranslationsSystem } from '../../../../50-systems/TranslationsSystem/0-TranslationsSystem';
-interface IHtmlPreviewComponentProps {
-    appState: AppState;
-    exportSystem: ExportSystem;
-    translationsSystem: TranslationsSystem;
-}
 /**
  *
- * @not-collboard-modules-sdk
+ * Note: Need to be used inside of a module
+ *
+ * @not-collboard-modules-sdk too specific that is used only in @collboard/html
  */
-export declare function HtmlPreviewComponent({
-    exportSystem,
-    appState,
-    translationsSystem,
-}: IHtmlPreviewComponentProps): JSX.Element;
-export {};
+export declare function HtmlPreviewComponent(): JSX.Element;
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

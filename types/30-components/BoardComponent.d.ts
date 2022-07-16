@@ -4,12 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import React from 'react';
-import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
-interface IBoardComponentProps {
-    systems: ISystemsExtended;
-}
-export declare class BoardComponent extends React.Component<IBoardComponentProps> {
-    render(): JSX.Element;
-}
-export {};
+/// <reference types="react" />
+export declare function BoardComponent(): JSX.Element;
+/**
+ * TODO: [🏛️] Convert Class components to Functional (with hooks).
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ * TODO: [🏊‍♂️] Better naming and distinction of Collboard-specific components vs utils components
+ */

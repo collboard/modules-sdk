@@ -8,4 +8,4 @@
  * Are two arrays equal?
  * @collboard-modules-sdk
  */
-export declare function isEqualArray<T>(a: T[], b: T[], isEqualItem?: (a: T, b: T) => boolean): boolean;
+export declare function isEqualArray<T>(a: Array<T>, b: Array<T>, isEqualItem?: (a: T, b: T) => boolean): boolean;

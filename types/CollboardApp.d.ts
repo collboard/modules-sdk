@@ -29,6 +29,7 @@ export declare class CollboardApp {
     private render;
     private setupModuleStore;
     private run;
+    private forEssencialSystemsAndItsParts;
     /**
      * TODO: !!  To some util which is destroyable and prepairs systems with a container as a whole
      */

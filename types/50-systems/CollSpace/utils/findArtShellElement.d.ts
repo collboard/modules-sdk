@@ -6,5 +6,6 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
  * @collboard-modules-sdk
+ * @sideeffect dependent on class __ArtShell maked by <ArtShell component
  */
 export declare function findArtShellElement(element: HTMLElement): HTMLElement | null;

@@ -14,10 +14,10 @@ interface IRefreshContentComponentProps extends ILoaderProps {
     /**
      * The content to be rendered
      */
-    content: () => JSX.Element | JSX.Element[];
+    content: () => JSX.Element | Array<JSX.Element>;
 }
 interface IRefreshContentComponentState {
-    content: JSX.Element | JSX.Element[] | null;
+    content: JSX.Element | Array<JSX.Element> | null;
 }
 /**
  * Utility for mounting content, which should be regularly refreshed
@@ -36,5 +36,7 @@ export declare class RefreshContentComponent extends React.Component<
 }
 export {};
 /**
- * TODO: Make this a functional component with hooks
+ * TODO: [🏛️] Convert Class components to Functional (with hooks).
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ * TODO: [🧵] Move to external LIB for react loadables
  */

@@ -6,8 +6,6 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { TouchController } from 'touchcontroller';
 import { ArtSerializer } from '../../CollboardApp';
-import { ExportSystem } from '../ExportSystem/0-ExportSystem';
-import { ImportSystem } from '../ImportSystem/0-ImportSystem';
 import { ApiClient } from './../ApiClient/0-ApiClient';
 import { BoardApiClient } from './../ApiClient/BoardApiClient';
 import { AppState } from './../AppState/0-AppState';
@@ -19,7 +17,7 @@ import { ClosePreventionSystem } from './../ClosePreventionSystem/0-ClosePrevent
 import { CollSpace } from './../CollSpace/0-CollSpace';
 import { ControlSystem } from './../ControlSystem/ControlSystem';
 import { CreateSystem } from './../CreateSystem/0-CreateSystem';
-import { ExtraJsxSystem } from './../ExtraJsxSystem/0-ExtraJsxSystem';
+import { ExportSystem } from './../ExportSystem/0-ExportSystem';
 import { FilepickSystem } from './../FilepickSystem/0-FilepickSystem';
 import { FocusSystem } from './../FocusSystem/0-FocusSystem';
 import { FractalSystem } from './../FractalSystem/0-FractalSystem';
@@ -27,6 +25,7 @@ import { GamificationSystem } from './../GamificationSystem/0-GamificationSystem
 import { GenerateSystem } from './../GenerateSystem/0-GenerateSystem';
 import { HintSystem } from './../HintSystem/0-HintSystem';
 import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
+import { ImportSystem } from './../ImportSystem/0-ImportSystem';
 import { LicenseSystem } from './../LicenseSystem/0-LicenseSystem';
 import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
@@ -44,63 +43,81 @@ import { StyleSystem } from './../StyleSystem/0-StyleSystem';
 import { ToolbarSystem } from './../ToolbarSystem/0-ToolbarSystem';
 import { TranslationsSystem } from './../TranslationsSystem/0-TranslationsSystem';
 import { UsercontentSystem } from './../UsercontentSystem/0-UsercontentSystem';
+import { UserInterfaceSystem } from './../UserInterfaceSystem/0-UserInterfaceSystem';
 import { VoiceSystem } from './../VoiceSystem/0-VoiceSystem';
-import { ISystemsExtended } from './ISystems';
+import { ISystemsExtended, ISystemsMethods } from './ISystems';
 import { ISystemsResolved } from './ISystemsResolved';
 /**
  * TODO: Protected systems and permissions
  */
 export declare class SystemsContainer implements ISystemsExtended {
-    request<T extends keyof Omit<ISystemsExtended, 'request'>>(
-        ...requestedSystemsNames: T[]
+    /**
+     * Request to use systems in the module
+     *
+     * @param requestedSystemsNames Names of requested systems
+     * @returns Promise of all record object which contains all requested systems which will be resolved after permissions are granted
+     */
+    request<T extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+        ...requestedSystemsNames: Array<T>
     ): Promise<Pick<ISystemsResolved, T>>;
+    /**
+     * Use previously requested systems
+     *
+     * Note: You need first to request the systems you want to use
+     *
+     * @param requestedSystemsNames Names of requested systems
+     * @returns record object which contains all requested systems
+     */
+    use<T extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+        ...requestedSystemsNames: Array<T>
+    ): Pick<ISystemsResolved, T>;
     /**
      * Generator: Systems
      * Omit: Serializer
      * Add: TouchController,ArtSerializer
-     * Pattern: private <system>Subject = new BehaviorSubject<<System> | null>(null);
+     * Pattern: private readonly <system>Subject = new BehaviorSubject<<System> | null>(null);
      */
-    private apiClientSubject;
-    private boardApiClientSubject;
-    private appStateSubject;
-    private materialArtVersioningSystemSubject;
-    private virtualArtVersioningSystemSubject;
-    private attributesSystemSubject;
-    private businessSystemSubject;
-    private closePreventionSystemSubject;
-    private collSpaceSubject;
-    private controlSystemSubject;
-    private createSystemSubject;
-    private exportSystemSubject;
-    private importSystemSubject;
-    private extraJsxSystemSubject;
-    private filepickSystemSubject;
-    private focusSystemSubject;
-    private fractalSystemSubject;
-    private gamificationSystemSubject;
-    private generateSystemSubject;
-    private hintSystemSubject;
-    private identitySystemSubject;
-    private licenseSystemSubject;
-    private moduleStoreSubject;
-    private artSupportSyncerSubject;
-    private attributeSupportSyncerSubject;
-    private cornerstoneSyncerSubject;
-    private fileSupportSyncerSubject;
-    private routeAndBusinessSyncerSubject;
-    private notificationSystemSubject;
-    private pointerSystemSubject;
-    private routingSystemSubject;
-    private snapSystemSubject;
-    private soundSystemSubject;
-    private storageSystemSubject;
-    private styleSystemSubject;
-    private toolbarSystemSubject;
-    private translationsSystemSubject;
-    private usercontentSystemSubject;
-    private voiceSystemSubject;
-    private touchControllerSubject;
-    private artSerializerSubject;
+    private readonly apiClientSubject;
+    private readonly boardApiClientSubject;
+    private readonly appStateSubject;
+    private readonly materialArtVersioningSystemSubject;
+    private readonly virtualArtVersioningSystemSubject;
+    private readonly attributesSystemSubject;
+    private readonly businessSystemSubject;
+    private readonly closePreventionSystemSubject;
+    private readonly collSpaceSubject;
+    private readonly controlSystemSubject;
+    private readonly createSystemSubject;
+    private readonly exportSystemSubject;
+    private readonly filepickSystemSubject;
+    private readonly focusSystemSubject;
+    private readonly fractalSystemSubject;
+    private readonly gamificationSystemSubject;
+    private readonly generateSystemSubject;
+    private readonly hintSystemSubject;
+    private readonly identitySystemSubject;
+    private readonly importSystemSubject;
+    private readonly licenseSystemSubject;
+    private readonly moduleStoreSubject;
+    private readonly artSupportSyncerSubject;
+    private readonly attributeSupportSyncerSubject;
+    private readonly cornerstoneSyncerSubject;
+    private readonly fileSupportSyncerSubject;
+    private readonly routeAndBusinessSyncerSubject;
+    private readonly notificationSystemSubject;
+    private readonly pointerSystemSubject;
+    private readonly routingSystemSubject;
+    private readonly snapSystemSubject;
+    private readonly soundSystemSubject;
+    private readonly storageSystemSubject;
+    private readonly styleSystemSubject;
+    private readonly toolbarSystemSubject;
+    private readonly translationsSystemSubject;
+    private readonly usercontentSystemSubject;
+    private readonly userInterfaceSystemSubject;
+    private readonly voiceSystemSubject;
+    private readonly touchControllerSubject;
+    private readonly artSerializerSubject;
     /**
 * Generator: Systems
 * Omit: Serializer
@@ -156,10 +173,6 @@ this.<system>Subject.next(<system>);
     setCreateSystem(createSystem: CreateSystem | null): Promise<void>;
     get exportSystem(): Promise<ExportSystem>;
     setExportSystem(exportSystem: ExportSystem | null): Promise<void>;
-    get importSystem(): Promise<ImportSystem>;
-    setImportSystem(importSystem: ImportSystem | null): Promise<void>;
-    get extraJsxSystem(): Promise<ExtraJsxSystem>;
-    setExtraJsxSystem(extraJsxSystem: ExtraJsxSystem | null): Promise<void>;
     get filepickSystem(): Promise<FilepickSystem>;
     setFilepickSystem(filepickSystem: FilepickSystem | null): Promise<void>;
     get focusSystem(): Promise<FocusSystem>;
@@ -174,6 +187,8 @@ this.<system>Subject.next(<system>);
     setHintSystem(hintSystem: HintSystem | null): Promise<void>;
     get identitySystem(): Promise<IdentitySystem>;
     setIdentitySystem(identitySystem: IdentitySystem | null): Promise<void>;
+    get importSystem(): Promise<ImportSystem>;
+    setImportSystem(importSystem: ImportSystem | null): Promise<void>;
     get licenseSystem(): Promise<LicenseSystem>;
     setLicenseSystem(licenseSystem: LicenseSystem | null): Promise<void>;
     get moduleStore(): Promise<ModuleStore>;
@@ -208,6 +223,8 @@ this.<system>Subject.next(<system>);
     setTranslationsSystem(translationsSystem: TranslationsSystem | null): Promise<void>;
     get usercontentSystem(): Promise<UsercontentSystem>;
     setUsercontentSystem(usercontentSystem: UsercontentSystem | null): Promise<void>;
+    get userInterfaceSystem(): Promise<UserInterfaceSystem>;
+    setUserInterfaceSystem(userInterfaceSystem: UserInterfaceSystem | null): Promise<void>;
     get voiceSystem(): Promise<VoiceSystem>;
     setVoiceSystem(voiceSystem: VoiceSystem | null): Promise<void>;
     get touchController(): Promise<TouchController>;

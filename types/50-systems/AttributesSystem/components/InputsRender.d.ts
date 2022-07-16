@@ -4,20 +4,19 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import React from 'react';
-import { string_attribute, string_context } from '../../../40-utils/typeAliases';
+/// <reference types="react" />
+import { BehaviorSubject } from 'rxjs';
+import { string_attribute, string_attribute_value_scope } from '../../../40-utils/typeAliases';
 import { AttributesSystem } from '../0-AttributesSystem';
 import { attribute_value } from '../IAttribute';
 import { IAttributeRule } from '../IAttributeRule';
 interface IInputsRenderProps {
     attributesManager: AttributesSystem;
-    attributesRules: Array<IAttributeRule<attribute_value>>;
+    attributesRules: BehaviorSubject<Array<IAttributeRule<attribute_value>>>;
     attributeName: string_attribute;
-    defaultValue?: attribute_value;
-    context?: string_context;
+    overrideValue?: attribute_value;
+    valueScope?: string_attribute_value_scope;
     additionaOnChange?: (value: attribute_value) => void;
 }
-export declare class InputsRender extends React.Component<IInputsRenderProps> {
-    render(): JSX.Element;
-}
+export declare function InputsRender(props: IInputsRenderProps): JSX.Element;
 export {};

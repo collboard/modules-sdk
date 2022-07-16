@@ -14,7 +14,7 @@ import { string_color, string_url, string_url_image } from '../../typeAliases';
 export declare type ITrayDynamicItem = {
     content: JSX.Element;
     defaultColor: string_color;
-    filters?: ITrayDynamicItemFilter[];
+    filters?: Array<ITrayDynamicItemFilter>;
 };
 /**
  * @collboard-modules-sdk
@@ -27,7 +27,7 @@ export declare type ITrayDynamicItemList = {
  */
 export declare type ITrayDynamicToolbarGroup = Array<{
     title: IMessage;
-    itemIds: string[];
+    itemIds: Array<string>;
     scale?: number;
 }>;
 /**

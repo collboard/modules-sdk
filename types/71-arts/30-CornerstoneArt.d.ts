@@ -24,7 +24,7 @@ import { Abstract2dArt } from './26-Abstract2dArt';
  * @collboard-modules-sdk
  */
 export declare class CornerstoneArt
-    extends Abstract2dArt /* TODO: maybe only AbstractPlacedArt */
+    extends Abstract2dArt /* TODO: Probably only AbstractPlacedArt */
     implements IModulePersister
 {
     static serializeName: string;
@@ -43,11 +43,11 @@ export declare class CornerstoneArt
     /**
      * List of user-activated modules on a board
      */
-    modulesActive?: string_module_name[];
+    modulesActive?: Array<string_module_name>;
     /**
      * List of user-inactivated modules on a board
      */
-    modulesInactive?: string_module_name[];
+    modulesInactive?: Array<string_module_name>;
     /**
      * Removes module from `modulesActive` and `modulesInactive`
      */
@@ -67,3 +67,7 @@ export declare class CornerstoneArt
  * @collboard-modules-sdk
  */
 export declare const virtualCornerstoneArt: CornerstoneArt;
+/**
+ * TODO: [🍫] In entire repository go through all Arrays and repace some of them with Sets:
+ *       Example: modulesActive and modulesInactive should be Set<string_module_name> because it does not depend on order and should be unique
+ */

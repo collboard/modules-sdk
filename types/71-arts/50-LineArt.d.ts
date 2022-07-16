@@ -21,5 +21,5 @@ export declare class LineArt extends ShapeArt {
     constructor(color: string, weight: number, point1: IVectorData, point2: IVectorData);
 }
 /**
- * Note: number is just a file prefix to feep it on the top of file list.
+ * Note: Number is just a file prefix to feep it on the top of file list.
  */

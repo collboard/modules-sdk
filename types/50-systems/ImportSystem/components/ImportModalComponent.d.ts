@@ -33,3 +33,7 @@ export declare class ImportModalComponent extends React.Component<
     render(): JSX.Element;
 }
 export {};
+/**
+ * TODO: [🏛️] Convert Class components to Functional (with hooks).
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ */

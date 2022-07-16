@@ -37,5 +37,5 @@ export interface IDependency extends IModuleManifest {
  */
 export declare type IDependencyDetail = Omit<IDependency, 'name'>;
 /**
- * TODO: Maybe join IDependenciesRecord and IDependenciesSet
+ * TODO: Probably join IDependenciesRecord and IDependenciesSet
  */

@@ -26,3 +26,6 @@ export declare class ConfirmIcon extends React.Component<IConfirmIconProps, ICon
     render(): JSX.Element;
 }
 export {};
+/**
+ * TODO: [🏛️] Convert Class components to Functional (with hooks).
+ */

@@ -7,7 +7,7 @@
 /// <reference types="react" />
 import { number_miliseconds, string_char } from '../../../40-utils/typeAliases';
 export interface ITextLoaderProps {
-    chars: string_char[];
+    chars: Array<string_char>;
     speed: number_miliseconds;
 }
 /**

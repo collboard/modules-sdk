@@ -5,13 +5,13 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 interface IFilterWithLimitOptions<T> {
-    array: T[];
+    array: Array<T>;
     limit: number;
-    predicate: (value: T, index?: number, array?: T[]) => boolean;
+    predicate: (value: T, index?: number, array?: Array<T>) => boolean;
 }
 /**
  * Filter array with limit and predicate
  * @collboard-modules-sdk
  */
-export declare function filterWithLimit<T>({ array, limit, predicate }: IFilterWithLimitOptions<T>): T[];
+export declare function filterWithLimit<T>({ array, limit, predicate }: IFilterWithLimitOptions<T>): Array<T>;
 export {};

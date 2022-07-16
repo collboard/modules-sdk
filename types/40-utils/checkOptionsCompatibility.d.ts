@@ -15,5 +15,5 @@
  */
 export declare function checkOptionsCompatibility<T, TCompatibleKeys extends keyof T>(
     options: T,
-    compatibleKeys: TCompatibleKeys[],
+    compatibleKeys: Array<TCompatibleKeys>,
 ): Pick<T, TCompatibleKeys>;

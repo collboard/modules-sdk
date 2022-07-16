@@ -27,3 +27,7 @@ interface IFileComponentProps {
  */
 export declare function FileComponent({ file, isLoading, isIframeEnforced }: IFileComponentProps): JSX.Element;
 export {};
+/**
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ * TODO: Move to external LIB
+ */

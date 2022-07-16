@@ -36,9 +36,9 @@ export interface IModuleManifest {
     deprecatedNames?: Arrayable<string_module_name>;
     title?: IStringMessage;
     description?: IStringMessage;
-    keywords?: string[];
+    keywords?: Array<string>;
     flags?: Partial<IModuleFlags>;
-    categories?: string_module_category[];
+    categories?: Array<string_module_category>;
     /**
      * Icon of the module
      * - It can be a URL to image in format for web (like png, svg, webp,...)
@@ -50,7 +50,7 @@ export interface IModuleManifest {
     /**
      * URL of screenshots in format for web (like png, svg, webp,...)
      */
-    screenshots?: string_url_image[];
+    screenshots?: Array<string_url_image>;
     /**
      * Describes software license of a module.
      * It is in same format as in package.json.
@@ -66,7 +66,7 @@ export interface IModuleManifest {
      *
      * @deprecated use instead softwareLicense (because it is more descriptive and distinct from software from usage license)
      */
-    licenses?: IModuleManifestSoftwareLicense[];
+    licenses?: Array<IModuleManifestSoftwareLicense>;
     /**
      * Describes software license of a module.
      * It is in same format as in package.json.
@@ -89,7 +89,7 @@ export interface IModuleManifest {
      * It is in same format as in package.json.
      * Note: In manifest there can be either author or contributors.
      */
-    contributors?: IModuleManifestAuthor[];
+    contributors?: Array<IModuleManifestAuthor>;
     /**
      * Url to the module repository.
      */

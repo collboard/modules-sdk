@@ -22,5 +22,5 @@ import { string_html } from '../typeAliases';
  */
 export declare function jsxToHtmlSimple(element?: IBaseMessage): string_html;
 /**
- * TODO: Maybe just use ReactDOMServer.renderToStaticMarkup
+ * TODO: Probably just use ReactDOMServer.renderToStaticMarkup
  */

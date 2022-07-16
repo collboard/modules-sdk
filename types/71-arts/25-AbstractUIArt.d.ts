@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { ISystemsExtended } from '../50-systems/00-SystemsContainer/ISystems';
-import { ExtraJsxPlace } from '../50-systems/ExtraJsxSystem/0-ExtraJsxSystem';
+import { UserInterfaceElementPlace } from '../50-systems/UserInterfaceSystem/UserInterfaceElementPlace';
 import { AbstractArt } from './20-AbstractArt';
 /**
  * AbstractUIArt is an abstract class providing functionality regarding
@@ -16,8 +16,8 @@ import { AbstractArt } from './20-AbstractArt';
  *
  * @collboard-modules-sdk
  */
-export declare abstract class AbstractUIArt extends AbstractArt {
-    extraJsxPlace: ExtraJsxPlace;
-    constructor(extraJsxPlace: ExtraJsxPlace);
+export declare abstract class AbstractUserInterfaceArt extends AbstractArt {
+    userInterfaceElementPlace: UserInterfaceElementPlace;
+    constructor(userInterfaceElementPlace: UserInterfaceElementPlace);
     abstract render(systems: ISystemsExtended): JSX.Element;
 }

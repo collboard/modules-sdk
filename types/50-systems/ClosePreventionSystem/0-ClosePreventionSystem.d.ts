@@ -17,7 +17,7 @@ export declare class ClosePreventionSystem
 {
     protected init(): Promise<void>;
     private reasons;
-    registerClosePrevention(...reasons: IClosePreventable[]): import('destroyable').Registration;
+    registerClosePrevention(...reasons: Array<IClosePreventable>): import('destroyable').Registration;
     get canBeClosed(): boolean;
     private beforeunloadHandler;
 }

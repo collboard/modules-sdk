@@ -16,5 +16,5 @@
  */
 export declare function pickKeys<TObject, TRemove extends keyof TObject>(
     options: TObject,
-    keys: TRemove[],
+    keys: Array<TRemove>,
 ): Pick<TObject, TRemove>;

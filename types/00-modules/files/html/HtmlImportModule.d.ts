@@ -7,5 +7,5 @@
 export {};
 /**
  * [⚗️]
- * TODO: Maybe split into native and non-native part
+ * TODO: Probably split into native and non-native part
  */

@@ -10,11 +10,11 @@ import { string_module_name } from '../../../40-utils/typeAliases';
 import { IModule, IModuleDefinition } from '../interfaces/IModule';
 import { IModulesStorageStrong } from '../interfaces/IModulesStorage';
 export declare class ModulesStorage extends Destroyable implements IModulesStorageStrong, IDestroyable {
-    private modulesObservable;
+    private readonly modulesObservable;
     private modules;
     getModule(name: string_module_name): IModuleDefinition | null;
-    getAllModules(): IModuleDefinition[];
-    observeAllModules(): Observable<IModuleDefinition[]>;
+    getAllModules(): Array<IModuleDefinition>;
+    observeAllModules(): Observable<Array<IModuleDefinition>>;
     declareModule(module: IModule): Promise<void>;
     destroy(): Promise<void>;
 }

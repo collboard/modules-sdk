@@ -10,3 +10,6 @@ import { IBehavoirProps } from '../IBehavoirProps';
  * @collboard-modules-sdk
  */
 export declare function selectionToolScalingBehavior(behaviorProps: IBehavoirProps): Promise<boolean>;
+/**
+ * TODO: [🎂] Probably remove systems from IBehavoirProps and use useSystems (or similar mechanism) instead
+ */
