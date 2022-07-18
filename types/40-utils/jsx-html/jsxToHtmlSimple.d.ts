@@ -14,7 +14,6 @@ import { string_html } from '../typeAliases';
  *    - **jsxToHtmlSimple** does not use react-dom to render the jsx to html and it tryes to extract essential information from the jsx
  *    @see ./jsxToHtml.test.tsx vs. ./jsxToHtmlSimple.test.tsx
  *
- *
  * @param element JSX element
  * @returns html string
  *

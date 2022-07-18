@@ -12,7 +12,6 @@ import { IToolbarIcon } from './IToolbarIcon';
  *
  * TODO: Unite naming ToolbarName, which can be part of IToolbarIcon (similar as section on it) OR combine it with UserInterfaceElementPlace
  *
- *
  * @collboard-modules-sdk
  */
 export declare enum ToolbarName {

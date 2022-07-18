@@ -1095,7 +1095,11 @@ export const ShapeName = (window as any).CollboardSdk.ShapeName;
 export const ShapeArt = (window as any).CollboardSdk.ShapeArt;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-TextArt.d.ts
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-TextArt/interfaces/IListStyle.d.ts
+export const IListStyle = (window as any).CollboardSdk.IListStyle;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/71-arts/50-TextArt/TextArt.d.ts
 export const TextArt = (window as any).CollboardSdk.TextArt;
 
 

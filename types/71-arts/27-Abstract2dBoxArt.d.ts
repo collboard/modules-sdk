@@ -16,13 +16,13 @@ import { Abstract2dArt } from './26-Abstract2dArt';
  * @collboard-modules-sdk
  */
 export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
-    private privateSize;
+    private __size;
     private __scale;
     /**
      * @param size null means it will be automatically measured and set
      * @param scale rescale after measuring; it will be used only if size is null
      */
-    constructor(privateSize?: IVectorData | null, __scale?: number);
+    constructor(__size?: IVectorData | null, __scale?: number);
     /**
      * Readonly property containing information about object's original size
      */
@@ -36,9 +36,9 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
      */
     get measured(): boolean;
     get acceptedAttributes(): Array<string_attribute>;
-    render(isSelected: boolean, systems: ISystemsExtended): JSX.Element;
+    render(/* @deprecated [🍒] */ isSelected: boolean, systems: ISystemsExtended): JSX.Element;
     /**
-     * Measure the object and set `privateSize` and `originalSize`
+     * Measure the object and set `__size` and `originalSize`
      */
     protected measure(element: HTMLElement | null, update?: () => void): Promise<void>;
     /**
@@ -54,5 +54,5 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
     protected abstract renderBox(systems: ISystemsExtended): JSX.Element;
 }
 /**
- * Note: Number is just a file prefix to feep it on the top of file list.
+ * TODO: [🍒] There should be some way how to integrate [🍒]
  */

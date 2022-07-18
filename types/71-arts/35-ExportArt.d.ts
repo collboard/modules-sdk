@@ -30,6 +30,3 @@ export declare class ExportArt extends Abstract2dArt {
     get acceptedAttributes(): never[];
     render(isSelected: boolean): JSX.Element;
 }
-/**
- * Note: Number is just a file prefix to feep it on the top of file list.
- */

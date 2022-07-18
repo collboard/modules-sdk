@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import '../71-arts/50-TextArt/TextArt';
 import './../50-systems/ControlSystem/modules/shortcuts-override.module';
 import './../50-systems/ControlSystem/modules/shortcuts.module';
 import './../50-systems/ExportSystem/modules/download-icon.module';
@@ -34,7 +35,6 @@ import './../71-arts/50-ImageArt';
 import './../71-arts/50-LineArt';
 import './../71-arts/50-LoadingArt';
 import './../71-arts/50-ShapeArt';
-import './../71-arts/50-TextArt';
 import './../72-tools/EraseTool';
 import './../72-tools/FrameTool';
 import './../72-tools/FreehandTool';

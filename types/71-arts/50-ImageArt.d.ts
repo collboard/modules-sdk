@@ -32,6 +32,3 @@ export declare class ImageArt extends Abstract2dBoxArt {
     private ref;
     renderBox(): JSX.Element;
 }
-/**
- * Note: Number is just a file prefix to feep it on the top of file list.
- */

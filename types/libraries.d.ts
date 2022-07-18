@@ -14,7 +14,6 @@ import * as _touchcontroller from 'touchcontroller';
  *       1. Some libraries (like React) are not compatible in the same application running two separate instances.
  *       2. To save resources
  *
- *
  * TODO: !! Put this description into modules SDK
  */
 /**

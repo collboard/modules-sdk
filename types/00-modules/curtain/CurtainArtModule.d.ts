@@ -15,7 +15,7 @@ export declare class CurtainArt extends Abstract2dArt {
     visible: boolean;
     color: string;
     defaultZIndex: number;
-    private privateSize;
+    private __size;
     constructor(shift: IVectorData);
     get size(): IVectorData;
     set size(size: IVectorData);

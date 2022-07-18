@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { IVectorData, Vector } from 'xyzt';
+import { string_color } from './../40-utils/typeAliases';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
  * @collboard-modules-sdk
@@ -22,14 +23,14 @@ export declare enum ShapeName {
  */
 export declare class ShapeArt extends Abstract2dArt {
     shape: ShapeName;
-    color: string;
+    color: string_color;
     weight: number;
-    private privateSize;
+    private __size;
     static serializeName: string;
     static manifest: {
         name: string;
     };
-    constructor(shape: ShapeName, color: string, weight: number, shift: IVectorData, privateSize: IVectorData);
+    constructor(shape: ShapeName, color: string_color, weight: number, shift: IVectorData, __size: IVectorData);
     get topLeftCorner(): Vector;
     get bottomRightCorner(): Vector;
     get size(): IVectorData;
@@ -39,6 +40,3 @@ export declare class ShapeArt extends Abstract2dArt {
     render(isSelected: boolean): JSX.Element;
     private renderShape;
 }
-/**
- * Note: Number is just a file prefix to feep it on the top of file list.
- */

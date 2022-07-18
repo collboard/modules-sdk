@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { BehaviorSubject } from 'rxjs';
 import { IVectorData, Transform, Vector } from 'xyzt';
-import { string_attribute } from '../../40-utils/typeAliases';
+import { string_attribute, string_uuid } from '../../40-utils/typeAliases';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 import { AbstractSystem } from '../AbstractSystem';
 /**
@@ -67,6 +67,18 @@ export declare class AppState extends AbstractSystem {
      *          It returns `color`
      */
     getCommonAttributesOfSelectedArts(): Array<string_attribute>;
+    /**
+     *
+     *
+     * [🌌]
+     */
+    isArtSelected(artId: string_uuid): boolean;
+    /**
+     *
+     *
+     * [🌌]
+     */
+    useArtSelected(artId: string_uuid): boolean;
 }
 /**
  * TODO: [🍵] Make SelectionSystem a system and much better with ONLY one BehaviorSubject with data and other stuff just Observables derived from it.
