@@ -6,7 +6,6 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
  *
- *
  * @collboard-modules-sdk
  */
 export declare function normalizeToCamelCase(name: string, firstLetterCapital?: boolean): string;

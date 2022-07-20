@@ -10,7 +10,6 @@ import { FocusScope } from './FocusScope';
  *
  * Represents type of the focus which can be taken each by one thing in the Collboard app
  *
- *
  * @collboard-modules-sdk
  */
 export declare enum FocusScopeName {

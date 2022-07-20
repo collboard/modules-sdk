@@ -24,7 +24,6 @@ export interface IThrottleQueueOptions {
  * Output:
  * _________🍋🍋🍋_________🍇🍇🍇_🍉_🍒🍒_🍈🍈🍈
  *
- *
  * TODO: Error handling
  * TODO: Probably debouncing
  * TODO: timeouts

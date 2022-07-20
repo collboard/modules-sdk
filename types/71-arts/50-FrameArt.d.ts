@@ -28,6 +28,6 @@ export declare class FrameArt extends Abstract2dBoxArt implements IFramable {
     renderBox(): JSX.Element;
 }
 /**
- * Note: Number is just a file prefix to feep it on the top of file list.
+ *
  * TODO: Pick on borders + one corner
  */

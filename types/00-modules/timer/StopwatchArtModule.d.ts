@@ -16,7 +16,7 @@ export declare class StopwatchArt extends Abstract2dArt {
     running: boolean;
     elapsed: number;
     timestamp: number;
-    private privateSize;
+    private __size;
     constructor(shift: Vector);
     start(): void;
     stop(): void;

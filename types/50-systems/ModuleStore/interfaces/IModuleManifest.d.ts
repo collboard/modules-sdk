@@ -128,7 +128,6 @@ export interface IModuleManifest {
 }
 /**
  *
- *
  * @collboard-modules-sdk
  */
 export interface IModuleFlags {

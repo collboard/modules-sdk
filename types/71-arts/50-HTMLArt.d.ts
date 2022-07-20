@@ -28,6 +28,3 @@ export declare class HTMLArt extends Abstract2dBoxArt {
     defaultZIndex: number;
     renderBox(): JSX.Element;
 }
-/**
- * Note: Number is just a file prefix to feep it on the top of file list.
- */

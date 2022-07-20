@@ -17,7 +17,7 @@ export declare class TimerArt extends Abstract2dArt {
     running: boolean;
     remaining: number;
     timestamp: number;
-    private privateSize;
+    private __size;
     constructor(shift: IVectorData, millis: number);
     start(): void;
     stop(): void;
@@ -32,6 +32,3 @@ export declare class TimerArt extends Abstract2dArt {
     get warningThreshold(): number;
     render(): JSX.Element;
 }
-/**
- * Note: Number is just a file prefix to feep it on the top of file list.
- */

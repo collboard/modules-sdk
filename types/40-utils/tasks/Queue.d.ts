@@ -18,7 +18,6 @@ import { ITaskRunner } from './ITaskRunner';
  * Output:
  * ___🥝_🍓_🍋______🍏_🍍_🍇__🍉_____🍌_🍒___🥑_🍎_🍈
  *
- *
  * TODO: Error handling
  * TODO: Probably debouncing
  * TODO: timeouts

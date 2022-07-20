@@ -14,6 +14,7 @@ import { Abstract2dArt } from './26-Abstract2dArt';
 *  > virtualArtVersioningSystem
 >    .createPrimaryOperation()
 >    .newArts(
+>      // [🍝] TODO: Position should be achieved with standard setShift method
 >      new LoadingArt('aaa').setShift((await collSpace.pickPoint(touch.firstFrame.position)).point),
 >    )
 >    .persist();
@@ -37,5 +38,5 @@ export declare class LoadingArt extends Abstract2dArt {
 }
 /**
  * TODO: @roseckyj maybe look at this and fix design flaws
- * Note: Number is just a file prefix to feep it on the top of file list.
+ *
  */

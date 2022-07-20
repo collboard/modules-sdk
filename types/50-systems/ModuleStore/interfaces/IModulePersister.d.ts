@@ -11,7 +11,6 @@ import { IModuleManifest } from './IModuleManifest';
  *
  * Note: this is not using destroyable pattern because activation of the module is long-term thing
  *
- *
  * @collboard-modules-sdk
  */
 export interface IModulePersister {

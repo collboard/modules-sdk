@@ -15,7 +15,7 @@ export declare class DiceArt extends Abstract2dArt {
     };
     value: number;
     rotation: number;
-    private privateSize;
+    private __size;
     constructor(shift: IVectorData, sides: number);
     random(): number;
     roll(): void;

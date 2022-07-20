@@ -21,6 +21,3 @@ export declare class DeletedArt extends AbstractArt {
         name: string;
     };
 }
-/**
- * Note: Number is just a file prefix to feep it on the top of file list.
- */

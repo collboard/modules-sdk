@@ -4,47 +4,48 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import React from 'react';
-import { IVectorData, Vector } from 'xyzt';
-import { Abstract2dArt } from './26-Abstract2dArt';
-export declare type IListStyle = 'unordered' | 'ordered' | 'none';
+/// <reference types="react" />
+import { IVectorData } from 'xyzt';
+import { Abstract2dBoxArt } from '../27-Abstract2dBoxArt';
+import { string_color } from './../../40-utils/typeAliases';
+import { ISystems } from './../../50-systems/00-SystemsContainer/ISystems';
+import { IListStyle } from './interfaces/IListStyle';
 /**
  * @collboard-modules-sdk
  */
-export declare class TextArt extends Abstract2dArt {
+export declare class TextArt extends Abstract2dBoxArt {
     content: string;
-    color: string;
+    color: string_color;
     fontSize: number;
     bold: boolean;
     italic: boolean;
     underline: boolean;
     listStyle: IListStyle;
-    point1: IVectorData;
     static serializeName: string;
     static manifest: {
         name: string;
     };
-    private textInput;
-    private tempText;
     constructor(
         content: string,
-        color: string,
+        color: string_color,
         fontSize: number,
         bold: boolean,
         italic: boolean,
         underline: boolean,
         listStyle: IListStyle,
-        point1: IVectorData,
     );
-    get size(): Vector;
-    get topLeftCorner(): Vector;
-    get bottomRightCorner(): Vector;
-    isNear(point2: IVectorData): boolean;
+    defaultZIndex: number;
     get acceptedAttributes(): string[];
-    setTempText(): void;
-    renderTextField(onKeyPress: (event: React.KeyboardEvent<HTMLDivElement>) => void): JSX.Element;
-    render(isSelected: boolean): JSX.Element;
+    /**
+     * This is for backwards compatibility
+     *
+     * TODO: Is this working?
+     * https://collboard.com/aubppdztrgbwa3uyvqu2
+     *
+     */
+    set point1(point1: IVectorData);
+    renderBox(systems: ISystems): JSX.Element;
 }
 /**
- * Note: Number is just a file prefix to feep it on the top of file list.
+ * TODO: [🍒] Every Art should look like this + what do render method here should do RenderSystem OR ArtSchell OR sth. like that
  */
