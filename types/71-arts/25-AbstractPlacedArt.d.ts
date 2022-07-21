@@ -92,7 +92,7 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      *
      * Default implementation uses square bounding box
      */
-    isNear(point2: IVectorData): boolean;
+    isNear(pointToTest: IVectorData): boolean;
     /**
      * Move art to certain vector (= absolute)
      */

@@ -47,6 +47,7 @@ export interface IArtContainer {
     element: HTMLElement | null;
 }
 /**
+ * TODO: [🐲] What is boundingbox related to? Board? Screen? - Write to its anotation and ideally the type
  * TODO: Put background option in IFileExportOptions
  * TODO: For HTML export put center (alongside with already given boundingBox)
  * TODO: [🌚] Some way how to chain exports - pass useOtherExport util into IFileExportOptions

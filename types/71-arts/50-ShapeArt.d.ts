@@ -25,17 +25,17 @@ export declare class ShapeArt extends Abstract2dArt {
     shape: ShapeName;
     color: string_color;
     weight: number;
-    private __size;
+    private privateSize;
     static serializeName: string;
     static manifest: {
         name: string;
     };
-    constructor(shape: ShapeName, color: string_color, weight: number, shift: IVectorData, __size: IVectorData);
+    constructor(shape: ShapeName, color: string_color, weight: number, shift: IVectorData, privateSize: IVectorData);
     get topLeftCorner(): Vector;
     get bottomRightCorner(): Vector;
     get size(): IVectorData;
     set size(newSize: IVectorData);
-    isNear(point2: IVectorData): boolean;
+    isNear(pointToTest: IVectorData): boolean;
     get acceptedAttributes(): string[];
     render(isSelected: boolean): JSX.Element;
     private renderShape;

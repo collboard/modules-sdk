@@ -29,6 +29,9 @@ interface ITextArtShape {
     underline: boolean;
     listStyle: IListStyle;
 }
+/**
+ * This is internal (how it looks like without transform) component that is used to render TextArt
+ */
 export declare function TextArtComponent({
     art,
     material: { color },

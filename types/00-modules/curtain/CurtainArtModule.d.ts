@@ -15,7 +15,10 @@ export declare class CurtainArt extends Abstract2dArt {
     visible: boolean;
     color: string;
     defaultZIndex: number;
-    private __size;
+    /**
+     * @deprecated [🍈] name privateSize is confusing, use something instead like size (=privateSize) vs. originalSize
+     */
+    private privateSize;
     constructor(shift: IVectorData);
     get size(): IVectorData;
     set size(size: IVectorData);

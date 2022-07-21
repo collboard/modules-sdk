@@ -8,3 +8,6 @@
  * @collboard-modules-sdk
  */
 export declare function getBoundingClientRectWithoutTransform(element: HTMLElement): DOMRect;
+/**
+ * TODO: Maybe rename to measureElementSize to be consistent with useMeasure(...) and <Measure>{...}</Measure>
+ */

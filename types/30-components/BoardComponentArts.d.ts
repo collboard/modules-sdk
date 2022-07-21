@@ -10,6 +10,9 @@ import { Transform } from 'xyzt';
 import { AbstractPlacedArt } from './../71-arts/25-AbstractPlacedArt';
 interface IBoardComponentArtsProps {
     artsPlaced: Observable<Array<AbstractPlacedArt>>;
+    /**
+     * Transform of the user`s view on the board
+     */
     transform: BehaviorSubject<Transform>;
 }
 export declare function BoardComponentArts(props: IBoardComponentArtsProps): JSX.Element;

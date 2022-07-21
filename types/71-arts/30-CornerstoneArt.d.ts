@@ -37,7 +37,7 @@ export declare class CornerstoneArt
     boardname: string;
     get topLeftCorner(): IVectorData;
     get bottomRightCorner(): IVectorData;
-    isNear(point2: IVectorData): boolean;
+    isNear(pointToTest: IVectorData): boolean;
     get acceptedAttributes(): never[];
     render(isSelected: boolean): JSX.Element;
     /**

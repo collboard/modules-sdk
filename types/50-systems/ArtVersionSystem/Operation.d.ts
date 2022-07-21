@@ -33,7 +33,8 @@ export declare class Operation
     get canBeClosed(): boolean;
     private isValuable;
     /**
-     * Tells that this state of operation and its arts can be instantly closed without destructing valuable user data. This will be turned on automatically on new update - takeArts(), takeCommits(), newArts().
+     * Tells that this state of operation and its arts can be instantly closed without destructing valuable user data.
+     * This will be reverted automatically on new update - i.e takeArts(), takeCommits(), newArts().
      */
     worthless(): this;
     /**
@@ -63,7 +64,12 @@ export declare class Operation
     updateWithMutatingCallback(artMutatingCallback: (art: AbstractArt) => void): this;
     /**
      * This method will delete all arts in the operation and persist them
+     *
      * Note: This is helper for using just methods update and persist
+     */
+    deleteArts(): this;
+    /**
+     * @deprecated use deleteArts
      */
     delete(): this;
     /**

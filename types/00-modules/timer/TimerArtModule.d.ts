@@ -17,7 +17,10 @@ export declare class TimerArt extends Abstract2dArt {
     running: boolean;
     remaining: number;
     timestamp: number;
-    private __size;
+    /**
+     * @deprecated [🍈] name privateSize is confusing, use something instead like size (=privateSize) vs. originalSize
+     */
+    private privateSize;
     constructor(shift: IVectorData, millis: number);
     start(): void;
     stop(): void;

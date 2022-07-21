@@ -72,14 +72,25 @@ export declare class AppState extends AbstractSystem {
      *
      * [🌌]
      */
-    isArtSelected(artId: string_uuid): boolean;
+    isArtSelected({ artId, isExclusive }: IIsArtSelectedOptions): boolean;
     /**
      *
      *
      * [🌌]
      */
-    useArtSelected(artId: string_uuid): boolean;
+    useArtSelected({ artId, isExclusive }: IIsArtSelectedOptions): boolean;
 }
+interface IIsArtSelectedOptions {
+    /**
+     * Unique ID of the art
+     */
+    artId: string_uuid;
+    /**
+     * If true, it will return true only if the art is selected and no other
+     */
+    isExclusive: boolean;
+}
+export {};
 /**
  * TODO: [🍵] Make SelectionSystem a system and much better with ONLY one BehaviorSubject with data and other stuff just Observables derived from it.
  * TODO: Selected: When loosing focus in the app (for example clicking on board name or opening a modal), selection should be canceled
