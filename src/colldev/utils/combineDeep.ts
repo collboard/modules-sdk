@@ -1,7 +1,7 @@
 import spaceTrim from 'spacetrim';
 import { flatternArray } from './flatternArray';
 
-export function combineDeep<T>(...values: T[]): T {
+export function combineDeep<T>(...values: Array<T>): T {
     const valuesDefined = values.filter((value) => value !== undefined && value !== null);
 
     if (

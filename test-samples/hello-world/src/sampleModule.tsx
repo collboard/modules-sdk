@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { declareModule, ExtraJsxPlace, makeExtrajsxModule } from '../../../src/runtime/runtime';
+import { declareModule, makeUserInterfaceModule, UserInterfaceElementPlace } from '../../../src/runtime/runtime';
 
 declareModule(
-    makeExtrajsxModule({
+    makeUserInterfaceModule({
         manifest: {
             name: '@collboard/sample-colldev-module',
             version: '1.0.0',
@@ -19,8 +19,8 @@ declareModule(
                 isDevelopment: true,
             },
         },
-        place: ExtraJsxPlace.EdgeRight,
-        createExtraJsx() {
+        place: UserInterfaceElementPlace.EdgeRight,
+        createElement() {
             const style = { display: 'inline-block', width: 20, height: 20 };
             return (
                 <button

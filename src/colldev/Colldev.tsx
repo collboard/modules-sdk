@@ -29,7 +29,7 @@ export class Colldev extends Destroyable implements IDestroyable {
     ];
     private renderingInstance: Instance | null = null;
 
-    constructor(readonly argv?: string[]) {
+    constructor(readonly argv?: Array<string>) {
         super();
         this.init();
     }

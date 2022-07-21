@@ -4,8 +4,8 @@
  * @return for example [1,2,3,4]
  *
  */
-export function flatternArray<T>(array: T[][]): T[] {
-    const flattened: T[] = [];
+export function flatternArray<T>(array: Array<Array<T>>): Array<T> {
+    const flattened: Array<T> = [];
     for (const subarray of array) {
         flattened.push(...subarray);
     }

@@ -3,15 +3,15 @@ import { IService } from '../services/IService';
 import { flatternArray } from './flatternArray';
 import { joinErrors } from './joinErrors';
 
-export function forServicesReady(...services: IService[]): Promise<void> {
+export function forServicesReady(...services: Array<IService>): Promise<void> {
     return forServicesReadyAdvanced({ services, debug: false });
 }
 
-export function forServicesReadyDebug(...services: IService[]): Promise<void> {
+export function forServicesReadyDebug(...services: Array<IService>): Promise<void> {
     return forServicesReadyAdvanced({ services, debug: true });
 }
 
-export function forServicesReadyAdvanced({ services, debug }: { services: IService[]; debug: boolean }): Promise<void> {
+export function forServicesReadyAdvanced({ services, debug }: { services: Array<IService>; debug: boolean }): Promise<void> {
     return new Promise((resolve, reject) => {
         const subscription = combineLatest(services.map(({ status }) => status)).subscribe(async (statuses) => {
             if (debug) console.info('statuses', statuses);

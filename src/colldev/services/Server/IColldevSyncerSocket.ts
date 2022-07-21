@@ -13,7 +13,7 @@ export namespace IColldevSyncerSocket {
         stack?: string;
     }
     export interface identify {
-        // TODO: domain: string_url;
+        // TODO: Domain: string_url;
         instanceId: string;
     }
     export interface bundle {
@@ -24,7 +24,7 @@ export namespace IColldevSyncerSocket {
         version: number;
         isConnected: boolean;
         isReady: boolean;
-        errors: IError[];
+        errors: Array<IError>;
         boardId: string | null;
         url: string;
         modules: Record<
@@ -32,7 +32,7 @@ export namespace IColldevSyncerSocket {
             {
                 isDeclared: boolean;
                 isInstalled: boolean;
-                errors: IError[];
+                errors: Array<IError>;
             }
         >;
     }

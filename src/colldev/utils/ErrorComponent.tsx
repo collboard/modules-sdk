@@ -2,7 +2,7 @@ import { Box, Text } from 'ink';
 import * as React from 'react';
 
 interface IErrorsComponentProps {
-    errors: Error[];
+    errors: Array<Error>;
     isBoxShown?: boolean;
 }
 

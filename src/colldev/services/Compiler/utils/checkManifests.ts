@@ -10,7 +10,7 @@ import { isEveryItemSame } from './isEveryItemSame';
  * In case of error throw an error
  * @param manifests to be checked
  */
-export async function checkManifests(...manifests: IModuleManifest[]): Promise<void> {
+export async function checkManifests(...manifests: Array<IModuleManifest>): Promise<void> {
     if (manifests.length === 0) {
         throw new Error('Expecting at least one module');
     }

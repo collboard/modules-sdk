@@ -12,8 +12,8 @@ import { WAIT_FOR_MODULES_MS } from '../../../config';
  * @param bundleContent Javascript bundle content to analyze
  * @returns at least one module manifest if there is none, it will throw an error
  */
-export async function extractManifestsFromBundleContent(bundleContent: string): Promise<IModuleManifest[]> {
-    const manifests: IModuleManifest[] = [];
+export async function extractManifestsFromBundleContent(bundleContent: string): Promise<Array<IModuleManifest>> {
+    const manifests: Array<IModuleManifest> = [];
 
     const browser = await puppeteer.launch({
         headless: true,
