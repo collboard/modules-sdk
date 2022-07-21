@@ -63,16 +63,16 @@ It can be either **TypeScript** or **JavaScript**. It can import other files or 
 <!-- TODO: Some better example -->
 
 ```typescript
-import { declareModule, ExtraJsxPlace, makeExtrajsxModule } from '@collboard/modules-sdk';
+import { declareModule, UserInterfaceElementPlace, makeUserInterfaceModule } from '@collboard/modules-sdk';
 import * as React from 'react';
 
 declareModule(
-makeExtrajsxModule({
+makeUserInterfaceModule({
 manifest: {
 name: '@my-username/first-module',
 },
-place: ExtraJsxPlace.EdgeRight,
-createExtraJsx({
+place: UserInterfaceElementPlace.EdgeRight,
+createElement({
 routingSystem,
 translationsSystem,
 apiClient,
@@ -226,6 +226,7 @@ ApiClient provides API calls to the remote server.
 ### [AppState](https://collboard.github.io/modules-sdk/classes/appstate.html)
 
 AppState is not quite a system but an object representing the state of the Collboard app.
+@deprecated This system will be split into two CollSpace and SelectionSystem and removed
 
 ### [MaterialArtVersioningSystem](https://collboard.github.io/modules-sdk/classes/materialartversioningsystem.html)
 
@@ -265,11 +266,6 @@ Note: CreateSystem+GenerateSystem and ExportSystem are in some kind opposites.
 
 ExportSystem creates other files from the board or the part of it.
 Note: This system is not just for exporting but also saves to native format.
-
-### [ExtraJsxSystem](https://collboard.github.io/modules-sdk/classes/extrajsxsystem.html)
-
-ExtraJsxSystem can register and manage additional JSX
-Note: ExtraJSXSystem is for JSX (HTML) vs. StyleSystem is for CSS styles
 
 <!--Private system:
 ### [FilepickSystem](https://collboard.github.io/modules-sdk/classes/filepicksystem.html)
@@ -382,7 +378,6 @@ PointerSystem allows us to bind a different controller then touch or mouse. For 
 
 
 
-
 -->
 
 ### [RoutingSystem](https://collboard.github.io/modules-sdk/classes/routingsystem.html)
@@ -423,8 +418,7 @@ StorageSystem provides storages for other systems / modules
 ### [StyleSystem](https://collboard.github.io/modules-sdk/classes/stylesystem.html)
 
 StyleSystem can register and manage additional CSS styles for modules. It can scope CSS so it will do not affect others.
-
-Note: ExtraJSXSystem is for JSX (HTML) vs. StyleSystem is for CSS styles
+Note: UserInterfaceSystem is for JSX (HTML) vs. StyleSystem is for CSS styles
 
 ### [ToolbarSystem](https://collboard.github.io/modules-sdk/classes/toolbarsystem.html)
 
@@ -437,6 +431,12 @@ TranslationsSystem manages messages across core, systems and modules.
 ### [UsercontentSystem](https://collboard.github.io/modules-sdk/classes/usercontentsystem.html)
 
 UsercontentSystem provides API to upload user content to the server.
+
+### [UserInterfaceSystem](https://collboard.github.io/modules-sdk/classes/userinterfacesystem.html)
+
+UserInterfaceSystem can register and manage additional JSX
+Note: Using UserInterfaceSystem is not recommended to use directly because it is using very low-level API. Consider using higher-level API like ToolbarSystem, NotificationSystem, etc.
+Note: UserInterfaceSystem is for JSX (HTML) vs. StyleSystem is for CSS styles
 
 <!--Private system:
 ### [VoiceSystem](https://collboard.github.io/modules-sdk/classes/voicesystem.html)
@@ -456,7 +456,7 @@ Makers are helpers which helps to create an module. Maker is a pure function tha
 
 ### makeAttributeModule
 
-### makeExtrajsxModule
+### makeUserInterfaceModule
 
 ### makeIconModule
 

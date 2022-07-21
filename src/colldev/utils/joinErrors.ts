@@ -1,4 +1,4 @@
-export function joinErrors(...errors: Error[]): Error | undefined {
+export function joinErrors(...errors: Array<Error>): Error | undefined {
     if (errors.length === 0) {
         return undefined;
     } else if (errors.length === 1) {

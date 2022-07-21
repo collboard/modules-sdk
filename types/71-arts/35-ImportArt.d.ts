@@ -45,7 +45,7 @@ export declare class ImportArt extends Abstract2dArt {
     constructor(source: string_url, strategy: ImportStrategy);
     get topLeftCorner(): IVectorData;
     get bottomRightCorner(): IVectorData;
-    isNear(point2: IVectorData): boolean;
+    isNear(pointToTest: IVectorData): boolean;
     get acceptedAttributes(): never[];
     render(isSelected: boolean): JSX.Element;
 }

@@ -22,7 +22,7 @@ export const COLLDEV_CONFIG_BASENAMES = [
     'colldev.json',
     // Note: We can not have here colldev.js because some command lines will try to run colldev.js instaed of propper colldev and it will fail.
 ];
-export const COLLDEV_CONFIG_POSSIBLE_DEFAULT_ENTRY_RELATIVE_PATHS: string_file_relative_path[] = [
+export const COLLDEV_CONFIG_POSSIBLE_DEFAULT_ENTRY_RELATIVE_PATHS: Array<string_file_relative_path> = [
     './index.ts',
     './index.tsx',
     './src/index.ts',

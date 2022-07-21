@@ -15,7 +15,10 @@ export declare class DiceArt extends Abstract2dArt {
     };
     value: number;
     rotation: number;
-    private __size;
+    /**
+     * @deprecated [🍈] name privateSize is confusing, use something instead like size (=privateSize) vs. originalSize
+     */
+    private privateSize;
     constructor(shift: IVectorData, sides: number);
     random(): number;
     roll(): void;

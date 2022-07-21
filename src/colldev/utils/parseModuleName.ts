@@ -13,7 +13,7 @@ import { MODULE_NAME_PATTERN } from '../config';
  */
 export function parseModuleName(moduleName: string_module_name): {
     scope: string;
-    name: string[];
+    name: Array<string>;
 } {
     const match = MODULE_NAME_PATTERN.exec(moduleName);
 

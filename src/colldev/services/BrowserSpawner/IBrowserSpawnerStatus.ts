@@ -1,6 +1,6 @@
 export interface IBrowserSpawnerStatus {
     isReady: boolean;
     isSpawned: boolean;
-    errors: Error[];
+    errors: Array<Error>;
     browserName?: string;
 }

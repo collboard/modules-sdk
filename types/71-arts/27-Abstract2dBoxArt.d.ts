@@ -13,16 +13,20 @@ import { Abstract2dArt } from './26-Abstract2dArt';
  * Abstract2dArt implements some of the functionality of `Abstract2dArt` to
  * make implementation of square objects simpler.
  *
+ * @deprecated use hook useMeasure or Measure component instead @see TextArt
  * @collboard-modules-sdk
  */
 export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
-    private __size;
+    private privateSize;
     private __scale;
     /**
      * @param size null means it will be automatically measured and set
      * @param scale rescale after measuring; it will be used only if size is null
      */
-    constructor(__size?: IVectorData | null, __scale?: number);
+    constructor(
+        privateSize?: /* <- [🍈] name privateSize is confusing, use something instead like size (=privateSize) vs. originalSize */ IVectorData | null,
+        __scale?: number,
+    );
     /**
      * Readonly property containing information about object's original size
      */
@@ -36,9 +40,9 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
      */
     get measured(): boolean;
     get acceptedAttributes(): Array<string_attribute>;
-    render(/* @deprecated [🍒] */ isSelected: boolean, systems: ISystemsExtended): JSX.Element;
+    render(isSelected: boolean, systems: ISystemsExtended): JSX.Element;
     /**
-     * Measure the object and set `__size` and `originalSize`
+     * Measure the object and set `privateSize` and `originalSize`
      */
     protected measure(element: HTMLElement | null, update?: () => void): Promise<void>;
     /**
@@ -54,5 +58,5 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
     protected abstract renderBox(systems: ISystemsExtended): JSX.Element;
 }
 /**
- * TODO: [🍒] There should be some way how to integrate [🍒]
+ *
  */

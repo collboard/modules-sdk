@@ -26,7 +26,7 @@ export declare class ExportArt extends Abstract2dArt {
     constructor(format: ExportFormat);
     get topLeftCorner(): IVectorData;
     get bottomRightCorner(): IVectorData;
-    isNear(point2: IVectorData): boolean;
+    isNear(pointToTest: IVectorData): boolean;
     get acceptedAttributes(): never[];
     render(isSelected: boolean): JSX.Element;
 }

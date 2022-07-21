@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { declareModule, ExtraJsxPlace, makeExtrajsxModule } from '../../../src/runtime/runtime';
+import { declareModule, makeUserInterfaceModule, UserInterfaceElementPlace } from '../../../src/runtime/runtime';
 
 // Note: Testing that URL object working during the build process.
 console.log(new URL(`https://github.com/collboard/collboard`));
 
 for (const [key, moduleVariant] of Object.entries({ a: '🍎 Red apple', b: '🍏 Green apple' })) {
     declareModule(
-        makeExtrajsxModule({
+        makeUserInterfaceModule({
             manifest: {
                 // Note: Just for fulltext search: @collboard/module-a @collboard/module-b
                 name: `@collboard/module-${key}`,
@@ -24,8 +24,8 @@ for (const [key, moduleVariant] of Object.entries({ a: '🍎 Red apple', b: '�
                     isDevelopment: true,
                 },
             },
-            place: ExtraJsxPlace.EdgeRight,
-            createExtraJsx() {
+            place: UserInterfaceElementPlace.EdgeRight,
+            createElement() {
                 return (
                     <button
                         onClick={async () => {

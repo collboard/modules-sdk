@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { declareModule, ExtraJsxPlace, makeExtrajsxModule } from '../../../../src/runtime/runtime';
+import { declareModule, makeUserInterfaceModule, UserInterfaceElementPlace } from '../../../../src/runtime/runtime';
 
-const makedModule = makeExtrajsxModule({
+const makedModule = makeUserInterfaceModule({
     manifest: {
         name: '@collboard/never-declared-module',
         version: '1.0.0',
@@ -13,8 +13,8 @@ const makedModule = makeExtrajsxModule({
         categories: ['Productivity', 'Buttons', 'Template'],
         icon: '/assets/icons/copy-material.svg',
     },
-    place: ExtraJsxPlace.EdgeRight,
-    createExtraJsx() {
+    place: UserInterfaceElementPlace.EdgeRight,
+    createElement() {
         return (
             <button className="button button-primary button-vertical">
                 <div>Nothing happen here</div>

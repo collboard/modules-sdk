@@ -14,7 +14,6 @@ import { Abstract2dArt } from './26-Abstract2dArt';
 *  > virtualArtVersioningSystem
 >    .createPrimaryOperation()
 >    .newArts(
->      // [🍝] TODO: Position should be achieved with standard setShift method
 >      new LoadingArt('aaa').setShift((await collSpace.pickPoint(touch.firstFrame.position)).point),
 >    )
 >    .persist();

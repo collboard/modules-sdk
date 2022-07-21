@@ -21,3 +21,6 @@ export declare class DeletedArt extends AbstractArt {
         name: string;
     };
 }
+/**
+ *
+ */

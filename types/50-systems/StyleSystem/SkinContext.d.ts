@@ -6,4 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
 import { ISkin } from './ISkin';
+/**
+ * @not-collboard-modules-sdk
+ */
 export declare const SkinContext: React.Context<ISkin>;

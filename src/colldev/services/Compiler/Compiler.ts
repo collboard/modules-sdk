@@ -114,7 +114,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 // TODO: Wrap webpack to some util that outputs RxJS stream of compiled sources
                 this.webpackConfig,
                 async (validationError, webpackStats) => {
-                    const errors: Error[] = [];
+                    const errors: Array<Error> = [];
                     if (validationError) {
                         errors.push(validationError);
                     }

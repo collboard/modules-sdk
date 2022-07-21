@@ -401,6 +401,10 @@ export const compareJsxs = (window as any).CollboardSdk.compareJsxs;
 export const jsxToHtml = (window as any).CollboardSdk.jsxToHtml;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/jsx-html/jsxToHtmlPretty.d.ts
+export const jsxToHtmlPretty = (window as any).CollboardSdk.jsxToHtmlPretty;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/jsx-html/jsxToHtmlSimple.d.ts
 export const jsxToHtmlSimple = (window as any).CollboardSdk.jsxToHtmlSimple;
 
@@ -473,6 +477,26 @@ export const randomString = (window as any).CollboardSdk.randomString;
 export const randomUriId = (window as any).CollboardSdk.randomUriId;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-components/Editable.d.ts
+export const Editable = (window as any).CollboardSdk.Editable;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-components/InnerHtml.d.ts
+export const InnerHtml = (window as any).CollboardSdk.InnerHtml;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-components/Measure.d.ts
+export const Measure = (window as any).CollboardSdk.Measure;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-components/NonBrakingSpaces.d.ts
+export const NonBrakingSpaces = (window as any).CollboardSdk.NonBrakingSpaces;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-components/StaticRender.d.ts
+export const StaticRender = (window as any).CollboardSdk.StaticRender;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-hooks/useAsyncMemo.d.ts
 export const useAsyncMemo = (window as any).CollboardSdk.useAsyncMemo;
 
@@ -482,12 +506,20 @@ export const IUseLoadableResultStatus = (window as any).CollboardSdk.IUseLoadabl
 export const useLoadable = (window as any).CollboardSdk.useLoadable;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-hooks/useMeasure.d.ts
+export const useMeasure = (window as any).CollboardSdk.useMeasure;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-hooks/useObservable.d.ts
 export const useObservable = (window as any).CollboardSdk.useObservable;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-hooks/usePromise.d.ts
 export const usePromise = (window as any).CollboardSdk.usePromise;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-hooks/useSkin.d.ts
+export const useSkin = (window as any).CollboardSdk.useSkin;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/react-hooks/useSystems.d.ts

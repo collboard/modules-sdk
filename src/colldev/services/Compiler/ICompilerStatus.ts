@@ -4,7 +4,7 @@ import { string_file_relative_path, string_folder_relative_path } from '../../..
 export interface ICompilerStatus {
     isReady: boolean;
     stage: 'INITIALIZED' | 'COMPILING' | 'POSTPROCESSING' | 'DONE' | 'ERROR';
-    errors: Error[];
+    errors: Array<Error>;
     compilerStats?: ICompilerStats;
     webpackStats?: webpack.Stats;
     mainBundlePath?: string;

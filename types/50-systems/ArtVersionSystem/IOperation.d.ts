@@ -19,6 +19,7 @@ export interface IOngoingOperation {
     updateWithCallback(artCallback: (art: AbstractArt) => AbstractArt): this;
     updateWithMutatingCallback(artMutatingCallback: (art: AbstractArt) => void): this;
     delete(): void;
+    arts: Array<AbstractArt>;
 }
 export interface IOngoingMaterialOperation extends IOngoingOperation {
     abort(): void;
