@@ -15,6 +15,9 @@ export interface ICompilerOptions {
     entryPath: string_file_relative_path;
 }
 
+// Note: !!!
+process.env.NODE_OPTIONS += ` --openssl-legacy-provider`;
+
 export abstract class Compiler<TOptions extends ICompilerOptions>
     extends Destroyable
     implements IService, IDestroyable
