@@ -34,6 +34,10 @@ export const IconColor = (window as any).CollboardSdk.IconColor;
 export const string_icon = (window as any).CollboardSdk.string_icon;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/30-components/menu/IconText.d.ts
+export const IconText = (window as any).CollboardSdk.IconText;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/30-components/menu/IIconAnonymous.d.ts
 export const IIconAnonymous = (window as any).CollboardSdk.IIconAnonymous;
 
@@ -415,6 +419,10 @@ export const jsxToText = (window as any).CollboardSdk.jsxToText;
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/loadAndRunExternalScript.d.ts
 export const loadAndRunExternalScript = (window as any).CollboardSdk.loadAndRunExternalScript;
+
+
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/nonceFunction1.d.ts
+export const nonceFunction1 = (window as any).CollboardSdk.nonceFunction1;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/normalizing/nameToUriPart.d.ts

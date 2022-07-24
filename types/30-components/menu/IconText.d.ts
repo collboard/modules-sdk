@@ -6,12 +6,16 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { IIconAnonymous } from './IIconAnonymous';
+interface IIconTextProps extends Omit<IIconAnonymous, 'icon'> {
+    children: string;
+}
 /**
- * Generic icon component
+ * Icon with text
  *
  * Note: If not rendered within a menu, there is no guarantee
  * of being rendered correctly
  *
  * @collboard-modules-sdk
  */
-export declare function Icon(props: IIconAnonymous): JSX.Element;
+export declare function IconText(props: IIconTextProps): JSX.Element;
+export {};
