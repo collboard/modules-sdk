@@ -10,4 +10,4 @@
  *
  * @collboard-modules-sdk
  */
-export declare function nonceFunction1<T>(input: T): T;
+export declare function nonceFunction2<T>(input: T): T;

@@ -422,7 +422,7 @@ export const loadAndRunExternalScript = (window as any).CollboardSdk.loadAndRunE
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/nonceFunction1.d.ts
-export const nonceFunction1 = (window as any).CollboardSdk.nonceFunction1;
+export const nonceFunction2 = (window as any).CollboardSdk.nonceFunction2;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/normalizing/nameToUriPart.d.ts
