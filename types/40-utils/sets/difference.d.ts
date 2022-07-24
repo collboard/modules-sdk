@@ -5,6 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
+ * Create difference set of two sets.
+ *
  * @collboard-modules-sdk
  */
 export declare function difference<T>(a: Set<T>, b: Set<T>, isEqual?: (a: T, b: T) => boolean): Set<T>;

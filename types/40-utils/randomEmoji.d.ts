@@ -9,6 +9,8 @@ import { string_char_emoji } from './typeAliasEmoji';
  *
  * Pick random emoji char like "🍆", "🍡", "🍤"...
  *
+ * Note: exclude non-graphical and non-colored emojis like "🇧🇾" or "✶"
+ *
  * @collboard-modules-sdk
  */
 export declare function randomEmoji(): string_char_emoji;
