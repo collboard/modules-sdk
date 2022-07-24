@@ -142,6 +142,7 @@ export * from './40-utils/removeKeys';
 export * from './40-utils/requireValue';
 export * from './40-utils/scrapeContentFromUrl';
 export * from './40-utils/sets/difference';
+export * from './40-utils/sets/union';
 export * from './40-utils/Speech';
 export * from './40-utils/splitArray';
 export * from './40-utils/splitArrayIntoChunks';

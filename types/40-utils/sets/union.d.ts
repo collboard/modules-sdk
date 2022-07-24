@@ -4,4 +4,9 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-export declare const TODO = 'TODO';
+/**
+ * Creates a new set with all elements that are present in either set.
+ *
+ * @collboard-modules-sdk
+ */
+export declare function union<T>(...sets: Array<Set<T>>): Set<T>;

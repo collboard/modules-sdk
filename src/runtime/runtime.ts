@@ -544,6 +544,10 @@ export const scrapeContentFromUrlUncached = (window as any).CollboardSdk.scrapeC
 export const difference = (window as any).CollboardSdk.difference;
 
 
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/sets/union.d.ts
+export const union = (window as any).CollboardSdk.union;
+
+
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/Speech.d.ts
 export const Speech = (window as any).CollboardSdk.Speech;
 
