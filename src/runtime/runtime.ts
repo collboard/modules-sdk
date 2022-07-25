@@ -421,8 +421,8 @@ export const jsxToText = (window as any).CollboardSdk.jsxToText;
 export const loadAndRunExternalScript = (window as any).CollboardSdk.loadAndRunExternalScript;
 
 
-// C:/Users/me/work/collboard/modules-sdk/types/40-utils/nonceFunction1.d.ts
-export const nonceFunction2 = (window as any).CollboardSdk.nonceFunction2;
+// C:/Users/me/work/collboard/modules-sdk/types/40-utils/nonceFunction.d.ts
+export const nonceFunction3 = (window as any).CollboardSdk.nonceFunction3;
 
 
 // C:/Users/me/work/collboard/modules-sdk/types/40-utils/normalizing/nameToUriPart.d.ts
