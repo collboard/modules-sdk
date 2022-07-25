@@ -104,7 +104,6 @@ export * from './40-utils/jsx-html/jsxToHtmlPretty';
 export * from './40-utils/jsx-html/jsxToHtmlSimple';
 export * from './40-utils/jsx-html/jsxToText';
 export * from './40-utils/loadAndRunExternalScript';
-export * from './40-utils/nonceFunction1';
 export * from './40-utils/normalizing/nameToUriPart';
 export * from './40-utils/normalizing/normalize-to-kebab-case';
 export * from './40-utils/normalizing/normalizeToCamelCase';
