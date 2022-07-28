@@ -4,10 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { BehaviorSubject } from 'rxjs';
 /**
- * This function does nothing. Just return 3.
- * Its purpose is to be used as a tester of compatibility between SDK versions.
+ *  Utility which can send next value to BehaviorSubject based on mutation function.
  *
  * @collboard-modules-sdk
  */
-export declare function nonceFunction3(): number;
+export declare function nextWithMutation<T>(subject: BehaviorSubject<T>, mutate: (value: T) => void): void;
