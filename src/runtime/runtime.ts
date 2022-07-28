@@ -943,28 +943,11 @@ export const jsxToText = (window as any).CollboardSdk.jsxToText;
 export const loadAndRunExternalScript = (window as any).CollboardSdk.loadAndRunExternalScript;
 
 /**
- * This function does nothing. Just return 3.
- * Its purpose is to be used as a tester of compatibility between SDK versions.
+ *  Utility which can send next value to BehaviorSubject based on mutation function.
  *
  * @collboard-modules-sdk
  */
-export const nonceFunction3 = (window as any).CollboardSdk.nonceFunction3;
-
-/**
- * This function does nothing. Just return 4.
- * Its purpose is to be used as a tester of compatibility between SDK versions.
- *
- * @collboard-modules-sdk
- */
-export const nonceFunction4 = (window as any).CollboardSdk.nonceFunction4;
-
-/**
- * This function does nothing. Just return 5.
- * Its purpose is to be used as a tester of compatibility between SDK versions.
- *
- * @collboard-modules-sdk
- */
-export const nonceFunction5 = (window as any).CollboardSdk.nonceFunction5;
+export const nextWithMutation = (window as any).CollboardSdk.nextWithMutation;
 
 /**
  * @collboard-modules-sdk
