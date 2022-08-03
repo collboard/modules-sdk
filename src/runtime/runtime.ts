@@ -14,13 +14,6 @@ export const declareModule = (window as any).declareModule;
 
 // Note: here is all stuff marked with "@collboard SDK"
 /**
- * This documentates interface between Collboard and other apps.
- *
- * @collboard-modules-sdk
- */
-export const MessageApi = (window as any).CollboardSdk.MessageApi;
-
-/**
  * @collboard-modules-sdk
  */
 export const ArtScaler = (window as any).CollboardSdk.ArtScaler;
@@ -396,13 +389,6 @@ export const amIEmbededInIFrame = (window as any).CollboardSdk.amIEmbededInIFram
  * @collboard-modules-sdk
  */
 export const calculate = (window as any).CollboardSdk.calculate;
-
-/**
- * Makes first letter of a string uppercase
- *
- * @collboard-modules-sdk
- */
-export const capitalizeFirstLetter = (window as any).CollboardSdk.capitalizeFirstLetter;
 
 /**
  * Throws error if the passed options are incompatible with the passed schema.
@@ -948,6 +934,20 @@ export const loadAndRunExternalScript = (window as any).CollboardSdk.loadAndRunE
  * @collboard-modules-sdk
  */
 export const nextWithMutation = (window as any).CollboardSdk.nextWithMutation;
+
+/**
+ * Makes first letter of a string uppercase
+ *
+ * @collboard-modules-sdk
+ */
+export const capitalize = (window as any).CollboardSdk.capitalize;
+
+/**
+ * Makes first letter of a string uppercase
+ *
+ * @collboard-modules-sdk
+ */
+export const decapitalize = (window as any).CollboardSdk.decapitalize;
 
 /**
  * @collboard-modules-sdk
@@ -1854,6 +1854,13 @@ export const PromisableArray = (window as any).CollboardSdk.PromisableArray;
 export const ISystems = (window as any).CollboardSdk.ISystems;
 
 /**
+ * Core System
+ *
+ * @collboard-system
+ */
+export const Core = (window as any).CollboardSdk.Core;
+
+/**
  * ApiClient provides API calls to the remote server.
  *
  * @collboard-system
@@ -1896,6 +1903,13 @@ export const VirtualArtVersioningSystem = (window as any).CollboardSdk.VirtualAr
  * @collboard-system
  */
 export const AttributesSystem = (window as any).CollboardSdk.AttributesSystem;
+
+/**
+ * ApiClient provides API calls to the remote server.
+ *
+ * @collboard-system
+ */
+export const BoardSystem = (window as any).CollboardSdk.BoardSystem;
 
 /**
  * BusinessSystem tell things about currently used business
@@ -2151,6 +2165,13 @@ export const centerArts = (window as any).CollboardSdk.centerArts;
  * @collboard-system
  */
 export const LicenseSystem = (window as any).CollboardSdk.LicenseSystem;
+
+/**
+ * System that recieves and executes the post message API
+ *
+ * @collboard-system
+ */
+export const MessagesApiSystem = (window as any).CollboardSdk.MessagesApiSystem;
 
 /**
  * List of common-used authors
@@ -2550,6 +2571,13 @@ export const ISkin = (window as any).CollboardSdk.ISkin;
  * @collboard-modules-sdk
  */
 export const makeSkinModule = (window as any).CollboardSdk.makeSkinModule;
+
+/**
+ * TestSystem just for testing purposes.
+ *
+ * @collboard-system
+ */
+export const TestSystem = (window as any).CollboardSdk.TestSystem;
 
 /**
  *
