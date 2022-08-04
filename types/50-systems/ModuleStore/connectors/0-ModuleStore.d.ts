@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IDestroyable } from 'destroyable';
 import { string_module_category, string_module_name } from '../../../40-utils/typeAliases';
-import { AbstractSystem } from '../../AbstractSystem';
+import { AbstractSystem } from '../../10-AbstractSystem/AbstractSystem';
 import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
 import { IModulesStorageStrong } from '../interfaces/IModulesStorage';

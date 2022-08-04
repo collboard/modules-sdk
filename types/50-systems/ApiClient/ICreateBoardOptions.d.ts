@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_url } from '../../40-utils/typeAliases';
 /**
- * @deprecated in favour of MessageApi.CreateBoard
+ * @deprecated in favour of BoardSystem.createNewBoard
  */
 export interface ICreateBoardOptions {
     /**
@@ -15,6 +15,9 @@ export interface ICreateBoardOptions {
     uriId?: string;
     boardname?: string;
     redirect?: boolean;
+    /**
+     * @deprecated Use BoardSystem.createNewBoard useTemplate instead
+     */
     importAsMaterialize?: string_url;
     /**
      * @deprecated [🈚] Make this better via Art

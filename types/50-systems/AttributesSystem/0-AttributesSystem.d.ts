@@ -7,7 +7,7 @@
 /// <reference types="react" />
 import { BehaviorSubject } from 'rxjs';
 import { string_attribute, string_attribute_value_scope } from '../../40-utils/typeAliases';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { attribute_value } from './IAttribute';
 import { IAttributeRule } from './IAttributeRule';
 /**

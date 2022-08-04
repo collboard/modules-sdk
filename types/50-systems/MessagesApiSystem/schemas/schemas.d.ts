@@ -4,9 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import Ajv from 'ajv/dist/2020';
 /**
- * Makes first letter of a string uppercase
+ * All schemas for message API
  *
- * @collboard-modules-sdk
+ * @singleton
  */
-export declare function capitalizeFirstLetter(word: string): string;
+export declare const schemas: Ajv;

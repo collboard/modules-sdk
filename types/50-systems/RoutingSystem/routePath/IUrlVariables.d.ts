@@ -36,6 +36,9 @@ export interface IUrlVariables {
     extension?: string_file_extension | null;
     module?: string_module_name | null;
     modulePath?: string_uri | null;
+    /**
+     * Note: Only for everstorage library
+     */
     [key: string]: string | null | undefined;
 }
 /**
@@ -44,3 +47,8 @@ export interface IUrlVariables {
  * @collboard-modules-sdk
  */
 export declare const DEFAULT_URL_VARIABLES: IUrlVariables;
+/**
+ * TODO: Do more constraints on IUrlVariables:
+ *       - modulePath can not be defined if module is undefined
+ *       - ...
+ */

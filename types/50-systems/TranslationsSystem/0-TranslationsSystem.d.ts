@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 import { IReplacer } from '../../40-utils/applyParamsOnTemplate';
 import { string_translate_language, string_translate_name_not_normalized } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IMessage } from './interfaces/IMessage';
 import { ITranslateMessage } from './interfaces/ITranslateMessage';
 import { ITranslateMessagePicker } from './interfaces/ITranslateMessagePicker';

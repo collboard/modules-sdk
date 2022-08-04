@@ -6,12 +6,14 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { TouchController } from 'touchcontroller';
 import { ArtSerializer } from '../../CollboardApp';
+import { Core } from './../30-Core/0-Core';
 import { ApiClient } from './../ApiClient/0-ApiClient';
 import { BoardApiClient } from './../ApiClient/BoardApiClient';
 import { AppState } from './../AppState/0-AppState';
 import { MaterialArtVersioningSystem } from './../ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { VirtualArtVersioningSystem } from './../ArtVersionSystem/0-VirtualArtVersioningSystem';
 import { AttributesSystem } from './../AttributesSystem/0-AttributesSystem';
+import { BoardSystem } from './../BoardSystem/0-BoardSystem';
 import { BusinessSystem } from './../BusinessSystem/0-BusinessSystem';
 import { ClosePreventionSystem } from './../ClosePreventionSystem/0-ClosePreventionSystem';
 import { CollSpace } from './../CollSpace/0-CollSpace';
@@ -27,6 +29,7 @@ import { HintSystem } from './../HintSystem/0-HintSystem';
 import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
 import { ImportSystem } from './../ImportSystem/0-ImportSystem';
 import { LicenseSystem } from './../LicenseSystem/0-LicenseSystem';
+import { MessagesApiSystem } from './../MessagesApiSystem/0-MessagesApiSystem';
 import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
 import { AttributeSupportSyncer } from './../ModuleStore/Syncers/AttributeSupportSyncer';
@@ -40,6 +43,7 @@ import { SnapSystem } from './../SnapSystem/0-SnapSystem';
 import { SoundSystem } from './../SoundSystem/0-SoundSystem';
 import { StorageSystem } from './../StorageSystem/StorageSystem';
 import { StyleSystem } from './../StyleSystem/0-StyleSystem';
+import { TestSystem } from './../TestSystem/0-TestSystem';
 import { ToolbarSystem } from './../ToolbarSystem/0-ToolbarSystem';
 import { TranslationsSystem } from './../TranslationsSystem/0-TranslationsSystem';
 import { UsercontentSystem } from './../UsercontentSystem/0-UsercontentSystem';
@@ -77,12 +81,14 @@ export declare class SystemsContainer implements ISystemsExtended {
      * Add: TouchController,ArtSerializer
      * Pattern: private readonly <system>Subject = new BehaviorSubject<<System> | null>(null);
      */
+    private readonly coreSubject;
     private readonly apiClientSubject;
     private readonly boardApiClientSubject;
     private readonly appStateSubject;
     private readonly materialArtVersioningSystemSubject;
     private readonly virtualArtVersioningSystemSubject;
     private readonly attributesSystemSubject;
+    private readonly boardSystemSubject;
     private readonly businessSystemSubject;
     private readonly closePreventionSystemSubject;
     private readonly collSpaceSubject;
@@ -98,6 +104,7 @@ export declare class SystemsContainer implements ISystemsExtended {
     private readonly identitySystemSubject;
     private readonly importSystemSubject;
     private readonly licenseSystemSubject;
+    private readonly messagesApiSystemSubject;
     private readonly moduleStoreSubject;
     private readonly artSupportSyncerSubject;
     private readonly attributeSupportSyncerSubject;
@@ -111,6 +118,7 @@ export declare class SystemsContainer implements ISystemsExtended {
     private readonly soundSystemSubject;
     private readonly storageSystemSubject;
     private readonly styleSystemSubject;
+    private readonly testSystemSubject;
     private readonly toolbarSystemSubject;
     private readonly translationsSystemSubject;
     private readonly usercontentSystemSubject;
@@ -149,6 +157,8 @@ this.<system>Subject.next(<system>);
 
 // ----
 */
+    get core(): Promise<Core>;
+    setCore(core: Core | null): Promise<void>;
     get apiClient(): Promise<ApiClient>;
     setApiClient(apiClient: ApiClient | null): Promise<void>;
     get boardApiClient(): Promise<BoardApiClient>;
@@ -161,6 +171,8 @@ this.<system>Subject.next(<system>);
     setVirtualArtVersioningSystem(virtualArtVersioningSystem: VirtualArtVersioningSystem | null): Promise<void>;
     get attributesSystem(): Promise<AttributesSystem>;
     setAttributesSystem(attributesSystem: AttributesSystem | null): Promise<void>;
+    get boardSystem(): Promise<BoardSystem>;
+    setBoardSystem(boardSystem: BoardSystem | null): Promise<void>;
     get businessSystem(): Promise<BusinessSystem>;
     setBusinessSystem(businessSystem: BusinessSystem | null): Promise<void>;
     get closePreventionSystem(): Promise<ClosePreventionSystem>;
@@ -191,6 +203,8 @@ this.<system>Subject.next(<system>);
     setImportSystem(importSystem: ImportSystem | null): Promise<void>;
     get licenseSystem(): Promise<LicenseSystem>;
     setLicenseSystem(licenseSystem: LicenseSystem | null): Promise<void>;
+    get messagesApiSystem(): Promise<MessagesApiSystem>;
+    setMessagesApiSystem(messagesApiSystem: MessagesApiSystem | null): Promise<void>;
     get moduleStore(): Promise<ModuleStore>;
     setModuleStore(moduleStore: ModuleStore | null): Promise<void>;
     get artSupportSyncer(): Promise<ArtSupportSyncer>;
@@ -217,6 +231,8 @@ this.<system>Subject.next(<system>);
     setStorageSystem(storageSystem: StorageSystem | null): Promise<void>;
     get styleSystem(): Promise<StyleSystem>;
     setStyleSystem(styleSystem: StyleSystem | null): Promise<void>;
+    get testSystem(): Promise<TestSystem>;
+    setTestSystem(testSystem: TestSystem | null): Promise<void>;
     get toolbarSystem(): Promise<ToolbarSystem>;
     setToolbarSystem(toolbarSystem: ToolbarSystem | null): Promise<void>;
     get translationsSystem(): Promise<TranslationsSystem>;

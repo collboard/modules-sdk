@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 import { IVectorData, Transform, Vector } from 'xyzt';
 import { string_attribute, string_uuid } from '../../40-utils/typeAliases';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 /**
  * AppState is not quite a system but an object representing the state of the Collboard app.
  *

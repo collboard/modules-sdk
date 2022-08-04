@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { BrowserHistoryUrlStorage, IBrowserHistoryStorageOptions, IJson, IObservableStorage } from 'everstorage';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IUrlVariables } from './routePath/IUrlVariables';
 /**
  * @singleton

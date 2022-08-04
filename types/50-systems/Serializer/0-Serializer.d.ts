@@ -7,7 +7,7 @@
 import { Registration } from 'destroyable';
 import { ISerializable, ISerialized, ISerializeRule } from 'everstorage';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 /**
  * Serializer can serialize/deserialize objects. Primarily it is serialized arts.
  */

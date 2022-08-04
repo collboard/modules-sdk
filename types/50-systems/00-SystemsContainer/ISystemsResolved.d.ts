@@ -6,12 +6,14 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { TouchController } from 'touchcontroller';
 import { ArtSerializer } from '../../CollboardApp';
+import { Core } from './../30-Core/0-Core';
 import { ApiClient } from './../ApiClient/0-ApiClient';
 import { BoardApiClient } from './../ApiClient/BoardApiClient';
 import { AppState } from './../AppState/0-AppState';
 import { MaterialArtVersioningSystem } from './../ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { VirtualArtVersioningSystem } from './../ArtVersionSystem/0-VirtualArtVersioningSystem';
 import { AttributesSystem } from './../AttributesSystem/0-AttributesSystem';
+import { BoardSystem } from './../BoardSystem/0-BoardSystem';
 import { BusinessSystem } from './../BusinessSystem/0-BusinessSystem';
 import { ClosePreventionSystem } from './../ClosePreventionSystem/0-ClosePreventionSystem';
 import { CollSpace } from './../CollSpace/0-CollSpace';
@@ -27,6 +29,7 @@ import { HintSystem } from './../HintSystem/0-HintSystem';
 import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
 import { ImportSystem } from './../ImportSystem/0-ImportSystem';
 import { LicenseSystem } from './../LicenseSystem/0-LicenseSystem';
+import { MessagesApiSystem } from './../MessagesApiSystem/0-MessagesApiSystem';
 import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
 import { AttributeSupportSyncer } from './../ModuleStore/Syncers/AttributeSupportSyncer';
@@ -40,6 +43,7 @@ import { SnapSystem } from './../SnapSystem/0-SnapSystem';
 import { SoundSystem } from './../SoundSystem/0-SoundSystem';
 import { StorageSystem } from './../StorageSystem/StorageSystem';
 import { StyleSystem } from './../StyleSystem/0-StyleSystem';
+import { TestSystem } from './../TestSystem/0-TestSystem';
 import { ToolbarSystem } from './../ToolbarSystem/0-ToolbarSystem';
 import { TranslationsSystem } from './../TranslationsSystem/0-TranslationsSystem';
 import { UsercontentSystem } from './../UsercontentSystem/0-UsercontentSystem';
@@ -52,12 +56,14 @@ export interface ISystemsResolved {
      * Add: TouchController,ArtSerializer
      * Pattern: readonly <system>: <System>;
      */
+    readonly core: Core;
     readonly apiClient: ApiClient;
     readonly boardApiClient: BoardApiClient;
     readonly appState: AppState;
     readonly materialArtVersioningSystem: MaterialArtVersioningSystem;
     readonly virtualArtVersioningSystem: VirtualArtVersioningSystem;
     readonly attributesSystem: AttributesSystem;
+    readonly boardSystem: BoardSystem;
     readonly businessSystem: BusinessSystem;
     readonly closePreventionSystem: ClosePreventionSystem;
     readonly collSpace: CollSpace;
@@ -73,6 +79,7 @@ export interface ISystemsResolved {
     readonly identitySystem: IdentitySystem;
     readonly importSystem: ImportSystem;
     readonly licenseSystem: LicenseSystem;
+    readonly messagesApiSystem: MessagesApiSystem;
     readonly moduleStore: ModuleStore;
     readonly artSupportSyncer: ArtSupportSyncer;
     readonly attributeSupportSyncer: AttributeSupportSyncer;
@@ -86,6 +93,7 @@ export interface ISystemsResolved {
     readonly soundSystem: SoundSystem;
     readonly storageSystem: StorageSystem;
     readonly styleSystem: StyleSystem;
+    readonly testSystem: TestSystem;
     readonly toolbarSystem: ToolbarSystem;
     readonly translationsSystem: TranslationsSystem;
     readonly usercontentSystem: UsercontentSystem;
