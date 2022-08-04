@@ -34,9 +34,9 @@ export declare class BoardApiClient
      * TODO: ColldevSyncer does not need keepConnectionAlive so probbably BoardApiClient wont either
      */
     private keepConnectionAlive;
-    private sendToServerCommitChainThrottleQueues;
-    private sendToServerCommitChainThrottleQueues__push;
-    private sendToServerCommitChainThrottleQueues__shift;
+    private sendToServerCommitTreeThrottleQueues;
+    private sendToServerCommitTreeThrottleQueues__push;
+    private sendToServerCommitTreeThrottleQueues__shift;
     private runServerThrottleQueue;
     private syncLocalObjectsToServer;
     get canBeClosed(): boolean;
