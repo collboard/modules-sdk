@@ -13,7 +13,7 @@ import { AbstractArt } from '../../71-arts/20-AbstractArt';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 import { CornerstoneArt } from '../../71-arts/30-CornerstoneArt';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IClosePreventionSystem } from '../ClosePreventionSystem/IClosePreventionSystem';
 import { IArtVersioningSystem } from './IArtVersionSystem';
 import { IModuleSignature } from './IModuleSignature';

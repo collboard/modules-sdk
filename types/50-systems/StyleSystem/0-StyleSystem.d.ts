@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { ISkin } from './ISkin';
 import { ColorScheme } from './utils/watchPreferedColorScheme';
 /**

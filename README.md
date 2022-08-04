@@ -217,6 +217,10 @@ Warning: Do not edit by hand, all changes will be lost on next execution!
 
 <!--Systems-->
 
+### [Core](https://collboard.github.io/modules-sdk/classes/core.html)
+
+Core System
+
 ### [ApiClient](https://collboard.github.io/modules-sdk/classes/apiclient.html)
 
 ApiClient provides API calls to the remote server.
@@ -237,6 +241,10 @@ ArtVersionSystem synchronizes the arts with the remote server.
 ### [AttributesSystem](https://collboard.github.io/modules-sdk/classes/attributessystem.html)
 
 AttributesSystem manages shared art attributes and modules capable of selecting from them. It auto-installs / uninstalls attribute modules.
+
+### [BoardSystem](https://collboard.github.io/modules-sdk/classes/boardsystem.html)
+
+ApiClient provides API calls to the remote server.
 
 <!--Private system:
 ### [BusinessSystem](https://collboard.github.io/modules-sdk/classes/businesssystem.html)
@@ -327,6 +335,10 @@ It auto-installs / uninstalls file support modules.
 ### [LicenseSystem](https://collboard.github.io/modules-sdk/classes/licensesystem.html)
 
 LicenseSystem is a system that manages the licenses for modules
+
+### [MessagesApiSystem](https://collboard.github.io/modules-sdk/classes/messagesapisystem.html)
+
+System that recieves and executes the post message API
 
 ### [ModuleStore](https://collboard.github.io/modules-sdk/classes/modulestore.html)
 
@@ -419,6 +431,10 @@ StorageSystem provides storages for other systems / modules
 
 StyleSystem can register and manage additional CSS styles for modules. It can scope CSS so it will do not affect others.
 Note: UserInterfaceSystem is for JSX (HTML) vs. StyleSystem is for CSS styles
+
+### [TestSystem](https://collboard.github.io/modules-sdk/classes/testsystem.html)
+
+TestSystem just for testing purposes.
 
 ### [ToolbarSystem](https://collboard.github.io/modules-sdk/classes/toolbarsystem.html)
 

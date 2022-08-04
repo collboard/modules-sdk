@@ -34,12 +34,10 @@ export declare class CollboardApp {
      * TODO: !!  To some util which is destroyable and prepairs systems with a container as a whole
      */
     private changeVersioningSystems;
-    private initConsoleAccess;
-    private initMessageListener;
 }
 export {};
 /**
- * TODO: This file is too big
+ * TODO: This file is too big - maybe print on paper and split into multiple logical pieces + use Core(system) as a place
  * TODO: Join app and createApp
  *
  */

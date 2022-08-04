@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Destroyable, IDestroyable } from 'destroyable';
-import { ISystemsExtended } from './00-SystemsContainer/ISystems';
+import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 export declare abstract class AbstractSystem extends Destroyable implements IDestroyable {
     protected readonly systems: ISystemsExtended;
     constructor(systems: ISystemsExtended);

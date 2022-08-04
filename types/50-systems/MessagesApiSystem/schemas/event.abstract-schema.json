@@ -1,0 +1,14 @@
+{
+    "$comment": "This is base abstract schema for all message API requsts",
+    "$id": "https://schema.collboard.com/event",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Abstract message API event",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "Type of the message.\nIn this case \"EVENT\", in other cases for example \"REQUEST\" or \"RESPONSE\"",
+            "const": "EVENT"
+        }
+    },
+    "required": ["type"]
+}

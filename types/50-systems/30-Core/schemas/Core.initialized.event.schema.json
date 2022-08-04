@@ -1,0 +1,33 @@
+{
+    "$comment": "[🐸]",
+    "$id": "https://schema.collboard.com/core/initialized/event",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "Event emited when Collboard is initialized",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://schema.collboard.com/event",
+            "$comment": "Note: [🍋] This is a way how to extend the event schema; if there is a better or more elegant way, do it!"
+        }
+    ],
+    "properties": {
+        "systemName": {
+            "const": "core",
+            "$comment": "TODO: [🍃] Test that this is a valid system name BY THE FILENAME IN generate-message-api"
+        },
+        "eventName": {
+            "const": "initialized"
+        },
+        "version": {
+            "$ref": "#/$defs/semanticVersion"
+        }
+    },
+    "required": ["systemName", "eventName"],
+    "unevaluatedProperties": false,
+    "$defs": {
+        "semanticVersion": {
+            "type": "string",
+            "$comment": "TODO: Here should be a regex for semantic version: ^(d+.)?(d+.)?(*|d+)$"
+        }
+    }
+}

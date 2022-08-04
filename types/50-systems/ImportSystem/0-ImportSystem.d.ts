@@ -8,7 +8,7 @@ import { IDestroyable } from 'destroyable';
 import { IVectorData } from 'xyzt';
 import { string_url } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IOngoingMaterialOperation } from '../ArtVersionSystem/IOperation';
 import { IFileImportSupporter } from './interfaces/IFileImportSupporter';
 interface IImportOptions {

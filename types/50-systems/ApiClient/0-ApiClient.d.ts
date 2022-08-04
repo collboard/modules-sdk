@@ -13,7 +13,7 @@ import {
     string_version,
 } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { MaterialArtVersioningSystem } from '../ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { ITranslateMessage } from '../TranslationsSystem/interfaces/ITranslateMessage';
 import { ICreateBoardOptions } from './ICreateBoardOptions';

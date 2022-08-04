@@ -1,0 +1,25 @@
+{
+    "$comment": "[🐸]",
+    "$id": "https://schema.collboard.com/testSystem/throwError/request",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "Command to throw testing error TODO: [🍃] error handling should be in abstract-response",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://schema.collboard.com/request",
+            "$comment": "Note: [🍋] This is a way how to extend the request schema; if there is a better or more elegant way, do it!"
+        }
+    ],
+    "properties": {
+        "systemName": {
+            "const": "testSystem",
+            "$comment": "TODO: [🍃] Test that this is a valid system name BY THE FILENAME IN generate-message-api"
+        },
+        "actionName": {
+            "const": "throwError",
+            "$comment": "TODO: [🍃] Test that this is a valid method name BY THE FILENAME IN generate-message-api"
+        }
+    },
+    "required": ["systemName", "actionName"],
+    "unevaluatedProperties": false
+}

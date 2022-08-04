@@ -1,0 +1,18 @@
+{
+    "$comment": "This is base abstract schema for all message API requsts",
+    "$id": "https://schema.collboard.com/response",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Abstract message API response",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "Type of the message.\nIn this case \"RESPONSE\", in other cases for example \"REQUEST\" or \"EVENT\"",
+            "const": "RESPONSE"
+        },
+        "requestId": {
+            "description": "Echo of requestId given in request",
+            "oneOf": [{ "type": "string" }, { "type": "number" }]
+        }
+    },
+    "required": ["type"]
+}

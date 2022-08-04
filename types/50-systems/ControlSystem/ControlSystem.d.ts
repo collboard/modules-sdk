@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Registration } from 'destroyable';
 import { BehaviorSubject } from 'rxjs';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IControl } from './interfaces/IControl';
 import { IShortcut } from './interfaces/IShortcut';
 import { IRegisterControlOptions } from './utils/controlToControls';

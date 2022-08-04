@@ -4,11 +4,15 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IModuleSignature } from './../50-systems/ArtVersionSystem/IModuleSignature';
-import { MessageApi } from './MessageApi';
-interface IParseMessageEventResult {
-    moduleSignature: IModuleSignature;
-    message: MessageApi.Request;
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
+import { ITestSystem } from './interfaces/0-ITestSystem';
+/**
+ * TestSystem just for testing purposes.
+ *
+ * @collboard-system
+ */
+export declare class TestSystem extends AbstractSystem implements ITestSystem {
+    protected init(): Promise<void>;
+    echo<T>(message: T): Promise<T>;
+    throwError(): Promise<never>;
 }
-export declare function parseMessageEvent(event: MessageEvent): IParseMessageEventResult | null;
-export {};

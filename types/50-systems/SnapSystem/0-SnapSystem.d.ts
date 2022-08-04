@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 /**
  * SnapSystem /aka. Playground 2.0/ allows us to define a snap point on each art.
  * Note: This is continuing of the Playground in H-edu.

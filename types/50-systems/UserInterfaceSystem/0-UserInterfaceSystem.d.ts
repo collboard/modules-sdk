@@ -7,7 +7,7 @@
 /// <reference types="react" />
 import { SetOptional } from 'type-fest';
 import { ISystems } from '../00-SystemsContainer/ISystems';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { UserInterfaceElementPlace } from './UserInterfaceElementPlace';
 interface IElementOptions {
     /**

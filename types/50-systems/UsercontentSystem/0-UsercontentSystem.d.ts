@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_url } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
-import { AbstractSystem } from '../AbstractSystem';
+import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 /**
  * UsercontentSystem provides API to upload user content to the server.
  *

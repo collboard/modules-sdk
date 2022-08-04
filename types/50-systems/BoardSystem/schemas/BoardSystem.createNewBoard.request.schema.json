@@ -1,0 +1,89 @@
+{
+    "$comment": "[🐸]",
+    "$id": "https://schema.collboard.com/boardSystem/createNewBoard/request",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "Command to create new board\nNote: None of the fields are required",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://schema.collboard.com/request",
+            "$comment": "Note: [🍋] This is a way how to extend the request schema; if there is a better or more elegant way, do it!"
+        }
+    ],
+    "properties": {
+        "systemName": {
+            "const": "boardSystem",
+            "$comment": "TODO: [🍃] Test that this is a valid system name BY THE FILENAME IN generate-message-api"
+        },
+        "actionName": {
+            "const": "createNewBoard",
+            "$comment": "TODO: [🍃] Test that this is a valid method name BY THE FILENAME IN generate-message-api"
+        },
+        "boardname": {
+            "description": "Name of the board",
+            "type": "string"
+        },
+        "useTemplate": {
+            "description": "If set, the board will not be empty but from given template(s)\n",
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/url"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/url"
+                    }
+                }
+            ]
+        },
+        "modulesOn": {
+            "description": "If set, following modules will be enabled on the board",
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/moduleName"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/moduleName"
+                    }
+                }
+            ]
+        },
+        "modulesOff": {
+            "description": "If set, following default modules will be disabled on the board",
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/moduleName"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/moduleName"
+                    }
+                }
+            ]
+        },
+        "isNewBoardNavigated": {
+            "description": "If true, Collboard will navigate to the new board",
+            "type": "boolean"
+        },
+        "isPersistent": {
+            "description": "If true, Collboard will preserve this board for a long time",
+            "type": "boolean"
+        }
+    },
+    "required": ["systemName", "actionName", "isNewBoardNavigated", "isPersistent"],
+    "unevaluatedProperties": false,
+    "$defs": {
+        "url": {
+            "type": "string",
+            "pattern": "^https://[^/\r\n]+"
+        },
+        "moduleName": {
+            "type": "string",
+            "pattern": "^(@(?<scope>[a-z0-9][a-z0-9-]*))/(?<name>([a-z0-9][a-z0-9-]*)(/([a-z0-9][a-z0-9-]*))*)$"
+        }
+    }
+}
