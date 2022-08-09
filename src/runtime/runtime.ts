@@ -1042,6 +1042,17 @@ export const pickKeys = (window as any).CollboardSdk.pickKeys;
 export const randomEmoji = (window as any).CollboardSdk.randomEmoji;
 
 /**
+ *
+ * Generates a random integer between a given range
+ *
+ * @param min Minimum number (inclusive)
+ * @param max Maximum number (inclusive)
+ *
+ * @collboard-modules-sdk
+ */
+export const randomInteger = (window as any).CollboardSdk.randomInteger;
+
+/**
  * Pick random item from the recieved array
  *
  * @collboard-modules-sdk
