@@ -387,19 +387,6 @@ export declare type string_attribute_value_scope = string;
  * @collboard-modules-sdk
  */
 export declare type string_color = string;
-export declare type number_miliseconds = number;
-export declare type number_seconds = number;
-export declare type number_minutes = number;
-export declare type number_hours = number;
-export declare type number_days = number;
-export declare type number_weeks = number;
-export declare type number_months = number;
-export declare type number_years = number;
-export declare type number_bytes = number;
-export declare type number_kilobytes = number;
-export declare type number_megabytes = number;
-export declare type number_gigabytes = number;
-export declare type number_terabytes = number;
 /**
  * Semantic helper; For example "SHARE_ICON/EDIT_LINK"
  */
@@ -425,3 +412,17 @@ export declare type string_token = string;
 export declare type string_password = string;
 export declare type string_ssh_key = string;
 export declare type string_pgp_key = string;
+export declare type number_integer = number;
+export declare type number_miliseconds = number_integer;
+export declare type number_seconds = number;
+export declare type number_minutes = number;
+export declare type number_hours = number;
+export declare type number_days = number;
+export declare type number_weeks = number;
+export declare type number_months = number;
+export declare type number_years = number;
+export declare type number_bytes = number_integer;
+export declare type number_kilobytes = number;
+export declare type number_megabytes = number;
+export declare type number_gigabytes = number;
+export declare type number_terabytes = number;
