@@ -113,6 +113,7 @@ export { parseModuleName } from './40-utils/parseModuleName';
 export { patternToRegExp } from './40-utils/patternToRegExp';
 export { pickKeys } from './40-utils/pickKeys';
 export { randomEmoji } from './40-utils/randomEmoji';
+export { randomInteger } from './40-utils/randomInteger';
 export { randomItem } from './40-utils/randomItem';
 export { randomJavascriptName } from './40-utils/randomJavascriptName';
 export { randomString } from './40-utils/randomString';
