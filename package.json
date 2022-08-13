@@ -1,6 +1,6 @@
 {
   "name": "@collboard/modules-sdk",
-  "version": "27.8.201",
+  "version": "27.8.202",
   "description": "Modules SDK toolkit for collaborative whiteboard platform Collboard.com.",
   "license": "SEE LICENSE IN LICENSE",
   "contributors": [
