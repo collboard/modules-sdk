@@ -6,7 +6,7 @@ export function createModuleDevelopTest(modulePath: string, expectError: string 
     return () => {
         const expectation = expect(
             getFlags().then((flags) => {
-                const command = `npx ts-node --openssl-legacy-provider ./src/colldev/main.ts develop ./test-samples/${modulePath} ${flags}`;
+                const command = `npx ts-node ./src/colldev/main.ts develop ./test-samples/${modulePath} ${flags}`;
                 const cwd = join(__dirname, '../..');
                 const timeout = 60 * 1000;
 
