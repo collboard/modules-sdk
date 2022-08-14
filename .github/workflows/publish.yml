@@ -17,6 +17,8 @@ jobs:
             - run: npm ci
             - run: npm run lint
             - run: npm run test
+              env:
+                  NODE_OPTIONS: --openssl-legacy-provider
 
     publish-npm:
         name: Publish on NPM package registry
