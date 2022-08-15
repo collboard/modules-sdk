@@ -48,7 +48,8 @@ import { join } from 'path';
 import { execCommand } from './test-utils/execCommand/execCommand';
 
 execCommand({
-    command: 'npx ts-node ./test/test-utils/exitCodes/success.ts',
+    command: `npx ts-node-dev ./src/colldev/main.ts develop ./test-samples/hello-world --port 4005 --open multiple --browser firefoxxx`,
+    //command: 'npx ts-node ./test/test-utils/exitCodes/success.ts',
     cwd: join(__dirname, '..'),
 })
     .then((result) => {
