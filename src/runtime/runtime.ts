@@ -2869,7 +2869,7 @@ export const LineArt = (window as any).CollboardSdk.LineArt;
  *  > virtualArtVersioningSystem
     >    .createPrimaryOperation()
     >    .newArts(
-    >      new LoadingArt('aaa').setShift((await collSpace.pickPoint(touch.firstFrame.position)).point),
+    >      new LoadingArt('aaa').setShift((collSpace.pickPoint(touch.firstFrame.position)).point),
     >    )
     >    .persist();
  *
