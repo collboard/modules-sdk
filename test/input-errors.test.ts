@@ -17,7 +17,7 @@ describe('wrong usage of Colldev CLI command', () => {
             execCommand({
                 command: `npx ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --exit --foooo`,
                 cwd: join(__dirname, '..'),
-                timeout: 15 * 1000,
+                timeout: 25 * 1000,
             }),
         ).rejects.toThrowError(`unknown option '--foooo'`));
 
@@ -26,7 +26,7 @@ describe('wrong usage of Colldev CLI command', () => {
             execCommand({
                 command: `npx ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --exit --output monkey`,
                 cwd: join(__dirname, '..'),
-                timeout: 15 * 1000,
+                timeout: 25 * 1000,
             }),
         ).rejects.toThrowError(`Unknown type of output "monkey"`));
 
@@ -35,7 +35,7 @@ describe('wrong usage of Colldev CLI command', () => {
             execCommand({
                 command: `npx ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --exit --open single --browser foooo`,
                 cwd: join(__dirname, '..'),
-                timeout: 15 * 1000,
+                timeout: 25 * 1000,
             }),
         ).rejects.toThrowError(`Unknown browser "foooo"`));
 
@@ -45,7 +45,7 @@ describe('wrong usage of Colldev CLI command', () => {
                 execCommand({
                     command: `npx ts-node ./src/colldev/main.ts develop ./test-samples/errors/no-error --output ${outputMode}`,
                     cwd: join(__dirname, '..'),
-                    timeout: 15 * 1000,
+                    timeout: 25 * 1000,
                 }),
             ).rejects.toThrowError(/*
                 Note: Can not specify error message because it will vary depending on the output mode
