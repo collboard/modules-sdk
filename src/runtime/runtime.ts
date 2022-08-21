@@ -655,6 +655,8 @@ export const isFileExecutable = (window as any).CollboardSdk.isFileExecutable;
 
 /**
  * Filter array with limit and predicate
+ *
+ * @deprecated Extend Array prototype instead
  * @collboard-modules-sdk
  */
 export const filterWithLimit = (window as any).CollboardSdk.filterWithLimit;
