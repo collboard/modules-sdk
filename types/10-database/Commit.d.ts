@@ -32,4 +32,11 @@ export declare class Commit implements ICommitData {
     uriId: string_uri_part | null;
     artClass: string;
     art: any;
+    /**
+     * Check if the given data is valid commit
+     *
+     * @param possibleCommit
+     * @returns true if the data are implementing ICommitData
+     */
+    static isCommitLike(possibleCommit: any): possibleCommit is ICommitData;
 }

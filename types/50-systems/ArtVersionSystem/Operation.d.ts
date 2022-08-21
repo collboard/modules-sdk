@@ -80,6 +80,7 @@ export declare class Operation
     destroy(): Promise<void>;
     /**
      * Note: returning this because you can persist operation multiple times
+     * @idempotent If you call persist multiple times in a row, it will just persist once
      */
     persist(): this;
     private get unpersistedCommits();
@@ -88,5 +89,4 @@ export declare class Operation
     private expectNoUnpersistedCommits;
     private checkIfStartedProperly;
     private checkIfPersistedProperly;
-    private static isCommitLike;
 }
