@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { execCommand } from './test-utils/execCommand/execCommand';
 
-jest.setTimeout(1000 * 15);
+jest.setTimeout(1000 * 25);
 
 describe('wrong usage of Colldev CLI command', () => {
     it(`should crash on wrong script`, () =>
