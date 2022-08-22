@@ -15,6 +15,7 @@ Modules SDK toolkit for collaborative whiteboard platform [Collboard.com](https:
 
 [![License of 📦 Collboard modules SDK](https://img.shields.io/github/license/collboard/modules-sdk.svg?style=flat)](https://github.com/collboard/modules-sdk/blob/main/LICENSE)
 [![lint](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/lint.yml)
+[![test](https://github.com/collboard/modules-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/modules-sdk/actions/workflows/test.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/collboard/modules-sdk/badge.svg)](https://snyk.io/test/github/collboard/modules-sdk)
 [![Issues](https://img.shields.io/github/issues/collboard/modules-sdk.svg?style=flat)](https://github.com/collboard/modules-sdk/issues)
 
