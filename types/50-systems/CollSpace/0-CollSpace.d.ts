@@ -13,10 +13,11 @@ import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
  * @collboard-system
  */
 export declare class CollSpace extends AbstractSystem {
+    private appState;
     protected init(): Promise<void>;
-    pickPoint(point: IVectorData): Promise<{
+    pickPoint(point: IVectorData): {
         point: Vector;
         normal: Vector;
-    }>;
+    };
     pickArt(point: IVectorData): AbstractPlacedArt | null;
 }

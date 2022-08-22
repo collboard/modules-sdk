@@ -4,17 +4,20 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { BusinessSystem } from '../../BusinessSystem/0-BusinessSystem';
+import { BusinessName } from '../../BusinessSystem/configuration/BusinessName';
+import { IBusinessConfiguration } from '../../BusinessSystem/interfaces/IBusinessConfiguration';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 import { IModuleSearchCriteria } from '../interfaces/IModuleSearchCriteria';
 export declare function isModulePassingSearchCriteria({
     moduleManifest,
     searchCriteria,
-    businessSystem,
+    businessName,
+    businessConfiguration,
 }: {
     searchCriteria: IModuleSearchCriteria;
     moduleManifest?: IModuleManifest;
-    businessSystem?: BusinessSystem;
+    businessName?: BusinessName;
+    businessConfiguration?: IBusinessConfiguration;
 }): boolean;
 /**
  * TODO: Unit test

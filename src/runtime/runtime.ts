@@ -655,6 +655,8 @@ export const isFileExecutable = (window as any).CollboardSdk.isFileExecutable;
 
 /**
  * Filter array with limit and predicate
+ *
+ * @deprecated Extend Array prototype instead
  * @collboard-modules-sdk
  */
 export const filterWithLimit = (window as any).CollboardSdk.filterWithLimit;
@@ -2867,7 +2869,7 @@ export const LineArt = (window as any).CollboardSdk.LineArt;
  *  > virtualArtVersioningSystem
     >    .createPrimaryOperation()
     >    .newArts(
-    >      new LoadingArt('aaa').setShift((await collSpace.pickPoint(touch.firstFrame.position)).point),
+    >      new LoadingArt('aaa').setShift((collSpace.pickPoint(touch.firstFrame.position)).point),
     >    )
     >    .persist();
  *

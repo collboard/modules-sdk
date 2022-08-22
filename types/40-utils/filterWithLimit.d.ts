@@ -11,6 +11,8 @@ interface IFilterWithLimitOptions<T> {
 }
 /**
  * Filter array with limit and predicate
+ *
+ * @deprecated Extend Array prototype instead
  * @collboard-modules-sdk
  */
 export declare function filterWithLimit<T>({ array, limit, predicate }: IFilterWithLimitOptions<T>): Array<T>;
