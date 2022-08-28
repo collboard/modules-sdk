@@ -48,4 +48,4 @@ registerValidServiceWorker(serviceWorkerUrl, config);
 //}
 }
 */
-export declare function registerValidServiceWorker(serviceWorkerUrl: string): Promise<void>;
+export declare function registerServiceWorker(serviceWorkerUrl: string): Promise<void>;
