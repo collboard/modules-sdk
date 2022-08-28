@@ -271,6 +271,13 @@ export const Clickable = (window as any).CollboardSdk.Clickable;
 export const CopyComponent = (window as any).CollboardSdk.CopyComponent;
 
 /**
+ * Choose on which devices (according to display size) to show certain component
+ *
+ * @collboard-modules-sdk
+ */
+export const DisplayOn = (window as any).CollboardSdk.DisplayOn;
+
+/**
  * @collboard-modules-sdk
  */
 export const ErrorBoundary = (window as any).CollboardSdk.ErrorBoundary;
