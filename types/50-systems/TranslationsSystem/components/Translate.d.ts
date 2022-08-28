@@ -14,6 +14,7 @@ export declare function Translate(
     props: React.PropsWithChildren<{
         name: string_translate_name_not_normalized;
         html?: boolean;
+        isNonBreakSpaced?: true;
         parameters?: any;
     }>,
 ): JSX.Element;

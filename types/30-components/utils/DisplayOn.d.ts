@@ -5,16 +5,19 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
-import { ILoaderProps } from './utils/Loader/Loader';
-export declare type IRootComponentUnloadedProps = React.PropsWithChildren<
-    | {
-          isLoading: false;
-      }
-    | ({
-          isLoading: true;
-      } & ILoaderProps)
->;
-export declare function RootComponentUnloaded(props: IRootComponentUnloadedProps): JSX.Element;
+interface IDisplayOnProps {
+    desktop?: true;
+    tablet?: true;
+    mobile?: true;
+    children: React.ReactNode;
+}
 /**
- * TODO: [🏊‍♂️] Better naming and distinction of Collboard-specific components vs utils components
+ * Choose on which devices (according to display size) to show certain component
+ *
+ * @collboard-modules-sdk
+ */
+export declare function DisplayOn({ desktop, tablet, mobile, children }: IDisplayOnProps): JSX.Element;
+export {};
+/**
+ * TODO: [🍕] Unite sizes for display each device to one place
  */

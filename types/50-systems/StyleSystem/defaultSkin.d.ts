@@ -4,14 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-/// <reference types="react" />
+import { ISkin } from './ISkin';
 /**
+ * Default skin configuration
  *
- * Note: Need to be used inside of a module
+ * Note: Always prefer skin provided by StyleSystem, use this only when StyleSystem not available OR as a base object for extending to create new skin module
  *
- * @not-collboard-modules-sdk too specific that is used only in @collboard/download
+ * @collboard-modules-sdk
  */
-export declare function DownloadComponent(): JSX.Element;
-/**
- * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
- */
+export declare const DEFAULT_SKIN: ISkin;

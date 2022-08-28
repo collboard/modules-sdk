@@ -8,6 +8,7 @@ import React from 'react';
 import { IBaseMessage } from '../../50-systems/TranslationsSystem/interfaces/IMessage';
 declare type IModalGroupProps = React.PropsWithChildren<{
     title?: IBaseMessage;
+    isTitleVisibleOnSmallScreen: boolean;
 }>;
-export declare function ModalGroup({ children, title }: IModalGroupProps): JSX.Element;
+export declare function ModalGroup({ children, title, isTitleVisibleOnSmallScreen }: IModalGroupProps): JSX.Element;
 export {};

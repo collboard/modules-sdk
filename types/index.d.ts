@@ -13,6 +13,7 @@ export declare function declareModule(module: IModule): void;
 
 // Note: bellow is all stuff marked with "@collboard SDK"
 export { ArtScaler } from './30-components/ArtScaler';
+export { string_animation } from './30-components/menu/animations';
 export { Icon } from './30-components/menu/Icon';
 export { IconColor } from './30-components/menu/IconColor';
 export { string_icon } from './30-components/menu/icons';
@@ -30,11 +31,11 @@ export { AsyncButtonComponent } from './30-components/utils/AsyncButtonComponent
 export { AsyncContentComponent } from './30-components/utils/AsyncContentComponent';
 export { Clickable } from './30-components/utils/Clickable';
 export { CopyComponent } from './30-components/utils/CopyComponent';
+export { DisplayOn } from './30-components/utils/DisplayOn';
 export { ErrorBoundary } from './30-components/utils/ErrorBoundary';
 export { FileComponent } from './30-components/utils/FileComponent';
 export { Loader } from './30-components/utils/Loader/Loader';
 export { LoaderInline } from './30-components/utils/Loader/LoaderInline';
-export { TextLoader } from './30-components/utils/Loader/TextLoader';
 export { Obfuscate } from './30-components/utils/Obfuscate';
 export { ObservableContentComponent } from './30-components/utils/ObservableContentComponent';
 export { QRCode } from './30-components/utils/QRCode';
@@ -319,6 +320,7 @@ export { SnapSystem } from './50-systems/SnapSystem/0-SnapSystem';
 export { SoundSystem } from './50-systems/SoundSystem/0-SoundSystem';
 export { StorageSystem } from './50-systems/StorageSystem/StorageSystem';
 export { StyleSystem } from './50-systems/StyleSystem/0-StyleSystem';
+export { DEFAULT_SKIN } from './50-systems/StyleSystem/defaultSkin';
 export { ISkin } from './50-systems/StyleSystem/ISkin';
 export { makeSkinModule } from './50-systems/StyleSystem/makers/makeSkinModule';
 export { TestSystem } from './50-systems/TestSystem/0-TestSystem';

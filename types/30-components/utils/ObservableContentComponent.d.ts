@@ -7,7 +7,7 @@
 /// <reference types="react" />
 import { Observable } from 'rxjs';
 import { Promisable } from 'type-fest';
-import { ILoaderProps } from './Loader/Loader';
+import { ILoaderProps } from './Loader/ILoaderProps';
 interface IObservableContentComponentProps extends ILoaderProps {
     /**
      * Component to be rendered before the content is loaded

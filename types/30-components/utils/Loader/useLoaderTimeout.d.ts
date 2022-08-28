@@ -4,9 +4,14 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-export {};
 /**
- * TODO: Allow to search for new modules
- * TODO: [🍩] Maybe think about requesting systems non-magically
- * TODO: [🍩] Omitting systems.request should fail bacause of unrequested systems.
+ * TODO: Put all %c styled console logs styles into one config place
  */
+export declare const LOADING_CONSOLE_WARN_STYLE =
+    'background: #ffff22; color: black; font-size: 1.1em; font-weight: bold; padding: 5px; border-radius: 3px;';
+/**
+ * React hook for warn if the component is mounted longer than certain time
+ *
+ * @not-collboard-modules-sdk
+ */
+export declare function useLoaderTimeout(timeout: number, alt: string): void;

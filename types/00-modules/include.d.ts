@@ -4,11 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import './../30-components/utils/displayon-module';
+import './../30-components/utils/Loader/loader-modal-module';
+import './../30-components/utils/Loader/loader-module';
 import './../50-systems/ControlSystem/modules/shortcuts-override.module';
 import './../50-systems/ControlSystem/modules/shortcuts.module';
 import './../50-systems/ExportSystem/modules/download-icon.module';
-import './../50-systems/ExportSystem/modules/download-preview-icon.module';
-import './../50-systems/ExportSystem/modules/download-preview.module';
 import './../50-systems/ExportSystem/modules/download-shortcut.module';
 import './../50-systems/ExportSystem/modules/download.module';
 import './../50-systems/ImportSystem/modules/add-icon.module';
@@ -113,6 +114,7 @@ import './ui/basic/share/share.module';
 import './ui/basic/ThemeSelectModule/ThemeSelectModule';
 import './ui/basic/welcome/WelcomeModules';
 import './ui/clone/CloneBoardButton';
+import './ui/install/install-module';
 import './weightPickers/Weight2AttributeModule';
 import './xmas/CollboardXmasLogoModule';
 import './xmas/XmasSnowingModule';

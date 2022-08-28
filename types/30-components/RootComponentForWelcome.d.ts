@@ -5,12 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { IRootComponentUnloadedProps } from './CollboardUnloaded';
-declare type IRootComponentForWelcomeProps = IRootComponentUnloadedProps & {
-    isUserInterfaceRendered?: boolean;
-};
-export declare function RootComponentForWelcome(props: IRootComponentForWelcomeProps): JSX.Element;
-export {};
+export declare function RootComponentForWelcome(): JSX.Element;
 /**
  * TODO: [🏊‍♂️] Better naming and distinction of Collboard-specific components vs utils components
  */

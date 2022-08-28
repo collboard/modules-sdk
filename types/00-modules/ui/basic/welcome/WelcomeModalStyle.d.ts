@@ -4,13 +4,15 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-/// <reference types="react" />
-import { number_miliseconds, string_char } from '../../../40-utils/typeAliases';
-export interface ITextLoaderProps {
-    chars: Array<string_char>;
-    speed: number_miliseconds;
-}
+import { ISkin } from './../../../../50-systems/StyleSystem/ISkin';
+export declare const WelcomeModalStyle: import('styled-components').StyledComponent<
+    'div',
+    any,
+    {
+        skin: ISkin;
+    },
+    never
+>;
 /**
- * @collboard-modules-sdk
+ * TODO: [🏴‍☠️] Across the projects components+files with styled name call WelcomeModalStyle (not WelcomeModalDiv)
  */
-export declare function TextLoader({ chars, speed }: ITextLoaderProps): JSX.Element;
