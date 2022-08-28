@@ -55,6 +55,7 @@ export declare class TranslationsSystem extends AbstractSystem implements ITrans
         props: React.PropsWithChildren<{
             name: string_translate_name_not_normalized;
             html?: boolean;
+            isNonBreakSpaced?: true;
             parameters?: any;
         }>,
     ) => JSX.Element;

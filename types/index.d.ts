@@ -31,6 +31,7 @@ export { AsyncButtonComponent } from './30-components/utils/AsyncButtonComponent
 export { AsyncContentComponent } from './30-components/utils/AsyncContentComponent';
 export { Clickable } from './30-components/utils/Clickable';
 export { CopyComponent } from './30-components/utils/CopyComponent';
+export { DisplayOn } from './30-components/utils/DisplayOn';
 export { ErrorBoundary } from './30-components/utils/ErrorBoundary';
 export { FileComponent } from './30-components/utils/FileComponent';
 export { Loader } from './30-components/utils/Loader/Loader';

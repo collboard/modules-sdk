@@ -5,19 +5,19 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
-import { string_translate_name_not_normalized } from '../../../40-utils/typeAliases';
+interface IDisplayOnProps {
+    desktop?: true;
+    tablet?: true;
+    mobile?: true;
+    children: React.ReactNode;
+}
 /**
- * ....
+ * Choose on which devices (according to display size) to show certain component
+ *
  * @collboard-modules-sdk
  */
-export declare function Translate(
-    props: React.PropsWithChildren<{
-        name: string_translate_name_not_normalized;
-        html?: boolean;
-        isNonBreakSpaced?: true;
-        parameters?: any;
-    }>,
-): JSX.Element;
+export declare function DisplayOn({ desktop, tablet, mobile, children }: IDisplayOnProps): JSX.Element;
+export {};
 /**
- * TODO: Translations in (external) modules
+ * TODO: [🍕] Unite sizes for display each device to one place
  */

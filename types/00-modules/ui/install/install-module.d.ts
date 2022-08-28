@@ -4,20 +4,4 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import React from 'react';
-import { string_translate_name_not_normalized } from '../../../40-utils/typeAliases';
-/**
- * ....
- * @collboard-modules-sdk
- */
-export declare function Translate(
-    props: React.PropsWithChildren<{
-        name: string_translate_name_not_normalized;
-        html?: boolean;
-        isNonBreakSpaced?: true;
-        parameters?: any;
-    }>,
-): JSX.Element;
-/**
- * TODO: Translations in (external) modules
- */
+export {};

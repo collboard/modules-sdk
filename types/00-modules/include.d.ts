@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import './../30-components/utils/displayon-module';
 import './../30-components/utils/Loader/loader-modal-module';
 import './../30-components/utils/Loader/loader-module';
 import './../50-systems/ControlSystem/modules/shortcuts-override.module';
@@ -113,6 +114,7 @@ import './ui/basic/share/share.module';
 import './ui/basic/ThemeSelectModule/ThemeSelectModule';
 import './ui/basic/welcome/WelcomeModules';
 import './ui/clone/CloneBoardButton';
+import './ui/install/install-module';
 import './weightPickers/Weight2AttributeModule';
 import './xmas/CollboardXmasLogoModule';
 import './xmas/XmasSnowingModule';
