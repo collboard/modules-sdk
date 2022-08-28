@@ -19,6 +19,13 @@ export const declareModule = (window as any).declareModule;
 export const ArtScaler = (window as any).CollboardSdk.ArtScaler;
 
 /**
+ * List of all possible css animations
+ *
+ * @collboard-modules-sdk
+ */
+export const string_animation = (window as any).CollboardSdk.string_animation;
+
+/**
  * Generic icon component
  *
  * Note: If not rendered within a menu, there is no guarantee
@@ -241,7 +248,6 @@ export const PageOverlay = (window as any).CollboardSdk.PageOverlay;
 /**
  * Utility for button with pending state after click
  *
- * @deprecated [📠] Make this better (via hooks)
  * @collboard-modules-sdk
  */
 export const AsyncButtonComponent = (window as any).CollboardSdk.AsyncButtonComponent;
@@ -285,11 +291,6 @@ export const Loader = (window as any).CollboardSdk.Loader;
  * @collboard-modules-sdk
  */
 export const LoaderInline = (window as any).CollboardSdk.LoaderInline;
-
-/**
- * @collboard-modules-sdk
- */
-export const TextLoader = (window as any).CollboardSdk.TextLoader;
 
 /**
  * @collboard-modules-sdk
@@ -2569,6 +2570,15 @@ export const StorageSystem = (window as any).CollboardSdk.StorageSystem;
  * @collboard-system
  */
 export const StyleSystem = (window as any).CollboardSdk.StyleSystem;
+
+/**
+ * Default skin configuration
+ *
+ * Note: Always prefer skin provided by StyleSystem, use this only when StyleSystem not available OR as a base object for extending to create new skin module
+ *
+ * @collboard-modules-sdk
+ */
+export const DEFAULT_SKIN = (window as any).CollboardSdk.DEFAULT_SKIN;
 
 /**
  * Configuration of the skin
