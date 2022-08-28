@@ -10,6 +10,7 @@ export declare const ModalGroupTitleStyledDiv: import('styled-components').Style
     any,
     {
         skin: ISkin;
+        isTitleVisibleOnSmallScreen: boolean;
     },
     never
 >;

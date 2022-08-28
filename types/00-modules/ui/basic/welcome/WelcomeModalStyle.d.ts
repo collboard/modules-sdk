@@ -4,4 +4,15 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-export declare const ModuleDiv: import('styled-components').StyledComponent<'div', any, {}, never>;
+import { ISkin } from './../../../../50-systems/StyleSystem/ISkin';
+export declare const WelcomeModalStyle: import('styled-components').StyledComponent<
+    'div',
+    any,
+    {
+        skin: ISkin;
+    },
+    never
+>;
+/**
+ * TODO: [🏴‍☠️] Across the projects components+files with styled name call WelcomeModalStyle (not WelcomeModalDiv)
+ */

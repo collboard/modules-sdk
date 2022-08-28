@@ -4,19 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-/// <reference types="react" />
-import { ILoaderProps } from './ILoaderProps';
-interface ILoaderBlockProps extends ILoaderProps {
-    /**
-     * Is the gray background around the loader
-     */
-    isWithBackground?: true;
-}
+import { ISkin } from './ISkin';
 /**
+ * Default skin configuration
+ *
+ * Note: Always prefer skin provided by StyleSystem, use this only when StyleSystem not available OR as a base object for extending to create new skin module
+ *
  * @collboard-modules-sdk
  */
-export declare function Loader({ alt, canLoadForever, isWithBackground }: ILoaderBlockProps): JSX.Element;
-export {};
-/**
- *  TODO: [🍳] Maybe rename Loader to LoaderBlock
- */
+export declare const DEFAULT_SKIN: ISkin;

@@ -22,7 +22,6 @@ export { ErrorBoundary } from './30-components/utils/ErrorBoundary';
 export { FileComponent } from './30-components/utils/FileComponent';
 export { Loader } from './30-components/utils/Loader/Loader';
 export { LoaderInline } from './30-components/utils/Loader/LoaderInline';
-export { TextLoader } from './30-components/utils/Loader/TextLoader';
 export { Obfuscate } from './30-components/utils/Obfuscate';
 export { ObservableContentComponent } from './30-components/utils/ObservableContentComponent';
 export { QRCode } from './30-components/utils/QRCode';
@@ -213,6 +212,7 @@ export { SnapSystem } from './50-systems/SnapSystem/0-SnapSystem';
 export { SoundSystem } from './50-systems/SoundSystem/0-SoundSystem';
 export { StorageSystem } from './50-systems/StorageSystem/StorageSystem';
 export { StyleSystem } from './50-systems/StyleSystem/0-StyleSystem';
+export { DEFAULT_SKIN } from './50-systems/StyleSystem/defaultSkin';
 export { makeSkinModule } from './50-systems/StyleSystem/makers/makeSkinModule';
 export { TestSystem } from './50-systems/TestSystem/0-TestSystem';
 export { ToolbarName, ToolbarSystem } from './50-systems/ToolbarSystem/0-ToolbarSystem';
@@ -260,6 +260,7 @@ export {
     styledComponents,
     touchcontroller,
 } from './libraries';
+export type { string_animation } from './30-components/menu/animations';
 export type { string_icon } from './30-components/menu/icons';
 export type { IIconAnonymous } from './30-components/menu/IIconAnonymous';
 export type { Factory } from './40-utils/IFactory';

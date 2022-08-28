@@ -4,6 +4,8 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import './../30-components/utils/Loader/loader-modal-module';
+import './../30-components/utils/Loader/loader-module';
 import './../50-systems/ControlSystem/modules/shortcuts-override.module';
 import './../50-systems/ControlSystem/modules/shortcuts.module';
 import './../50-systems/ExportSystem/modules/download-icon.module';

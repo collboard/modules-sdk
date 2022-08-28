@@ -31,9 +31,6 @@ declare type ICategorizedModalProps = React.PropsWithChildren<{
      */
     fullSize?: boolean;
 }>;
-interface ICategorizedModalState {
-    menuOpen: boolean;
-}
 /**
  * Categorized modal component
  *
@@ -42,10 +39,7 @@ interface ICategorizedModalState {
  *
  * @collboard-modules-sdk
  */
-export declare class CategorizedModal extends React.Component<ICategorizedModalProps, ICategorizedModalState> {
-    state: ICategorizedModalState;
-    render(): JSX.Element;
-}
+export declare function CategorizedModal(props: ICategorizedModalProps): JSX.Element;
 /**
  * Categorized modal left sidebar wrapper
  *

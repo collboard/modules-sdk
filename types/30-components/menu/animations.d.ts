@@ -4,19 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-/// <reference types="react" />
-import { ILoaderProps } from './ILoaderProps';
-interface ILoaderBlockProps extends ILoaderProps {
-    /**
-     * Is the gray background around the loader
-     */
-    isWithBackground?: true;
-}
 /**
+ * List of all possible css animations
+ *
  * @collboard-modules-sdk
  */
-export declare function Loader({ alt, canLoadForever, isWithBackground }: ILoaderBlockProps): JSX.Element;
-export {};
+export declare type string_animation = 'spinning' | 'spinning-colors' | 'loading' | 'unpacking';
 /**
- *  TODO: [🍳] Maybe rename Loader to LoaderBlock
+ * TODO: Auto-generate list like icons.ts from animations.css [😻]
  */

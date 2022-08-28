@@ -4,19 +4,4 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-/// <reference types="react" />
-import { ILoaderProps } from './ILoaderProps';
-interface ILoaderBlockProps extends ILoaderProps {
-    /**
-     * Is the gray background around the loader
-     */
-    isWithBackground?: true;
-}
-/**
- * @collboard-modules-sdk
- */
-export declare function Loader({ alt, canLoadForever, isWithBackground }: ILoaderBlockProps): JSX.Element;
 export {};
-/**
- *  TODO: [🍳] Maybe rename Loader to LoaderBlock
- */

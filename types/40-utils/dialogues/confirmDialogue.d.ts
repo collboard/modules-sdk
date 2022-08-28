@@ -17,3 +17,6 @@ interface IConfirmDialogueOptions {
  */
 export declare function confirmDialogue(options: IConfirmDialogueOptions | IBaseMessage): Promise<boolean>;
 export {};
+/**
+ * TODO: Use here <ConfirmIcon [🙋]
+ */

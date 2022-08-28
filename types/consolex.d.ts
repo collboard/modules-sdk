@@ -23,7 +23,11 @@ export declare const consolex: SwitchLogger;
  *
  * @singleton
  */
-export declare function disableLogging(): void;
+export declare function disableLogging(reason: string): void;
+/**
+ * TODO: Put all %c styled console logs styles into one config place
+ */
+export declare const DISABLE_LOGGING_STYLE = 'color: #888;';
 /**
  * TODO: LoggingSystem
  * TODO: Make is as non-singleton

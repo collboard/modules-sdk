@@ -14,6 +14,9 @@ import { IModuleDefinition } from '../interfaces/IModule';
 import { IModuleManifest } from '../interfaces/IModuleManifest';
 interface ICreateModalReturn extends Partial<Omit<IModalProps, 'children'>> {
     content: Factorable<JSX.Element>;
+    /**
+     * @deprecated There should be just content and maker should be able to detect automatically if the content is <Modal or not
+     */
     wrapModalManually?: boolean;
 }
 /**

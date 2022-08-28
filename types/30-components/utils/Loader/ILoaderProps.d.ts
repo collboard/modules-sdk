@@ -4,19 +4,16 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-/// <reference types="react" />
-import { ILoaderProps } from './ILoaderProps';
-interface ILoaderBlockProps extends ILoaderProps {
+export interface ILoaderProps {
     /**
-     * Is the gray background around the loader
+     * Describe what is loading
+     * It is sorta like a alt for the image as a text for immediate synchronous use
      */
-    isWithBackground?: true;
+    alt: string;
+    /**
+     * Should be content loaded quickly or it is ok to show loader for long period of time
+     * - If FALSE warning will be shown after some time
+     * - If TRUE nothing will happen
+     */
+    canLoadForever?: boolean;
 }
-/**
- * @collboard-modules-sdk
- */
-export declare function Loader({ alt, canLoadForever, isWithBackground }: ILoaderBlockProps): JSX.Element;
-export {};
-/**
- *  TODO: [🍳] Maybe rename Loader to LoaderBlock
- */

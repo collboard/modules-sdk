@@ -7,7 +7,7 @@
 /// <reference types="react" />
 import { Promisable } from 'type-fest';
 import { Factorable } from '../../40-utils/IFactory';
-import { ILoaderProps } from './Loader/Loader';
+import { ILoaderProps } from './Loader/ILoaderProps';
 interface IAsyncContentComponentProps extends ILoaderProps {
     /**
      * Component to be rendered before the content is loaded
