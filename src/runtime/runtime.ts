@@ -206,18 +206,22 @@ export const Separator = (window as any).CollboardSdk.Separator;
 export const CategorizedModal = (window as any).CollboardSdk.CategorizedModal;
 
 /**
- * Categorized modal left sidebar wrapper
+ * Categorized modal main body wrapper
+ * Note: Use only inside component <CategorizedModal
  *
  * @collboard-modules-sdk
  */
-export const CategorizedModalMenu = (window as any).CollboardSdk.CategorizedModalMenu;
+
+export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModalBody;
 
 /**
- * Categorized modal main body wrapper
+ * Categorized modal left sidebar wrapper
+ * Note: Use only inside component <CategorizedModal
  *
  * @collboard-modules-sdk
  */
-export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModalBody;
+
+export const CategorizedModalMenu = (window as any).CollboardSdk.CategorizedModalMenu;
 
 /**
  * Modal component
