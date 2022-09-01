@@ -4,10 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_url } from './typeAliases';
+import { string_url } from '../typeAliases';
 /**
  * Tests if given string is valid DataURL.
  *
  * @collboard-modules-sdk
  */
-export declare function isValidDataUrl(url: string_url): boolean;
+export declare function isValidDataurl(url: string_url): boolean;

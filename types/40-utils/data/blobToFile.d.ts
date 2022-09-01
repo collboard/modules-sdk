@@ -4,15 +4,13 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_url } from '../typeAliases';
 /**
- * Makes GET request* and return response as a file.
+ * Converts Blob to File
+ * This is usefull for:
+ *   - Preserving Files that actually has a filename
+ *   - Autocomplete the filename for blobs according to its mimetype
  *
- * Tip: You can pass dataurl here and then * it converts it to a File
  *
  * @collboard-modules-sdk
  */
-export declare function fetchAsFile(url: URL | string_url, proxyUrl?: URL | string_url): Promise<File>;
-/**
- * TODO: Probably some other way to pass proxyUrl - maybe with high order function?
- */
+export declare function blobToFile(blob: File | Blob): Promise<File>;

@@ -8,6 +8,8 @@ import { string_data_url } from '../typeAliases';
 /**
  * Convert string data url to blob
  *
+ * Tip: If you want to have more versatile tool look at fetchAsFile which in dataurl cases uses internally this function dataurlToBlob
+ *
  * @collboard-modules-sdk
  */
-export declare function dataUrlToBlob(dataUrl: string_data_url): Promise<Blob>;
+export declare function dataurlToBlob(dataurl: string_data_url): Promise<Blob>;

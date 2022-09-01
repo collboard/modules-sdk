@@ -5,9 +5,12 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export { ArtScaler } from './30-components/ArtScaler';
+export type { string_animation } from './30-components/menu/animations';
 export { Icon } from './30-components/menu/Icon';
 export { IconColor } from './30-components/menu/IconColor';
+export type { string_icon } from './30-components/menu/icons';
 export { IconText } from './30-components/menu/IconText';
+export type { IIconAnonymous } from './30-components/menu/IIconAnonymous';
 export { Menu } from './30-components/menu/Menu';
 export { Separator } from './30-components/menu/Separator';
 export { CategorizedModal } from './30-components/modal/categorized-modal/CategorizedModal';
@@ -46,10 +49,10 @@ export { hslToRgb } from './40-utils/color/hslToRgb';
 export { rgbToHsl } from './40-utils/color/rgbToHsl';
 export { compareStrings } from './40-utils/compareStrings';
 export { create3dRotation } from './40-utils/create3dRotation';
-export { blobToDataUrl } from './40-utils/data/blobToDataUrl';
-export { dataUrlToBlob } from './40-utils/data/dataUrlToBlob';
-export { downloadFile } from './40-utils/data/downloadFile';
+export { blobToDataurl } from './40-utils/data/blobToDataurl';
+export { dataurlToBlob } from './40-utils/data/dataurlToBlob';
 export { ObjectUrl } from './40-utils/data/ObjectUrl';
+export { triggerFileDownload as downloadFile } from './40-utils/data/triggerFileDownload';
 export { deepClone } from './40-utils/deepClone';
 export { alertDialogue } from './40-utils/dialogues/alertDialogue';
 export { confirmDialogue } from './40-utils/dialogues/confirmDialogue';
@@ -79,7 +82,10 @@ export { flipNegativeSize } from './40-utils/flipNegativeSize';
 export { FunctionCache } from './40-utils/FunctionCache';
 export { windowSize } from './40-utils/getWindowSize';
 export { factor, NOT_CONSTRUCTABLE } from './40-utils/IFactory';
+export type { Factorable, Factory } from './40-utils/IFactory';
 export { factorWithSystems } from './40-utils/IFactoryWithSystems';
+export type { IFactorableWithSystems } from './40-utils/IFactoryWithSystems';
+export type { IHandler } from './40-utils/IHandler';
 export { addWhiteBackground } from './40-utils/image/addWhiteBackground';
 export { createPreviewElement } from './40-utils/image/createPreviewElement';
 export { imageToCanvas } from './40-utils/image/imageToCanvas';
@@ -90,7 +96,6 @@ export { isEqualArray } from './40-utils/isEqualArray';
 export { isFetchable } from './40-utils/isFetchable';
 export { isNumeric } from './40-utils/isNumeric';
 export { isRunningOnLocalhost } from './40-utils/isRunningOnLocalhost';
-export { isValidDataUrl } from './40-utils/isValidDataUrl';
 export { isValidUriId } from './40-utils/isValidUriId';
 export { isValidUrl } from './40-utils/isValidUrl';
 export { isValidUuid } from './40-utils/isValidUuid';
@@ -140,6 +145,7 @@ export { union } from './40-utils/sets/union';
 export { Speech } from './40-utils/Speech';
 export { splitArray } from './40-utils/splitArray';
 export { splitArrayIntoChunks } from './40-utils/splitArrayIntoChunks';
+export type { ICss } from './40-utils/style/css-object/ICss';
 export { parseStyles } from './40-utils/style/css-object/parseStyles';
 export { stringifyStyles } from './40-utils/style/css-object/stringifyStyles';
 export { parseGlobalStyles } from './40-utils/style/global/parseGlobalStyles';
@@ -148,9 +154,70 @@ export { insertStyleIntoHtml } from './40-utils/style/misc/insertStyleIntoHtml';
 export { pointsToPolygon } from './40-utils/svgUtils';
 export { Queue } from './40-utils/tasks/Queue';
 export { ThrottleQueue } from './40-utils/tasks/ThrottleQueue';
+export type { IThrottleQueueOptions } from './40-utils/tasks/ThrottleQueue';
 export { ThrottleQueues } from './40-utils/tasks/ThrottleQueues';
 export { toArray } from './40-utils/toArray';
 export { toString } from './40-utils/toString';
+export type {
+    ITrayDynamicDefinition,
+    ITrayDynamicItem,
+    ITrayDynamicItemFilter,
+    ITrayDynamicItemList,
+    ITrayDynamicToolbarGroup,
+    ITrayDynamicToolbarItems,
+} from './40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
+export type { ITraySimpleDefinition } from './40-utils/trayModules/interfaces/ITraySimpleItemTypes';
+export type { string_char_emoji } from './40-utils/typeAliasEmoji';
+export type {
+    ILicense,
+    IPersonProfile,
+    IRepository,
+    Keywords,
+    string_attribute,
+    string_attribute_value_scope,
+    string_char,
+    string_color,
+    string_css,
+    string_css_cursor,
+    string_css_property,
+    string_css_selector,
+    string_css_value,
+    string_data_url,
+    string_email,
+    string_file_absolute_path,
+    string_file_extension,
+    string_file_path,
+    string_file_relative_path,
+    string_folder_absolute_path,
+    string_folder_path,
+    string_folder_relative_path,
+    string_host,
+    string_hostname,
+    string_href,
+    string_html,
+    string_keyword,
+    string_license,
+    string_mime_type,
+    string_mime_type_with_wildcard,
+    string_module_category,
+    string_module_name,
+    string_person_fullname,
+    string_person_profile,
+    string_protocol,
+    string_sha256,
+    string_uri,
+    string_uriid,
+    string_uri_part,
+    string_url,
+    string_url_image,
+    string_uuid,
+    string_uuid_cut,
+    string_version,
+    string_version_dependency,
+    string_xml,
+} from './40-utils/typeAliases';
+export type { Arrayable, ArrayableFull, ArrayFull, PromisableArray } from './40-utils/typeHelpers';
+export type { ISystems } from './50-systems/00-SystemsContainer/ISystems';
 export { Core } from './50-systems/30-Core/0-Core';
 export { ApiClient } from './50-systems/ApiClient/0-ApiClient';
 export { BoardApiClient } from './50-systems/ApiClient/BoardApiClient';
@@ -169,6 +236,8 @@ export { findArtElement } from './50-systems/CollSpace/utils/findArtElement';
 export { findArtShellElement } from './50-systems/CollSpace/utils/findArtShellElement';
 export { getBoundingClientRectWithoutTransform } from './50-systems/CollSpace/utils/getBoundingClientRectWithoutTransform';
 export { ControlSystem } from './50-systems/ControlSystem/ControlSystem';
+export type { IKey } from './50-systems/ControlSystem/interfaces/IKey';
+export type { IShortcut } from './50-systems/ControlSystem/interfaces/IShortcut';
 export { isEventOnBoard } from './50-systems/ControlSystem/utils/isEventOnBoard';
 export { CreateSystem } from './50-systems/CreateSystem/0-CreateSystem';
 export { ExportSystem } from './50-systems/ExportSystem/0-ExportSystem';
@@ -176,6 +245,9 @@ export { ExporterPickerComponent } from './50-systems/ExportSystem/components/0-
 export { ExportScopePickerComponent } from './50-systems/ExportSystem/components/0-ExportScopePickerComponent';
 export { ExportPrepareComponent } from './50-systems/ExportSystem/components/ExportPrepareComponent';
 export { ExportScopeSimple } from './50-systems/ExportSystem/interfaces/IExportScope';
+export type { IExportScope } from './50-systems/ExportSystem/interfaces/IExportScope';
+export type { IFileExportSupporterOptions } from './50-systems/ExportSystem/interfaces/IFileExportSupporterOptions';
+export type { IFramable } from './50-systems/ExportSystem/interfaces/IFramable';
 export { sortArtContainersByScreenPosition } from './50-systems/ExportSystem/utils/sortArtContainersByScreenPosition';
 export { FilepickSystem } from './50-systems/FilepickSystem/0-FilepickSystem';
 export { FocusScopeName, FocusSystem } from './50-systems/FocusSystem/0-FocusSystem';
@@ -190,6 +262,22 @@ export { LicenseSystem } from './50-systems/LicenseSystem/0-LicenseSystem';
 export { MessagesApiSystem } from './50-systems/MessagesApiSystem/0-MessagesApiSystem';
 export { Authors } from './50-systems/ModuleStore/Authors';
 export { ModuleStore } from './50-systems/ModuleStore/connectors/0-ModuleStore';
+export type { IInstaller } from './50-systems/ModuleStore/interfaces/IInstaller';
+export type { IInstallPlan } from './50-systems/ModuleStore/interfaces/IInstallPlan';
+export type { IModule, IModuleDefinition, IModuleSetup } from './50-systems/ModuleStore/interfaces/IModule';
+export type {
+    IModuleFlags,
+    IModuleManifest,
+    IModuleManifestAuthor,
+    IModuleManifestSoftwareLicense,
+    IModuleManifestUsageLicense,
+    IModuleManifestUsageLicensePayed,
+} from './50-systems/ModuleStore/interfaces/IModuleManifest';
+export type { IModulePersister } from './50-systems/ModuleStore/interfaces/IModulePersister';
+export type { IModuleSearchCriteria } from './50-systems/ModuleStore/interfaces/IModuleSearchCriteria';
+export type { IModuleStatusReporter } from './50-systems/ModuleStore/interfaces/IModuleStatusReporter';
+export type { IModuleStoreConnector } from './50-systems/ModuleStore/interfaces/IModuleStoreConnector';
+export type { IModuleStoreConnectorSearchResult } from './50-systems/ModuleStore/interfaces/IModuleStoreConnectorSearchResult';
 export { makeArticlesSetModule } from './50-systems/ModuleStore/makers/makeArticlesSetModule';
 export { makeArtModule } from './50-systems/ModuleStore/makers/makeArtModule';
 export { makeAttributeModule } from './50-systems/ModuleStore/makers/makeAttributeModule';
@@ -211,20 +299,24 @@ export { NotificationSystem } from './50-systems/NotificationSystem/0-Notificati
 export { PointerSystem } from './50-systems/PointerSystem/0-PointerSystem';
 export { RoutingSystem } from './50-systems/RoutingSystem/0-RoutingSystem';
 export { DEFAULT_URL_VARIABLES, URI_PATTERN } from './50-systems/RoutingSystem/routePath/IUrlVariables';
+export type { IUrlVariables } from './50-systems/RoutingSystem/routePath/IUrlVariables';
 export { SnapSystem } from './50-systems/SnapSystem/0-SnapSystem';
 export { SoundSystem } from './50-systems/SoundSystem/0-SoundSystem';
 export { StorageSystem } from './50-systems/StorageSystem/StorageSystem';
 export { StyleSystem } from './50-systems/StyleSystem/0-StyleSystem';
 export { DEFAULT_SKIN } from './50-systems/StyleSystem/defaultSkin';
+export type { ISkin } from './50-systems/StyleSystem/ISkin';
 export { makeSkinModule } from './50-systems/StyleSystem/makers/makeSkinModule';
 export { TestSystem } from './50-systems/TestSystem/0-TestSystem';
 export { ToolbarName, ToolbarSystem } from './50-systems/ToolbarSystem/0-ToolbarSystem';
 export { TranslationsSystem } from './50-systems/TranslationsSystem/0-TranslationsSystem';
 export { Translate } from './50-systems/TranslationsSystem/components/Translate';
+export type { IBaseMessage, IMessage, IStringMessage } from './50-systems/TranslationsSystem/interfaces/IMessage';
 export { UsercontentSystem } from './50-systems/UsercontentSystem/0-UsercontentSystem';
 export { UserInterfaceSystem } from './50-systems/UserInterfaceSystem/0-UserInterfaceSystem';
 export { UserInterfaceElementPlace } from './50-systems/UserInterfaceSystem/UserInterfaceElementPlace';
 export { VoiceSystem } from './50-systems/VoiceSystem/0-VoiceSystem';
+export type { IFontStyleAttributeValue } from './70-attributes/FontStyleAttributeModule';
 export { AbstractArt } from './71-arts/20-AbstractArt';
 export { AbstractEnvironmentArt } from './71-arts/25-AbstractEnvironmentArt';
 export { AbstractPlacedArt, NEAR_DISTANCE } from './71-arts/25-AbstractPlacedArt';
@@ -247,7 +339,9 @@ export { ImageArt } from './71-arts/50-ImageArt';
 export { LineArt } from './71-arts/50-LineArt';
 export { LoadingArt } from './71-arts/50-LoadingArt';
 export { ShapeArt, ShapeName } from './71-arts/50-ShapeArt';
+export type { IListStyle } from './71-arts/50-TextArt/interfaces/IListStyle';
 export { TextArt } from './71-arts/50-TextArt/TextArt';
+export type { IBehavoirProps } from './72-tools/behaviors/IBehavoirProps';
 export { selectionToolDraggingBehavior } from './72-tools/behaviors/selectionTool/selectionToolDraggingBehavior';
 export { selectionToolScalingBehavior } from './72-tools/behaviors/selectionTool/selectionToolScalingBehavior';
 export { selectionToolSelectionBoxBehavior } from './72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior';
@@ -263,100 +357,3 @@ export {
     styledComponents,
     touchcontroller,
 } from './libraries';
-export type { string_animation } from './30-components/menu/animations';
-export type { string_icon } from './30-components/menu/icons';
-export type { IIconAnonymous } from './30-components/menu/IIconAnonymous';
-export type { Factory } from './40-utils/IFactory';
-export type { Factorable } from './40-utils/IFactory';
-export type { IFactorableWithSystems } from './40-utils/IFactoryWithSystems';
-export type { IHandler } from './40-utils/IHandler';
-export type { ICss } from './40-utils/style/css-object/ICss';
-export type { IThrottleQueueOptions } from './40-utils/tasks/ThrottleQueue';
-export type { ITrayDynamicItem } from './40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
-export type { ITrayDynamicItemList } from './40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
-export type { ITrayDynamicToolbarGroup } from './40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
-export type { ITrayDynamicToolbarItems } from './40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
-export type { ITrayDynamicItemFilter } from './40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
-export type { ITrayDynamicDefinition } from './40-utils/trayModules/interfaces/ITrayDynamicItemTypes';
-export type { ITraySimpleDefinition } from './40-utils/trayModules/interfaces/ITraySimpleItemTypes';
-export type { string_char_emoji } from './40-utils/typeAliasEmoji';
-export type { string_mime_type } from './40-utils/typeAliases';
-export type { string_mime_type_with_wildcard } from './40-utils/typeAliases';
-export type { string_char } from './40-utils/typeAliases';
-export type { string_html } from './40-utils/typeAliases';
-export type { string_xml } from './40-utils/typeAliases';
-export type { string_css } from './40-utils/typeAliases';
-export type { string_css_property } from './40-utils/typeAliases';
-export type { string_css_value } from './40-utils/typeAliases';
-export type { string_css_selector } from './40-utils/typeAliases';
-export type { string_url } from './40-utils/typeAliases';
-export type { string_data_url } from './40-utils/typeAliases';
-export type { string_href } from './40-utils/typeAliases';
-export type { string_url_image } from './40-utils/typeAliases';
-export type { string_uri } from './40-utils/typeAliases';
-export type { string_uri_part } from './40-utils/typeAliases';
-export type { string_uriid } from './40-utils/typeAliases';
-export type { string_protocol } from './40-utils/typeAliases';
-export type { string_hostname } from './40-utils/typeAliases';
-export type { string_host } from './40-utils/typeAliases';
-export type { string_email } from './40-utils/typeAliases';
-export type { string_uuid } from './40-utils/typeAliases';
-export type { string_uuid_cut } from './40-utils/typeAliases';
-export type { string_sha256 } from './40-utils/typeAliases';
-export type { string_version } from './40-utils/typeAliases';
-export type { string_version_dependency } from './40-utils/typeAliases';
-export type { string_file_extension } from './40-utils/typeAliases';
-export type { string_file_absolute_path } from './40-utils/typeAliases';
-export type { string_file_relative_path } from './40-utils/typeAliases';
-export type { string_file_path } from './40-utils/typeAliases';
-export type { string_folder_absolute_path } from './40-utils/typeAliases';
-export type { string_folder_relative_path } from './40-utils/typeAliases';
-export type { string_folder_path } from './40-utils/typeAliases';
-export type { string_module_name } from './40-utils/typeAliases';
-export type { string_module_category } from './40-utils/typeAliases';
-export type { string_person_fullname } from './40-utils/typeAliases';
-export type { string_person_profile } from './40-utils/typeAliases';
-export type { IPersonProfile } from './40-utils/typeAliases';
-export type { string_license } from './40-utils/typeAliases';
-export type { ILicense } from './40-utils/typeAliases';
-export type { IRepository } from './40-utils/typeAliases';
-export type { string_keyword } from './40-utils/typeAliases';
-export type { Keywords } from './40-utils/typeAliases';
-export type { string_css_cursor } from './40-utils/typeAliases';
-export type { string_attribute } from './40-utils/typeAliases';
-export type { string_attribute_value_scope } from './40-utils/typeAliases';
-export type { string_color } from './40-utils/typeAliases';
-export type { ArrayFull } from './40-utils/typeHelpers';
-export type { Arrayable } from './40-utils/typeHelpers';
-export type { ArrayableFull } from './40-utils/typeHelpers';
-export type { PromisableArray } from './40-utils/typeHelpers';
-export type { ISystems } from './50-systems/00-SystemsContainer/ISystems';
-export type { IKey } from './50-systems/ControlSystem/interfaces/IKey';
-export type { IShortcut } from './50-systems/ControlSystem/interfaces/IShortcut';
-export type { IExportScope } from './50-systems/ExportSystem/interfaces/IExportScope';
-export type { IFileExportSupporterOptions } from './50-systems/ExportSystem/interfaces/IFileExportSupporterOptions';
-export type { IFramable } from './50-systems/ExportSystem/interfaces/IFramable';
-export type { IInstaller } from './50-systems/ModuleStore/interfaces/IInstaller';
-export type { IInstallPlan } from './50-systems/ModuleStore/interfaces/IInstallPlan';
-export type { IModule } from './50-systems/ModuleStore/interfaces/IModule';
-export type { IModuleDefinition } from './50-systems/ModuleStore/interfaces/IModule';
-export type { IModuleSetup } from './50-systems/ModuleStore/interfaces/IModule';
-export type { IModuleManifest } from './50-systems/ModuleStore/interfaces/IModuleManifest';
-export type { IModuleFlags } from './50-systems/ModuleStore/interfaces/IModuleManifest';
-export type { IModuleManifestAuthor } from './50-systems/ModuleStore/interfaces/IModuleManifest';
-export type { IModuleManifestSoftwareLicense } from './50-systems/ModuleStore/interfaces/IModuleManifest';
-export type { IModuleManifestUsageLicense } from './50-systems/ModuleStore/interfaces/IModuleManifest';
-export type { IModuleManifestUsageLicensePayed } from './50-systems/ModuleStore/interfaces/IModuleManifest';
-export type { IModulePersister } from './50-systems/ModuleStore/interfaces/IModulePersister';
-export type { IModuleSearchCriteria } from './50-systems/ModuleStore/interfaces/IModuleSearchCriteria';
-export type { IModuleStatusReporter } from './50-systems/ModuleStore/interfaces/IModuleStatusReporter';
-export type { IModuleStoreConnector } from './50-systems/ModuleStore/interfaces/IModuleStoreConnector';
-export type { IModuleStoreConnectorSearchResult } from './50-systems/ModuleStore/interfaces/IModuleStoreConnectorSearchResult';
-export type { IUrlVariables } from './50-systems/RoutingSystem/routePath/IUrlVariables';
-export type { ISkin } from './50-systems/StyleSystem/ISkin';
-export type { IStringMessage } from './50-systems/TranslationsSystem/interfaces/IMessage';
-export type { IMessage } from './50-systems/TranslationsSystem/interfaces/IMessage';
-export type { IBaseMessage } from './50-systems/TranslationsSystem/interfaces/IMessage';
-export type { IFontStyleAttributeValue } from './70-attributes/FontStyleAttributeModule';
-export type { IListStyle } from './71-arts/50-TextArt/interfaces/IListStyle';
-export type { IBehavoirProps } from './72-tools/behaviors/IBehavoirProps';
