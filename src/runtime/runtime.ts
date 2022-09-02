@@ -863,7 +863,8 @@ export const isValidUriId = (window as any).CollboardSdk.isValidUriId;
 
 /**
  * Tests if given string is valid URL.
- * Note: DataURLs are considered valid.
+ *
+ * Note: Dataurl are considered perfectly valid.
  *
  * @collboard-modules-sdk
  */
