@@ -456,6 +456,13 @@ export const compareStrings = (window as any).CollboardSdk.compareStrings;
 export const create3dRotation = (window as any).CollboardSdk.create3dRotation;
 
 /**
+ * Convert Blob or File to binary string
+ *
+ * @collboard-modules-sdk
+ */
+export const blobToBinaryString = (window as any).CollboardSdk.blobToBinaryString;
+
+/**
  * Convert Blob or File to string data url
  *
  * Tip: Consider using ObjectUrl class instead
