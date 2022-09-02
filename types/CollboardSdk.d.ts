@@ -46,6 +46,7 @@ export { hslToRgb } from './40-utils/color/hslToRgb';
 export { rgbToHsl } from './40-utils/color/rgbToHsl';
 export { compareStrings } from './40-utils/compareStrings';
 export { create3dRotation } from './40-utils/create3dRotation';
+export { blobToBinaryString } from './40-utils/data/blobToBinaryString';
 export { blobToDataurl } from './40-utils/data/blobToDataurl';
 export { blobToFile } from './40-utils/data/blobToFile';
 export { dataurlToBlob } from './40-utils/data/dataurlToBlob';
