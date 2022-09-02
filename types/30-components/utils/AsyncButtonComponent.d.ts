@@ -58,6 +58,7 @@ export declare function AsyncButtonComponent({
 }: IAsyncButtonComponentProps): JSX.Element;
 export {};
 /**
+ * TODO: <Clickable vs. <Button (use <button as element) vs. (deprecated <AsyncButtonComponent)
  * TODO: Use here alt and canLoadForever
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */
