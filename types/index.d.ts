@@ -119,6 +119,7 @@ export { jsxToHtml } from './40-utils/jsx-html/jsxToHtml';
 export { jsxToHtmlPretty } from './40-utils/jsx-html/jsxToHtmlPretty';
 export { jsxToHtmlSimple } from './40-utils/jsx-html/jsxToHtmlSimple';
 export { jsxToText } from './40-utils/jsx-html/jsxToText';
+export { measureHtmlSize } from './40-utils/jsx-html/measureHtmlSize';
 export { loadAndRunExternalScript } from './40-utils/loadAndRunExternalScript';
 export { nextWithMutation } from './40-utils/nextWithMutation';
 export { capitalize } from './40-utils/normalizing/capitalize';
