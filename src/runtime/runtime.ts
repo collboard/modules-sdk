@@ -958,6 +958,13 @@ export const jsxToHtmlSimple = (window as any).CollboardSdk.jsxToHtmlSimple;
 export const jsxToText = (window as any).CollboardSdk.jsxToText;
 
 /**
+ * Get size of html
+ *
+ * @collboard-modules-sdk
+ */
+export const measureHtmlSize = (window as any).CollboardSdk.measureHtmlSize;
+
+/**
  * Load and run an external script
  * @param src url of the script to load
  * @returns a promise that resolves when the script is loaded
