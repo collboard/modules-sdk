@@ -810,7 +810,7 @@ export const createPreviewElement = (window as any).CollboardSdk.createPreviewEl
 export const imageToCanvas = (window as any).CollboardSdk.imageToCanvas;
 
 /**
- * Get image size after its rendered on its native size
+ * Get image size after its rendered on its natural size
  *
  * @collboard-modules-sdk
  */
