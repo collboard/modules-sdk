@@ -7,7 +7,7 @@
 import { Vector } from 'xyzt';
 import { string_url_image } from '../typeAliases';
 /**
- * Get image size after its rendered on its native size
+ * Get image size after its rendered on its natural size
  *
  * @collboard-modules-sdk
  */
