@@ -16,6 +16,10 @@ export declare class ConsoleLogger implements ILogger {
     trace(...data: Array<any>): this;
     group(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
     groupCollapsed(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
+    /**
+     *
+     * @deprecated Better to use standard group
+     */
     groupPrefixed(groupName?: string, ...optionalParams: Array<any>): ConsolePrefixLogger;
 }
 /**
