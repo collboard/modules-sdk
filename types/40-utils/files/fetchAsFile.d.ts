@@ -6,7 +6,9 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_url } from '../typeAliases';
 /**
- * Makes GET request and return response as a file.
+ * Makes GET request* and return response as a file.
+ *
+ * Tip: You can pass dataurl here and then * it converts it to a File
  *
  * @collboard-modules-sdk
  */

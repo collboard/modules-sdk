@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IDestroyable } from 'destroyable';
 import { IVectorData } from 'xyzt';
+import { ISubLogger } from '../../40-utils/logger/ILogger';
 import { string_url } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
@@ -28,6 +29,11 @@ interface IImportOptions {
      * @default true
      */
     isPersisted?: boolean;
+    /**
+     * Use some specific or existing logger
+     * @default there will be created new logger as groupPrefixed from the console
+     */
+    logger?: ISubLogger;
 }
 /**
  * Import system makes support for files which are dragged onto board, imporded or pasted
@@ -78,6 +84,7 @@ export declare class ImportSystem extends AbstractSystem {
         isPersisted,
         files,
         boardPosition,
+        logger: loggerNullable,
     }: IImportOptions & {
         files: Array<Blob | File>;
     }): Promise<IOngoingMaterialOperation | IDestroyable | null>;

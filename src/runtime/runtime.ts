@@ -206,18 +206,22 @@ export const Separator = (window as any).CollboardSdk.Separator;
 export const CategorizedModal = (window as any).CollboardSdk.CategorizedModal;
 
 /**
- * Categorized modal left sidebar wrapper
+ * Categorized modal main body wrapper
+ * Note: Use only inside component <CategorizedModal
  *
  * @collboard-modules-sdk
  */
-export const CategorizedModalMenu = (window as any).CollboardSdk.CategorizedModalMenu;
+
+export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModalBody;
 
 /**
- * Categorized modal main body wrapper
+ * Categorized modal left sidebar wrapper
+ * Note: Use only inside component <CategorizedModal
  *
  * @collboard-modules-sdk
  */
-export const CategorizedModalBody = (window as any).CollboardSdk.CategorizedModalBody;
+
+export const CategorizedModalMenu = (window as any).CollboardSdk.CategorizedModalMenu;
 
 /**
  * Modal component
@@ -452,27 +456,48 @@ export const compareStrings = (window as any).CollboardSdk.compareStrings;
 export const create3dRotation = (window as any).CollboardSdk.create3dRotation;
 
 /**
+ * Convert Blob or File to binary string
+ *
+ * @collboard-modules-sdk
+ */
+export const blobToBinaryString = (window as any).CollboardSdk.blobToBinaryString;
+
+/**
  * Convert Blob or File to string data url
+ *
  * Tip: Consider using ObjectUrl class instead
  * Tip: You can pass dataurl and it will be returned as is
  *
  * @collboard-modules-sdk
  */
-export const blobToDataUrl = (window as any).CollboardSdk.blobToDataUrl;
+export const blobToDataurl = (window as any).CollboardSdk.blobToDataurl;
+
+/**
+ * Converts Blob to File
+ * This is usefull for:
+ *   - Preserving Files that actually has a filename
+ *   - Autocomplete the filename for blobs according to its mimetype
+ *
+ *
+ * @collboard-modules-sdk
+ */
+export const blobToFile = (window as any).CollboardSdk.blobToFile;
 
 /**
  * Convert string data url to blob
  *
- * @collboard-modules-sdk
- */
-export const dataUrlToBlob = (window as any).CollboardSdk.dataUrlToBlob;
-
-/**
- * Download a File
+ * Tip: If you want to have more versatile tool look at fetchAsFile which in dataurl cases uses internally this function dataurlToBlob
  *
  * @collboard-modules-sdk
  */
-export const downloadFile = (window as any).CollboardSdk.downloadFile;
+export const dataurlToBlob = (window as any).CollboardSdk.dataurlToBlob;
+
+/**
+ * Tests if given string is valid DataURL.
+ *
+ * @collboard-modules-sdk
+ */
+export const isValidDataurl = (window as any).CollboardSdk.isValidDataurl;
 
 /**
  * Converts Blob, File or MediaSource to url using URL.createObjectURL
@@ -480,6 +505,13 @@ export const downloadFile = (window as any).CollboardSdk.downloadFile;
  * @collboard-modules-sdk
  */
 export const ObjectUrl = (window as any).CollboardSdk.ObjectUrl;
+
+/**
+ * Download a File to with a browser
+ *
+ * @collboard-modules-sdk
+ */
+export const triggerFileDownload = (window as any).CollboardSdk.triggerFileDownload;
 
 /**
  * Deep clone an object
@@ -620,7 +652,9 @@ export const escapeRegExp = (window as any).CollboardSdk.escapeRegExp;
 export const amendPropperFileTypeAndName = (window as any).CollboardSdk.amendPropperFileTypeAndName;
 
 /**
- * Makes GET request and return response as a file.
+ * Makes GET request* and return response as a file.
+ *
+ * Tip: You can pass dataurl here and then * it converts it to a File
  *
  * @collboard-modules-sdk
  */
@@ -776,7 +810,7 @@ export const createPreviewElement = (window as any).CollboardSdk.createPreviewEl
 export const imageToCanvas = (window as any).CollboardSdk.imageToCanvas;
 
 /**
- * Get image size after its rendered on its native size
+ * Get image size after its rendered on its natural size
  *
  * @collboard-modules-sdk
  */
@@ -829,13 +863,6 @@ export const isNumeric = (window as any).CollboardSdk.isNumeric;
 export const isRunningOnLocalhost = (window as any).CollboardSdk.isRunningOnLocalhost;
 
 /**
- * Tests if given string is valid DataURL.
- *
- * @collboard-modules-sdk
- */
-export const isValidDataUrl = (window as any).CollboardSdk.isValidDataUrl;
-
-/**
  *
  * @collboard-modules-sdk
  */
@@ -843,7 +870,8 @@ export const isValidUriId = (window as any).CollboardSdk.isValidUriId;
 
 /**
  * Tests if given string is valid URL.
- * Note: DataURLs are considered valid.
+ *
+ * Note: Dataurl are considered perfectly valid.
  *
  * @collboard-modules-sdk
  */
@@ -928,6 +956,13 @@ export const jsxToHtmlSimple = (window as any).CollboardSdk.jsxToHtmlSimple;
  * @collboard-modules-sdk
  */
 export const jsxToText = (window as any).CollboardSdk.jsxToText;
+
+/**
+ * Get size of html
+ *
+ * @collboard-modules-sdk
+ */
+export const measureHtmlSize = (window as any).CollboardSdk.measureHtmlSize;
 
 /**
  * Load and run an external script

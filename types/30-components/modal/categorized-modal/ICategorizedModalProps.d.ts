@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
-declare type ICategorizedModalProps = React.PropsWithChildren<{
+export declare type ICategorizedModalProps = React.PropsWithChildren<{
     /**
      * Modal title
      */
@@ -31,25 +31,3 @@ declare type ICategorizedModalProps = React.PropsWithChildren<{
      */
     fullSize?: boolean;
 }>;
-/**
- * Categorized modal component
- *
- * Wrap the CategorizedModal contents with `CategorizedModalMenu`
- * and `CategorizedModalBody` components
- *
- * @collboard-modules-sdk
- */
-export declare function CategorizedModal(props: ICategorizedModalProps): JSX.Element;
-/**
- * Categorized modal left sidebar wrapper
- *
- * @collboard-modules-sdk
- */
-export declare function CategorizedModalMenu(props: { children: JSX.Element }): JSX.Element;
-/**
- * Categorized modal main body wrapper
- *
- * @collboard-modules-sdk
- */
-export declare function CategorizedModalBody(props: { children: JSX.Element }): JSX.Element;
-export {};

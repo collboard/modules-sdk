@@ -13,4 +13,8 @@ export declare class ConsoleGroupSubLogger extends RecordLogger implements ISubL
     private readonly optionalParams;
     constructor(console: Console, collapsed: boolean, groupName?: string | undefined, ...optionalParams: Array<any>);
     end(): void;
+    private output;
 }
+/**
+ * TODO: In constructor optionalParams probbably does not make sense BUT instead of it configure timeout, style,...
+ */

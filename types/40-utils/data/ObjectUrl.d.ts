@@ -26,7 +26,7 @@ export declare class ObjectUrl extends Registration implements IDestroyable {
      *
      * DO NOT forget to call destroy() when you are done with it
      */
-    static fromBlobOrUrl(source: Blob | File | MediaSource | string_url): ObjectUrl;
+    static fromBlobOrUrl(source: Blob | File | MediaSource | URL | string_url): ObjectUrl;
     /**
      * Gets object url as string
      * @alias src

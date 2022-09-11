@@ -9,5 +9,5 @@ import { Arrayable, ArrayableFull, ArrayFull } from './typeHelpers';
  *
  * @collboard-modules-sdk
  */
-export declare function toArray<T>(input?: ArrayableFull<T> | string, delimiter?: string): ArrayFull<T>;
-export declare function toArray<T>(input?: Arrayable<T> | string, delimiter?: string): Array<T>;
+export declare function toArray<T>(input?: ArrayableFull<T> | string, delimiter?: string | null): ArrayFull<T>;
+export declare function toArray<T>(input?: Arrayable<T> | string, delimiter?: string | null): Array<T>;

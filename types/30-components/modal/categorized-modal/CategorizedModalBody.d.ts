@@ -5,15 +5,14 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { IModuleBoxComponentProps } from './IModuleBoxComponentProps';
-export declare function ModuleBoxComponent({
-    manifest,
-    moduleStatusReporter,
-    persister,
-    translationsSystem,
-    businessSystem,
-    licenseSystem,
-}: IModuleBoxComponentProps): JSX.Element;
 /**
- * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ * Categorized modal main body wrapper
+ * Note: Use only inside component <CategorizedModal
+ *
+ * @collboard-modules-sdk
+ */
+export declare function CategorizedModalBody(props: { children: JSX.Element }): JSX.Element;
+/**
+ * TODO: Maybe remove CategorizedModalBodyStyle + with this remove tag [🦅]
+ * TODO: [🦅] Maybe just CategorizedModalBodyStyle as CategorizedModalBody will be enough
  */

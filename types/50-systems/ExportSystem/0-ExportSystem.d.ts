@@ -49,7 +49,14 @@ export declare class ExportSystem extends AbstractSystem {
     /**
      * Makes export from the Collboard
      *
-     * Note: exportFiles (=do all heavy stuff) vs exportFilesPrepare (=only tells which exports are possible)
+     * Note: exportFile(s) (=do all heavy stuff) vs exportFilesPrepare (=only tells which exports are possible)
      */
     exportFiles(options: IExportFileOptions): Promise<Array<File>>;
+    /**
+     * Makes export of one file from the Collboard
+     * When there is no file to export it throws error
+     *
+     * Note: exportFile(s) (=do all heavy stuff) vs exportFilesPrepare (=only tells which exports are possible)
+     */
+    exportFile(options: IExportFileOptions): Promise<File>;
 }

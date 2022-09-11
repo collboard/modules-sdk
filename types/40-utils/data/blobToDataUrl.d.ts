@@ -8,12 +8,13 @@ import { Promisable } from 'type-fest';
 import { string_data_url } from '../typeAliases';
 /**
  * Convert Blob or File to string data url
+ *
  * Tip: Consider using ObjectUrl class instead
  * Tip: You can pass dataurl and it will be returned as is
  *
  * @collboard-modules-sdk
  */
-export declare function blobToDataUrl(source: Blob | File | string_data_url): Promisable<string_data_url>;
+export declare function blobToDataurl(source: Blob | File | string_data_url): Promisable<string_data_url>;
 /**
- * TODO: Throw warning when dataUrl is not valid due to its length
+ * TODO: Throw warning when dataurl is not valid due to its length
  */
