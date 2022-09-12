@@ -44,8 +44,8 @@ export declare class TextArt extends Abstract2dArt {
     set point1(point1: IVectorData);
     private __size;
     get size(): Vector;
-    get topLeftCorner(): IVectorData;
-    get bottomRightCorner(): Vector;
+    get topLeft(): IVectorData;
+    get bottomRight(): Vector;
     isNear(pointToTest: IVectorData): boolean;
     get acceptedAttributes(): string[];
     render(/* @deprecated */ isSelected: boolean, systems: ISystems): Promise<JSX.Element>;

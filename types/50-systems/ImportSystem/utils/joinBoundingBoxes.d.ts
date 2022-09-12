@@ -4,15 +4,8 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IVectorData, Vector } from 'xyzt';
+import { IBoundingBoxData } from '../../ExportSystem/interfaces/IBoundingBoxData';
 /**
- * @deprecated this should be using LIB xyzt boundingBox
+ * @deprecated use BoundingBox.merge from LIB xyzt
  */
-export declare type square = {
-    topLeft: Vector;
-    bottomRight: Vector;
-};
-/**
- * @deprecated this should be using LIB xyzt boundingBox
- */
-export declare function pointsToSquare(point1: IVectorData, point2: IVectorData): square;
+export declare function joinBoundingBoxes(...boundingBoxes: Array<IBoundingBoxData>): IBoundingBoxData;

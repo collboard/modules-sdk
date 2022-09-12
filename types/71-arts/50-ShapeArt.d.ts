@@ -31,8 +31,8 @@ export declare class ShapeArt extends Abstract2dArt {
         name: string;
     };
     constructor(shape: ShapeName, color: string_color, weight: number, shift: IVectorData, privateSize: IVectorData);
-    get topLeftCorner(): Vector;
-    get bottomRightCorner(): Vector;
+    get topLeft(): Vector;
+    get bottomRight(): Vector;
     get size(): IVectorData;
     set size(newSize: IVectorData);
     isNear(pointToTest: IVectorData): boolean;

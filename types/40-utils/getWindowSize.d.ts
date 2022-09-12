@@ -13,3 +13,6 @@ import { Vector } from 'xyzt';
  * @collboard-modules-sdk
  */
 export declare const windowSize: BehaviorSubject<Vector>;
+/**
+ * TODO: windowSize is more like system than a singleton
+ */

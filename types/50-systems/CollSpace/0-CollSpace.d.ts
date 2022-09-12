@@ -4,8 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IVectorData, Vector } from 'xyzt';
-import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
+import { BoundingBox, IVectorData, Vector } from 'xyzt';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 /**
  * CollSpace manages 3D objects rendered by WebGL (BABYLON JS) and provides all the tooling around the 3D scene, positioning, textures, materials, etc.
@@ -15,9 +14,26 @@ import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 export declare class CollSpace extends AbstractSystem {
     private appState;
     protected init(): Promise<void>;
-    pickPoint(point: IVectorData): {
+    /**
+     * Border of the user screen
+     */
+    get screenBorder(): BoundingBox;
+    /**
+     * Pick point on the board based on point on users screen
+     *
+     * @param pointOnScreen [0,0] means top-left corner of the window
+     * @return point on the board with normal vector (if there is 3D shape)
+     */
+    pickPoint(pointOnScreen: IVectorData): {
         point: Vector;
         normal: Vector;
     };
-    pickArt(point: IVectorData): AbstractPlacedArt | null;
+    /**
+     * Testing code to showcase screenBorder property
+     */
+    private testScreenBorder;
+    /**
+     * Testing code to showcase pickPoint method
+     */
+    private testPickPoint;
 }

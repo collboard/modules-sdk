@@ -276,6 +276,7 @@ export { HintSystem } from './50-systems/HintSystem/0-HintSystem';
 export { IdentitySystem } from './50-systems/IdentitySystem/0-IdentitySystem';
 export { ImportSystem } from './50-systems/ImportSystem/0-ImportSystem';
 export { centerArts } from './50-systems/ImportSystem/utils/centerArts';
+export { topleftArts } from './50-systems/ImportSystem/utils/topleftArts';
 export { LicenseSystem } from './50-systems/LicenseSystem/0-LicenseSystem';
 export { MessagesApiSystem } from './50-systems/MessagesApiSystem/0-MessagesApiSystem';
 export { Authors } from './50-systems/ModuleStore/Authors';

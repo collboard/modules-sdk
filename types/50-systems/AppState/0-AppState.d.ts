@@ -48,8 +48,8 @@ export declare class AppState extends AbstractSystem {
      */
     getSelectedBoundingBox():
         | {
-              topLeftCorner: Vector;
-              bottomRightCorner: Vector;
+              topLeft: Vector;
+              bottomRight: Vector;
           }
         | undefined;
     /**
@@ -92,6 +92,7 @@ interface IIsArtSelectedOptions {
 }
 export {};
 /**
+ * TODO: screenBorder should be maybe RxJs observable
  * TODO: [🍵] Make SelectionSystem a system and much better with ONLY one BehaviorSubject with data and other stuff just Observables derived from it.
  * TODO: Selected: When loosing focus in the app (for example clicking on board name or opening a modal), selection should be canceled
  * TODO: Selection: Some better name like selectBox AND rname it globally not only here

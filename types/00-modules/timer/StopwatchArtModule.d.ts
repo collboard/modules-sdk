@@ -27,8 +27,8 @@ export declare class StopwatchArt extends Abstract2dArt {
     set stopwatchControls(value: ITimerAndStopwatchControls);
     get stopwatchControls(): ITimerAndStopwatchControls;
     get acceptedAttributes(): string[];
-    get topLeftCorner(): IVectorData;
-    get bottomRightCorner(): Vector;
+    get topLeft(): IVectorData;
+    get bottomRight(): Vector;
     render(): JSX.Element;
 }
 /**

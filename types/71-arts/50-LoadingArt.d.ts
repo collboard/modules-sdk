@@ -30,8 +30,8 @@ export declare class LoadingArt extends Abstract2dArt {
      * @param alt What is loading
      */
     constructor(alt: string);
-    get topLeftCorner(): import('xyzt').IVectorData;
-    get bottomRightCorner(): import('xyzt').IVectorData;
+    get topLeft(): import('xyzt').IVectorData;
+    get bottomRight(): import('xyzt').IVectorData;
     get acceptedAttributes(): never[];
     render(isSelected: boolean, systems: ISystems): Promise<JSX.Element>;
 }

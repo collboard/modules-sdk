@@ -26,8 +26,8 @@ export declare class FreehandArt extends Abstract2dArt {
     private maxY;
     constructor(frames: Array<TouchFrame>, color: string_color, weight: number);
     private get path();
-    get topLeftCorner(): Vector;
-    get bottomRightCorner(): Vector;
+    get topLeft(): Vector;
+    get bottomRight(): Vector;
     get size(): IVectorData;
     set size(newSize: IVectorData);
     isNear(pointToTest: IVectorData): boolean;

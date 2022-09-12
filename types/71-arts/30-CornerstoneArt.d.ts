@@ -35,8 +35,8 @@ export declare class CornerstoneArt
      * String containing user-editable board name
      */
     boardname: string;
-    get topLeftCorner(): IVectorData;
-    get bottomRightCorner(): IVectorData;
+    get topLeft(): IVectorData;
+    get bottomRight(): IVectorData;
     isNear(pointToTest: IVectorData): boolean;
     get acceptedAttributes(): never[];
     render(isSelected: boolean): JSX.Element;
