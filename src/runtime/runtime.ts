@@ -2208,12 +2208,22 @@ export const IdentitySystem = (window as any).CollboardSdk.IdentitySystem;
 export const ImportSystem = (window as any).CollboardSdk.ImportSystem;
 
 /**
+ * Moves given arts to be in center
+ *
  * @sideeffect This will mutate passed arts
- * TODO: Use rotation and scale we should probbably bahave isotropically and isometrically (pass here transform instead of center)
  *
  * @collboard-modules-sdk
  */
 export const centerArts = (window as any).CollboardSdk.centerArts;
+
+/**
+ * Moves given arts to be in top left position
+ *
+ * @sideeffect This will mutate passed arts
+ *
+ * @collboard-modules-sdk
+ */
+export const topleftArts = (window as any).CollboardSdk.topleftArts;
 
 /**
  * LicenseSystem is a system that manages the licenses for modules
