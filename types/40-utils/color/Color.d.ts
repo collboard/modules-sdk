@@ -18,10 +18,8 @@ export declare class Color {
     private constructor();
     withAlpha(alpha: number): Color;
     addLightness(delta: number): Color;
-    /**
-     * TODO: This should be a static method - same as vector.half()
-     */
     get negative(): Color;
+    get grayscale(): Color;
     withMutation(
         modifier: (red: number, green: number, blue: number, opacity: number) => [number, number, number, number],
     ): Color;
@@ -181,5 +179,7 @@ export declare class Color {
     static yellowgreen: Color;
 }
 /**
+ * TODO: Getters (like negative and grayscale) should be a static method - same as vector.half()
  * TODO: Random color
+ * TODO: Convolution matrix
  */
