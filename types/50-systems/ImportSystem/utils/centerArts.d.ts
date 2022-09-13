@@ -10,6 +10,12 @@ interface ICenterArtsOptions {
     arts: Array<AbstractPlacedArt>;
     center: IVectorData;
 }
+declare type ICenterArtsOptionsDeprecated = Omit<ICenterArtsOptions, 'center'> & {
+    /**
+     * @deprecated
+     */
+    boardPosition: IVectorData;
+};
 /**
  * Moves given arts to be in center
  *
@@ -17,7 +23,7 @@ interface ICenterArtsOptions {
  *
  * @collboard-modules-sdk
  */
-export declare function centerArts({ arts, center }: ICenterArtsOptions): void;
+export declare function centerArts(options: ICenterArtsOptions | ICenterArtsOptionsDeprecated): void;
 export {};
 /**
  * TODO: [🎼] Relation between topleftArts and centerArts
