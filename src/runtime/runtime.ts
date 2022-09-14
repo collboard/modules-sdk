@@ -3043,6 +3043,13 @@ export const SCALE_PIXELS = (window as any).CollboardSdk.SCALE_PIXELS;
 export const MODULE_NAME_PATTERN = (window as any).CollboardSdk.MODULE_NAME_PATTERN;
 
 /**
+ * How much maximum notifications should be shown at one time
+ *
+ * @collboard-modules-sdk
+ */
+export const SHOW_MAXIMUM_NOTIFICATION = (window as any).CollboardSdk.SHOW_MAXIMUM_NOTIFICATION;
+
+/**
  * @collboard-modules-sdk
  */
 export const configchecker = (window as any).CollboardSdk.configchecker;
