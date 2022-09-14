@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+/// <reference types="react" />
 import { Observable } from 'rxjs';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IconsToolbar } from './IconsToolbar';
@@ -30,7 +31,31 @@ export declare class ToolbarSystem extends AbstractSystem {
     private focusSystem;
     private controlSystem;
     protected init(): Promise<void>;
+    /**
+     * Renders the toolbar
+     *
+     * There are two similar methods:
+     * - **render** which renders the toolbar
+     * - **renderMenu** which renders the menu of currently active icon in the toolbar
+     */
+    renderToolbar(toolbarName: ToolbarName): JSX.Element;
+    /**
+     * Renders the menu of currently active icon in the toolbar
+     *
+     * There are two similar methods:
+     * - **render** which renders the toolbar
+     * - **renderMenu** which renders the menu of currently active icon in the toolbar
+     */
+    renderMenu(toolbarName: ToolbarName): JSX.Element;
+    /**
+     * Returns the toolbar
+     *
+     * Note: If you want to render the toolbar use renderToolbar or renderMenu instead
+     */
     getToolbar(toolbarName: ToolbarName): IconsToolbar;
+    /**
+     * List all the toolbars
+     */
     getAllToolbars(): Record<ToolbarName, IconsToolbar>;
     /**
      * All actions from all toolbars will be merged into one observable stream
@@ -39,5 +64,6 @@ export declare class ToolbarSystem extends AbstractSystem {
     destroy(): Promise<void>;
 }
 /**
+ * TODO: [🎲] It is a bit inconsistent that renderMenu wraps content with <Menu but renderToolbar not
  * TODO: Add method allIcons and use it internally in allActiveIcons
  */

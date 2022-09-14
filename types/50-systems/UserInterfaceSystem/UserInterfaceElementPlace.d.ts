@@ -44,6 +44,15 @@ export declare enum UserInterfaceElementPlace {
      */
     EdgeTop = 'EDGE_TOP',
     /**
+     * The top edge of screen
+     * - growing left to right
+     * - aligned to top
+     * - inside of social toolbar
+     *
+     * @collboard-modules-sdk
+     */
+    Social = 'SOCIAL',
+    /**
      * The right edge of screen
      * - growing top to bottom
      * - aligned to right
@@ -71,3 +80,6 @@ export declare enum UserInterfaceElementPlace {
      */
     WelcomeModalAdjacent = 'WELCOME_MODAL_ADJACENT',
 }
+/**
+ * TODO: [👩‍👩‍👦] Make some way how every ToolbarName can be used as UserInterfaceElementPlace (for example SOCIAL)
+ */

@@ -256,7 +256,7 @@ export { selectionToolDraggingBehavior } from './72-tools/behaviors/selectionToo
 export { selectionToolScalingBehavior } from './72-tools/behaviors/selectionTool/selectionToolScalingBehavior';
 export { selectionToolSelectionBoxBehavior } from './72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior';
 export { selectionToolBehavior } from './72-tools/behaviors/selectionTool/_selectionToolBehavior';
-export { MODULE_NAME_PATTERN, SCALE_PIXELS } from './config';
+export { MODULE_NAME_PATTERN, SCALE_PIXELS, SHOW_MAXIMUM_NOTIFICATION } from './config';
 export {
     configchecker,
     destroyable,

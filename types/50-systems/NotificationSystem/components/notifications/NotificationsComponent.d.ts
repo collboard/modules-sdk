@@ -12,5 +12,7 @@ interface INotificationsComponentProps {
 export declare function NotificationsComponent(props: INotificationsComponentProps): JSX.Element;
 export {};
 /**
+ * TODO: More should be colored (notification-warning) like the most important level of notification hidden in queue
+ * TODO: When showMaximumNotifications increases and closing upper notifications showMaximumNotifications should decrease
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */

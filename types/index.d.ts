@@ -374,6 +374,7 @@ export { selectionToolScalingBehavior } from './72-tools/behaviors/selectionTool
 export { selectionToolSelectionBoxBehavior } from './72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior';
 export { SCALE_PIXELS } from './config';
 export { MODULE_NAME_PATTERN } from './config';
+export { SHOW_MAXIMUM_NOTIFICATION } from './config';
 export { configchecker } from './libraries';
 export { destroyable } from './libraries';
 export { React } from './libraries';
