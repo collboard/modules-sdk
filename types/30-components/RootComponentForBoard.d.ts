@@ -7,6 +7,8 @@
 /// <reference types="react" />
 export declare function RootComponentForBoard(): JSX.Element;
 /**
+ * TODO: [0][👩‍👩‍👦] It is a bit inconsistent that some parts are wrapped with <Menu (EdgeTop,Social) and others not
+ * TODO: [0][👩‍👩‍👦] It is a bit inconsistent that some parts are only managed by userInterfaceSystem and others by userInterfaceSystem+toolbarSystem
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  * TODO: [🏊‍♂️] Better naming and distinction of Collboard-specific components vs utils components
  */

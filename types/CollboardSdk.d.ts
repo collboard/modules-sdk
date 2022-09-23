@@ -189,6 +189,7 @@ export { HintSystem } from './50-systems/HintSystem/0-HintSystem';
 export { IdentitySystem } from './50-systems/IdentitySystem/0-IdentitySystem';
 export { ImportSystem } from './50-systems/ImportSystem/0-ImportSystem';
 export { centerArts } from './50-systems/ImportSystem/utils/centerArts';
+export { topleftArts } from './50-systems/ImportSystem/utils/topleftArts';
 export { LicenseSystem } from './50-systems/LicenseSystem/0-LicenseSystem';
 export { MessagesApiSystem } from './50-systems/MessagesApiSystem/0-MessagesApiSystem';
 export { Authors } from './50-systems/ModuleStore/Authors';
@@ -255,7 +256,7 @@ export { selectionToolDraggingBehavior } from './72-tools/behaviors/selectionToo
 export { selectionToolScalingBehavior } from './72-tools/behaviors/selectionTool/selectionToolScalingBehavior';
 export { selectionToolSelectionBoxBehavior } from './72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior';
 export { selectionToolBehavior } from './72-tools/behaviors/selectionTool/_selectionToolBehavior';
-export { MODULE_NAME_PATTERN, SCALE_PIXELS } from './config';
+export { MODULE_NAME_PATTERN, SCALE_PIXELS, SHOW_MAXIMUM_NOTIFICATION } from './config';
 export {
     configchecker,
     destroyable,

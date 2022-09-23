@@ -38,3 +38,9 @@ export declare const DEBUG_CSS_RULE: string;
  * @collboard-modules-sdk
  */
 export declare const MODULE_NAME_PATTERN: RegExp;
+/**
+ * How much maximum notifications should be shown at one time
+ *
+ * @collboard-modules-sdk
+ */
+export declare const SHOW_MAXIMUM_NOTIFICATION = 2;

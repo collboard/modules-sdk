@@ -6,10 +6,10 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IVectorData } from 'xyzt';
 /**
- * @deprecated use ILIB xyzt boundingBox
+ * @deprecated [🎟️] use ILIB xyzt boundingBox
  *
  */
 export interface IBoundingBoxData {
-    topRight: IVectorData;
-    bottomLeft: IVectorData;
+    topLeft: IVectorData;
+    bottomRight: IVectorData;
 }

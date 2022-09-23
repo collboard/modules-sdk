@@ -19,8 +19,10 @@ export interface ISkin {
         primary: Color | string_color;
         light: Color | string_color;
         dark: Color | string_color;
-        danger: Color | string_color;
         success: Color | string_color;
+        warning: Color | string_color;
+        error: Color | string_color;
+        danger: Color | string_color;
         white: Color | string_color;
         black: Color | string_color;
         overlay: Color | string_color;
@@ -29,3 +31,7 @@ export interface ISkin {
     lighten: number;
     circles: boolean;
 }
+/**
+ * TODO: Colors light/dark/white/black are not semantic - create instead primary/secondary OR all as success/warning/error/...
+ * TODO: error vs danger
+ */

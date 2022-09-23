@@ -9,8 +9,18 @@ import { IconsToolbar } from './IconsToolbar';
 interface IIconsToolbarComponentProps {
     iconsToolbar: IconsToolbar;
 }
+/**
+ * Renders the toolbar
+ *
+ * There are two similar components:
+ * - **IconsToolbarComponent** which renders the toolbar
+ * - **IconsToolbarMenuComponent** which renders the menu of currently active icon in the toolbar
+ *
+ * @not-collboard-modules-sdk because IconsToolbarComponent is a private component of ToolbarSystem
+ */
 export declare function IconsToolbarComponent({ iconsToolbar }: IIconsToolbarComponentProps): JSX.Element;
 export {};
 /**
+ * TODO: [🎲] It is a bit inconsistent that renderMenu wraps content with <Menu but renderToolbar not
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */

@@ -66,7 +66,7 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      *
      * @abstract
      */
-    abstract get topLeftCorner(): IVectorData;
+    abstract get topLeft(): IVectorData;
     /**
      * Position of bottom right corner of art (absolute including `shift`)
      *
@@ -74,7 +74,7 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      *
      * @abstract
      */
-    abstract get bottomRightCorner(): IVectorData;
+    abstract get bottomRight(): IVectorData;
     /**
      * Position of top right corner of art (absolute including `shift`)
      *
@@ -102,3 +102,6 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      */
     move(shift: IVectorData): this;
 }
+/**
+ *  TODO: [🎟️] topLeft, bottomRight, topRight and bottomLeft should be encapsulated in boundingBox property
+ */

@@ -33,8 +33,8 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
     originalSize: Vector;
     get size(): IVectorData;
     set size(size: IVectorData);
-    get topLeftCorner(): IVectorData;
-    get bottomRightCorner(): Vector;
+    get topLeft(): IVectorData;
+    get bottomRight(): Vector;
     /**
      * Was the art already measured?
      */
