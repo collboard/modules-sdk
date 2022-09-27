@@ -11,5 +11,11 @@ import { IBehavoirProps } from '../IBehavoirProps';
  */
 export declare function selectionToolSelectionBoxBehavior(behaviorProps: IBehavoirProps): Promise<boolean>;
 /**
+ * TODO: Originally there was highliting of the objects during unfinished selection
+ *       More things happen in [0] next than [1] complete phase
+ *       This was removed for performance reasons
+ *       [🐦] When there will be able to provide content for Ctrl+C clipboard asynchronously, we can put it back
+ *       Last woring version is in commit ac32ca6c3fb9b3aca803046d4a620df9fb0a5888
+ *
  * TODO: [🎂] Probably remove systems from IBehavoirProps and use useSystems (or similar mechanism) instead
  */

@@ -4,13 +4,13 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { ISkin } from '../50-systems/StyleSystem/ISkin';
-export declare const CommonStyles: import('styled-components').GlobalStyleComponent<
-    {
-        skin: ISkin;
-    },
-    import('styled-components').DefaultTheme
->;
+import { string_css } from '../typeAliases';
 /**
- * TODO: [🗾] Get rid of majority of theese styles - scope them OR move to each modules
+ * Prettify the css code
+ *
+ * @param css raw css code
+ * @returns formatted css code
+ *
+ * @collboard-modules-sdk
  */
+export declare function prettifyCss(css: string_css): string_css;

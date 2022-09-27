@@ -5,8 +5,11 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
- * Converts potentially malformed XML to well-formed XML.
+ * Traverse through the object and all its children and replace them via the callback
  *
- * @param xml xml which will be repaired
+ * @collboard-modules-sdk
  */
-export declare function repairXml(xml: string): string;
+export declare function deepMapObject<T>(value: T, callback: (subobject: any) => any): T;
+/**
+ * TODO: Protect from passing cyclic objects - isObjectCyclic util
+ */

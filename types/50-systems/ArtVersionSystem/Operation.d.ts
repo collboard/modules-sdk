@@ -19,12 +19,14 @@ export declare class Operation
     implements IClosePreventable, IDestroyable, IFreshMaterialOperation, IOngoingMaterialOperation
 {
     private artVersioningSystem;
+    private pushCommitsToVersioningSystem;
     private closePreventionSystem;
     private operationId;
     private operationName;
     static ORIGIN: symbol;
     constructor(
         artVersioningSystem: IArtVersioningSystem,
+        pushCommitsToVersioningSystem: (...commits: Array<ICommitData>) => void,
         closePreventionSystem: IClosePreventionSystem,
         operationName: string,
     );
@@ -90,3 +92,6 @@ export declare class Operation
     private checkIfStartedProperly;
     private checkIfPersistedProperly;
 }
+/**
+ *  TODO: Override destroy method and really destroy ongoing stuff
+ */

@@ -5,13 +5,12 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { ISkin } from '../50-systems/StyleSystem/ISkin';
-declare const _default: import('styled-components').GlobalStyleComponent<
+export declare const BoardStyles: import('styled-components').GlobalStyleComponent<
     {
         skin: ISkin;
     },
     import('styled-components').DefaultTheme
 >;
 /**
- * @hejny -> @roseckyj Prosím nepoužívejme "export default" ale vždy export pojmenovávejme
+ * TODO: [🗾] Get rid of majority of theese styles - scope them OR move to each modules
  */
-export default _default;

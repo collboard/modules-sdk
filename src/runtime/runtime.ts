@@ -833,7 +833,8 @@ export const preview = (window as any).CollboardSdk.preview;
 export const isEmoji = (window as any).CollboardSdk.isEmoji;
 
 /**
- * Are two arrays equal?
+ * Compare two arrays
+ *
  * @collboard-modules-sdk
  */
 export const isEqualArray = (window as any).CollboardSdk.isEqualArray;
@@ -881,12 +882,6 @@ export const isValidUrl = (window as any).CollboardSdk.isValidUrl;
  *
  * @collboard-modules-sdk
  */
-export const isValidUuid = (window as any).CollboardSdk.isValidUuid;
-
-/**
- *
- * @collboard-modules-sdk
- */
 export const joinWithAny = (window as any).CollboardSdk.joinWithAny;
 
 /**
@@ -902,10 +897,9 @@ export const compareJsxs = (window as any).CollboardSdk.compareJsxs;
 /**
  * Renders jsx to html / xml
  *
- * Note: There is a difference between several jsxToHtml functions:
+ * Note: There are functions:
  *    - **jsxToHtml** uses react-dom to render the jsx to html
- *    - **jsxToHtmlPretty** does same work as jsxToHtml but it formats the html into nice exportable form
- *    - **jsxToHtmlSimple** does not use react-dom to render the jsx to html and it tryes to extract essential information from the jsx
+ *    - **jsxToHtmlSimple** does not use react-dom to render the jsx to html and it tryes to extract essential information from the js
  *    @see ./jsxToHtml.test.tsx vs. ./jsxToHtmlSimple.test.tsx
  *
  * @param element JSX element
@@ -916,27 +910,10 @@ export const compareJsxs = (window as any).CollboardSdk.compareJsxs;
 export const jsxToHtml = (window as any).CollboardSdk.jsxToHtml;
 
 /**
- * Renders jsx to html / xml
- *
- * Note: There is a difference between several jsxToHtml functions:
- *    - **jsxToHtml** uses react-dom to render the jsx to html
- *    - **jsxToHtmlPretty** does same work as jsxToHtml but it formats the html into nice exportable form
- *    - **jsxToHtmlSimple** does not use react-dom to render the jsx to html and it tryes to extract essential information from the jsx
- *    @see ./jsxToHtml.test.tsx vs. ./jsxToHtmlSimple.test.tsx
- *
- * @param element JSX element
- * @returns html string
- *
- * @collboard-modules-sdk
- */
-export const jsxToHtmlPretty = (window as any).CollboardSdk.jsxToHtmlPretty;
-
-/**
  * Converts jsx to simple provisional html without using react-dom
  *
- * Note: There is a difference between several jsxToHtml functions:
+ * Note: There are functions:
  *    - **jsxToHtml** uses react-dom to render the jsx to html
- *    - **jsxToHtmlPretty** does same work as jsxToHtml but it formats the html into nice exportable form
  *    - **jsxToHtmlSimple** does not use react-dom to render the jsx to html and it tryes to extract essential information from the jsx
  *    @see ./jsxToHtml.test.tsx vs. ./jsxToHtmlSimple.test.tsx
  *
@@ -963,6 +940,26 @@ export const jsxToText = (window as any).CollboardSdk.jsxToText;
  * @collboard-modules-sdk
  */
 export const measureHtmlSize = (window as any).CollboardSdk.measureHtmlSize;
+
+/**
+ * Prettify the css code
+ *
+ * @param css raw css code
+ * @returns formatted css code
+ *
+ * @collboard-modules-sdk
+ */
+export const prettifyCss = (window as any).CollboardSdk.prettifyCss;
+
+/**
+ * Prettify the html code
+ *
+ * @param css raw html code
+ * @returns formatted html code
+ *
+ * @collboard-modules-sdk
+ */
+export const prettifyHtml = (window as any).CollboardSdk.prettifyHtml;
 
 /**
  * Load and run an external script
@@ -1039,6 +1036,13 @@ export const removeDiacritics = (window as any).CollboardSdk.removeDiacritics;
  * @collboard-modules-sdk
  */
 export const searchKeywords = (window as any).CollboardSdk.searchKeywords;
+
+/**
+ * Traverse through the object and all its children and replace them via the callback
+ *
+ * @collboard-modules-sdk
+ */
+export const deepMapObject = (window as any).CollboardSdk.deepMapObject;
 
 /**
  * Parse Collboard module name
@@ -1313,47 +1317,13 @@ export const splitArray = (window as any).CollboardSdk.splitArray;
 export const splitArrayIntoChunks = (window as any).CollboardSdk.splitArrayIntoChunks;
 
 /**
- * Represents css style in the form of object.
+ * Parses styled components styles from html
  *
+ * @returns CSS styles as a string
+ * @sideeffect Not pure - reads from window.document style elements
  * @collboard-modules-sdk
  */
-export const ICss = (window as any).CollboardSdk.ICss;
-
-/**
- * Parses css string into object form.
- *
- * @param css string with css.
- * @returns {ICss} css in form of object.
- * @example '.bar{border: 1px}' => {'.bar': {border: '1px'}}
- * @example '.bar{border: 1px} .foo{border: 2px}' => {'.bar': {border: '1px'}, '.foo': {border: '2px'}}
- * @example '.bar{border: 1px; padding: 13px}' => {'.bar': {border: '1px', padding: '13px'}}
- * @collboard-modules-sdk
- */
-export const parseStyles = (window as any).CollboardSdk.parseStyles;
-
-/**
- * Stringifies css object into css string.
- *
- * @param css {ICss} css in form of object.
- * @returns string with css.
- * @example {'.bar': {border: '1px'}} => '.bar{border: 1px}'
- * @example {'.bar': {border: '1px'}, '.foo': {border: '2px'}} => '.bar{border: 1px} .foo{border: 2px}' =>
- * @example {'.bar': {border: '1px', padding: '13px'}} => '.bar{border: 1px; padding: 13px}'
- * @collboard-modules-sdk
- */
-export const stringifyStyles = (window as any).CollboardSdk.stringifyStyles;
-
-/**
- * Parses global styles from html.
- * It extract styles from:
- *    - Everything inlined inside <style> tag
- *    - Everything which <link> tag refers to
- *
- * @returns
- * @sideeffect Not pure - reads from window.document all the style elements
- * @collboard-modules-sdk
- */
-export const parseGlobalStyles = (window as any).CollboardSdk.parseGlobalStyles;
+export const getGlobalStyles = (window as any).CollboardSdk.getGlobalStyles;
 
 /**
  * Extract all used selectors from html.
@@ -1900,6 +1870,21 @@ export const ArrayableFull = (window as any).CollboardSdk.ArrayableFull;
  * @collboard-modules-sdk
  */
 export const PromisableArray = (window as any).CollboardSdk.PromisableArray;
+
+/**
+ *
+ * @collboard-modules-sdk
+ */
+export const isValidUuid = (window as any).CollboardSdk.isValidUuid;
+
+/**
+ * Replaces all UUID strings in the object but preserve its identity
+ * - Same UUIDs will be chnaged into another BUT same UUIDs
+ * - Different UUIDs will be different
+ *
+ * @collboard-modules-sdk
+ */
+export const replaceUuids = (window as any).CollboardSdk.replaceUuids;
 
 /**
  * Systems do everything in Collboard.

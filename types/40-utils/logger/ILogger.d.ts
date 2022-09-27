@@ -21,4 +21,5 @@ export {};
 /**
  * TODO: [🐋]  Make support for table in ILogger
  * TODO: ILoggerCore extends IDestroyable
+ * TODO: [🎋] When logger updated and can be subloggered, update theese logging in the code
  */

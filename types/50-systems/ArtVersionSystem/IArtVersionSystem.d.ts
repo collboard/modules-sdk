@@ -43,5 +43,4 @@ export interface IArtVersioningSystem extends IDestroyable {
     signAs(moduleSignature: IModuleSignature): IArtVersioningSystem;
     createOperation(operationName: string): IFreshMaterialOperation;
     setCommitWasPersisted(commitId: string_uuid, id: number): void;
-    _USE_ONLY_INSIDE_CORE_pushCommit(...commits: Array<ICommitData>): Promise<void>;
 }

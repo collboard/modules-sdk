@@ -43,7 +43,18 @@ export interface IFileExportSupporterOptions extends Required<IExportFileOptions
  * Information about one art to export
  */
 export interface IArtContainer {
+    /**
+     * The art to export
+     */
     art: Abstract2dArt;
+    /**
+     * Is this art only virtual (not synchronized with others)
+     */
+    isMaterial: boolean;
+    /**
+     * Rendered element on board
+     *
+     */
     element: HTMLElement | null;
 }
 /**

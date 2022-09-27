@@ -38,5 +38,5 @@ export declare class FreehandArt extends Abstract2dArt {
 /**
  * TODO: Instead of x/y pairs use Vector
  * TODO: [✏️] Fix> react-dom.development.js:630 Error: <svg> attribute width: Expected length, "NaN".
- *
+ * TODO: Probbably (maybe in html/css values MUST be whole integers): ACTRY To be infinitelly zoomable avoid using Math.ceil, Math.floor, Math.round,...
  */

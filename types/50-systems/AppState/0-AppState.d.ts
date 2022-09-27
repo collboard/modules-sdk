@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { BehaviorSubject } from 'rxjs';
 import { IVectorData, Transform, Vector } from 'xyzt';
+import { square } from '../../40-utils/pointsToSquare';
 import { string_attribute, string_uuid } from '../../40-utils/typeAliases';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
@@ -19,11 +20,15 @@ export declare class AppState extends AbstractSystem {
     protected init(): Promise<void>;
     /**
      * Just mirroring the Cornerstone commit with boardname
+     *
+     * @deprecated Put to separate system instead
      */
     readonly boardname: BehaviorSubject<string>;
     /**
      * This represents user-view on the current board, Every user can have different.
      * For example every user can have different position on the board.
+     *
+     * @deprecated Put to CollSpace system instead
      */
     readonly transform: BehaviorSubject<Transform>;
     readonly selected: BehaviorSubject<AbstractPlacedArt[]>;
@@ -41,8 +46,13 @@ export declare class AppState extends AbstractSystem {
             point2: IVectorData;
         };
     }): void;
+    /**
+     * Set selection to nothing selected
+     *
+     * @idempotent If you call this function twice, nothing will happen
+     */
     cancelSelection(): void;
-    getSelection(): import('../../40-utils/pointsToSquare').square | null;
+    getSelection(): null | square;
     /**
      * This bounding box is relative to screen
      */
@@ -79,6 +89,14 @@ export declare class AppState extends AbstractSystem {
      * [🌌]
      */
     useArtSelected({ artId, isExclusive }: IIsArtSelectedOptions): boolean;
+    /**
+     * Testing code to showcase when selected is changed
+     */
+    private testSelected;
+    /**
+     * Testing code to showcase when selection is changed
+     */
+    private testSelection;
 }
 interface IIsArtSelectedOptions {
     /**
@@ -97,4 +115,5 @@ export {};
  * TODO: Selected: When loosing focus in the app (for example clicking on board name or opening a modal), selection should be canceled
  * TODO: Selection: Some better name like selectBox AND rname it globally not only here
  * TODO: Selection: Should return LIB xyzt boundingBox
+ * TODO: [💉] Selected virtual arts
  */

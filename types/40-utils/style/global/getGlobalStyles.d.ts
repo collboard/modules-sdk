@@ -5,15 +5,15 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_css } from '../../typeAliases';
-import { ICss } from './ICss';
 /**
- * Stringifies css object into css string.
+ * Parses styled components styles from html
  *
- * @param css {ICss} css in form of object.
- * @returns string with css.
- * @example {'.bar': {border: '1px'}} => '.bar{border: 1px}'
- * @example {'.bar': {border: '1px'}, '.foo': {border: '2px'}} => '.bar{border: 1px} .foo{border: 2px}' =>
- * @example {'.bar': {border: '1px', padding: '13px'}} => '.bar{border: 1px; padding: 13px}'
+ * @returns CSS styles as a string
+ * @sideeffect Not pure - reads from window.document style elements
  * @collboard-modules-sdk
  */
-export declare function stringifyStyles(css: ICss): string_css;
+export declare function getGlobalStyles(): string_css;
+/**
+ * Note: Originally this was a function parseGlobalStyles which used css-tree to parse css but it is unnecessary and too heavy so it was transformed to getGlobalStyles
+ *       Last commit with this is a0d06c564cee94f9d7b88de59f7d3067149d9a65
+ */

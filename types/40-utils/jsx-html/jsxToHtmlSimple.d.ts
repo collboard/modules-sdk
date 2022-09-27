@@ -9,9 +9,8 @@ import { string_html } from '../typeAliases';
 /**
  * Converts jsx to simple provisional html without using react-dom
  *
- * Note: There is a difference between several jsxToHtml functions:
+ * Note: There are functions:
  *    - **jsxToHtml** uses react-dom to render the jsx to html
- *    - **jsxToHtmlPretty** does same work as jsxToHtml but it formats the html into nice exportable form
  *    - **jsxToHtmlSimple** does not use react-dom to render the jsx to html and it tryes to extract essential information from the jsx
  *    @see ./jsxToHtml.test.tsx vs. ./jsxToHtmlSimple.test.tsx
  *

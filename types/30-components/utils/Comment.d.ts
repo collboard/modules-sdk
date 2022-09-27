@@ -8,4 +8,5 @@
 export declare function Comment({ children }: { children: string }): JSX.Element;
 /**
  * TODO: Remove <g wrapper
+ * [💅]
  */
