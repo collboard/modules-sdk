@@ -9,5 +9,4 @@ export declare function BoardComponentSelection(): JSX.Element;
 /**
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  * TODO: [🏊‍♂️] Better naming and distinction of Collboard-specific components vs utils components
- * TODO: Split between two compontnts [0] and [1] and in each observe only the nessesery
  */

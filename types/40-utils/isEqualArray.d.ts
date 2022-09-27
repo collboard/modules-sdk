@@ -5,7 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
- * Are two arrays equal?
+ * Compare two arrays
+ *
  * @collboard-modules-sdk
  */
 export declare function isEqualArray<T>(a: Array<T>, b: Array<T>, isEqualItem?: (a: T, b: T) => boolean): boolean;

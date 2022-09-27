@@ -14,7 +14,7 @@ import { string_module_name } from './../../../40-utils/typeAliases';
 export declare function getFileNativeImporter(file: File): Promise<string_module_name | null>;
 /**
  * TODO: Also search in metadata
- * TODO: Allow other formats of import-with-module="@collboard/html-import"
+ * TODO: Allow other formats of import-with-module="@collboard/html-native-import"
  * TODO: Write tests before 👆
  * TODO: Scenarios when more than one import-with-module found
  */

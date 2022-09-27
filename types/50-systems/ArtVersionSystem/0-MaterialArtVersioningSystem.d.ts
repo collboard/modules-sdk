@@ -42,7 +42,7 @@ export declare class MaterialArtVersioningSystem extends AbstractSystem implemen
     signAs(moduleSignature: IModuleSignature): MaterialArtVersioningSystem;
     createOperation(operationName: string): Operation;
     createPrimaryOperation(): Operation;
-    _USE_ONLY_INSIDE_CORE_pushCommit(...commits: Array<ICommitData>): Promise<void>;
+    protected pushCommitsToVersioningSystem(...commits: Array<ICommitData>): Promise<void>;
     get lastCommitId(): number;
     setCommitWasPersisted(commitId: string_uuid, id: number): void;
     get commits(): Array<ICommitData>;

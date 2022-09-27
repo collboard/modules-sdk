@@ -66,6 +66,7 @@ import './dice/DiceSidesAttributeModule';
 import './dice/DiceTool';
 import './files/html/HtmlExportModule';
 import './files/html/HtmlImportModule';
+import './files/html/HtmlNativeImportModule';
 import './files/html/preview/html-preview-module';
 import './files/images/ImagesExportModule';
 import './files/images/ImagesImportModule';

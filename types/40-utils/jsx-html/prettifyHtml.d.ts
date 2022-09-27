@@ -4,18 +4,16 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { ICss } from '../css-object/ICss';
+import { string_html } from '../typeAliases';
 /**
- * Parses global styles from html.
- * It extract styles from:
- *    - Everything inlined inside <style> tag
- *    - Everything which <link> tag refers to
+ * Prettify the html code
  *
- * @returns
- * @sideeffect Not pure - reads from window.document all the style elements
+ * @param css raw html code
+ * @returns formatted html code
+ *
  * @collboard-modules-sdk
  */
-export declare function parseGlobalStyles(): Promise<ICss>;
+export declare function prettifyHtml(html: string_html): string_html;
 /**
- * TODO: [🌱] In future we should parse every css but for now parsing whole css with parseStyles and parseGlobalStyles is too slow and heavy
+ * TODO: [🐾] Optimize HTML native export
  */

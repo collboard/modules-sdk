@@ -9,10 +9,9 @@ import { string_html, string_xml } from '../typeAliases';
 /**
  * Renders jsx to html / xml
  *
- * Note: There is a difference between several jsxToHtml functions:
+ * Note: There are functions:
  *    - **jsxToHtml** uses react-dom to render the jsx to html
- *    - **jsxToHtmlPretty** does same work as jsxToHtml but it formats the html into nice exportable form
- *    - **jsxToHtmlSimple** does not use react-dom to render the jsx to html and it tryes to extract essential information from the jsx
+ *    - **jsxToHtmlSimple** does not use react-dom to render the jsx to html and it tryes to extract essential information from the js
  *    @see ./jsxToHtml.test.tsx vs. ./jsxToHtmlSimple.test.tsx
  *
  * @param element JSX element
@@ -24,4 +23,5 @@ export declare function jsxToHtml(jsx: JSX.Element): string_xml | string_html;
 /**
  * TODO: Formatting is not working on large (exported) SVGs - It is not fatal but it returns one lined string
  * TODO: [🎞️] Probbably work with XMLs in some object-based method
+ * TODO: [🐾] Optimize HTML native export
  */

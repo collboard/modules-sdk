@@ -18,6 +18,7 @@ interface IBoardComponentArtsProps {
 export declare function BoardComponentArts(props: IBoardComponentArtsProps): JSX.Element;
 export {};
 /**
+ * TODO: [📕] Unite ArtShell
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  * TODO: [🏊‍♂️] Better naming and distinction of Collboard-specific components vs utils components
  */

@@ -70,3 +70,6 @@ export interface IFileImportSupporter {
     }): Promisable<Arrayable<AbstractArt> | IDestroyable | typeof FILE_IMPORT_SUPPORTER_NEXT>;
 }
 export declare const FILE_IMPORT_SUPPORTER_NEXT: unique symbol;
+/**
+ * TODO: Rename willCommitArts to willImportArts or willCreateArts
+ */

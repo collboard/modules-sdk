@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_html } from '../../typeAliases';
 /**
- * Adds styles to given html document.
+ * Adds styles to given html document
  * It recieves html document which is not styled but contains references (classes, ids) to styles which are not there.
  * This function will find all styles used in current page and add them to the given document inlined.
  *
@@ -16,6 +16,5 @@ import { string_html } from '../../typeAliases';
  */
 export declare function addGlobalStyles(html: string_html): Promise<string_html>;
 /**
- * TODO: Probably use FunctionCache:
- *     > const parseGlobalStylesCached = new FunctionCache<undefined, ICss>(parseGlobalStyles);
+ * TODO: [🐾] Optimize HTML native export
  */

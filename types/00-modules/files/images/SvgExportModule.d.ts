@@ -9,4 +9,5 @@ export {};
  * TODO: [🎇] Full vs linked export
  * TODO: !! Work also when scaled
  * TODO: Is export to SVG more like export to HTML or Bitmap image?
+ * TODO: [💅] Decide and choose which type of inserting comments into the export is better
  */

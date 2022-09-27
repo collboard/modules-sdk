@@ -30,15 +30,25 @@ export declare class ExportSystem extends AbstractSystem {
     /**
      * Get all arts that can be exported OR are frames
      */
-    private getAllArts;
+    private getExportRelevantArts;
     /**
      * Get all possible exports frames
      */
-    getFrames(): Promise<Array<IFramable>>;
+    getFrames(): Promise<
+        Array<{
+            art: IFramable;
+            isMaterial: boolean;
+        }>
+    >;
     /**
      * Get all arts (but non frames)
      */
-    getArts(): Promise<Array<Abstract2dArt>>;
+    getArts(): Promise<
+        Array<{
+            art: Abstract2dArt;
+            isMaterial: boolean;
+        }>
+    >;
     private forEssentialFileSupporters;
     /**
      * Prepares export from the Collboard
