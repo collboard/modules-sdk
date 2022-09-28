@@ -2976,6 +2976,7 @@ export const IBehavoirProps = (window as any).CollboardSdk.IBehavoirProps;
 
 /**
  * Behavior of the selection tool
+ * !!-! Describe Better
  *
  * @param useBehaviors Specifies, which parts of the selection tool behavoir
  * should be used. Defaults to `true` on all.
@@ -2991,6 +2992,7 @@ export const IBehavoirProps = (window as any).CollboardSdk.IBehavoirProps;
 export const selectionToolBehavior = (window as any).CollboardSdk.selectionToolBehavior;
 
 /**
+ * !!-! Describe
  *
  * @collboard-modules-sdk
  */
@@ -3003,6 +3005,7 @@ export const selectionToolDraggingBehavior = (window as any).CollboardSdk.select
 export const selectionToolScalingBehavior = (window as any).CollboardSdk.selectionToolScalingBehavior;
 
 /**
+ * !!-! Describe
  *
  * @collboard-modules-sdk
  */

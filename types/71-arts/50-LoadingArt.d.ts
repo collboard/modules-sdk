@@ -8,18 +8,18 @@
 import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
-* Art which renders loading of something
-* It is usefull primarly with virtual commits:
-*  >
-*  > virtualArtVersioningSystem
->    .createPrimaryOperation()
->    .newArts(
->      new LoadingArt('aaa').setShift((collSpace.pickPoint(touch.firstFrame.position)).point),
->    )
->    .persist();
-*
-* @collboard-modules-sdk
-*/
+ * Art which renders loading of something
+ * It is usefull primarly with virtual commits:
+ *  >
+ *  > virtualArtVersioningSystem
+    >    .createPrimaryOperation()
+    >    .newArts(
+    >      new LoadingArt('aaa').setShift((collSpace.pickPoint(touch.firstFrame.position)).point),
+    >    )
+    >    .persist();
+ *
+ * @collboard-modules-sdk
+ */
 export declare class LoadingArt extends Abstract2dArt {
     alt: string;
     static serializeName: string;

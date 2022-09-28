@@ -28,12 +28,12 @@ interface IAsyncContentComponentProps extends ILoaderProps {
 export declare function AsyncContentComponent({ loader, content, alt }: IAsyncContentComponentProps): JSX.Element;
 export {};
 /**
-* TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
-* TODO: [🧵] Move to external LIB for react loadables
+ * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
+ * TODO: [🧵] Move to external LIB for react loadables
 
 TODO: [1] Better mechanism for slowing down components
 let slowAsyncContentComponentMiliseconds = 0;
 (window as any).slowAsyncContentComponent = (miliseonds: number) => {
-slowAsyncContentComponentMiliseconds = miliseonds;
+    slowAsyncContentComponentMiliseconds = miliseonds;
 };
 */
