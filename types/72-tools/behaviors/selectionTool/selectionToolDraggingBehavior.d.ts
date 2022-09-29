@@ -4,12 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IBehavoirProps } from '../IBehavoirProps';
+import { IBehaviorOptions } from '../0-IBehavior';
 /**
- *
- * @collboard-modules-sdk
+ * Part of createSelectionToolBehavior
+ * @see ./0-createSelectionToolBehavior.ts
  */
-export declare function selectionToolDraggingBehavior(behaviorProps: IBehavoirProps): Promise<boolean>;
+export declare function selectionToolDraggingBehavior(behaviorProps: IBehaviorOptions): Promise<boolean>;
 /**
- * TODO: [🎂] Probably remove systems from IBehavoirProps and use useSystems (or similar mechanism) instead
+ * TODO: [🎂] Probably remove systems from IBehaviorProps and use useSystems (or similar mechanism) instead
  */

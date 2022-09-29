@@ -4,12 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IBehavoirProps } from '../IBehavoirProps';
+import { IBehaviorOptions } from '../0-IBehavior';
 /**
- *
- * @collboard-modules-sdk
+ * Part of createSelectionToolBehavior
+ * @see ./0-createSelectionToolBehavior.ts
  */
-export declare function selectionToolSelectionBoxBehavior(behaviorProps: IBehavoirProps): Promise<boolean>;
+export declare function selectionToolSelectionBoxBehavior(behaviorProps: IBehaviorOptions): Promise<boolean>;
 /**
  * TODO: Originally there was highliting of the objects during unfinished selection
  *       More things happen in [0] next than [1] complete phase
@@ -17,5 +17,5 @@ export declare function selectionToolSelectionBoxBehavior(behaviorProps: IBehavo
  *       [🐦] When there will be able to provide content for Ctrl+C clipboard asynchronously, we can put it back
  *       Last woring version is in commit ac32ca6c3fb9b3aca803046d4a620df9fb0a5888
  *
- * TODO: [🎂] Probably remove systems from IBehavoirProps and use useSystems (or similar mechanism) instead
+ * TODO: [🎂] Probably remove systems from IBehaviorProps and use useSystems (or similar mechanism) instead
  */

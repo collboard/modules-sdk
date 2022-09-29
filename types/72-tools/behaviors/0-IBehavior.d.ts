@@ -25,7 +25,7 @@ import { ISystems } from '../../50-systems/00-SystemsContainer/ISystems';
  *         return Registration.fromSubscription((registerAdditionalSubscription) =>
  *             touchController.touches.subscribe((touch) => {
  *                 // do something else
- *                 let props: IBehavoirProps = { systems, registerAdditionalSubscription, touch };
+ *                 let props: IBehaviorProps = { systems, registerAdditionalSubscription, touch };
  *                 if (selectionToolBehavior(props)) return;
  *                 if (someOtherBehavior(props)) return;
  *             }),
@@ -35,11 +35,17 @@ import { ISystems } from '../../50-systems/00-SystemsContainer/ISystems';
  *
  * @collboard-modules-sdk
  */
-export interface IBehavoirProps {
+export declare type IBehavior = (behaviorProps: IBehaviorOptions) => Promise<boolean>;
+/**
+ * Options passed to behavior
+ *
+ * @collboard-modules-sd
+ */
+export interface IBehaviorOptions {
     systems: ISystems;
     registerAdditionalSubscription: (subscription: ISubscription) => void;
     touch: Touch;
 }
 /**
- * TODO: [🎂] Probably remove systems from IBehavoirProps and use useSystems (or similar mechanism) instead
+ * TODO: [🎂] Probably remove systems from IBehaviorProps and use useSystems (or similar mechanism) instead
  */
