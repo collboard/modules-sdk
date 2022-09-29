@@ -2962,7 +2962,7 @@ export const TextArt = (window as any).CollboardSdk.TextArt;
  *         return Registration.fromSubscription((registerAdditionalSubscription) =>
  *             touchController.touches.subscribe((touch) => {
  *                 // do something else
- *                 let props: IBehavoirProps = { systems, registerAdditionalSubscription, touch };
+ *                 let props: IBehaviorProps = { systems, registerAdditionalSubscription, touch };
  *                 if (selectionToolBehavior(props)) return;
  *                 if (someOtherBehavior(props)) return;
  *             }),
@@ -2972,44 +2972,23 @@ export const TextArt = (window as any).CollboardSdk.TextArt;
  *
  * @collboard-modules-sdk
  */
-export const IBehavoirProps = (window as any).CollboardSdk.IBehavoirProps;
+export const IBehavior = (window as any).CollboardSdk.IBehavior;
 
 /**
- * Behavior of the selection tool
- * !!-! Describe Better
+ * Creates behavior of the selection tool
  *
- * @param useBehaviors Specifies, which parts of the selection tool behavoir
+ * @param useBehaviors Specifies, which parts of the selection tool behavior
  * should be used. Defaults to `true` on all.
- * - `scaling` (Scaling objects)
- * - `dragging` (Moving objects)
- * - `selectionBox` (Creating selection box)
- * - `rotating` (Rotating objects) - **not yet implemented**
+ * - `isScaling` (Scaling objects)
+ * - `isDragging` (Moving objects)
+ * - `isSelectionBox` (Creating selection box)
+ * - `isRotating` (Rotating objects) - **not yet implemented**
  *
- * @see IBehavoirProps
- *
- * @collboard-modules-sdk
- */
-export const selectionToolBehavior = (window as any).CollboardSdk.selectionToolBehavior;
-
-/**
- * !!-! Describe
+ * @see IBehaviorOptions
  *
  * @collboard-modules-sdk
  */
-export const selectionToolDraggingBehavior = (window as any).CollboardSdk.selectionToolDraggingBehavior;
-
-/**
- *
- * @collboard-modules-sdk
- */
-export const selectionToolScalingBehavior = (window as any).CollboardSdk.selectionToolScalingBehavior;
-
-/**
- * !!-! Describe
- *
- * @collboard-modules-sdk
- */
-export const selectionToolSelectionBoxBehavior = (window as any).CollboardSdk.selectionToolSelectionBoxBehavior;
+export const createSelectionToolBehavior = (window as any).CollboardSdk.createSelectionToolBehavior;
 
 /**
  * Conversion table from misc units to board pixels
