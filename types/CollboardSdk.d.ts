@@ -253,10 +253,7 @@ export { LineArt } from './71-arts/50-LineArt';
 export { LoadingArt } from './71-arts/50-LoadingArt';
 export { ShapeArt, ShapeName } from './71-arts/50-ShapeArt';
 export { TextArt } from './71-arts/50-TextArt/TextArt';
-export { selectionToolBehavior } from './72-tools/behaviors/selectionTool/0-selectionToolBehavior';
-export { selectionToolDraggingBehavior } from './72-tools/behaviors/selectionTool/selectionToolDraggingBehavior';
-export { selectionToolScalingBehavior } from './72-tools/behaviors/selectionTool/selectionToolScalingBehavior';
-export { selectionToolSelectionBoxBehavior } from './72-tools/behaviors/selectionTool/selectionToolSelectionBoxBehavior';
+export { createSelectionToolBehavior } from './72-tools/behaviors/selectionTool/0-createSelectionToolBehavior';
 export { MODULE_NAME_PATTERN, SCALE_PIXELS, SHOW_MAXIMUM_NOTIFICATION } from './config';
 export {
     configchecker,
@@ -363,4 +360,4 @@ export type { IMessage } from './50-systems/TranslationsSystem/interfaces/IMessa
 export type { IBaseMessage } from './50-systems/TranslationsSystem/interfaces/IMessage';
 export type { IFontStyleAttributeValue } from './70-attributes/FontStyleAttributeModule';
 export type { IListStyle } from './71-arts/50-TextArt/interfaces/IListStyle';
-export type { IBehavoirProps } from './72-tools/behaviors/IBehavoirProps';
+export type { IBehavior } from './72-tools/behaviors/0-IBehavior';
