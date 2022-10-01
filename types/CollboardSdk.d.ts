@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+export type { IGridConfig } from './00-modules/background/gridModules/IGridConfig';
 export { ArtScaler } from './30-components/ArtScaler';
 export { Icon } from './30-components/menu/Icon';
 export { IconColor } from './30-components/menu/IconColor';

@@ -7,6 +7,14 @@
 import { IVectorData } from 'xyzt';
 import { string_url } from '../../../40-utils/typeAliases';
 import { IStringMessage } from '../../../50-systems/TranslationsSystem/interfaces/IMessage';
+/**
+ * Configuration of the grid pattern
+ *
+ * @deprecated Create some better way how to share patterns between the core and background-patterns
+ *             Maybe makeBackgroundPatternModule
+ *             @see https://github.com/collboard/background-patterns
+ * @collboard-modules-sdk
+ */
 export interface IGridConfig {
     name: string;
     title: IStringMessage;
