@@ -14,6 +14,16 @@ export const declareModule = (window as any).declareModule;
 
 // Note: here is all stuff marked with "@collboard SDK"
 /**
+ * Configuration of the grid pattern
+ *
+ * @deprecated Create some better way how to share patterns between the core and background-patterns
+ *             Maybe makeBackgroundPatternModule
+ *             @see https://github.com/collboard/background-patterns
+ * @collboard-modules-sdk
+ */
+export const IGridConfig = (window as any).CollboardSdk.IGridConfig;
+
+/**
  * @collboard-modules-sdk
  */
 export const ArtScaler = (window as any).CollboardSdk.ArtScaler;
