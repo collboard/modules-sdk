@@ -14,6 +14,7 @@ export declare const PUBLIC_URL: string;
  * @deprecated Make ScaleSystem instead
  */
 export declare const SCALE_PIXELS: {
+    grid: number;
     field: number;
     centimeter: number;
     kilometer: number;

@@ -12,7 +12,6 @@ import { IModule } from './50-systems/ModuleStore/interfaces/IModule';
 export declare function declareModule(module: IModule): void;
 
 // Note: bellow is all stuff marked with "@collboard SDK"
-export { IGridConfig } from './00-modules/background/gridModules/IGridConfig';
 export { ArtScaler } from './30-components/ArtScaler';
 export { string_animation } from './30-components/menu/animations';
 export { Icon } from './30-components/menu/Icon';
