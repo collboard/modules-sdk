@@ -3014,7 +3014,7 @@ export const MODULE_NAME_PATTERN = (window as any).CollboardSdk.MODULE_NAME_PATT
  *
  * @collboard-modules-sdk
  */
-export const SHOW_MAXIMUM_NOTIFICATION = (window as any).CollboardSdk.SHOW_MAXIMUM_NOTIFICATION;
+export const SHOW_MAXIMUM_NOTIFICATIONS = (window as any).CollboardSdk.SHOW_MAXIMUM_NOTIFICATIONS;
 
 /**
  * @collboard-modules-sdk
