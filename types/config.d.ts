@@ -44,4 +44,7 @@ export declare const MODULE_NAME_PATTERN: RegExp;
  *
  * @collboard-modules-sdk
  */
-export declare const SHOW_MAXIMUM_NOTIFICATION = 2;
+export declare const SHOW_MAXIMUM_NOTIFICATIONS = 2;
+/**
+ * TODO: [🌓] MODULE_NAME_PATTERN Do not allow double dash -- in module name or in the module scope because it is string used to escape
+ */

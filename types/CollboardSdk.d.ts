@@ -254,7 +254,7 @@ export { LoadingArt } from './71-arts/50-LoadingArt';
 export { ShapeArt, ShapeName } from './71-arts/50-ShapeArt';
 export { TextArt } from './71-arts/50-TextArt/TextArt';
 export { createSelectionToolBehavior } from './72-tools/behaviors/selectionTool/0-createSelectionToolBehavior';
-export { MODULE_NAME_PATTERN, SCALE_PIXELS, SHOW_MAXIMUM_NOTIFICATION } from './config';
+export { MODULE_NAME_PATTERN, SCALE_PIXELS, SHOW_MAXIMUM_NOTIFICATIONS } from './config';
 export {
     configchecker,
     destroyable,

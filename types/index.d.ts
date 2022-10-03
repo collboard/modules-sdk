@@ -371,7 +371,7 @@ export { IBehavior } from './72-tools/behaviors/0-IBehavior';
 export { createSelectionToolBehavior } from './72-tools/behaviors/selectionTool/0-createSelectionToolBehavior';
 export { SCALE_PIXELS } from './config';
 export { MODULE_NAME_PATTERN } from './config';
-export { SHOW_MAXIMUM_NOTIFICATION } from './config';
+export { SHOW_MAXIMUM_NOTIFICATIONS } from './config';
 export { configchecker } from './libraries';
 export { destroyable } from './libraries';
 export { React } from './libraries';
