@@ -20,3 +20,7 @@ export declare function parseModuleName(moduleName: string_module_name): {
     scope: string;
     name: Array<string>;
 };
+/**
+ * TODO: [🌓] Do not allow double dash -- in module name or in the module scope because it is string used to escape
+ * TODO: [🚤] Maybe create reverse function - stringifyModulName
+ */

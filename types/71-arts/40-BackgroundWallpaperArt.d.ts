@@ -26,3 +26,6 @@ export declare class BackgroundWallpaperArt extends AbstractBackgroundArt {
     additionalStyle(): CSSProperties;
     transformStyle(): CSSProperties;
 }
+/**
+ *  TODO: Allow to patterns to be in front of wallpapers
+ */
