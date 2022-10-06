@@ -20,7 +20,7 @@
     "colldev": "dist/colldev/main.js"
   },
   "scripts": {
-    "test": "npx jest --forceExit",
+    "test": "npx jest --runInBand --forceExit",
     "lint": "tslint -p tsconfig.json",
     "prepare": "tsc",
     "documentation": "typedoc",
