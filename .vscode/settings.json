@@ -1,6 +1,5 @@
 {
     "files.eol": "\n",
-    "jestRunIt.jestPath": "npx jest --runInBand",
     "editor.formatOnSave": true,
     "prettier.configPath": ".prettierrc",
     "editor.defaultFormatter": "esbenp.prettier-vscode",

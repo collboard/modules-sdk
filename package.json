@@ -1,6 +1,6 @@
 {
     "name": "@collboard/modules-sdk",
-    "version": "27.45.101",
+    "version": "27.46.400",
     "description": "Modules SDK toolkit for collaborative whiteboard platform Collboard.com.",
     "license": "SEE LICENSE IN LICENSE",
     "contributors": [
@@ -20,7 +20,7 @@
         "colldev": "dist/colldev/main.js"
     },
     "scripts": {
-        "test": "npx jest --forceExit",
+        "test": "npx jest --runInBand --forceExit",
         "lint": "tslint -p tsconfig.json",
         "prepare": "tsc",
         "documentation": "typedoc",
