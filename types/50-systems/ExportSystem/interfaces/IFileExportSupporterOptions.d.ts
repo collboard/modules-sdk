@@ -9,7 +9,7 @@ import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
 import { IExportFileOptions } from './IExportFileOptions';
 import { IExportScope } from './IExportScope';
 /**
- * Options and util provided for the exporter to as a material to create exported data
+ * Options and util provided for the exporter to as a complete foundation to create exported data
  * Note: Do not need to include the systems because systems are already available in registree module> systems: ISystems;
  *
  * @collboard-modules-sdk

@@ -158,10 +158,11 @@ export declare type string_uuid = string;
  * Semantic helper
  * UUID with only the first part of the UUID
  *
+ *
  * For example `"5a0a153d"`
  * @collboard-modules-sdk
  */
-export declare type string_uuid_cut = string;
+export declare type string_uuid_first_segment = string;
 /**
  * Semantic helper
  *
@@ -383,7 +384,7 @@ export declare type string_attribute_value_scope = string;
 /**
  * Semantic helper for css/html colors
  *
- * For example `"white"` or `"#906090"`
+ * For example `"white"` or `"#009EDD"`
  * @collboard-modules-sdk
  */
 export declare type string_color = string;
@@ -412,7 +413,15 @@ export declare type string_token = string;
 export declare type string_password = string;
 export declare type string_ssh_key = string;
 export declare type string_pgp_key = string;
+export declare type number_positive = number;
+export declare type number_positive_integer = number;
 export declare type number_integer = number;
+/**
+ * Semantic helper;
+ * Percentage from 0 to 1 (100%)
+ *
+ */
+export declare type number_percent = number;
 export declare type number_miliseconds = number_integer;
 export declare type number_seconds = number;
 export declare type number_minutes = number;
@@ -421,8 +430,11 @@ export declare type number_days = number;
 export declare type number_weeks = number;
 export declare type number_months = number;
 export declare type number_years = number;
-export declare type number_bytes = number_integer;
-export declare type number_kilobytes = number;
-export declare type number_megabytes = number;
-export declare type number_gigabytes = number;
-export declare type number_terabytes = number;
+export declare type number_bytes = number_positive_integer;
+export declare type number_kilobytes = number_positive;
+export declare type number_megabytes = number_positive;
+export declare type number_gigabytes = number_positive;
+export declare type number_terabytes = number_positive;
+/**
+ * TODO: Anotate all + collboard-modules-sdk to all
+ */

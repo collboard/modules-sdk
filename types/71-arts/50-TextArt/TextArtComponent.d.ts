@@ -5,21 +5,14 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
+import { IAppearance } from '../../50-systems/CollSpace/appearance/IAppearance';
 import { AbstractArt } from '../20-AbstractArt';
-import { string_color } from './../../40-utils/typeAliases';
 import { IListStyle } from './interfaces/IListStyle';
 import { TextArt } from './TextArt';
-interface IArtComponentProps<
-    TArt extends AbstractArt,
-    TShape extends object,
-    TMaterial extends IArtMaterial = IArtMaterial,
-> {
+interface IArtComponentProps<TArt extends AbstractArt, TShape extends object> {
     art: TArt;
-    material: TMaterial;
+    appearance: IAppearance;
     shape: TShape;
-}
-interface IArtMaterial {
-    color: string_color;
 }
 interface ITextArtShape {
     content: string;
@@ -34,7 +27,7 @@ interface ITextArtShape {
  */
 export declare function TextArtComponent({
     art,
-    material: { color },
+    appearance,
     shape: { content, fontSize, bold, italic, underline, listStyle },
 }: IArtComponentProps<TextArt, ITextArtShape>): JSX.Element;
 export {};

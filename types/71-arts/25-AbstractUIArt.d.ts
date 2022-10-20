@@ -21,3 +21,8 @@ export declare abstract class AbstractUserInterfaceArt extends AbstractArt {
     constructor(userInterfaceElementPlace: UserInterfaceElementPlace);
     abstract render(systems: ISystemsExtended): JSX.Element;
 }
+/**
+ * TODO: AbstractLogoArt  - Change or remove Collboard logo (it can be payed feature)
+ * TODO: ToolbarArt  - Creates a new toolbar
+ * TODO: [🎚️] Maybe get rit of AbstractArts and make makers for arts which returns IArts
+ */

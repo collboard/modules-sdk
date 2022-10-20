@@ -32,3 +32,8 @@ export declare class ImageArt extends Abstract2dBoxArt {
     private ref;
     renderBox(): JSX.Element;
 }
+/**
+ * TODO: [🍎]  Use IMaterial instead of color
+ * TODO: [🍎]  Use IShape instead of weight, points,...
+ * TODO: [🎚️] Implement IArt
+ */

@@ -58,5 +58,6 @@ export declare abstract class Abstract2dBoxArt extends Abstract2dArt {
     protected abstract renderBox(systems: ISystemsExtended): JSX.Element;
 }
 /**
- *
+ * TODO: [🍎]  Use IShape instead of weight, points,...
+ * TODO: [🎚️] Maybe get rit of AbstractArts and make makers for arts which returns IArts
  */

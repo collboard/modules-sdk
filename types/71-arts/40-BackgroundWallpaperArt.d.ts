@@ -28,4 +28,5 @@ export declare class BackgroundWallpaperArt extends AbstractBackgroundArt {
 }
 /**
  *  TODO: Allow to patterns to be in front of wallpapers
+ * TODO: [🎚️] Implement IArt
  */

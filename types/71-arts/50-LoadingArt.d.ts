@@ -37,5 +37,8 @@ export declare class LoadingArt extends Abstract2dArt {
 }
 /**
  * TODO: @roseckyj maybe look at this and fix design flaws
+ * TODO: [🍎]  Use IMaterial instead of color
+ * TODO: [🍎]  Use IShape instead of weight, points,...
+ * TODO: [🎚️] Implement IArt
  *
  */

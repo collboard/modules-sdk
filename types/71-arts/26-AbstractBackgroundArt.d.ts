@@ -31,3 +31,6 @@ export declare abstract class AbstractBackgroundArt extends AbstractEnvironmentA
      */
     transformStyle(transform: Transform): CSSProperties;
 }
+/**
+ * TODO: [🎚️] Maybe get rit of AbstractArts and make makers for arts which returns IArts
+ */

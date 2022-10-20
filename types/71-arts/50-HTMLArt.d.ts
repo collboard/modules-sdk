@@ -28,3 +28,6 @@ export declare class HTMLArt extends Abstract2dBoxArt {
     defaultZIndex: number;
     renderBox(): JSX.Element;
 }
+/**
+ * TODO: [🎚️] Implement IArt
+ */

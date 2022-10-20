@@ -20,7 +20,7 @@ export declare abstract class Abstract2dArt extends AbstractPlacedArt {
      *
      * Needs to be overridden if art has `"size"` among `AcceptedAttributes`
      *
-     * *Note: This will be removed in the future*
+     * @deprecated Make it using BoundingBox
      */
     get size(): IVectorData;
     /**
@@ -28,13 +28,13 @@ export declare abstract class Abstract2dArt extends AbstractPlacedArt {
      *
      * Needs to be overridden if art has `"size"` among `AcceptedAttributes`
      *
-     * *Note: This will be removed in the future*
+     * @deprecated Make it using BoundingBox
      */
     set size(size: IVectorData);
     /**
      * Object rotation
      *
-     * *Note: This will be replaced with 3D rotiation in `AbstractPlacedArt`*
+     * @deprecated Make it using BoundingBox
      */
     rotation: number;
     /**
@@ -63,3 +63,6 @@ export declare abstract class Abstract2dArt extends AbstractPlacedArt {
      */
     defaultZIndex: number;
 }
+/**
+ * TODO: [🎚️] Maybe get rit of AbstractArts and make makers for arts which returns IArts
+ */

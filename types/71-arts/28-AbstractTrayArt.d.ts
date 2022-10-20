@@ -23,3 +23,6 @@ export declare abstract class AbstractTrayArt extends Abstract2dBoxArt {
     get acceptedAttributes(): string[];
     renderBox(): JSX.Element;
 }
+/**
+ * TODO: [🎚️] Maybe get rit of AbstractArts and make makers for arts which returns IArts
+ */

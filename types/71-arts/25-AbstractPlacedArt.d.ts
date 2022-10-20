@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IVectorData } from 'xyzt';
+import { ITransformData, IVectorData, Transform } from 'xyzt';
 import { string_attribute } from '../40-utils/typeAliases';
 import { IBoundingBoxData } from '../50-systems/ExportSystem/interfaces/IBoundingBoxData';
 import { AbstractArt } from './20-AbstractArt';
@@ -23,7 +23,17 @@ export declare const NEAR_DISTANCE = 20;
  */
 export declare abstract class AbstractPlacedArt extends AbstractArt implements IBoundingBoxData {
     /**
+     * Get the transform which is created from a deprecated shift
+     */
+    get transform(): Transform;
+    /**
+     * Set the transform which is converted and saved as a deprecated shift
+     */
+    set transform(transformData: ITransformData);
+    /**
      * Translation vector of art
+     *
+     * @deprecated use transform property instead
      */
     shift: IVectorData;
     /**
@@ -36,6 +46,8 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      * Getter with list of attributes particular art supports
      *
      * Value is used to display a floating menu above selection
+     *
+     * @deprecated Make it using IMaterial
      *
      * @example
      * public get acceptedAttributes() {
@@ -57,6 +69,8 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      * Value is automatically used by ArtShell when rendering
      *
      * *Note: type needs to be overridden when extending*
+     *
+     * @deprecated use transform property instead
      */
     rotation: any;
     /**
@@ -64,6 +78,7 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      *
      * Value is used mostly when making selection
      *
+     * @deprecated Make it using BoundingBox
      * @abstract
      */
     abstract get topLeft(): IVectorData;
@@ -72,6 +87,7 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      *
      * Value is used mostly when making selection
      *
+     * @deprecated Make it using BoundingBox
      * @abstract
      */
     abstract get bottomRight(): IVectorData;
@@ -79,29 +95,41 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
      * Position of top right corner of art (absolute including `shift`)
      *
      * Value is used mostly when making selection
+     *
+     * @deprecated Make it using BoundingBox
      */
     get topRight(): IVectorData;
     /**
      * Position of bottom left corner of art (absolute including `shift`)
      *
      * Value is used mostly when making selection
+     *
+     * @deprecated Make it using BoundingBox
      */
     get bottomLeft(): IVectorData;
     /**
      * Function determining, whether a point is near the art
      *
      * Default implementation uses square bounding box
+     *
+     * @deprecated Make it using BoundingBox - just only provide BoundingBoxand the calling will look like art.boundingBox.isNear(...)
      */
     isNear(pointToTest: IVectorData): boolean;
     /**
      * Move art to certain vector (= absolute)
+     *
+     * @deprecated use transform property instead
      */
     setShift(shift: IVectorData): this;
     /**
      * Move art to by vector (= relative)
+     *
+     * @deprecated use transform property instead
      */
     move(shift: IVectorData): this;
 }
 /**
- *  TODO: [🎟️] topLeft, bottomRight, topRight and bottomLeft should be encapsulated in boundingBox property
+ * TODO: [🎟️] topLeft, bottomRight, topRight and bottomLeft should be encapsulated in boundingBox property
+ * TODO: [🍎]  acceptedAttributes should reflect IMaterial and IShape
+ * TODO: [🎚️] Maybe get rit of AbstractArts and make makers for arts which returns IArts
  */

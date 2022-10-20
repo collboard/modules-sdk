@@ -68,6 +68,8 @@ export declare class CornerstoneArt
  */
 export declare const virtualCornerstoneArt: CornerstoneArt;
 /**
+ * TODO: [🧗‍♀️] CornerstoneArt extends PointArt
  * TODO: [🍫] In entire repository go through all Arrays and repace some of them with Sets:
  *       Example: modulesActive and modulesInactive should be Set<string_module_name> because it does not depend on order and should be unique
+ * TODO: [🎚️] Implement IArt
  */
