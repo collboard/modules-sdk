@@ -424,19 +424,14 @@ export const checkOptionsCompatibility = (window as any).CollboardSdk.checkOptio
 export const classNames = (window as any).CollboardSdk.classNames;
 
 /**
+ * Color object is represents rbg color with alpha chanell
+ *
+ * Note: there is nothing as fromObject and toObject because much better and most logic way how top serialize color is to serialize it to hex string #009EDD
+ *
  * @collboard-modules-sdk
+ *
  */
 export const Color = (window as any).CollboardSdk.Color;
-
-/**
- * @collboard-modules-sdk
- */
-export const hslToRgb = (window as any).CollboardSdk.hslToRgb;
-
-/**
- * @collboard-modules-sdk
- */
-export const rgbToHsl = (window as any).CollboardSdk.rgbToHsl;
 
 /**
  * Compares two strings for sorting purposes
@@ -1637,10 +1632,11 @@ export const string_uuid = (window as any).CollboardSdk.string_uuid;
  * Semantic helper
  * UUID with only the first part of the UUID
  *
+ *
  * For example `"5a0a153d"`
  * @collboard-modules-sdk
  */
-export const string_uuid_cut = (window as any).CollboardSdk.string_uuid_cut;
+export const string_uuid_first_segment = (window as any).CollboardSdk.string_uuid_first_segment;
 
 /**
  * Semantic helper
@@ -1838,7 +1834,7 @@ export const string_attribute_value_scope = (window as any).CollboardSdk.string_
 /**
  * Semantic helper for css/html colors
  *
- * For example `"white"` or `"#906090"`
+ * For example `"white"` or `"#009EDD"`
  * @collboard-modules-sdk
  */
 export const string_color = (window as any).CollboardSdk.string_color;
@@ -1989,6 +1985,158 @@ export const FakeClosePreventionSystem = (window as any).CollboardSdk.FakeCloseP
 export const CollSpace = (window as any).CollboardSdk.CollSpace;
 
 /**
+ * Converts appearance in any form to the advanced one
+ *
+ * @param appearance in any form (simple one material, advanced material)
+ * @returns IFullAdvancedAppearance
+ *
+ * @collboard-modules-sdk
+ */
+export const getFullAdvancedAppearance = (window as any).CollboardSdk.getFullAdvancedAppearance;
+
+/**
+ * Converts material in any form to the phong one
+ *
+ * @param material in any form (just texture, phong)
+ * @returns IFullPhongMaterial
+ *
+ * @collboard-modules-sdk
+ */
+export const getFullPhongMaterial = (window as any).CollboardSdk.getFullPhongMaterial;
+
+/**
+ * Appearance describes complete appearance of the art.
+ * It can be one of the following:
+ * - **IMaterial** when you want to use just a single material for every spots, edges and fills of the art
+ * - **IAdvancedAppearance**, **IFullAdvancedAppearance** when you want to specify materials for different spots, edges and fills of the art
+ *
+ * 🟦🟦🟦🟦
+ * 🟦🟦🟦🟦
+ * 🟦🟦🟦🟦
+ * 🟦🟦🟦🟦
+ *
+ * @collboard-modules-sdk
+ */
+export const IAppearance = (window as any).CollboardSdk.IAppearance;
+
+/**
+ * Appearance when you want to specify materials for different spots, edges and fills of the art and set the default for the rest.
+ * For example polygon with red edge and blue fill
+ *
+ * 🟥🟥🟥🟥
+ * 🟥🟦🟦🟥
+ * 🟥🟦🟦🟥
+ * 🟥🟥🟥🟥
+ *
+ * @collboard-modules-sdk
+ */
+export const IAdvancedAppearance = (window as any).CollboardSdk.IAdvancedAppearance;
+
+/**
+ * Appearance when you want to specify every material for different spots, edges and fills of the art.
+ * For example polygon with red edge and blue fill
+ *
+ * ❎🟥🟥❎
+ * 🟥🟦🟦🟥
+ * 🟥🟦🟦🟥
+ * ❎🟥🟥❎
+ *
+ * @collboard-modules-sdk
+ */
+export const IFullAdvancedAppearance = (window as any).CollboardSdk.IFullAdvancedAppearance;
+
+/**
+ * Material describes one material of the art or part of the art
+ * It can be one of the following:
+ * - **ITexture** when you want to use just an emissive texture without struggle with the lightning, shadows, etc.
+ * - **IPhongMaterial** when you want to specify full phong lighting model
+ *
+ * @collboard-modules-sdk
+ */
+export const IMaterial = (window as any).CollboardSdk.IMaterial;
+
+/**
+ * Material with specified at least parts of phong lighting model
+ *
+ * @collboard-modules-sdk
+ */
+export const IPhongMaterial = (window as any).CollboardSdk.IPhongMaterial;
+
+/**
+ * Full phong lighting model
+ * NOT IMPLEMENTED YET just holding place for future use
+ *
+ * @collboard-modules-sdk
+ */
+export const IFullPhongMaterial = (window as any).CollboardSdk.IFullPhongMaterial;
+
+/**
+ * Texture is texture or its equivalent like color, gradient, video, etc.
+ *
+ * @collboard-modules-sdk
+ */
+export const ITexture = (window as any).CollboardSdk.ITexture;
+
+/**
+ * Just a simple color
+ * Note: This color can be transparent
+ *
+ * @collboard-modules-sdk
+ */
+export const IColorTexture = (window as any).CollboardSdk.IColorTexture;
+
+/**
+ * Texture
+ * Note: Image for the texture can be transparent
+ *
+ * @collboard-modules-sdk
+ */
+export const ITextureTexture = (window as any).CollboardSdk.ITextureTexture;
+
+/**
+ * Converts texture to color
+ * If the texture is not a simple color, returns average color of the texture
+ *
+ * @param texture
+ * @returns Promise<Color>
+ *
+ * @collboard-modules-sdk
+ */
+export const textureToColor = (window as any).CollboardSdk.textureToColor;
+
+/**
+ * Converts texture to color
+ * If the texture is not a simple color, returns some transparent color instead
+ *
+ * Note: There are two similar functions:
+ * - **textureToColor** Propperly extracts color from image textures but returns a promise
+ * - **textureToColorSync** Returns provisional color when image texture is given but works synchronously
+ *
+ * @param texture
+ * @returns Color
+ *
+ * @collboard-modules-sdk
+ */
+export const textureToColorSync = (window as any).CollboardSdk.textureToColorSync;
+
+/**
+ * Converts texture to SVG props
+ *
+ * @collboard-modules-sdk
+ */
+export const textureToSvg = (window as any).CollboardSdk.textureToSvg;
+
+/**
+ * Art is a an object on the shared board
+ * This interface defines basic requirements of the art
+ *
+ * Note: Arts that implements this are compliant with new art and attribute system
+ *
+ * @collboard-modules-sdk
+ */
+export const IArt = (window as any).CollboardSdk.IArt;
+
+/**
  * @collboard-modules-sdk
  * @sideeffect Creating elements with id={artId} to be findable in the DOM
  * @sideeffect Creating elements with class __ArtShell for findArtShellElement
@@ -2096,7 +2244,7 @@ export const IExportScope = (window as any).CollboardSdk.IExportScope;
 export const ExportScopeSimple = (window as any).CollboardSdk.ExportScopeSimple;
 
 /**
- * Options and util provided for the exporter to as a material to create exported data
+ * Options and util provided for the exporter to as a complete foundation to create exported data
  * Note: Do not need to include the systems because systems are already available in registree module> systems: ISystems;
  *
  * @collboard-modules-sdk
@@ -2882,6 +3030,8 @@ export const BackgroundWallpaperArt = (window as any).CollboardSdk.BackgroundWal
 export const FrameArt = (window as any).CollboardSdk.FrameArt;
 
 /**
+ * Handwritten free line with lot of segments
+ *
  * @collboard-modules-sdk
  */
 export const FreehandArt = (window as any).CollboardSdk.FreehandArt;
@@ -2923,6 +3073,21 @@ export const LineArt = (window as any).CollboardSdk.LineArt;
  * @collboard-modules-sdk
  */
 export const LoadingArt = (window as any).CollboardSdk.LoadingArt;
+
+/**
+ * Just a point/flag/marker or whatever pointy on the board
+ *
+ * @collboard-modules-sdk
+ */
+export const PointArt = (window as any).CollboardSdk.PointArt;
+
+/**
+ * Universal polygon art with N points
+ * Polygon is always closed - there is always last edge from last point back to the first point
+ *
+ * @collboard-modules-sdk
+ */
+export const PolygonArt = (window as any).CollboardSdk.PolygonArt;
 
 /**
  * @collboard-modules-sdk
