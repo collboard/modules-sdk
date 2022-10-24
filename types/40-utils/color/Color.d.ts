@@ -76,6 +76,12 @@ export declare class Color {
     addLightness(delta: number): Color;
     get negative(): Color;
     get grayscale(): Color;
+    /**
+     * Creates best text color for this background color
+     *
+     * @returns white or black color
+     */
+    textColor(): Color;
     withMutation(
         modifier: (red: number, green: number, blue: number, opacity: number) => [number, number, number, number],
     ): Color;

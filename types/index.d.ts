@@ -12,6 +12,7 @@ import { IModule } from './50-systems/ModuleStore/interfaces/IModule';
 export declare function declareModule(module: IModule): void;
 
 // Note: bellow is all stuff marked with "@collboard SDK"
+export { sanitizeHtml } from './00-modules/files/html/utlis/sanitizeHtml';
 export { ArtScaler } from './30-components/ArtScaler';
 export { string_animation } from './30-components/menu/animations';
 export { Icon } from './30-components/menu/Icon';
@@ -53,6 +54,7 @@ export { calculate } from './40-utils/calculate';
 export { checkOptionsCompatibility } from './40-utils/checkOptionsCompatibility';
 export { classNames } from './40-utils/classNames';
 export { Color } from './40-utils/color/Color';
+export { randomColor } from './40-utils/color/randomColor';
 export { compareStrings } from './40-utils/compareStrings';
 export { create3dRotation } from './40-utils/create3dRotation';
 export { blobToBinaryString } from './40-utils/data/blobToBinaryString';

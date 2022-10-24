@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+export { sanitizeHtml } from './00-modules/files/html/utlis/sanitizeHtml';
 export { ArtScaler } from './30-components/ArtScaler';
 export { Icon } from './30-components/menu/Icon';
 export { IconColor } from './30-components/menu/IconColor';
@@ -42,6 +43,7 @@ export { calculate } from './40-utils/calculate';
 export { checkOptionsCompatibility } from './40-utils/checkOptionsCompatibility';
 export { classNames } from './40-utils/classNames';
 export { Color } from './40-utils/color/Color';
+export { randomColor } from './40-utils/color/randomColor';
 export { compareStrings } from './40-utils/compareStrings';
 export { create3dRotation } from './40-utils/create3dRotation';
 export { blobToBinaryString } from './40-utils/data/blobToBinaryString';
