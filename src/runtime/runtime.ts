@@ -14,6 +14,16 @@ export const declareModule = (window as any).declareModule;
 
 // Note: here is all stuff marked with "@collboard SDK"
 /**
+ * Sanitize HTML
+ *
+ * @param html dirty html from user (or parter apps like H-edu)
+ * @returns clean html to be used in HTMLArt
+ *
+ * @collboard-modules-sdk
+ */
+export const sanitizeHtml = (window as any).CollboardSdk.sanitizeHtml;
+
+/**
  * @collboard-modules-sdk
  */
 export const ArtScaler = (window as any).CollboardSdk.ArtScaler;
@@ -432,6 +442,13 @@ export const classNames = (window as any).CollboardSdk.classNames;
  *
  */
 export const Color = (window as any).CollboardSdk.Color;
+
+/**
+ * Creates a random color
+ *
+ * @collboard-modules-sdk
+ */
+export const randomColor = (window as any).CollboardSdk.randomColor;
 
 /**
  * Compares two strings for sorting purposes
