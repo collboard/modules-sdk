@@ -4,182 +4,104 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_color } from '../typeAliases';
+import { string_color, string_url_image } from '../typeAliases';
 /**
+ * Color object is represents rbg color with alpha chanell
+ *
+ * Note: there is nothing as fromObject and toObject because much better and most logic way how top serialize color is to serialize it to hex string #009EDD
+ *
  * @collboard-modules-sdk
+ *
  */
 export declare class Color {
     readonly red: number;
     readonly green: number;
     readonly blue: number;
     readonly alpha: number;
-    static fromHex(hex: string_color): Color;
+    /**
+     * Creates a new Color instance from miscellaneous formats
+     * - It can receive Color instance and just return the same instance
+     * - It can receive color in string format for example #009EDD, rgb(0,158,221), rgb(0%,62%,86.7%), hsl(197.1,100%,43.3%)
+     *
+     * Note: This is not including fromImage because detecting color from an image is heavy task which requires async stuff and we cannot safely determine with overloading if return value will be a promise
+     *
+     * @param color
+     * @returns Color object
+     */
     static from(color: string_color | Color): Color;
+    /**
+     * Creates a new Color instance from miscellaneous string formats
+     *
+     * @param color as a string for example #009EDD, rgb(0,158,221), rgb(0%,62%,86.7%), hsl(197.1,100%,43.3%), red, darkgrey,...
+     * @returns Color object
+     */
+    static fromString(color: string_color): Color;
+    /**
+     * Creates a new Color instance from average color of given image
+     *
+     * @param image as a source for example data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjYJh39z8ABJgCe/ZvAS4AAAAASUVORK5CYII=
+     * @returns Color object
+     */
+    static fromImage(image: string_url_image): Promise<Color>;
+    /**
+     * Creates a new Color instance from color in hex format
+     *
+     * @param color in hex for example  #009EDD
+     * @returns Color object
+     */
+    static fromHex(hex: string_color): Color;
+    /**
+     * Creates a new Color instance from color in hsl format
+     *
+     * @param color as a hsl for example  hsl(197.1,100%,43.3%)
+     * @returns Color object
+     */
+    static fromHsl(hsl: string_color): Color;
+    /**
+     * Creates a new Color instance from color in rgb format
+     *
+     * @param color as a rgb for example rgb(0,158,221), rgb(0%,62%,86.7%)
+     * @returns Color object
+     */
+    static fromRgbString(rgb: string_color): Color;
+    /**
+     * Creates a new Color instance from color in rbga format
+     *
+     * @param color as a rgba for example rgba(0,158,221,0.5), rgb(0%,62%,86.7%,50%)
+     * @returns Color object
+     */
+    static fromRgbaString(rgba: string_color): Color;
     private constructor();
     withAlpha(alpha: number): Color;
     addLightness(delta: number): Color;
     get negative(): Color;
     get grayscale(): Color;
+    /**
+     * Creates best text color for this background color
+     *
+     * @returns white or black color
+     */
+    textColor(): Color;
     withMutation(
         modifier: (red: number, green: number, blue: number, opacity: number) => [number, number, number, number],
     ): Color;
     clone(): Color;
-    toString(): string_color;
     get opaque(): Color;
     get transparent(): Color;
-    get rgb(): string_color;
-    get hsl(): string_color;
-    static aliceblue: Color;
-    static antiquewhite: Color;
-    static aqua: Color;
-    static aquamarine: Color;
-    static azure: Color;
-    static beige: Color;
-    static bisque: Color;
-    static black: Color;
-    static blanchedalmond: Color;
-    static blue: Color;
-    static blueviolet: Color;
-    static brown: Color;
-    static burlywood: Color;
-    static cadetblue: Color;
-    static chartreuse: Color;
-    static chocolate: Color;
-    static coral: Color;
-    static cornflowerblue: Color;
-    static cornsilk: Color;
-    static crimson: Color;
-    static cyan: Color;
-    static darkblue: Color;
-    static darkcyan: Color;
-    static darkgoldenrod: Color;
-    static darkgray: Color;
-    static darkgrey: Color;
-    static darkgreen: Color;
-    static darkkhaki: Color;
-    static darkmagenta: Color;
-    static darkolivegreen: Color;
-    static darkorange: Color;
-    static darkorchid: Color;
-    static darkred: Color;
-    static darksalmon: Color;
-    static darkseagreen: Color;
-    static darkslateblue: Color;
-    static darkslategray: Color;
-    static darkslategrey: Color;
-    static darkturquoise: Color;
-    static darkviolet: Color;
-    static deeppink: Color;
-    static deepskyblue: Color;
-    static dimgray: Color;
-    static dimgrey: Color;
-    static dodgerblue: Color;
-    static firebrick: Color;
-    static floralwhite: Color;
-    static forestgreen: Color;
-    static fuchsia: Color;
-    static gainsboro: Color;
-    static ghostwhite: Color;
-    static gold: Color;
-    static goldenrod: Color;
-    static gray: Color;
-    static grey: Color;
-    static green: Color;
-    static greenyellow: Color;
-    static honeydew: Color;
-    static hotpink: Color;
-    static indianred: Color;
-    static indigo: Color;
-    static ivory: Color;
-    static khaki: Color;
-    static lavender: Color;
-    static lavenderblush: Color;
-    static lawngreen: Color;
-    static lemonchiffon: Color;
-    static lightblue: Color;
-    static lightcoral: Color;
-    static lightcyan: Color;
-    static lightgoldenrodyellow: Color;
-    static lightgray: Color;
-    static lightgrey: Color;
-    static lightgreen: Color;
-    static lightpink: Color;
-    static lightsalmon: Color;
-    static lightseagreen: Color;
-    static lightskyblue: Color;
-    static lightslategray: Color;
-    static lightslategrey: Color;
-    static lightsteelblue: Color;
-    static lightyellow: Color;
-    static lime: Color;
-    static limegreen: Color;
-    static linen: Color;
-    static magenta: Color;
-    static maroon: Color;
-    static mediumaquamarine: Color;
-    static mediumblue: Color;
-    static mediumorchid: Color;
-    static mediumpurple: Color;
-    static mediumseagreen: Color;
-    static mediumslateblue: Color;
-    static mediumspringgreen: Color;
-    static mediumturquoise: Color;
-    static mediumvioletred: Color;
-    static midnightblue: Color;
-    static mintcream: Color;
-    static mistyrose: Color;
-    static moccasin: Color;
-    static navajowhite: Color;
-    static navy: Color;
-    static oldlace: Color;
-    static olive: Color;
-    static olivedrab: Color;
-    static orange: Color;
-    static orangered: Color;
-    static orchid: Color;
-    static palegoldenrod: Color;
-    static palegreen: Color;
-    static paleturquoise: Color;
-    static palevioletred: Color;
-    static papayawhip: Color;
-    static peachpuff: Color;
-    static peru: Color;
-    static pink: Color;
-    static plum: Color;
-    static powderblue: Color;
-    static purple: Color;
-    static rebeccapurple: Color;
-    static red: Color;
-    static rosybrown: Color;
-    static royalblue: Color;
-    static saddlebrown: Color;
-    static salmon: Color;
-    static sandybrown: Color;
-    static seagreen: Color;
-    static seashell: Color;
-    static sienna: Color;
-    static silver: Color;
-    static skyblue: Color;
-    static slateblue: Color;
-    static slategray: Color;
-    static slategrey: Color;
-    static snow: Color;
-    static springgreen: Color;
-    static steelblue: Color;
-    static tan: Color;
-    static teal: Color;
-    static thistle: Color;
-    static tomato: Color;
-    static turquoise: Color;
-    static violet: Color;
-    static wheat: Color;
-    static white: Color;
-    static whitesmoke: Color;
-    static yellow: Color;
-    static yellowgreen: Color;
+    toString(): string_color;
+    toHex(): string_color;
+    toHsl(): string_color;
 }
 /**
+ * TODO: Maybe [🏌️‍♂️] change ACRY toString => (toHex) toRbg when there will be toRgb and toRgba united
+ * TODO: Convert getters to methods - getters only for values
+ * TODO: Write tests
+ * TODO: Getters for alpha, opacity, transparency, r,b,g,h,s,l,a,...,
+ * TODO: [0] Should be fromRgbString and fromRgbaString one or two functions + one or two regex
+ * TODO: Use rgb, rgba, hsl for testing and parsing and use SAME regex
+ * TODO: Regex for rgb, rgba, hsl does not support all options like deg, rad, turn,...
  * TODO: Getters (like negative and grayscale) should be a static method - same as vector.half()
  * TODO: Random color
  * TODO: Convolution matrix
+ * TODO: Maybe connect with textures
  */

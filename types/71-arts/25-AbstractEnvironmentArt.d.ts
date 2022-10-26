@@ -11,3 +11,9 @@ import { AbstractArt } from './20-AbstractArt';
  * @collboard-modules-sdk
  */
 export declare abstract class AbstractEnvironmentArt extends AbstractArt {}
+/**
+ * TODO: [🎚️] Maybe get rit of AbstractArts and make makers for arts which returns IArts
+ * TODO: SkyboxArtModule
+ *       LightArtModule
+ *       ...
+ */

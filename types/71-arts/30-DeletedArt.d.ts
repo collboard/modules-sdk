@@ -22,5 +22,5 @@ export declare class DeletedArt extends AbstractArt {
     };
 }
 /**
- *
+ * TODO: [🎚️] Implement IArt
  */

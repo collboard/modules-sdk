@@ -30,3 +30,6 @@ export declare class ExportArt extends Abstract2dArt {
     get acceptedAttributes(): never[];
     render(isSelected: boolean): JSX.Element;
 }
+/**
+ * TODO: [🎚️] Implement IArt
+ */

@@ -37,3 +37,6 @@ export declare class CollSpace extends AbstractSystem {
      */
     private testPickPoint;
 }
+/**
+ * TODO: [🍤] This should be splitted/renamed into ArtSystem, SpaceSystem, RenderingSystem and MaterialSystem
+ */

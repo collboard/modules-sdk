@@ -4,7 +4,14 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { Takeable } from './Takeable';
+export interface ITakeChain<TValue extends Takeable> {
+    readonly value: TValue;
+    then<TResultValue extends Takeable>(
+        callback: (value: TValue) => TResultValue,
+    ): TResultValue & ITakeChain<TResultValue>;
+}
 /**
- * @collboard-modules-sdk
+ * TODO: ITakeChain should implementing PromiseLike interface
+ * TODO: Maybe method finally
  */
-export declare function hslToRgb(h: number, s: number, l: number): number[];

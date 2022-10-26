@@ -26,3 +26,6 @@ export declare class BackgroundColorArt extends AbstractBackgroundArt {
     additionalStyle(): CSSProperties;
     transformStyle(): CSSProperties;
 }
+/**
+ * TODO: [🎚️] Implement IArt
+ */

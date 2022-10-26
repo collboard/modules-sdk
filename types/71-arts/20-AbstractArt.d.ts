@@ -17,6 +17,8 @@ export declare abstract class AbstractArt {
     /**
      * AbstractArt is considered indexable in order to make serialization
      * and deserialization work
+     *
+     * TODO: [🍎] Remove when there is only shape and appearance on the arts
      */
     [index: string]: attribute_value | any;
     /**
@@ -25,3 +27,6 @@ export declare abstract class AbstractArt {
     readonly artId: string_uuid;
     constructor();
 }
+/**
+ * TODO: [🎚️] Maybe get rit of AbstractArts and make makers for arts which returns IArts
+ */

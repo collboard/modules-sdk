@@ -10,6 +10,8 @@ import { string_html } from './../../../../40-utils/typeAliases';
  *
  * @param html dirty html from user (or parter apps like H-edu)
  * @returns clean html to be used in HTMLArt
+ *
+ * @collboard-modules-sdk
  */
 export declare function sanitizeHtml(html: string_html): string_html;
 /**
