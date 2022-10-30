@@ -13,9 +13,13 @@ import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
  */
 export declare class MessagesApiSystem extends AbstractSystem implements IDestroyable {
     protected init(): Promise<void>;
+    private messageQueue;
+    private processMessage;
     emitEvent(eventData: any): void;
 }
 /**
+ * TODO: processMessage maybe public
  * TODO: There should be some concept of private system
  * TODO: This (or some similar) system should manage console access
+ * TODO: messageQueue maybe ThrottleQueue (not a simple Queue)
  */

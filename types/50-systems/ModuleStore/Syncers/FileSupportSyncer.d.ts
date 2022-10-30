@@ -5,6 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IDestroyable } from 'destroyable';
+import { ILogger, ISubLogger } from '../../../40-utils/logger/ILogger';
 import { string_mime_type, string_module_name } from '../../../40-utils/typeAliases';
 import { ISyncer } from '../interfaces/ISyncer';
 import { AbstractSyncer } from './AbstractSyncer';
@@ -15,7 +16,10 @@ import { AbstractSyncer } from './AbstractSyncer';
 export declare class FileSupportSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
     private fileSupportDependencies;
     private throttleQueues;
-    installSupportForFile(mimeType: string_mime_type): Promise<unknown>;
-    installSupportForNative(moduleName: string_module_name): Promise<import('destroyable').Registration | undefined>;
+    installSupportForFile(mimeType: string_mime_type, logger: ILogger | ISubLogger): Promise<unknown>;
+    installSupportForNative(
+        moduleName: string_module_name,
+        logger: ILogger | ISubLogger,
+    ): Promise<import('destroyable').Registration | undefined>;
     destroy(): Promise<void>;
 }
