@@ -33,6 +33,10 @@ export declare class ApiClient extends AbstractSystem {
         remoteInstanceId: string_version;
     }>;
     connectToBoard(uriId: string_uri_part): Promise<MaterialArtVersioningSystem>;
+    /**
+     *
+     * @deprecated Use boardSystem.createNewBoard instead
+     */
     createNewBoard(options: Omit<ICreateBoardOptions, 'redirect'>): Promise<{
         uriId: string_uriid;
         links: {

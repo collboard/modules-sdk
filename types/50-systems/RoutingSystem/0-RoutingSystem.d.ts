@@ -48,4 +48,5 @@ export declare class RoutingSystem extends AbstractSystem {
 }
 /**
  * TODO: For URLs (view, edit...) should be probbably some better system
+ * TODO: [🌵] Choose between boardSystem.navigateBoard(null) VS routingSystem.navigateBoardHome()
  */

@@ -22,4 +22,5 @@ export {};
  * TODO: [🐋]  Make support for table in ILogger
  * TODO: ILoggerCore extends IDestroyable
  * TODO: [🎋] When logger updated and can be subloggered, update theese logging in the code
+ * TODO: [🐋] Make support for custom style in ILogger AND ACRY replace all %c + create some central place to keep the styles
  */

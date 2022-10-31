@@ -32,7 +32,7 @@ export interface IUrlVariables {
     protocol: string_protocol;
     host: string_host;
     businessName: BusinessName;
-    uriId?: string_uri_part | null;
+    uriId: string_uri_part | null;
     extension?: string_file_extension | null;
     module?: string_module_name | null;
     modulePath?: string_uri | null;

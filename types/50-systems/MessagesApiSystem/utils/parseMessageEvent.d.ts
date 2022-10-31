@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { ISystemsExtended, ISystemsMethods } from '../../00-SystemsContainer/ISystems';
 import { IModuleSignature } from '../../ArtVersionSystem/IModuleSignature';
-interface IParseMessageEventResult {
+export interface IParseMessageEventResult {
     requestId?: string | number;
     moduleSignature: IModuleSignature;
     systemName: keyof Omit<ISystemsExtended, ISystemsMethods>;
@@ -14,7 +14,6 @@ interface IParseMessageEventResult {
     options: any;
 }
 export declare function parseMessageEvent(event: MessageEvent): IParseMessageEventResult;
-export {};
 /**
  * TODO: Maybe use compileAsync
  * TODO: [👨‍👨‍👦‍👦] What is the right version to use for the schema? Currently 2020-12
