@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
+import { Factorable } from './../40-utils/IFactory';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
  * Art which renders loading of something
@@ -21,7 +22,7 @@ import { Abstract2dArt } from './26-Abstract2dArt';
  * @collboard-modules-sdk
  */
 export declare class LoadingArt extends Abstract2dArt {
-    alt: string;
+    alt: Factorable<string>;
     static serializeName: string;
     static manifest: {
         name: string;
@@ -29,7 +30,7 @@ export declare class LoadingArt extends Abstract2dArt {
     /**
      * @param alt What is loading
      */
-    constructor(alt: string);
+    constructor(alt: Factorable<string>);
     get topLeft(): import('xyzt').IVectorData;
     get bottomRight(): import('xyzt').IVectorData;
     get acceptedAttributes(): never[];

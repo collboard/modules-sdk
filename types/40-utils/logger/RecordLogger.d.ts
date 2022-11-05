@@ -20,6 +20,7 @@ export declare class RecordLogger implements ILogger, ISubLogger {
     error(message?: any, ...optionalParams: Array<any>): this;
     trace(...data: Array<any>): this;
     get isEnded(): boolean;
+    appear(): this;
     end(): void;
     group(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
     groupCollapsed(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
