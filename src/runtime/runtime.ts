@@ -1137,6 +1137,14 @@ export const randomString = (window as any).CollboardSdk.randomString;
 
 /**
  *
+ * Pick random tag char like "[🍆]", "[🍡]", "[🍤]"...
+ *
+ * @collboard-modules-sdk
+ */
+export const randomTag = (window as any).CollboardSdk.randomTag;
+
+/**
+ *
  * Generates a random uriId name like "ggpsehhglbdoejrhpmal", "h2m24iceax4qtxnk7pzj", "krc73zrdryyuaebj74du"...
  *
  * @collboard-modules-sdk
