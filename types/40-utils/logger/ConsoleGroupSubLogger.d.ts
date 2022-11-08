@@ -12,6 +12,7 @@ export declare class ConsoleGroupSubLogger extends RecordLogger implements ISubL
     private readonly groupName?;
     private readonly optionalParams;
     constructor(console: Console, collapsed: boolean, groupName?: string | undefined, ...optionalParams: Array<any>);
+    appear(): this;
     end(): void;
     private output;
 }

@@ -9,7 +9,14 @@ export interface ILogger extends ILoggerCore {
     groupCollapsed(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
 }
 export interface ISubLogger extends ILoggerCore {
+    /**
+     * Finishes the logger and output to the terminal
+     */
     end(): void;
+    /**
+     * Output to the terminal without finishing the logger
+     */
+    appear(): this;
 }
 interface ILoggerCore {
     info(message?: any, ...optionalParams: Array<any>): this;

@@ -123,6 +123,7 @@ export { randomInteger } from './40-utils/randomInteger';
 export { randomItem } from './40-utils/randomItem';
 export { randomJavascriptName } from './40-utils/randomJavascriptName';
 export { randomString } from './40-utils/randomString';
+export { randomTag } from './40-utils/randomTag';
 export { randomUriId } from './40-utils/randomUriId';
 export { Editable } from './40-utils/react-components/Editable';
 export { InnerHtml } from './40-utils/react-components/InnerHtml';
