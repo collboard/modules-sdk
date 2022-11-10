@@ -4,10 +4,9 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { ISvgPath } from './ISvgPath';
+export declare function stringifySvgPath(pathSegments: ISvgPath): string;
 /**
- *
- * Pick random tag char like "[🍆]", "[🍡]", "[🍤]"...
- *
- * @collboard-modules-sdk
+ * TODO: Use toFixed ARCY
+ * TODO: ${firstPoint.x} ${firstPoint.y}`  <- via xyzt method
  */
-export declare function randomTag(): string;

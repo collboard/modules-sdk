@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import '../71-arts/50-FreehandArt/FreehandArt';
 import './../30-components/utils/displayon-module';
 import './../30-components/utils/Loader/loader-modal-module';
 import './../30-components/utils/Loader/loader-module';
@@ -28,7 +29,6 @@ import './../71-arts/40-BackgroundColorArt';
 import './../71-arts/40-BackgroundPatternArt';
 import './../71-arts/40-BackgroundWallpaperArt';
 import './../71-arts/50-FrameArt';
-import './../71-arts/50-FreehandArt';
 import './../71-arts/50-HTMLArt';
 import './../71-arts/50-IframeArt';
 import './../71-arts/50-ImageArt';
