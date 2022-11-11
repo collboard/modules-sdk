@@ -7,8 +7,8 @@
 /// <reference types="react" />
 import { TouchFrame } from 'touchcontroller';
 import { IVectorData, Vector } from 'xyzt';
-import { number_positive, string_color } from './../40-utils/typeAliases';
-import { Abstract2dArt } from './26-Abstract2dArt';
+import { number_positive, string_color } from '../../40-utils/typeAliases';
+import { Abstract2dArt } from '../26-Abstract2dArt';
 /**
  * Handwritten free line with lot of segments
  *
@@ -20,27 +20,31 @@ export declare class FreehandArt extends Abstract2dArt {
         name: string;
     };
     frames: Array<TouchFrame>;
+    smoothing: 0 | number_positive;
     color: string_color;
     weight: 0 | number_positive;
-    private minX;
-    private maxX;
-    private minY;
-    private maxY;
+    private __path?;
+    private __minX?;
+    private __maxX?;
+    private __minY?;
+    private __maxY?;
     constructor(frames: Array<TouchFrame>, color: string_color, weight: number);
-    private get path();
     get topLeft(): Vector;
     get bottomRight(): Vector;
     get size(): IVectorData;
     set size(newSize: IVectorData);
     isNear(pointToTest: IVectorData): boolean;
     get acceptedAttributes(): string[];
+    pushFrame(frame: TouchFrame): this;
     /**
      * @deprecated [🍒] remove this method
      */
     private calculateBoundingBox;
+    private calculatePath;
     render(isSelected: boolean): JSX.Element;
 }
 /**
+ * TODO: FreehandArt with just 1 frame should be invalid
  * TODO: Instead of x/y pairs use Vector
  * TODO: [✏️] Fix> react-dom.development.js:630 Error: <svg> attribute width: Expected length, "NaN".
  * TODO: Probbably (maybe in html/css values MUST be whole integers): ACTRY To be infinitelly zoomable avoid using Math.ceil, Math.floor, Math.round,...
@@ -53,5 +57,5 @@ export declare class FreehandArt extends Abstract2dArt {
  * TODO: [🕺] Rename weight => spotSize, edgeSize (as it is in PolygonArt and FreehandArt)
  * TODO: [🎚️] Implement IArt
  * Note: [🌡️]
- * TODO: [👨‍🦰] minX, maxX, minY, maxY should not be serialized - make it through getters, private for serializer or use new system of shape+appearance+transform
+ * TODO: [1] Detect collisions from bézier curve not original points
  */

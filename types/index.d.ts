@@ -374,7 +374,7 @@ export { BackgroundColorArt } from './71-arts/40-BackgroundColorArt';
 export { BackgroundPatternArt } from './71-arts/40-BackgroundPatternArt';
 export { BackgroundWallpaperArt } from './71-arts/40-BackgroundWallpaperArt';
 export { FrameArt } from './71-arts/50-FrameArt';
-export { FreehandArt } from './71-arts/50-FreehandArt';
+export { FreehandArt } from './71-arts/50-FreehandArt/FreehandArt';
 export { HTMLArt } from './71-arts/50-HTMLArt';
 export { ImageArt } from './71-arts/50-ImageArt';
 export { LineArt } from './71-arts/50-LineArt';
