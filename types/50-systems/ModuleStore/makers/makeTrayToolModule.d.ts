@@ -11,7 +11,7 @@ import { Abstract2dArt } from '../../../71-arts/26-Abstract2dArt';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IOngoingMaterialOperation } from '../../ArtVersionSystem/IOperation';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 /**
  * Internal module maker used by makeTrayModule (which gets exported and should be used)
  *

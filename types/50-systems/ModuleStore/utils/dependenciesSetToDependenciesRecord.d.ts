@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IDependenciesRecord, IDependenciesSet, IDependency } from '../interfaces/IDependencies';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 export declare function dependenciesSetToDependenciesRecord(
     dependenciesSetOrArray: IDependenciesSet | Array<IDependency | IModuleManifest>,
 ): IDependenciesRecord;

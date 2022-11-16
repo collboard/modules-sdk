@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 import { string_module_name } from '../../../40-utils/typeAliases';
 import { ISystemsExtended } from '../../00-SystemsContainer/ISystems';
 import { IModule, IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 import { IModulePersister } from '../interfaces/IModulePersister';
 import { IModulesStorageStrong } from '../interfaces/IModulesStorage';
 import { ISyncer } from '../interfaces/ISyncer';

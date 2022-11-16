@@ -7,7 +7,7 @@
 /// <reference types="react" />
 import { BusinessSystem } from '../../../../../50-systems/BusinessSystem/0-BusinessSystem';
 import { LicenseSystem } from '../../../../../50-systems/LicenseSystem/0-LicenseSystem';
-import { IModuleManifest } from '../../../../../50-systems/ModuleStore/interfaces/IModuleManifest';
+import { IModuleManifest } from '../../../../../50-systems/ModuleStore/interfaces/IModuleManifest/IModuleManifest';
 import { IModulePersister } from '../../../../../50-systems/ModuleStore/interfaces/IModulePersister';
 import { IModuleStatusReporter } from '../../../../../50-systems/ModuleStore/interfaces/IModuleStatusReporter';
 import { TranslationsSystem } from '../../../../../50-systems/TranslationsSystem/0-TranslationsSystem';

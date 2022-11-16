@@ -9,7 +9,7 @@ import { IUrlVariables } from '../../RoutingSystem/routePath/IUrlVariables';
 import { ToolbarName } from '../../ToolbarSystem/0-ToolbarSystem';
 import { IToolbarIcon } from '../../ToolbarSystem/IToolbarIcon';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 /**
  * Makes toolbar icon module which setup/unsetup given submodule when user select/unselect icon
  * TODO: Probbably better name (makeIconModuleOnModule vs. makeIconModuleOnRoute)

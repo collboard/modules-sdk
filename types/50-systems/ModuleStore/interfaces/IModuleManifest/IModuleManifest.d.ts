@@ -4,25 +4,23 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IPrice } from '../../../40-utils/price/IPrice';
-import { string_char_emoji } from '../../../40-utils/typeAliasEmoji';
+import { string_char_emoji } from '../../../../40-utils/typeAliasEmoji';
 import {
-    ILicense,
-    IPersonProfile,
     IRepository,
     string_attribute,
-    string_license,
     string_mime_type_with_wildcard,
     string_module_category,
     string_module_name,
-    string_person_profile,
-    string_token,
     string_url,
     string_url_image,
     string_version,
-} from '../../../40-utils/typeAliases';
-import { Arrayable, ArrayFull } from '../../../40-utils/typeHelpers';
-import { IStringMessage } from '../../TranslationsSystem/interfaces/IMessage';
+} from '../../../../40-utils/typeAliases';
+import { Arrayable, ArrayFull } from '../../../../40-utils/typeHelpers';
+import { IStringMessage } from '../../../TranslationsSystem/interfaces/IMessage';
+import { IModuleFlags } from './IModuleFlags';
+import { IModuleManifestAuthor } from './IModuleManifestAuthor';
+import { IModuleManifestSoftwareLicense } from './IModuleManifestSoftwareLicense';
+import { IModuleManifestUsageLicense } from './IModuleManifestUsageLicense';
 /**
  * Manifest describes the module.
  *
@@ -126,57 +124,6 @@ export interface IModuleManifest {
         fileImport?: Arrayable<string_mime_type_with_wildcard>;
     };
 }
-/**
- *
- * @collboard-modules-sdk
- */
-export interface IModuleFlags {
-    isPrivate: boolean;
-    isHidden: boolean;
-    isDeprecated: boolean;
-    isDevelopment: boolean;
-    isExperimental: boolean;
-    isTemplate: boolean;
-    isShowcase: boolean;
-}
-/**
- * Describes author or contributor of a module.
- * It is in same format as in package.json.
- *
- * @collboard-modules-sdk
- */
-export declare type IModuleManifestAuthor = string_person_profile | IPersonProfile;
-/**
- * Describes software license of a module.
- * It is in same format as in package.json.
- *
- * @collboard-modules-sdk
- */
-export declare type IModuleManifestSoftwareLicense = string_license | ILicense;
-/**
- * Describes licence for usage of a module.
- *
- * @collboard-modules-sdk
- */
-export declare type IModuleManifestUsageLicense =
-    | {
-          type: 'FREE';
-      }
-    | IModuleManifestUsageLicensePayed;
-/**
- * Describes licence for usage of a module.
- *
- * @collboard-modules-sdk
- */
-export declare type IModuleManifestUsageLicensePayed = {
-    type: 'SIMPLE_TOKEN';
-    token: string_token;
-    price: IPrice;
-    /**
-     * Note: Using string not URL to ensure whole manifest is JSON serializable.
-     */
-    buyLink: string_url;
-};
 /**
  * TODO: PickOneOf in manifest:
  *        - license or licenses

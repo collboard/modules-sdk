@@ -9,7 +9,7 @@ import { Promisable } from 'type-fest';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IAttribute } from '../../AttributesSystem/IAttribute';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 export interface IAttributeProtoModule<T> {
     manifest: IModuleManifest;
     attribute: IAttribute;

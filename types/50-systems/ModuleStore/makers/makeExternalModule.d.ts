@@ -7,7 +7,7 @@
 import { Promisable } from 'type-fest';
 import { string_url } from '../../../40-utils/typeAliases';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 import { IModulesStorageStrong } from '../interfaces/IModulesStorage';
 interface IExternalModuleOptions {
     expectedManifest: IModuleManifest;

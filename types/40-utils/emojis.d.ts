@@ -22,6 +22,7 @@ export declare const EMOJIS_IN_CATHEGORIES: Record<string, Array<string_char_emo
  */
 export declare const EMOJIS: Array<string_char_emoji>;
 /**
+ * TODO: Add emojis is some repeating frequency (annually?) - now missing is added by hand to cathegory "New Emojis (Discorered randomly)"
  * TODO: Is this unique and complete?
  * TODO: Heards, plants animals
  */

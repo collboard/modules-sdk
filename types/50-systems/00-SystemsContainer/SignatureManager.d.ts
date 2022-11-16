@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { TouchController } from 'touchcontroller';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
-import { IModuleManifest } from '../ModuleStore/interfaces/IModuleManifest';
+import { IModuleManifest } from '../ModuleStore/interfaces/IModuleManifest/IModuleManifest';
 import { ISystems } from './ISystems';
 declare type ISignableEntity = ISystems | AbstractSystem | TouchController;
 declare type ISignature = IModuleManifest | null;

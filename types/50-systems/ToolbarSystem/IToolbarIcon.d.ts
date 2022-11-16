@@ -76,3 +76,6 @@ export interface IToolbarIcon extends IIconAnonymous {
      */
     menu?: Factorable<Promisable<JSX.Element>>;
 }
+/**
+ *  TODO: [💽] Maybe allow IToolbarIcon to be just a string_char_emoji
+ */

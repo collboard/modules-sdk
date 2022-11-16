@@ -5,11 +5,13 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
-import { IModuleManifest, IModuleManifestUsageLicense } from '../ModuleStore/interfaces/IModuleManifest';
-import { IUsageLicenseInfo } from './IUsageLicenseInfo';
+import { IModuleManifest } from '../ModuleStore/interfaces/IModuleManifest/IModuleManifest';
+import { IModuleManifestUsageLicense } from '../ModuleStore/interfaces/IModuleManifest/IModuleManifestUsageLicense';
+import { IUsageLicenseInfo } from './interfaces/IUsageLicenseInfo';
 /**
  * LicenseSystem is a system that manages the licenses for modules
  *
+ * @see more on https://github.com/collboard/collboard/blob/main/documents/license-system.md
  * @collboard-system
  */
 export declare class LicenseSystem extends AbstractSystem {
@@ -18,5 +20,12 @@ export declare class LicenseSystem extends AbstractSystem {
     protected init(): Promise<void>;
     getModuleLicences(moduleManifest: IModuleManifest): Promise<Array<IModuleManifestUsageLicense>>;
     getModuleLicenceInfo(moduleManifest: IModuleManifest): Promise<IUsageLicenseInfo>;
-    hasModuleLicence(moduleManifest: IModuleManifest): Promise<boolean>;
+    hasModuleValidLicence(moduleManifest: IModuleManifest): Promise<boolean>;
 }
+/**
+ * TODO: Sign token and also sign date limitations
+ * TODO: (maybe) Save fill info about the license (maybe in IndexedDB)
+ * TODO: Method for adding license
+ * TODO: Observable licenses
+ * TODO: [0] Licenses manager
+ */

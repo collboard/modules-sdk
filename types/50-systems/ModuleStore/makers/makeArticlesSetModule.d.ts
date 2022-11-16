@@ -8,7 +8,7 @@ import { Promisable } from 'type-fest';
 import { IFactorableWithSystems } from '../../../40-utils/IFactoryWithSystems';
 import { string_translate_language, string_uri_part, string_url } from '../../../40-utils/typeAliases';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 /**
  * TODO: How to do article translations and flags in window top
  * TODO: Možná by tady nahoře mohlo být menu k dalším stránkám. ArticleSet?

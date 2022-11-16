@@ -19,7 +19,7 @@ export declare abstract class AbstractSyncer extends AbstractSystem implements I
     private moduleInstaller;
     private throttleQueue;
     get statusOf(): (
-        moduleManifest: import('../interfaces/IModuleManifest').IModuleManifest,
+        moduleManifest: import('../interfaces/IModuleManifest/IModuleManifest').IModuleManifest,
     ) => import('rxjs').BehaviorSubject<import('../ModuleStatus').ModuleStatus>;
     get installations(): import('../ModuleInstallation').ModuleInstallation[];
     install(dependency: IDependency, syncerName?: string): Promise<void>;

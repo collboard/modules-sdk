@@ -29,6 +29,7 @@ import { HintSystem } from './../HintSystem/0-HintSystem';
 import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
 import { ImportSystem } from './../ImportSystem/0-ImportSystem';
 import { LicenseSystem } from './../LicenseSystem/0-LicenseSystem';
+import { LicenseSyncer } from './../LicenseSystem/LicenseSyncer';
 import { MessagesApiSystem } from './../MessagesApiSystem/0-MessagesApiSystem';
 import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
@@ -79,6 +80,7 @@ export interface ISystemsResolved {
     readonly identitySystem: IdentitySystem;
     readonly importSystem: ImportSystem;
     readonly licenseSystem: LicenseSystem;
+    readonly licenseSyncer: LicenseSyncer;
     readonly messagesApiSystem: MessagesApiSystem;
     readonly moduleStore: ModuleStore;
     readonly artSupportSyncer: ArtSupportSyncer;

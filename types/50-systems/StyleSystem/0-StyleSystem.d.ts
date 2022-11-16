@@ -50,4 +50,6 @@ export declare class StyleSystem extends AbstractSystem {
 /**
  * TODO: Probably allow to hotreload skin
  * TODO: Probably use it for core and systems.
+ * TODO: Better name for renderStyles method (to be able to recgognize the difference between <GlobalStyles /> and {styleSystem.renderStyles()})
+ * TODO: [🏅] Allow to override just one color in the skin via styleSystem
  */

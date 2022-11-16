@@ -4,20 +4,12 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import {
-    IModuleManifestUsageLicense,
-    IModuleManifestUsageLicensePayed,
-} from '../ModuleStore/interfaces/IModuleManifest';
+import { IUsageLicenseInfoInvalid } from './IUsageLicenseInfoInvalid';
+import { IUsageLicenseInfoValid } from './IUsageLicenseInfoValid';
+/**
+ * Tells if user has valid license for given module
+ */
 export declare type IUsageLicenseInfo = IUsageLicenseInfoInvalid | IUsageLicenseInfoValid;
-interface IUsageLicenseInfoInvalid {
-    isValid: false;
-    licenseToBuy: IModuleManifestUsageLicensePayed | null;
-}
-interface IUsageLicenseInfoValid {
-    isValid: true;
-    license: IModuleManifestUsageLicense;
-}
-export {};
 /**
  * TODO: Probbaly better name for IUsageLicenseInfo
  */

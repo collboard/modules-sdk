@@ -4,19 +4,18 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import '../71-arts/50-FreehandArt/FreehandArt';
 import './../30-components/utils/displayon-module';
 import './../30-components/utils/Loader/loader-modal-module';
 import './../30-components/utils/Loader/loader-module';
-import './../50-systems/ControlSystem/modules/shortcuts-override.module';
-import './../50-systems/ControlSystem/modules/shortcuts.module';
 import './../50-systems/ExportSystem/modules/download-icon.module';
 import './../50-systems/ExportSystem/modules/download-shortcut.module';
 import './../50-systems/ExportSystem/modules/download.module';
 import './../50-systems/ImportSystem/modules/add-icon.module';
 import './../50-systems/ImportSystem/modules/add.module';
 import './../50-systems/ImportSystem/modules/import-module';
-import './../50-systems/LicenseSystem/modules/test-simple-token-license.module';
+import './../50-systems/LicenseSystem/modules/01-gold-membership-module';
+import './../50-systems/LicenseSystem/modules/02-gold-stickers-module';
+import './../50-systems/LicenseSystem/modules/03-gold-freehand-module';
 import './../50-systems/ModuleStore/connectors/ModulesStorage';
 import './../50-systems/ModuleStore/interfaces/IModulesStorage';
 import './../50-systems/ModuleStore/Syncers/StorageSyncer';
@@ -29,6 +28,7 @@ import './../71-arts/40-BackgroundColorArt';
 import './../71-arts/40-BackgroundPatternArt';
 import './../71-arts/40-BackgroundWallpaperArt';
 import './../71-arts/50-FrameArt';
+import './../71-arts/50-FreehandArt/FreehandArt';
 import './../71-arts/50-HTMLArt';
 import './../71-arts/50-IframeArt';
 import './../71-arts/50-ImageArt';

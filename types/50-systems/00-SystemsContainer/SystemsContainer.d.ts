@@ -29,6 +29,7 @@ import { HintSystem } from './../HintSystem/0-HintSystem';
 import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
 import { ImportSystem } from './../ImportSystem/0-ImportSystem';
 import { LicenseSystem } from './../LicenseSystem/0-LicenseSystem';
+import { LicenseSyncer } from './../LicenseSystem/LicenseSyncer';
 import { MessagesApiSystem } from './../MessagesApiSystem/0-MessagesApiSystem';
 import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
 import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
@@ -104,6 +105,7 @@ export declare class SystemsContainer implements ISystemsExtended {
     private readonly identitySystemSubject;
     private readonly importSystemSubject;
     private readonly licenseSystemSubject;
+    private readonly licenseSyncerSubject;
     private readonly messagesApiSystemSubject;
     private readonly moduleStoreSubject;
     private readonly artSupportSyncerSubject;
@@ -203,6 +205,8 @@ export declare class SystemsContainer implements ISystemsExtended {
     setImportSystem(importSystem: ImportSystem | null): Promise<void>;
     get licenseSystem(): Promise<LicenseSystem>;
     setLicenseSystem(licenseSystem: LicenseSystem | null): Promise<void>;
+    get licenseSyncer(): Promise<LicenseSyncer>;
+    setLicenseSyncer(licenseSyncer: LicenseSyncer | null): Promise<void>;
     get messagesApiSystem(): Promise<MessagesApiSystem>;
     setMessagesApiSystem(messagesApiSystem: MessagesApiSystem | null): Promise<void>;
     get moduleStore(): Promise<ModuleStore>;
@@ -248,3 +252,6 @@ export declare class SystemsContainer implements ISystemsExtended {
     get artSerializer(): Promise<ArtSerializer>;
     setArtSerializer(artSerializer: ArtSerializer | null): Promise<void>;
 }
+/**
+ * TODO: [🏄] Rename ready to whenReady
+ */

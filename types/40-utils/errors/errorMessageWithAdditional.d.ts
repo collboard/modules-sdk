@@ -13,3 +13,7 @@
  * @collboard-modules-sdk
  */
 export declare function errorMessageWithAdditional(errorMessage: string, additional: Record<string, any>): string;
+/**
+ * TODO: Repair all JSDoc types @see https://jsdoc.app/tags-type.html AND change "jsdoc-format": true,
+ * TODO: [🏜️] Maybe make hint as an official param of errorMessageWithAdditional
+ */

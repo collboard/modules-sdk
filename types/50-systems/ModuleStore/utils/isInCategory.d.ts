@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_module_category } from '../../../40-utils/typeAliases';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 export declare function isInCategory(manifest: IModuleManifest, category: string_module_category): boolean;
 /**
  *  TODO:  Unit test

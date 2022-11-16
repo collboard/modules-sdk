@@ -27,3 +27,6 @@ export declare abstract class AbstractSystem extends Destroyable implements IDes
      */
     protected checkIsReady(): void;
 }
+/**
+ * TODO: [🏄] Rename ready to whenReady - then ACRY find and replace other "ready" to "whenReady" or "isReady"
+ */

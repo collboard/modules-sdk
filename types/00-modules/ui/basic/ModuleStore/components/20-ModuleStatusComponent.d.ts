@@ -6,8 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { BusinessSystem } from '../../../../../50-systems/BusinessSystem/0-BusinessSystem';
-import { IUsageLicenseInfo } from '../../../../../50-systems/LicenseSystem/IUsageLicenseInfo';
-import { IModuleManifest } from '../../../../../50-systems/ModuleStore/interfaces/IModuleManifest';
+import { IUsageLicenseInfo } from '../../../../../50-systems/LicenseSystem/interfaces/IUsageLicenseInfo';
+import { IModuleManifest } from '../../../../../50-systems/ModuleStore/interfaces/IModuleManifest/IModuleManifest';
 import { IModulePersister } from '../../../../../50-systems/ModuleStore/interfaces/IModulePersister';
 import { IModuleStatusReporter } from '../../../../../50-systems/ModuleStore/interfaces/IModuleStatusReporter';
 interface IModuleStatusComponentProps {

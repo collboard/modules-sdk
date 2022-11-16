@@ -6,6 +6,5 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export {};
 /**
- * TODO: !! Remove this from here and USE on from @collboard/admin
- * TODO: [🎮] As production module
+ * TODO: !! Do not show on wellcome screen
  */

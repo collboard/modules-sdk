@@ -7,7 +7,7 @@
 /// <reference types="react" />
 import { IVectorData } from 'xyzt';
 import { string_module_name } from '../40-utils/typeAliases';
-import { IModuleManifest } from '../50-systems/ModuleStore/interfaces/IModuleManifest';
+import { IModuleManifest } from '../50-systems/ModuleStore/interfaces/IModuleManifest/IModuleManifest';
 import { IModulePersister } from '../50-systems/ModuleStore/interfaces/IModulePersister';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
