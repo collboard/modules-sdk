@@ -2386,9 +2386,18 @@ export const topleftArts = (window as any).CollboardSdk.topleftArts;
 /**
  * LicenseSystem is a system that manages the licenses for modules
  *
+ * @see more on https://github.com/collboard/collboard/blob/main/documents/license-system.md
  * @collboard-system
  */
 export const LicenseSystem = (window as any).CollboardSdk.LicenseSystem;
+
+/**
+ * LicenseSyncer installs / uninstalls modules according to (payed) license which has flag isModuleAutoInstalled
+ *
+ * @private
+ * @collboard-system
+ */
+export const LicenseSyncer = (window as any).CollboardSdk.LicenseSyncer;
 
 /**
  * System that recieves and executes the post message API
@@ -2465,6 +2474,13 @@ export const IModuleDefinition = (window as any).CollboardSdk.IModuleDefinition;
 export const IModuleSetup = (window as any).CollboardSdk.IModuleSetup;
 
 /**
+ * Flags which tells misc metadata about the module
+ *
+ * @collboard-modules-sdk
+ */
+export const IModuleFlags = (window as any).CollboardSdk.IModuleFlags;
+
+/**
  * Manifest describes the module.
  *
  * You are able to spread package.json into Collboard module manifest and all types are matching perfectly.
@@ -2473,12 +2489,6 @@ export const IModuleSetup = (window as any).CollboardSdk.IModuleSetup;
  * @collboard-modules-sdk
  */
 export const IModuleManifest = (window as any).CollboardSdk.IModuleManifest;
-
-/**
- *
- * @collboard-modules-sdk
- */
-export const IModuleFlags = (window as any).CollboardSdk.IModuleFlags;
 
 /**
  * Describes author or contributor of a module.
