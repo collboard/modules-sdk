@@ -7,4 +7,5 @@
 export {};
 /**
  * TODO: [🐅] Maybe some more elegant way how to create icon-window pairs of modules
+ * TODO: Make clear difference between admin modules (technical, now in https://github.com/collboard/collboard-admin) and management modules (for users)
  */

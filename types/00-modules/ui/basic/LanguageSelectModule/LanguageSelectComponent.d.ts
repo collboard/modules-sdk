@@ -8,5 +8,6 @@
 import { StyleSystem } from '../../../../50-systems/StyleSystem/0-StyleSystem';
 export declare function LanguageSelectComponent({ styleSystem }: { styleSystem: StyleSystem }): JSX.Element;
 /**
+ * TODO: Use useSkin() instead of passing as a prop
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */
