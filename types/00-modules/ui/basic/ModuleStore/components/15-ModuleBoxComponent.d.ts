@@ -5,19 +5,13 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { BusinessSystem } from '../../../../../50-systems/BusinessSystem/0-BusinessSystem';
-import { LicenseSystem } from '../../../../../50-systems/LicenseSystem/0-LicenseSystem';
 import { IModuleManifest } from '../../../../../50-systems/ModuleStore/interfaces/IModuleManifest/IModuleManifest';
 import { IModulePersister } from '../../../../../50-systems/ModuleStore/interfaces/IModulePersister';
 import { IModuleStatusReporter } from '../../../../../50-systems/ModuleStore/interfaces/IModuleStatusReporter';
-import { TranslationsSystem } from '../../../../../50-systems/TranslationsSystem/0-TranslationsSystem';
 interface IModuleBoxComponentProps {
     manifest: IModuleManifest;
     moduleStatusReporter: IModuleStatusReporter;
-    persister: IModulePersister;
-    translationsSystem: TranslationsSystem;
-    businessSystem: BusinessSystem;
-    licenseSystem: LicenseSystem;
+    persister: IModulePersister | null;
 }
 /**
  * One module in the catalogue (list) in module store
@@ -27,9 +21,6 @@ export declare function ModuleBoxComponent({
     manifest,
     moduleStatusReporter,
     persister,
-    translationsSystem,
-    businessSystem,
-    licenseSystem,
 }: IModuleBoxComponentProps): JSX.Element;
 export {};
 /**

@@ -4,12 +4,8 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { SetRequired } from 'type-fest';
-import { IModuleManifestUsageLicensePayed } from '../../ModuleStore/interfaces/IModuleManifest/IModuleManifestUsageLicensePayed';
+/// <reference types="react" />
+export declare function LicensesListModalGroup(): JSX.Element;
 /**
- * Tells that user has no or invalid license for given module
+ * TODO: What are propper  translate names "Licenses/...", "LicensesList/...", "@collboard/licenses/...", "@collboard/licenses/Licenses/..." or some other way
  */
-export interface IUsageLicenseInfoInvalid {
-    isValid: false;
-    licensesToBuy: Array<SetRequired<IModuleManifestUsageLicensePayed, 'buyLink'>>;
-}

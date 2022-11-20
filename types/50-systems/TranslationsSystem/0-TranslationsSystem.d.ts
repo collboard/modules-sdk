@@ -63,7 +63,7 @@ export declare class TranslationsSystem extends AbstractSystem implements ITrans
      * Creates context for providing translator
      */
     readonly WithTranslateContext: ({ children }: React.PropsWithChildren<{}>) => JSX.Element;
-    private _Translate;
+    private TranslateComponent;
     private _WithTranslateContext;
     useTemplate(html: string): string;
     pickStringMessage(message: IMessage): string;

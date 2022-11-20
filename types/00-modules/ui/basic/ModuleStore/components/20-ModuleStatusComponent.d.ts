@@ -13,7 +13,7 @@ import { IModuleStatusReporter } from '../../../../../50-systems/ModuleStore/int
 interface IModuleStatusComponentProps {
     shownModule: IModuleManifest;
     moduleStatusReporter: IModuleStatusReporter;
-    persister: IModulePersister;
+    persister: IModulePersister | null;
     businessSystem: BusinessSystem;
     usageLicenseInfo: IUsageLicenseInfo;
 }

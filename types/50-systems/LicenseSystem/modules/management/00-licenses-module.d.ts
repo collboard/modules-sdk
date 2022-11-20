@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export {};
 /**
+ * TODO: [🥇] Allow to scan QR code with the license here
  * TODO: [🐅] Maybe some more elegant way how to create icon-window pairs of modules
  * TODO: Make clear difference between admin modules (technical, now in https://github.com/collboard/collboard-admin) and management modules (for users)
  */

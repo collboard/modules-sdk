@@ -6,5 +6,6 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export {};
 /**
+ * TODO: [🥇] When multiple licenses for one module - which buyLink should be shown?
  * TODO: [🏅] Allow to override just one color in the skin via styleSystem
  */

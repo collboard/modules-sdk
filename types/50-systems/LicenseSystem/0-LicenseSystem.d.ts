@@ -5,6 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { BehaviorSubject } from 'rxjs';
+import { string_token } from '../../40-utils/typeAliases';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IModuleManifest } from '../ModuleStore/interfaces/IModuleManifest/IModuleManifest';
 import { IModuleManifestUsageLicense } from '../ModuleStore/interfaces/IModuleManifest/IModuleManifestUsageLicense';
@@ -19,6 +20,9 @@ export declare class LicenseSystem extends AbstractSystem {
     private storage;
     readonly licenses: BehaviorSubject<string[]>;
     protected init(): Promise<void>;
+    private activateLicenseTokensFromGetParams;
+    activateLicenseToken(licenseToken: string_token): Promise<void>;
+    removeLicenseToken(licenseToken: string_token): Promise<void>;
     getModuleLicences(moduleManifest: IModuleManifest): Promise<Array<IModuleManifestUsageLicense>>;
     getModuleLicenceInfo(moduleManifest: IModuleManifest): Promise<IUsageLicenseInfo>;
     hasModuleValidLicence(moduleManifest: IModuleManifest): Promise<boolean>;
