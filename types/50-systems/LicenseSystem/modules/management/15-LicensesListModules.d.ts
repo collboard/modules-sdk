@@ -5,9 +5,9 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { string_token } from '../../../../40-utils/typeAliases';
+import { string_license_token } from '../../../../40-utils/typeAliases';
 interface ILicensesListModulesProps {
-    licenseToken: string_token;
+    licenseToken: string_license_token;
 }
 export declare function LicensesListModules({ licenseToken }: ILicensesListModulesProps): JSX.Element;
 export {};

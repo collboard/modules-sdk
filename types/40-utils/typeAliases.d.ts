@@ -410,6 +410,7 @@ export declare type string_translate_language = 'en' | 'cs' | 'sk' | 'uk';
  */
 export declare type string_javascript_name = string;
 export declare type string_token = string;
+export declare type string_license_token = string_token;
 export declare type string_password = string;
 export declare type string_ssh_key = string;
 export declare type string_pgp_key = string;

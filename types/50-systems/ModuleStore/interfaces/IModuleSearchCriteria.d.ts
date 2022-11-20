@@ -7,10 +7,10 @@
 import { IJson } from 'everstorage';
 import {
     string_attribute,
+    string_license_token,
     string_mime_type,
     string_module_category,
     string_module_name,
-    string_token,
 } from '../../../40-utils/typeAliases';
 /**
  * Represents a query to modules repository
@@ -26,7 +26,7 @@ export interface IModuleSearchCriteria extends IJson {
         attribute?: string_attribute;
         fileImport?: string_mime_type;
     };
-    usageLicenseToken?: string_token;
+    usageLicenseToken?: string_license_token;
     limit?: number;
 }
 /**

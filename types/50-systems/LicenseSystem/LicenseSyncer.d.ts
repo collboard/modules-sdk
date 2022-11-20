@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IDestroyable } from 'destroyable';
-import { string_token } from '../../40-utils/typeAliases';
+import { string_license_token } from '../../40-utils/typeAliases';
 import { ISyncer } from '../ModuleStore/interfaces/ISyncer';
 import { AbstractSyncer } from '../ModuleStore/Syncers/AbstractSyncer';
 /**
@@ -17,7 +17,7 @@ import { AbstractSyncer } from '../ModuleStore/Syncers/AbstractSyncer';
 export declare class LicenseSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
     private artDependencies;
     private throttleQueues;
-    installSupportForLicense(usageLicenseToken: string_token): Promise<unknown>;
+    installSupportForLicense(usageLicenseToken: string_license_token): Promise<unknown>;
     destroy(): Promise<void>;
 }
 /**

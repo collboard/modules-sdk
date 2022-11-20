@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IPrice } from '../../../../40-utils/price/IPrice';
-import { string_token, string_url } from '../../../../40-utils/typeAliases';
+import { string_license_token, string_url } from '../../../../40-utils/typeAliases';
 /**
  * Describes licence for usage of a module.
  *
@@ -16,7 +16,7 @@ export interface IModuleManifestUsageLicensePayed {
     /**
      * The license number
      */
-    token: string_token;
+    token: string_license_token;
     /**
      * Price of the license
      */
@@ -36,7 +36,6 @@ export interface IModuleManifestUsageLicensePayed {
     isModuleAutoInstalled: boolean;
 }
 /**
- * TODO: [🥇] Maybe special string_license_token
  * TODO: [🥇] Make some better token format
  * TODO: [🥇][🥇0] When multiple licenses for one module - which buyLink should be shown?
  * TODO: [🥇] How about multiple pricing ranges - can be solved together with [🥇0]
