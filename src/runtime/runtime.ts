@@ -241,11 +241,26 @@ export const CategorizedModalMenu = (window as any).CollboardSdk.CategorizedModa
 export const Modal = (window as any).CollboardSdk.Modal;
 
 /**
- * Categorized modal footer wrapper
+ * Footer component for the modal
  *
  * @collboard-modules-sdk
  */
 export const ModalFooter = (window as any).CollboardSdk.ModalFooter;
+
+/**
+ *
+ * @collboard-modules-sdk
+ */
+export const ModalGroup = (window as any).CollboardSdk.ModalGroup;
+
+/**
+ * Scrolling content of the modal
+ *
+ * Tip: If you want to have some fixed content after (on the bottom), use <ModalFooter isSequestered={false}
+ *
+ * @collboard-modules-sdk
+ */
+export const ModalScroll = (window as any).CollboardSdk.ModalScroll;
 
 /**
  * Renders the content inside a darkened page overlay blocking all
@@ -253,7 +268,7 @@ export const ModalFooter = (window as any).CollboardSdk.ModalFooter;
  *
  * **You probably want to use Modal or CategorizedModal instead.**
  *
- * **Warning: Do not try to use more, than one PageOverlay at a time.
+ * **Warning: Do not try to use more, than one PageOverlay at a time.**
  *
  * @collboard-modules-sdk
  */
@@ -577,6 +592,7 @@ export const EMOJIS = (window as any).CollboardSdk.EMOJIS;
 
 /**
  * Converts typescript enum to array without number values
+ *
  * @collboard-modules-sdk
  */
 export const enumToArray = (window as any).CollboardSdk.enumToArray;
@@ -594,9 +610,11 @@ export const BoardAlreadyExistsError = (window as any).CollboardSdk.BoardAlready
 export const BoardNotFoundError = (window as any).CollboardSdk.BoardNotFoundError;
 
 /**
+ * This error occurs when you try to add some item in place where it already exists
+ *
  * @collboard-modules-sdk
  */
-export const CollisionError = (window as any).CollboardSdk.CollisionError;
+export const DuplicateError = (window as any).CollboardSdk.DuplicateError;
 
 /**
  * Wraps the error message with additional info that will be nicely logged to the console bellow thrown error
@@ -617,6 +635,13 @@ export const errorMessageWithAdditional = (window as any).CollboardSdk.errorMess
  * @collboard-modules-sdk
  */
 export const HighOrderError = (window as any).CollboardSdk.HighOrderError;
+
+/**
+ * This error occurs when you try to pass some wrong item
+ *
+ * @collboard-modules-sdk
+ */
+export const InvalidError = (window as any).CollboardSdk.InvalidError;
 
 /**
  * This util catches an error and rethrows more meaningfull error message to better debugging
@@ -988,66 +1013,6 @@ export const loadAndRunExternalScript = (window as any).CollboardSdk.loadAndRunE
  * @collboard-modules-sdk
  */
 export const nextWithMutation = (window as any).CollboardSdk.nextWithMutation;
-
-/**
- * Makes first letter of a string uppercase
- *
- * @collboard-modules-sdk
- */
-export const capitalize = (window as any).CollboardSdk.capitalize;
-
-/**
- * Makes first letter of a string uppercase
- *
- * @collboard-modules-sdk
- */
-export const decapitalize = (window as any).CollboardSdk.decapitalize;
-
-/**
- * @collboard-modules-sdk
- */
-export const nameToUriPart = (window as any).CollboardSdk.nameToUriPart;
-
-/**
- * TODO: Put this into some inpidendent LIB which do normalizing (there are things in Collboard+Czech.events)
- *
- * @collboard-modules-sdk
- * @note normalizeToKebabCase function is not finished because it it not used anywhere
- */
-export const normalizeToKebabCase = (window as any).CollboardSdk.normalizeToKebabCase;
-
-/**
- *
- * @collboard-modules-sdk
- */
-export const normalizeToCamelCase = (window as any).CollboardSdk.normalizeToCamelCase;
-
-/**
- * TODO: Put this into some inpidendent library which do normalizing (there are things in Collboard+Czech.events)
- *
- * @collboard-modules-sdk
- */
-export const normalizeToSCREAMING_CASE = (window as any).CollboardSdk.normalizeToSCREAMING_CASE;
-
-/**
- *
- * TODO: Put this into some inpidendent library which do normalizing (there are things in Collboard+Czech.events)
- *
- * @collboard-modules-sdk
- */
-export const parseKeywords = (window as any).CollboardSdk.parseKeywords;
-
-/**
- * @collboard-modules-sdk
- */
-export const removeDiacritics = (window as any).CollboardSdk.removeDiacritics;
-
-/**
- * Searches through given keywords
- *
- * @collboard-modules-sdk
- */
-export const searchKeywords = (window as any).CollboardSdk.searchKeywords;
 
 /**
  * Traverse through the object and all its children and replace them via the callback
@@ -1809,25 +1774,6 @@ export const ILicense = (window as any).CollboardSdk.ILicense;
  * @collboard-modules-sdk
  */
 export const IRepository = (window as any).CollboardSdk.IRepository;
-
-/**
- * Semantic helper
- *
- * Keyword is string without diacritics in lowercase [a-z1-9]
- * Words are splitted between multiple keywords @see IKeywords
- *
- * For example `"keyword"`
- * @collboard-modules-sdk
- */
-export const string_keyword = (window as any).CollboardSdk.string_keyword;
-
-/**
- * Semantic helper
- * Array of keywords @see string_keyword
- *
- * @collboard-modules-sdk
- */
-export const Keywords = (window as any).CollboardSdk.Keywords;
 
 /**
  * CSS cursor type
