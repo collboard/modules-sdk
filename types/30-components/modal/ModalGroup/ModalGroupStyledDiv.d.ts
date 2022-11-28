@@ -4,11 +4,19 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_uri_part } from '../typeAliases';
+import { ISkin } from '../../../50-systems/StyleSystem/ISkin';
 /**
- * @collboard-modules-sdk
+ * @private Only used in this folder
  */
-export declare function nameToUriPart(name: string): string_uri_part;
+export declare const ModalGroupStyledDiv: import('styled-components').StyledComponent<
+    'div',
+    any,
+    {
+        skin: ISkin;
+    },
+    never
+>;
 /**
- * TODO: [👚] Put this into LIB n12
+ * Note: I am here using styled components not global CSS
+ * TODO: @roseckyj Do it with styled components across the repositiory
  */

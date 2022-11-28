@@ -5,12 +5,6 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
- * TODO: Put this into some inpidendent LIB which do normalizing (there are things in Collboard+Czech.events)
- *
- * @collboard-modules-sdk
- * @note normalizeToKebabCase function is not finished because it it not used anywhere
+ * @private Only used in this folder
  */
-export declare function normalizeToKebabCase(name: string): string;
-/**
- * TODO: [👚] Put this into LIB n12
- */
+export declare const ModalScrollStyledDiv: import('styled-components').StyledComponent<'div', any, {}, never>;

@@ -5,10 +5,10 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
+ * This error occurs when you try to pass some wrong item
  *
  * @collboard-modules-sdk
  */
-export declare function normalizeToCamelCase(name: string, firstLetterCapital?: boolean): string;
-/**
- * TODO: [👚] Put this into LIB n12
- */
+export declare class InvalidError extends TypeError {
+    readonly name = 'InvalidError';
+}

@@ -5,10 +5,14 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
-import { IBaseMessage } from '../../50-systems/TranslationsSystem/interfaces/IMessage';
-declare type IModalGroupProps = React.PropsWithChildren<{
-    title?: IBaseMessage;
-    isTitleVisibleOnSmallScreen: boolean;
+/**
+ * @private Only used in this folder
+ */
+export declare type IModalFooterProps = React.PropsWithChildren<{
+    /**
+     * Is footer in graphically different style than rest of the modal
+     * - If `true` footer in darkened style with smaller font
+     * - If `false` footer is just a fixed position without changing inside style
+     */
+    isSequestered: boolean;
 }>;
-export declare function ModalGroup({ children, title, isTitleVisibleOnSmallScreen }: IModalGroupProps): JSX.Element;
-export {};

@@ -5,13 +5,17 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
-import { ISkin } from '../../50-systems/StyleSystem/ISkin';
-export declare function ModalScroll({ children }: React.PropsWithChildren<{}>): JSX.Element;
-export declare const ModalScrollDiv: import('styled-components').StyledComponent<
-    'div',
-    any,
-    {
-        skin: ISkin;
-    },
-    never
->;
+import { IBaseMessage } from '../../../50-systems/TranslationsSystem/interfaces/IMessage';
+/**
+ * @private Only used in this folder
+ */
+export declare type IModalGroupProps = React.PropsWithChildren<{
+    /**
+     * Title shown before the group content
+     */
+    title?: IBaseMessage;
+    /**
+     * Show the title on small screens
+     */
+    isTitleVisibleOnSmallScreen: boolean;
+}>;

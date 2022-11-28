@@ -4,13 +4,11 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { Keywords } from '../typeAliases';
 /**
- * Searches through given keywords
+ * This error occurs when you try to add some item in place where it already exists
  *
  * @collboard-modules-sdk
  */
-export declare function searchKeywords(haystack: Keywords, needle: Keywords): boolean;
-/**
- * TODO: [👚] Put this into LIB n12
- */
+export declare class DuplicateError extends Error {
+    readonly name = 'DuplicateError';
+}

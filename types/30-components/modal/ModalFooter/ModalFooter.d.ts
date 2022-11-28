@@ -4,7 +4,11 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+/// <reference types="react" />
+import { IModalFooterProps } from './IModalFooterProps';
 /**
- * Take every whitespace (space, new line, tab) and replace it with a single space.
+ * Footer component for the modal
+ *
+ * @collboard-modules-sdk
  */
-export declare function normalizeWhitespaces(str: string): string;
+export declare function ModalFooter({ children, isSequestered }: IModalFooterProps): JSX.Element;

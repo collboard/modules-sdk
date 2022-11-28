@@ -6,9 +6,6 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IBaseMessage } from '../../50-systems/TranslationsSystem/interfaces/IMessage';
 interface IAlertDialogueOptions {
-    /**
-     * TODO: Accept JSX when maked betted
-     */
     message: IBaseMessage;
 }
 /**
@@ -17,3 +14,8 @@ interface IAlertDialogueOptions {
  */
 export declare function alertDialogue(options: IAlertDialogueOptions | IBaseMessage): Promise<void>;
 export {};
+/**
+ * TODO: Maybe split into multiple stages of importance - info/warning/error
+ * TODO: [🔊] This should be just a shortcut for using notificationSystem (OR other similar system)
+ * TODO: [🔊] Return IDestroyable & Notification object
+ */

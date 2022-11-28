@@ -4,8 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import React from 'react';
+/// <reference types="react" />
+import { IModalGroupProps } from './IModalGroupProps';
 /**
- * @deprecated probbably remove with all its css etc., use CategorizedModal instead
+ *
+ * @collboard-modules-sdk
  */
-export declare function ModalMenu({ children }: React.PropsWithChildren<{}>): JSX.Element;
+export declare function ModalGroup({ children, title, isTitleVisibleOnSmallScreen }: IModalGroupProps): JSX.Element;

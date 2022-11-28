@@ -18,7 +18,7 @@ import { IUsageLicenseInfo } from './interfaces/IUsageLicenseInfo';
  */
 export declare class LicenseSystem extends AbstractSystem {
     private storage;
-    readonly licensesTokens: BehaviorSubject<string[]>;
+    readonly licensesTokens: BehaviorSubject<Set<string>>;
     protected init(): Promise<void>;
     private activateLicenseTokensFromGetParams;
     activateLicenseToken(licenseToken: string_license_token): Promise<void>;
@@ -29,4 +29,5 @@ export declare class LicenseSystem extends AbstractSystem {
 }
 /**
  * TODO: Sign token and also sign date limitations
+ * TODO: Maybe create DuplicateLicenseError and InvalidLicenseError
  */

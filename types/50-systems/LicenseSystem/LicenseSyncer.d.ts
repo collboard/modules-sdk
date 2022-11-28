@@ -15,9 +15,8 @@ import { AbstractSyncer } from '../ModuleStore/Syncers/AbstractSyncer';
  * @collboard-system
  */
 export declare class LicenseSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
-    private artDependencies;
-    private throttleQueues;
-    installSupportForLicense(usageLicenseToken: string_license_token): Promise<unknown>;
+    private queue;
+    syncSupportForLicenses(...usageLicensesTokens: Array<string_license_token>): Promise<unknown>;
     destroy(): Promise<void>;
 }
 /**

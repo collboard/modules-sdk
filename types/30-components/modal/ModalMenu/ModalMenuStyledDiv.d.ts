@@ -4,14 +4,20 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { Keywords } from '../typeAliases';
+import { ISkin } from '../../../50-systems/StyleSystem/ISkin';
 /**
- *
- * TODO: Put this into some inpidendent library which do normalizing (there are things in Collboard+Czech.events)
- *
- * @collboard-modules-sdk
+ * @private Only used in this folder
  */
-export declare function parseKeywords(input: any, _maxRecursionLevel?: number): Keywords;
+export declare const ModalMenuStyledDiv: import('styled-components').StyledComponent<
+    'div',
+    any,
+    {
+        skin: ISkin;
+    },
+    never
+>;
 /**
- * TODO: [👚] Put this into LIB n12
+ * Note: I am here using styled components not global CSS
+ * TODO: @roseckyj Do it with styled components across the repositiory
+ * TODO: @roseckyj Udělal bys prosím pro menu lepší design
  */

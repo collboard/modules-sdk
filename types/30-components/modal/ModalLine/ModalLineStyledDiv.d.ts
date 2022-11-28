@@ -4,12 +4,15 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { ISkin } from '../../../50-systems/StyleSystem/ISkin';
 /**
- * Makes first letter of a string uppercase
- *
- * @collboard-modules-sdk
+ * @private Only used in this folder
  */
-export declare function capitalize(word: string): string;
-/**
- * TODO: [👚] Put this into LIB n12
- */
+export declare const ModalLineStyledDiv: import('styled-components').StyledComponent<
+    'div',
+    any,
+    {
+        skin: ISkin;
+    },
+    never
+>;

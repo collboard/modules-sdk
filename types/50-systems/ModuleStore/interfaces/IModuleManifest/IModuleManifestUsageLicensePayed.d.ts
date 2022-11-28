@@ -29,8 +29,8 @@ export interface IModuleManifestUsageLicensePayed {
     buyLink?: string_url;
     /**
      * Is module installed automatically when the license is activated
-     * - If false modules behave like a normal module, only change is that it now can be installed in the module store
-     * - If true module is installed immediately and this installation is connected with the user NOT the board
+     * - If `false` modules behave like a normal module, only change is that it now can be installed in the module store
+     * - If `true` module is installed immediately and this installation is connected with the user NOT the board
      *           Also the module is excluded from module store
      */
     isModuleAutoInstalled: boolean;
