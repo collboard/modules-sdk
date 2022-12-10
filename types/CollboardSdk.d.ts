@@ -103,6 +103,7 @@ export { compareJsxs } from './40-utils/jsx-html/compareJsxs';
 export { jsxToHtml } from './40-utils/jsx-html/jsxToHtml';
 export { jsxToHtmlSimple } from './40-utils/jsx-html/jsxToHtmlSimple';
 export { jsxToText } from './40-utils/jsx-html/jsxToText';
+export { htmlToXmlValidHtml } from './40-utils/jsx-html/makeXmlValid';
 export { measureHtmlSize } from './40-utils/jsx-html/measureHtmlSize';
 export { prettifyCss } from './40-utils/jsx-html/prettifyCss';
 export { prettifyHtml } from './40-utils/jsx-html/prettifyHtml';
