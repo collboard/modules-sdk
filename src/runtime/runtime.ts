@@ -972,6 +972,22 @@ export const jsxToHtmlSimple = (window as any).CollboardSdk.jsxToHtmlSimple;
 export const jsxToText = (window as any).CollboardSdk.jsxToText;
 
 /**
+ * Make given HTML XML valid
+ *
+ * It will do:
+ * - Automatically end the tags like <img> to <img/>, <link> to <link/>,...
+ * - Add <!DOCTYPE html> doctype of the html
+ * - Add <?xml version="1.0" encoding="UTF-8"?> doctype of the svg
+ * - Automatically end all unended tags
+ *
+ * @param element HTML or SVG string which can be invalid
+ * @returns HTML or SVG string which is also valid XML string
+ *
+ * @collboard-modules-sdk
+ */
+export const htmlToXmlValidHtml = (window as any).CollboardSdk.htmlToXmlValidHtml;
+
+/**
  * Get size of html
  *
  * @collboard-modules-sdk
