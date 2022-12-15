@@ -417,6 +417,7 @@ export const aggregate = (window as any).CollboardSdk.aggregate;
 /**
  * @returns true if current page is embedded in iframe
  *
+ * @deprecated this utility is unused and should be removed
  * @collboard-modules-sdk
  */
 export const amIEmbededInIFrame = (window as any).CollboardSdk.amIEmbededInIFrame;
@@ -451,7 +452,7 @@ export const classNames = (window as any).CollboardSdk.classNames;
 /**
  * Color object is represents rbg color with alpha chanell
  *
- * Note: there is nothing as fromObject and toObject because much better and most logic way how top serialize color is to serialize it to hex string #009EDD
+ * Note: there is nothing as fromObject and toObject because much better and most logic way how top serialize color is to serialize it to hex string #009edd
  *
  * @collboard-modules-sdk
  *
@@ -1007,7 +1008,7 @@ export const prettifyCss = (window as any).CollboardSdk.prettifyCss;
 /**
  * Prettify the html code
  *
- * @param css raw html code
+ * @param html raw html code
  * @returns formatted html code
  *
  * @collboard-modules-sdk
@@ -1821,7 +1822,7 @@ export const string_attribute_value_scope = (window as any).CollboardSdk.string_
 /**
  * Semantic helper for css/html colors
  *
- * For example `"white"` or `"#009EDD"`
+ * For example `"white"` or `"#009edd"`
  * @collboard-modules-sdk
  */
 export const string_color = (window as any).CollboardSdk.string_color;
@@ -2572,6 +2573,7 @@ export const makeIconModuleOnModule = (window as any).CollboardSdk.makeIconModul
 export const makeIconModuleOnRoute = (window as any).CollboardSdk.makeIconModuleOnRoute;
 
 /**
+ * Makes a module which shows a simple modal
  *
  * @collboard-modules-sdk
  */
