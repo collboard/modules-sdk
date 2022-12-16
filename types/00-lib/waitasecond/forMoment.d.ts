@@ -4,16 +4,14 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_css } from '../typeAliases';
 /**
- * Prettify the css code
+ * Utility for splitting up one big event loop frame stack into multiple
  *
- * @param css raw css code
- * @returns formatted css code
+ * Note:
+ *  - Use **forMoment** to split one big event loop frame stack into multiple
+ *  - Use **forAnimationFrame** in animations
  *
- * @collboard-modules-sdk
+ *
+ * @returns Promise with resolves
  */
-export declare function prettifyCss(css: string_css): string_css;
-/**
- * TODO: [Optimization][InitialLoading] Optimize this for initial loading
- */
+export declare function forMoment(): Promise<void>;

@@ -51,5 +51,7 @@ export declare class TextArt extends Abstract2dArt {
     render(/* @deprecated */ isSelected: boolean, systems: ISystems): Promise<JSX.Element>;
 }
 /**
+ * TODO: [👀] Focus cursor as a thing which better keeps focus
+ * TODO: [👀] Focus cursor from other users in edited texts
  * TODO: [🍒] Every Art should look like this + what do render method here should do RenderSystem OR ArtSchell OR sth. like that
  */

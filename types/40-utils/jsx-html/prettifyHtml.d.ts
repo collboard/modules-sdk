@@ -8,12 +8,13 @@ import { string_html } from '../typeAliases';
 /**
  * Prettify the html code
  *
- * @param css raw html code
+ * @param html raw html code
  * @returns formatted html code
  *
  * @collboard-modules-sdk
  */
 export declare function prettifyHtml(html: string_html): string_html;
 /**
+ * TODO: [Optimization][InitialLoading] Optimize this for initial loading
  * TODO: [🐾] Optimize HTML native export
  */

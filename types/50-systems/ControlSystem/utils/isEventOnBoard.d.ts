@@ -11,3 +11,6 @@
  * @collboard-modules-sdk
  */
 export declare function isEventOnBoard(event: Event): boolean;
+/**
+ * TODO: [Optimization][InitialLoading] Optimize this for initial loading
+ */

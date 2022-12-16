@@ -6,6 +6,9 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_version } from './40-utils/typeAliases';
 export declare const clientVersion: string_version;
+/**
+ * @deprecated Used only in one place and will be removed
+ */
 export declare const PUBLIC_URL: string;
 /**
  * Conversion table from misc units to board pixels

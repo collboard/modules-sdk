@@ -37,6 +37,9 @@ export declare class CollboardApp {
 }
 export {};
 /**
+ * TODO: [Optimization][InitialLoading] Break into the forMoment(s)
+ *       Double-check that changes are working
+ * TODO: [Optimization][InitialLoading] Split heavy work in main JS into smaller event loop pieces to smooth animation + UI
  * TODO: This file is too big - maybe print on paper and split into multiple logical pieces + use Core(system) as a place
  * TODO: Join app and createApp
  *

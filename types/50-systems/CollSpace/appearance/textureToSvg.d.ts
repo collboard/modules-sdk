@@ -9,7 +9,7 @@ import { ITexture } from './ITexture';
 interface ITextureToSvgResult {
     /**
      * Identification of stroke/fill which can be used in the SVG image
-     * - It can be just in-place color, for example `rgb(0,158,221)`
+     * - It can be just in-place color, for example `#009edd` or `rgb(0,158,221)`
      * - It can be reference, for example `url(#c53dd063);`
      */
     textureId: string;

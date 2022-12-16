@@ -20,6 +20,7 @@ interface ICreateModalReturn extends Partial<Omit<IModalProps, 'children'>> {
     wrapModalManually?: boolean;
 }
 /**
+ * Makes a module which shows a simple modal
  *
  * @collboard-modules-sdk
  */
@@ -38,5 +39,6 @@ export declare function createModalTitle({
 }): string | React.ReactNode;
 export {};
 /**
+ * TODO: [Optimization][InitialLoading] Optimize this for initial loading
  * TODO: Changing title of modal
  */

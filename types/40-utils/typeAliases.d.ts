@@ -367,7 +367,7 @@ export declare type string_attribute_value_scope = string;
 /**
  * Semantic helper for css/html colors
  *
- * For example `"white"` or `"#009EDD"`
+ * For example `"white"` or `"#009edd"`
  * @collboard-modules-sdk
  */
 export declare type string_color = string;

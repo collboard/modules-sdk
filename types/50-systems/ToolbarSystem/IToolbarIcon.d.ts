@@ -69,7 +69,7 @@ export interface IToolbarIcon extends IIconAnonymous {
      * This shortcut will be automatically registered in shortcut system
      */
     shortcut?: IShortcut;
-    boardCursor?: string_css_cursor;
+    boardCursor?: string_css_cursor | string;
     /**
      * Extra menu which will be
      *

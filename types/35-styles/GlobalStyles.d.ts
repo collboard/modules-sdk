@@ -9,3 +9,6 @@ import './animations.css';
 import './icons.css';
 import './index.css';
 export declare function GlobalStyles(): JSX.Element;
+/**
+ * TODO: [Optimization][InitialLoading] Optimize this for initial loading
+ */

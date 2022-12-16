@@ -7,6 +7,7 @@
 /**
  * @returns true if current page is embedded in iframe
  *
+ * @deprecated this utility is unused and should be removed
  * @collboard-modules-sdk
  */
 export declare function amIEmbededInIFrame(): boolean;

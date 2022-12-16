@@ -6,8 +6,19 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import Ajv from 'ajv/dist/2020';
 /**
- * All schemas for message API
+ * Create schemas for Messages API
  *
- * @singleton
+ * @heavy on first call
+ * @idempotent this function is cached so it will return cached schemas second time
  */
-export declare const schemas: Ajv;
+export declare function createSchemas(): Ajv;
+/**
+ * TODO: Standard way how to make (async/parallel) singleton cache
+ *       + Way how to anotate this
+ *       + Probbably ask
+ * TODO: [Optimization][InitialLoading] Probbably break into the forMoment(s) (and put it in the generator)
+ *       Reflect changes to the generator
+ *       Reflect changes to the filename
+ *       Reflect changes to the anotation
+ *       Double-check that changes are working
+ */

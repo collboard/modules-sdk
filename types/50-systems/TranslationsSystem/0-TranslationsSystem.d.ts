@@ -73,5 +73,6 @@ export declare class TranslationsSystem extends AbstractSystem implements ITrans
     showDateAndTime(date: Date | string): string;
 }
 /**
+ * TODO: [Optimization][InitialLoading] Optimize this for initial loading - Can be somehow optimized loading of moment.js
  * TODO: Translations in (external) modules
  */

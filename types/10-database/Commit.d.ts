@@ -40,3 +40,6 @@ export declare class Commit implements ICommitData {
      */
     static isCommitLike(possibleCommit: any): possibleCommit is ICommitData;
 }
+/**
+ * TODO: [Optimization][InitialLoading] Optimize this for initial loading
+ */

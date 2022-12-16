@@ -7,6 +7,7 @@
 /// <reference types="react" />
 export declare function RootComponentForBoard(): JSX.Element;
 /**
+ * TODO: [☮️] Remove all initial <Loader/> and <LoaderInline/>
  * TODO: [0][👩‍👩‍👦] It is a bit inconsistent that some parts are wrapped with <Menu (EdgeTop,Social) and others not
  * TODO: [0][👩‍👩‍👦] It is a bit inconsistent that some parts are only managed by userInterfaceSystem and others by userInterfaceSystem+toolbarSystem
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
