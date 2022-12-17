@@ -329,6 +329,13 @@ export const Loader = (window as any).CollboardSdk.Loader;
 export const LoaderInline = (window as any).CollboardSdk.LoaderInline;
 
 /**
+ * React hook for warn if the component is mounted longer than certain time
+ *
+ * @collboard-modules-sdk
+ */
+export const useTimeout = (window as any).CollboardSdk.useTimeout;
+
+/**
  * @collboard-modules-sdk
  */
 export const Obfuscate = (window as any).CollboardSdk.Obfuscate;
@@ -424,6 +431,8 @@ export const amIEmbededInIFrame = (window as any).CollboardSdk.amIEmbededInIFram
 
 /**
  * Converts human readable time to seconds
+ *
+ * @deprecated use some better name or complete library instead
  * @collboard-modules-sdk
  */
 export const calculate = (window as any).CollboardSdk.calculate;
@@ -1045,7 +1054,7 @@ export const deepMapObject = (window as any).CollboardSdk.deepMapObject;
  * @param moduleName
  * @returns normalized scope and name split into chunks
  *
- * @example @collboard/foo/bar => { scope: 'collboard', name: ['foo','bar'] }
+ * @example @collboard/internal/foo/bar => { scope: 'collboard', name: ['foo','bar'] }
  *
  * @collboard-modules-sdk
  */
@@ -1728,7 +1737,7 @@ export const string_folder_path = (window as any).CollboardSdk.string_folder_pat
  *
  * - basically module identifier
  *
- * For example `"@collboard/download"`
+ * For example `"@collboard/internal/download"`
  * @pattern /^(@(?<scope>[a-z0-9][a-z0-9-]*))\/(?<name>([a-z0-9][a-z0-9-]*)(\/([a-z0-9][a-z0-9-]*))*)$/
  * @collboard-modules-sdk
  */
@@ -1837,6 +1846,7 @@ export const ArrayFull = (window as any).CollboardSdk.ArrayFull;
 /**
  * Just an item or array of items or set of items
  *
+ * @deprecated Using this is a bit antipattern use just Array
  * @collboard-modules-sdk
  */
 export const Arrayable = (window as any).CollboardSdk.Arrayable;
@@ -2381,7 +2391,7 @@ export const Authors = (window as any).CollboardSdk.Authors;
  * ModuleStore unites all module store connectors into one API, so consumer have same way how to get internal or external module
  *
  * Note: Modules storage - is just getter / setter for modules
- *       Modules store   - has full logic of mudules domain
+ *       Modules store   - has full logic of modules domain
  *
  * @collboard-system
  */
@@ -2530,6 +2540,7 @@ export const IModuleStoreConnectorSearchResult = (window as any).CollboardSdk.IM
  * TODO: Scoped css
  * TODO: Namings URL vs SRC
  *
+ * Note: If requirePermissions not set then will this maker set them to empty array
  * Note: There is in git history makeArticleModule but we have removed it. If it will be needed, we can bring it back.
  *
  * @collboard-modules-sdk
@@ -2774,6 +2785,7 @@ export const ISkin = (window as any).CollboardSdk.ISkin;
 /**
  * makeSkinModule will make skin confuiguration module
  *
+ * Note: If requirePermissions not set then will this maker set them to empty array
  * Note: Module still needs to be declared
  * @collboard-modules-sdk
  */
