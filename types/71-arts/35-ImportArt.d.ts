@@ -36,6 +36,7 @@ export declare class ImportArt extends Abstract2dArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     /**
      *

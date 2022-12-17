@@ -30,6 +30,7 @@ export declare class CornerstoneArt
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     /**
      * String containing user-editable board name

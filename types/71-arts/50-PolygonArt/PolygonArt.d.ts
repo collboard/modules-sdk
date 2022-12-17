@@ -24,6 +24,7 @@ export declare class PolygonArt extends Abstract2dArt implements IArt<IPolygonSh
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     private minX;
     private maxX;

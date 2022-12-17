@@ -15,5 +15,5 @@ import { string_html } from './../../../../40-utils/typeAliases';
  */
 export declare function sanitizeHtml(html: string_html): string_html;
 /**
- * TODO: Where should be this file - it is definetelly util which can be under src/40-utils/jsx-html BUT is also used only here in @collboard/html-import
+ * TODO: Where should be this file - it is definetelly util which can be under src/40-utils/jsx-html BUT is also used only here in @collboard/internal/html-import
  */

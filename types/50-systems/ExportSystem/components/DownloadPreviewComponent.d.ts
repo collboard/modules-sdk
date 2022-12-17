@@ -8,7 +8,7 @@
 /**
  * Note: Need to be used inside of a module
  *
- * @not-collboard-modules-sdk too specific that is used only in @collboard/download
+ * @not-collboard-modules-sdk too specific that is used only in @collboard/internal/download
  */
 export declare function DownloadPreviewComponent(): JSX.Element;
 /**

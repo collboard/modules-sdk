@@ -18,6 +18,7 @@ export declare class FreehandArt extends Abstract2dArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     frames: Array<TouchFrame>;
     smoothing: 0 | number_positive;

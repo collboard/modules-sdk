@@ -6,6 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
  * Converts human readable time to seconds
+ *
+ * @deprecated use some better name or complete library instead
  * @collboard-modules-sdk
  */
 export declare function calculate(formula: string): number;

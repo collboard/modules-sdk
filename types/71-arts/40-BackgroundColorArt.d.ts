@@ -17,6 +17,7 @@ export declare class BackgroundColorArt extends AbstractBackgroundArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     /**
      * @param color

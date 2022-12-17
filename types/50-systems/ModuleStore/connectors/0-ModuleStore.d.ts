@@ -16,7 +16,7 @@ import { IModuleStoreConnectorSearchResult } from '../interfaces/IModuleStoreCon
  * ModuleStore unites all module store connectors into one API, so consumer have same way how to get internal or external module
  *
  * Note: Modules storage - is just getter / setter for modules
- *       Modules store   - has full logic of mudules domain
+ *       Modules store   - has full logic of modules domain
  *
  * @collboard-system
  */

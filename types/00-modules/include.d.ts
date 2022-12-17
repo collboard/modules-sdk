@@ -4,7 +4,6 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import '../50-systems/LicenseSystem/modules/management/00-licenses-module';
 import './../30-components/utils/displayon-module';
 import './../30-components/utils/Loader/loader-modal-module';
 import './../30-components/utils/Loader/loader-module';
@@ -15,6 +14,7 @@ import './../50-systems/ImportSystem/modules/add-icon.module';
 import './../50-systems/ImportSystem/modules/add.module';
 import './../50-systems/ImportSystem/modules/import-icon-module';
 import './../50-systems/ImportSystem/modules/import-module';
+import './../50-systems/LicenseSystem/modules/management/00-licenses-module';
 import './../50-systems/LicenseSystem/modules/mocks/01-gold-membership-module';
 import './../50-systems/LicenseSystem/modules/mocks/02-gold-stickers-module';
 import './../50-systems/LicenseSystem/modules/mocks/03-gold-freehand-module';
@@ -108,7 +108,6 @@ import './ui/basic/Error404ForModule';
 import './ui/basic/EuCookiesWarningModule';
 import './ui/basic/FullscreenModule';
 import './ui/basic/LanguageSelectModule/LanguageSelectModule';
-import './ui/basic/Menus';
 import './ui/basic/ModuleStore/module-store-icon.module';
 import './ui/basic/ModuleStore/module-store.module';
 import './ui/basic/ModuleStore/module.module';

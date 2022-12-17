@@ -25,7 +25,7 @@ export declare const consolex: SwitchLogger;
  */
 export declare function disableLogging(reason: string): void;
 /**
- * TODO: Put all %c styled console logs styles into one config place
+ * TODO: [🔅] Put all %c styled console logs styles into one config place
  */
 export declare const DISABLE_LOGGING_STYLE = 'color: #888;';
 /**
@@ -34,4 +34,5 @@ export declare const DISABLE_LOGGING_STYLE = 'color: #888;';
  * TODO: Move it to some other file
  * TODO: Better name than consolex like clientConsole
  * TODO: Better management of logging - disableLogging is a bit ugly - make some manages / system to manage logging
+ * TODO: [🔅] New comsole should have native way how to log messages with style (replacing %c on frontend and chalk.bgRed,.. on backend)
  */

@@ -70,5 +70,6 @@ export declare class MaterialArtVersioningSystem extends AbstractSystem implemen
     findCommitsByOperationId(operationId: string_uuid): Array<ICommitData>;
 }
 /**
+ * TODO: In future move out permissions to PermissionsSystem
  * TODO: [🏔️]  All art getters should be cold obserservables
  */

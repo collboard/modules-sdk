@@ -4,7 +4,6 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-/// <reference types="react" />
 import { Observable } from 'rxjs';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IconsToolbar } from './IconsToolbar';
@@ -30,23 +29,19 @@ export declare class ToolbarSystem extends AbstractSystem {
     private toolbars;
     private focusSystem;
     private controlSystem;
+    private userInterfaceSystem;
     protected init(): Promise<void>;
+    private addToolbarsToUserInterface;
     /**
      * Renders the toolbar
      *
-     * There are two similar methods:
-     * - **render** which renders the toolbar
-     * - **renderMenu** which renders the menu of currently active icon in the toolbar
      */
-    renderToolbar(toolbarName: ToolbarName): JSX.Element;
+    private renderToolbar;
     /**
      * Renders the menu of currently active icon in the toolbar
      *
-     * There are two similar methods:
-     * - **render** which renders the toolbar
-     * - **renderMenu** which renders the menu of currently active icon in the toolbar
      */
-    renderMenu(toolbarName: ToolbarName): JSX.Element;
+    private renderMenuOfActiveIcon;
     /**
      * Returns the toolbar
      *
@@ -64,6 +59,11 @@ export declare class ToolbarSystem extends AbstractSystem {
     destroy(): Promise<void>;
 }
 /**
+ * TODO: [0] Some better way to decide if the icon has editing capabilities or not
  * TODO: [🎲] It is a bit inconsistent that renderMenu wraps content with <Menu but renderToolbar not
  * TODO: Add method allIcons and use it internally in allActiveIcons
+ * Note: [👩‍👩‍👦] This is a bit strange piece of logic:
+ *             1) TollbarSystem registers some own components into UserInterfaceSystem
+ *             2) In one of this components there is rendered the place from UserInterfaceSystem
+ *             Maybe solve this better (non-cyclical way) in the future
  */

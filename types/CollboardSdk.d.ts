@@ -28,6 +28,7 @@ export { ErrorBoundary } from './30-components/utils/ErrorBoundary';
 export { FileComponent } from './30-components/utils/FileComponent';
 export { Loader } from './30-components/utils/Loader/Loader';
 export { LoaderInline } from './30-components/utils/Loader/LoaderInline';
+export { useTimeout } from './30-components/utils/Loader/utils/useTimeout';
 export { Obfuscate } from './30-components/utils/Obfuscate';
 export { ObservableContentComponent } from './30-components/utils/ObservableContentComponent';
 export { QRCode } from './30-components/utils/QRCode';

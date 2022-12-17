@@ -18,6 +18,7 @@ export declare class LineArt extends ShapeArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     constructor(color: string_color, weight: 0 | number_positive, point1: IVectorData, point2: IVectorData);
 }

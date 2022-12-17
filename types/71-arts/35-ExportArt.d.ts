@@ -22,6 +22,7 @@ export declare class ExportArt extends Abstract2dArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     constructor(format: ExportFormat);
     get topLeft(): IVectorData;

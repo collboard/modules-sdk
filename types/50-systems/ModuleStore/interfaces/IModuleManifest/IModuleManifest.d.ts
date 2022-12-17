@@ -123,8 +123,19 @@ export interface IModuleManifest {
          */
         fileImport?: Arrayable<string_mime_type_with_wildcard>;
     };
+    /**
+     * Minimal required permissions for module to be working
+     *
+     * Note: 'edit' extends 'view' so ['edit'] is same as ['view', 'edit']
+     * Note: In future here will be complex logic of permissions
+     * Note: Because the default value is ['edit'] you can activelly lower it by putting ['view'] in manifest
+     *
+     * @default ['edit']
+     */
+    requirePermissions?: Array<'view' | 'edit' | string>;
 }
 /**
+ * TODO: [✨] What is the best way to mark the permissions and flags
  * TODO: PickOneOf in manifest:
  *        - license or licenses
  *        - author or contributors

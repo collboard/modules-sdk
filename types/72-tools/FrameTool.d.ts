@@ -7,4 +7,5 @@
 export {};
 /**
  * TODO: [🈁]
+ * TODO: [0] Maybe some option how this can work in edit mode> requirePermissions: ['view'],
  */

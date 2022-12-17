@@ -12,6 +12,7 @@ export declare class StopwatchArt extends Abstract2dArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     running: boolean;
     elapsed: number;

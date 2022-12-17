@@ -10,6 +10,7 @@ import { ISkin } from '../ISkin';
 /**
  * makeSkinModule will make skin confuiguration module
  *
+ * Note: If requirePermissions not set then will this maker set them to empty array
  * Note: Module still needs to be declared
  * @collboard-modules-sdk
  */

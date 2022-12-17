@@ -26,6 +26,7 @@ export declare class LoadingArt extends Abstract2dArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     /**
      * @param alt What is loading

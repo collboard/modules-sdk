@@ -32,14 +32,14 @@ export interface IToolbarIcon extends IIconAnonymous {
      *
      * @default true
      *
-     *  TODO: ✨ Maybe add is prefix
+     *  TODO: [✨] Maybe add is prefix
      */
     autoSelect?: boolean;
     /**
      * If user click on icon when it is selected should it be unselected
      * Note: working only with onSelect (not onClick)
      *
-     * TODO: ✨ Maybe add is prefix
+     * TODO: [✨] Maybe add is prefix
      */
     togglable?: boolean;
     /**

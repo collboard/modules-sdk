@@ -30,6 +30,7 @@ export declare type ArrayFull<T> = {
 /**
  * Just an item or array of items or set of items
  *
+ * @deprecated Using this is a bit antipattern use just Array
  * @collboard-modules-sdk
  */
 export declare type Arrayable<T> = T | Array<T> | Set<T>;

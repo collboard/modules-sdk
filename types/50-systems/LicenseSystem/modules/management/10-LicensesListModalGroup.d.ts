@@ -7,5 +7,5 @@
 /// <reference types="react" />
 export declare function LicensesListModalGroup(): JSX.Element;
 /**
- * TODO: What are propper  translate names "Licenses/...", "LicensesList/...", "@collboard/licenses/...", "@collboard/licenses/Licenses/..." or some other way
+ * TODO: What are propper  translate names "Licenses/...", "LicensesList/...", "@collboard/internal/licenses/...", "@collboard/internal/licenses/Licenses/..." or some other way
  */

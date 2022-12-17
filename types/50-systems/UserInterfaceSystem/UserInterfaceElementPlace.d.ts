@@ -76,5 +76,5 @@ export declare enum UserInterfaceElementPlace {
     BoardComponent = 'BOARD_COMPONENT',
 }
 /**
- * TODO: [👩‍👩‍👦] Make some way how every ToolbarName can be used as UserInterfaceElementPlace (for example SOCIAL)
+ * TODO: [👩‍👩‍👦] (Probbably not) Make some way how every ToolbarName can be used as UserInterfaceElementPlace (for example SOCIAL)
  */

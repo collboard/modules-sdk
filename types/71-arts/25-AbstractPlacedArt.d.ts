@@ -39,7 +39,7 @@ export declare abstract class AbstractPlacedArt extends AbstractArt implements I
     /**
      * Marks, whether art is locked
      *
-     * TODO: ✨ Maybe add is prefix
+     * TODO: [✨] Maybe add is prefix
      */
     locked: boolean;
     /**

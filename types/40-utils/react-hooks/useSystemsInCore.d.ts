@@ -11,7 +11,7 @@ import { ISystemsResolved } from '../../50-systems/00-SystemsContainer/ISystemsR
  * Context for systems container used in modules
  * Note: This context is provided at top render level (with translations and skin)
  *
- * @not-collboard-modules-sdk because this is core util
+ * @not-collboard-modules-sdk because this is core hook
  */
 export declare const UnsignedSystemsContainerContext: React.Context<ISystemsExtended | null>;
 /**

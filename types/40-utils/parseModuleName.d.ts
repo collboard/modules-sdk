@@ -12,7 +12,7 @@ import { string_module_name } from './typeAliases';
  * @param moduleName
  * @returns normalized scope and name split into chunks
  *
- * @example @collboard/foo/bar => { scope: 'collboard', name: ['foo','bar'] }
+ * @example @collboard/internal/foo/bar => { scope: 'collboard', name: ['foo','bar'] }
  *
  * @collboard-modules-sdk
  */

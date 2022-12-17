@@ -8,5 +8,6 @@ export interface IPermissions {
     edit: boolean;
 }
 /**
+ * TODO: In future this should be under PermissionsSystem
  * TODO: Make some LIB that manages the permissions
  */

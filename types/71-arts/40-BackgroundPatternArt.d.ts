@@ -20,6 +20,7 @@ export declare class BackgroundPatternArt extends AbstractBackgroundArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     /**
      * @param src Source of the background pattern tile

@@ -16,6 +16,7 @@ import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
  * TODO: Scoped css
  * TODO: Namings URL vs SRC
  *
+ * Note: If requirePermissions not set then will this maker set them to empty array
  * Note: There is in git history makeArticleModule but we have removed it. If it will be needed, we can bring it back.
  *
  * @collboard-modules-sdk

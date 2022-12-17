@@ -23,6 +23,7 @@ export declare class PointArt extends Abstract2dArt implements IArt<IPointShape>
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     constructor(shape: IPointShape, appearance: IAppearance, transform: ITransformData);
     get topLeft(): IVectorData;

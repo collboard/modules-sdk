@@ -28,3 +28,6 @@ export declare class RouteAndBusinessSyncer extends AbstractSyncer implements IS
     triggerErrorForModule(error: ModuleNotFoundError): Promise<void>;
     destroy(): Promise<void>;
 }
+/**
+ * TODO: Split between RouteSyncer and BusinessSyncer
+ */
