@@ -570,7 +570,7 @@ export const confirmDialogue = (window as any).CollboardSdk.confirmDialogue;
 
 /**
  * @returns array of files NOT FileList
- * TODO: As some cathegory of utils which replace alert, prompt, confirm by better async options like this or NotificationSystem
+ * TODO: As some category of utils which replace alert, prompt, confirm by better async options like this or NotificationSystem
  *
  * @collboard-modules-sdk
  */
@@ -590,7 +590,7 @@ export const promptDialogue = (window as any).CollboardSdk.promptDialogue;
  *
  * @collboard-modules-sdk
  */
-export const EMOJIS_IN_CATHEGORIES = (window as any).CollboardSdk.EMOJIS_IN_CATHEGORIES;
+export const EMOJIS_IN_CATEGORIES = (window as any).CollboardSdk.EMOJIS_IN_CATEGORIES;
 
 /**
  *
@@ -602,6 +602,8 @@ export const EMOJIS = (window as any).CollboardSdk.EMOJIS;
 
 /**
  * Converts typescript enum to array without number values
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  *
  * @collboard-modules-sdk
  */
@@ -1188,6 +1190,8 @@ export const useAsyncMemo = (window as any).CollboardSdk.useAsyncMemo;
 
 /**
  * @collboard-modules-sdk
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  */
 export const IUseLoadableResultStatus = (window as any).CollboardSdk.IUseLoadableResultStatus;
 
@@ -1750,7 +1754,7 @@ export const string_module_name = (window as any).CollboardSdk.string_module_nam
  *
  * For example `"Basic"` or `"Math"`
  *
- * *Note: This may become an enum of values in the near future*
+ * *Note: This may become an list of 'LITERAL_VALUES' in the near future*
  * @collboard-modules-sdk
  */
 export const string_module_category = (window as any).CollboardSdk.string_module_category;
@@ -1957,9 +1961,9 @@ export const BusinessSystem = (window as any).CollboardSdk.BusinessSystem;
 /**
  * Enumerates all the possible businesses. In Collboard, a business for which purpose is Collboard used.
  *
- * @collboard-modules-sdk
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  *
- * TODO: Probbably move to some other foleder
+ * @collboard-modules-sdk
  */
 
 export const BusinessName = (window as any).CollboardSdk.BusinessName;
@@ -2236,6 +2240,8 @@ export const IExportScope = (window as any).CollboardSdk.IExportScope;
 /**
  * Simple export scopes
  *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
  * @collboard-modules-sdk
  */
 
@@ -2275,6 +2281,8 @@ export const FilepickSystem = (window as any).CollboardSdk.FilepickSystem;
 /**
  *
  * Represents type of the focus which can be taken each by one thing in the Collboard app
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  *
  * @collboard-modules-sdk
  */
@@ -2690,6 +2698,26 @@ export const parseKeywordsFromManifest = (window as any).CollboardSdk.parseKeywo
 export const NotificationSystem = (window as any).CollboardSdk.NotificationSystem;
 
 /**
+ * Similar interface to Notification Web API
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Notification
+ *
+ * @collboard-modules-sdk
+ */
+export const INotification = (window as any).CollboardSdk.INotification;
+
+/**
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
+ * @collboard-modules-sdk
+ */
+export const NotificationPlace = (window as any).CollboardSdk.NotificationPlace;
+
+/**
+ * @collboard-modules-sdk
+ */
+export const INotificationAction = (window as any).CollboardSdk.INotificationAction;
+
+/**
  * PointerSystem allows us to bind a different controller then touch or mouse. For example, it is syncing the phone with accelerometer or VR controllers.
  *
  * @private
@@ -2802,6 +2830,8 @@ export const TestSystem = (window as any).CollboardSdk.TestSystem;
  *
  * TODO: Unite naming ToolbarName, which can be part of IToolbarIcon (similar as section on it) OR combine it with UserInterfaceElementPlace
  *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
  * @collboard-modules-sdk
  */
 export const ToolbarName = (window as any).CollboardSdk.ToolbarName;
@@ -2872,6 +2902,8 @@ export const UserInterfaceSystem = (window as any).CollboardSdk.UserInterfaceSys
 
 /**
  * UserInterfaceElementPlace enum lists possible places for an element to be placed.
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  *
  * @collboard-modules-sdk
  */
@@ -3101,6 +3133,8 @@ export const PointArt = (window as any).CollboardSdk.PointArt;
 export const PolygonArt = (window as any).CollboardSdk.PolygonArt;
 
 /**
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
  * @collboard-modules-sdk
  */
 export const ShapeName = (window as any).CollboardSdk.ShapeName;

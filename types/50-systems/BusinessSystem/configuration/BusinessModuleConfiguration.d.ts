@@ -8,5 +8,5 @@ import { IBusinessConfiguration } from '../interfaces/IBusinessConfiguration';
 import { BusinessName } from './BusinessName';
 export declare const BusinessModuleConfiguration: Record<BusinessName, IBusinessConfiguration>;
 /**
- * TODO: !!x Doublecheck after deploy that some modules takes sooooo long to install (in two waves)
+ * TODO: !!! Make Freehand selected even if dot is loaded after
  */

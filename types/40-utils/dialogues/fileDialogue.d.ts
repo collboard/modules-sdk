@@ -23,7 +23,7 @@ interface IFileDialogueOptions {
 }
 /**
  * @returns array of files NOT FileList
- * TODO: As some cathegory of utils which replace alert, prompt, confirm by better async options like this or NotificationSystem
+ * TODO: As some category of utils which replace alert, prompt, confirm by better async options like this or NotificationSystem
  *
  * @collboard-modules-sdk
  */

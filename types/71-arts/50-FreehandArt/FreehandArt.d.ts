@@ -45,7 +45,7 @@ export declare class FreehandArt extends Abstract2dArt {
     render(isSelected: boolean): JSX.Element;
 }
 /**
- * TODO: [👀] Focus cursor from other users in unfinished Freehands
+ * TODO: [🏹][👀] Focus cursor from other users in unfinished Freehands
  * TODO: FreehandArt with just 1 frame should be invalid
  * TODO: Instead of x/y pairs use Vector
  * TODO: [✏️] Fix> react-dom.development.js:630 Error: <svg> attribute width: Expected length, "NaN".

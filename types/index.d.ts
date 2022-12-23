@@ -11,7 +11,7 @@ import { IModule } from './50-systems/ModuleStore/interfaces/IModule';
 
 export declare function declareModule(module: IModule): void;
 
-// Note: bellow is all stuff marked with "@collboard SDK"
+// Note: bellow is all stuff marked with @collboard-modules-sdk, @collboard-system or @collboard-system-interface
 export { sanitizeHtml } from './00-modules/files/html/utlis/sanitizeHtml';
 export { ArtScaler } from './30-components/ArtScaler';
 export { string_animation } from './30-components/menu/animations';
@@ -72,7 +72,7 @@ export { alertDialogue } from './40-utils/dialogues/alertDialogue';
 export { confirmDialogue } from './40-utils/dialogues/confirmDialogue';
 export { fileDialogue } from './40-utils/dialogues/fileDialogue';
 export { promptDialogue } from './40-utils/dialogues/promptDialogue';
-export { EMOJIS_IN_CATHEGORIES } from './40-utils/emojis';
+export { EMOJIS_IN_CATEGORIES } from './40-utils/emojis';
 export { EMOJIS } from './40-utils/emojis';
 export { enumToArray } from './40-utils/enumToArray';
 export { BoardAlreadyExistsError } from './40-utils/errors/BoardAlreadyExistsError';
@@ -226,7 +226,6 @@ export { string_color } from './40-utils/typeAliases';
 export { ArrayFull } from './40-utils/typeHelpers';
 export { Arrayable } from './40-utils/typeHelpers';
 export { ArrayableFull } from './40-utils/typeHelpers';
-export { PromisableArray } from './40-utils/typeHelpers';
 export { isValidUuid } from './40-utils/uuid/isValidUuid';
 export { replaceUuids } from './40-utils/uuid/replaceUuids';
 export { ISystems } from './50-systems/00-SystemsContainer/ISystems';

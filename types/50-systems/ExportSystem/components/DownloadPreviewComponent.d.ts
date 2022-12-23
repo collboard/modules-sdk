@@ -12,5 +12,10 @@
  */
 export declare function DownloadPreviewComponent(): JSX.Element;
 /**
+ * TODO: !!! Set loading immediately
+ * TODO: !!! Work with initial load
+ * TODO: !!! Analyze every (HTML~heavy +prepare) export - optimization
+ * TODO: !!! Make nicer isLoading design (loading handwriting)
+ * TODO: !!! Probbably do not export automatically BUT after pressing the button
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */
