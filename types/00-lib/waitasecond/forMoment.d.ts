@@ -5,10 +5,13 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
- * Utility used for split up the loading blocks into multiple event loop frames
+ * Utility for splitting up one big event loop frame stack into multiple
  *
- * This is simmilar to forImmediate or forAnimationFrame:
+ * Note:
  *  - Use **forMoment** to split one big event loop frame stack into multiple
  *  - Use **forAnimationFrame** in animations
+ *
+ *
+ * @returns Promise with resolves
  */
 export declare function forMoment(): Promise<void>;

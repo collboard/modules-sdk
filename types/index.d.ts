@@ -226,6 +226,7 @@ export { string_color } from './40-utils/typeAliases';
 export { ArrayFull } from './40-utils/typeHelpers';
 export { Arrayable } from './40-utils/typeHelpers';
 export { ArrayableFull } from './40-utils/typeHelpers';
+export { PromisableArray } from './40-utils/typeHelpers';
 export { isValidUuid } from './40-utils/uuid/isValidUuid';
 export { replaceUuids } from './40-utils/uuid/replaceUuids';
 export { ISystems } from './50-systems/00-SystemsContainer/ISystems';
@@ -325,6 +326,9 @@ export { RouteAndBusinessSyncer } from './50-systems/ModuleStore/Syncers/RouteAn
 export { StorageSyncer } from './50-systems/ModuleStore/Syncers/StorageSyncer';
 export { parseKeywordsFromManifest } from './50-systems/ModuleStore/utils/parseKeywordsFromManifest';
 export { NotificationSystem } from './50-systems/NotificationSystem/0-NotificationSystem';
+export { INotification } from './50-systems/NotificationSystem/INotification';
+export { NotificationPlace } from './50-systems/NotificationSystem/INotification';
+export { INotificationAction } from './50-systems/NotificationSystem/INotification';
 export { PointerSystem } from './50-systems/PointerSystem/0-PointerSystem';
 export { RoutingSystem } from './50-systems/RoutingSystem/0-RoutingSystem';
 export { URI_PATTERN } from './50-systems/RoutingSystem/routePath/IUrlVariables';

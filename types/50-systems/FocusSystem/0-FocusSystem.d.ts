@@ -10,6 +10,8 @@ import { FocusScope } from './FocusScope';
  *
  * Represents type of the focus which can be taken each by one thing in the Collboard app
  *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
  * @collboard-modules-sdk
  */
 export declare enum FocusScopeName {

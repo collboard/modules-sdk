@@ -7,6 +7,8 @@
 /**
  * UserInterfaceElementPlace enum lists possible places for an element to be placed.
  *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
  * @collboard-modules-sdk
  */
 export declare enum UserInterfaceElementPlace {

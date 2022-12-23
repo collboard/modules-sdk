@@ -7,6 +7,9 @@
 /// <reference types="react" />
 import { IVectorData } from 'xyzt';
 import { Abstract2dArt } from './26-Abstract2dArt';
+/**
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ */
 export declare enum ExportFormat {
     Native = 'NATIVE',
     Png = 'PNG',

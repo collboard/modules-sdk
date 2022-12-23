@@ -7,6 +7,8 @@
 import { Loadable } from '../typeHelpers';
 /**
  * @collboard-modules-sdk
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  */
 export declare enum IUseLoadableResultStatus {
     Pending = 'PENDING',

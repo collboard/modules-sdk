@@ -11,6 +11,7 @@ import { Abstract2dArt } from './26-Abstract2dArt';
 /**
  * Strategy for importing external data
  *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  * @deprecated use isMaterialized instead
  */
 export declare enum ImportStrategy {

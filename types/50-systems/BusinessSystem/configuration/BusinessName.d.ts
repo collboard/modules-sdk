@@ -7,12 +7,15 @@
 /**
  * Enumerates all the possible businesses. In Collboard, a business for which purpose is Collboard used.
  *
- * @collboard-modules-sdk
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  *
- * TODO: Probbably move to some other foleder
+ * @collboard-modules-sdk
  */
 export declare enum BusinessName {
     Education = 'EDUCATION',
     Business = 'BUSINESS',
     Development = 'DEVELOPMENT',
 }
+/**
+ * TODO: Probbably move to some other foleder
+ */

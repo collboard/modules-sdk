@@ -248,7 +248,7 @@ export declare type string_module_name = string;
  *
  * For example `"Basic"` or `"Math"`
  *
- * *Note: This may become an enum of values in the near future*
+ * *Note: This may become an list of 'LITERAL_VALUES' in the near future*
  * @collboard-modules-sdk
  */
 export declare type string_module_category = string;

@@ -57,7 +57,7 @@ export declare class UserInterfaceSystem extends AbstractSystem {
 }
 export {};
 /**
- * TODO: !!! Fix doubeling of toolbars or user interface content
+ * TODO: Fix doubeling of toolbars or user interface content
  * TODO: Probbably (require OR used sign OR extract from given systems) module signature when registering
  *       ! Warning: render method is used by DIFFERENT module than the one that registered it
  */
