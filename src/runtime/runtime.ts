@@ -1921,16 +1921,12 @@ export const AppState = (window as any).CollboardSdk.AppState;
 
 /**
  * ArtVersionSystem synchronizes the arts with the remote server.
- * TODO: This is used a lot so maybe we can figure out some better name
  *
  * @collboard-system
  */
 export const MaterialArtVersioningSystem = (window as any).CollboardSdk.MaterialArtVersioningSystem;
 
 /**
- * TODO: VirtualArtVersioningSystem should be a bit les capable then MaterialArtVersioningSystem because it can for example cannot handle persisting (@see IFreshMaterialOperation vs IFreshOperation)
- * TODO: Virtual art operations shoud not require persisting
- * TODO: Virtual art operations should not prevent closing (maybe just canBeClosed always true or completelly not IClosePreventable)
  *
  * @collboard-system
  */
