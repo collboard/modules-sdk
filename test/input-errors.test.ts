@@ -2,6 +2,7 @@ import { join } from 'path';
 import { execCommand } from './test-utils/execCommand/execCommand';
 
 jest.setTimeout(1000 * 25);
+jest.retryTimes(2);
 
 describe('wrong usage of Colldev CLI command', () => {
     it(`should crash on wrong script`, () =>
