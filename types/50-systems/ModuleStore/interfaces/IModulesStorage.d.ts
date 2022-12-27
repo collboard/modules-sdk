@@ -28,7 +28,7 @@ export interface IModulesStorageWeak {
 export interface IModulesStorageStrong extends IModulesStorageWeak, IDestroyable {
     getAllModules(): Array<IModuleDefinition>;
     observeAllModules(): Observable<Array<IModuleDefinition>>;
-    declareModule(module: IModule): Promise<void>;
+    declareModule(...module: Array<IModule>): Promise<void>;
 }
 /**
  * TODO: [🉐] Module storage (IModulesStorageWeak or IModulesStorageStrong?) should have name prefix which modules it manages

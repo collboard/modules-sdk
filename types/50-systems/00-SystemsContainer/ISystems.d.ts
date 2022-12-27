@@ -5,11 +5,11 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { TouchController } from 'touchcontroller';
-import { ArtSerializer } from '../../CollboardApp';
 import { Core } from './../30-Core/0-Core';
 import { ApiClient } from './../ApiClient/0-ApiClient';
 import { BoardApiClient } from './../ApiClient/BoardApiClient';
 import { AppState } from './../AppState/0-AppState';
+import { ArtSerializer } from './../ArtSerializer/ArtSerializer';
 import { MaterialArtVersioningSystem } from './../ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { VirtualArtVersioningSystem } from './../ArtVersionSystem/0-VirtualArtVersioningSystem';
 import { AttributesSystem } from './../AttributesSystem/0-AttributesSystem';
@@ -88,14 +88,14 @@ export interface ISystemsExtended {
     ): Pick<ISystemsResolved, T>;
     /**
      * Generator: Systems
-     * Omit: Serializer
-     * Add: TouchController,ArtSerializer
+     * Add: TouchController
      * Pattern: readonly <system>: Promise<<System>>;
      */
     readonly core: Promise<Core>;
     readonly apiClient: Promise<ApiClient>;
     readonly boardApiClient: Promise<BoardApiClient>;
     readonly appState: Promise<AppState>;
+    readonly artSerializer: Promise<ArtSerializer>;
     readonly materialArtVersioningSystem: Promise<MaterialArtVersioningSystem>;
     readonly virtualArtVersioningSystem: Promise<VirtualArtVersioningSystem>;
     readonly attributesSystem: Promise<AttributesSystem>;
@@ -137,7 +137,6 @@ export interface ISystemsExtended {
     readonly userInterfaceSystem: Promise<UserInterfaceSystem>;
     readonly voiceSystem: Promise<VoiceSystem>;
     readonly touchController: Promise<TouchController>;
-    readonly artSerializer: Promise<ArtSerializer>;
 }
 /**
  * TODO: Allow partial load of systems - some systems are resolved, some are not (and waiting for example for the users permission or initializing)

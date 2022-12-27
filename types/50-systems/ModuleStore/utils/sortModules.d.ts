@@ -12,5 +12,5 @@ export declare function sortModules(
     manifest2: IModuleManifest,
 ): 0 | 1 | -1;
 /**
- *  TODO:  Unit test
+ *  TODO: Unit test
  */

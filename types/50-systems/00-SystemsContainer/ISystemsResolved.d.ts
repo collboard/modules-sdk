@@ -5,11 +5,11 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { TouchController } from 'touchcontroller';
-import { ArtSerializer } from '../../CollboardApp';
 import { Core } from './../30-Core/0-Core';
 import { ApiClient } from './../ApiClient/0-ApiClient';
 import { BoardApiClient } from './../ApiClient/BoardApiClient';
 import { AppState } from './../AppState/0-AppState';
+import { ArtSerializer } from './../ArtSerializer/ArtSerializer';
 import { MaterialArtVersioningSystem } from './../ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { VirtualArtVersioningSystem } from './../ArtVersionSystem/0-VirtualArtVersioningSystem';
 import { AttributesSystem } from './../AttributesSystem/0-AttributesSystem';
@@ -53,14 +53,14 @@ import { VoiceSystem } from './../VoiceSystem/0-VoiceSystem';
 export interface ISystemsResolved {
     /**
      * Generator: Systems
-     * Omit: Serializer
-     * Add: TouchController,ArtSerializer
+     * Add: TouchController
      * Pattern: readonly <system>: <System>;
      */
     readonly core: Core;
     readonly apiClient: ApiClient;
     readonly boardApiClient: BoardApiClient;
     readonly appState: AppState;
+    readonly artSerializer: ArtSerializer;
     readonly materialArtVersioningSystem: MaterialArtVersioningSystem;
     readonly virtualArtVersioningSystem: VirtualArtVersioningSystem;
     readonly attributesSystem: AttributesSystem;
@@ -102,5 +102,4 @@ export interface ISystemsResolved {
     readonly userInterfaceSystem: UserInterfaceSystem;
     readonly voiceSystem: VoiceSystem;
     readonly touchController: TouchController;
-    readonly artSerializer: ArtSerializer;
 }

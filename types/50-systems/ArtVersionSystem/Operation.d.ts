@@ -93,5 +93,6 @@ export declare class Operation
     private checkIfPersistedProperly;
 }
 /**
- *  TODO: Override destroy method and really destroy ongoing stuff
+ * TODO: !!!! Support here IArt
+ * TODO: Override destroy method and really destroy ongoing stuff
  */

@@ -4,12 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { Vector } from 'xyzt';
-import { Commit } from './10-database/Commit';
-import { ICommitData } from './10-database/interfaces/ICommitData';
 import { string_translate_language, string_url } from './40-utils/typeAliases';
-import { Serializer } from './50-systems/Serializer/0-Serializer';
-import { AbstractArt } from './71-arts/20-AbstractArt';
 interface ICollboardAppOptions {
     rootElement: HTMLDivElement;
     language: string_translate_language;
@@ -18,8 +13,6 @@ interface ICollboardAppOptions {
     proxyUrl: string_url;
     usercontentUrl: string_url;
 }
-export declare type ISerializableTypes = Commit | ICommitData | AbstractArt | Vector;
-export declare type ArtSerializer = Serializer<ISerializableTypes>;
 export declare class CollboardApp {
     private readonly options;
     private systems;

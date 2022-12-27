@@ -7,5 +7,5 @@
 import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 export declare function isExperimental(manifest: IModuleManifest): boolean;
 /**
- *  TODO:  Unit test
+ *  TODO: Unit test
  */

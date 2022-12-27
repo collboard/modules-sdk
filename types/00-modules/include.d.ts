@@ -20,6 +20,7 @@ import './../50-systems/LicenseSystem/modules/mocks/02-gold-stickers-module';
 import './../50-systems/LicenseSystem/modules/mocks/03-gold-freehand-module';
 import './../50-systems/ModuleStore/connectors/ModulesStorage';
 import './../50-systems/ModuleStore/interfaces/IModulesStorage';
+import './../50-systems/ModuleStore/makers/0-samples/makeSimpleArtToolAttributeModules.tsx';
 import './../50-systems/ModuleStore/Syncers/StorageSyncer';
 import './../70-attributes/ColorAttributeModule';
 import './../70-attributes/FontSizeAttributeModule';

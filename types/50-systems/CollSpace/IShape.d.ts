@@ -4,7 +4,8 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-export { sanitizeHtml } from './00-modules/files/html/utlis/sanitizeHtml';
-export { ArtScaler } from './30-components/ArtScaler';
-export type { IIconAnonymous } from './30-components/menu/IIconAnonymous';
-export { Icon } from './30-components/menu/Icon';
+import { JsonValue } from 'type-fest';
+/**
+ * @@@
+ */
+export declare type IShape = JsonValue;

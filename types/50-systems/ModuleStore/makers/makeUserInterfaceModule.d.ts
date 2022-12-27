@@ -23,3 +23,6 @@ export declare function makeUserInterfaceModule(protoModule: {
     order?: number;
     createElement(systems: ISystems): Promisable<JSX.Element>;
 }): IModuleDefinition;
+/**
+ * TODO: !!! Rename createElement to render (fulltext ACRY)
+ */
