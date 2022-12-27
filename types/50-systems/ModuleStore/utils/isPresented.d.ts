@@ -14,5 +14,5 @@ import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
  */
 export declare function isPresented(manifest: IModuleManifest, businessConfiguration?: IBusinessConfiguration): boolean;
 /**
- *  TODO: Unit test
+ *  TODO:  Unit test
  */

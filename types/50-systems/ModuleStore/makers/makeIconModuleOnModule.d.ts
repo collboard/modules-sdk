@@ -22,6 +22,3 @@ export declare function makeIconModuleOnModule(protoModule: {
     icon: IToolbarIcon | ((systems: ISystems) => Promisable<IToolbarIcon>);
     moduleActivatedByIcon: IModule;
 }): IModuleDefinition;
-/**
- * TODO: !!! Rename to makeToolModule
- */

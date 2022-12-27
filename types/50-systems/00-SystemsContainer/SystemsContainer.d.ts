@@ -5,11 +5,11 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { TouchController } from 'touchcontroller';
+import { ArtSerializer } from '../../CollboardApp';
 import { Core } from './../30-Core/0-Core';
 import { ApiClient } from './../ApiClient/0-ApiClient';
 import { BoardApiClient } from './../ApiClient/BoardApiClient';
 import { AppState } from './../AppState/0-AppState';
-import { ArtSerializer } from './../ArtSerializer/ArtSerializer';
 import { MaterialArtVersioningSystem } from './../ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { VirtualArtVersioningSystem } from './../ArtVersionSystem/0-VirtualArtVersioningSystem';
 import { AttributesSystem } from './../AttributesSystem/0-AttributesSystem';
@@ -78,14 +78,14 @@ export declare class SystemsContainer implements ISystemsExtended {
     ): Pick<ISystemsResolved, T>;
     /**
      * Generator: Systems
-     * Add: TouchController
+     * Omit: Serializer
+     * Add: TouchController,ArtSerializer
      * Pattern: private readonly <system>Subject = new BehaviorSubject<<System> | null>(null);
      */
     private readonly coreSubject;
     private readonly apiClientSubject;
     private readonly boardApiClientSubject;
     private readonly appStateSubject;
-    private readonly artSerializerSubject;
     private readonly materialArtVersioningSystemSubject;
     private readonly virtualArtVersioningSystemSubject;
     private readonly attributesSystemSubject;
@@ -127,9 +127,11 @@ export declare class SystemsContainer implements ISystemsExtended {
     private readonly userInterfaceSystemSubject;
     private readonly voiceSystemSubject;
     private readonly touchControllerSubject;
+    private readonly artSerializerSubject;
     /**
      * Generator: Systems
-     * Add: TouchController
+     * Omit: Serializer
+     * Add: TouchController,ArtSerializer
      * Pattern:
 
     public get <system>(): Promise<<System>> {
@@ -165,8 +167,6 @@ export declare class SystemsContainer implements ISystemsExtended {
     setBoardApiClient(boardApiClient: BoardApiClient | null): Promise<void>;
     get appState(): Promise<AppState>;
     setAppState(appState: AppState | null): Promise<void>;
-    get artSerializer(): Promise<ArtSerializer>;
-    setArtSerializer(artSerializer: ArtSerializer | null): Promise<void>;
     get materialArtVersioningSystem(): Promise<MaterialArtVersioningSystem>;
     setMaterialArtVersioningSystem(materialArtVersioningSystem: MaterialArtVersioningSystem | null): Promise<void>;
     get virtualArtVersioningSystem(): Promise<VirtualArtVersioningSystem>;
@@ -249,6 +249,8 @@ export declare class SystemsContainer implements ISystemsExtended {
     setVoiceSystem(voiceSystem: VoiceSystem | null): Promise<void>;
     get touchController(): Promise<TouchController>;
     setTouchController(touchController: TouchController | null): Promise<void>;
+    get artSerializer(): Promise<ArtSerializer>;
+    setArtSerializer(artSerializer: ArtSerializer | null): Promise<void>;
 }
 /**
  * TODO: [🏄] Rename ready to whenReady

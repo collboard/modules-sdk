@@ -53,4 +53,5 @@ export declare class ApiClient extends AbstractSystem {
 }
 /**
  * TODO: !! Listen on RoutingSystem and save it into myBoards
+ * TODO: [🕎] Create/use some LIB for generic REST-api calls with serializer
  */

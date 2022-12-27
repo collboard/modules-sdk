@@ -45,8 +45,7 @@ export declare abstract class StorageSyncer
      * @proxy
      */
     observeAllModules(): Observable<Array<IModuleDefinition>>;
-    declareModule(...modules: Array<IModule>): Promise<void>;
-    private declareOneModule;
+    declareModule(module: IModule): Promise<void>;
     moduleActivate(moduleManifest: IModuleManifest): Promise<void>;
     moduleDeactivate(moduleManifest: IModuleManifest): Promise<void>;
     destroy(): Promise<void>;

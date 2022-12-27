@@ -13,5 +13,5 @@ import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
  */
 export declare function parseKeywordsFromManifest(manifest: IModuleManifest): IKeywords;
 /**
- *  TODO: Unit test
+ *  TODO:  Unit test
  */

@@ -15,7 +15,6 @@ export declare class ModulesStorage extends Destroyable implements IModulesStora
     getModule(name: string_module_name): IModuleDefinition | null;
     getAllModules(): Array<IModuleDefinition>;
     observeAllModules(): Observable<Array<IModuleDefinition>>;
-    declareModule(...modules: Array<IModule>): Promise<void>;
-    private declareOneModule;
+    declareModule(module: IModule): Promise<void>;
     destroy(): Promise<void>;
 }
