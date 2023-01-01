@@ -5,8 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
+import { ISystems, ISystemsExtended, ISystemsMethods } from '../../50-systems/00-SystemsContainer/ISystems';
 import { ISystemsResolved } from '../../50-systems/00-SystemsContainer/ISystemsResolved';
-import { ISystems, ISystemsExtended, ISystemsMethods } from './../../50-systems/00-SystemsContainer/ISystems';
 /**
  * Context for systems container used in modules
  * Note: This context is provided at UserInterfaceSystem
@@ -24,9 +24,9 @@ export declare const SystemsContainerContext: React.Context<ISystems | null>;
  *
  * @collboard-modules-sdk
  */
-export declare function useSystems<T extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
-    ...requestedSystemsNames: Array<T>
-): Pick<ISystemsResolved, T>;
+export declare function useSystems<TSystemNames extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+    ...requestedSystemsNames: Array<TSystemNames>
+): Pick<ISystemsResolved, TSystemNames>;
 /**
  * Note: For security reason there are two separate hooks and contexts:
  *       - useSystems is used in modules and gives only the requested systems

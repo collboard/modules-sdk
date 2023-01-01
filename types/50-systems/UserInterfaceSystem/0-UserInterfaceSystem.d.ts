@@ -5,6 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
+import { Registration } from 'destroyable';
 import { SetOptional } from 'type-fest';
 import { ISystems } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
@@ -46,12 +47,7 @@ export declare class UserInterfaceSystem extends AbstractSystem {
      *
      * Note: Consider using higher-level API
      */
-    registerElement({
-        place,
-        order,
-        element,
-        systems,
-    }: SetOptional<IElementOptions, 'order'>): import('destroyable').Registration;
+    registerElement({ place, order, element, systems }: SetOptional<IElementOptions, 'order'>): Registration;
     render(place: UserInterfaceElementPlace): JSX.Element;
     private getPlaceStorage;
 }

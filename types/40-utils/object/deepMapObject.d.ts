@@ -9,7 +9,7 @@
  *
  * @collboard-modules-sdk
  */
-export declare function deepMapObject<T>(value: T, callback: (subobject: any) => any): T;
+export declare function deepMapObject<TObject>(value: TObject, callback: (subobject: any) => any): TObject;
 /**
  * TODO: Protect from passing cyclic objects - isObjectCyclic util
  */

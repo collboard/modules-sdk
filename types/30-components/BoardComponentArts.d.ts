@@ -7,7 +7,7 @@
 /// <reference types="react" />
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Transform } from 'xyzt';
-import { AbstractPlacedArt } from './../71-arts/25-AbstractPlacedArt';
+import { AbstractPlacedArt } from '../71-arts/25-AbstractPlacedArt';
 interface IBoardComponentArtsProps {
     artsPlaced: Observable<Array<AbstractPlacedArt>>;
     /**

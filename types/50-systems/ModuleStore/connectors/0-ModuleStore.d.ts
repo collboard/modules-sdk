@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IDestroyable } from 'destroyable';
+import { Registration } from 'destroyable';
 import { string_module_category, string_module_name } from '../../../40-utils/typeAliases';
 import { AbstractSystem } from '../../10-AbstractSystem/AbstractSystem';
 import { IModuleDefinition } from '../interfaces/IModule';
@@ -30,11 +30,11 @@ export declare class ModuleStore extends AbstractSystem implements IModuleStoreC
     /**
      * Note: When searching with limit, it depends on order of connectors registration
      */
-    registerModuleStoreConnector(modulesConnector: IModuleStoreConnector): IDestroyable;
+    registerModuleStoreConnector(modulesConnector: IModuleStoreConnector): Registration;
     /**
      * Note: When searching with limit, it depends on order of connectors registration
      */
-    registerModuleStorage(modulesStorage: IModulesStorageStrong): IDestroyable;
+    registerModuleStorage(modulesStorage: IModulesStorageStrong): Registration;
     search(searchCriteria: IModuleSearchCriteria): Promise<IModuleStoreConnectorSearchResult>;
     getCategories(): Promise<Set<string_module_category>>;
 }

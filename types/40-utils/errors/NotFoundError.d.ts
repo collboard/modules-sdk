@@ -9,4 +9,5 @@
  */
 export declare class NotFoundError extends Error {
     readonly name = 'NotFoundError';
+    constructor(message: string);
 }

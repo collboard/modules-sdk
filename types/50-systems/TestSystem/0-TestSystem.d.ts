@@ -13,6 +13,6 @@ import { ITestSystem } from './interfaces/0-ITestSystem';
  */
 export declare class TestSystem extends AbstractSystem implements ITestSystem {
     protected init(): Promise<void>;
-    echo<T>(message: T): Promise<T>;
+    echo<TMessage>(message: TMessage): Promise<TMessage>;
     throwError(): Promise<never>;
 }

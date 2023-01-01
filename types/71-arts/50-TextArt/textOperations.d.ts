@@ -4,8 +4,8 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { MaterialArtVersioningSystem } from '../../50-systems/ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { IOngoingMaterialOperation } from '../../50-systems/ArtVersionSystem/IOperation';
-import { MaterialArtVersioningSystem } from './../../50-systems/ArtVersionSystem/0-MaterialArtVersioningSystem';
 import { TextArt } from './TextArt';
 /**
  * Create new text art operation

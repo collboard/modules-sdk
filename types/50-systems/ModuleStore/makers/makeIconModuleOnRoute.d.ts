@@ -22,3 +22,6 @@ export declare function makeIconModuleOnRoute(protoModule: {
     icon: IToolbarIcon | ((systems: ISystems) => IToolbarIcon);
     routeParams: Partial<IUrlVariables>;
 }): IModuleDefinition;
+/**
+ * TODO: !!x Rename to makeIconShortcutModule
+ */

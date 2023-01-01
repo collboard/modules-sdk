@@ -6,4 +6,4 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export declare const DEFAULT_BOARD_NAME = 'collboard';
 export declare const TITLE_SEPARATOR = ' \uD83D\uDD8B\uFE0F ';
-export declare const MAX_RECURSION_LEVEL = 100;
+export declare const MAX_RECURSION_LEVEL = 17;

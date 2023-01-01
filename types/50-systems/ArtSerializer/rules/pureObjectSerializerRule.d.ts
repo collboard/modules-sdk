@@ -4,12 +4,11 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-export declare class SerializerError extends Error {
-    constructor(message: string);
-}
-export declare class SerializationError extends SerializerError {
-    readonly name = 'SerializationError';
-}
-export declare class DeserializationError extends SerializerError {
-    readonly name = 'DeserializationError';
-}
+import { ISerializerRule } from '../interfaces/ISerializerRule';
+/**
+ * @@x
+ */
+export declare const pureObjectSerializerRule: ISerializerRule;
+/**
+ * TODO: [🌉] In future use satisfies ISerializerRule
+ */

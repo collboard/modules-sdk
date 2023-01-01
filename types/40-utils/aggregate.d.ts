@@ -10,4 +10,4 @@
  *
  * @collboard-modules-sdk
  */
-export declare function aggregate<T>(...data: Array<T>): T;
+export declare function aggregate<TData>(...data: Array<TData>): TData;

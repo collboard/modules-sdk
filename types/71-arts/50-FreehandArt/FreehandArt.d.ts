@@ -20,7 +20,7 @@ export declare class FreehandArt extends Abstract2dArt {
         name: string;
         deprecatedNames: string;
     };
-    frames: Array<TouchFrame>;
+    frames: Array<Pick<TouchFrame, 'position' | 'time'>>;
     smoothing: 0 | number_positive;
     color: string_color;
     weight: 0 | number_positive;
@@ -36,7 +36,7 @@ export declare class FreehandArt extends Abstract2dArt {
     set size(newSize: IVectorData);
     isNear(pointToTest: IVectorData): boolean;
     get acceptedAttributes(): string[];
-    pushFrame(frame: TouchFrame): this;
+    pushFrame(frame: Pick<TouchFrame, 'position' | 'time'>): this;
     /**
      * @deprecated [🍒] remove this method
      */

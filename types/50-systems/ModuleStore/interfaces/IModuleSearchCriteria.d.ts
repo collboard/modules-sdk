@@ -6,6 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IJson } from 'everstorage';
 import {
+    number_integer,
+    number_positive,
     string_attribute,
     string_license_token,
     string_mime_type,
@@ -22,12 +24,15 @@ export interface IModuleSearchCriteria extends IJson {
     needle?: string;
     category?: string_module_category;
     supports?: {
+        /**
+         * @deprecated @@x
+         */
         art?: string;
         attribute?: string_attribute;
         fileImport?: string_mime_type;
     };
     usageLicenseToken?: string_license_token;
-    limit?: number;
+    limit?: number_positive & number_integer;
 }
 /**
  * TODOs:

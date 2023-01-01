@@ -421,4 +421,6 @@ export declare type number_gigabytes = number_positive;
 export declare type number_terabytes = number_positive;
 /**
  * TODO: Anotate all + collboard-modules-sdk to all
+ * TODO: Use instead of number_... type-fest
+ * TODO: In some cases string_module_name, constraint by literals (or as close to RegExp as possible in TypeScript)
  */

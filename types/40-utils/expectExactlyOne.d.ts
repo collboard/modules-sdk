@@ -13,8 +13,8 @@
  * @param array - the array to check
  * @returns the only item
  */
-export declare function expectExactlyOne<T>(
+export declare function expectExactlyOne<TItem>(
     what: string | undefined,
-    array: Array<T>,
+    array: Array<TItem>,
     additional: Record<string, any>,
-): T;
+): TItem;

@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { Registration } from 'destroyable';
 import React from 'react';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
@@ -26,7 +27,7 @@ export declare class StyleSystem extends AbstractSystem {
      * TODO: Enable object-like styles + styled components in future
      * TODO: Create scoped version of this
      */
-    registerGlobalStyle(style: string): import('destroyable').Registration;
+    registerGlobalStyle(style: string): Registration;
     renderStyles(): JSX.Element;
     colorScheme: BehaviorSubject<ColorScheme>;
     readonly skin: ReplaySubject<ISkin>;
@@ -44,7 +45,7 @@ export declare class StyleSystem extends AbstractSystem {
     private _WithSkin;
     private _WithSkinContext;
     private skins;
-    registerSkin({ skin }: { skin: ISkin; priority?: number }): import('destroyable').Registration;
+    registerSkin({ skin }: { skin: ISkin; priority?: number }): Registration;
     destroy(): Promise<void>;
 }
 /**

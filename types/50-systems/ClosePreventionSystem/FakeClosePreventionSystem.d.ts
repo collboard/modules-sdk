@@ -8,7 +8,8 @@ import { Destroyable, Registration } from 'destroyable';
 import { IClosePreventable } from './IClosePreventable';
 import { IClosePreventionSystem } from './IClosePreventionSystem';
 /**
- * FakeClosePreventionSystem is a implementation of IClosePreventionSystem which satisfy the interface but does nothing.
+ * FakeClosePreventionSystem is a implementation of IClosePreventionSystem which implements the interface but does nothing
+ *
  * @collboard-modules-sdk
  */
 export declare class FakeClosePreventionSystem extends Destroyable implements IClosePreventionSystem {

@@ -5,6 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IDestroyable } from 'destroyable';
+import { string_module_name } from '../../../40-utils/typeAliases';
 import { AbstractArt } from '../../../71-arts/20-AbstractArt';
 import { ISyncer } from '../interfaces/ISyncer';
 import { AbstractSyncer } from './AbstractSyncer';
@@ -17,6 +18,10 @@ import { AbstractSyncer } from './AbstractSyncer';
 export declare class ArtSupportSyncer extends AbstractSyncer implements ISyncer, IDestroyable {
     private artDependencies;
     private throttleQueues;
+    installSupport(moduleName: string_module_name): Promise<unknown>;
+    /**
+     * @deprecated
+     */
     installSupportForArt(classNameOrInstance: string | AbstractArt): Promise<unknown>;
     destroy(): Promise<void>;
 }

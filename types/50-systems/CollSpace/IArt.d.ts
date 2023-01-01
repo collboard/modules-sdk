@@ -6,10 +6,11 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { Promisable } from 'type-fest';
-import { Transform } from 'xyzt';
+import { string_module_name, string_uuid } from '../../40-utils/typeAliases';
 import { ISystems } from '../00-SystemsContainer/ISystems';
-import { string_uuid } from './../../40-utils/typeAliases';
 import { IAppearance } from './appearance/IAppearance';
+import { IArtData } from './IArtData';
+import { IShape } from './IShape';
 /**
  * Art is a an object on the shared board
  * This interface defines basic requirements of the art
@@ -18,7 +19,8 @@ import { IAppearance } from './appearance/IAppearance';
  *
  * @collboard-modules-sdk
  */
-export interface IArt<TShape, TAppearance extends IAppearance = IAppearance> {
+export interface IArt<TShape extends IShape = IShape, TAppearance extends IAppearance = IAppearance>
+    extends IArtData<TShape, TAppearance> {
     /**
      * Unique identifier of the art
      * - If there is one art which is changed by user, the id is kept unchanged
@@ -26,19 +28,9 @@ export interface IArt<TShape, TAppearance extends IAppearance = IAppearance> {
      */
     readonly artId: string_uuid;
     /**
-     * Transform of the art relative to origin of the board
-     * It means position, rotation and scale of the art
+     * @@x
      */
-    transform: Transform;
-    /**
-     * How the art looks inside without the colors and textures
-     * This will be different for each art Class
-     */
-    shape: TShape;
-    /**
-     * What colors and textures are applied to the art
-     */
-    appearance: TAppearance;
+    readonly moduleName: string_module_name;
     /**
      * Renders the art
      *
@@ -58,17 +50,15 @@ export interface IArt<TShape, TAppearance extends IAppearance = IAppearance> {
     render(isSelected: boolean, systems: ISystems): Promisable<JSX.Element>;
 }
 /**
+ * TODO: [🟨][🧠] how to react on changes (partial renders (Docker like)), art destroyable process, getters setters
+ * TODO: Should be artId under IArt or IArtData
+ * TODO: !!x Go through all usages of IArt and transform+shape+appearance => use IArtData where more logic
  * TODO: [🐁] Constrain the constructor interface to be same on every IArt
  * TODO: Probbably some equivalent for acceptedAttributes - maybe transform+shape+appearance is already enough
  * TODO: Maybe IArt should contain boundingBox property
- * TODO: [👨‍⚖️] Probbably allow to extend Appearance (similar to extending Shape)
  * TODO: Add more things from AbstractArts like
  *       - BoundingBox (isNear)
  *       - transform (shift, move, setShift)
- *
- * TODO: Ordering of transform, shape, appearance
- *       - shape, appearance, transform
- *
  * TODO: On render method:
  *       - Maybe do not use render method but ArtComponent
  *       - Maybe remove isSelected and systems which both can be provided via hooks

@@ -4,11 +4,13 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { ISerializerRule } from '../interfaces/ISerializerRule';
 /**
- * Flattern array by one level
- * @param array for example [[1,2],[3,4]]
- * @return for example [1,2,3,4]
- *
- * @collboard-modules-sdk
+ * @@x
  */
-export declare function flatternArray<T>(array: Array<Array<T>>): Array<T>;
+export declare const pureArraySerializerRule: ISerializerRule;
+/**
+ * TODO: [🧠] Maybe rename to just arraySerializerRule
+ * TODO: setSerializerRule
+ * TODO: [🌉] In future use satisfies ISerializerRule
+ */

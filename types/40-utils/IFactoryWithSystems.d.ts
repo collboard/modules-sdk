@@ -8,12 +8,15 @@ import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
 /**
  * @collboard-modules-sdk
  */
-export declare type IFactorableWithSystems<T> = T | ((systems: ISystems) => T);
+export declare type IFactorableWithSystems<TValue> = TValue | ((systems: ISystems) => TValue);
 /**
  *
  * @collboard-modules-sdk
  */
-export declare function factorWithSystems<T>(valueOrFunction: IFactorableWithSystems<T>, systems: ISystems): T;
+export declare function factorWithSystems<TValue>(
+    valueOrFunction: IFactorableWithSystems<TValue>,
+    systems: ISystems,
+): TValue;
 /**
  * TODO: Use IFactorableWithSystems + factorWithSystems across the code
  * TODO: Probably better name as Create/Creatable/factor

@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IDestroyable } from 'destroyable';
+import { IDestroyable, Registration } from 'destroyable';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IClosePreventable } from './IClosePreventable';
 import { IClosePreventionSystem } from './IClosePreventionSystem';
@@ -17,7 +17,7 @@ export declare class ClosePreventionSystem
 {
     protected init(): Promise<void>;
     private reasons;
-    registerClosePrevention(...reasons: Array<IClosePreventable>): import('destroyable').Registration;
+    registerClosePrevention(...reasons: Array<IClosePreventable>): Registration;
     get canBeClosed(): boolean;
     private beforeunloadHandler;
 }

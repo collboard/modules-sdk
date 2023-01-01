@@ -20,7 +20,10 @@ declare class SignatureManager {
      * @param signature
      * @returns Signed version of given entity; it does not mutate given entity it returns proxied version with signature.
      */
-    sign<T extends ISignableEntity>(signableEntity: T, signature: ISignature): T;
+    sign<TSignableEntity extends ISignableEntity>(
+        signableEntity: TSignableEntity,
+        signature: ISignature,
+    ): TSignableEntity;
     /**
      * Gets signature of given entity.
      */

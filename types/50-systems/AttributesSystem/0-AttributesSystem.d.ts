@@ -5,6 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
+import { Registration } from 'destroyable';
 import { BehaviorSubject } from 'rxjs';
 import { string_attribute, string_attribute_value_scope } from '../../40-utils/typeAliases';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
@@ -18,7 +19,7 @@ import { IAttributeRule } from './IAttributeRule';
 export declare class AttributesSystem extends AbstractSystem {
     private attributesRules;
     protected init(): Promise<void>;
-    registerAttributeRule(rule: IAttributeRule<attribute_value>): import('destroyable').Registration;
+    registerAttributeRule(rule: IAttributeRule<attribute_value>): Registration;
     /**
      *
      * Note: this is not async because when it need to do some async stuff it will return AsyncContentComponent immediatelly and load in in the fly

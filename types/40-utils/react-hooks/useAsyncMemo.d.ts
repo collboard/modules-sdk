@@ -11,15 +11,15 @@ import React from 'react';
  *
  * @collboard-modules-sdk
  */
-export declare function useAsyncMemo<T>(
-    factory: () => Promise<T> | undefined | null,
+export declare function useAsyncMemo<TValue>(
+    factory: () => Promise<TValue> | undefined | null,
     deps: React.DependencyList,
-): T | undefined;
-export declare function useAsyncMemo<T>(
-    factory: () => Promise<T> | undefined | null,
+): TValue | undefined;
+export declare function useAsyncMemo<TValue>(
+    factory: () => Promise<TValue> | undefined | null,
     deps: React.DependencyList,
-    initial: T,
-): T;
+    initial: TValue,
+): TValue;
 /**
  * TODO: Handle errors here
  * Note: Hook for modules must use same React as the main Collboard app

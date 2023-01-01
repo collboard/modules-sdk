@@ -4,9 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { Registration } from 'destroyable';
+import { Abstract2dArt } from '../../71-arts/26-Abstract2dArt';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
-import { Abstract2dArt } from './../../71-arts/26-Abstract2dArt';
 import { IExportFileOptions } from './interfaces/IExportFileOptions';
 import { IFileExportSupporter } from './interfaces/IFileExportSupporter';
 import { IFramable } from './interfaces/IFramable';
@@ -22,7 +23,7 @@ export declare class ExportSystem extends AbstractSystem {
     constructor(systems: ISystemsExtended, proxyUrl: URL);
     protected init(): Promise<void>;
     private fileSupporters;
-    registerFileSupport(fileSupporter: IFileExportSupporter): import('destroyable').Registration;
+    registerFileSupport(fileSupporter: IFileExportSupporter): Registration;
     /**
      * @deprecated use exportFiles OR prepareExportFiles instaed
      */

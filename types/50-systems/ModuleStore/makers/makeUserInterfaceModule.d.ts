@@ -21,5 +21,5 @@ export declare function makeUserInterfaceModule(protoModule: {
     manifest?: IModuleManifest;
     place: UserInterfaceElementPlace;
     order?: number;
-    createElement(systems: ISystems): Promisable<JSX.Element>;
+    render(systems: ISystems): Promisable<JSX.Element>;
 }): IModuleDefinition;

@@ -7,12 +7,12 @@
 import { string_module_name } from '../../40-utils/typeAliases';
 import { IAttribute } from './IAttribute';
 import { IAttributeInputRender } from './IAttributeInputRender';
-export interface IAttributeRule<T> {
+export interface IAttributeRule<TAttributeValue> {
     moduleName: string_module_name;
     attribute: IAttribute;
     /**
      * TODO: Probably get rid of standard/bonus and bring up priority
      */
     standard: boolean;
-    inputRender: IAttributeInputRender<T>;
+    inputRender: IAttributeInputRender<TAttributeValue>;
 }

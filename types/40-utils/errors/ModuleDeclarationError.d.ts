@@ -7,8 +7,9 @@
 import { HighOrderError } from './HighOrderError';
 export declare class ModuleDeclarationError extends HighOrderError {
     readonly name = 'ModuleDeclarationError';
+    constructor(lowOrderError: Error, highOrderExplanation: string);
 }
 export declare class ModuleDeclarationMissingManifestError extends Error {
-    constructor();
     readonly name = 'ModuleDeclarationMissingManifestError';
+    constructor();
 }

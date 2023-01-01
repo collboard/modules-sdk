@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IVectorData } from 'xyzt';
-import { number_positive, string_color } from './../40-utils/typeAliases';
+import { number_positive, string_color } from '../40-utils/typeAliases';
 import { ShapeArt } from './50-ShapeArt';
 /**
  *

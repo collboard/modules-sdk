@@ -5,12 +5,11 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
-import { IHandler } from '../../../../../40-utils/IHandler';
 import { IModuleSearchCriteria } from '../../../../../50-systems/ModuleStore/interfaces/IModuleSearchCriteria';
 export { CategorizedModal } from '../../../../../30-components/modal/categorized-modal/CategorizedModal';
 interface IModuleStoreModalComponentProps {
     search: IModuleSearchCriteria;
-    onSearchChange: IHandler<IModuleSearchCriteria>;
+    onSearchChange(value: IModuleSearchCriteria): void;
 }
 export declare function ModuleStoreModalComponent({
     search,

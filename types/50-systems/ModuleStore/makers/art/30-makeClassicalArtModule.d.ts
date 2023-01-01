@@ -4,16 +4,18 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IInstantiable } from 'everstorage';
-import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
+import { IInstantiable } from '../../../ArtSerializer/interfaces/IInstantiable';
+import { IModuleDefinition } from '../../interfaces/IModule';
+import { IModuleManifest } from '../../interfaces/IModuleManifest/IModuleManifest';
 /**
- * makeArtModule will make UI module
+ * @@x
+ * makeClassicalArtModule will make UI module
  *
  * Note: Module still needs to be declared
+ * @deprecated please use makeFunctionalArtModule
  * @collboard-modules-sdk
  */
-export declare function makeArtModule(
+export declare function makeClassicalArtModule(
     artClass: IInstantiable & {
         /**
          * Name which is unique for each art
@@ -23,8 +25,3 @@ export declare function makeArtModule(
         manifest: IModuleManifest;
     },
 ): IModuleDefinition;
-/** TODO:
- *  - And also support extended mode with :artSerializeRule: ISerializeRule<AbstractArt>
- *  - Add @scope/module@version prefix to rule
- *
- */

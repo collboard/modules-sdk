@@ -9,4 +9,8 @@
  *
  * @collboard-modules-sdk
  */
-export declare function difference<T>(a: Set<T>, b: Set<T>, isEqual?: (a: T, b: T) => boolean): Set<T>;
+export declare function difference<TItem>(
+    a: Set<TItem>,
+    b: Set<TItem>,
+    isEqual?: (a: TItem, b: TItem) => boolean,
+): Set<TItem>;

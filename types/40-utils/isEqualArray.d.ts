@@ -9,4 +9,8 @@
  *
  * @collboard-modules-sdk
  */
-export declare function isEqualArray<T>(a: Array<T>, b: Array<T>, isEqualItem?: (a: T, b: T) => boolean): boolean;
+export declare function isEqualArray<TItem>(
+    a: Array<TItem>,
+    b: Array<TItem>,
+    isEqualItem?: (a: TItem, b: TItem) => boolean,
+): boolean;

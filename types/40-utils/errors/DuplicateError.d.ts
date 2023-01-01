@@ -11,4 +11,5 @@
  */
 export declare class DuplicateError extends Error {
     readonly name = 'DuplicateError';
+    constructor(message: string);
 }
