@@ -551,12 +551,6 @@ export const ObjectUrl = (window as any).CollboardSdk.ObjectUrl;
 export const triggerFileDownload = (window as any).CollboardSdk.triggerFileDownload;
 
 /**
- * Deep clone an object
- * @collboard-modules-sdk
- */
-export const deepClone = (window as any).CollboardSdk.deepClone;
-
-/**
  *
  * @collboard-modules-sdk
  */
@@ -659,6 +653,7 @@ export const InvalidError = (window as any).CollboardSdk.InvalidError;
  * This util catches an error and rethrows more meaningfull error message to better debugging
  * TODO: More oprions how to handle and rewrap the error - for example by a function
  *
+ * @deprecated this is used only in one place internally and will be removed in next major version
  * @collboard-modules-sdk
  */
 export const meaningfullError = (window as any).CollboardSdk.meaningfullError;
@@ -762,15 +757,6 @@ export const filterWithLimit = (window as any).CollboardSdk.filterWithLimit;
 export const fitInside = (window as any).CollboardSdk.fitInside;
 
 /**
- * Flattern array by one level
- * @param array for example [[1,2],[3,4]]
- * @return for example [1,2,3,4]
- *
- * @collboard-modules-sdk
- */
-export const flatternArray = (window as any).CollboardSdk.flatternArray;
-
-/**
  * Flip negative size values to positive and change according to it translate
  * Or preserves both size and translate when size is positive
  * If there is only one axis negative, it will be flipped and positive axis will be preserved
@@ -830,11 +816,6 @@ export const IFactorableWithSystems = (window as any).CollboardSdk.IFactorableWi
  * @collboard-modules-sdk
  */
 export const factorWithSystems = (window as any).CollboardSdk.factorWithSystems;
-
-/**
- * @collboard-modules-sdk
- */
-export const IHandler = (window as any).CollboardSdk.IHandler;
 
 /**
  * Adds a white background to an canvas image and returns it as the new canvas
@@ -1036,7 +1017,7 @@ export const prettifyHtml = (window as any).CollboardSdk.prettifyHtml;
 export const loadAndRunExternalScript = (window as any).CollboardSdk.loadAndRunExternalScript;
 
 /**
- *  Utility which can send next value to BehaviorSubject based on mutation function.
+ * Utility which can send next value to BehaviorSubject based on mutation function.
  *
  * @collboard-modules-sdk
  */
@@ -1048,6 +1029,16 @@ export const nextWithMutation = (window as any).CollboardSdk.nextWithMutation;
  * @collboard-modules-sdk
  */
 export const deepMapObject = (window as any).CollboardSdk.deepMapObject;
+
+/**
+ * @@x
+ *
+ * @param input
+ * @returns
+ *
+ * @collboard-modules-sdk
+ */
+export const isPureObject = (window as any).CollboardSdk.isPureObject;
 
 /**
  * Parse Collboard module name
@@ -1920,6 +1911,17 @@ export const BoardApiClient = (window as any).CollboardSdk.BoardApiClient;
 export const AppState = (window as any).CollboardSdk.AppState;
 
 /**
+ * ArtSerializer serializes and deseriales Collboard arts and other objects
+ *
+ * - **Serializer** is generic serializer which can work with any rules; it works synchronously
+ * - **Serializer with basic rules** is Serializer which has registered basic rules; it works synchronously
+ * - **ArtSerializer** serializes and deseriales Collboard arts and other objects; it works asynchronously
+ *
+ * @collboard-system
+ */
+export const ArtSerializer = (window as any).CollboardSdk.ArtSerializer;
+
+/**
  * ArtVersionSystem synchronizes the arts with the remote server.
  *
  * @collboard-system
@@ -1970,7 +1972,8 @@ export const BusinessName = (window as any).CollboardSdk.BusinessName;
 export const ClosePreventionSystem = (window as any).CollboardSdk.ClosePreventionSystem;
 
 /**
- * FakeClosePreventionSystem is a implementation of IClosePreventionSystem which satisfy the interface but does nothing.
+ * FakeClosePreventionSystem is a implementation of IClosePreventionSystem which implements the interface but does nothing
+ *
  * @collboard-modules-sdk
  */
 export const FakeClosePreventionSystem = (window as any).CollboardSdk.FakeClosePreventionSystem;
@@ -2133,6 +2136,17 @@ export const textureToSvg = (window as any).CollboardSdk.textureToSvg;
  * @collboard-modules-sdk
  */
 export const IArt = (window as any).CollboardSdk.IArt;
+
+/**
+ * @@x
+ *
+ * - **IArt** @@x
+ * - **IArtData** @@x
+ *
+ *
+ * @collboard-modules-sdk
+ */
+export const IArtData = (window as any).CollboardSdk.IArtData;
 
 /**
  * @collboard-modules-sdk
@@ -2538,6 +2552,41 @@ export const IModuleStoreConnector = (window as any).CollboardSdk.IModuleStoreCo
 export const IModuleStoreConnectorSearchResult = (window as any).CollboardSdk.IModuleStoreConnectorSearchResult;
 
 /**
+ * @@x
+ *
+ * @collboard-modules-sdk
+ */
+export const makeArtModule = (window as any).CollboardSdk.makeArtModule;
+
+/**
+ * @@x
+ * makeClassicalArtModule will make UI module
+ *
+ * Note: Module still needs to be declared
+ * @deprecated please use makeFunctionalArtModule
+ * @collboard-modules-sdk
+ */
+export const makeClassicalArtModule = (window as any).CollboardSdk.makeClassicalArtModule;
+
+/**
+ * @@x
+ *
+ * Note: Module still needs to be declared
+ * @collboard-modules-sdk
+ */
+export const makeFunctionalArtModule = (window as any).CollboardSdk.makeFunctionalArtModule;
+
+/**
+ * @@x
+ *
+ * @param options @@x
+ * @returns @@x
+ *
+ * @collboard-modules-sdk
+ */
+export const makeCanvasArtModule = (window as any).CollboardSdk.makeCanvasArtModule;
+
+/**
  * TODO: How to do article translations and flags in window top
  * TODO: Možná by tady nahoře mohlo být menu k dalším stránkám. ArticleSet?
  * TODO: Live reloaded content (like stats)
@@ -2550,14 +2599,6 @@ export const IModuleStoreConnectorSearchResult = (window as any).CollboardSdk.IM
  * @collboard-modules-sdk
  */
 export const makeArticlesSetModule = (window as any).CollboardSdk.makeArticlesSetModule;
-
-/**
- * makeArtModule will make UI module
- *
- * Note: Module still needs to be declared
- * @collboard-modules-sdk
- */
-export const makeArtModule = (window as any).CollboardSdk.makeArtModule;
 
 /**
  *
@@ -2603,6 +2644,16 @@ export const makeModalModule = (window as any).CollboardSdk.makeModalModule;
  * @collboard-modules-sdk
  */
 export const makeMultiModule = (window as any).CollboardSdk.makeMultiModule;
+
+/**
+ * @@x
+ *
+ * @param options @@x
+ * @returns @@x
+ *
+ * @collboard-modules-sdk
+ */
+export const makeSimpleArtoolModules = (window as any).CollboardSdk.makeSimpleArtoolModules;
 
 /**
  * Maker for creating tray-like modules (like H-edu or Montessori)
@@ -3195,6 +3246,14 @@ export const IBehavior = (window as any).CollboardSdk.IBehavior;
  * @collboard-modules-sdk
  */
 export const createSelectionToolBehavior = (window as any).CollboardSdk.createSelectionToolBehavior;
+
+/**
+ * @@x
+ *
+ * [👘]
+ * @collboard-modules-sdk
+ */
+export const touchFrameToArtFrame = (window as any).CollboardSdk.touchFrameToArtFrame;
 
 /**
  * Conversion table from misc units to board pixels
