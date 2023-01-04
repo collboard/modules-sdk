@@ -4,13 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IUrlVariables } from './IUrlVariables';
-export declare function encodeUrl({
-    protocol,
-    host,
-    businessName,
-    uriId,
-    extension,
-    moduleName: module,
-    modulePath,
-}: IUrlVariables): URL;
+/**
+ * @@x
+ */
+export declare class DetailedError<TDetails extends {} = Record<string, unknown>> extends Error {
+    readonly details: TDetails;
+    constructor(message: string, details: TDetails);
+}

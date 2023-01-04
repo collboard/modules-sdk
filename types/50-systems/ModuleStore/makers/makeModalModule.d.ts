@@ -39,6 +39,8 @@ export declare function createModalTitle({
 }): string | React.ReactNode;
 export {};
 /**
+ * TODO: Remove all spinning loaders
+ * TODO: Split into two files in folder makeModalModule and anotate createModalTitle
  * TODO: [Optimization][InitialLoading] Optimize this for initial loading
  * TODO: Changing title of modal
  */

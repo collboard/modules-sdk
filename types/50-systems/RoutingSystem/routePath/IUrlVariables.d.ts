@@ -34,7 +34,7 @@ export interface IUrlVariables {
     businessName: BusinessName;
     uriId: string_uri_part | null;
     extension?: string_file_extension | null;
-    module?: string_module_name | null;
+    moduleName?: string_module_name | null;
     modulePath?: string_uri | null;
     /**
      * Note: Only for everstorage library

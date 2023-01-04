@@ -6,7 +6,9 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Registration } from 'destroyable';
 import { JsonValue } from 'type-fest';
+import { Vector } from 'xyzt';
 import { ISerializable } from './interfaces/ISerializable';
+import { ISerializer } from './interfaces/ISerializer';
 import { ISerializerRule } from './interfaces/ISerializerRule';
 /**
  * Serializer can serialize/deserialize objects into pure JSON objects
@@ -15,12 +17,12 @@ import { ISerializerRule } from './interfaces/ISerializerRule';
  * - **Serializer with basic rules** is Serializer which has registered basic rules; it works synchronously
  * - **ArtSerializer** serializes and deseriales Collboard arts and other objects; it works asynchronously
  */
-export declare class Serializer {
+export declare class Serializer<TSerializable extends ISerializable> implements ISerializer<TSerializable> {
     /**
      * @@x
      * @returns Serializer @@x
      */
-    static createSerializerWithBasicRules(): Serializer;
+    static createSerializerWithBasicRules(): Serializer<boolean | number | string | object | Date | Vector>;
     /**
      * @@x
      */
@@ -41,7 +43,7 @@ export declare class Serializer {
      * @param value to be serialized
      * @returns pure JSON object
      */
-    serialize<TSerializable extends ISerializable>(value: TSerializable): JsonValue;
+    serialize(value: TSerializable): JsonValue;
     /**
      * Take instanced object and convert it to pure JSON
      * With recursion protection
@@ -50,10 +52,7 @@ export declare class Serializer {
      * @param recursionValues stack all the recursion values
      * @returns
      */
-    serializeWithRecursionProtection<TSerializable extends ISerializable>(
-        value: TSerializable,
-        recursionValues: Array<ISerializable>,
-    ): JsonValue;
+    serializeWithRecursionProtection(value: TSerializable, recursionValues: Array<ISerializable>): JsonValue;
     /**
      * Take JSON made by serialize method and deserialize it
      *

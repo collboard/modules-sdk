@@ -12,10 +12,10 @@ import { ICommitData } from '../../10-database/interfaces/ICommitData';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IArt } from '../CollSpace/IArt';
-import { DeserializationError } from './errors/DeserializationError';
-import { SerializationError } from './errors/SerializationError';
+import { SerializationError } from './errors/10-SerializationError';
+import { DeserializationError } from './errors/11-DeserializationError';
+import { ISerializer } from './interfaces/ISerializer';
 import { ISerializerRule } from './interfaces/ISerializerRule';
-import { Serializer } from './Serializer';
 /**
  * @@x
  */
@@ -29,12 +29,12 @@ declare type ICollboardSerializable = Commit | ICommitData | IArt | AbstractArt 
  *
  * @collboard-system
  */
-export declare class ArtSerializer extends AbstractSystem {
+export declare class ArtSerializer extends AbstractSystem implements ISerializer<ICollboardSerializable> {
     /**
      * @@x
      * Using composition over inheritance patern
      */
-    readonly serializer: Serializer;
+    private readonly serializer;
     protected init(): Promise<void>;
     /**
      * @@x copy from serializer
