@@ -174,7 +174,7 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
         return `Modules are working successfully.`;
     }
 
-    public render( options: IColldevDevelopOptions) {
+    public render(options: IColldevDevelopOptions) {
         return (
             <OutputComponent
                 {...{
@@ -197,9 +197,9 @@ export class ColldevDevelop extends Destroyable implements ICommand<IColldevDeve
 
     public async destroy() {
         await super.destroy();
-        await this.compiler.destroy();
-        await this.server.destroy();
-        await this.browserSpawner.destroy();
+        await this.compiler?.destroy();
+        await this.server?.destroy();
+        await this.browserSpawner?.destroy();
     }
 }
 

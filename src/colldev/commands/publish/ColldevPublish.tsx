@@ -42,8 +42,7 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
     public async run(options: IColldevPublishOptions) {
         const { workingDir, entryPath, moduleStoreUrl, token } = options;
 
-        // TODO: Cleanup of .colldev folder - make some univeral function from cleanupTemporaryAssets
-
+  
         this.compiler = new ProductionCompiler({
             workingDir,
             entryPath,

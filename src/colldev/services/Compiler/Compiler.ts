@@ -96,8 +96,6 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 await this.createWebpackConfig(),
             );
 
-            //console.log(this.webpackConfig);
-            //process.exit(0);
 
             const mainBundlePath: string_file_absolute_path = join(
                 this.webpackConfig!.output!.path!,

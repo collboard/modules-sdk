@@ -5,16 +5,17 @@ import { Instance, render } from 'ink';
 import * as React from 'react';
 import spaceTrim from 'spacetrim';
 import { string_folder_relative_path } from '../../types';
+import { IColldevOptions } from './IColldevOptions';
+import { ICommand } from './commands/ICommand';
 import { ColldevBuild } from './commands/build/ColldevBuild';
 import { ColldevDevelop } from './commands/develop/ColldevDevelop';
-import { ICommand } from './commands/ICommand';
 import { ColldevPublish } from './commands/publish/ColldevPublish';
 import { ColldevTest } from './commands/test/ColldevTest';
-import { IColldevOptions } from './IColldevOptions';
+import { cleanupOldTemporaryAssets } from './services/Compiler/utils/cleanupOldTemporaryAssets';
 import { getColldevConfig } from './services/Compiler/utils/getColldevConfig';
+import { ErrorBoundary } from './utils/ErrorBoundary';
 import { compactErrorReport } from './utils/cliLogging/compactErrorReport';
 import { compactSuccessReport } from './utils/cliLogging/compactSuccessReport';
-import { ErrorBoundary } from './utils/ErrorBoundary';
 import { getColldevPackageJsonContent } from './utils/getColldevPackageJsonContent';
 import { jsonReplacer } from './utils/jsonReplacer';
 
@@ -63,12 +64,10 @@ export class Colldev extends Destroyable implements IDestroyable {
                     `),
                 )
                 .action(async (workingDir?: string_folder_relative_path, flags?: IColldevOptions) => {
-                    //console.info(`${command.constructor.name}:`, { path, options });
-                    //process.exit();
-
                     workingDir = workingDir || '.';
-                    const config = await getColldevConfig(workingDir).catch((error) => {
+                    const config = await getColldevConfig(workingDir).catch(async (error) => {
                         compactErrorReport(error);
+                        await this.destroy();
                         process.exit(1);
                     });
                     const options: IColldevOptions = { workingDir, ...config, ...config[command.name], ...flags };
@@ -82,60 +81,67 @@ export class Colldev extends Destroyable implements IDestroyable {
 
                         // TODO: DRY
                         runningCommand
-                            .then((finalSuccessMessage) => {
-                                this.renderingInstance?.unmount();
+                            .then(async (finalSuccessMessage) => {
                                 console.info(chalk.green(finalSuccessMessage));
+                                await this.destroy();
                                 process.exit(0);
                             })
-                            .catch((error: Error) => {
-                                this.renderingInstance?.unmount();
-
+                            .catch(async (error: Error) => {
                                 // TODO: Probbably use compactErrorReport
                                 console.info(
                                     chalk.bgRed(chalk.white(error.name + ': ')) + ' ' + chalk.red(error.message),
                                 );
                                 console.info(chalk.redBright((error.stack || '').replace(error.message, '')));
+                                await this.destroy();
                                 process.exit(1);
                             });
                     } else if (output === 'compact') {
                         // TODO: DRY
                         runningCommand
-                            .then((finalSuccessMessage) => {
+                            .then(async (finalSuccessMessage) => {
                                 compactSuccessReport(finalSuccessMessage);
+                                await this.destroy();
                                 process.exit(0);
                             })
-                            .catch((error: Error) => {
+                            .catch(async (error: Error) => {
                                 compactErrorReport(error);
+                                await this.destroy();
                                 process.exit(1);
                             });
                     } else if (output === 'minimal') {
                         // TODO: DRY
                         runningCommand
-                            .then(() => {
+                            .then(async () => {
                                 console.info(chalk.green(chalk.bold(`Success`)));
+                                await this.destroy();
                                 process.exit(0);
                             })
-                            .catch((error: Error) => {
+                            .catch(async (error: Error) => {
                                 // TODO: Probbably use compactErrorReport with some isMinimal flag
                                 console.error(chalk.bgRed(chalk.white(error.name)));
+                                await this.destroy();
                                 process.exit(1);
                             });
                     } else if (output === 'json' || output === 'json-raw') {
                         const jsonSpace = output === 'json' ? 4 : undefined;
                         runningCommand
-                            .then(() => {
+                            .then(async () => {
                                 console.info(JSON.stringify(command.status(), jsonReplacer, jsonSpace));
+                                await this.destroy();
                                 process.exit(0);
                             })
-                            .catch((error: Error) => {
-                                console.info(JSON.stringify({ ...command.status(), error }, jsonReplacer, jsonSpace));
+                            .catch(async (error: Error) => {
                                 // TODO: Probbably show the error
+                                console.info(JSON.stringify({ ...command.status(), error }, jsonReplacer, jsonSpace));
+                                await this.destroy();
                                 process.exit(1);
                             });
                     } else {
                         console.info(
                             chalk.red(`Unknown type of output "${output}", please use "human", "json" or "json-raw".`),
                         );
+
+                        await this.destroy();
                         process.exit(1);
                     }
                 });
@@ -146,8 +152,13 @@ export class Colldev extends Destroyable implements IDestroyable {
 
     public async destroy() {
         await super.destroy();
+
+        this.renderingInstance?.unmount();
+
         for (const command of this.commands) {
             await command.destroy();
         }
+
+        await cleanupOldTemporaryAssets();
     }
 }
