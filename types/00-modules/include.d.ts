@@ -33,7 +33,7 @@ import '../71-arts/50-HTMLArt';
 import '../71-arts/50-IframeArt';
 import '../71-arts/50-ImageArt';
 import '../71-arts/50-LineArt';
-import '../71-arts/50-LoadingArt';
+import '../71-arts/30-LoadingArt';
 import '../71-arts/50-PointArt/50-PointArt';
 import '../71-arts/50-PolygonArt/PolygonArt';
 import '../71-arts/50-ShapeArt';

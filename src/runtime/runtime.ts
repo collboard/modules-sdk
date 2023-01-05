@@ -3075,6 +3075,21 @@ export const virtualCornerstoneArt = (window as any).CollboardSdk.virtualCorners
 export const DeletedArt = (window as any).CollboardSdk.DeletedArt;
 
 /**
+ * Art which renders loading of something
+ * It is usefull primarly with virtual commits:
+ *  >
+ *  > virtualArtVersioningSystem
+    >    .createPrimaryOperation()
+    >    .newArts(
+    >      new LoadingArt('aaa').setShift((collSpace.pickPoint(touch.firstFrame.position)).point),
+    >    )
+    >    .persist();
+ *
+ * @collboard-modules-sdk
+ */
+export const LoadingArt = (window as any).CollboardSdk.LoadingArt;
+
+/**
  * ExportArt is art for exporting content from the board.
  *
  * @deprecated do this functionality better in the future via FrameArt
@@ -3148,21 +3163,6 @@ export const ImageArt = (window as any).CollboardSdk.ImageArt;
  * @collboard-modules-sdk
  */
 export const LineArt = (window as any).CollboardSdk.LineArt;
-
-/**
- * Art which renders loading of something
- * It is usefull primarly with virtual commits:
- *  >
- *  > virtualArtVersioningSystem
-    >    .createPrimaryOperation()
-    >    .newArts(
-    >      new LoadingArt('aaa').setShift((collSpace.pickPoint(touch.firstFrame.position)).point),
-    >    )
-    >    .persist();
- *
- * @collboard-modules-sdk
- */
-export const LoadingArt = (window as any).CollboardSdk.LoadingArt;
 
 /**
  * Just a point/flag/marker or whatever pointy on the board

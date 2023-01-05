@@ -11,3 +11,6 @@ export declare class DetailedError<TDetails extends {} = Record<string, unknown>
     readonly details: TDetails;
     constructor(message: string, details: TDetails);
 }
+/**
+ * TODO: Why handleDetailedError not working on production
+ */
