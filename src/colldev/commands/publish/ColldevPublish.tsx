@@ -10,12 +10,12 @@ import spaceTrim from 'spacetrim';
 import { promisify } from 'util';
 import { PUBLISH_BUILD_RELATIVE_PATH } from '../../config';
 import { CompilerStatusOutputComponent } from '../../services/Compiler/CompilerStatusOutputComponent';
-import { PublishingError } from '../../services/Compiler/errors/PublishingError';
 import { ProductionCompiler } from '../../services/Compiler/ProductionCompiler';
+import { PublishingError } from '../../services/Compiler/errors/PublishingError';
 import { compilerStatusToJson } from '../../services/Compiler/utils/compilerStatusToJson';
+import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
 import { forServicesReady } from '../../utils/forServicesReady';
 import { getUniqueFoldername } from '../../utils/getUniqueFoldername';
-import { ObservableContentComponent } from '../../utils/ObservableContentComponent';
 import { ICommand } from '../ICommand';
 import { IColldevPublishOptions } from './IColldevPublishOptions';
 import { IColldevPublishStatus } from './IColldevPublishStatus';
@@ -42,7 +42,6 @@ export class ColldevPublish extends Destroyable implements ICommand<IColldevPubl
     public async run(options: IColldevPublishOptions) {
         const { workingDir, entryPath, moduleStoreUrl, token } = options;
 
-  
         this.compiler = new ProductionCompiler({
             workingDir,
             entryPath,
