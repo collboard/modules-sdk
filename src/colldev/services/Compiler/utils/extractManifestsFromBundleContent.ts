@@ -47,7 +47,7 @@ export async function extractManifestsFromBundleContent(bundleContent: string): 
     await page.addScriptTag({ content: bundleContent });
 
     await forTime(WAIT_FOR_MODULES_MS);
-    await browser.close();
+    await browser?.close();
 
     return manifests;
 }

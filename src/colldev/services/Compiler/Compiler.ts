@@ -96,7 +96,6 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
                 await this.createWebpackConfig(),
             );
 
-
             const mainBundlePath: string_file_absolute_path = join(
                 this.webpackConfig!.output!.path!,
                 this.webpackConfig!.output!.filename! as string,
@@ -164,7 +163,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
     public async destroy() {
         await super.destroy();
         // TODO: await cleanupAssets();
-        this.compiler.close(() => {
+        this.compiler?.close(() => {
             /* TODO: What is this callback about */
         });
     }
