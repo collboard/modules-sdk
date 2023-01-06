@@ -1,6 +1,10 @@
 import { join } from 'path';
 import { execCommand } from './test-utils/execCommand/execCommand';
 
+/**
+ * Note: @@x
+ */
+
 jest.setTimeout(1000 * 25);
 jest.retryTimes(2);
 
