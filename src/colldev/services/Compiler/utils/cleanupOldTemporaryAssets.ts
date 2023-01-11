@@ -23,5 +23,11 @@ export async function cleanupOldTemporaryAssets() {
         }
     }
 
-    await deleteEmptyDirectories(COLLDEV_PATH);
+    await deleteEmptyDirectories(COLLDEV_PATH).catch((error) => {
+        if (error instanceof Error && error.message === 'Can not delete .colldev') {
+            return;
+        } else {
+            throw error;
+        }
+    });
 }
