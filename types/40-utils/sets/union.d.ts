@@ -9,4 +9,4 @@
  *
  * @collboard-modules-sdk
  */
-export declare function union<T>(...sets: Array<Set<T>>): Set<T>;
+export declare function union<TItem>(...sets: Array<Set<TItem>>): Set<TItem>;

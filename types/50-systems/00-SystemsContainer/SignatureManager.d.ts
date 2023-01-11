@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { TouchController } from 'touchcontroller';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
-import { IModuleManifest } from '../ModuleStore/interfaces/IModuleManifest';
+import { IModuleManifest } from '../ModuleStore/interfaces/IModuleManifest/IModuleManifest';
 import { ISystems } from './ISystems';
 declare type ISignableEntity = ISystems | AbstractSystem | TouchController;
 declare type ISignature = IModuleManifest | null;
@@ -20,7 +20,10 @@ declare class SignatureManager {
      * @param signature
      * @returns Signed version of given entity; it does not mutate given entity it returns proxied version with signature.
      */
-    sign<T extends ISignableEntity>(signableEntity: T, signature: ISignature): T;
+    sign<TSignableEntity extends ISignableEntity>(
+        signableEntity: TSignableEntity,
+        signature: ISignature,
+    ): TSignableEntity;
     /**
      * Gets signature of given entity.
      */

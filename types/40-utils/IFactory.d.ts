@@ -7,16 +7,16 @@
 /**
  * @collboard-modules-sdk
  */
-export declare type Factory<T> = () => T;
+export declare type Factory<TValue> = () => TValue;
 /**
  * @collboard-modules-sdk
  */
-export declare type Factorable<T> = T | Factory<T>;
+export declare type Factorable<TValue> = TValue | Factory<TValue>;
 /**
  *
  * @collboard-modules-sdk
  */
-export declare function factor<T>(valueOrFunction: Factorable<T>): T;
+export declare function factor<Value>(valueOrFunction: Factorable<Value>): Value;
 /**
  *
  * @collboard-modules-sdk

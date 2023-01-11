@@ -11,10 +11,10 @@ import { IUseLoadableResult, IUseLoadableResultError, IUseLoadableResultPending 
  *
  * @collboard-modules-sdk
  */
-export declare function useObservable<T>(
-    observable: BehaviorSubject<T>,
-): Exclude<IUseLoadableResult<T>, IUseLoadableResultPending | IUseLoadableResultError>;
-export declare function useObservable<T>(observable: Observable<T>): IUseLoadableResult<T>;
+export declare function useObservable<TValue>(
+    observable: BehaviorSubject<TValue>,
+): Exclude<IUseLoadableResult<TValue>, IUseLoadableResultPending | IUseLoadableResultError>;
+export declare function useObservable<TValue>(observable: Observable<TValue>): IUseLoadableResult<TValue>;
 /**
  * TODO: [🐞] Proppably also allow to override deps like in usePromise
  * TODO: [🧵] Move to external LIB for react loadables

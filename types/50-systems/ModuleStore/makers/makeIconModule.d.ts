@@ -9,7 +9,7 @@ import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { ToolbarName } from '../../ToolbarSystem/0-ToolbarSystem';
 import { IToolbarIcon } from '../../ToolbarSystem/IToolbarIcon';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 /**
  *
  * @collboard-modules-sdk

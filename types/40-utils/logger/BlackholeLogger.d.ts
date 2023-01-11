@@ -11,6 +11,7 @@ export declare class BlackholeLogger implements ILogger, ISubLogger {
     warn(): this;
     error(): this;
     trace(): this;
+    appear(): this;
     end(): void;
     group(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
     groupCollapsed(groupName?: string, ...optionalParams: Array<any>): ISubLogger;

@@ -32,14 +32,14 @@ export interface IToolbarIcon extends IIconAnonymous {
      *
      * @default true
      *
-     *  TODO: ✨ Maybe add is prefix
+     *  TODO: [✨] Maybe add is prefix
      */
     autoSelect?: boolean;
     /**
      * If user click on icon when it is selected should it be unselected
      * Note: working only with onSelect (not onClick)
      *
-     * TODO: ✨ Maybe add is prefix
+     * TODO: [✨] Maybe add is prefix
      */
     togglable?: boolean;
     /**
@@ -52,7 +52,7 @@ export interface IToolbarIcon extends IIconAnonymous {
     /**
      * Focus scope represent type of focus that is taken by one think in an app.
      *
-     * 1) You can use enum **FocusScopeName** to pick from common focus scopes
+     * 1) You can use [🍿] enum **FocusScopeName** to pick from common focus scopes
      * 2) Or you can define your own by your own unique **string**
      * 3) And if you will use **null** it will be behaving as its own unique scope
      *
@@ -69,10 +69,13 @@ export interface IToolbarIcon extends IIconAnonymous {
      * This shortcut will be automatically registered in shortcut system
      */
     shortcut?: IShortcut;
-    boardCursor?: string_css_cursor;
+    boardCursor?: string_css_cursor | string;
     /**
      * Extra menu which will be
      *
      */
     menu?: Factorable<Promisable<JSX.Element>>;
 }
+/**
+ *  TODO: [💽] Maybe allow IToolbarIcon to be just a string_char_emoji
+ */

@@ -14,3 +14,6 @@ import { string_css } from '../typeAliases';
  * @collboard-modules-sdk
  */
 export declare function prettifyCss(css: string_css): string_css;
+/**
+ * TODO: [Optimization][InitialLoading] Optimize this for initial loading
+ */

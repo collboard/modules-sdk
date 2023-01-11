@@ -5,3 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export {};
+/**
+ * TODO: [🏰] We want to be able selecting, copying, exporting, etc. arts in view mode
+ *       Now it is messed by the selection which is always behaving like with edit capabilities
+ */

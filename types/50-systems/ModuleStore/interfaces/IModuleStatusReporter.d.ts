@@ -7,7 +7,7 @@
 import { IDestroyable } from 'destroyable';
 import { BehaviorSubject } from 'rxjs';
 import { ModuleStatus } from '../ModuleStatus';
-import { IModuleManifest } from './IModuleManifest';
+import { IModuleManifest } from './IModuleManifest/IModuleManifest';
 /**
  * IModuleStatusReporter can tell if the module is installed or not
  *

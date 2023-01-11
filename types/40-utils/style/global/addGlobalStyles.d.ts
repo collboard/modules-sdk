@@ -16,5 +16,6 @@ import { string_html } from '../../typeAliases';
  */
 export declare function addGlobalStyles(html: string_html): Promise<string_html>;
 /**
+ * TODO: [Optimization][InitialLoading] Optimize this for initial loading
  * TODO: [🐾] Optimize HTML native export
  */

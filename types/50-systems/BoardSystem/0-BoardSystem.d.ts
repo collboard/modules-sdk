@@ -5,8 +5,8 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { BehaviorSubject } from 'rxjs';
+import { string_uriid } from '../../40-utils/typeAliases';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
-import { string_uriid } from './../../40-utils/typeAliases';
 import {
     IBoardSystem,
     IBoardSystem_createNewBoard_request,

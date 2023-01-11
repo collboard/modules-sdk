@@ -15,6 +15,10 @@ export const VM_ERRORS_TEMPORARY_PATH = join(process.cwd(), '.colldev/vm/tmp');
 export const DEVELOP_TEMPORARY_PATH = join(process.cwd(), '.colldev/develop/tmp');
 export const TEST_TEMPORARY_RELATIVE_PATH = '.colldev/test/tmp';
 export const PUBLISH_BUILD_RELATIVE_PATH = '.colldev/publish';
+export const COLLDEV_PATH = join(
+    process.cwd(),
+    '.colldev' /* <- TODO: DRY above - use COLLDEV_PATH in VM_ERRORS_TEMPORARY_PATH, DEVELOP_TEMPORARY_PATH,... */,
+);
 
 export const COLLDEV_CONFIG_BASENAMES = [
     'colldev.config.js',

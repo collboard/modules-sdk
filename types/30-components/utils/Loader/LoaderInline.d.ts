@@ -38,3 +38,6 @@ export declare function LoaderInline({
     canLoadForever,
 }: ILoaderInlineProps): JSX.Element;
 export {};
+/**
+ * TODO: [☮️] Implement new loading /handwritten/ design
+ */

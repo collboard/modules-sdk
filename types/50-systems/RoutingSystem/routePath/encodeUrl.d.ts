@@ -11,6 +11,6 @@ export declare function encodeUrl({
     businessName,
     uriId,
     extension,
-    module,
+    moduleName: module,
     modulePath,
 }: IUrlVariables): URL;

@@ -8,7 +8,7 @@ import { ITraySimpleDefinition } from '../../../40-utils/trayModules/interfaces/
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IToolbarIcon } from '../../ToolbarSystem/IToolbarIcon';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 /**
  * Maker for creating tray-like modules
  * This is the simple version of the maker which is usefull for creating modules with have predefined list of items which can be stored in as pure JSON

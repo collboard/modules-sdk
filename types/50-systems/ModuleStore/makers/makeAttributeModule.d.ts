@@ -9,15 +9,21 @@ import { Promisable } from 'type-fest';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IAttribute } from '../../AttributesSystem/IAttribute';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
-export interface IAttributeProtoModule<T> {
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
+export interface IAttributeProtoModule<TAttributeValue> {
     manifest: IModuleManifest;
     attribute: IAttribute;
     standard: boolean;
-    inputRender(value: T, onChange: (value: T) => void, systems: ISystems): Promisable<JSX.Element>;
+    inputRender(
+        value: TAttributeValue,
+        onChange: (value: TAttributeValue) => void,
+        systems: ISystems,
+    ): Promisable<JSX.Element>;
 }
 /**
  *
  * @collboard-modules-sdk
  */
-export declare function makeAttributeModule<T>(protoModule: IAttributeProtoModule<T>): IModuleDefinition;
+export declare function makeAttributeModule<TAttributeValue>(
+    protoModule: IAttributeProtoModule<TAttributeValue>,
+): IModuleDefinition;

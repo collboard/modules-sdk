@@ -7,5 +7,6 @@
 /// <reference types="react" />
 export declare function RootComponentForWelcome(): JSX.Element;
 /**
+ * TODO: [☮️] Remove all initial <Loader/> and <LoaderInline/>
  * TODO: [🏊‍♂️] Better naming and distinction of Collboard-specific components vs utils components
  */

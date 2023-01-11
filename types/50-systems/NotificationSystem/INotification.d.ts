@@ -11,7 +11,7 @@ import { IMessage } from '../TranslationsSystem/interfaces/IMessage';
  * Similar interface to Notification Web API
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Notification
  *
- * @collboard sdk
+ * @collboard-modules-sdk
  */
 export interface INotification {
     /**
@@ -31,14 +31,16 @@ export interface INotification {
     readonly href?: string_url;
 }
 /**
- * @collboard sdk
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
+ * @collboard-modules-sdk
  */
 export declare enum NotificationPlace {
     Board = 'BOARD',
     WelcomeModalAnnouncement = 'ANNOUNCEMENT',
 }
 /**
- * @collboard sdk
+ * @collboard-modules-sdk
  */
 export interface INotificationAction {
     /**

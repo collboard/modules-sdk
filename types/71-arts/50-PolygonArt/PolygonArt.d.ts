@@ -6,11 +6,10 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { ITransformData, IVectorData, Vector } from 'xyzt';
-import { number_positive } from '../../40-utils/typeAliases';
+import { number_positive, string_color, string_module_name } from '../../40-utils/typeAliases';
 import { IAppearance } from '../../50-systems/CollSpace/appearance/IAppearance';
 import { IArt } from '../../50-systems/CollSpace/IArt';
 import { Abstract2dArt } from '../26-Abstract2dArt';
-import { string_color } from './../../40-utils/typeAliases';
 import { IPolygonShape } from './IPolygonShape';
 /**
  * Universal polygon art with N points
@@ -24,12 +23,14 @@ export declare class PolygonArt extends Abstract2dArt implements IArt<IPolygonSh
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     private minX;
     private maxX;
     private minY;
     private maxY;
     constructor(shape: IPolygonShape, appearance: IAppearance, transform: ITransformData);
+    get moduleName(): string_module_name;
     private get path();
     get topLeft(): Vector;
     get bottomRight(): Vector;

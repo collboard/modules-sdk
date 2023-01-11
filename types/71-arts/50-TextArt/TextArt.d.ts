@@ -6,9 +6,9 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { IVectorData, Vector } from 'xyzt';
+import { string_color } from '../../40-utils/typeAliases';
+import { ISystems } from '../../50-systems/00-SystemsContainer/ISystems';
 import { Abstract2dArt } from '../26-Abstract2dArt';
-import { string_color } from './../../40-utils/typeAliases';
-import { ISystems } from './../../50-systems/00-SystemsContainer/ISystems';
 import { IListStyle } from './interfaces/IListStyle';
 /**
  * @collboard-modules-sdk
@@ -24,6 +24,7 @@ export declare class TextArt extends Abstract2dArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     constructor(
         content: string,
@@ -51,5 +52,7 @@ export declare class TextArt extends Abstract2dArt {
     render(/* @deprecated */ isSelected: boolean, systems: ISystems): Promise<JSX.Element>;
 }
 /**
+ * TODO: [👀] Focus cursor as a thing which better keeps focus
+ * TODO: [👀] Focus cursor from other users in edited texts
  * TODO: [🍒] Every Art should look like this + what do render method here should do RenderSystem OR ArtSchell OR sth. like that
  */

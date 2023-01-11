@@ -12,7 +12,7 @@ interface IHtmlPreviewFileComponentProps {
 /**
  * Note: Need to be used inside of a module
  *
- * @not-collboard-modules-sdk too specific that is used only in @collboard/html
+ * @not-collboard-modules-sdk too specific that is used only in @collboard/internal/html
  */
 export declare function HtmlPreviewFileComponent({ scope }: IHtmlPreviewFileComponentProps): JSX.Element;
 export {};

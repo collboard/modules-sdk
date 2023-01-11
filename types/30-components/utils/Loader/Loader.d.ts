@@ -18,5 +18,6 @@ interface ILoaderBlockProps extends ILoaderProps {
 export declare function Loader({ alt, canLoadForever, isWithBackground }: ILoaderBlockProps): JSX.Element;
 export {};
 /**
- *  TODO: [🍳] Maybe rename Loader to LoaderBlock
+ * TODO: [☮️] Implement new loading /handwritten/ design
+ * TODO: [🍳] Maybe rename Loader to LoaderBlock
  */

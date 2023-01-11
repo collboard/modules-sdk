@@ -6,5 +6,5 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export {};
 /**
- * TODO: Maybe this should be named more generally as @collboard/xml-native-import
+ * TODO: Maybe this should be named more generally as @collboard/internal/xml-native-import
  */

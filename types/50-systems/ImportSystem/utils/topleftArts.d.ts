@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { AbstractPlacedArt } from '../../../71-arts/25-AbstractPlacedArt';
-import { CollSpace } from './../../CollSpace/0-CollSpace';
+import { CollSpace } from '../../CollSpace/0-CollSpace';
 interface ITopleftArtsOptions {
     arts: Array<AbstractPlacedArt>;
     collSpace: CollSpace;

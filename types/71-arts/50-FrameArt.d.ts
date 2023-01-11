@@ -18,6 +18,7 @@ export declare class FrameArt extends Abstract2dBoxArt implements IFramable {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     get boundingBox(): BoundingBox;
     /**

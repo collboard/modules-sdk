@@ -11,7 +11,7 @@ import { ISystemsResolved } from '../../50-systems/00-SystemsContainer/ISystemsR
  * Context for systems container used in modules
  * Note: This context is provided at top render level (with translations and skin)
  *
- * @not-collboard-modules-sdk because this is core util
+ * @not-collboard-modules-sdk because this is core hook
  */
 export declare const UnsignedSystemsContainerContext: React.Context<ISystemsExtended | null>;
 /**
@@ -24,9 +24,9 @@ export declare const UnsignedSystemsContainerContext: React.Context<ISystemsExte
  *
  * @not-collboard-modules-sdk because this is core util
  */
-export declare function useSystemsInCore<T extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
-    ...requestedSystemsNames: Array<T>
-): Pick<ISystemsResolved, T>;
+export declare function useSystemsInCore<TSystemNames extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+    ...requestedSystemsNames: Array<TSystemNames>
+): Pick<ISystemsResolved, TSystemNames>;
 /**
  * Note: For security reason there are two separate hooks and contexts:
  *       - useSystems is used in modules and gives only the requested systems

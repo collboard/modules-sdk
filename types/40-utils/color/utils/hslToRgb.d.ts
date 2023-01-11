@@ -9,7 +9,7 @@
  *
  * @collboard-modules-sdk
  */
-import { number_percent, number_positive_integer } from '../../typeAliases';
+import { number_integer, number_percent, number_positive } from '../../typeAliases';
 /**
  * Converts HSL values to RGB values
  *
@@ -24,7 +24,7 @@ export declare function hslToRgb(
     hue: number_percent,
     saturation: number_percent,
     lightness: number_percent,
-): [number_positive_integer, number_positive_integer, number_positive_integer];
+): [number_positive & number_integer, number_positive & number_integer, number_positive & number_integer];
 /**
  * TODO: Name propperly all used internal variabiles
  */

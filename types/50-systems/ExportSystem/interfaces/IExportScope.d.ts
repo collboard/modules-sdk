@@ -14,6 +14,8 @@ export declare type IExportScope = ExportScopeSimple | IFramable;
 /**
  * Simple export scopes
  *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
  * @collboard-modules-sdk
  */
 export declare enum ExportScopeSimple {

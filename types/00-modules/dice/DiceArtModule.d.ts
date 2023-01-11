@@ -12,6 +12,7 @@ export declare class DiceArt extends Abstract2dArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     value: number;
     rotation: number;

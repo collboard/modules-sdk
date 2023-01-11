@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { number_percent, number_positive_integer } from '../../typeAliases';
+import { number_integer, number_percent, number_positive } from '../../typeAliases';
 /**
  * Converts RGB values to HSL values
  *
@@ -16,9 +16,9 @@ import { number_percent, number_positive_integer } from '../../typeAliases';
  * @not-collboard-modules-sdk Use Color object for conversion instead
  */
 export declare function rgbToHsl(
-    red: number_positive_integer,
-    green: number_positive_integer,
-    blue: number_positive_integer,
+    red: number_positive & number_integer,
+    green: number_positive & number_integer,
+    blue: number_positive & number_integer,
 ): [number_percent, number_percent, number_percent];
 /**
  * TODO: Name propperly all used internal variabiles

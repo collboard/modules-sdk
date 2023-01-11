@@ -6,3 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { ILogger, ISubLogger } from '../ILogger';
 export declare function isLogger(logger: ILogger | ISubLogger): logger is ILogger;
+/**
+ * TODO: [🥟] Autogenerate suffix as .guard.ts
+ * TODO: [🥟] This should be propper typeguard not just testing one property
+ * TODO: [🥟] All typeguards should recieve unknown
+ */

@@ -6,11 +6,10 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { ITransformData, IVectorData } from 'xyzt';
-import { number_positive } from '../../40-utils/typeAliases';
+import { number_positive, string_color, string_module_name } from '../../40-utils/typeAliases';
 import { IAppearance } from '../../50-systems/CollSpace/appearance/IAppearance';
 import { IArt } from '../../50-systems/CollSpace/IArt';
 import { Abstract2dArt } from '../26-Abstract2dArt';
-import { string_color } from './../../40-utils/typeAliases';
 import { IPointShape } from './IPointShape';
 /**
  * Just a point/flag/marker or whatever pointy on the board
@@ -23,8 +22,10 @@ export declare class PointArt extends Abstract2dArt implements IArt<IPointShape>
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     constructor(shape: IPointShape, appearance: IAppearance, transform: ITransformData);
+    get moduleName(): string_module_name;
     get topLeft(): IVectorData;
     get bottomRight(): IVectorData;
     get size(): IVectorData;

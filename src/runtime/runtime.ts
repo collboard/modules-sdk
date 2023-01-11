@@ -241,11 +241,26 @@ export const CategorizedModalMenu = (window as any).CollboardSdk.CategorizedModa
 export const Modal = (window as any).CollboardSdk.Modal;
 
 /**
- * Categorized modal footer wrapper
+ * Footer component for the modal
  *
  * @collboard-modules-sdk
  */
 export const ModalFooter = (window as any).CollboardSdk.ModalFooter;
+
+/**
+ *
+ * @collboard-modules-sdk
+ */
+export const ModalGroup = (window as any).CollboardSdk.ModalGroup;
+
+/**
+ * Scrolling content of the modal
+ *
+ * Tip: If you want to have some fixed content after (on the bottom), use <ModalFooter isSequestered={false}
+ *
+ * @collboard-modules-sdk
+ */
+export const ModalScroll = (window as any).CollboardSdk.ModalScroll;
 
 /**
  * Renders the content inside a darkened page overlay blocking all
@@ -253,7 +268,7 @@ export const ModalFooter = (window as any).CollboardSdk.ModalFooter;
  *
  * **You probably want to use Modal or CategorizedModal instead.**
  *
- * **Warning: Do not try to use more, than one PageOverlay at a time.
+ * **Warning: Do not try to use more, than one PageOverlay at a time.**
  *
  * @collboard-modules-sdk
  */
@@ -312,6 +327,13 @@ export const Loader = (window as any).CollboardSdk.Loader;
  * @collboard-modules-sdk
  */
 export const LoaderInline = (window as any).CollboardSdk.LoaderInline;
+
+/**
+ * React hook for warn if the component is mounted longer than certain time
+ *
+ * @collboard-modules-sdk
+ */
+export const useTimeout = (window as any).CollboardSdk.useTimeout;
 
 /**
  * @collboard-modules-sdk
@@ -402,12 +424,15 @@ export const aggregate = (window as any).CollboardSdk.aggregate;
 /**
  * @returns true if current page is embedded in iframe
  *
+ * @deprecated this utility is unused and should be removed
  * @collboard-modules-sdk
  */
 export const amIEmbededInIFrame = (window as any).CollboardSdk.amIEmbededInIFrame;
 
 /**
  * Converts human readable time to seconds
+ *
+ * @deprecated use some better name or complete library instead
  * @collboard-modules-sdk
  */
 export const calculate = (window as any).CollboardSdk.calculate;
@@ -436,7 +461,7 @@ export const classNames = (window as any).CollboardSdk.classNames;
 /**
  * Color object is represents rbg color with alpha chanell
  *
- * Note: there is nothing as fromObject and toObject because much better and most logic way how top serialize color is to serialize it to hex string #009EDD
+ * Note: there is nothing as fromObject and toObject because much better and most logic way how top serialize color is to serialize it to hex string #009edd
  *
  * @collboard-modules-sdk
  *
@@ -526,12 +551,6 @@ export const ObjectUrl = (window as any).CollboardSdk.ObjectUrl;
 export const triggerFileDownload = (window as any).CollboardSdk.triggerFileDownload;
 
 /**
- * Deep clone an object
- * @collboard-modules-sdk
- */
-export const deepClone = (window as any).CollboardSdk.deepClone;
-
-/**
  *
  * @collboard-modules-sdk
  */
@@ -545,7 +564,7 @@ export const confirmDialogue = (window as any).CollboardSdk.confirmDialogue;
 
 /**
  * @returns array of files NOT FileList
- * TODO: As some cathegory of utils which replace alert, prompt, confirm by better async options like this or NotificationSystem
+ * TODO: As some category of utils which replace alert, prompt, confirm by better async options like this or NotificationSystem
  *
  * @collboard-modules-sdk
  */
@@ -565,7 +584,7 @@ export const promptDialogue = (window as any).CollboardSdk.promptDialogue;
  *
  * @collboard-modules-sdk
  */
-export const EMOJIS_IN_CATHEGORIES = (window as any).CollboardSdk.EMOJIS_IN_CATHEGORIES;
+export const EMOJIS_IN_CATEGORIES = (window as any).CollboardSdk.EMOJIS_IN_CATEGORIES;
 
 /**
  *
@@ -577,6 +596,9 @@ export const EMOJIS = (window as any).CollboardSdk.EMOJIS;
 
 /**
  * Converts typescript enum to array without number values
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
  * @collboard-modules-sdk
  */
 export const enumToArray = (window as any).CollboardSdk.enumToArray;
@@ -594,9 +616,11 @@ export const BoardAlreadyExistsError = (window as any).CollboardSdk.BoardAlready
 export const BoardNotFoundError = (window as any).CollboardSdk.BoardNotFoundError;
 
 /**
+ * This error occurs when you try to add some item in place where it already exists
+ *
  * @collboard-modules-sdk
  */
-export const CollisionError = (window as any).CollboardSdk.CollisionError;
+export const DuplicateError = (window as any).CollboardSdk.DuplicateError;
 
 /**
  * Wraps the error message with additional info that will be nicely logged to the console bellow thrown error
@@ -619,9 +643,17 @@ export const errorMessageWithAdditional = (window as any).CollboardSdk.errorMess
 export const HighOrderError = (window as any).CollboardSdk.HighOrderError;
 
 /**
+ * This error occurs when you try to pass some wrong item
+ *
+ * @collboard-modules-sdk
+ */
+export const InvalidError = (window as any).CollboardSdk.InvalidError;
+
+/**
  * This util catches an error and rethrows more meaningfull error message to better debugging
  * TODO: More oprions how to handle and rewrap the error - for example by a function
  *
+ * @deprecated this is used only in one place internally and will be removed in next major version
  * @collboard-modules-sdk
  */
 export const meaningfullError = (window as any).CollboardSdk.meaningfullError;
@@ -725,15 +757,6 @@ export const filterWithLimit = (window as any).CollboardSdk.filterWithLimit;
 export const fitInside = (window as any).CollboardSdk.fitInside;
 
 /**
- * Flattern array by one level
- * @param array for example [[1,2],[3,4]]
- * @return for example [1,2,3,4]
- *
- * @collboard-modules-sdk
- */
-export const flatternArray = (window as any).CollboardSdk.flatternArray;
-
-/**
  * Flip negative size values to positive and change according to it translate
  * Or preserves both size and translate when size is positive
  * If there is only one axis negative, it will be flipped and positive axis will be preserved
@@ -793,11 +816,6 @@ export const IFactorableWithSystems = (window as any).CollboardSdk.IFactorableWi
  * @collboard-modules-sdk
  */
 export const factorWithSystems = (window as any).CollboardSdk.factorWithSystems;
-
-/**
- * @collboard-modules-sdk
- */
-export const IHandler = (window as any).CollboardSdk.IHandler;
 
 /**
  * Adds a white background to an canvas image and returns it as the new canvas
@@ -947,6 +965,22 @@ export const jsxToHtmlSimple = (window as any).CollboardSdk.jsxToHtmlSimple;
 export const jsxToText = (window as any).CollboardSdk.jsxToText;
 
 /**
+ * Make given HTML XML valid
+ *
+ * It will do:
+ * - Automatically end the tags like <img> to <img/>, <link> to <link/>,...
+ * - Add <!DOCTYPE html> doctype of the html
+ * - Add <?xml version="1.0" encoding="UTF-8"?> doctype of the svg
+ * - Automatically end all unended tags
+ *
+ * @param element HTML or SVG string which can be invalid
+ * @returns HTML or SVG string which is also valid XML string
+ *
+ * @collboard-modules-sdk
+ */
+export const htmlToXmlValidHtml = (window as any).CollboardSdk.htmlToXmlValidHtml;
+
+/**
  * Get size of html
  *
  * @collboard-modules-sdk
@@ -966,7 +1000,7 @@ export const prettifyCss = (window as any).CollboardSdk.prettifyCss;
 /**
  * Prettify the html code
  *
- * @param css raw html code
+ * @param html raw html code
  * @returns formatted html code
  *
  * @collboard-modules-sdk
@@ -983,71 +1017,11 @@ export const prettifyHtml = (window as any).CollboardSdk.prettifyHtml;
 export const loadAndRunExternalScript = (window as any).CollboardSdk.loadAndRunExternalScript;
 
 /**
- *  Utility which can send next value to BehaviorSubject based on mutation function.
+ * Utility which can send next value to BehaviorSubject based on mutation function.
  *
  * @collboard-modules-sdk
  */
 export const nextWithMutation = (window as any).CollboardSdk.nextWithMutation;
-
-/**
- * Makes first letter of a string uppercase
- *
- * @collboard-modules-sdk
- */
-export const capitalize = (window as any).CollboardSdk.capitalize;
-
-/**
- * Makes first letter of a string uppercase
- *
- * @collboard-modules-sdk
- */
-export const decapitalize = (window as any).CollboardSdk.decapitalize;
-
-/**
- * @collboard-modules-sdk
- */
-export const nameToUriPart = (window as any).CollboardSdk.nameToUriPart;
-
-/**
- * TODO: Put this into some inpidendent LIB which do normalizing (there are things in Collboard+Czech.events)
- *
- * @collboard-modules-sdk
- * @note normalizeToKebabCase function is not finished because it it not used anywhere
- */
-export const normalizeToKebabCase = (window as any).CollboardSdk.normalizeToKebabCase;
-
-/**
- *
- * @collboard-modules-sdk
- */
-export const normalizeToCamelCase = (window as any).CollboardSdk.normalizeToCamelCase;
-
-/**
- * TODO: Put this into some inpidendent library which do normalizing (there are things in Collboard+Czech.events)
- *
- * @collboard-modules-sdk
- */
-export const normalizeToSCREAMING_CASE = (window as any).CollboardSdk.normalizeToSCREAMING_CASE;
-
-/**
- *
- * TODO: Put this into some inpidendent library which do normalizing (there are things in Collboard+Czech.events)
- *
- * @collboard-modules-sdk
- */
-export const parseKeywords = (window as any).CollboardSdk.parseKeywords;
-
-/**
- * @collboard-modules-sdk
- */
-export const removeDiacritics = (window as any).CollboardSdk.removeDiacritics;
-
-/**
- * Searches through given keywords
- *
- * @collboard-modules-sdk
- */
-export const searchKeywords = (window as any).CollboardSdk.searchKeywords;
 
 /**
  * Traverse through the object and all its children and replace them via the callback
@@ -1057,13 +1031,23 @@ export const searchKeywords = (window as any).CollboardSdk.searchKeywords;
 export const deepMapObject = (window as any).CollboardSdk.deepMapObject;
 
 /**
+ * @@x
+ *
+ * @param input
+ * @returns
+ *
+ * @collboard-modules-sdk
+ */
+export const isPureObject = (window as any).CollboardSdk.isPureObject;
+
+/**
  * Parse Collboard module name
  * @see more in MODULE_NAME_REGEX
  *
  * @param moduleName
  * @returns normalized scope and name split into chunks
  *
- * @example @collboard/foo/bar => { scope: 'collboard', name: ['foo','bar'] }
+ * @example @collboard/internal/foo/bar => { scope: 'collboard', name: ['foo','bar'] }
  *
  * @collboard-modules-sdk
  */
@@ -1137,6 +1121,14 @@ export const randomString = (window as any).CollboardSdk.randomString;
 
 /**
  *
+ * Pick random tag char like "[🍆]", "[🍡]", "[🍤]"...
+ *
+ * @collboard-modules-sdk
+ */
+export const randomTag = (window as any).CollboardSdk.randomTag;
+
+/**
+ *
  * Generates a random uriId name like "ggpsehhglbdoejrhpmal", "h2m24iceax4qtxnk7pzj", "krc73zrdryyuaebj74du"...
  *
  * @collboard-modules-sdk
@@ -1189,6 +1181,8 @@ export const useAsyncMemo = (window as any).CollboardSdk.useAsyncMemo;
 
 /**
  * @collboard-modules-sdk
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  */
 export const IUseLoadableResultStatus = (window as any).CollboardSdk.IUseLoadableResultStatus;
 
@@ -1738,7 +1732,7 @@ export const string_folder_path = (window as any).CollboardSdk.string_folder_pat
  *
  * - basically module identifier
  *
- * For example `"@collboard/download"`
+ * For example `"@collboard/internal/download"`
  * @pattern /^(@(?<scope>[a-z0-9][a-z0-9-]*))\/(?<name>([a-z0-9][a-z0-9-]*)(\/([a-z0-9][a-z0-9-]*))*)$/
  * @collboard-modules-sdk
  */
@@ -1751,7 +1745,7 @@ export const string_module_name = (window as any).CollboardSdk.string_module_nam
  *
  * For example `"Basic"` or `"Math"`
  *
- * *Note: This may become an enum of values in the near future*
+ * *Note: This may become an list of 'LITERAL_VALUES' in the near future*
  * @collboard-modules-sdk
  */
 export const string_module_category = (window as any).CollboardSdk.string_module_category;
@@ -1803,25 +1797,6 @@ export const ILicense = (window as any).CollboardSdk.ILicense;
 export const IRepository = (window as any).CollboardSdk.IRepository;
 
 /**
- * Semantic helper
- *
- * Keyword is string without diacritics in lowercase [a-z1-9]
- * Words are splitted between multiple keywords @see IKeywords
- *
- * For example `"keyword"`
- * @collboard-modules-sdk
- */
-export const string_keyword = (window as any).CollboardSdk.string_keyword;
-
-/**
- * Semantic helper
- * Array of keywords @see string_keyword
- *
- * @collboard-modules-sdk
- */
-export const Keywords = (window as any).CollboardSdk.Keywords;
-
-/**
  * CSS cursor type
  * @collboard-modules-sdk
  */
@@ -1851,7 +1826,7 @@ export const string_attribute_value_scope = (window as any).CollboardSdk.string_
 /**
  * Semantic helper for css/html colors
  *
- * For example `"white"` or `"#009EDD"`
+ * For example `"white"` or `"#009edd"`
  * @collboard-modules-sdk
  */
 export const string_color = (window as any).CollboardSdk.string_color;
@@ -1866,6 +1841,7 @@ export const ArrayFull = (window as any).CollboardSdk.ArrayFull;
 /**
  * Just an item or array of items or set of items
  *
+ * @deprecated Using this is a bit antipattern use just Array
  * @collboard-modules-sdk
  */
 export const Arrayable = (window as any).CollboardSdk.Arrayable;
@@ -1935,17 +1911,24 @@ export const BoardApiClient = (window as any).CollboardSdk.BoardApiClient;
 export const AppState = (window as any).CollboardSdk.AppState;
 
 /**
+ * ArtSerializer serializes and deseriales Collboard arts and other objects
+ *
+ * - **Serializer** is generic serializer which can work with any rules; it works synchronously
+ * - **Serializer with basic rules** is Serializer which has registered basic rules; it works synchronously
+ * - **ArtSerializer** serializes and deseriales Collboard arts and other objects; it works asynchronously
+ *
+ * @collboard-system
+ */
+export const ArtSerializer = (window as any).CollboardSdk.ArtSerializer;
+
+/**
  * ArtVersionSystem synchronizes the arts with the remote server.
- * TODO: This is used a lot so maybe we can figure out some better name
  *
  * @collboard-system
  */
 export const MaterialArtVersioningSystem = (window as any).CollboardSdk.MaterialArtVersioningSystem;
 
 /**
- * TODO: VirtualArtVersioningSystem should be a bit les capable then MaterialArtVersioningSystem because it can for example cannot handle persisting (@see IFreshMaterialOperation vs IFreshOperation)
- * TODO: Virtual art operations shoud not require persisting
- * TODO: Virtual art operations should not prevent closing (maybe just canBeClosed always true or completelly not IClosePreventable)
  *
  * @collboard-system
  */
@@ -1976,9 +1959,9 @@ export const BusinessSystem = (window as any).CollboardSdk.BusinessSystem;
 /**
  * Enumerates all the possible businesses. In Collboard, a business for which purpose is Collboard used.
  *
- * @collboard-modules-sdk
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  *
- * TODO: Probbably move to some other foleder
+ * @collboard-modules-sdk
  */
 
 export const BusinessName = (window as any).CollboardSdk.BusinessName;
@@ -1989,7 +1972,8 @@ export const BusinessName = (window as any).CollboardSdk.BusinessName;
 export const ClosePreventionSystem = (window as any).CollboardSdk.ClosePreventionSystem;
 
 /**
- * FakeClosePreventionSystem is a implementation of IClosePreventionSystem which satisfy the interface but does nothing.
+ * FakeClosePreventionSystem is a implementation of IClosePreventionSystem which implements the interface but does nothing
+ *
  * @collboard-modules-sdk
  */
 export const FakeClosePreventionSystem = (window as any).CollboardSdk.FakeClosePreventionSystem;
@@ -2154,6 +2138,17 @@ export const textureToSvg = (window as any).CollboardSdk.textureToSvg;
 export const IArt = (window as any).CollboardSdk.IArt;
 
 /**
+ * @@x
+ *
+ * - **IArt** @@x
+ * - **IArtData** @@x
+ *
+ *
+ * @collboard-modules-sdk
+ */
+export const IArtData = (window as any).CollboardSdk.IArtData;
+
+/**
  * @collboard-modules-sdk
  * @sideeffect Creating elements with id={artId} to be findable in the DOM
  * @sideeffect Creating elements with class __ArtShell for findArtShellElement
@@ -2255,6 +2250,8 @@ export const IExportScope = (window as any).CollboardSdk.IExportScope;
 /**
  * Simple export scopes
  *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
  * @collboard-modules-sdk
  */
 
@@ -2294,6 +2291,8 @@ export const FilepickSystem = (window as any).CollboardSdk.FilepickSystem;
 /**
  *
  * Represents type of the focus which can be taken each by one thing in the Collboard app
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  *
  * @collboard-modules-sdk
  */
@@ -2378,9 +2377,18 @@ export const topleftArts = (window as any).CollboardSdk.topleftArts;
 /**
  * LicenseSystem is a system that manages the licenses for modules
  *
+ * @see more on https://github.com/collboard/collboard/blob/main/documents/license-system.md
  * @collboard-system
  */
 export const LicenseSystem = (window as any).CollboardSdk.LicenseSystem;
+
+/**
+ * LicenseSyncer installs / uninstalls modules according to (payed) license which has flag isModuleAutoInstalled
+ *
+ * @private
+ * @collboard-system
+ */
+export const LicenseSyncer = (window as any).CollboardSdk.LicenseSyncer;
 
 /**
  * System that recieves and executes the post message API
@@ -2401,7 +2409,7 @@ export const Authors = (window as any).CollboardSdk.Authors;
  * ModuleStore unites all module store connectors into one API, so consumer have same way how to get internal or external module
  *
  * Note: Modules storage - is just getter / setter for modules
- *       Modules store   - has full logic of mudules domain
+ *       Modules store   - has full logic of modules domain
  *
  * @collboard-system
  */
@@ -2457,6 +2465,13 @@ export const IModuleDefinition = (window as any).CollboardSdk.IModuleDefinition;
 export const IModuleSetup = (window as any).CollboardSdk.IModuleSetup;
 
 /**
+ * Flags which tells misc metadata about the module
+ *
+ * @collboard-modules-sdk
+ */
+export const IModuleFlags = (window as any).CollboardSdk.IModuleFlags;
+
+/**
  * Manifest describes the module.
  *
  * You are able to spread package.json into Collboard module manifest and all types are matching perfectly.
@@ -2465,12 +2480,6 @@ export const IModuleSetup = (window as any).CollboardSdk.IModuleSetup;
  * @collboard-modules-sdk
  */
 export const IModuleManifest = (window as any).CollboardSdk.IModuleManifest;
-
-/**
- *
- * @collboard-modules-sdk
- */
-export const IModuleFlags = (window as any).CollboardSdk.IModuleFlags;
 
 /**
  * Describes author or contributor of a module.
@@ -2543,25 +2552,53 @@ export const IModuleStoreConnector = (window as any).CollboardSdk.IModuleStoreCo
 export const IModuleStoreConnectorSearchResult = (window as any).CollboardSdk.IModuleStoreConnectorSearchResult;
 
 /**
+ * @@x
+ *
+ * @collboard-modules-sdk
+ */
+export const makeArtModule = (window as any).CollboardSdk.makeArtModule;
+
+/**
+ * @@x
+ * makeClassicalArtModule will make UI module
+ *
+ * Note: Module still needs to be declared
+ * @deprecated please use makeFunctionalArtModule
+ * @collboard-modules-sdk
+ */
+export const makeClassicalArtModule = (window as any).CollboardSdk.makeClassicalArtModule;
+
+/**
+ * @@x
+ *
+ * Note: Module still needs to be declared
+ * @collboard-modules-sdk
+ */
+export const makeFunctionalArtModule = (window as any).CollboardSdk.makeFunctionalArtModule;
+
+/**
+ * @@x
+ *
+ * @param options @@x
+ * @returns @@x
+ *
+ * @collboard-modules-sdk
+ */
+export const makeCanvasArtModule = (window as any).CollboardSdk.makeCanvasArtModule;
+
+/**
  * TODO: How to do article translations and flags in window top
  * TODO: Možná by tady nahoře mohlo být menu k dalším stránkám. ArticleSet?
  * TODO: Live reloaded content (like stats)
  * TODO: Scoped css
  * TODO: Namings URL vs SRC
  *
+ * Note: If requirePermissions not set then will this maker set them to empty array
  * Note: There is in git history makeArticleModule but we have removed it. If it will be needed, we can bring it back.
  *
  * @collboard-modules-sdk
  */
 export const makeArticlesSetModule = (window as any).CollboardSdk.makeArticlesSetModule;
-
-/**
- * makeArtModule will make UI module
- *
- * Note: Module still needs to be declared
- * @collboard-modules-sdk
- */
-export const makeArtModule = (window as any).CollboardSdk.makeArtModule;
 
 /**
  *
@@ -2592,6 +2629,7 @@ export const makeIconModuleOnModule = (window as any).CollboardSdk.makeIconModul
 export const makeIconModuleOnRoute = (window as any).CollboardSdk.makeIconModuleOnRoute;
 
 /**
+ * Makes a module which shows a simple modal
  *
  * @collboard-modules-sdk
  */
@@ -2606,6 +2644,16 @@ export const makeModalModule = (window as any).CollboardSdk.makeModalModule;
  * @collboard-modules-sdk
  */
 export const makeMultiModule = (window as any).CollboardSdk.makeMultiModule;
+
+/**
+ * @@x
+ *
+ * @param options @@x
+ * @returns @@x
+ *
+ * @collboard-modules-sdk
+ */
+export const makeSimpleArtoolModules = (window as any).CollboardSdk.makeSimpleArtoolModules;
 
 /**
  * Maker for creating tray-like modules (like H-edu or Montessori)
@@ -2695,6 +2743,26 @@ export const parseKeywordsFromManifest = (window as any).CollboardSdk.parseKeywo
  * @collboard-system
  */
 export const NotificationSystem = (window as any).CollboardSdk.NotificationSystem;
+
+/**
+ * Similar interface to Notification Web API
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Notification
+ *
+ * @collboard-modules-sdk
+ */
+export const INotification = (window as any).CollboardSdk.INotification;
+
+/**
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
+ * @collboard-modules-sdk
+ */
+export const NotificationPlace = (window as any).CollboardSdk.NotificationPlace;
+
+/**
+ * @collboard-modules-sdk
+ */
+export const INotificationAction = (window as any).CollboardSdk.INotificationAction;
 
 /**
  * PointerSystem allows us to bind a different controller then touch or mouse. For example, it is syncing the phone with accelerometer or VR controllers.
@@ -2792,6 +2860,7 @@ export const ISkin = (window as any).CollboardSdk.ISkin;
 /**
  * makeSkinModule will make skin confuiguration module
  *
+ * Note: If requirePermissions not set then will this maker set them to empty array
  * Note: Module still needs to be declared
  * @collboard-modules-sdk
  */
@@ -2807,6 +2876,8 @@ export const TestSystem = (window as any).CollboardSdk.TestSystem;
 /**
  *
  * TODO: Unite naming ToolbarName, which can be part of IToolbarIcon (similar as section on it) OR combine it with UserInterfaceElementPlace
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  *
  * @collboard-modules-sdk
  */
@@ -2878,6 +2949,8 @@ export const UserInterfaceSystem = (window as any).CollboardSdk.UserInterfaceSys
 
 /**
  * UserInterfaceElementPlace enum lists possible places for an element to be placed.
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  *
  * @collboard-modules-sdk
  */
@@ -3002,6 +3075,21 @@ export const virtualCornerstoneArt = (window as any).CollboardSdk.virtualCorners
 export const DeletedArt = (window as any).CollboardSdk.DeletedArt;
 
 /**
+ * Art which renders loading of something
+ * It is usefull primarly with virtual commits:
+ *  >
+ *  > virtualArtVersioningSystem
+    >    .createPrimaryOperation()
+    >    .newArts(
+    >      new LoadingArt('aaa').setShift((collSpace.pickPoint(touch.firstFrame.position)).point),
+    >    )
+    >    .persist();
+ *
+ * @collboard-modules-sdk
+ */
+export const LoadingArt = (window as any).CollboardSdk.LoadingArt;
+
+/**
  * ExportArt is art for exporting content from the board.
  *
  * @deprecated do this functionality better in the future via FrameArt
@@ -3077,21 +3165,6 @@ export const ImageArt = (window as any).CollboardSdk.ImageArt;
 export const LineArt = (window as any).CollboardSdk.LineArt;
 
 /**
- * Art which renders loading of something
- * It is usefull primarly with virtual commits:
- *  >
- *  > virtualArtVersioningSystem
-    >    .createPrimaryOperation()
-    >    .newArts(
-    >      new LoadingArt('aaa').setShift((collSpace.pickPoint(touch.firstFrame.position)).point),
-    >    )
-    >    .persist();
- *
- * @collboard-modules-sdk
- */
-export const LoadingArt = (window as any).CollboardSdk.LoadingArt;
-
-/**
  * Just a point/flag/marker or whatever pointy on the board
  *
  * @collboard-modules-sdk
@@ -3107,6 +3180,8 @@ export const PointArt = (window as any).CollboardSdk.PointArt;
 export const PolygonArt = (window as any).CollboardSdk.PolygonArt;
 
 /**
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
  * @collboard-modules-sdk
  */
 export const ShapeName = (window as any).CollboardSdk.ShapeName;
@@ -3171,6 +3246,14 @@ export const IBehavior = (window as any).CollboardSdk.IBehavior;
  * @collboard-modules-sdk
  */
 export const createSelectionToolBehavior = (window as any).CollboardSdk.createSelectionToolBehavior;
+
+/**
+ * @@x
+ *
+ * [👘]
+ * @collboard-modules-sdk
+ */
+export const touchFrameToArtFrame = (window as any).CollboardSdk.touchFrameToArtFrame;
 
 /**
  * Conversion table from misc units to board pixels

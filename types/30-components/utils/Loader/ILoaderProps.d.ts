@@ -12,8 +12,8 @@ export interface ILoaderProps {
     alt: string;
     /**
      * Should be content loaded quickly or it is ok to show loader for long period of time
-     * - If FALSE warning will be shown after some time
-     * - If TRUE nothing will happen
+     * - If `false` warning will be shown after some time
+     * - If `true` nothing will happen
      */
     canLoadForever?: boolean;
 }

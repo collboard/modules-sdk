@@ -13,6 +13,7 @@ export declare class TimerArt extends Abstract2dArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     running: boolean;
     remaining: number;

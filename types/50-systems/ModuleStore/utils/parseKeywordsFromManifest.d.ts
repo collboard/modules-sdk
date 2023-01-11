@@ -4,14 +4,14 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { Keywords } from '../../../40-utils/typeAliases';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IKeywords } from 'n12';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 /**
  * Create list of keywords from module manifest
  *
  * @collboard-modules-sdk
  */
-export declare function parseKeywordsFromManifest(manifest: IModuleManifest): Keywords;
+export declare function parseKeywordsFromManifest(manifest: IModuleManifest): IKeywords;
 /**
- *  TODO:  Unit test
+ *  TODO: Unit test
  */

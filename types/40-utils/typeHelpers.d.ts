@@ -9,12 +9,12 @@ import { Promisable } from 'type-fest';
 /**
  * Loadable represents value that is loaded, can be loaded via Promise or can update over a time via Observable.
  */
-export declare type Loadable<T> = T | Promise<T> | Observable<T>;
-declare type OptionalKeys<T> = {
-    [K in keyof T]-?: {} extends Pick<T, K> ? K : never;
-}[keyof T];
-export declare type FlipOptional<T> = Required<Pick<T, OptionalKeys<T>>> &
-    Partial<Omit<T, OptionalKeys<T>>> extends infer O
+export declare type Loadable<TValue> = TValue | Promise<TValue> | Observable<TValue>;
+declare type OptionalKeys<TObject extends object> = {
+    [K in keyof TObject]-?: {} extends Pick<TObject, K> ? K : never;
+}[keyof TObject];
+export declare type FlipOptional<TObject extends object> = Required<Pick<TObject, OptionalKeys<TObject>>> &
+    Partial<Omit<TObject, OptionalKeys<TObject>>> extends infer O
     ? {
           [K in keyof O]: O[K];
       }
@@ -24,25 +24,26 @@ export declare type FlipOptional<T> = Required<Pick<T, OptionalKeys<T>>> &
  *
  * @collboard-modules-sdk
  */
-export declare type ArrayFull<T> = {
-    0: T;
-} & Array<T>;
+export declare type ArrayFull<TItem> = {
+    0: TItem;
+} & Array<TItem>;
 /**
  * Just an item or array of items or set of items
  *
+ * @deprecated Using this is a bit antipattern use just Array
  * @collboard-modules-sdk
  */
-export declare type Arrayable<T> = T | Array<T> | Set<T>;
+export declare type Arrayable<TItem> = TItem | Array<TItem> | Set<TItem>;
 /**
  * Just an item or array of items with at least one item
  *
  * @collboard-modules-sdk
  */
-export declare type ArrayableFull<T> = T | ArrayFull<T>;
+export declare type ArrayableFull<TItem> = TItem | ArrayFull<TItem>;
 /**
  * Array which can be wrapped in a Promise and all items can be also wrapped in a Promise
  *
  * @collboard-modules-sdk
  */
-export declare type PromisableArray<T> = Promisable<Array<Promisable<T>>>;
+export declare type PromisableArray<TItem> = Promisable<Array<Promisable<TItem>>>;
 export {};

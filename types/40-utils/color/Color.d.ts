@@ -8,7 +8,7 @@ import { string_color, string_url_image } from '../typeAliases';
 /**
  * Color object is represents rbg color with alpha chanell
  *
- * Note: there is nothing as fromObject and toObject because much better and most logic way how top serialize color is to serialize it to hex string #009EDD
+ * Note: there is nothing as fromObject and toObject because much better and most logic way how top serialize color is to serialize it to hex string #009edd
  *
  * @collboard-modules-sdk
  *
@@ -21,7 +21,7 @@ export declare class Color {
     /**
      * Creates a new Color instance from miscellaneous formats
      * - It can receive Color instance and just return the same instance
-     * - It can receive color in string format for example #009EDD, rgb(0,158,221), rgb(0%,62%,86.7%), hsl(197.1,100%,43.3%)
+     * - It can receive color in string format for example #009edd, `rgb(0,158,221)`, rgb(0%,62%,86.7%), hsl(197.1,100%,43.3%)
      *
      * Note: This is not including fromImage because detecting color from an image is heavy task which requires async stuff and we cannot safely determine with overloading if return value will be a promise
      *
@@ -32,7 +32,7 @@ export declare class Color {
     /**
      * Creates a new Color instance from miscellaneous string formats
      *
-     * @param color as a string for example #009EDD, rgb(0,158,221), rgb(0%,62%,86.7%), hsl(197.1,100%,43.3%), red, darkgrey,...
+     * @param color as a string for example #009edd, rgb(0,158,221), rgb(0%,62%,86.7%), hsl(197.1,100%,43.3%), red, darkgrey,...
      * @returns Color object
      */
     static fromString(color: string_color): Color;
@@ -46,10 +46,24 @@ export declare class Color {
     /**
      * Creates a new Color instance from color in hex format
      *
-     * @param color in hex for example  #009EDD
+     * @param color in hex for example #009edd, 009edd, #555,...
      * @returns Color object
      */
     static fromHex(hex: string_color): Color;
+    /**
+     * Creates a new Color instance from color in hex format with 3 color digits
+     *
+     * @param color in hex for example 09d
+     * @returns Color object
+     */
+    private static fromHex3;
+    /**
+     * Creates a new Color instance from color in hex format with 6 color digits
+     *
+     * @param color in hex for example 009edd
+     * @returns Color object
+     */
+    private static fromHex6;
     /**
      * Creates a new Color instance from color in hsl format
      *
@@ -104,4 +118,5 @@ export declare class Color {
  * TODO: Random color
  * TODO: Convolution matrix
  * TODO: Maybe connect with textures
+ * TODO: Check fromHex3 and fromHex6 with RegExp and then it can be public
  */

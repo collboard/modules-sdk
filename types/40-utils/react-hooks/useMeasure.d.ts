@@ -12,7 +12,9 @@ import { Vector } from 'xyzt';
  *
  * @collboard-modules-sdk
  */
-export declare function useMeasure<T extends HTMLElement>(onMeasured: (size: Vector) => void): React.RefObject<T>;
+export declare function useMeasure<TElement extends HTMLElement>(
+    onMeasured: (size: Vector) => void,
+): React.RefObject<TElement>;
 /**
  * TODO: [🌺] Measure more often than once (via infinite loop + useEffect)
  * TODO: [⚜️] Maybe instead of onMeasured callback receive subject as a box to put new values in

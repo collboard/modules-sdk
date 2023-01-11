@@ -6,9 +6,6 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IBaseMessage } from '../../50-systems/TranslationsSystem/interfaces/IMessage';
 interface IConfirmDialogueOptions {
-    /**
-     * TODO: Accept JSX when maked betted
-     */
     message?: IBaseMessage;
 }
 /**
@@ -19,4 +16,6 @@ export declare function confirmDialogue(options: IConfirmDialogueOptions | IBase
 export {};
 /**
  * TODO: Use here <ConfirmIcon [🙋]
+ * TODO: [🔊] This should be just a shortcut for using notificationSystem (OR other similar system)
+ * TODO: [🔊] Return IDestroyable & Notification object
  */

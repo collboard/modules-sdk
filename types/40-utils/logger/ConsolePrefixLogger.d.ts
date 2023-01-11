@@ -20,5 +20,10 @@ export declare class ConsolePrefixLogger implements ILogger, ISubLogger {
      * Note: In PrefixLogger does nothing
      *
      */
+    appear(): this;
+    /**
+     * Note: In PrefixLogger does nothing
+     *
+     */
     end(): void;
 }

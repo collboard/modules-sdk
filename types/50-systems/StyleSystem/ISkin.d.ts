@@ -32,6 +32,12 @@ export interface ISkin {
     circles: boolean;
 }
 /**
+ * TODO: Allow optionally to customize everything -for example scrollbar, modal header,...
+ * TODO: [🚥] Allow customization for (not only <hr>) lines - does not matter if it is <hr> or border or image
+ * TODO: Allow optionally to add any css style
+ * TODO: Allow optionally to change assets / colors / ...
+ * TODO: Extending of the skins + Allow to change just one thing via the module (register one specific change)
  * TODO: Colors light/dark/white/black are not semantic - create instead primary/secondary OR all as success/warning/error/...
  * TODO: error vs danger
+ * TODO: Simmilar thing for sounds - SoundSkin
  */

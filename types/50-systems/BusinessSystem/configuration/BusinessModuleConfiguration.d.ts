@@ -7,3 +7,6 @@
 import { IBusinessConfiguration } from '../interfaces/IBusinessConfiguration';
 import { BusinessName } from './BusinessName';
 export declare const BusinessModuleConfiguration: Record<BusinessName, IBusinessConfiguration>;
+/**
+ * TODO: Make Freehand selected even if dot is loaded after
+ */

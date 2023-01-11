@@ -6,8 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
 import { Transform } from 'xyzt';
+import { string_uuid } from '../../../40-utils/typeAliases';
 import { Loadable } from '../../../40-utils/typeHelpers';
-import { string_uuid } from './../../../40-utils/typeAliases';
 declare type IArtShellProps = React.PropsWithChildren<{
     artId: string_uuid;
     zIndex: number;

@@ -17,5 +17,5 @@ export declare class StorageSystem extends AbstractSystem {
     private runMigrations;
     private persistentStorage;
     private sessionStorage;
-    getStorage<T extends any>(storageName: string, persistent?: boolean): IStorage<T>;
+    getStorage<TValue extends any>(storageName: string, persistent?: boolean): IStorage<TValue>;
 }

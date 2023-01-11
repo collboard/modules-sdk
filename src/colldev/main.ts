@@ -5,11 +5,8 @@ import { Colldev } from './Colldev';
 
 const colldev = new Colldev(process.argv);
 
-process.on('SIGINT', () => {
+process.on('SIGINT', async () => {
     console.info(chalk.red('Stopping Colldev...'));
-    process.exit();
-});
-
-process.on('exit', async () => {
     await colldev.destroy();
+    process.exit();
 });

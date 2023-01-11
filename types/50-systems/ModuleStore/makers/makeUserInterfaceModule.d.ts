@@ -9,7 +9,7 @@ import { Promisable } from 'type-fest';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { UserInterfaceElementPlace } from '../../UserInterfaceSystem/UserInterfaceElementPlace';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 /**
  * Makes a module that will add any JSX element on requested place.
  *
@@ -21,5 +21,5 @@ export declare function makeUserInterfaceModule(protoModule: {
     manifest?: IModuleManifest;
     place: UserInterfaceElementPlace;
     order?: number;
-    createElement(systems: ISystems): Promisable<JSX.Element>;
+    render(systems: ISystems): Promisable<JSX.Element>;
 }): IModuleDefinition;

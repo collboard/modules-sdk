@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
- * TODO: Put all %c styled console logs styles into one config place
+ * TODO: [🔅] Put all %c styled console logs styles into one config place
  */
 export declare const COLLDEV_SYNCER_STYLE =
     'background: #ff6622; color: black; font-size: 1.1em; font-weight: bold; padding: 5px; border-radius: 3px;';

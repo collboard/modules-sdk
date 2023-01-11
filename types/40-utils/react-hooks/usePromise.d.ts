@@ -7,13 +7,19 @@
 import React from 'react';
 import { Promisable } from 'type-fest';
 import { IUseLoadableResultComplete, IUseLoadableResultError, IUseLoadableResultPending } from './useLoadable';
-declare type IUsePromiseResult<T> = IUseLoadableResultPending | IUseLoadableResultError | IUseLoadableResultComplete<T>;
+declare type IUsePromiseResult<TValue> =
+    | IUseLoadableResultPending
+    | IUseLoadableResultError
+    | IUseLoadableResultComplete<TValue>;
 /**
  * React hook that returns result of Promise or its pending/error state.
  *
  * @collboard-modules-sdk
  */
-export declare function usePromise<T>(promise: Promisable<T>, deps?: React.DependencyList): IUsePromiseResult<T>;
+export declare function usePromise<TValue>(
+    promise: Promisable<TValue>,
+    deps?: React.DependencyList,
+): IUsePromiseResult<TValue>;
 export {};
 /**
  * TODO: [🧵] Move to external LIB for react loadables

@@ -5,24 +5,24 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
-import { MaterialArtVersioningSystem } from './../../ArtVersionSystem/0-MaterialArtVersioningSystem';
-import { RoutingSystem } from './../../RoutingSystem/0-RoutingSystem';
+import { MaterialArtVersioningSystem } from '../../ArtVersionSystem/0-MaterialArtVersioningSystem';
+import { RoutingSystem } from '../../RoutingSystem/0-RoutingSystem';
 /**
- * @deprecated in favour of @collboard/add-icon
+ * @deprecated in favour of @collboard/internal/add-icon
  */
 interface IImportModalComponentProps {
     materialArtVersioningSystem: MaterialArtVersioningSystem;
     routingSystem: RoutingSystem;
 }
 /**
- * @deprecated in favour of @collboard/add-icon
+ * @deprecated in favour of @collboard/internal/add-icon
  */
 interface IImportModalComponentState {
     ref: React.RefObject<HTMLInputElement>;
     valid: boolean;
 }
 /**
- * @deprecated in favour of @collboard/add-icon
+ * @deprecated in favour of @collboard/internal/add-icon
  */
 export declare class ImportModalComponent extends React.Component<
     IImportModalComponentProps,

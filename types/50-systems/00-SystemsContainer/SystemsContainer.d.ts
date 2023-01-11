@@ -5,50 +5,51 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { TouchController } from 'touchcontroller';
-import { ArtSerializer } from '../../CollboardApp';
-import { Core } from './../30-Core/0-Core';
-import { ApiClient } from './../ApiClient/0-ApiClient';
-import { BoardApiClient } from './../ApiClient/BoardApiClient';
-import { AppState } from './../AppState/0-AppState';
-import { MaterialArtVersioningSystem } from './../ArtVersionSystem/0-MaterialArtVersioningSystem';
-import { VirtualArtVersioningSystem } from './../ArtVersionSystem/0-VirtualArtVersioningSystem';
-import { AttributesSystem } from './../AttributesSystem/0-AttributesSystem';
-import { BoardSystem } from './../BoardSystem/0-BoardSystem';
-import { BusinessSystem } from './../BusinessSystem/0-BusinessSystem';
-import { ClosePreventionSystem } from './../ClosePreventionSystem/0-ClosePreventionSystem';
-import { CollSpace } from './../CollSpace/0-CollSpace';
-import { ControlSystem } from './../ControlSystem/ControlSystem';
-import { CreateSystem } from './../CreateSystem/0-CreateSystem';
-import { ExportSystem } from './../ExportSystem/0-ExportSystem';
-import { FilepickSystem } from './../FilepickSystem/0-FilepickSystem';
-import { FocusSystem } from './../FocusSystem/0-FocusSystem';
-import { FractalSystem } from './../FractalSystem/0-FractalSystem';
-import { GamificationSystem } from './../GamificationSystem/0-GamificationSystem';
-import { GenerateSystem } from './../GenerateSystem/0-GenerateSystem';
-import { HintSystem } from './../HintSystem/0-HintSystem';
-import { IdentitySystem } from './../IdentitySystem/0-IdentitySystem';
-import { ImportSystem } from './../ImportSystem/0-ImportSystem';
-import { LicenseSystem } from './../LicenseSystem/0-LicenseSystem';
-import { MessagesApiSystem } from './../MessagesApiSystem/0-MessagesApiSystem';
-import { ModuleStore } from './../ModuleStore/connectors/0-ModuleStore';
-import { ArtSupportSyncer } from './../ModuleStore/Syncers/ArtSupportSyncer';
-import { AttributeSupportSyncer } from './../ModuleStore/Syncers/AttributeSupportSyncer';
-import { CornerstoneSyncer } from './../ModuleStore/Syncers/CornerstoneSyncer';
-import { FileSupportSyncer } from './../ModuleStore/Syncers/FileSupportSyncer';
-import { RouteAndBusinessSyncer } from './../ModuleStore/Syncers/RouteAndBusinessSyncer';
-import { NotificationSystem } from './../NotificationSystem/0-NotificationSystem';
-import { PointerSystem } from './../PointerSystem/0-PointerSystem';
-import { RoutingSystem } from './../RoutingSystem/0-RoutingSystem';
-import { SnapSystem } from './../SnapSystem/0-SnapSystem';
-import { SoundSystem } from './../SoundSystem/0-SoundSystem';
-import { StorageSystem } from './../StorageSystem/StorageSystem';
-import { StyleSystem } from './../StyleSystem/0-StyleSystem';
-import { TestSystem } from './../TestSystem/0-TestSystem';
-import { ToolbarSystem } from './../ToolbarSystem/0-ToolbarSystem';
-import { TranslationsSystem } from './../TranslationsSystem/0-TranslationsSystem';
-import { UsercontentSystem } from './../UsercontentSystem/0-UsercontentSystem';
-import { UserInterfaceSystem } from './../UserInterfaceSystem/0-UserInterfaceSystem';
-import { VoiceSystem } from './../VoiceSystem/0-VoiceSystem';
+import { Core } from '../30-Core/0-Core';
+import { ApiClient } from '../ApiClient/0-ApiClient';
+import { BoardApiClient } from '../ApiClient/BoardApiClient';
+import { AppState } from '../AppState/0-AppState';
+import { ArtSerializer } from '../ArtSerializer/ArtSerializer';
+import { MaterialArtVersioningSystem } from '../ArtVersionSystem/0-MaterialArtVersioningSystem';
+import { VirtualArtVersioningSystem } from '../ArtVersionSystem/0-VirtualArtVersioningSystem';
+import { AttributesSystem } from '../AttributesSystem/0-AttributesSystem';
+import { BoardSystem } from '../BoardSystem/0-BoardSystem';
+import { BusinessSystem } from '../BusinessSystem/0-BusinessSystem';
+import { ClosePreventionSystem } from '../ClosePreventionSystem/0-ClosePreventionSystem';
+import { CollSpace } from '../CollSpace/0-CollSpace';
+import { ControlSystem } from '../ControlSystem/ControlSystem';
+import { CreateSystem } from '../CreateSystem/0-CreateSystem';
+import { ExportSystem } from '../ExportSystem/0-ExportSystem';
+import { FilepickSystem } from '../FilepickSystem/0-FilepickSystem';
+import { FocusSystem } from '../FocusSystem/0-FocusSystem';
+import { FractalSystem } from '../FractalSystem/0-FractalSystem';
+import { GamificationSystem } from '../GamificationSystem/0-GamificationSystem';
+import { GenerateSystem } from '../GenerateSystem/0-GenerateSystem';
+import { HintSystem } from '../HintSystem/0-HintSystem';
+import { IdentitySystem } from '../IdentitySystem/0-IdentitySystem';
+import { ImportSystem } from '../ImportSystem/0-ImportSystem';
+import { LicenseSystem } from '../LicenseSystem/0-LicenseSystem';
+import { LicenseSyncer } from '../LicenseSystem/LicenseSyncer';
+import { MessagesApiSystem } from '../MessagesApiSystem/0-MessagesApiSystem';
+import { ModuleStore } from '../ModuleStore/connectors/0-ModuleStore';
+import { ArtSupportSyncer } from '../ModuleStore/Syncers/ArtSupportSyncer';
+import { AttributeSupportSyncer } from '../ModuleStore/Syncers/AttributeSupportSyncer';
+import { CornerstoneSyncer } from '../ModuleStore/Syncers/CornerstoneSyncer';
+import { FileSupportSyncer } from '../ModuleStore/Syncers/FileSupportSyncer';
+import { RouteAndBusinessSyncer } from '../ModuleStore/Syncers/RouteAndBusinessSyncer';
+import { NotificationSystem } from '../NotificationSystem/0-NotificationSystem';
+import { PointerSystem } from '../PointerSystem/0-PointerSystem';
+import { RoutingSystem } from '../RoutingSystem/0-RoutingSystem';
+import { SnapSystem } from '../SnapSystem/0-SnapSystem';
+import { SoundSystem } from '../SoundSystem/0-SoundSystem';
+import { StorageSystem } from '../StorageSystem/StorageSystem';
+import { StyleSystem } from '../StyleSystem/0-StyleSystem';
+import { TestSystem } from '../TestSystem/0-TestSystem';
+import { ToolbarSystem } from '../ToolbarSystem/0-ToolbarSystem';
+import { TranslationsSystem } from '../TranslationsSystem/0-TranslationsSystem';
+import { UsercontentSystem } from '../UsercontentSystem/0-UsercontentSystem';
+import { UserInterfaceSystem } from '../UserInterfaceSystem/0-UserInterfaceSystem';
+import { VoiceSystem } from '../VoiceSystem/0-VoiceSystem';
 import { ISystemsExtended, ISystemsMethods } from './ISystems';
 import { ISystemsResolved } from './ISystemsResolved';
 /**
@@ -61,9 +62,9 @@ export declare class SystemsContainer implements ISystemsExtended {
      * @param requestedSystemsNames Names of requested systems
      * @returns Promise of all record object which contains all requested systems which will be resolved after permissions are granted
      */
-    request<T extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
-        ...requestedSystemsNames: Array<T>
-    ): Promise<Pick<ISystemsResolved, T>>;
+    request<TSystemNames extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+        ...requestedSystemsNames: Array<TSystemNames>
+    ): Promise<Pick<ISystemsResolved, TSystemNames>>;
     /**
      * Use previously requested systems
      *
@@ -72,19 +73,19 @@ export declare class SystemsContainer implements ISystemsExtended {
      * @param requestedSystemsNames Names of requested systems
      * @returns record object which contains all requested systems
      */
-    use<T extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
-        ...requestedSystemsNames: Array<T>
-    ): Pick<ISystemsResolved, T>;
+    use<TSystemNames extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+        ...requestedSystemsNames: Array<TSystemNames>
+    ): Pick<ISystemsResolved, TSystemNames>;
     /**
      * Generator: Systems
-     * Omit: Serializer
-     * Add: TouchController,ArtSerializer
+     * Add: TouchController
      * Pattern: private readonly <system>Subject = new BehaviorSubject<<System> | null>(null);
      */
     private readonly coreSubject;
     private readonly apiClientSubject;
     private readonly boardApiClientSubject;
     private readonly appStateSubject;
+    private readonly artSerializerSubject;
     private readonly materialArtVersioningSystemSubject;
     private readonly virtualArtVersioningSystemSubject;
     private readonly attributesSystemSubject;
@@ -104,6 +105,7 @@ export declare class SystemsContainer implements ISystemsExtended {
     private readonly identitySystemSubject;
     private readonly importSystemSubject;
     private readonly licenseSystemSubject;
+    private readonly licenseSyncerSubject;
     private readonly messagesApiSystemSubject;
     private readonly moduleStoreSubject;
     private readonly artSupportSyncerSubject;
@@ -125,11 +127,9 @@ export declare class SystemsContainer implements ISystemsExtended {
     private readonly userInterfaceSystemSubject;
     private readonly voiceSystemSubject;
     private readonly touchControllerSubject;
-    private readonly artSerializerSubject;
     /**
      * Generator: Systems
-     * Omit: Serializer
-     * Add: TouchController,ArtSerializer
+     * Add: TouchController
      * Pattern:
 
     public get <system>(): Promise<<System>> {
@@ -165,6 +165,8 @@ export declare class SystemsContainer implements ISystemsExtended {
     setBoardApiClient(boardApiClient: BoardApiClient | null): Promise<void>;
     get appState(): Promise<AppState>;
     setAppState(appState: AppState | null): Promise<void>;
+    get artSerializer(): Promise<ArtSerializer>;
+    setArtSerializer(artSerializer: ArtSerializer | null): Promise<void>;
     get materialArtVersioningSystem(): Promise<MaterialArtVersioningSystem>;
     setMaterialArtVersioningSystem(materialArtVersioningSystem: MaterialArtVersioningSystem | null): Promise<void>;
     get virtualArtVersioningSystem(): Promise<VirtualArtVersioningSystem>;
@@ -203,6 +205,8 @@ export declare class SystemsContainer implements ISystemsExtended {
     setImportSystem(importSystem: ImportSystem | null): Promise<void>;
     get licenseSystem(): Promise<LicenseSystem>;
     setLicenseSystem(licenseSystem: LicenseSystem | null): Promise<void>;
+    get licenseSyncer(): Promise<LicenseSyncer>;
+    setLicenseSyncer(licenseSyncer: LicenseSyncer | null): Promise<void>;
     get messagesApiSystem(): Promise<MessagesApiSystem>;
     setMessagesApiSystem(messagesApiSystem: MessagesApiSystem | null): Promise<void>;
     get moduleStore(): Promise<ModuleStore>;
@@ -245,6 +249,7 @@ export declare class SystemsContainer implements ISystemsExtended {
     setVoiceSystem(voiceSystem: VoiceSystem | null): Promise<void>;
     get touchController(): Promise<TouchController>;
     setTouchController(touchController: TouchController | null): Promise<void>;
-    get artSerializer(): Promise<ArtSerializer>;
-    setArtSerializer(artSerializer: ArtSerializer | null): Promise<void>;
 }
+/**
+ * TODO: [🏄] Rename ready to whenReady
+ */

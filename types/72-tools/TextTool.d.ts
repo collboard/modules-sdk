@@ -6,6 +6,8 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export {};
 /**
- * TODO: [🍩] Maybe think about requesting systems non-magically
+ * TODO: [👀] Focus cursor as a thing which better keeps focus
+ * TODO: [👀] Focus cursor from other users in edited texts
+ * TODO: [🍩][🧠] Requesting systems non-magically
  * TODO: [🍩] Omitting systems.request should fail bacause of unrequested systems.
  */

@@ -11,4 +11,4 @@
  *
  * @collboard-modules-sdk
  */
-export declare function replaceUuids<T>(object: T): T;
+export declare function replaceUuids<TObject extends object>(object: TObject): TObject;

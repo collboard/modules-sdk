@@ -236,7 +236,7 @@ export declare type string_folder_path = string_file_absolute_path | string_file
  *
  * - basically module identifier
  *
- * For example `"@collboard/download"`
+ * For example `"@collboard/internal/download"`
  * @pattern /^(@(?<scope>[a-z0-9][a-z0-9-]*))\/(?<name>([a-z0-9][a-z0-9-]*)(\/([a-z0-9][a-z0-9-]*))*)$/
  * @collboard-modules-sdk
  */
@@ -248,7 +248,7 @@ export declare type string_module_name = string;
  *
  * For example `"Basic"` or `"Math"`
  *
- * *Note: This may become an enum of values in the near future*
+ * *Note: This may become an list of 'LITERAL_VALUES' in the near future*
  * @collboard-modules-sdk
  */
 export declare type string_module_category = string;
@@ -305,23 +305,6 @@ export interface IRepository {
     type?: string | 'git';
     url?: string;
 }
-/**
- * Semantic helper
- *
- * Keyword is string without diacritics in lowercase [a-z1-9]
- * Words are splitted between multiple keywords @see IKeywords
- *
- * For example `"keyword"`
- * @collboard-modules-sdk
- */
-export declare type string_keyword = string;
-/**
- * Semantic helper
- * Array of keywords @see string_keyword
- *
- * @collboard-modules-sdk
- */
-export declare type Keywords = Array<string_keyword>;
 /**
  * CSS cursor type
  * @collboard-modules-sdk
@@ -384,7 +367,7 @@ export declare type string_attribute_value_scope = string;
 /**
  * Semantic helper for css/html colors
  *
- * For example `"white"` or `"#009EDD"`
+ * For example `"white"` or `"#009edd"`
  * @collboard-modules-sdk
  */
 export declare type string_color = string;
@@ -410,11 +393,12 @@ export declare type string_translate_language = 'en' | 'cs' | 'sk' | 'uk';
  */
 export declare type string_javascript_name = string;
 export declare type string_token = string;
+export declare type string_license_token = string_token;
 export declare type string_password = string;
 export declare type string_ssh_key = string;
 export declare type string_pgp_key = string;
 export declare type number_positive = number;
-export declare type number_positive_integer = number;
+export declare type number_negative = number;
 export declare type number_integer = number;
 /**
  * Semantic helper;
@@ -430,11 +414,13 @@ export declare type number_days = number;
 export declare type number_weeks = number;
 export declare type number_months = number;
 export declare type number_years = number;
-export declare type number_bytes = number_positive_integer;
+export declare type number_bytes = number_positive & number_integer;
 export declare type number_kilobytes = number_positive;
 export declare type number_megabytes = number_positive;
 export declare type number_gigabytes = number_positive;
 export declare type number_terabytes = number_positive;
 /**
  * TODO: Anotate all + collboard-modules-sdk to all
+ * TODO: Use instead of number_... type-fest
+ * TODO: In some cases string_module_name, constraint by literals (or as close to RegExp as possible in TypeScript)
  */

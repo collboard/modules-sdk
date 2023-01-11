@@ -6,6 +6,13 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /**
  * Converts typescript enum to array without number values
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
  * @collboard-modules-sdk
  */
 export declare function enumToArray(enumerable: any): Array<string>;
+/**
+ * TODO: [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *       @see https://youtu.be/jjMbPt_H3RQ
+ */

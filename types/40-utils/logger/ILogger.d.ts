@@ -9,7 +9,14 @@ export interface ILogger extends ILoggerCore {
     groupCollapsed(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
 }
 export interface ISubLogger extends ILoggerCore {
+    /**
+     * Finishes the logger and output to the terminal
+     */
     end(): void;
+    /**
+     * Output to the terminal without finishing the logger
+     */
+    appear(): this;
 }
 interface ILoggerCore {
     info(message?: any, ...optionalParams: Array<any>): this;
@@ -23,4 +30,5 @@ export {};
  * TODO: ILoggerCore extends IDestroyable
  * TODO: [🎋] When logger updated and can be subloggered, update theese logging in the code
  * TODO: [🐋] Make support for custom style in ILogger AND ACRY replace all %c + create some central place to keep the styles
+ * TODO: [🐋] Automatically flatten groups with no logs
  */

@@ -15,6 +15,9 @@ export interface IParseMessageEventResult {
 }
 export declare function parseMessageEvent(event: MessageEvent): IParseMessageEventResult;
 /**
+ * TODO: [Optimization][InitialLoading]  Break into the forMoment(s)
+ *       Double-check that changes are working
  * TODO: Maybe use compileAsync
  * TODO: [👨‍👨‍👦‍👦] What is the right version to use for the schema? Currently 2020-12
+ *       Double-check that changes are working
  */

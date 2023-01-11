@@ -4,9 +4,9 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { Factorable, Factory } from '../../../40-utils/IFactory';
+import { Factorable } from '../../../40-utils/IFactory';
 import { IModule, IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 /**
  * Takes an array of of modules (or just a setup functions) and create a composition module from it.
  * This is usefull if you want to use some maker with some custom functionality
@@ -22,4 +22,4 @@ export declare function makeMultiModule(
               modules: Factorable<Array<IModule>>;
           }
         | Factorable<Array<IModule>>,
-): Factory<IModuleDefinition>;
+): IModuleDefinition;

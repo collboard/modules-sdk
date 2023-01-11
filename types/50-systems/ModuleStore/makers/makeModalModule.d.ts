@@ -11,7 +11,7 @@ import { Factorable } from '../../../40-utils/IFactory';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { TranslationsSystem } from '../../TranslationsSystem/0-TranslationsSystem';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 interface ICreateModalReturn extends Partial<Omit<IModalProps, 'children'>> {
     content: Factorable<JSX.Element>;
     /**
@@ -20,6 +20,7 @@ interface ICreateModalReturn extends Partial<Omit<IModalProps, 'children'>> {
     wrapModalManually?: boolean;
 }
 /**
+ * Makes a module which shows a simple modal
  *
  * @collboard-modules-sdk
  */
@@ -38,5 +39,8 @@ export declare function createModalTitle({
 }): string | React.ReactNode;
 export {};
 /**
+ * TODO: Remove all spinning loaders
+ * TODO: Split into two files in folder makeModalModule and anotate createModalTitle
+ * TODO: [Optimization][InitialLoading] Optimize this for initial loading
  * TODO: Changing title of modal
  */

@@ -19,6 +19,7 @@ export declare class HTMLArt extends Abstract2dBoxArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     /**
      * @param content HTML content as string

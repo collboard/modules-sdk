@@ -9,7 +9,7 @@ import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { ToolbarName } from '../../ToolbarSystem/0-ToolbarSystem';
 import { IToolbarIcon } from '../../ToolbarSystem/IToolbarIcon';
 import { IModule, IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 /**
  * Makes toolbar icon module which setup/unsetup given submodule when user select/unselect icon
  * TODO: Probbably better name (makeIconModuleOnModule vs. makeIconModuleOnRoute)
@@ -22,3 +22,6 @@ export declare function makeIconModuleOnModule(protoModule: {
     icon: IToolbarIcon | ((systems: ISystems) => Promisable<IToolbarIcon>);
     moduleActivatedByIcon: IModule;
 }): IModuleDefinition;
+/**
+ * TODO: !!x Rename to makeToolModule
+ */

@@ -8,7 +8,7 @@ import { IDestroyable } from 'destroyable';
 import { Promisable } from 'type-fest';
 import { Factorable } from '../../../40-utils/IFactory';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
-import { IModuleManifest } from './IModuleManifest';
+import { IModuleManifest } from './IModuleManifest/IModuleManifest';
 /**
  * Collboard module is basic unit of functionality. From the technical point of view it is just an object or function which will create this object with manifest and setup function that can make some work and returns a logic how to destroy itself.
  *

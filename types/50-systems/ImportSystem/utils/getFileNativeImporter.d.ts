@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_module_name } from './../../../40-utils/typeAliases';
+import { string_module_name } from '../../../40-utils/typeAliases';
 /**
  * Looks at the file for import-with-module directive
  *
@@ -14,7 +14,7 @@ import { string_module_name } from './../../../40-utils/typeAliases';
 export declare function getFileNativeImporter(file: File): Promise<string_module_name | null>;
 /**
  * TODO: Also search in metadata
- * TODO: Allow other formats of import-with-module="@collboard/html-native-import"
+ * TODO: Allow other formats of import-with-module="@collboard/internal/html-native-import"
  * TODO: Write tests before 👆
  * TODO: Scenarios when more than one import-with-module found
  */

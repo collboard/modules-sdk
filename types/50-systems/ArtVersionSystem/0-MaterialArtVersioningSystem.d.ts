@@ -21,7 +21,6 @@ import { IPermissions } from './IPermissions';
 import { Operation } from './Operation';
 /**
  * ArtVersionSystem synchronizes the arts with the remote server.
- * TODO: This is used a lot so maybe we can figure out some better name
  *
  * @collboard-system
  */
@@ -70,5 +69,7 @@ export declare class MaterialArtVersioningSystem extends AbstractSystem implemen
     findCommitsByOperationId(operationId: string_uuid): Array<ICommitData>;
 }
 /**
+ * TODO: This is used a lot so maybe we can figure out some better name
+ * TODO: In future move out permissions to PermissionsSystem
  * TODO: [🏔️]  All art getters should be cold obserservables
  */

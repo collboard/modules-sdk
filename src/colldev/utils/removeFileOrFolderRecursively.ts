@@ -1,4 +1,4 @@
-import { access, constants, readdir, stat, unlink } from 'fs';
+import { access, constants, readdir, rmdir, stat, unlink } from 'fs';
 import { join } from 'path';
 import { promisify } from 'util';
 import { string_file_absolute_path, string_folder_absolute_path } from '../../../types';
@@ -19,7 +19,8 @@ export async function removeFileOrFolderRecursively(path: string_folder_absolute
                 await removeFileOrFolderRecursively(join(path, sub));
             }
 
-            await promisify(unlink)(path);
+            // console.log(chalk.red(`Deleting folder ${relative(process.cwd(), path).split('\\').join('/')}`));
+            await promisify(rmdir)(path);
         } else {
             throw new Error(`Unsupported file type: ${path}`);
         }

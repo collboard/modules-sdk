@@ -15,6 +15,7 @@ export declare class SentryLogger implements ILogger, ISubLogger {
     warn(warning?: any, ...optionalParams: Array<any>): this;
     error(error?: Error | any, ...optionalParams: Array<any>): this;
     trace(...data: Array<any>): this;
+    appear(): this;
     end(): void;
     group(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
     groupCollapsed(groupName?: string, ...optionalParams: Array<any>): ISubLogger;

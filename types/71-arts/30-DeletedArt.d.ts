@@ -19,6 +19,7 @@ export declare class DeletedArt extends AbstractArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
 }
 /**

@@ -6,9 +6,11 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { IVectorData, Vector } from 'xyzt';
-import { number_positive, string_color } from './../40-utils/typeAliases';
+import { number_positive, string_color } from '../40-utils/typeAliases';
 import { Abstract2dArt } from './26-Abstract2dArt';
 /**
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
+ *
  * @collboard-modules-sdk
  */
 export declare enum ShapeName {
@@ -29,6 +31,7 @@ export declare class ShapeArt extends Abstract2dArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     constructor(
         shape: ShapeName,

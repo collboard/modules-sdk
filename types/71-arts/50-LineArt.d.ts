@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IVectorData } from 'xyzt';
-import { number_positive, string_color } from './../40-utils/typeAliases';
+import { number_positive, string_color } from '../40-utils/typeAliases';
 import { ShapeArt } from './50-ShapeArt';
 /**
  *
@@ -18,6 +18,7 @@ export declare class LineArt extends ShapeArt {
     static serializeName: string;
     static manifest: {
         name: string;
+        deprecatedNames: string;
     };
     constructor(color: string_color, weight: 0 | number_positive, point1: IVectorData, point2: IVectorData);
 }

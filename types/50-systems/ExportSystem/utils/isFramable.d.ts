@@ -8,4 +8,7 @@ import { IFramable } from '../interfaces/IFramable';
 export declare function isFramable(framable: any): framable is IFramable;
 /**
  * TODO: There should be function BoundingBox.isBoundingBox in xyzt
+ * TODO: [🥟] Autogenerate suffix as .guard.ts
+ * TODO: [🥟] This should be propper typeguard not just testing one property
+ * TODO: [🥟] All typeguards should recieve unknown
  */

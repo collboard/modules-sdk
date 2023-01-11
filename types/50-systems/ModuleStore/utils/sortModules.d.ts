@@ -5,12 +5,12 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { ITranslateMessagePicker } from '../../TranslationsSystem/interfaces/ITranslateMessagePicker';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 export declare function sortModules(
     messagePicker: ITranslateMessagePicker,
     manifest1: IModuleManifest,
     manifest2: IModuleManifest,
 ): 0 | 1 | -1;
 /**
- *  TODO:  Unit test
+ *  TODO: Unit test
  */

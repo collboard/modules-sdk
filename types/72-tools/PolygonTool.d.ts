@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 export {};
 /**
- * TODO: [🍩] Maybe think about requesting systems non-magically
+ * TODO: [🍩][🧠] Requesting systems non-magically
  * TODO: [🍩] Omitting systems.request should fail bacause of unrequested systems.
  * TODO: What about unfinished polygons WHEN the tool is switched
  * TODO: Separate tool for freehand polygons (In commit bdc6d690536b6def2f7bc61701b53135e2832317 was working)

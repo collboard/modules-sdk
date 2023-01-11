@@ -7,6 +7,8 @@
 import React from 'react';
 /**
  * Which part of the editable element is focused across the rerendering
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  */
 export declare enum EditableFocus {
     /**

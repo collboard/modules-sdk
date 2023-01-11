@@ -11,7 +11,8 @@
  *
  * @collboard-modules-sdk
  */
-export declare function requireValue<T>(value: T | undefined, errorMessage?: string): T;
+export declare function requireValue<TValue>(value: TValue | undefined, errorMessage?: string): TValue;
 /**
+ * TODO: Use typescript assert in return
  * TODO: Use across the repositiory instead of !
  */

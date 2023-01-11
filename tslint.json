@@ -1,15 +1,18 @@
 {
-  "extends": ["tslint:recommended"],
-  "rules": {
-      "important-todos": true,
-      "object-literal-sort-keys": false,
-      "no-console": false,
-      "jsdoc-format": false,
-      "max-classes-per-file": {
-          "options": [4]
-      },
-      "comment-format": false,
-      "no-empty": false,
-      "array-type": [true, "generic"]
-  }
+    "extends": ["tslint:recommended"],
+    "rulesDirectory": ["./other/code-quality"],
+    "rules": {
+        "important-todos": true,
+        "missing-messages": true,
+        "clean-experiments": true,
+        "object-literal-sort-keys": false,
+        "no-console": false,
+        "jsdoc-format": false,
+        "max-classes-per-file": {
+            "options": [4]
+        },
+        "comment-format": false,
+        "no-empty": false,
+        "array-type": [true, "generic"]
+    }
 }

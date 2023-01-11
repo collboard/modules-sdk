@@ -5,9 +5,6 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 interface IPromptDialogueOptions {
-    /**
-     * TODO: Accept JSX when maked betted
-     */
     message?: string;
     defaultValue?: string;
 }
@@ -17,3 +14,7 @@ interface IPromptDialogueOptions {
  */
 export declare function promptDialogue(options: IPromptDialogueOptions | string): Promise<string | null>;
 export {};
+/**
+ * TODO: [🔊] This should be just a shortcut for using notificationSystem (OR other similar system)
+ * TODO: [🔊] Return IDestroyable & Notification object
+ */

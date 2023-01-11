@@ -36,9 +36,8 @@ export interface IIconAnonymous {
      * It can be one of the following:
      * - string with the name of the icon like "pyramid"
      * - string with emoji like "🔥"
-     * - URL object
+     * - URL as a string or URL object
      *
-     * **`icon` xor `char` must be set**
      */
     icon: string_char_emoji | string_icon | URL | string_url_image;
     /**

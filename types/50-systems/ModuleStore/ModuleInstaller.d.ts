@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { IDependency } from './interfaces/IDependencies';
 import { IInstaller } from './interfaces/IInstaller';
-import { IModuleManifest } from './interfaces/IModuleManifest';
+import { IModuleManifest } from './interfaces/IModuleManifest/IModuleManifest';
 import { IModulesStorageWeak } from './interfaces/IModulesStorage';
 import { ModuleInstallation } from './ModuleInstallation';
 import { ModuleStatus } from './ModuleStatus';

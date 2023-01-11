@@ -13,7 +13,7 @@ import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IOngoingMaterialOperation } from '../../ArtVersionSystem/IOperation';
 import { IToolbarIcon } from '../../ToolbarSystem/IToolbarIcon';
 import { IModuleDefinition } from '../interfaces/IModule';
-import { IModuleManifest } from '../interfaces/IModuleManifest';
+import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 /**
  * Maker for creating tray-like modules (like H-edu or Montessori)
  * This is the advanced version of the maker which is usefull for creating modules with can have dynamic number, order or other specific properties

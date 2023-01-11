@@ -131,10 +131,10 @@ export class BrowserSpawner extends Destroyable implements IService, IDestroyabl
 
         // TODO: This bellow is not working
         if (this.puppeteerBrowser) {
-            this.puppeteerBrowser.close();
+            this.puppeteerBrowser?.close();
         }
         if (this.process) {
-            this.process.kill();
+            this.process?.kill();
         }
     }
 }

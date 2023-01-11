@@ -14,9 +14,10 @@ export class DevelopmentCompiler extends Compiler<ICompilerOptions> {
     protected async runPreparation() {}
 
     protected async createWebpackConfig() {
-        // TODO: Consistent strategy how to garbage collect files that wasnt deleted propperly
         await makeColldevFolder();
-        await removeFileOrFolderRecursively(DEVELOP_TEMPORARY_PATH);
+        await removeFileOrFolderRecursively(
+            DEVELOP_TEMPORARY_PATH /* <- Note: This is not full cleanup but just develop script cleanup (full cleanup is done at the end by cleanupOldTemporaryAssets) */,
+        );
 
         return {
             mode: 'development' as 'development',

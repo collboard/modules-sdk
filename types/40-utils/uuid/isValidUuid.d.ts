@@ -9,4 +9,4 @@ import { string_uuid } from '../typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare function isValidUuid(value: any): value is string_uuid;
+export declare function isValidUuid(value: unknown): value is string_uuid;

@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_module_name } from '../../../40-utils/typeAliases';
-import { IModuleManifest } from './IModuleManifest';
+import { IModuleManifest } from './IModuleManifest/IModuleManifest';
 /**
  * Record of modules which are dependencies. It contains dependency name + details
  * Note: IDependenciesRecord and IDependenciesSet carries same information but in different form

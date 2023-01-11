@@ -40,3 +40,9 @@ export declare class Commit implements ICommitData {
      */
     static isCommitLike(possibleCommit: any): possibleCommit is ICommitData;
 }
+/**
+ * TODO: [🥟] All typeguards should recieve unknown
+ * TODO: [🥟] Expose isCommitLike to separate function and autogenerate
+ * TODO: [🥟] Add to separate file suffixed .guard.ts
+ * TODO: [Optimization][InitialLoading] Optimize this for initial loading
+ */

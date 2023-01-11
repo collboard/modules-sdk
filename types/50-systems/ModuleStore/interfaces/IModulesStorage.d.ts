@@ -13,7 +13,7 @@ import { IModule, IModuleDefinition } from './IModule';
  * This module definition can be already stored in the memory (for this is used IModulesStorageStrong) or created ad-hod from the name (this is used for external modules)
  *
  * Note: Modules storage - is just getter / setter for modules
- *       Modules store   - has full logic of mudules domain
+ *       Modules store   - has full logic of modules domain
  */
 export interface IModulesStorageWeak {
     getModule(name: string_module_name, version?: string_version_dependency): IModuleDefinition | null;
@@ -23,13 +23,14 @@ export interface IModulesStorageWeak {
  * This is used for internal modules + modules in development by colldev
  *
  * Note: Modules storage - is just getter / setter for modules
- *       Modules store   - has full logic of mudules domain
+ *       Modules store   - has full logic of modules domain
  */
 export interface IModulesStorageStrong extends IModulesStorageWeak, IDestroyable {
     getAllModules(): Array<IModuleDefinition>;
     observeAllModules(): Observable<Array<IModuleDefinition>>;
-    declareModule(module: IModule): Promise<void>;
+    declareModule(...module: Array<IModule>): Promise<void>;
 }
 /**
+ * TODO: [🉐] Module storage (IModulesStorageWeak or IModulesStorageStrong?) should have name prefix which modules it manages
  * TODO: Undeclaring modules in IModulesStorageStrong
  */

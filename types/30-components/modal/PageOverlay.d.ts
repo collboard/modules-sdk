@@ -14,9 +14,12 @@ declare type IPageOverlayProps = React.PropsWithChildren<{
  *
  * **You probably want to use Modal or CategorizedModal instead.**
  *
- * **Warning: Do not try to use more, than one PageOverlay at a time.
+ * **Warning: Do not try to use more, than one PageOverlay at a time.**
  *
  * @collboard-modules-sdk
  */
 export declare function PageOverlay({ onPointerDown, children }: IPageOverlayProps): JSX.Element;
 export {};
+/**
+ * TODO: @roseckyj 🎨 Prevent OR Warn if multiple PageOverlay instances from being rendered at the same time
+ */

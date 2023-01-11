@@ -7,6 +7,8 @@
 import { Loadable } from '../typeHelpers';
 /**
  * @collboard-modules-sdk
+ *
+ * @deprecated [🍿] Do not use enums but object as const OR 'LITERAL VALUES' instead
  */
 export declare enum IUseLoadableResultStatus {
     Pending = 'PENDING',
@@ -20,9 +22,9 @@ export interface IUseLoadableResultPending {
     error: undefined;
     isComplete: false;
 }
-interface IUseLoadableResultOngoing<T> {
+interface IUseLoadableResultOngoing<TValue> {
     status: IUseLoadableResultStatus.Ongoing;
-    value: T;
+    value: TValue;
     error: null;
     isComplete: false;
 }
@@ -32,23 +34,23 @@ export interface IUseLoadableResultError {
     value: null;
     isComplete: true;
 }
-export interface IUseLoadableResultComplete<T> {
+export interface IUseLoadableResultComplete<TValue> {
     status: IUseLoadableResultStatus.Complete;
-    value: T;
+    value: TValue;
     error: null;
     isComplete: true;
 }
-export declare type IUseLoadableResult<T> =
+export declare type IUseLoadableResult<TValue> =
     | IUseLoadableResultPending
-    | IUseLoadableResultOngoing<T>
+    | IUseLoadableResultOngoing<TValue>
     | IUseLoadableResultError
-    | IUseLoadableResultComplete<T>;
+    | IUseLoadableResultComplete<TValue>;
 /**
  * React hook that returns current value of given Loadable.
  *
  * @collboard-modules-sdk
  */
-export declare function useLoadable<T>(loadable: Loadable<T>): IUseLoadableResult<T>;
+export declare function useLoadable<Value>(loadable: Loadable<Value>): IUseLoadableResult<Value>;
 export {};
 /**
  * TODO: Proppably also with using this hook, create <Loadable> component as a combination and replacement of AsyncContentComponent and ObservableContentComponent:
