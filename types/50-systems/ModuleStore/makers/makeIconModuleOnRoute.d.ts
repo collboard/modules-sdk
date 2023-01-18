@@ -4,6 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
+import { RemoveIndex } from '../../../40-utils/typeHelpers';
 import { ISystems } from '../../00-SystemsContainer/ISystems';
 import { IUrlVariables } from '../../RoutingSystem/routePath/IUrlVariables';
 import { ToolbarName } from '../../ToolbarSystem/0-ToolbarSystem';
@@ -20,7 +21,7 @@ export declare function makeIconModuleOnRoute(protoModule: {
     manifest?: IModuleManifest;
     toolbar: ToolbarName;
     icon: IToolbarIcon | ((systems: ISystems) => IToolbarIcon);
-    routeParams: Partial<IUrlVariables>;
+    routeParams: Partial<RemoveIndex<IUrlVariables>>;
 }): IModuleDefinition;
 /**
  * TODO: !!x Rename to makeIconShortcutModule

@@ -6,6 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { BrowserHistoryUrlStorage, IBrowserHistoryStorageOptions, IJson, IObservableStorage } from 'everstorage';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { RemoveIndex } from '../../40-utils/typeHelpers';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IUrlVariables } from './routePath/IUrlVariables';
 /**
@@ -30,7 +31,7 @@ export declare class RoutingSystem extends AbstractSystem {
     private storageSystem;
     get selfUrl(): URL;
     protected init(): Promise<void>;
-    readonly urlVariables: BrowserHistoryUrlStorage<IUrlVariables>;
+    readonly urlVariables: BrowserHistoryUrlStorage<RemoveIndex<IUrlVariables>>;
     navigateHome(): void;
     get homeUrl(): URL;
     private get home();

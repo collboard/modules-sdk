@@ -20,6 +20,18 @@ export declare type FlipOptional<TObject extends object> = Required<Pick<TObject
       }
     : never;
 /**
+ * Removes an index signature from object
+ * Keeps only known properies
+ *
+ * @see https://stackoverflow.com/a/51956054/10647824
+ */
+export declare type RemoveIndex<T> = {
+    [K in keyof T as string extends K ? never : number extends K ? never : K]: T[K];
+};
+/**
+ * TODO: Maybe rename RemoveIndex to RemoveIndexSignature or OnlyKnown
+ */
+/**
  * Array with at least one item
  *
  * @collboard-modules-sdk

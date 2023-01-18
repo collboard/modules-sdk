@@ -11,3 +11,6 @@ import { IModuleManifest } from './IModuleManifest';
  * @private
  */
 export declare function testingThatPackageJsonIsAssignableToMobuleManifest(packageJson: PackageJson): IModuleManifest;
+/**
+ * TODO: Can be this done somehow better - maybe with new operator satisfies or extends
+ */
