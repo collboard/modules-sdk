@@ -37,7 +37,6 @@ export declare class ThrottleQueue<TTaskResult> extends Destroyable implements I
     private result;
     constructor(options: IThrottleQueueOptions);
     task(runner: () => Promisable<TTaskResult>): Promise<TTaskResult>;
-    destroy(): Promise<void>;
 }
 /**
  * TODO: [0] This should be maybe named DebounceQueue?

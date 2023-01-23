@@ -27,5 +27,7 @@ import { ITaskRunner } from './ITaskRunner';
 export declare class Queue<TTaskResult> extends Destroyable implements ITaskRunner<TTaskResult>, IDestroyable {
     private taskToWait;
     task(runner: () => Promisable<TTaskResult>): Promise<TTaskResult>;
-    destroy(): Promise<void>;
 }
+/**
+ * TODO: Implement destroy
+ */

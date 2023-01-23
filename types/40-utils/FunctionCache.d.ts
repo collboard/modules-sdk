@@ -20,7 +20,6 @@ export declare class FunctionCache<TInput, TOutput> extends Destroyable implemen
     constructor(executor: (input: TInput) => TOutput);
     get function(): (input: TInput) => TOutput;
     execute(input: TInput): TOutput;
-    destroy(): Promise<void>;
 }
 /**
  *
