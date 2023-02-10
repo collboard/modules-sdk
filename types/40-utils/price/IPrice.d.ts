@@ -10,3 +10,6 @@ export declare type IPrice =
           amount: number;
           currency: 'CZK' | 'EUR' | 'USD';
       };
+/**
+ * TODO: @see https://www.youtube.com/shorts/J1szHIME1ok
+ */
