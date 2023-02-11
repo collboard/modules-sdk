@@ -1876,6 +1876,13 @@ export const isValidUuid = (window as any).CollboardSdk.isValidUuid;
 export const replaceUuids = (window as any).CollboardSdk.replaceUuids;
 
 /**
+ * All system names as union type
+ *
+ * @collboard-modules-sdk
+ */
+export const SystemName = (window as any).CollboardSdk.SystemName;
+
+/**
  * Systems do everything in Collboard.
  * They can comunicate between or modules can do things through a systems
  *
