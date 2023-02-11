@@ -50,7 +50,7 @@ import { TranslationsSystem } from '../TranslationsSystem/0-TranslationsSystem';
 import { UsercontentSystem } from '../UsercontentSystem/0-UsercontentSystem';
 import { UserInterfaceSystem } from '../UserInterfaceSystem/0-UserInterfaceSystem';
 import { VoiceSystem } from '../VoiceSystem/0-VoiceSystem';
-import { ISystemsExtended, ISystemsMethods } from './ISystems';
+import { ISystemsExtended, SystemName } from './ISystems';
 import { ISystemsResolved } from './ISystemsResolved';
 /**
  * TODO: Protected systems and permissions
@@ -62,7 +62,7 @@ export declare class SystemsContainer implements ISystemsExtended {
      * @param requestedSystemsNames Names of requested systems
      * @returns Promise of all record object which contains all requested systems which will be resolved after permissions are granted
      */
-    request<TSystemNames extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+    request<TSystemNames extends SystemName>(
         ...requestedSystemsNames: Array<TSystemNames>
     ): Promise<Pick<ISystemsResolved, TSystemNames>>;
     /**
@@ -73,7 +73,7 @@ export declare class SystemsContainer implements ISystemsExtended {
      * @param requestedSystemsNames Names of requested systems
      * @returns record object which contains all requested systems
      */
-    use<TSystemNames extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+    use<TSystemNames extends SystemName>(
         ...requestedSystemsNames: Array<TSystemNames>
     ): Pick<ISystemsResolved, TSystemNames>;
     /**

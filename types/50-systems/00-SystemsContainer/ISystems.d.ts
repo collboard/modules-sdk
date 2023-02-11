@@ -52,6 +52,12 @@ import { UserInterfaceSystem } from '../UserInterfaceSystem/0-UserInterfaceSyste
 import { VoiceSystem } from '../VoiceSystem/0-VoiceSystem';
 import { ISystemsResolved } from './ISystemsResolved';
 /**
+ * All system names as union type
+ *
+ * @collboard-modules-sdk
+ */
+export declare type SystemName = keyof Omit<ISystemsExtended, ISystemsMethods>;
+/**
  * Keys of the ISystems that are methods not actual systems
  */
 export declare type ISystemsMethods = 'request' | 'use';
@@ -72,7 +78,7 @@ export interface ISystemsExtended {
      * @param requestedSystemsNames Names of requested systems
      * @returns Promise of all record object which contains all requested systems which will be resolved after permissions are granted
      */
-    request<TSystemNames extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+    request<TSystemNames extends SystemName>(
         ...requestedSystemsNames: Array<TSystemNames>
     ): Promise<Pick<ISystemsResolved, TSystemNames>>;
     /**
@@ -83,7 +89,7 @@ export interface ISystemsExtended {
      * @param requestedSystemsNames Names of requested systems
      * @returns record object which contains all requested systems
      */
-    use<TSystemNames extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+    use<TSystemNames extends SystemName>(
         ...requestedSystemsNames: Array<TSystemNames>
     ): Pick<ISystemsResolved, TSystemNames>;
     /**

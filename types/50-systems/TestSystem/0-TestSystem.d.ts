@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
-import { ITestSystem } from './interfaces/0-ITestSystem';
+import { ITestSystem, ITestSystem_echo_request, ITestSystem_echo_response } from './interfaces/0-ITestSystem';
 /**
  * TestSystem just for testing purposes.
  *
@@ -13,6 +13,6 @@ import { ITestSystem } from './interfaces/0-ITestSystem';
  */
 export declare class TestSystem extends AbstractSystem implements ITestSystem {
     protected init(): Promise<void>;
-    echo<TMessage>(message: TMessage): Promise<TMessage>;
+    echo({ message }: ITestSystem_echo_request): Promise<ITestSystem_echo_response>;
     throwError(): Promise<never>;
 }

@@ -227,6 +227,7 @@ export { ArrayableFull } from './40-utils/typeHelpers';
 export { PromisableArray } from './40-utils/typeHelpers';
 export { isValidUuid } from './40-utils/uuid/isValidUuid';
 export { replaceUuids } from './40-utils/uuid/replaceUuids';
+export { SystemName } from './50-systems/00-SystemsContainer/ISystems';
 export { ISystems } from './50-systems/00-SystemsContainer/ISystems';
 export { Core } from './50-systems/30-Core/0-Core';
 export { ApiClient } from './50-systems/ApiClient/0-ApiClient';

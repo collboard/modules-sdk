@@ -14,7 +14,7 @@ import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 export declare class MessagesApiSystem extends AbstractSystem implements IDestroyable {
     protected init(): Promise<void>;
     private messageQueue;
-    private processMessage;
+    private performMessage;
     emitEvent(eventData: any): void;
 }
 /**

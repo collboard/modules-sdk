@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
-import { ISystemsExtended, ISystemsMethods } from '../../50-systems/00-SystemsContainer/ISystems';
+import { ISystemsExtended, SystemName } from '../../50-systems/00-SystemsContainer/ISystems';
 import { ISystemsResolved } from '../../50-systems/00-SystemsContainer/ISystemsResolved';
 /**
  * Context for systems container used in modules
@@ -24,7 +24,7 @@ export declare const UnsignedSystemsContainerContext: React.Context<ISystemsExte
  *
  * @not-collboard-modules-sdk because this is core util
  */
-export declare function useSystemsInCore<TSystemNames extends keyof Omit<ISystemsExtended, ISystemsMethods>>(
+export declare function useSystemsInCore<TSystemNames extends SystemName>(
     ...requestedSystemsNames: Array<TSystemNames>
 ): Pick<ISystemsResolved, TSystemNames>;
 /**
