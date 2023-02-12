@@ -43,6 +43,7 @@ export { Additional } from './40-utils/Additional';
 export { aggregate } from './40-utils/aggregate';
 export { amIEmbededInIFrame } from './40-utils/amIEmbededInIFrame';
 export { calculate } from './40-utils/calculate';
+export { canBeCloned } from './40-utils/canBeClonned';
 export { checkOptionsCompatibility } from './40-utils/checkOptionsCompatibility';
 export { classNames } from './40-utils/classNames';
 export { Color } from './40-utils/color/Color';
