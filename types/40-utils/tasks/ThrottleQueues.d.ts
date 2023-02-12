@@ -16,3 +16,6 @@ export declare class ThrottleQueues<TName, TTaskResult> extends Destroyable impl
     getThrottleQueue(key: TName): ThrottleQueue<TTaskResult>;
     destroy(): Promise<void>;
 }
+/**
+ * TODO: Handle errors same as in Queue
+ */

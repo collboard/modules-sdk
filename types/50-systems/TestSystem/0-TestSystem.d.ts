@@ -13,6 +13,5 @@ import { ITestSystem, ITestSystem_echo_request, ITestSystem_echo_response } from
  */
 export declare class TestSystem extends AbstractSystem implements ITestSystem {
     protected init(): Promise<void>;
-    echo({ message }: ITestSystem_echo_request): Promise<ITestSystem_echo_response>;
-    throwError(): Promise<never>;
+    echo({ message, logger }: ITestSystem_echo_request): Promise<ITestSystem_echo_response>;
 }

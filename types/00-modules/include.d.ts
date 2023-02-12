@@ -90,7 +90,7 @@ import './shortcuts/undo-redo/UndoButton';
 import './skins/defaultBusinessSkin/DefaultBusinessSkinModule';
 import './skins/defaultDevelopmentSkin/00-DefaultDevelopmentSkinModule';
 import './skins/defaultEducationSkin/DefaultEducationSkinModule';
-import './special/black-module';
+import './special/blank-module';
 import './timer/StopwatchArtModule';
 import './timer/StopwatchControlsAttributeModule';
 import './timer/TimerArtModule';

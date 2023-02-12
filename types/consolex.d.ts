@@ -7,12 +7,12 @@
 import { ProxyLogger } from './40-utils/logger/ProxyLogger';
 import { SwitchLogger } from './40-utils/logger/SwitchLogger';
 /**
- * TODO: [🍃] Anotate
+ * TODO: Anotate
  */
 export declare const consolexBase: ProxyLogger;
 /**
- * TODO: [🍃] Anotate
- * TODO: [🍃] Better name than consolex
+ * TODO: Anotate
+ * TODO: Better name than consolex
  */
 export declare const consolex: SwitchLogger;
 /**

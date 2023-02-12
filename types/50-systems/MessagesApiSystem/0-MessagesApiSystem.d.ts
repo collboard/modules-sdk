@@ -16,10 +16,14 @@ export declare class MessagesApiSystem extends AbstractSystem implements IDestro
     private messageQueue;
     private performMessage;
     emitEvent(eventData: any): void;
+    /**
+     * Reaction is response, error or log
+     */
+    private reactionMessage;
 }
 /**
- * TODO: processMessage maybe public
- * TODO: There should be some concept of private system
- * TODO: This (or some similar) system should manage console access
- * TODO: messageQueue maybe ThrottleQueue (not a simple Queue)
+ * TODO: [🍃] processMessage maybe public
+ * TODO: [🍃] There should be some concept of private system
+ * TODO: [🍃] This (or some similar) system should manage console access
+ * TODO: [🍃] messageQueue maybe ThrottleQueue (not a simple Queue)
  */
