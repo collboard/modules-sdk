@@ -438,6 +438,14 @@ export const amIEmbededInIFrame = (window as any).CollboardSdk.amIEmbededInIFram
 export const calculate = (window as any).CollboardSdk.calculate;
 
 /**
+ * Detects if given value can be clonned (for example for postMessage)
+ *
+ * @see https://stackoverflow.com/questions/32673518/how-to-check-if-an-object-can-be-cloned-by-the-structured-clone-algorithm
+ * @collboard-modules-sdk
+ */
+export const canBeCloned = (window as any).CollboardSdk.canBeCloned;
+
+/**
  * Throws error if the passed options are incompatible with the passed schema.
  *
  * @param options all options
