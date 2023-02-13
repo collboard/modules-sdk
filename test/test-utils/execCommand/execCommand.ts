@@ -46,11 +46,7 @@ export function execCommand(options: IExecCommandOptions): Promise<void> {
             commandProcess.stderr.on('data', (stderr) => {
                 output.push(stderr.toString());
                 if (stderr.toString().trim()) {
-                    if (crashOnError) {
-                        reject(new Error(stderr.toString()));
-                    } else {
-                        console.warn(stderr.toString());
-                    }
+                  console.warn(stderr.toString());
                 }
             });
 
