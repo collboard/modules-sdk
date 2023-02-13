@@ -10,4 +10,4 @@
  * @see https://stackoverflow.com/questions/32673518/how-to-check-if-an-object-can-be-cloned-by-the-structured-clone-algorithm
  * @collboard-modules-sdk
  */
-export declare function canBeCloned(value: any): boolean;
+export declare function isCloneable(value: any): boolean;
