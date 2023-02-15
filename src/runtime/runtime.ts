@@ -500,6 +500,16 @@ export const create3dRotation = (window as any).CollboardSdk.create3dRotation;
 export const blobToBinaryString = (window as any).CollboardSdk.blobToBinaryString;
 
 /**
+ * Convert Blob or File to string data url
+ *
+ * Tip: Consider using ObjectUrl class instead
+ * Tip: You can pass dataurl and it will be returned as is
+ *
+ * @collboard-modules-sdk
+ */
+export const blobToDataurl = (window as any).CollboardSdk.blobToDataurl;
+
+/**
  * Converts Blob to File
  * This is usefull for:
  *   - Preserving Files that actually has a filename
@@ -509,6 +519,22 @@ export const blobToBinaryString = (window as any).CollboardSdk.blobToBinaryStrin
  * @collboard-modules-sdk
  */
 export const blobToFile = (window as any).CollboardSdk.blobToFile;
+
+/**
+ * Convert string data url to blob
+ *
+ * Tip: If you want to have more versatile tool look at fetchAsFile which in dataurl cases uses internally this function dataurlToBlob
+ *
+ * @collboard-modules-sdk
+ */
+export const dataurlToBlob = (window as any).CollboardSdk.dataurlToBlob;
+
+/**
+ * Tests if given string is valid DataURL.
+ *
+ * @collboard-modules-sdk
+ */
+export const isValidDataurl = (window as any).CollboardSdk.isValidDataurl;
 
 /**
  * Converts Blob, File or MediaSource to url using URL.createObjectURL
