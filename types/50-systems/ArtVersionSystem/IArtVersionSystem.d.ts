@@ -8,7 +8,7 @@ import { IDestroyable } from 'destroyable';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Commit } from '../../10-database/Commit';
 import { ICommitData } from '../../10-database/interfaces/ICommitData';
-import { string_uuid } from '../../40-utils/typeAliases';
+import { uuid } from '../../40-utils/typeAliases';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
 import { CornerstoneArt } from '../../71-arts/30-CornerstoneArt';
 import { IModuleSignature } from './IModuleSignature';
@@ -22,7 +22,7 @@ export interface IArtVersioningSystem extends IDestroyable {
     readonly commitsObservable: Observable<Commit>;
     readonly artsObservable: Observable<AbstractArt>;
     readonly permissions: IPermissions;
-    readonly clientId: string_uuid;
+    readonly clientId: uuid;
     readonly lastCommit: ICommitData | null;
     readonly lastCommitId: number;
     readonly commits: Array<ICommitData>;
@@ -38,9 +38,9 @@ export interface IArtVersioningSystem extends IDestroyable {
     findOriginCommit(commit: ICommitData): ICommitData;
     isLastInItsTree(commit: ICommitData): boolean;
     findLastCommitOfArt(art: AbstractArt): ICommitData | null;
-    findCommitById(commitId: string_uuid | null | undefined): ICommitData | null;
-    findCommitsByOperationId(operationId: string_uuid): Array<ICommitData>;
+    findCommitById(commitId: uuid | null | undefined): ICommitData | null;
+    findCommitsByOperationId(operationId: uuid): Array<ICommitData>;
     signAs(moduleSignature: IModuleSignature): IArtVersioningSystem;
     createOperation(operationName: string): IFreshMaterialOperation;
-    setCommitWasPersisted(commitId: string_uuid, id: number): void;
+    setCommitWasPersisted(commitId: uuid, id: number): void;
 }

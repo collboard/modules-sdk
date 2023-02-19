@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_uri_part, string_uuid, string_version } from '../../40-utils/typeAliases';
+import { string_uri_part, string_version, uuid } from '../../40-utils/typeAliases';
 import { BusinessName } from '../../50-systems/BusinessSystem/configuration/BusinessName';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
 import { CornerstoneArt } from '../../71-arts/30-CornerstoneArt';
@@ -17,10 +17,10 @@ import { CornerstoneArt } from '../../71-arts/30-CornerstoneArt';
 export interface ICommitData {
     [index: string]: string | number | null | any;
     id: number;
-    boardId: string_uuid;
-    treeId: string_uuid;
-    commitId: string_uuid;
-    previousId: string_uuid | null;
+    boardId: uuid;
+    treeId: uuid;
+    commitId: uuid;
+    previousId: uuid | null;
     /**
      * This is just computed redundant information that the commit is last in the tree.
      */
@@ -31,8 +31,8 @@ export interface ICommitData {
     moduleVersion: string_version;
     remoteVersion: string_version;
     operationName: string | null;
-    operationId: string | null;
-    author: string;
+    operationId: uuid | null;
+    author: uuid | 'remote';
     seenBy: object;
     persist: number;
     created: Date;

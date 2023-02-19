@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_uuid } from '../../40-utils/typeAliases';
+import { uuid } from '../../40-utils/typeAliases';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IBoardApiIdentity, IConnectionIdentity, IInstanceIdentity } from './IIdentity';
 /**
@@ -13,13 +13,13 @@ import { IBoardApiIdentity, IConnectionIdentity, IInstanceIdentity } from './IId
  * @collboard-system
  */
 export declare class IdentitySystem extends AbstractSystem {
-    readonly instanceId: string_uuid;
+    readonly instanceId: uuid;
     private storage;
     private _browserId;
     private _sessionId;
     protected init(): Promise<void>;
-    get browserId(): string_uuid;
-    get sessionId(): string_uuid;
+    get browserId(): uuid;
+    get sessionId(): uuid;
     createInstanceIdentity(): IInstanceIdentity;
     createBoardApiIdentity(): IBoardApiIdentity;
     createConnectionIdentity(boardApiIdentity: IBoardApiIdentity): IConnectionIdentity;

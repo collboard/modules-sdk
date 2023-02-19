@@ -4,9 +4,10 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { uuid } from '../typeAliases';
+import { uuid } from './typeAliases';
 /**
+ * Generates random UUID v4
  *
- * @collboard-modules-sdk
+ * @returns uuid branded type
  */
-export declare function isValidUuid(value: unknown): value is uuid;
+export declare function randomUuid(): uuid;

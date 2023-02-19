@@ -4,11 +4,11 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_uuid } from '../../../40-utils/typeAliases';
+import { uuid } from '../../../40-utils/typeAliases';
 /**
  * @collboard-modules-sdk
  */
-export declare function findArtElement(artId: string_uuid): HTMLElement | null;
+export declare function findArtElement(artId: uuid): HTMLElement | null;
 /**
  * TODO:This should be part of some rendering system
  */

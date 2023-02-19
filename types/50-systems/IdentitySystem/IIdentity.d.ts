@@ -4,41 +4,41 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_uuid } from '../../40-utils/typeAliases';
+import { uuid } from '../../40-utils/typeAliases';
 export interface IUserIdentity {
     /**
      *
      */
-    userId: string_uuid | null;
+    userId: uuid | null;
 }
 export interface IBrowserIdentity extends IUserIdentity {
     /**
      *
      */
-    browserId: string_uuid;
+    browserId: uuid;
 }
 export interface ISessionIdentity extends IBrowserIdentity {
     /**
      *
      */
-    sessionId: string_uuid;
+    sessionId: uuid;
 }
 export interface IInstanceIdentity extends ISessionIdentity {
     /**
      *
      */
-    instanceId: string_uuid;
+    instanceId: uuid;
 }
 export interface IBoardApiIdentity extends IInstanceIdentity {
     /**
      *
      */
-    boardApiId: string_uuid;
+    boardApiId: uuid;
 }
 export interface IConnectionIdentity extends IBoardApiIdentity {
     /**
      *
      */
-    connectionId: string_uuid;
+    connectionId: uuid;
 }
 export declare const IDENTITY_KEYS: Array<keyof IConnectionIdentity>;

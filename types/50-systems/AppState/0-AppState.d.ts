@@ -7,7 +7,7 @@
 import { BehaviorSubject } from 'rxjs';
 import { IVectorData, Transform, Vector } from 'xyzt';
 import { square } from '../../40-utils/pointsToSquare';
-import { string_attribute, string_uuid } from '../../40-utils/typeAliases';
+import { string_attribute, uuid } from '../../40-utils/typeAliases';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 /**
@@ -102,7 +102,7 @@ interface IIsArtSelectedOptions {
     /**
      * Unique ID of the art
      */
-    artId: string_uuid;
+    artId: uuid;
     /**
      * If true, it will return true only if the art is selected and no other
      */

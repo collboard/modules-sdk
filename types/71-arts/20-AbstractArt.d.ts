@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_uuid } from '../40-utils/typeAliases';
+import { uuid } from '../40-utils/typeAliases';
 import { attribute_value } from '../50-systems/AttributesSystem/IAttribute';
 /**
  * AbstractArt is an abstract class which all art classes extend.
@@ -24,7 +24,7 @@ export declare abstract class AbstractArt {
     /**
      * Unique identifier of each art
      */
-    readonly artId: string_uuid;
+    readonly artId: uuid;
     constructor();
 }
 /**

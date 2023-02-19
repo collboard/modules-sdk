@@ -148,12 +148,19 @@ export declare type string_host = string;
  */
 export declare type string_email = string;
 /**
- * Semantic helper
+ * Branded type for UUIDs version 4
+ * This will not allow to pass some random string where should be only a valid UUID
+ *
+ * Use utils:
+ *   - `randomUuid` to generate
+ *   - `isValidUuid  to check validity
  *
  * For example `"5a0a153d-7be9-4018-9eda-e0e2e2b89bd9"`
  * @collboard-modules-sdk
  */
-export declare type string_uuid = string;
+export declare type uuid = string & {
+    __type: 'UUID';
+};
 /**
  * Semantic helper
  * UUID with only the first part of the UUID
@@ -420,6 +427,8 @@ export declare type number_megabytes = number_positive;
 export declare type number_gigabytes = number_positive;
 export declare type number_terabytes = number_positive;
 /**
+ * TODO: Change all Semantic helper to Branded types (like Uuid)
+ *       [🥙] Should be uuid vs Uuid vs UUID
  * TODO: Anotate all + collboard-modules-sdk to all
  * TODO: Use instead of number_... type-fest
  * TODO: In some cases string_module_name, constraint by literals (or as close to RegExp as possible in TypeScript)

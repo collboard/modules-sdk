@@ -4,16 +4,16 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_uri_part, string_uuid, string_version } from '../40-utils/typeAliases';
+import { string_uri_part, string_version, uuid } from '../40-utils/typeAliases';
 import { BusinessName } from '../50-systems/BusinessSystem/configuration/BusinessName';
 import { ICommitData } from './interfaces/ICommitData';
 export declare class Commit implements ICommitData {
     [index: string]: string | number | null | any;
     id: number;
-    boardId: string_uuid;
-    treeId: string_uuid;
-    commitId: string_uuid;
-    previousId: string_uuid | null;
+    boardId: uuid;
+    treeId: uuid;
+    commitId: uuid;
+    previousId: uuid | null;
     current: number;
     version: number;
     replacingStrategy: 'KEEP' | 'REPLACE' | null;
@@ -21,8 +21,8 @@ export declare class Commit implements ICommitData {
     moduleVersion: string_version;
     remoteVersion: string_version;
     operationName: string | null;
-    operationId: string | null;
-    author: string;
+    operationId: uuid | null;
+    author: uuid | 'remote';
     seenBy: object;
     isSeenBy(clientId: string): boolean;
     addSeenBy(clientId: string): void;

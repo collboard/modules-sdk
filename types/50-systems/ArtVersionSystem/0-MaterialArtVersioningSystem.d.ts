@@ -8,7 +8,7 @@ import { IDestroyable } from 'destroyable';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Commit } from '../../10-database/Commit';
 import { ICommitData } from '../../10-database/interfaces/ICommitData';
-import { string_uuid } from '../../40-utils/typeAliases';
+import { uuid } from '../../40-utils/typeAliases';
 import { AbstractArt } from '../../71-arts/20-AbstractArt';
 import { AbstractPlacedArt } from '../../71-arts/25-AbstractPlacedArt';
 import { CornerstoneArt } from '../../71-arts/30-CornerstoneArt';
@@ -37,13 +37,13 @@ export declare class MaterialArtVersioningSystem extends AbstractSystem implemen
     private identitySystem;
     private artSerializer;
     protected init(): Promise<void>;
-    get clientId(): string;
+    get clientId(): uuid;
     signAs(moduleSignature: IModuleSignature): MaterialArtVersioningSystem;
     createOperation(operationName: string): Operation;
     createPrimaryOperation(): Operation;
     protected pushCommitsToVersioningSystem(...commits: Array<ICommitData>): Promise<void>;
     get lastCommitId(): number;
-    setCommitWasPersisted(commitId: string_uuid, id: number): void;
+    setCommitWasPersisted(commitId: uuid, id: number): void;
     get commits(): Array<ICommitData>;
     get arts(): Array<AbstractArt>;
     readonly cornerstoneArts: BehaviorSubject<CornerstoneArt>;
@@ -61,12 +61,12 @@ export declare class MaterialArtVersioningSystem extends AbstractSystem implemen
      *
      * @param commitId when null or undefined returns null
      */
-    findCommitById(commitId: string_uuid | null | undefined): ICommitData | null;
+    findCommitById(commitId: uuid | null | undefined): ICommitData | null;
     /**
      * Note: This is just a debug class
      */
     get sortCommitsByOperationId(): Array<Array<ICommitData>>;
-    findCommitsByOperationId(operationId: string_uuid): Array<ICommitData>;
+    findCommitsByOperationId(operationId: uuid): Array<ICommitData>;
 }
 /**
  * TODO: This is used a lot so maybe we can figure out some better name

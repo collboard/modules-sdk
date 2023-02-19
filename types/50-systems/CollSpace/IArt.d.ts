@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { Promisable } from 'type-fest';
-import { string_module_name, string_uuid } from '../../40-utils/typeAliases';
+import { string_module_name, uuid } from '../../40-utils/typeAliases';
 import { ISystems } from '../00-SystemsContainer/ISystems';
 import { IAppearance } from './appearance/IAppearance';
 import { IArtData } from './IArtData';
@@ -26,7 +26,7 @@ export interface IArt<TShape extends IShape = IShape, TAppearance extends IAppea
      * - If there is one art which is changed by user, the id is kept unchanged
      * - When you make a copy or export+import the art, new id will be generated
      */
-    readonly artId: string_uuid;
+    readonly artId: uuid;
     /**
      * @@x
      */
