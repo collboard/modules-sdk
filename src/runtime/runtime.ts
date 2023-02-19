@@ -493,64 +493,6 @@ export const compareStrings = (window as any).CollboardSdk.compareStrings;
 export const create3dRotation = (window as any).CollboardSdk.create3dRotation;
 
 /**
- * Convert Blob or File to binary string
- *
- * @collboard-modules-sdk
- */
-export const blobToBinaryString = (window as any).CollboardSdk.blobToBinaryString;
-
-/**
- * Convert Blob or File to string data url
- *
- * Tip: Consider using ObjectUrl class instead
- * Tip: You can pass dataurl and it will be returned as is
- *
- * @collboard-modules-sdk
- */
-export const blobToDataurl = (window as any).CollboardSdk.blobToDataurl;
-
-/**
- * Converts Blob to File
- * This is usefull for:
- *   - Preserving Files that actually has a filename
- *   - Autocomplete the filename for blobs according to its mimetype
- *
- *
- * @collboard-modules-sdk
- */
-export const blobToFile = (window as any).CollboardSdk.blobToFile;
-
-/**
- * Convert string data url to blob
- *
- * Tip: If you want to have more versatile tool look at fetchAsFile which in dataurl cases uses internally this function dataurlToBlob
- *
- * @collboard-modules-sdk
- */
-export const dataurlToBlob = (window as any).CollboardSdk.dataurlToBlob;
-
-/**
- * Tests if given string is valid DataURL.
- *
- * @collboard-modules-sdk
- */
-export const isValidDataurl = (window as any).CollboardSdk.isValidDataurl;
-
-/**
- * Converts Blob, File or MediaSource to url using URL.createObjectURL
- *
- * @collboard-modules-sdk
- */
-export const ObjectUrl = (window as any).CollboardSdk.ObjectUrl;
-
-/**
- * Download a File to with a browser
- *
- * @collboard-modules-sdk
- */
-export const triggerFileDownload = (window as any).CollboardSdk.triggerFileDownload;
-
-/**
  *
  * @collboard-modules-sdk
  */
@@ -696,6 +638,43 @@ export const escapeRegExp = (window as any).CollboardSdk.escapeRegExp;
 export const amendPropperFileTypeAndName = (window as any).CollboardSdk.amendPropperFileTypeAndName;
 
 /**
+ * Convert Blob or File to binary string
+ *
+ * @collboard-modules-sdk
+ */
+export const blobToBinaryString = (window as any).CollboardSdk.blobToBinaryString;
+
+/**
+ * Convert Blob or File to string data url
+ *
+ * Tip: Consider using ObjectUrl class instead
+ * Tip: You can pass dataurl and it will be returned as is
+ *
+ * @collboard-modules-sdk
+ */
+export const blobToDataurl = (window as any).CollboardSdk.blobToDataurl;
+
+/**
+ * Converts Blob to File
+ * This is usefull for:
+ *   - Preserving Files that actually has a filename
+ *   - Autocomplete the filename for blobs according to its mimetype
+ *
+ *
+ * @collboard-modules-sdk
+ */
+export const blobToFile = (window as any).CollboardSdk.blobToFile;
+
+/**
+ * Convert string data url to blob
+ *
+ * Tip: If you want to have more versatile tool look at fetchAsFile which in dataurl cases uses internally this function dataurlToBlob
+ *
+ * @collboard-modules-sdk
+ */
+export const dataurlToBlob = (window as any).CollboardSdk.dataurlToBlob;
+
+/**
  * Makes GET request* and return response as a file.
  *
  * Tip: You can pass dataurl here and then * it converts it to a File
@@ -738,6 +717,27 @@ export const findPropperFileType = (window as any).CollboardSdk.findPropperFileT
  * @collboard-modules-sdk
  */
 export const isFileExecutable = (window as any).CollboardSdk.isFileExecutable;
+
+/**
+ * Tests if given string is valid DataURL.
+ *
+ * @collboard-modules-sdk
+ */
+export const isValidDataurl = (window as any).CollboardSdk.isValidDataurl;
+
+/**
+ * Converts Blob, File or MediaSource to url using URL.createObjectURL
+ *
+ * @collboard-modules-sdk
+ */
+export const ObjectUrl = (window as any).CollboardSdk.ObjectUrl;
+
+/**
+ * Download a File to with a browser
+ *
+ * @collboard-modules-sdk
+ */
+export const triggerFileDownload = (window as any).CollboardSdk.triggerFileDownload;
 
 /**
  * Filter array with limit and predicate
@@ -1640,12 +1640,17 @@ export const string_host = (window as any).CollboardSdk.string_host;
 export const string_email = (window as any).CollboardSdk.string_email;
 
 /**
- * Semantic helper
+ * Branded type for UUIDs version 4
+ * This will not allow to pass some random string where should be only a valid UUID
+ *
+ * Use utils:
+ *   - `randomUuid` to generate
+ *   - `isValidUuid  to check validity
  *
  * For example `"5a0a153d-7be9-4018-9eda-e0e2e2b89bd9"`
  * @collboard-modules-sdk
  */
-export const string_uuid = (window as any).CollboardSdk.string_uuid;
+export const uuid = (window as any).CollboardSdk.uuid;
 
 /**
  * Semantic helper
