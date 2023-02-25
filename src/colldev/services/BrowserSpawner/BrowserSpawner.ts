@@ -3,8 +3,8 @@ import { Destroyable, IDestroyable } from 'destroyable';
 import { getAppName, locateBrowser } from 'locate-app';
 import openBrowser from 'open';
 import puppeteer, {
-    Browser,
-    Page,
+  Browser,
+  Page
 } from 'puppeteer' /* <- TODO: Maybe better to install puppeteer-core and chrome separatelly when missing (for example in GitHub actions environment) */;
 import { BehaviorSubject } from 'rxjs';
 import { forTime } from 'waitasecond';
