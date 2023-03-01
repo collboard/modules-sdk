@@ -23,7 +23,7 @@ export declare class ErrorBoundary extends React.Component<IErrorBoundaryProps, 
     componentDidCatch(error: Error): void;
     render(): React.ReactNode;
 }
-export { };
+export {};
 /**
  * TODO: [🏛️] Convert Class components to Functional (with hooks).
  */

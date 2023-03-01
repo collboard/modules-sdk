@@ -13,7 +13,7 @@
  *
  * @collboard-modules-sdk
  */
-export declare function checkOptionsCompatibility<T, TCompatibleKeys extends keyof T>(
-    options: T,
-    compatibleKeys: Array<TCompatibleKeys>,
-): Pick<T, TCompatibleKeys>;
+export declare function checkOptionsCompatibility<
+    TOptions extends Record<TAllowedKey, unknown>,
+    TAllowedKey extends string,
+>(options: TOptions, compatibleKeys: Array<TAllowedKey>): Pick<TOptions, TAllowedKey>;

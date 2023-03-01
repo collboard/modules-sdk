@@ -5,7 +5,6 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Observable } from 'rxjs';
-import { Promisable } from 'type-fest';
 /**
  * Loadable represents value that is loaded, can be loaded via Promise or can update over a time via Observable.
  */
@@ -52,10 +51,4 @@ export declare type Arrayable<TItem> = TItem | Array<TItem> | Set<TItem>;
  * @collboard-modules-sdk
  */
 export declare type ArrayableFull<TItem> = TItem | ArrayFull<TItem>;
-/**
- * Array which can be wrapped in a Promise and all items can be also wrapped in a Promise
- *
- * @collboard-modules-sdk
- */
-export declare type PromisableArray<TItem> = Promisable<Array<Promisable<TItem>>>;
-export { };
+export {};

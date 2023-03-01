@@ -6,11 +6,11 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Observable } from 'rxjs';
 import {
-  string_translate_language,
-  string_uriid,
-  string_uri_part,
-  string_url,
-  string_version
+    string_translate_language,
+    string_uriid,
+    string_uri_part,
+    string_url,
+    string_version,
 } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
@@ -46,7 +46,7 @@ export declare class ApiClient extends AbstractSystem {
     }>;
     getMyBoards(): Observable<IGetMyBoardsResponse>;
     translateMessages(language: string_translate_language): Promise<Array<ITranslateMessage>>;
-    missingTranslateMessage(missingTranslateMessage: ITranslateMessage): Promise<any>;
+    missingTranslateMessage(missingTranslateMessage: ITranslateMessage): Promise<unknown>;
     private get;
     private post;
     private processResponse;

@@ -18,11 +18,6 @@ declare global {
             thisArg?: any,
         ): Promise<Array<T>>;
         /**
-         * Variant of Array.prototype.filter with simple predicate that just tests for item not being null
-         * Returns the elements of an array that is not null
-         */
-        filterNull(): Array<NonNullable<T>>;
-        /**
          * Async version of Array.prototype.map
          * Calls a defined callback function on each element of an array, and returns an array that contains the results.
          * @param callbackfn A function that accepts up to three arguments. The map method calls the callbackfn function one time for each element in the array.

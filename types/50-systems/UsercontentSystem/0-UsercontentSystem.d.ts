@@ -4,7 +4,6 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { string_url } from '../../40-utils/typeAliases';
 import { ISystemsExtended } from '../00-SystemsContainer/ISystems';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 /**
@@ -16,5 +15,5 @@ export declare class UsercontentSystem extends AbstractSystem {
     private usercontentUrl;
     constructor(systems: ISystemsExtended, usercontentUrl: URL);
     protected init(): Promise<void>;
-    upload(file: File | Blob): Promise<string_url>;
+    upload(file: File | Blob): Promise<URL>;
 }
