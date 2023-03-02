@@ -63,7 +63,7 @@ export declare class ArtSerializer extends AbstractSystem implements ISerializer
         errors: Array<DeserializationError>,
     ): Promise<ICollboardSerializable>;
 }
-export {};
+export { };
 /**
  * TODO: DRY serialize and deserialize
  * TODO: ArtSerializer should warn if you try to serialize unnessesary HUGE art - test on clone vs fixed freehand

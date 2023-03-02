@@ -51,7 +51,7 @@ export declare type IUseLoadableResult<TValue> =
  * @collboard-modules-sdk
  */
 export declare function useLoadable<Value>(loadable: Loadable<Value>): IUseLoadableResult<Value>;
-export {};
+export { };
 /**
  * TODO: Proppably also with using this hook, create <Loadable> component as a combination and replacement of AsyncContentComponent and ObservableContentComponent:
  *     > <Loadable>

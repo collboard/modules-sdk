@@ -13,7 +13,7 @@ interface IAlertDialogueOptions {
  * @collboard-modules-sdk
  */
 export declare function alertDialogue(options: IAlertDialogueOptions | IBaseMessage): Promise<void>;
-export {};
+export { };
 /**
  * TODO: Maybe split into multiple stages of importance - info/warning/error
  * TODO: [🔊] This should be just a shortcut for using notificationSystem (OR other similar system)

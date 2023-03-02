@@ -51,4 +51,4 @@ export declare type Arrayable<TItem> = TItem | Array<TItem> | Set<TItem>;
  * @collboard-modules-sdk
  */
 export declare type ArrayableFull<TItem> = TItem | ArrayFull<TItem>;
-export {};
+export { };
