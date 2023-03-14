@@ -6,13 +6,13 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IJson } from 'everstorage';
 import {
-  number_integer,
-  number_positive,
-  string_attribute,
-  string_license_token,
-  string_mime_type,
-  string_module_category,
-  string_module_name
+    number_integer,
+    number_positive,
+    string_attribute,
+    string_license_token,
+    string_mime_type,
+    string_module_category,
+    string_module_name,
 } from '../../../40-utils/typeAliases';
 /**
  * Represents a query to modules repository
