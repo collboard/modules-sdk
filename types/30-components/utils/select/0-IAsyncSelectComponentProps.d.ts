@@ -6,15 +6,34 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Promisable } from 'type-fest';
 import { Factorable } from '../../../40-utils/IFactory';
+import { PromisableArray } from '../../../40-utils/typeHelpers';
 import { IMessage } from '../../../50-systems/TranslationsSystem/interfaces/IMessage';
 /**
- * Shared props for <SelectComponent/>
+ * Shared props for select components
  */
 export interface IAsyncSelectComponentProps<TItem> {
     /**
      * All options in a list.
      */
-    options: Factorable<Promisable<IAsyncSelectComponentOptions<TItem>>>;
+    options: Factorable<
+        PromisableArray<
+            {
+                title: IMessage;
+            } & (
+                | {
+                      value: TItem;
+                  }
+                | {
+                      value: TItem;
+                      isDisabled: false;
+                  }
+                | {
+                      value: never;
+                      isDisabled: true;
+                  }
+            )
+        >
+    >;
     /**
      * Current value
      */
@@ -26,25 +45,3 @@ export interface IAsyncSelectComponentProps<TItem> {
      */
     onChange(value: TItem): Promisable<void>;
 }
-/**
- * Options for <SelectComponent/>
- */
-export declare type IAsyncSelectComponentOptions<TItem> = Array<
-    Promisable<
-        {
-            title: IMessage;
-        } & (
-            | {
-                  value: TItem;
-              }
-            | {
-                  value: TItem;
-                  isDisabled: false;
-              }
-            | {
-                  value: never;
-                  isDisabled: true;
-              }
-        )
-    >
->;

@@ -225,6 +225,7 @@ export { string_color } from './40-utils/typeAliases';
 export { ArrayFull } from './40-utils/typeHelpers';
 export { Arrayable } from './40-utils/typeHelpers';
 export { ArrayableFull } from './40-utils/typeHelpers';
+export { PromisableArray } from './40-utils/typeHelpers';
 export { isValidUuid } from './40-utils/uuid/isValidUuid';
 export { replaceUuids } from './40-utils/uuid/replaceUuids';
 export { SystemName } from './50-systems/00-SystemsContainer/ISystems';
