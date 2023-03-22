@@ -42,7 +42,7 @@ export {};
  * TODO: !!x Use or not to use simple prefix in maker
  * TODO: !!x Optimize re-draw
  * TODO: Do not internally use class
- * TODO: [🧠] !!x return type Promisable<void>
+ * TODO: [🧠] TODO: !!x return type Promisable<void>
  *       - What about animated arts
  *       - What about heavy arts
  * TODO: In renderBox maybe make propper component like <FrameArtComponent title={this.title} size={new Vector(this.size)} /> instead of returning JSX

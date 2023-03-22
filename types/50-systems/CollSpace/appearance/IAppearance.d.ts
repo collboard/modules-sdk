@@ -55,5 +55,5 @@ export interface IFullAdvancedAppearance {
 /**
  * TODO: !! Appearance should be able to describe different mabterial for each spot/cap - same for different edge
  * TODO: What about bulk,... spot, edge, fill, bulk,...
- * TODO: [👨‍⚖️] !! Allow extending for specific arts> [index: string]: IMaterial
+ * TODO: [👨‍⚖️] TODO: !! Allow extending for specific arts> [index: string]: IMaterial
  */
