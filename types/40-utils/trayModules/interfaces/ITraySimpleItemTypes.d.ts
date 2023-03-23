@@ -47,7 +47,7 @@ interface ITraySimpleTabGroupItem {
      */
     artSrc?: string_url;
 }
-export {};
+export { };
 /**
  * TODO: Allow more types of ITraySimpleTabGroupItem.artSrc like artData, art and artSrc: URL
  */

@@ -17,7 +17,7 @@ interface IDeepCloneOptions<TCloned extends ISerializable> {
  * @returns new instance of the same class with same data
  */
 export declare function deepClone<TCloned extends ISerializable>(options: IDeepCloneOptions<TCloned>): Promise<TCloned>;
-export {};
+export { };
 /**
  * TODO Use instead of deepClone the native structuredClone
  */

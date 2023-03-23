@@ -16,7 +16,7 @@ interface IBoardComponentArtsProps {
     transform: BehaviorSubject<Transform>;
 }
 export declare function BoardComponentArts(props: IBoardComponentArtsProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: [📕] Unite ArtShell
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])

@@ -20,7 +20,7 @@ export declare function usePromise<TValue>(
     promise: Promisable<TValue>,
     deps?: React.DependencyList,
 ): IUsePromiseResult<TValue>;
-export {};
+export { };
 /**
  * TODO: [🧵] Move to external LIB for react loadables
  */

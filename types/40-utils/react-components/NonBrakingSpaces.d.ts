@@ -14,4 +14,4 @@ interface INonBrakingSpacesProps {
  * @collboard-modules-sdk
  */
 export declare function NonBrakingSpaces(props: INonBrakingSpacesProps): JSX.Element;
-export {};
+export { };

@@ -6,14 +6,14 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { string_char_emoji } from '../../../../40-utils/typeAliasEmoji';
 import {
-    IRepository,
-    string_attribute,
-    string_mime_type_with_wildcard,
-    string_module_category,
-    string_module_name,
-    string_url,
-    string_url_image,
-    string_version,
+  IRepository,
+  string_attribute,
+  string_mime_type_with_wildcard,
+  string_module_category,
+  string_module_name,
+  string_url,
+  string_url_image,
+  string_version
 } from '../../../../40-utils/typeAliases';
 import { Arrayable, ArrayFull } from '../../../../40-utils/typeHelpers';
 import { IStringMessage } from '../../../TranslationsSystem/interfaces/IMessage';
