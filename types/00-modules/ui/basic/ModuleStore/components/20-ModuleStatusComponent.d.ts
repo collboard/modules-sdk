@@ -21,7 +21,7 @@ export declare function ModuleStatusComponent({
     persister,
     usageLicenseInfo,
 }: IModuleStatusComponentProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */

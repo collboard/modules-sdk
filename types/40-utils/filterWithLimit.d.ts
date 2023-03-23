@@ -20,4 +20,4 @@ export declare function filterWithLimit<TItem>({
     limit,
     predicate,
 }: IFilterWithLimitOptions<TItem>): Array<TItem>;
-export {};
+export { };

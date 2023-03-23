@@ -45,7 +45,7 @@ interface IEditableProps {
  * @collboard-modules-sdk
  */
 export declare function Editable(props: IEditableProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: Probbably move some of functionality in "ref={(element) => {" to new hook useFocusPreservation
  * TODO: Replace all contentEditable, contenteditable across the codebase with <Editable
