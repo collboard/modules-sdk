@@ -22,7 +22,7 @@ export declare function makeSimpleArtoolModules<
     TShape extends IShape = IShape,
     TAppearance extends IAppearance = IAppearance,
 >(options: ISimpleArtoatModulesOptions<TShape, TAppearance>): [IModuleDefinition, IModuleDefinition];
-export { };
+export {};
 /**
  * TODO: !!x Should be in the maker name attribute? If no rename also in 0-samples
  * TODO: !!x Some makers does not return ModuleDefinition but Art or multiple modules, (and things like proposed makeSimpleIcon), should they be called makers

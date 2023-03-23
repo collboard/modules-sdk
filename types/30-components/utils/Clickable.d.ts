@@ -22,4 +22,4 @@ export declare function Clickable({
     className,
     children,
 }: IClickableProps): JSX.Element;
-export { };
+export {};

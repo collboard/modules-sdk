@@ -58,4 +58,4 @@ export declare type ArrayableFull<TItem> = TItem | ArrayFull<TItem>;
  * @collboard-modules-sdk
  */
 export declare type PromisableArray<TItem> = Promisable<Array<Promisable<TItem>>>;
-export { };
+export {};
