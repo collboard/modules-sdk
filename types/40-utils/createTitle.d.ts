@@ -14,7 +14,7 @@ interface ICreateTitleArguments {
  * @not-collboard-modules-sdk
  */
 export declare function createTitle({ boardname, translationsSystem }: ICreateTitleArguments): string;
-export { };
+export {};
 /**
  * TODO: Some better system for this
  */

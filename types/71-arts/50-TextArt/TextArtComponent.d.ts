@@ -30,7 +30,7 @@ export declare function TextArtComponent({
     appearance,
     shape: { content, fontSize, bold, italic, underline, listStyle },
 }: IArtComponentProps<TextArt, ITextArtShape>): JSX.Element;
-export { };
+export {};
 /**
  * TODO: Warning: A component is `contentEditable` and contains `children` managed by React. It is now your responsibility to guarantee that none of those nodes are unexpectedly modified or duplicated. This is probably not intentional.
  * TODO: [🍣] Weirdness in text editing when removed last character

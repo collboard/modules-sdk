@@ -16,7 +16,7 @@ interface ILoaderBlockProps extends ILoaderProps {
  * @collboard-modules-sdk
  */
 export declare function Loader({ alt, canLoadForever, isWithBackground }: ILoaderBlockProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [☮️] Implement new loading /handwritten/ design
  * TODO: [🍳] Maybe rename Loader to LoaderBlock
