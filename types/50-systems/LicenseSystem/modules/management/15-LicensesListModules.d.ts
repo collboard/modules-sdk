@@ -10,4 +10,4 @@ interface ILicensesListModulesProps {
     licenseToken: string_license_token;
 }
 export declare function LicensesListModules({ licenseToken }: ILicensesListModulesProps): JSX.Element;
-export {};
+export { };

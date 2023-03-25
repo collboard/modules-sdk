@@ -29,4 +29,4 @@ declare type IMenuProps = React.PropsWithChildren<{
  * @collboard-modules-sdk
  */
 export declare function Menu({ orientation, className, onClick, children }: IMenuProps): JSX.Element;
-export {};
+export { };

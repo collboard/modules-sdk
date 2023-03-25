@@ -19,7 +19,7 @@ interface IExporterPickerComponentProps {
  * @collboard-modules-sdk
  */
 export declare function ExporterPickerComponent({ scope, value, onChange }: IExporterPickerComponentProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: [1] Listen for new exporters
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
