@@ -28,7 +28,7 @@ export declare class CollboardApp {
      */
     private changeVersioningSystems;
 }
-export { };
+export {};
 /**
  * TODO: [Optimization][InitialLoading] Break into the forMoment(s)
  *       Double-check that changes are working

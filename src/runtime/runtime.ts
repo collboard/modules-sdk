@@ -307,6 +307,13 @@ export const CopyComponent = (window as any).CollboardSdk.CopyComponent;
 export const DisplayOn = (window as any).CollboardSdk.DisplayOn;
 
 /**
+ * Shows the content with optional contenteditable optimized for multiplayer apps
+ *
+ * @collboard-modules-sdk
+ */
+export const EditableHtmlContent = (window as any).CollboardSdk.EditableHtmlContent;
+
+/**
  * @collboard-modules-sdk
  */
 export const ErrorBoundary = (window as any).CollboardSdk.ErrorBoundary;
@@ -895,14 +902,6 @@ export const isNumeric = (window as any).CollboardSdk.isNumeric;
 
 /**
  *
- * @returns true if the current environment is running on localhost
- *
- * @collboard-modules-sdk
- */
-export const isRunningOnLocalhost = (window as any).CollboardSdk.isRunningOnLocalhost;
-
-/**
- *
  * @collboard-modules-sdk
  */
 export const isValidUriId = (window as any).CollboardSdk.isValidUriId;
@@ -1142,13 +1141,6 @@ export const randomTag = (window as any).CollboardSdk.randomTag;
  * @collboard-modules-sdk
  */
 export const randomUriId = (window as any).CollboardSdk.randomUriId;
-
-/**
- * Editable is wrapper for innerHTML of a DOM element.
- *
- * @collboard-modules-sdk
- */
-export const Editable = (window as any).CollboardSdk.Editable;
 
 /**
  * InnerHtml is wrapper for innerHTML of a DOM element.
