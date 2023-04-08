@@ -31,3 +31,7 @@ export declare class FocusSystem extends AbstractSystem {
     getAllFocusScopes<TIdentification>(): Record<FocusScopeName, FocusScope<TIdentification>>;
     destroy(): Promise<void>;
 }
+/**
+ *  TODO: Interact with <HtmlContent/> and <TextContent/> isEditableAndFocused
+ *        Make Singleton lock on isEditableAndFocused
+ */

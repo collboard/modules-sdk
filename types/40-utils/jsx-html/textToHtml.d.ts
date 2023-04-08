@@ -4,12 +4,8 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-export {};
+export declare function textToHtml(text: string): string;
 /**
- * TODO: [🍣] DO not persist (delete) until first char is written
- *       [🍣] Remove the art if last char is deleted and unselected
- * TODO: [👀] Focus cursor as a thing which better keeps focus
- * TODO: [👀] Focus cursor from other users in edited texts
- * TODO: [🍩][🧠] Requesting systems non-magically
- * TODO: [🍩] Omitting systems.request should fail bacause of unrequested systems.
+ * TODO: !! DO NOT USE OR EXPORT UNTIL the text is secured and escaped
+ * TODO: [🎠] Is JSDoc auto-added? + Export to SDK
  */

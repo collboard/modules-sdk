@@ -31,7 +31,14 @@ export declare class AppState extends AbstractSystem {
      * @deprecated Put to CollSpace system instead
      */
     readonly transform: BehaviorSubject<Transform>;
+    /**
+     * Selected arts
+     */
     readonly selected: BehaviorSubject<AbstractPlacedArt[]>;
+    /**
+     * Selection is just a temporary box created from mousedown until mouseup
+     * After the releasing of the mouse selection became selected
+     */
     readonly selection: BehaviorSubject<{
         point1: IVectorData;
         point2: IVectorData;
@@ -116,4 +123,5 @@ export {};
  * TODO: Selection: Some better name like selectBox AND rname it globally not only here
  * TODO: Selection: Should return LIB xyzt boundingBox
  * TODO: [💉] Selected virtual arts
+ * TODO: [🪑] Compute selection from selected should be probbably done ONLY in AppState (or in future SelectionSystem)
  */

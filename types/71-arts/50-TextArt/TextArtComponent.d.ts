@@ -32,8 +32,14 @@ export declare function TextArtComponent({
 }: IArtComponentProps<TextArt, ITextArtShape>): JSX.Element;
 export {};
 /**
- * TODO: Warning: A component is `contentEditable` and contains `children` managed by React. It is now your responsibility to guarantee that none of those nodes are unexpectedly modified or duplicated. This is probably not intentional.
- * TODO: [🍣] Weirdness in text editing when removed last character
- * TODO: [🍣] Weirdness in text editing when making new line
- * TODO: [🍣] Weird behaviour when multiple TextArts are selected
+ * TODO: [🍣]  Sanitize dangerous things - Allow only text with <p>
+ * TODO: [🍣]  This was changed from EditableTextContent to EditableHtmlContent - ensure backward compatibility (Maybe add migrations)
+ * TODO: Make Full HTML Equivalent
+ * TODO: Allow to toggle <b>, <i>, <ul>,... inside HTML
+ * TODO: Make option to make <ul>, <ol>, todo lists, emoji bulletes,...
+ * TODO: Multiple people editing one text
+ *       Now when there are two people editing same text and both have focus
+ *       When Alice changes something Bob is still focused but gets his cursor at the end
+ *       It works same when there is not only car|et but multiple sel███ed chars
+ *       Ideally it should work simmilar to Google drive
  */

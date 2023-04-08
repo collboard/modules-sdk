@@ -18,4 +18,5 @@ export declare function selectionToolSelectionBoxBehavior(behaviorProps: IBehavi
  *       Last woring version is in commit ac32ca6c3fb9b3aca803046d4a620df9fb0a5888
  *
  * TODO: [🎂] Probably remove systems from IBehaviorProps and use useSystems (or similar mechanism) instead
+ * TODO: [🪑] Compute selection from selected should be probbably done ONLY in AppState (or in future SelectionSystem)
  */
