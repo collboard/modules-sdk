@@ -55,4 +55,5 @@ export declare class TextArt extends Abstract2dArt {
  * TODO: [👀] Focus cursor as a thing which better keeps focus
  * TODO: [👀] Focus cursor from other users in edited texts
  * TODO: [🍒] Every Art should look like this + what do render method here should do RenderSystem OR ArtSchell OR sth. like that
+ * TODO: LIB xyzt: Vector.minmax, Vector.min, Vector.max
  */
