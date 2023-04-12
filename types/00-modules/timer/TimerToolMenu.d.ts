@@ -11,7 +11,7 @@ interface ITimerToolMenuProps {
     toolTimerType: BehaviorSubject<ToolTimerType>;
 }
 export declare function TimerToolMenu(props: ITimerToolMenuProps): JSX.Element;
-export {};
+export { };
 /**
  * Note: In future this file will we in independent repository as external module.
  */

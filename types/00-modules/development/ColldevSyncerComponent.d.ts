@@ -10,7 +10,7 @@ interface IColldevSyncerComponentProps {
     colldevSyncer: ColldevSyncer;
 }
 export declare function ColldevSyncerComponent({ colldevSyncer }: IColldevSyncerComponentProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */
