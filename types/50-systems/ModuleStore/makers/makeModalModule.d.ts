@@ -37,7 +37,7 @@ export declare function createModalTitle({
     manifest?: IModuleManifest;
     translationsSystem: TranslationsSystem;
 }): string | React.ReactNode;
-export { };
+export {};
 /**
  * TODO: Remove all spinning loaders
  * TODO: Split into two files in folder makeModalModule and anotate createModalTitle

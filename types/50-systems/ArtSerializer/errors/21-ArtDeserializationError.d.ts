@@ -22,4 +22,4 @@ export declare class ArtDeserializationError extends DetailedError<IArtDeseriali
     readonly name = 'ArtDeserializationError';
     constructor(message: string, details: IArtDeserializationErrorDetails);
 }
-export { };
+export {};

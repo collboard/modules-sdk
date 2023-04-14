@@ -13,7 +13,7 @@ interface IModulesCatalogueComponentProps {
  * Note: This component should contain <ModuleBoxComponent as chilren
  */
 export declare function ModulesCatalogueComponent({ children }: IModulesCatalogueComponentProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [🏴‍☠️] Across the projects components+files with styled name call WelcomeModalStyle (not WelcomeModalDiv)
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])

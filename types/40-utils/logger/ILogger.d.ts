@@ -24,7 +24,7 @@ interface ILoggerCore {
     error(error?: Error | any, ...optionalParams: Array<any>): this;
     trace(...data: Array<any>): this;
 }
-export { };
+export {};
 /**
  * TODO: [🐋]  Make support for table in ILogger
  * TODO: ILoggerCore extends IDestroyable
