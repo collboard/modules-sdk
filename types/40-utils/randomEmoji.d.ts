@@ -15,6 +15,7 @@ import { string_char_emoji } from './typeAliasEmoji';
  */
 export declare function randomEmoji(): string_char_emoji;
 /**
+ * TODO: randomItemInSet as optimization
  * TODO: Constrain by group of emojis like animals, plants,...
  * TODO: To separate emoji LIB
  * TODO: Use in emoji modules

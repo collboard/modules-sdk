@@ -14,5 +14,6 @@ import { string_char_emoji } from './typeAliasEmoji';
  */
 export declare function isEmoji(value: string): value is string_char_emoji;
 /**
+ * Note: Not using only EMOJIS or EMOJIS_IN_CATEGORIES because there can be a new emoji in the future which wont be yet in our system
  * TODO: Some smarter way how to detect new emojis without listing them in EMOJIS
  */

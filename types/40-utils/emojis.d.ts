@@ -20,7 +20,7 @@ export declare const EMOJIS_IN_CATEGORIES: Record<string, Array<string_char_emoj
  *
  * @collboard-modules-sdk
  */
-export declare const EMOJIS: Array<string_char_emoji>;
+export declare const EMOJIS: Set<string_char_emoji>;
 /**
  * TODO: Add emojis is some repeating frequency (annually?) - now missing is added by hand to category "New Emojis (Discorered randomly)"
  * TODO: Is this unique and complete?
