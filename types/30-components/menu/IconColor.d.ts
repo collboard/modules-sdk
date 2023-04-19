@@ -22,4 +22,4 @@ interface IIconColorProps {
  * @collboard-modules-sdk
  */
 export declare function IconColor({ className, color, active, inactive, onClick }: IIconColorProps): JSX.Element;
-export {};
+export { };

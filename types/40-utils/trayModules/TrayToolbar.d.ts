@@ -28,7 +28,7 @@ export declare class TrayToolbar extends React.Component<ITrayToolbarProps, ITra
     startOpeningAnimation(): Promise<void>;
     render(): JSX.Element;
 }
-export {};
+export { };
 /**
  * TODO: [🏛️] Convert Class components to Functional (with hooks).
  */

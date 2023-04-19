@@ -23,7 +23,7 @@ export declare class TimerComponent extends React.Component<ITimerComponentProps
     componentWillUnmount(): void;
     render(): JSX.Element;
 }
-export {};
+export { };
 /**
  * Note: In future this file will we in independent repository as external module.
  * TODO: [🏛️] Convert Class components to Functional (with hooks).
