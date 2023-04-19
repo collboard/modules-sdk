@@ -23,7 +23,7 @@ interface IHandwrittenCollboardLogoProps {
     onClick?: React.MouseEventHandler<SVGElement>;
 }
 export declare function HandwrittenCollboardLogo(props: IHandwrittenCollboardLogoProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: Use dynamic id instead of "logo-gradient"
  * TODO: Maybe accept material (basics are set by <defs>)

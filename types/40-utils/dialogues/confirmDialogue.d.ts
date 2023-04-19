@@ -13,7 +13,7 @@ interface IConfirmDialogueOptions {
  * @collboard-modules-sdk
  */
 export declare function confirmDialogue(options: IConfirmDialogueOptions | IBaseMessage): Promise<boolean>;
-export {};
+export { };
 /**
  * TODO: Use here <ConfirmIcon [🙋]
  * TODO: [🔊] This should be just a shortcut for using notificationSystem (OR other similar system)

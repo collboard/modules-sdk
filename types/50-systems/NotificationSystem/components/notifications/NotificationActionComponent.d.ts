@@ -15,7 +15,7 @@ export declare function NotificationActionComponent({
     translationsSystem,
     action: { title, type, onClick, href },
 }: INotificationActionComponentProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */

@@ -17,7 +17,7 @@ interface IDisplayOnProps {
  * @collboard-modules-sdk
  */
 export declare function DisplayOn({ desktop, tablet, mobile, children }: IDisplayOnProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: [🍕] Unite sizes for display each device to one place
  */
