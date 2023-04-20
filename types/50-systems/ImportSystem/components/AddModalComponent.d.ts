@@ -12,7 +12,7 @@ interface IAddModalComponentProps {
     routingSystem: RoutingSystem;
 }
 export declare function AddModalComponent({ importSystem, routingSystem }: IAddModalComponentProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */

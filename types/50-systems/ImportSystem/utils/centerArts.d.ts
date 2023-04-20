@@ -24,7 +24,7 @@ declare type ICenterArtsOptionsDeprecated = Omit<ICenterArtsOptions, 'center'> &
  * @collboard-modules-sdk
  */
 export declare function centerArts(options: ICenterArtsOptions | ICenterArtsOptionsDeprecated): void;
-export { };
+export {};
 /**
  * TODO: [🎼] Relation between topleftArts and centerArts
  * TODO: This should be done by LIB xyzt boundingBox and AbstractPlacedArt should implement interface IBoundingBox

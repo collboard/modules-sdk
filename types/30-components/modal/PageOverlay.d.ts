@@ -19,7 +19,7 @@ declare type IPageOverlayProps = React.PropsWithChildren<{
  * @collboard-modules-sdk
  */
 export declare function PageOverlay({ onPointerDown, children }: IPageOverlayProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: @roseckyj 🎨 Prevent OR Warn if multiple PageOverlay instances from being rendered at the same time
  */
