@@ -26,7 +26,7 @@ interface ISelectionToolBehaviors {
  * @collboard-modules-sdk
  */
 export declare function createSelectionToolBehavior(useBehaviors?: ISelectionToolBehaviors): Promise<IBehavior>;
-export {};
+export { };
 /**
  * TODO: [🎂] Probably remove systems from IBehaviorProps and use useSystems (or similar mechanism) instead
  */

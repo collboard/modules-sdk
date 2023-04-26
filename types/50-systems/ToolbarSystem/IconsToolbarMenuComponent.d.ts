@@ -19,7 +19,7 @@ interface IIconsToolbarMenuComponentProps {
  * @not-collboard-modules-sdk because IconsToolbarMenuComponent is a private component of ToolbarSystem
  */
 export declare function IconsToolbarMenuComponent({ iconsToolbar }: IIconsToolbarMenuComponentProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: [🎲] It is a bit inconsistent that renderMenu wraps content with <Menu but renderToolbar not
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
