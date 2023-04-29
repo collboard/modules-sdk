@@ -89,7 +89,7 @@ export declare class ImportSystem extends AbstractSystem {
         files: Array<Blob | File>;
     }): Promise<IOngoingMaterialOperation | IDestroyable | null>;
 }
-export { };
+export {};
 /**
  * TODO: Importing URLs like YouTube
  */
