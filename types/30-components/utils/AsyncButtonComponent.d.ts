@@ -56,7 +56,7 @@ export declare function AsyncButtonComponent({
     children,
     isDisabled: disabled,
 }: IAsyncButtonComponentProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: <Clickable vs. <Button (use <button as element) vs. (deprecated <AsyncButtonComponent)
  * TODO: Use here alt and canLoadForever
