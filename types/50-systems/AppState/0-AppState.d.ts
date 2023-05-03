@@ -115,7 +115,7 @@ interface IIsArtSelectedOptions {
      */
     isExclusive: boolean;
 }
-export { };
+export {};
 /**
  * TODO: screenBorder should be maybe RxJs observable
  * TODO: [🍵] Make SelectionSystem a system and much better with ONLY one BehaviorSubject with data and other stuff just Observables derived from it.
