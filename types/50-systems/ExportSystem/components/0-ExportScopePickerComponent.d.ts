@@ -17,7 +17,7 @@ interface IExportScopePickerComponentProps {
  * @collboard-modules-sdk
  */
 export declare function ExportScopePickerComponent({ value, onChange }: IExportScopePickerComponentProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: Listen for new frames
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
