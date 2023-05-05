@@ -9,4 +9,4 @@ declare type IMenuWrapperProps = React.PropsWithChildren<{
     position: 'left' | 'right' | 'top-ltr' | 'top-rtl' | 'bottom-ltr' | 'bottom-rtl';
 }>;
 export declare function MenuWrapper(props: IMenuWrapperProps): JSX.Element;
-export { };
+export {};

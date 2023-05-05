@@ -26,7 +26,7 @@ interface IFileComponentProps {
  * @collboard-modules-sdk
  */
 export declare function FileComponent({ file, isLoading, isIframeEnforced }: IFileComponentProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  * TODO: Move to external LIB

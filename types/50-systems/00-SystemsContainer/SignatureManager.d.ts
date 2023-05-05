@@ -35,7 +35,7 @@ declare class SignatureManager {
  * TODO: SignatureManager should be probbably own system NOT const singleton
  */
 export declare const signatureManager: SignatureManager;
-export { };
+export {};
 /**
  * TODO: Probably more universally - DO not hardcode SystemsContainer, AbstractSystem or IModuleManifest
  * TODO: Is this the best way to do this?

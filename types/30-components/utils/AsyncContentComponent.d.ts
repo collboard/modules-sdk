@@ -26,7 +26,7 @@ interface IAsyncContentComponentProps extends ILoaderProps {
  * @collboard-modules-sdk
  */
 export declare function AsyncContentComponent({ loader, content, alt }: IAsyncContentComponentProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  * TODO: [🧵] Move to external LIB for react loadables

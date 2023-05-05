@@ -14,4 +14,4 @@ interface IInstallButtonProps {
  * @not-collboard-modules-sdk
  */
 export declare function InstallButton({ children }: IInstallButtonProps): JSX.Element;
-export { };
+export {};

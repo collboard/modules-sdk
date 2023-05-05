@@ -16,7 +16,7 @@ interface IExportPrepareComponentProps {
  * @collboard-modules-sdk
  */
 export declare function ExportPrepareComponent({ onChange }: IExportPrepareComponentProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */
