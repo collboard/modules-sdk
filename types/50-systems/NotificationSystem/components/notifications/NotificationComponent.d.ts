@@ -20,7 +20,7 @@ export declare function NotificationComponent({
     notification: { type, onClick, href, title, subtitle, canBeClosed, body, actions },
     closeHandler,
 }: INotificationComponentProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: Probably not use functional component in this project
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
