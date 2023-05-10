@@ -29,4 +29,4 @@ export interface IAttributeObject extends IAttributeCommon {
     type: 'object';
     defaultValue: any;
 }
-export { };
+export {};

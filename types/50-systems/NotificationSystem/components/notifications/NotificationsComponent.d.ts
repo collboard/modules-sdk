@@ -10,7 +10,7 @@ interface INotificationsComponentProps {
     place: NotificationPlace;
 }
 export declare function NotificationsComponent(props: INotificationsComponentProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: More should be colored (notification-warning) like the most important level of notification hidden in queue
  * TODO: When showMaximumNotifications increases and closing upper notifications showMaximumNotifications should decrease

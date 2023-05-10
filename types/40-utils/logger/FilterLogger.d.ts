@@ -20,7 +20,7 @@ export declare class FilterLogger implements ILogger {
     group(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
     groupCollapsed(groupName?: string, ...optionalParams: Array<any>): ISubLogger;
 }
-export { };
+export {};
 /**
  * TODO: ALso filter on group and groupCollapsed
  */
