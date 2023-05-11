@@ -14,7 +14,7 @@ interface IInnerHtmlProps {
  * @collboard-modules-sdk
  */
 export declare function InnerHtml(props: IInnerHtmlProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: Add prop isSafe
  */

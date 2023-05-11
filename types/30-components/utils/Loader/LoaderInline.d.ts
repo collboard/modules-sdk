@@ -37,7 +37,7 @@ export declare function LoaderInline({
     alt,
     canLoadForever,
 }: ILoaderInlineProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: [☮️] Implement new loading /handwritten/ design
  */
