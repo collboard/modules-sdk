@@ -18,7 +18,7 @@ interface ITopleftArtsOptions {
  * @collboard-modules-sdk
  */
 export declare function topleftArts({ arts, collSpace }: ITopleftArtsOptions): void;
-export { };
+export {};
 /**
  * TODO: [🎼] Relation between topleftArts and centerArts
  * TODO: This should be done by LIB xyzt boundingBox and AbstractPlacedArt should implement interface IBoundingBox

@@ -13,7 +13,7 @@ interface IPromptDialogueOptions {
  * @collboard-modules-sdk
  */
 export declare function promptDialogue(options: IPromptDialogueOptions | string): Promise<string | null>;
-export { };
+export {};
 /**
  * TODO: [🔊] This should be just a shortcut for using notificationSystem (OR other similar system)
  * TODO: [🔊] Return IDestroyable & Notification object

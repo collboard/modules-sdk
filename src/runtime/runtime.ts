@@ -711,6 +711,13 @@ export const fetchProxied = (window as any).CollboardSdk.fetchProxied;
 export const findPropperFileType = (window as any).CollboardSdk.findPropperFileType;
 
 /**
+ * Download a File to with a browser
+ *
+ * @collboard-modules-sdk
+ */
+export const induceFileDownload = (window as any).CollboardSdk.induceFileDownload;
+
+/**
  * Checks if the given file is executable.
  *
  * - Windows executables are identified as executable
@@ -738,13 +745,6 @@ export const isValidDataurl = (window as any).CollboardSdk.isValidDataurl;
  * @collboard-modules-sdk
  */
 export const ObjectUrl = (window as any).CollboardSdk.ObjectUrl;
-
-/**
- * Download a File to with a browser
- *
- * @collboard-modules-sdk
- */
-export const triggerFileDownload = (window as any).CollboardSdk.triggerFileDownload;
 
 /**
  * Filter array with limit and predicate

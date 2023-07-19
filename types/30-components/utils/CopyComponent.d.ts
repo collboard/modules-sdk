@@ -13,7 +13,7 @@ interface ICopyComponentProps {
  * @collboard-modules-sdk
  */
 export declare function CopyComponent({ className, value }: ICopyComponentProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */
