@@ -10,4 +10,4 @@ import { string_url } from '../typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare function triggerFileDownload(fileOrBlobOrUrl: File | Blob | URL | string_url): Promise<void>;
+export declare function induceFileDownload(fileOrBlobOrUrl: File | Blob | URL | string_url): Promise<void>;
