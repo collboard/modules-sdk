@@ -28,4 +28,4 @@ export interface IOngoingMaterialOperation extends IOngoingOperation {
     valuable(): IOngoingOperation;
     persist(): IOngoingOperation;
 }
-export {};
+export { };

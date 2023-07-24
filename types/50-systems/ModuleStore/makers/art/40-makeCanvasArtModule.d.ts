@@ -32,7 +32,7 @@ export declare function makeCanvasArtModule<
     TShape extends IShape = IShape,
     TAppearance extends IAppearance = IAppearance,
 >(options: ICanvasArtOptions): IArtModuleDefinition<TShape, TAppearance>;
-export {};
+export { };
 /**
  * TODO: !!x makeReactArt, makeBabylonArt, makeDomArt, makeJqueryArt
  * TODO: !!x [6] Unhardcode size and origin - but in future infinite canvas

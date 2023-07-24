@@ -18,4 +18,4 @@ interface IIconTextProps extends Omit<IIconAnonymous, 'icon'> {
  * @collboard-modules-sdk
  */
 export declare function IconText(props: IIconTextProps): JSX.Element;
-export {};
+export { };

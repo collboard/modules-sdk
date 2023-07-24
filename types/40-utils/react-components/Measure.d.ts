@@ -16,7 +16,7 @@ interface IMeasureProps {
  * @collboard-modules-sdk
  */
 export declare function Measure(props: React.PropsWithChildren<IMeasureProps>): JSX.Element;
-export {};
+export { };
 /**
  * TODO: [🌺] Measure more often than once
  * TODO: [⚜️] Maybe instead of onMeasured callback receive subject as a box to put new values in
