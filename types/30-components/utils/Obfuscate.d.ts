@@ -18,4 +18,4 @@ export declare function Obfuscate({
     content: description,
     buttonContent: button,
 }: IObfuscateProps): JSX.Element;
-export { };
+export {};
