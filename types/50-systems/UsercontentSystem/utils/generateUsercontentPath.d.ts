@@ -23,7 +23,7 @@ export declare function generateUsercontentPath({
     content,
     businessName,
 }: IGenerateUsercontentPathOptions): Promise<string_uri>;
-export { };
+export {};
 /**
  * TODO: Efficient way how to garbage collect old files
  * TODO: Probably saparate util countBufferHash

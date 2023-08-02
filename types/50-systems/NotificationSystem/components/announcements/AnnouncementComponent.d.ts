@@ -22,7 +22,7 @@ export declare function AnnouncementComponent({
     notification: { type, onClick, href, title, subtitle, canBeClosed, body, actions },
     closeHandler,
 }: IAnnouncementComponentProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
  */

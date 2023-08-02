@@ -24,7 +24,7 @@ interface ITextureToSvgResult {
  * @collboard-modules-sdk
  */
 export declare function textureToSvg(texture: ITexture): ITextureToSvgResult;
-export { };
+export {};
 /**
  * TODO: Test
  * TODO: Equivalent function for Html> textureToHtml
