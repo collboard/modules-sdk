@@ -20,4 +20,4 @@ export declare function flipNegativeSize({
     translate,
     size,
 }: IFlipNegativeSizeValue<IVectorData>): IFlipNegativeSizeValue<Vector>;
-export {};
+export { };

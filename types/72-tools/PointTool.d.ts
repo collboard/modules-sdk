@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-export {};
+export { };
 /**
  * TODO: Real size VS size of the selection box VS size with near distance for selecting, erasing
  * TODO: [🍩][🧠] Requesting systems non-magically
