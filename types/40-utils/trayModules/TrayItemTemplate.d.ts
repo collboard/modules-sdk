@@ -13,4 +13,4 @@ interface ITrayItemTemplateProps {
     trayDefinition: ITrayDynamicDefinition;
 }
 export declare function TrayItemTemplate(props: ITrayItemTemplateProps): JSX.Element;
-export { };
+export {};

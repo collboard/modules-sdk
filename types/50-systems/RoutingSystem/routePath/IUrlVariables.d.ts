@@ -5,12 +5,12 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import {
-  string_file_extension,
-  string_host,
-  string_module_name,
-  string_protocol,
-  string_uri,
-  string_uri_part
+    string_file_extension,
+    string_host,
+    string_module_name,
+    string_protocol,
+    string_uri,
+    string_uri_part,
 } from '../../../40-utils/typeAliases';
 import { BusinessName } from '../../BusinessSystem/configuration/BusinessName';
 /**

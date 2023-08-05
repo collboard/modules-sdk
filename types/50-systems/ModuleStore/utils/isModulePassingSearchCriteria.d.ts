@@ -24,7 +24,7 @@ export declare function isModulePassingSearchCriteria({
     businessName?: BusinessName;
     businessConfiguration?: IBusinessConfiguration;
 }): SemanticBoolean;
-export { };
+export {};
 /**
  * TODO: Unit test
  * TODO: Make from SemanticBoolean a library if it is usefull in other places

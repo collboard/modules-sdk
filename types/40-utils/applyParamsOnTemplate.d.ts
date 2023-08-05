@@ -16,4 +16,4 @@ interface ITemplateArguments {
  *
  */
 export declare function applyParamsOnTemplate({ template, params, replace }: ITemplateArguments): string;
-export { };
+export {};
