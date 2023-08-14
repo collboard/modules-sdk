@@ -61,7 +61,7 @@ interface IFileExportSupporterCore {
  * Exported data
  */
 declare type IExported = File | Blob | string | JSX.Element;
-export { };
+export {};
 /**
  * TODO: Use isHeavy in auto install mechanism
  * TODO: [🌿] Use priority in auto install mechanism

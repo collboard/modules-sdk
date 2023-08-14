@@ -14,4 +14,4 @@ interface IInputRenderProps {
     onChange: (value: attribute_value) => void;
 }
 export declare function InputRender(props: IInputRenderProps): JSX.Element;
-export { };
+export {};
