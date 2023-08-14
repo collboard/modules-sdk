@@ -17,7 +17,7 @@ declare type IUploadOverlayProps = React.PropsWithChildren<{
 export declare class UploadOverlayWrapper extends React.Component<IUploadOverlayProps> {
     render(): JSX.Element;
 }
-export {};
+export { };
 /**
  * TODO: [🏛️] Convert Class components to Functional (with hooks).
  * TODO: Maybe put reason after all @not-collboard-modules-sdk tags
