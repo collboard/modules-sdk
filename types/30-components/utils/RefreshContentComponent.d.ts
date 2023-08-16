@@ -34,7 +34,7 @@ export declare class RefreshContentComponent extends React.Component<
     componentWillUnmount(): void;
     render(): JSX.Element | JSX.Element[] | null;
 }
-export {};
+export { };
 /**
  * TODO: [🏛️] Convert Class components to Functional (with hooks).
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])
