@@ -8,9 +8,9 @@ import { BehaviorSubject } from 'rxjs';
 import { string_uriid } from '../../40-utils/typeAliases';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import {
-  IBoardSystem,
-  IBoardSystem_createNewBoard_request,
-  IBoardSystem_createNewBoard_response
+    IBoardSystem,
+    IBoardSystem_createNewBoard_request,
+    IBoardSystem_createNewBoard_response,
 } from './interfaces/0-IBoardSystem';
 /**
  * ApiClient provides API calls to the remote server.

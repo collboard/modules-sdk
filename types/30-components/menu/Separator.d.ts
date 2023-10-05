@@ -14,4 +14,4 @@ interface ISeparatorProps {
  * @collboard-modules-sdk
  */
 export declare function Separator(props: ISeparatorProps): JSX.Element;
-export { };
+export {};
