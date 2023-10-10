@@ -28,4 +28,4 @@ interface IFileDialogueOptions {
  * @collboard-modules-sdk
  */
 export declare function fileDialogue({ accept, multiple }: IFileDialogueOptions): Promise<Array<File>>;
-export {};
+export { };
