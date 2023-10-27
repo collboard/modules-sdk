@@ -13,7 +13,7 @@ interface IQRCodeProps extends QRCodeRenderersOptions {
  * @collboard-modules-sdk
  */
 export declare function QRCode(props: IQRCodeProps): JSX.Element;
-export {};
+export { };
 /**
  * TODO: Move to external LIB
  */

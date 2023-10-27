@@ -12,4 +12,4 @@ interface IFloatingMenuProps {
     screenPosition: IVectorData;
 }
 export declare function FloatingMenu(props: IFloatingMenuProps): JSX.Element | null;
-export {};
+export { };
