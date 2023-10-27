@@ -51,7 +51,7 @@ export declare class UserInterfaceSystem extends AbstractSystem {
     render(place: UserInterfaceElementPlace): JSX.Element;
     private getPlaceStorage;
 }
-export { };
+export {};
 /**
  * TODO: Fix doubeling of toolbars or user interface content
  * TODO: Probbably (require OR used sign OR extract from given systems) module signature when registering

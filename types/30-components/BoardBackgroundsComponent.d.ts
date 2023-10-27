@@ -13,7 +13,7 @@ interface IBoardBackgroundsProps {
     transform: BehaviorSubject<Transform>;
 }
 export declare function BoardBackgroundsComponent({ backgroundArts, transform }: IBoardBackgroundsProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [🏊‍♀️] Better naming for BoardBackgroundsComponent
  * TODO: [🩱] Probbably do not suffix components with "Component" (or make better decisions [🏊‍♂️])

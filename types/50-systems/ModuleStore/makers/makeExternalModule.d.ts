@@ -28,7 +28,7 @@ export declare function makeExternalModule({
     cache,
     script,
 }: IExternalModuleOptions): IModuleDefinition;
-export { };
+export {};
 /**
  * TODO: Verify better that module has expected manifest
  * TODO: Add emoji before all `Warning:`
