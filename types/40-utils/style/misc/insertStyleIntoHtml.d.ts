@@ -18,7 +18,7 @@ interface IInsertStyleIntoHtmlOptions {
  * @collboard-modules-sdk
  */
 export declare function insertStyleIntoHtml({ html, css }: IInsertStyleIntoHtmlOptions): string_html;
-export { };
+export {};
 /**
  * TODO: [🎞️] Probbably work with XMLs in some object-based method
  */

@@ -16,7 +16,7 @@ interface IConfirmIconProps {
     subtitle?: IBaseMessage;
 }
 export declare function ConfirmIcon(props: IConfirmIconProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [🙋] Make this component more common - not only for one tool (erase)
  */
