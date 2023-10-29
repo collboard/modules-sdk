@@ -34,7 +34,7 @@ export declare class DigitalOceanSpaces implements IIFilesStorageWithCdn {
     private observers;
     private notifyObservers;
 }
-export {};
+export { };
 /**
  * TODO: Extend this from AWS S3 (compatible) storage
  * TODO: Probably not extend from storage
