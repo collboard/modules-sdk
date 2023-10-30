@@ -19,4 +19,4 @@ interface IInputsRenderProps {
     additionaOnChange?: (value: attribute_value) => void;
 }
 export declare function InputsRender(props: IInputsRenderProps): JSX.Element;
-export { };
+export {};

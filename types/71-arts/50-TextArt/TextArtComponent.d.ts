@@ -30,7 +30,7 @@ export declare function TextArtComponent({
     appearance,
     shape: { content, fontSize, bold, italic, underline, listStyle },
 }: IArtComponentProps<TextArt, ITextArtShape>): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [🍣]  Sanitize dangerous things - Allow only text with <p>
  * TODO: [🍣]  This was changed from EditableTextContent to EditableHtmlContent - ensure backward compatibility (Maybe add migrations)

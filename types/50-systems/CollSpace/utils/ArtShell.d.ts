@@ -21,7 +21,7 @@ declare type IArtShellProps = React.PropsWithChildren<{
  * @sideeffect Creating elements with class __ArtShell for findArtShellElement
  */
 export declare function ArtShell(props: IArtShellProps): JSX.Element;
-export { };
+export {};
 /**
  *  TODO: [🍒][0]! This should became a <ArtBoardShell vs <ArtOwnShell
  * TODO: [✏️] Fix> react-dom.development.js:630 Error: <svg> attribute width: Expected length, "NaN".

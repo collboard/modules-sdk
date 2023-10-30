@@ -18,7 +18,7 @@ interface IFitInsideOptions {
  *
  */
 export declare function fitInside({ objectSize, containerSize, isUpscaling }: IFitInsideOptions): Vector;
-export { };
+export {};
 /**
  * TODO: This util should be part of LIB xyzt
  */
