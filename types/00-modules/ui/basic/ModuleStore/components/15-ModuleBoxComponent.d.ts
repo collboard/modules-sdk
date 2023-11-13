@@ -22,7 +22,7 @@ export declare function ModuleBoxComponent({
     moduleStatusReporter,
     persister,
 }: IModuleBoxComponentProps): JSX.Element;
-export { };
+export {};
 /**
  * TODO: [🏴‍☠️] Across the projects components+files with styled name call WelcomeModalStyle (not WelcomeModalDiv)
  */
