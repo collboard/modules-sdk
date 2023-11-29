@@ -10,6 +10,9 @@
 export declare const WHICH_ARTS_STYLE =
     'background: #66ffff; color: black; font-size: 1.1em; font-weight: bold; padding: 5px; border-radius: 3px;';
 /**
- * TODO: [🏰] We want to be able selecting, copying, exporting, etc. arts in view mode
- *       Now it is messed by the selection which is always behaving like with edit capabilities
+ * Nearby distance to select arts
+ */
+export declare const WHICH_ARTS_DISTANCE = 10;
+/**
+ * TODO: Maybe also log virtualArtVersioningSystem
  */
