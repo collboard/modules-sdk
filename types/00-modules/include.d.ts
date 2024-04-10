@@ -110,6 +110,7 @@ import './ui/basic/ModuleStore/module-store.module';
 import './ui/basic/ModuleStore/module.module';
 import './ui/basic/RemoteAnnouncementsModule/RemoteAnnouncementsModule';
 import './ui/basic/share/share-icon.module';
+import './ui/basic/share/share-indicator.module';
 import './ui/basic/share/share.module';
 import './ui/basic/ThemeSelectModule/ThemeSelectModule';
 import './ui/basic/welcome/WelcomeModules';
