@@ -4,7 +4,7 @@
 //       @see https://github.com/Microsoft/vscode/issues/40248
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
-import { IKeywords } from 'n12';
+import { IKeywords } from '@promptbook/utils';
 import { IModuleManifest } from '../interfaces/IModuleManifest/IModuleManifest';
 /**
  * Create list of keywords from module manifest
