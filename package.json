@@ -1,6 +1,6 @@
 {
   "name": "@collboard/modules-sdk",
-  "version": "35.13.2100",
+  "version": "35.13.2200",
   "description": "Modules SDK toolkit for collaborative whiteboard platform Collboard.com.",
   "license": "SEE LICENSE IN LICENSE",
   "contributors": [
@@ -61,7 +61,7 @@
     "vm2": "3.9.7",
     "waitasecond": "1.11.1",
     "webpack": "5.35.1",
-    "xyzt": "5.4.0"
+    "xyzt": "5.4.3"
   },
   "devDependencies": {
     "@types/express": "4.17.8",
