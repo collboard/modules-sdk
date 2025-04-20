@@ -10,7 +10,7 @@ import { IModuleManifestUsageLicensePayed } from './IModuleManifestUsageLicenseP
  *
  * @collboard-modules-sdk
  */
-export declare type IModuleManifestUsageLicense =
+export type IModuleManifestUsageLicense =
     | {
           type: 'FREE';
       }

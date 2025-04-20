@@ -118,7 +118,7 @@
  *
  * @collboard-modules-sdk
  */
-export declare type string_icon =
+export type string_icon =
     | 'abacus'
     | 'add'
     | 'anchor'

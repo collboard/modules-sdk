@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 /// <reference types="react" />
 import { Promisable } from 'type-fest';
-export declare type IAttributeInputRender<TAttributeValue> = (
+export type IAttributeInputRender<TAttributeValue> = (
     value: TAttributeValue,
     onChange: (value: TAttributeValue) => void,
 ) => Promisable<JSX.Element>;

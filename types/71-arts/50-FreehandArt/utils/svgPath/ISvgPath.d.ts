@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { Vector } from 'xyzt';
-export declare type ISvgPath = Array<ISvgPathSegment>;
+export type ISvgPath = Array<ISvgPathSegment>;
 export interface ISvgPathSegment {
     command: ISvgPathSegmentCommand;
     positions: Array<Vector>;
@@ -25,7 +25,7 @@ export interface ISvgPathSegment {
  *
  * Note: Please note that these commands are case sensitive, so "M" and "m" are different commands.
  */
-export declare type ISvgPathSegmentCommand =
+export type ISvgPathSegmentCommand =
     | 'M'
     | 'm'
     | 'L'

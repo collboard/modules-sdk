@@ -10,7 +10,7 @@ import { IFramable } from './IFramable';
  *
  * @collboard-modules-sdk
  */
-export declare type IExportScope = ExportScopeSimple | IFramable;
+export type IExportScope = ExportScopeSimple | IFramable;
 /**
  * Simple export scopes
  *

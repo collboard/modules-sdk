@@ -8,7 +8,7 @@ import React from 'react';
 import { Transform } from 'xyzt';
 import { uuid } from '../../../40-utils/typeAliases';
 import { Loadable } from '../../../40-utils/typeHelpers';
-declare type IArtShellProps = React.PropsWithChildren<{
+type IArtShellProps = React.PropsWithChildren<{
     artId: uuid;
     zIndex: number;
     transform?: Loadable<Transform>;

@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
-export declare type IUploadZoneProps = React.PropsWithChildren<{
+export type IUploadZoneProps = React.PropsWithChildren<{
     isClickable?: boolean;
     onFilesOver?: (isFileOver: boolean) => void;
     onFiles: (droppedFiles: Array<File>) => void;

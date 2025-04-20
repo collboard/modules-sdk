@@ -10,7 +10,7 @@
  * For example `"text/plain"` or `"application/collboard"`
  * @collboard-modules-sdk
  */
-export declare type string_mime_type = string;
+export type string_mime_type = string;
 /**
  * Semantic helper
  *
@@ -19,21 +19,21 @@ export declare type string_mime_type = string;
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#unique_file_type_specifiers
  */
-export declare type string_mime_type_with_wildcard = string;
+export type string_mime_type_with_wildcard = string;
 /**
  * Semantic helper
  *
  * For example `"a"`
  * @collboard-modules-sdk
  */
-export declare type string_char = string;
+export type string_char = string;
 /**
  * Semantic helper
  *
  * For example `"<div>Hello World!</div>"`
  * @collboard-modules-sdk
  */
-export declare type string_html = string;
+export type string_html = string;
 /**
  * Semantic helper
  *
@@ -42,111 +42,111 @@ export declare type string_html = string;
  *
  * TODO: [🎞️] Probbably use some object-based method for working with XMLs
  */
-export declare type string_xml = string;
+export type string_xml = string;
 /**
  * Semantic helper
  *
  * For example `.foo{border: 1px solid red}`
  * @collboard-modules-sdk
  */
-export declare type string_css = string;
+export type string_css = string;
 /**
  * Semantic helper
  *
  * For example `border`
  * @collboard-modules-sdk
  */
-export declare type string_css_property = string;
+export type string_css_property = string;
 /**
  * Semantic helper
  *
  * For example `13px`
  * @collboard-modules-sdk
  */
-export declare type string_css_value = string;
+export type string_css_value = string;
 /**
  * Semantic helper
  *
  * For example `.foo`
  * @collboard-modules-sdk
  */
-export declare type string_css_selector = string;
+export type string_css_selector = string;
 /**
  * Semantic helper
  *
  * For example `"https://collboard.com/9SeSQTupmQHwuSrLi"`
  * @collboard-modules-sdk
  */
-export declare type string_url = string;
+export type string_url = string;
 /**
  * Semantic helper
  *
  * For example `"data:text/plain;base64,SGVsbG8sIFdvcmxkIQ=="`
  * @collboard-modules-sdk
  */
-export declare type string_data_url = string;
+export type string_data_url = string;
 /**
  * Semantic helper
  *
  * For example `"https://collboard.com/9SeSQTupmQHwuSrLi"` OR `/9SeSQTupmQHwuSrLi`
  * @collboard-modules-sdk
  */
-export declare type string_href = string;
+export type string_href = string;
 /**
  * Semantic helper
  *
  * For example `"https://collboard.com/9SeSQTupmQHwuSrLi.png?width=1200&height=630"`
  * @collboard-modules-sdk
  */
-export declare type string_url_image = string;
+export type string_url_image = string;
 /**
  * Semantic helper
  *
  * For example `"/9SeSQTupmQHwuSrLi"`
  * @collboard-modules-sdk
  */
-export declare type string_uri = string;
+export type string_uri = string;
 /**
  * Semantic helper
  *
  * For example `"9SeSQTupmQHwuSrLi"`
  * @collboard-modules-sdk
  */
-export declare type string_uri_part = string;
+export type string_uri_part = string;
 /**
  * Semantic helper, ID of the board used in URL and API
  *
  * For example `"9SeSQTupmQHwuSrLi"`
  * @collboard-modules-sdk
  */
-export declare type string_uriid = string_uri_part;
+export type string_uriid = string_uri_part;
 /**
  * Semantic helper
  *
  * @collboard-modules-sdk
  */
-export declare type string_protocol = 'http:' | 'https:';
+export type string_protocol = 'http:' | 'https:';
 /**
  * Semantic helper
  *
  * For example `"localhost"` or `"collboard.com"`
  * @collboard-modules-sdk
  */
-export declare type string_hostname = string;
+export type string_hostname = string;
 /**
  * Semantic helper
  *
  * For example `"localhost:9977"` or `"collboard.com"`
  * @collboard-modules-sdk
  */
-export declare type string_host = string;
+export type string_host = string;
 /**
  * Semantic helper
  *
  * For example `"pavol@collboard.com"`
  * @collboard-modules-sdk
  */
-export declare type string_email = string;
+export type string_email = string;
 /**
  * Branded type for UUIDs version 4
  * This will not allow to pass some random string where should be only a valid UUID
@@ -158,7 +158,7 @@ export declare type string_email = string;
  * For example `"5a0a153d-7be9-4018-9eda-e0e2e2b89bd9"`
  * @collboard-modules-sdk
  */
-export declare type uuid = string & {
+export type uuid = string & {
     __type: 'UUID';
 };
 /**
@@ -169,75 +169,75 @@ export declare type uuid = string & {
  * For example `"5a0a153d"`
  * @collboard-modules-sdk
  */
-export declare type string_uuid_first_segment = string;
+export type string_uuid_first_segment = string;
 /**
  * Semantic helper
  *
  * For example `"b126926439c5fcb83609888a11283723c1ef137c0ad599a77a1be81812bd221d"`
  * @collboard-modules-sdk
  */
-export declare type string_sha256 = string;
+export type string_sha256 = string;
 /**
  * Semantic helper
  *
  * For example `"4.2.4"`
  * @collboard-modules-sdk
  */
-export declare type string_version = string;
+export type string_version = string;
 /**
  * Semantic helper
  *
  * For example `"^4.2.4"`
  * @collboard-modules-sdk
  */
-export declare type string_version_dependency = string;
+export type string_version_dependency = string;
 /**
  * Semantic helper
  *
  * For example `"png"`
  * @collboard-modules-sdk
  */
-export declare type string_file_extension = string;
+export type string_file_extension = string;
 /**
  * Semantic helper
  *
  * For example `"C:/Users/me/work/collboard/modules-sdk/src/colldev/commands/develop/ColldevDevelop.tsx"`
  * @collboard-modules-sdk
  */
-export declare type string_file_absolute_path = string;
+export type string_file_absolute_path = string;
 /**
  * Semantic helper
  *
  * For example `"./src/colldev/commands/develop/ColldevDevelop.tsx"`
  * @collboard-modules-sdk
  */
-export declare type string_file_relative_path = string;
+export type string_file_relative_path = string;
 /**
  * Semantic helper
  *
  * @collboard-modules-sdk
  */
-export declare type string_file_path = string_file_absolute_path | string_file_relative_path;
+export type string_file_path = string_file_absolute_path | string_file_relative_path;
 /**
  * Semantic helper
  *
  * For example `"C:/Users/me/work/collboard/modules-sdk/src/colldev/commands/develop/ColldevDevelop.tsx"`
  * @collboard-modules-sdk
  */
-export declare type string_folder_absolute_path = string;
+export type string_folder_absolute_path = string;
 /**
  * Semantic helper
  *
  * For example `"./src/colldev/commands/develop/ColldevDevelop.tsx"`
  * @collboard-modules-sdk
  */
-export declare type string_folder_relative_path = string;
+export type string_folder_relative_path = string;
 /**
  * Semantic helper
  *
  * @collboard-modules-sdk
  */
-export declare type string_folder_path = string_file_absolute_path | string_file_relative_path;
+export type string_folder_path = string_file_absolute_path | string_file_relative_path;
 /**
  * Semantic helper
  *
@@ -247,7 +247,7 @@ export declare type string_folder_path = string_file_absolute_path | string_file
  * @pattern /^(@(?<scope>[a-z0-9][a-z0-9-]*))\/(?<name>([a-z0-9][a-z0-9-]*)(\/([a-z0-9][a-z0-9-]*))*)$/
  * @collboard-modules-sdk
  */
-export declare type string_module_name = string;
+export type string_module_name = string;
 /**
  * Semantic helper
  *
@@ -258,14 +258,14 @@ export declare type string_module_name = string;
  * *Note: This may become an list of 'LITERAL_VALUES' in the near future*
  * @collboard-modules-sdk
  */
-export declare type string_module_category = string;
+export type string_module_category = string;
 /**
  * Semantic helper
  *
  * For example `"John Smith"`
  * @collboard-modules-sdk
  */
-export declare type string_person_fullname = string;
+export type string_person_fullname = string;
 /**
  * Semantic helper
  * Full profile of the person with his email and web (like in package.json)
@@ -273,7 +273,7 @@ export declare type string_person_fullname = string;
  * For example `"Pavol Hejný <pavol@collboard.com> (https://pavolhejny.com)"`
  * @collboard-modules-sdk
  */
-export declare type string_person_profile = string;
+export type string_person_profile = string;
 /**
  * Full profile of the person with his email and web (like in package.json)
  *
@@ -293,7 +293,7 @@ export interface IPersonProfile {
  * For example `"MIT"`
  * @collboard-modules-sdk
  */
-export declare type string_license = string;
+export type string_license = string;
 /**
  * License with its type and url like in package.json
  *
@@ -316,7 +316,7 @@ export interface IRepository {
  * CSS cursor type
  * @collboard-modules-sdk
  */
-export declare type string_css_cursor =
+export type string_css_cursor =
     | 'alias'
     | 'all-scroll'
     | 'auto'
@@ -360,7 +360,7 @@ export declare type string_css_cursor =
  * For example `"color"`
  * @collboard-modules-sdk
  */
-export declare type string_attribute = string;
+export type string_attribute = string;
 /**
  * Semantic helper for attributes context
  * Each attribute value scope with a attribute name has its own current value
@@ -370,22 +370,22 @@ export declare type string_attribute = string;
  * For example `"tools"`
  * @collboard-modules-sdk
  */
-export declare type string_attribute_value_scope = string;
+export type string_attribute_value_scope = string;
 /**
  * Semantic helper for css/html colors
  *
  * For example `"white"` or `"#009edd"`
  * @collboard-modules-sdk
  */
-export declare type string_color = string;
+export type string_color = string;
 /**
  * Semantic helper; For example "SHARE_ICON/EDIT_LINK"
  */
-export declare type string_translate_name = string;
+export type string_translate_name = string;
 /**
  * Semantic helper; For example "ShareIcon/ edit link"
  */
-export declare type string_translate_name_not_normalized = string;
+export type string_translate_name_not_normalized = string;
 /**
  * Semantic helper; For example "cs" or "en"
  * Implementing ISO 639-1
@@ -393,39 +393,39 @@ export declare type string_translate_name_not_normalized = string;
  * TODO: Probably use enum
  * TODO: Rename - remove string_ prefix like ITranslateLanguageCode
  */
-export declare type string_translate_language = 'en' | 'cs' | 'sk' | 'uk';
+export type string_translate_language = 'en' | 'cs' | 'sk' | 'uk';
 /**
  * Semantic helper; For example "callbackName" or "renderMe"
  *
  */
-export declare type string_javascript_name = string;
-export declare type string_token = string;
-export declare type string_license_token = string_token;
-export declare type string_password = string;
-export declare type string_ssh_key = string;
-export declare type string_pgp_key = string;
-export declare type number_positive = number;
-export declare type number_negative = number;
-export declare type number_integer = number;
+export type string_javascript_name = string;
+export type string_token = string;
+export type string_license_token = string_token;
+export type string_password = string;
+export type string_ssh_key = string;
+export type string_pgp_key = string;
+export type number_positive = number;
+export type number_negative = number;
+export type number_integer = number;
 /**
  * Semantic helper;
  * Percentage from 0 to 1 (100%)
  *
  */
-export declare type number_percent = number;
-export declare type number_miliseconds = number_integer;
-export declare type number_seconds = number;
-export declare type number_minutes = number;
-export declare type number_hours = number;
-export declare type number_days = number;
-export declare type number_weeks = number;
-export declare type number_months = number;
-export declare type number_years = number;
-export declare type number_bytes = number_positive & number_integer;
-export declare type number_kilobytes = number_positive;
-export declare type number_megabytes = number_positive;
-export declare type number_gigabytes = number_positive;
-export declare type number_terabytes = number_positive;
+export type number_percent = number;
+export type number_miliseconds = number_integer;
+export type number_seconds = number;
+export type number_minutes = number;
+export type number_hours = number;
+export type number_days = number;
+export type number_weeks = number;
+export type number_months = number;
+export type number_years = number;
+export type number_bytes = number_positive & number_integer;
+export type number_kilobytes = number_positive;
+export type number_megabytes = number_positive;
+export type number_gigabytes = number_positive;
+export type number_terabytes = number_positive;
 /**
  * TODO: Change all Semantic helper to Branded types (like Uuid)
  *       [🥙] Should be uuid vs Uuid vs UUID

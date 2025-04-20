@@ -10,7 +10,7 @@ import { IFileExportSupporterOptions } from './IFileExportSupporterOptions';
 /**
  * Prepared one file export OR export which can not be done
  */
-export declare type IPreparedFileExport = IPreparedFileExporting | IPreparedFileVoidExport;
+export type IPreparedFileExport = IPreparedFileExporting | IPreparedFileVoidExport;
 /**
  * Prepared one file export in progress ready to do the hard work by calling `exporting()`
  */

@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
 import { IBaseMessage } from '../../50-systems/TranslationsSystem/interfaces/IMessage';
-declare type IObfuscateProps = React.PropsWithChildren<{
+type IObfuscateProps = React.PropsWithChildren<{
     content: IBaseMessage;
     buttonContent: IBaseMessage;
 }>;

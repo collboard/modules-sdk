@@ -12,14 +12,14 @@ import { IModuleManifest } from './IModuleManifest/IModuleManifest';
  *
  * @not-collboard-modules-sdk
  */
-export declare type IDependenciesRecord = Record<string_module_name, IDependencyDetail>;
+export type IDependenciesRecord = Record<string_module_name, IDependencyDetail>;
 /**
  * Set of modules which are dependencies.
  * Note: IDependenciesRecord and IDependenciesSet carries same information but in different form
  *
  * @not-collboard-modules-sdk
  */
-export declare type IDependenciesSet = Set<IDependency>;
+export type IDependenciesSet = Set<IDependency>;
 /**
  * Details about module dependency
  *
@@ -35,7 +35,7 @@ export interface IDependency extends IModuleManifest {
  *
  * TODO: Make value true as shortcut for { priority: 0 }
  */
-export declare type IDependencyDetail = Omit<IDependency, 'name'>;
+export type IDependencyDetail = Omit<IDependency, 'name'>;
 /**
  * TODO: Probably join IDependenciesRecord and IDependenciesSet
  */

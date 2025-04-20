@@ -56,18 +56,18 @@ import { ISystemsResolved } from './ISystemsResolved';
  *
  * @collboard-modules-sdk
  */
-export declare type SystemName = keyof Omit<ISystemsExtended, ISystemsMethods>;
+export type SystemName = keyof Omit<ISystemsExtended, ISystemsMethods>;
 /**
  * Keys of the ISystems that are methods not actual systems
  */
-export declare type ISystemsMethods = 'request' | 'use';
+export type ISystemsMethods = 'request' | 'use';
 /**
  * Systems do everything in Collboard.
  * They can comunicate between or modules can do things through a systems
  *
  * @collboard-modules-sdk
  */
-export declare type ISystems = Pick<ISystemsExtended, ISystemsMethods>;
+export type ISystems = Pick<ISystemsExtended, ISystemsMethods>;
 /**
  * TODO: Remove this temporary solution when we merge feature/requesting-systems-pure
  */

@@ -10,7 +10,7 @@ interface ICenterArtsOptions {
     arts: Array<AbstractPlacedArt>;
     center: IVectorData;
 }
-declare type ICenterArtsOptionsDeprecated = Omit<ICenterArtsOptions, 'center'> & {
+type ICenterArtsOptionsDeprecated = Omit<ICenterArtsOptions, 'center'> & {
     /**
      * @deprecated
      */

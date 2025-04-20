@@ -8,7 +8,7 @@ import { ISystems } from '../50-systems/00-SystemsContainer/ISystems';
 /**
  * @collboard-modules-sdk
  */
-export declare type IFactorableWithSystems<TValue> = TValue | ((systems: ISystems) => TValue);
+export type IFactorableWithSystems<TValue> = TValue | ((systems: ISystems) => TValue);
 /**
  *
  * @collboard-modules-sdk

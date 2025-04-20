@@ -8,7 +8,7 @@ import { IVectorData, Vector } from 'xyzt';
 /**
  * @deprecated this should be using LIB xyzt boundingBox
  */
-export declare type square = {
+export type square = {
     topLeft: Vector;
     bottomRight: Vector;
 };

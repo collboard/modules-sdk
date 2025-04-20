@@ -59,4 +59,4 @@ export interface INotificationAction {
     readonly onClick?: INotificationOnClickHandler;
     readonly href?: string_url;
 }
-export declare type INotificationOnClickHandler = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+export type INotificationOnClickHandler = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;

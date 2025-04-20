@@ -19,7 +19,7 @@ import { ISerializerRule } from './interfaces/ISerializerRule';
 /**
  * @@x
  */
-declare type ICollboardSerializable = Commit | ICommitData | IArt | AbstractArt | Vector;
+type ICollboardSerializable = Commit | ICommitData | IArt | AbstractArt | Vector;
 /**
  * ArtSerializer serializes and deseriales Collboard arts and other objects
  *

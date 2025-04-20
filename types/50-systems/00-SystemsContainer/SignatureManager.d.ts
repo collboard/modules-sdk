@@ -8,8 +8,8 @@ import { TouchController } from 'touchcontroller';
 import { AbstractSystem } from '../10-AbstractSystem/AbstractSystem';
 import { IModuleManifest } from '../ModuleStore/interfaces/IModuleManifest/IModuleManifest';
 import { ISystems } from './ISystems';
-declare type ISignableEntity = ISystems | AbstractSystem | TouchController;
-declare type ISignature = IModuleManifest | null;
+type ISignableEntity = ISystems | AbstractSystem | TouchController;
+type ISignature = IModuleManifest | null;
 declare class SignatureManager {
     private readonly signatureKey;
     /**

@@ -11,7 +11,7 @@ import { string_translate_language } from '../../../40-utils/typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare type IStringMessage = string | Partial<Record<string_translate_language, string>>;
+export type IStringMessage = string | Partial<Record<string_translate_language, string>>;
 /**
  * A message which can be a simple string or JSX element*, or a complex object with multiple translations and rich elements.
  *
@@ -19,7 +19,7 @@ export declare type IStringMessage = string | Partial<Record<string_translate_la
  *
  * @collboard-modules-sdk
  */
-export declare type IMessage = IBaseMessage | Partial<Record<string_translate_language, IBaseMessage>>;
+export type IMessage = IBaseMessage | Partial<Record<string_translate_language, IBaseMessage>>;
 /**
  * A message which can be a simple string or JSX element*
  *
@@ -27,7 +27,7 @@ export declare type IMessage = IBaseMessage | Partial<Record<string_translate_la
  *
  * @collboard-modules-sdk
  */
-export declare type IBaseMessage = string | JSX.Element;
+export type IBaseMessage = string | JSX.Element;
 /**
  * TODO: Try to support IMessage instead of IBaseMessage across the repositiory
  */

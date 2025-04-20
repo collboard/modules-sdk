@@ -7,11 +7,11 @@
 /**
  * @collboard-modules-sdk
  */
-export declare type Factory<TValue> = () => TValue;
+export type Factory<TValue> = () => TValue;
 /**
  * @collboard-modules-sdk
  */
-export declare type Factorable<TValue> = TValue | Factory<TValue>;
+export type Factorable<TValue> = TValue | Factory<TValue>;
 /**
  *
  * @collboard-modules-sdk

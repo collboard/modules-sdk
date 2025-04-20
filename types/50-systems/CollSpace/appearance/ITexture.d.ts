@@ -10,7 +10,7 @@ import { string_color, string_url_image } from '../../../40-utils/typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare type ITexture = IColorTexture | ITextureTexture;
+export type ITexture = IColorTexture | ITextureTexture;
 /**
  * Just a simple color
  * Note: This color can be transparent

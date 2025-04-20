@@ -9,7 +9,7 @@ import { Promisable } from 'type-fest';
 import { Factorable } from '../../../40-utils/IFactory';
 import { string_mime_type } from '../../../40-utils/typeAliases';
 import { IFileExportSupporterOptions } from './IFileExportSupporterOptions';
-export declare type IFileExportSupporter = IFileExportSupporterHeavy | IFileExportSupporterLight;
+export type IFileExportSupporter = IFileExportSupporterHeavy | IFileExportSupporterLight;
 /**
  * This represents support for one file type export
  */
@@ -60,7 +60,7 @@ interface IFileExportSupporterCore {
 /**
  * Exported data
  */
-declare type IExported = File | Blob | string | JSX.Element;
+type IExported = File | Blob | string | JSX.Element;
 export {};
 /**
  * TODO: Use isHeavy in auto install mechanism

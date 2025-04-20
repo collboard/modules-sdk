@@ -8,7 +8,7 @@ import React from 'react';
 /**
  * @private Only used in this folder
  */
-export declare type IModalFooterProps = React.PropsWithChildren<{
+export type IModalFooterProps = React.PropsWithChildren<{
     /**
      * Is footer in graphically different style than rest of the modal
      * - If `true` footer in darkened style with smaller font

@@ -7,7 +7,7 @@
 import React from 'react';
 import { CollSpace } from '../../50-systems/CollSpace/0-CollSpace';
 import { ImportSystem } from '../../50-systems/ImportSystem/0-ImportSystem';
-declare type IUploadOverlayProps = React.PropsWithChildren<{
+type IUploadOverlayProps = React.PropsWithChildren<{
     importSystem: ImportSystem;
     collSpace: CollSpace;
 }>;

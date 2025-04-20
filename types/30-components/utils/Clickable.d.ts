@@ -6,7 +6,7 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
 import { string_url } from '../../40-utils/typeAliases';
-declare type IClickableProps = React.PropsWithChildren<{
+type IClickableProps = React.PropsWithChildren<{
     onClick?: React.MouseEventHandler;
     href?: string_url;
     hrefByJavascript?: boolean;

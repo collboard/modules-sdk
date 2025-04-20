@@ -11,4 +11,4 @@ import { IPersonProfile, string_person_profile } from '../../../../40-utils/type
  *
  * @collboard-modules-sdk
  */
-export declare type IModuleManifestAuthor = string_person_profile | IPersonProfile;
+export type IModuleManifestAuthor = string_person_profile | IPersonProfile;

@@ -22,7 +22,7 @@ import { IModuleManifest } from './IModuleManifest/IModuleManifest';
  *
  * @collboard-modules-sdk
  */
-export declare type IModule = Factorable<IModuleDefinition>;
+export type IModule = Factorable<IModuleDefinition>;
 /**
  * Collboard module is basic unit of functionality. From the technical point of view it is just an object with manifest and setup function that can make some work and returns a logic how to destroy itself.
  *
@@ -48,4 +48,4 @@ export interface IModuleDefinition {
  *
  * @collboard-modules-sdk
  */
-export declare type IModuleSetup = (systems: ISystems) => Promisable<IDestroyable>;
+export type IModuleSetup = (systems: ISystems) => Promisable<IDestroyable>;

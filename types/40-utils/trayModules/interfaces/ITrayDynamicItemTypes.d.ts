@@ -11,7 +11,7 @@ import { string_color, string_url, string_url_image } from '../../typeAliases';
 /**
  * @collboard-modules-sdk
  */
-export declare type ITrayDynamicItem = {
+export type ITrayDynamicItem = {
     content: JSX.Element;
     defaultColor: string_color;
     filters?: Array<ITrayDynamicItemFilter>;
@@ -19,13 +19,13 @@ export declare type ITrayDynamicItem = {
 /**
  * @collboard-modules-sdk
  */
-export declare type ITrayDynamicItemList = {
+export type ITrayDynamicItemList = {
     [key: string]: ITrayDynamicItem;
 };
 /**
  * @collboard-modules-sdk
  */
-export declare type ITrayDynamicToolbarGroup = Array<{
+export type ITrayDynamicToolbarGroup = Array<{
     title: IMessage;
     itemIds: Array<string>;
     scale?: number;
@@ -33,7 +33,7 @@ export declare type ITrayDynamicToolbarGroup = Array<{
 /**
  * @collboard-modules-sdk
  */
-export declare type ITrayDynamicToolbarItems = Array<{
+export type ITrayDynamicToolbarItems = Array<{
     title: IMessage;
     scale: number;
     /**
@@ -47,7 +47,7 @@ export declare type ITrayDynamicToolbarItems = Array<{
 /**
  * @collboard-modules-sdk
  */
-export declare type ITrayDynamicItemFilter = (source: JSX.Element) => JSX.Element;
+export type ITrayDynamicItemFilter = (source: JSX.Element) => JSX.Element;
 /**
  * @collboard-modules-sdk
  */

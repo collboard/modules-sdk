@@ -11,4 +11,4 @@ import { ILicense, string_license } from '../../../../40-utils/typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare type IModuleManifestSoftwareLicense = string_license | ILicense;
+export type IModuleManifestSoftwareLicense = string_license | ILicense;

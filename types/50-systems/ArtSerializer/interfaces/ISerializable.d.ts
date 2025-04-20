@@ -7,4 +7,4 @@
 /**
  * @@x
  */
-export declare type ISerializable = any;
+export type ISerializable = any;

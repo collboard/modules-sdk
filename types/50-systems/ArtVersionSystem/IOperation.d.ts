@@ -13,8 +13,8 @@ interface GenericFreshOperation<TOngoingOperation extends IOngoingOperation> ext
     newArts(...arts: Array<AbstractArt>): IOngoingOperation;
     arts: Array<AbstractArt>;
 }
-export declare type IFreshOperation = GenericFreshOperation<IOngoingOperation>;
-export declare type IFreshMaterialOperation = GenericFreshOperation<IOngoingMaterialOperation>;
+export type IFreshOperation = GenericFreshOperation<IOngoingOperation>;
+export type IFreshMaterialOperation = GenericFreshOperation<IOngoingMaterialOperation>;
 export interface IOngoingOperation extends IDestroyable {
     update(...arts: Array<AbstractArt>): this;
     updateWithCallback(artCallback: (art: AbstractArt) => AbstractArt): this;

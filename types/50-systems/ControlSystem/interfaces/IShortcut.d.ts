@@ -8,4 +8,4 @@ import { IKey } from './IKey';
 /**
  * @collboard-modules-sdk
  */
-export declare type IShortcut = Array<IKey>;
+export type IShortcut = Array<IKey>;

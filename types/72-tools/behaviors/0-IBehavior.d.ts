@@ -35,7 +35,7 @@ import { ISystems } from '../../50-systems/00-SystemsContainer/ISystems';
  *
  * @collboard-modules-sdk
  */
-export declare type IBehavior = (behaviorProps: IBehaviorOptions) => Promise<boolean>;
+export type IBehavior = (behaviorProps: IBehaviorOptions) => Promise<boolean>;
 /**
  * Options passed to behavior
  *

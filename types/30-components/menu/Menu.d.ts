@@ -8,7 +8,7 @@ import React from 'react';
 /**
  * @collboard-modules-sdk
  */
-declare type IMenuProps = React.PropsWithChildren<{
+type IMenuProps = React.PropsWithChildren<{
     /**
      * Menu orientation
      *

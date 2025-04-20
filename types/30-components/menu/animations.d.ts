@@ -9,7 +9,7 @@
  *
  * @collboard-modules-sdk
  */
-export declare type string_animation = 'spinning' | 'spinning-colors' | 'loading' | 'unpacking';
+export type string_animation = 'spinning' | 'spinning-colors' | 'loading' | 'unpacking';
 /**
  * TODO: Auto-generate list like icons.ts from animations.css [😻]
  */

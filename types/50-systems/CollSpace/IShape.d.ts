@@ -7,4 +7,4 @@
 /**
  * @@x
  */
-export declare type IShape = {};
+export type IShape = {};

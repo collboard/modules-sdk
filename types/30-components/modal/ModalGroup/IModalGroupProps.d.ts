@@ -9,7 +9,7 @@ import { IBaseMessage } from '../../../50-systems/TranslationsSystem/interfaces/
 /**
  * @private Only used in this folder
  */
-export declare type IModalGroupProps = React.PropsWithChildren<{
+export type IModalGroupProps = React.PropsWithChildren<{
     /**
      * Title shown before the group content
      */

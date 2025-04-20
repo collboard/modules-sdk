@@ -7,7 +7,7 @@
 /**
  * @collboard-modules-sdk
  */
-export declare type IListStyle = 'unordered' | 'ordered' | 'none';
+export type IListStyle = 'unordered' | 'ordered' | 'none';
 /**
  * TODO: Anotate
  * TODO: Make this enum

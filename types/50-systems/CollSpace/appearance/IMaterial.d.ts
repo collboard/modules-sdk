@@ -14,13 +14,13 @@ import { ITexture } from './ITexture';
  *
  * @collboard-modules-sdk
  */
-export declare type IMaterial = ITexture | IPhongMaterial;
+export type IMaterial = ITexture | IPhongMaterial;
 /**
  * Material with specified at least parts of phong lighting model
  *
  * @collboard-modules-sdk
  */
-export declare type IPhongMaterial = RequireAtLeastOne<IFullPhongMaterial>;
+export type IPhongMaterial = RequireAtLeastOne<IFullPhongMaterial>;
 /**
  * Full phong lighting model
  * NOT IMPLEMENTED YET just holding place for future use

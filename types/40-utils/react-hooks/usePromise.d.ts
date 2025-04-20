@@ -7,7 +7,7 @@
 import React from 'react';
 import { Promisable } from 'type-fest';
 import { IUseLoadableResultComplete, IUseLoadableResultError, IUseLoadableResultPending } from './useLoadable';
-declare type IUsePromiseResult<TValue> =
+type IUsePromiseResult<TValue> =
     | IUseLoadableResultPending
     | IUseLoadableResultError
     | IUseLoadableResultComplete<TValue>;

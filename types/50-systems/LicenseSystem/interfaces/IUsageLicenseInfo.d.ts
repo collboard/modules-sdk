@@ -9,7 +9,7 @@ import { IUsageLicenseInfoValid } from './IUsageLicenseInfoValid';
 /**
  * Tells if user has valid license for given module
  */
-export declare type IUsageLicenseInfo = IUsageLicenseInfoInvalid | IUsageLicenseInfoValid;
+export type IUsageLicenseInfo = IUsageLicenseInfoInvalid | IUsageLicenseInfoValid;
 /**
  * TODO: Probbaly better name for IUsageLicenseInfo
  */

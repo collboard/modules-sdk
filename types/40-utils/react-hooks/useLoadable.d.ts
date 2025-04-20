@@ -40,7 +40,7 @@ export interface IUseLoadableResultComplete<TValue> {
     error: null;
     isComplete: true;
 }
-export declare type IUseLoadableResult<TValue> =
+export type IUseLoadableResult<TValue> =
     | IUseLoadableResultPending
     | IUseLoadableResultOngoing<TValue>
     | IUseLoadableResultError

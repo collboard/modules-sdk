@@ -19,7 +19,7 @@ import { IMaterial } from './IMaterial';
  *
  * @collboard-modules-sdk
  */
-export declare type IAppearance = IMaterial | IAdvancedAppearance | IFullAdvancedAppearance;
+export type IAppearance = IMaterial | IAdvancedAppearance | IFullAdvancedAppearance;
 /**
  * Appearance when you want to specify materials for different spots, edges and fills of the art and set the default for the rest.
  * For example polygon with red edge and blue fill
@@ -31,7 +31,7 @@ export declare type IAppearance = IMaterial | IAdvancedAppearance | IFullAdvance
  *
  * @collboard-modules-sdk
  */
-export declare type IAdvancedAppearance = RequireAtLeastOne<
+export type IAdvancedAppearance = RequireAtLeastOne<
     IFullAdvancedAppearance & {
         default: IMaterial;
     }

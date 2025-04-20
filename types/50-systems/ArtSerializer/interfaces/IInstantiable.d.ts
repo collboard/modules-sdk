@@ -7,4 +7,4 @@
 /**
  * @@x
  */
-export declare type IInstantiable = new (...args: Array<any>) => any;
+export type IInstantiable = new (...args: Array<any>) => any;

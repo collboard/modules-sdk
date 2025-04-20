@@ -11,7 +11,7 @@ import { string_url, string_url_image } from '../../typeAliases';
  *
  * @collboard-modules-sdk
  */
-export declare type ITraySimpleDefinition = Array<ITraySimpleTab>;
+export type ITraySimpleDefinition = Array<ITraySimpleTab>;
 /**
  * Definition of one tab in the tray
  */

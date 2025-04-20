@@ -6,5 +6,5 @@
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import { IControl } from '../interfaces/IControl';
 import { IControls } from '../interfaces/IControls';
-export declare type IRegisterControlOptions<TValue> = IControl | IControls<TValue>;
+export type IRegisterControlOptions<TValue> = IControl | IControls<TValue>;
 export declare function controlToControls<TValue>(options: IRegisterControlOptions<TValue>): IControls<TValue>;

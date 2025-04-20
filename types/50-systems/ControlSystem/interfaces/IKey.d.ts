@@ -8,7 +8,7 @@
  * @see https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values
  * @collboard-modules-sdk
  */
-export declare type IKey =
+export type IKey =
     | 'a'
     | 'b'
     | 'c'

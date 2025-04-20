@@ -10,7 +10,7 @@ import { IArtData } from '../../../CollSpace/IArtData';
 import { IShape } from '../../../CollSpace/IShape';
 import { IModuleDefinition } from '../../interfaces/IModule';
 import { IModuleManifest } from '../../interfaces/IModuleManifest/IModuleManifest';
-export declare type IArtModuleDefinition<
+export type IArtModuleDefinition<
     TShape extends IShape = IShape,
     TAppearance extends IAppearance = IAppearance,
 > = IModuleDefinition & /* TODO: !!x Remove IMakeFunctionalArtModuleOptions<TShape, TAppearance>*/ {

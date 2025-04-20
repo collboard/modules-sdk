@@ -5,7 +5,7 @@
 //       @see https://github.com/microsoft/TypeScript/issues/35395
 //       @see https://stackoverflow.com/questions/47796545/how-to-disable-auto-import-from-specific-files-in-vscode
 import React from 'react';
-declare type IMenuWrapperProps = React.PropsWithChildren<{
+type IMenuWrapperProps = React.PropsWithChildren<{
     position: 'left' | 'right' | 'top-ltr' | 'top-rtl' | 'bottom-ltr' | 'bottom-rtl';
 }>;
 export declare function MenuWrapper(props: IMenuWrapperProps): JSX.Element;
