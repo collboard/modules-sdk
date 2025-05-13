@@ -29,7 +29,7 @@ export function combineDeep<T>(...values: Array<T>): T {
 
             const combined: T = {} as T;
             for (const key of keys) {
-                combined[key] = combineDeep(...valuesDefined.map((object) => object[key]));
+                (combined as any)[key] = combineDeep(...valuesDefined.map((object) => (combined as any)[key]));
             }
             return combined;
         }
