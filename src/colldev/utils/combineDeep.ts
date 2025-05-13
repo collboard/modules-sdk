@@ -25,7 +25,7 @@ export function combineDeep<T>(...values: Array<T>): T {
             // TODO: Maybe uniqueness check
             return [...new Set(flatternArray(valuesDefined as any))] as any;
         } else {
-            const keys = [...new Set(flatternArray(valuesDefined.map((object) => Object.keys(object))))];
+            const keys = [...new Set(flatternArray(valuesDefined.map((object) => Object.keys(object as any))))];
 
             const combined: T = {} as T;
             for (const key of keys) {
