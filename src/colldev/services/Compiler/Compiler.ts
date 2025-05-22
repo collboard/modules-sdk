@@ -97,7 +97,7 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
             );
 
             // tslint:disable-next-line: important-todos
-            console.log('!!! this.webpackConfig', this.webpackClontonfig);
+            console.log('!!! this.webpackConfig', this.webpackConfig);
 
             const mainBundlePath: string_file_absolute_path = join(
                 this.webpackConfig!.output!.path!,
