@@ -40,13 +40,15 @@ export function execCommand(options: IExecCommandOptions): Promise<void> {
 
             commandProcess.stdout.on('data', (stdout) => {
                 output.push(stdout.toString());
-                console.info(stdout.toString());
+                if (!process.env.JEST_WORKER_ID) {
+                    console.info(stdout.toString());
+                }
             });
 
             commandProcess.stderr.on('data', (stderr) => {
                 output.push(stderr.toString());
-                if (stderr.toString().trim()) {
-                  console.warn(stderr.toString());
+                if (stderr.toString().trim() && !process.env.JEST_WORKER_ID) {
+                    console.warn(stderr.toString());
                 }
             });
 

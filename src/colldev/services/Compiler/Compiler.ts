@@ -98,9 +98,20 @@ export abstract class Compiler<TOptions extends ICompilerOptions>
 
             console.log('xxxxxx this.webpackConfig', this.webpackConfig);
 
+            if (
+                !this.webpackConfig ||
+                !this.webpackConfig.output ||
+                !this.webpackConfig.output.path ||
+                !this.webpackConfig.output.filename
+            ) {
+                throw new Error(
+                    'Invalid webpackConfig: output.path or output.filename is undefined'
+                );
+            }
+
             const mainBundlePath: string_file_absolute_path = join(
-                this.webpackConfig!.output!.path!,
-                this.webpackConfig!.output!.filename! as string,
+                this.webpackConfig.output.path,
+                this.webpackConfig.output.filename as string,
             );
 
             this.status.next({
